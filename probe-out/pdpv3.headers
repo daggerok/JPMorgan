@@ -1,0 +1,27 @@
+HTTP/1.1 200 OK
+Content-Type: text/javascript
+Last-Modified: Thu, 10 Sep 2026 08:40:59 GMT
+x-haproxy-backend-time-ms: 69
+x-haproxy-backend-time-ms: 82
+x-haproxy-request-time-us: 1789058776448963
+x-haproxy-request-time-us: 1789058776451796
+x-stk-waf: V2
+x-trace-id: 32042b0da1ee38a1b9238223d383912c
+x-vcap-request-id: e0a42ef1-f1c9-4132-4253-cfd90e9a3404
+x-haproxy-backend-time-ms: 88
+x-haproxy-request-time-us: 1789058776453903
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 122
+Cache-Control: must-revalidate, max-age=720
+Expires: Sat, 19 Sep 2026 23:10:40 GMT
+Date: Sat, 19 Sep 2026 22:58:40 GMT
+Connection: keep-alive
+Connection: Transfer-Encoding
+Set-Cookie: userGeo=US; path=/
+Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers, Accept-Encoding
+X-User-Type: External
+Set-Cookie: TS01c7814b=0164cfe1d5d7017157d4a3400b82546ce1f8f44fed9255a6a3bf6b04f3871d5d8f4ce7d56522c9324cd201197744cc6ce2d3572e05; Path=/
+Transfer-Encoding: chunked
+Set-Cookie: ppnet_4587=!iDxCHTt5LGtmjHkFCmayusEbh4oDhvsB3rzVWLiD4ZDcN4n0G0IzPUtsmwMTe4wuL1RRX60p6/lwZg==; path=/; Httponly; Secure
+

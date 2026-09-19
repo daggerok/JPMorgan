@@ -1,230 +1,362 @@
 ==================================================================
-### loader
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/fundsmarketingloader-new.js?1
-exit=0 size=414027
+### pdp
+URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/pdp-7ac633d5a7558721f040.js
+exit=0 size=3009064
 HTTP/1.1 200 OK
 Content-Type: text/javascript
 head:
-/*! For license information please see fundsmarketingloader-new.js.LICENSE.txt */
-(()=>{var e,t,r,n,a={122:(e,t,r)=>{"use strict";var n=r(46518),a=r(44576),o=r(91955),i=r(79306),s=r(22812),u=r(79039),c=r(43724);n({global:!0,enumerable:!0,dontCallGetSet:!0,forced:u(function(){return c&&1!==Object.getOwnPropertyDescriptor(a,"queueMicrotask").value.length})},{queueMicrotask:function(e){s(arguments.le
+/*! For license information please see pdp-7ac633d5a7558721f040.js.LICENSE.txt */
+(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[56185],{197:()=>{},319:(e,t,r)=>{"use strict";var n=r(69675),i=r(6537),a=r(60280);e.exports=function(e){if(!i(e))throw new n("Assertion faile
 ==================================================================
-### intlshim
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/intlshim.js
-exit=0 size=198728
+### pdpv3
+URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/pdp-v3-606d8b1e464d4dda9df9.js
+exit=0 size=173672
 HTTP/1.1 200 OK
 Content-Type: text/javascript
 head:
-(()=>{var n={855:()=>{IntlPolyfill.__addLocaleData({locale:"zh",date:{ca:["gregory","buddhist","chinese","coptic","dangi","ethioaa","ethiopic","generic","hebrew","indian","islamic","islamicc","japanese","persian","roc"],hourNo0:!0,hour12:!0,formats:{short:"{1} {0}",medium:"{1} {0}",full:"{1} {0}",long:"{1} {0}",availableFormats:{d:"d...",E:"ccc",Ed:"d...E",Ehm:"E ah:mm",EHm:"EHH:mm",Ehms:"E ah:mm:
+/*! For license information please see pdp-v3-606d8b1e464d4dda9df9.js.LICENSE.txt */
+"use strict";(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[64415],{5338:(e,n,t)=>{var r=t(40961);n.H=r.createRoot,r.hydrateRoot},7463:(e,n)=>{function t(e,n){var t=e.length;e.push(n);e
 ==================================================================
-### shell
-URL: https://cdn.jpmorganfunds.com/etc/designs/jpm-am-aem/clientlib-site/jpm-am-container-npe-shell-component.min.d70d379a2530c22fd926a8a635feff08.js
-exit=0 size=1051
+### fxv3
+URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/fx-v3-8030f81274a0d1818bd8.js
+exit=0 size=4455193
 HTTP/1.1 200 OK
-Content-Type: application/javascript;charset=utf-8
+Content-Type: text/javascript
 head:
-!function(f){function c(a){if(e[a])return e[a].exports;var b=e[a]={i:a,l:!1,exports:{}};return f[a].call(b.exports,b,b.exports,c),b.l=!0,b.exports}var e={};c.m=f;c.c=e;c.d=function(a,b,d){c.o(a,b)||Object.defineProperty(a,b,{enumerable:!0,get:d})};c.r=function(a){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:"Module"});Object.defineProperty(a,"__
+/*! For license information please see fx-v3-8030f81274a0d1818bd8.js.LICENSE.txt */
+(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[39103],{34:e=>{"use strict";e.exports="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 view
 ==================================================================
-### slugtest
-URL: https://am.jpmorgan.com/us/en/asset-management/adv/products/x-46641q399
-200 https://am.jpmorgan.com/us/en/asset-management/adv/products/x-46641q399
-exit=0 size=220637
+### fxv2
+URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/fx-v2-bef1f7b4dd25ae76d9f7.js
+exit=0 size=1473022
 HTTP/1.1 200 OK
-Content-Type: text/html;charset=utf-8
+Content-Type: text/javascript
 head:
-
-  <!DOCTYPE HTML>
-  
-  
-  
-  <html lang="en-US">
-
-  <head>
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="referrer" content="no-referrer-when-downgrade"/>
-    <meta content="UEgzQAQUVvl5ylECkxr9zhGU19brVYyHBFJ-u_avkXc" name="google-site-verification"/>
-    <meta name="clr" con
+/*! For license information please see fx-v2-bef1f7b4dd25ae76d9f7.js.LICENSE.txt */
+(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[26294],{197:()=>{},845:(e,t,r)=>{"use strict";r.d(t,{A:()=>i});var n=r(5564);function i(e,t,r){return function(){if(0===arguments.length)re
 ==================================================================
-### slugtest2
-URL: https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-betabuilders-u-s-equity-etf-etf-shares-46641q399
-200 https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-betabuilders-u-s-equity-etf-etf-shares-46641q399
-exit=0 size=220637
+### card
+URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/card-25b68944a13737010ace.js
+exit=0 size=2095531
 HTTP/1.1 200 OK
-Content-Type: text/html;charset=utf-8
+Content-Type: text/javascript
 head:
-
-  <!DOCTYPE HTML>
-  
-  
-  
-  <html lang="en-US">
-
-  <head>
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="referrer" content="no-referrer-when-downgrade"/>
-    <meta content="UEgzQAQUVvl5ylECkxr9zhGU19brVYyHBFJ-u_avkXc" name="google-site-verification"/>
-    <meta name="clr" con
+/*! For license information please see card-25b68944a13737010ace.js.LICENSE.txt */
+(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[96509],{197:()=>{},319:(e,t,r)=>{"use strict";var n=r(69675),i=r(6537),a=r(60280);e.exports=function(e){if(!i(e))throw new n("Assertion fail
 ==================================================================
-### holdings-params
-URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q837&country=us&role=adv&fundType=N_ETF&locale=en-US&isUnderlyingHolding=false&isProxyHolding=false
-exit=0 size=99975
-HTTP/1.1 200 OK
-Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
-content-disposition: attachment; filename*=UTF-8''JPMorgan-Ultra-Short-Income-ETF-ETF-Shares-Holdings-09-18-2026.xlsx
-head:
-PK........+.3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
-..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK........+.3]................[Content_Types].xml...n.0.E.%..J.]TUE`...E*........1...8@%(HT..........heM.........+.I
-==================================================================
-### yahoo-ua
-URL: https://query2.finance.yahoo.com/v8/finance/chart/JEPI?period1=0&period2=1789900000&interval=1d&events=div%7Csplit
-exit=0 size=19
-HTTP/2 429 
-content-type: text/html
-head:
-Too Many Requests.
-
-==================================================================
-### yahoo-chart-plain
-URL: https://query1.finance.yahoo.com/v8/finance/chart/JEPI?range=5d&interval=1d
-exit=0 size=23
-HTTP/2 429 
-content-type: text/html
-head:
-Edge: Too Many Requests
-==================================================================
-### sec-series
-URL: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001485894&type=NPORT-P&dateb=&owner=include&count=10&output=atom
-exit=0 size=15799
-HTTP/2 200 
-content-type: application/atom+xml
-head:
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-  <feed xmlns="http://www.w3.org/2005/Atom">
-    <author>
-      <email>webmaster@sec.gov</email>
-      <name>Webmaster</name>
-    </author>
-    <company-info>
-      <addresses>
-        <address type="mailing">
-          <city>NEW YORK</city>
-          <state>NY</state>
-          <street1>390 MADISON AVENUE</street1>
-          <zip>10017</zip>
-        </
-==================================================================
-### loader endpoints
-## loader
-"/FundsMarketingHandler/"
-"/a/b"
-"/a/i"
-"/etc/designs/jpm-am-aem/fonts"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobol-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobol-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobol-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobolita-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobolita-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobolita-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamproboo-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamproboo-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamproboo-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobooita-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobooita-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamprobooita-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamproita-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamproita-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamproita-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamprolig-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamprolig-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamprolig-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamproligita-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamproligita-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamproligita-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmampromed-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmampromed-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmampromed-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmampromedita-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmampromedita-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmampromedita-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmampromono-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmampromono-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmampromono-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/jpmamproreg-webfont.ttf"
-"/etc/designs/jpm-am-aem/fonts/jpmamproreg-webfont.woff"
-"/etc/designs/jpm-am-aem/fonts/jpmamproreg-webfont.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-100.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-100.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-300.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-300.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-500.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-500.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-700.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-700.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-regular.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-hk-v15-chinese-hongkong-regular.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-100.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-100.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-300.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-300.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-500.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-500.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-700.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-700.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-regular.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-jp-v36-japanese-regular.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-100.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-100.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-300.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-300.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-500.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-500.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-700.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-700.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-regular.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-sc-v20-chinese-simplified-regular.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-100.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-100.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-300.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-300.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-500.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-500.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-700.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-700.woff2"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-regular.woff"
-"/etc/designs/jpm-am-aem/fonts/noto-sans-tc-v20-chinese-traditional-regular.woff2"
-//
-//./app/implementation/styles/font-face.scss
-//.test
--- literal keywords --
-ex-t.sortIndex;return 0!==r?r:e.id-t.id}if("object"==typeof performance&&"function"==typeof performance.now){var i=performance;t.un
-5459],"./jtf":[52054,9,24165],"./jtf.js":[52054,9,24165],"./pdp":[29453,9,56185],"./pdp-v3":[45009,9,64415],"./pdp-v3.js":[
-st",39103:"fx-v3",50312:"print_view",55415:"firevis",56185:"pdp",60220:"docsubscription",60957:"support-new",63240:"support
-## intlshim
-//
--- literal keywords --
-## shell
--- literal keywords --
---- loader script tags it injects ---
---- holdings-params sheet header ---
-<?xml version="1.0" encoding="UTF-8"?>
-<sst count="22198" uniqueCount="3021" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><si><t>Holdings</t></si><si><t>JPMorgan Ultra-Short Income ETF - 46641Q837</t></si><si><t>As of Date: 09/18/2026</t></si><si><t>Ticker</t></si><si><t>Security Description</t></si><si><t>Security Type</t></si><si><t>Method</t></si><si><t>Shares/Par</t></si><si><t>Market Value (USD)</t></si><si><t>Country</t></si><si><t>Currency</t></si><si><t>Sector</t></si><si><t>Industry</t></si><si><t>Coupon</t></si><si><t>Maturity Date</t></si><si><t>Effective Date</t></si><si><t>Contract Size</t></si><si><t>Strike Price</t></si><si><t>% of Market Value</t></si><si><t>% of Net Assets</t></si><si><t/></si><si><t>MGMXX</t></si><si><t>JPMORGAN U.S. GOVERNMENT</t></si><si><t>MONEY MARKET</t></si><si><t>Physical</t></si><si><t>3171769748</t></si><si><t>United States</t></si><si><t>USD</t></si><si><t>04/13/2017</t></si><si><t>7.59%</t></si><si><t>7.58%</t></si><si><t>T</t></si><si><t>UNITED 3.375% 02/28</t></si><si><t>TREASURY NOTES</t></si><si><t>897200000</t></si><si><t>02/29/2028</t></si><si><t>02/28/2026</t></si><si><t>2.11%</t></si><si><t>WELLS FARGO SECUR
+### endpoints in chunks
+## pdp
+"!=typeof n.__clickOutsideHandlerProp){var t=n.getInstance();if("
+"!=typeof this.__clickOutsideHandlerProp))throw new Error("
+")+e.jsonp+"
+").addListener(this.mediaQueryHandler),this.props.printModeForFeatureTest&&this.beforePrint(),(0,D.rX)("
+"):s,p=!!o||null;return(0,u.jsx)(Ce,{activeCardHandler:()=>null,breakpoint:this.props.breakpoint,tabbedData:a,cardID:"
+")},mouseoutHandler:function(e,t){"
+"+e)}function C(e,t){var r=!0;return h(function(){if(null!=i.deprecationHandler&&i.deprecationHandler(null,e),r){var n,a,o,l=[],d=arguments.length;for(a=0;a<d;a++){if(n="
+"+i):!1!==e.jsonp&&(e.url+=(It.test(e.url)?"
+"+n.namespace:n.origType,n.selector,n.handler),this;if("
+",activeCardHandler:e.activeCardScrollHandler,breakpoint:e.breakpoint,disableButton:!0,headerTitlelabel:"
+",activeCardHandler:this.activeCardScrollHandler,componentId:"
+",children:[this.props.activeCardHandler?(0,u.jsx)(be.Y,{topOffset:"
+",function(e,t,r){var i,a,o,s=!1!==e.jsonp&&(rr.test(e.url)?"
+",onClick:e=>this.props.clickHandler(e),role:"
+",onEnter:this.props.activeCardHandler.bind(this,this.props.id)}),(0,u.jsx)(H.A,{headerTitle:this.props.header,headerTitleId:this.props.id,headerTitleLabel:"
+",onEnter:this.props.activeCardHandler.bind(this,this.props.id)}),(0,u.jsxs)(H.A,{headerTitle:this.props.header,headerTitleId:this.props.id,headerTitleLabel:"
+",onEnter:this.props.activeCardHandler.bind(this,this.props.id)}):null,(0,u.jsx)(H.A,{dataTest:this.props.id+"
+",{children:[(0,u.jsx)(be.Y,{onEnter:this.activeCardScrollHandler.bind(this,t)}),(0,u.jsx)("
+":this.props.id,children:[this.props.activeCardHandler?(0,u.jsx)(be.Y,{topOffset:"
+"===e.dataTypes[0])return i=e.jsonpCallback=y(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,s?e[s]=e[s].replace(rr,"
+"==typeof t.handleClickOutside&&(this.__clickOutsideHandlerProp=t.handleClickOutside(e),"
+"DefaultHandler"
+"DomHandler"
+"__consolidated_events_handlers__"
+"_swipeHandler"
+"}activeCardScrollHandler(e){return"
+"}}}},mouseoverHandler:function(e,r){if(d3.select(r).select("
+"}}}},mouseoverHandler:function(e,t){if(d3.select(t).select("
+-- fetch/axios calls --
+.get("$rootScope
+.get("accessCode
+.get("loginService
+.get(`${a}
+.get(`${e}
+.get(`${n}?country=${e}&language=${r}&version=9.16_1789026120
+.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}
+.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${c}
+.get(`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120
+.get(`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120
+.get(`${r}&ac=${t}
+.get(`${r}?query=${e}&country=${t}
+.get(`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120
+.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120
+.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120
+.get(`${this.getFundManagerImageServiceURL()}
+-- template urls --
+`${e.cusip}productDropdown`
+`${e}/autocomplete?country=${t}&role=${r}&language=${n}&userLoggedIn=${i}&version=9.16_1789026120`
+`${n}?country=${e}&language=${r}&version=9.16_1789026120`
+`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${c}`
+`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}`
+`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120`
+`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120`
+`${r[0].cusip}shareclassDropdown`
+`${r[r.length-1].cusip}shareclassDropdown`
+`${r}?query=${e}&country=${t}`
+`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120`
+`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120`
+`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120`
+`${t.cusip}shareclassDropdown`
+`${this.props.gaiaRedirectUrl}/autocomplete?country=${this.props.country}&role=${this.props.role}&language=${this.props.language}&userLoggedIn=${this.props.userLoggedIn}&version=9.16_1789026120`
+`/excel?type=${t}_pcf&cusip=`
+`?country=${t}`
+`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
+`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
+`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
+-- concat urls --
+",r=encodeURI(this.props.gaiaRedirectUrl+`/excel?type=${t}_pcf&cusip=`+this.props.cusip+"
+"/excel?type="
+"/excel?type=compositionOfFundDistribution&cusip="
+"/excel?type=dailyPerformanceChartCustomSelection&cusip="
+"/excel?type=dividendHistory&cusip="
+"/excel?type=fundDistribution&cusip="
+"/excel?type=performanceChart&cusip="
+"/excel?type=performanceChartCustomSelection&cusip="
+"/excel?type=pricingCompositionHistory&cusip="
+"?country="
+"?type="
+"?type=dailyETFHoldings&cusip="
+## pdpv3
+-- fetch/axios calls --
+-- template urls --
+`${a}/product-data?${new URLSearchParams({cusip:e,country:n,role:t,language:r||"en",userLoggedIn:!!l}).toString()}`
+-- concat urls --
+## fxv3
+")+e.jsonp+"
+"),this.initialised=!0;const e=e=>this.callColumnCellValueChangedHandler(e),t=j(this.gos);this.eventService.addEventListener("
+"+e)}function S(e,t){var i=!0;return p(function(){if(null!=r.deprecationHandler&&r.deprecationHandler(null,e),i){var n,a,s,l=[],c=arguments.length;for(a=0;a<c;a++){if(n="
+"+n.namespace:n.origType,n.selector,n.handler),this;if("
+"+r):!1!==e.jsonp&&(e.url+=(It.test(e.url)?"
+",function(e,t,i){var r,a,s,o=!1!==e.jsonp&&(ii.test(e.url)?"
+",this.overlayEventHandler)),this.containerChanged(!0),this.domManager.addListener("
+",this.overlayEventHandler),this.domManager.addEventListenerOnElement("
+"===e.dataTypes[0])return r=e.jsonpCallback=A(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,o?e[o]=e[o].replace(ii,"
+"DefaultHandler"
+"DomHandler"
+-- fetch/axios calls --
+.get("accentedSort
+.get("advancedFilterBuilderParams
+.get("advancedFilterModel
+.get("advancedFilterParent
+.get("aggFuncs
+.get("aggregateOnlyChangedColumns
+.get("alignedGrids
+.get("allowContextMenuWithControlKey
+.get("allowDragFromColumnsToolPanel
+.get("allowShowChangeAfterFilter
+.get("alwaysAggregateAtRootLevel
+.get("alwaysMultiSort
+.get("alwaysShowHorizontalScroll
+.get("alwaysShowVerticalScroll
+.get("animateRows
+.get("applyQuickFilterBeforePivotOrAgg
+.get("asyncTransactionWaitMillis
+.get("autoGroupColumnDef
+.get("autoSizePadding
+.get("autoSizeStrategy
+.get("blockLoadDebounceMillis
+.get("bottom
+.get("cacheBlockSize
+.get("cacheOverflowSize
+.get("cacheQuickFilter
+.get("cellFadeDuration
+.get("cellFlashDuration
+.get("cellSelection
+.get("center
+.get("chartMenuItems
+.get("chartThemeOverrides
+.get("chartThemes
+.get("chartToolPanelsDef
+.get("clipboardDelimiter
+.get("colResizeDefault
+.get("columnDefs
+.get("columnHoverHighlight
+.get("columnMenu
+.get("columnTypes
+.get("components
+.get("copyGroupHeadersToClipboard
+.get("copyHeadersToClipboard
+.get("customChartThemes
+.get("dataTypeDefinitions
+.get("datasource
+.get("debounceVerticalScrollbar
+.get("debug
+.get("defaultColDef
+.get("defaultColGroupDef
+.get("defaultCsvExportParams
+.get("defaultExcelExportParams
+.get("deltaSort
+.get("detailRowAutoHeight
+.get("detailRowHeight
+.get("doesExternalFilterPass
+.get("domLayout
+.get("editType
+.get("embedFullWidthRows
+.get("enableAdvancedFilter
+.get("enableBrowserTooltips
+-- template urls --
+`${e.gaiaRedirectUrl||""}/fund-explorer-label?country=${encodeURIComponent(t)}&language=${encodeURIComponent(c)}&version=9.16_1789026120`
+`/excel?type=fundExplorer&fundType=${e}&country={country}&role={role}`
+`?country=${this.country}`
+`ag-dragging-${this.type===lo.FILL?"fill":"range"}-handle`
+`axis[type=${o}]`
+`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${i}${n.queryString}`
+`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${i}${n.queryString}`
+`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
+`series[type=${o}]`
+-- concat urls --
+"/excel?type=fundExplorer&fundType=etf&country=at&role=adv"
+"/excel?type=fundExplorer&fundType=etf&country=at&role=per"
+"/excel?type=fundExplorer&fundType=etf&country=de&role=adv"
+"/excel?type=fundExplorer&fundType=etf&country=de&role=per"
+"/excel?type=fundExplorer&fundType=etf&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=etf&country=it&role=adv"
+"/excel?type=fundExplorer&fundType=investment_trusts&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=adv"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=per"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=adv"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=per"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=adv"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=per"
+"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=adv"
+"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=oeics&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=offshore-funds&country=tw&role=per"
+"/excel?type=fundExplorer&fundType=onshore-funds&country=jp&role=per"
+"/excel?type=fundExplorer&fundType=onshore-funds&country=tw&role=per"
+"/excel?type=fundExplorer&fundType=provident-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=adv"
+"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=sar-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=at&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=at&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=de&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=de&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=sicavs&country=it&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=it&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=per"
+"/excel?type=fundExplorer&fundType={fundType}&country={country}&role={role}"
+"?country="
+## fxv2
+")+e.jsonp+"
+"+e)}function w(e,t){var r=!0;return f(function(){if(null!=i.deprecationHandler&&i.deprecationHandler(null,e),r){var n,a,s,l=[],c=arguments.length;for(a=0;a<c;a++){if(n="
+"+i):!1!==e.jsonp&&(e.url+=(Dt.test(e.url)?"
+"+n.namespace:n.origType,n.selector,n.handler),this;if("
+",function(e,t,r){var i,a,s,o=!1!==e.jsonp&&(rr.test(e.url)?"
+"===e.dataTypes[0])return i=e.jsonpCallback=g(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,o?e[o]=e[o].replace(rr,"
+"DefaultHandler"
+"DomHandler"
+-- fetch/axios calls --
+.get("$rootScope
+.get("accessCode
+.get("loginService
+.get(`${a}
+.get(`${e}
+.get(`${r}&ac=${t}
+-- template urls --
+`${e}/autocomplete?country=${t}&role=${r}&language=${n}&userLoggedIn=${i}&version=9.16_1789026120`
+`?country=${this.country}`
+`?country=${t}`
+`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
+`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
+`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
+-- concat urls --
+"/excel?type=fundExplorer&fundType=etf&country=at&role=adv"
+"/excel?type=fundExplorer&fundType=etf&country=at&role=per"
+"/excel?type=fundExplorer&fundType=etf&country=de&role=adv"
+"/excel?type=fundExplorer&fundType=etf&country=de&role=per"
+"/excel?type=fundExplorer&fundType=etf&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=etf&country=it&role=adv"
+"/excel?type=fundExplorer&fundType=investment_trusts&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=adv"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=per"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=adv"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=per"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=adv"
+"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=per"
+"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=adv"
+"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=oeics&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=offshore-funds&country=tw&role=per"
+"/excel?type=fundExplorer&fundType=onshore-funds&country=jp&role=per"
+"/excel?type=fundExplorer&fundType=onshore-funds&country=tw&role=per"
+"/excel?type=fundExplorer&fundType=provident-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=adv"
+"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=sar-funds&country=hk&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=at&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=at&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=de&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=de&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=gb&role=institutional"
+"/excel?type=fundExplorer&fundType=sicavs&country=it&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=it&role=per"
+"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=adv"
+"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=per"
+"/excel?type=fundExplorer&fundType={fundType}&country={country}&role={role}"
+"?country="
+## card
+"!=typeof n.__clickOutsideHandlerProp){var t=n.getInstance();if("
+"!=typeof this.__clickOutsideHandlerProp))throw new Error("
+")+e.jsonp+"
+")},mouseoutHandler:function(e,t){"
+"+e)}function S(e,t){var r=!0;return h(function(){if(null!=i.deprecationHandler&&i.deprecationHandler(null,e),r){var n,a,o,l=[],c=arguments.length;for(a=0;a<c;a++){if(n="
+"+i):!1!==e.jsonp&&(e.url+=(Mt.test(e.url)?"
+"+n.namespace:n.origType,n.selector,n.handler),this;if("
+",activeCardHandler:e.activeCardScrollHandler,breakpoint:e.breakpoint,disableButton:!0,headerTitlelabel:"
+",function(e,t,r){var i,a,o,s=!1!==e.jsonp&&(rr.test(e.url)?"
+"===e.dataTypes[0])return i=e.jsonpCallback=y(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,s?e[s]=e[s].replace(rr,"
+"==typeof t.handleClickOutside&&(this.__clickOutsideHandlerProp=t.handleClickOutside(e),"
+"DefaultHandler"
+"DomHandler"
+"__consolidated_events_handlers__"
+"}}}},mouseoverHandler:function(e,t){if(d3.select(t).select("
+-- fetch/axios calls --
+.get("$rootScope
+.get("accessCode
+.get("loginService
+.get(`${a}
+.get(`${n}?country=${e}&language=${r}&version=9.16_1789026120
+.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}
+.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${u}
+.get(`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120
+.get(`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120
+.get(`${r}&ac=${t}
+.get(`${r}?query=${e}&country=${t}
+.get(`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120
+.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120
+.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120
+-- template urls --
+`${e}/autocomplete?country=${t}&role=${r}&language=${n}&userLoggedIn=${i}&version=9.16_1789026120`
+`${n}?country=${e}&language=${r}&version=9.16_1789026120`
+`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${u}`
+`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}`
+`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120`
+`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120`
+`${r}?query=${e}&country=${t}`
+`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120`
+`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120`
+`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120`
+`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
+`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
+`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
+-- concat urls --
+"/excel?type="
+"/excel?type=dividendHistory&cusip="
+"/excel?type=performanceChart&cusip="
+"/excel?type=performanceChartCustomSelection&cusip="
+"?country="
 done
