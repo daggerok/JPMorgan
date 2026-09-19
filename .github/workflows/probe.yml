@@ -23,7 +23,7 @@ jobs:
         with:
           bun-version: latest
       - name: Run probe
-        run: bash scripts/probe.sh 2>&1 | tee probe-out/summary.txt
+        run: mkdir -p probe-out && bash scripts/probe.sh 2>&1 | tee probe-out/summary.txt
       - name: Commit probe output
         if: always()
         run: |
