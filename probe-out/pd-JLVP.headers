@@ -1,18 +1,18 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
 x-stk-waf: V2
-x-envoy-upstream-service-time: 429
+x-envoy-upstream-service-time: 533
 x-xss-protection: 1; mode=block
 x-frame-options: SAMEORIGIN
 Cache-Control: must-revalidate, max-age=240
-Expires: Sat, 19 Sep 2026 23:11:23 GMT
-Date: Sat, 19 Sep 2026 23:07:23 GMT
+Expires: Sat, 19 Sep 2026 23:11:25 GMT
+Date: Sat, 19 Sep 2026 23:07:25 GMT
 Connection: keep-alive
 Connection: Transfer-Encoding
 Set-Cookie: userGeo=US; path=/
 Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers, Accept-Encoding
 X-User-Type: External
-Set-Cookie: TS01c7814b=0143db3d9410321b76f8a89008f05e4f5851271588be518aeb29b1cbcc005915a26f8f053fa8b6e251e7e0cd03ae2f6b4515c4eafe; Path=/
+Set-Cookie: TS01c7814b=0164cfe1d5c86af93cfd8e82cd8ce34db1694eebde5fd7c21c99cf0304246d40769b0c662906438e1b422e3d64f806d0cd252d644a; Path=/
 Transfer-Encoding: chunked
-Set-Cookie: ppnet_4587=!mEcYfinxexS9AIYFCmayusEbh4oDhnidRXVpCH8Adp0aZCPe30I1VyL8w1HmERQc2+21V3vBIeRKKw==; path=/; Httponly; Secure
+Set-Cookie: ppnet_4587=!cC9+MiAX9jJMgkgFCmayusEbh4oDhrFCdbgSUMMUgLwq0jSF/iZ/B1oE8pzgl3Db0hJgTfSOwEeO2Q==; path=/; Httponly; Secure
 
