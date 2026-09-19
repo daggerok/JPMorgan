@@ -144,7 +144,7 @@ test("1. per-tab sort survives tabs, checkboxes, buttons, Clear, and reload", as
   });
 
   // select a fund and round-trip through the Watchlist tab
-  toggleRow(app, "AGGY");
+  toggleRow(app, "BBAG");
   await until(() => app.el("selected-tabs-bar").innerHTML.includes("Watchlist"));
   await clickTab(app, "watchlist");
   expect(app.run("state.activeTab")).toBe("watchlist");
@@ -195,7 +195,7 @@ test("1. per-tab sort survives tabs, checkboxes, buttons, Clear, and reload", as
 
 test("1b. Watchlist remembers its own sort separately from the catalog", async () => {
   const app = await bootFresh();
-  toggleRow(app, "AGGY");
+  toggleRow(app, "BBAG");
   await until(() => app.el("selected-tabs-bar").innerHTML.includes("Watchlist"));
   await clickTab(app, "watchlist");
   expect(JSON.parse(app.storage.getItem(SORTS_KEY) || "{}").watchlist).toBeUndefined();
@@ -220,9 +220,9 @@ test("1b. Watchlist remembers its own sort separately from the catalog", async (
 
 test("2. header Use check selects exactly the filtered ETFs", async () => {
   const app = await bootFresh();
-  setSearch(app, "yield enhanced"); // matches AGGY, SHAG, UNIY only
+  setSearch(app, "equity premium"); // matches JEPI, JEPQ, ROCQ, ROCY only
   const visible = app.run<string[]>("visibleCatalogRows().map((f) => f.ticker)").sort();
-  expect(visible).toEqual(["AGGY", "SHAG", "UNIY"]);
+  expect(visible).toEqual(["JEPI", "JEPQ", "ROCQ", "ROCY"]);
 
   setChecked(headerCheckbox(app), true);
   expect(selectedTickers(app)).toEqual(visible);
@@ -247,20 +247,20 @@ test("3. header Use uncheck removes only visible tickers; hidden selections surv
   const app = await bootFresh();
 
   // a selection that will be hidden by the filter
-  toggleRow(app, "DEM");
+  toggleRow(app, "BBJP");
   await sleep(20);
 
-  setSearch(app, "yield enhanced");
+  setSearch(app, "equity premium");
   const visible = app.run<string[]>("visibleCatalogRows().map((f) => f.ticker)").sort();
-  expect(visible).not.toContain("DEM");
+  expect(visible).not.toContain("BBJP");
 
   setChecked(headerCheckbox(app), true);
-  expect(selectedTickers(app)).toEqual([...visible, "DEM"].sort());
+  expect(selectedTickers(app)).toEqual([...visible, "BBJP"].sort());
   // checked state: every visible row selected -> header box is checked
   expect(headerCheckbox(app).checked).toBe(true);
 
   setChecked(headerCheckbox(app), false);
-  expect(selectedTickers(app)).toEqual(["DEM"]); // hidden selection survives
+  expect(selectedTickers(app)).toEqual(["BBJP"]); // hidden selection survives
   expect(app.el("table-head").innerHTML.includes("YTD Return")).toBe(true);
 }, 60000);
 
@@ -271,11 +271,11 @@ test("3. header Use uncheck removes only visible tickers; hidden selections surv
 test("4. All ETFs pill selects the whole non-blacklisted catalog without navigating", async () => {
   const app = await bootFresh();
   const all = catalogTickers();
-  app.run("blacklistTickers(['DEM'])");
+  app.run("blacklistTickers(['BBJP'])");
   await until(() => app.run<string[]>("[...state.blacklist]").length === 1);
 
   // from the Watchlist tab, with a filter active
-  toggleRow(app, "AGGY");
+  toggleRow(app, "BBAG");
   await until(() => app.el("selected-tabs-bar").innerHTML.includes("Watchlist"));
   setSearch(app, "bond");
   await clickTab(app, "watchlist");
@@ -283,9 +283,9 @@ test("4. All ETFs pill selects the whole non-blacklisted catalog without navigat
 
   expect(app.run("state.activeTab")).toBe("watchlist"); // no navigation
   const selected = selectedTickers(app);
-  expect(selected).not.toContain("DEM");
+  expect(selected).not.toContain("BBJP");
   expect(selected.length).toBe(all.length - 1);
-  expect(selected).toEqual(all.filter((t) => t !== "DEM").sort());
+  expect(selected).toEqual(all.filter((t) => t !== "BBJP").sort());
 
   // checked state reflects the whole catalog, not the filtered view
   expect(pillCheckbox(app).checked).toBe(true);
@@ -297,8 +297,8 @@ test("4. All ETFs pill selects the whole non-blacklisted catalog without navigat
 
   // the pill also works from a fund detail tab
   setSearch(app, "");
-  toggleRow(app, "AGGY");
-  await until(() => app.el("selected-tabs-bar").innerHTML.includes("AGGY Overview"));
+  toggleRow(app, "BBAG");
+  await until(() => app.el("selected-tabs-bar").innerHTML.includes("BBAG Overview"));
   await clickTab(app, "detail:holdings");
   setChecked(pillCheckbox(app), true);
   expect(app.run("state.activeTab")).toBe("detail:holdings"); // still no navigation
@@ -312,16 +312,16 @@ test("4. All ETFs pill selects the whole non-blacklisted catalog without navigat
 test("5. selecting one ETF shows Watchlist Loading then the exact count", async () => {
   const app = await bootFresh();
   // slow the selected fund down so the loading state is observable
-  app.stats.latency = (url) => (url.includes("/AGGY/") ? 60 : 0);
+  app.stats.latency = (url) => (url.includes("/BBAG/") ? 60 : 0);
 
-  toggleRow(app, "AGGY");
+  toggleRow(app, "BBAG");
 
   // immediately: no misleading exact "Watchlist (0)"
   await sleep(10);
   const labelDuringLoad = watchlistTabLabel(app);
   expect(labelDuringLoad).not.toBe("0");
 
-  const expected = expectedWatchlist(["AGGY"]).size;
+  const expected = expectedWatchlist(["BBAG"]).size;
   await until(() => watchlistTabLabel(app) === String(expected), 120000);
   expect(app.run<number>("getDedupedWatchlistRows().length")).toBe(expected);
 }, 180000);
@@ -332,16 +332,16 @@ test("5. selecting one ETF shows Watchlist Loading then the exact count", async 
 
 test("6. rapid overlapping selections load without duplicate or skipped pages", async () => {
   const app = await bootFresh();
-  app.stats.latency = (url) => (url.includes("/AGGY/") || url.includes("/AGZD/") ? 40 : 0);
+  app.stats.latency = (url) => (url.includes("/BBAG/") || url.includes("/BBCB/") ? 40 : 0);
 
-  toggleRow(app, "AGGY");
-  toggleRow(app, "AGZD"); // second selection while the first is still in flight
+  toggleRow(app, "BBAG");
+  toggleRow(app, "BBCB"); // second selection while the first is still in flight
 
-  const oracle = expectedWatchlist(["AGGY", "AGZD"]);
+  const oracle = expectedWatchlist(["BBAG", "BBCB"]);
   await waitWatchlistCount(app, oracle.size);
 
   // every holdings page fetched exactly once — no duplicates, no gaps
-  for (const ticker of ["AGGY", "AGZD"]) {
+  for (const ticker of ["BBAG", "BBCB"]) {
     const pages: string[] = feedJson(`funds/${ticker}/meta.json`).holdings.pages;
     for (const page of pages) {
       expect(app.stats.counts.get(`./api/jpmorgan/funds/${ticker}/${page}`) ?? 0).toBe(1);
@@ -368,22 +368,22 @@ test("6. rapid overlapping selections load without duplicate or skipped pages", 
 
 test("7. deselecting an ETF updates subtitle, tabs and Watchlist immediately", async () => {
   const app = await bootFresh();
-  toggleRow(app, "AGGY");
-  toggleRow(app, "AGZD");
-  const both = expectedWatchlist(["AGGY", "AGZD"]).size;
+  toggleRow(app, "BBAG");
+  toggleRow(app, "BBCB");
+  const both = expectedWatchlist(["BBAG", "BBCB"]).size;
   await waitWatchlistCount(app, both);
   expect(watchlistTabLabel(app)).toBe(String(both));
 
-  toggleRow(app, "AGZD"); // deselect — everything below must be synchronous
+  toggleRow(app, "BBCB"); // deselect — everything below must be synchronous
 
-  const onlyAggy = expectedWatchlist(["AGGY"]).size;
-  expect(app.run<number>("getDedupedWatchlistRows().length")).toBe(onlyAggy);
-  expect(watchlistTabLabel(app)).toBe(String(onlyAggy));
+  const onlyBbag = expectedWatchlist(["BBAG"]).size;
+  expect(app.run<number>("getDedupedWatchlistRows().length")).toBe(onlyBbag);
+  expect(watchlistTabLabel(app)).toBe(String(onlyBbag));
   expect(app.el("app-subtitle").innerHTML).toContain("1 selected");
-  expect(app.el("app-subtitle").innerHTML).not.toContain('data-activate-fund="AGZD"');
-  expect(app.el("selected-tabs-bar").innerHTML).not.toContain("AGZD Overview");
-  expect(app.el("selected-tabs-bar").innerHTML).toContain("AGGY Overview");
-  expect(app.run("state.activeFundTicker")).toBe("AGGY");
+  expect(app.el("app-subtitle").innerHTML).not.toContain('data-activate-fund="BBCB"');
+  expect(app.el("selected-tabs-bar").innerHTML).not.toContain("BBCB Overview");
+  expect(app.el("selected-tabs-bar").innerHTML).toContain("BBAG Overview");
+  expect(app.run("state.activeFundTicker")).toBe("BBAG");
 }, 240000);
 
 // =============================================================================
@@ -428,22 +428,22 @@ test("8. selecting all ETFs aggregates the whole feed and keeps the DOM bounded"
 
 test("9. reload restores selection, active fund and rebuilds the Watchlist", async () => {
   const app = await bootFresh();
-  toggleRow(app, "AGGY");
-  toggleRow(app, "AGZD");
-  const both = expectedWatchlist(["AGGY", "AGZD"]).size;
+  toggleRow(app, "BBAG");
+  toggleRow(app, "BBCB");
+  const both = expectedWatchlist(["BBAG", "BBCB"]).size;
   await waitWatchlistCount(app, both);
-  expect(app.run("state.activeFundTicker")).toBe("AGZD");
+  expect(app.run("state.activeFundTicker")).toBe("BBCB");
 
   const reloaded = await bootFresh(app.storage);
-  expect(selectedTickers(reloaded)).toEqual(["AGGY", "AGZD"]);
-  expect(reloaded.run("state.activeFundTicker")).toBe("AGZD");
+  expect(selectedTickers(reloaded)).toEqual(["BBAG", "BBCB"]);
+  expect(reloaded.run("state.activeFundTicker")).toBe("BBCB");
 
   // background loading completes without any checkbox interaction
   await waitWatchlistCount(reloaded, both);
   await clickTab(reloaded, "watchlist");
   expect(watchlistTabLabel(reloaded)).toBe(String(both));
   // active fund tabs were restored in the background
-  expect(reloaded.el("selected-tabs-bar").innerHTML).toContain("AGZD Overview");
+  expect(reloaded.el("selected-tabs-bar").innerHTML).toContain("BBCB Overview");
 }, 300000);
 
 // =============================================================================
@@ -452,35 +452,35 @@ test("9. reload restores selection, active fund and rebuilds the Watchlist", asy
 
 test("10. Holdings, History, Overview and Distributions render real rows", async () => {
   const app = await bootFresh();
-  toggleRow(app, "AGGY");
-  await until(() => app.el("selected-tabs-bar").innerHTML.includes("AGGY Overview"));
+  toggleRow(app, "BBAG");
+  await until(() => app.el("selected-tabs-bar").innerHTML.includes("BBAG Overview"));
 
   await clickTab(app, "detail:holdings");
-  const firstPageRow = feedJson("funds/AGGY/holdings/001.json").rows[0];
+  const firstPageRow = feedJson("funds/BBAG/holdings/001.json").rows[0];
   await until(() => bodyRowHtml(app).includes(String(firstPageRow.Name)));
 
   // shared envelope cache: the detail pager and the background Watchlist
   // loader reuse the same requests — every holdings page fetched exactly once
   await waitForHoldingsSettled(app);
-  for (const page of feedJson("funds/AGGY/meta.json").holdings.pages) {
-    expect(app.stats.counts.get(`./api/jpmorgan/funds/AGGY/${page}`) ?? 0).toBe(1);
+  for (const page of feedJson("funds/BBAG/meta.json").holdings.pages) {
+    expect(app.stats.counts.get(`./api/jpmorgan/funds/BBAG/${page}`) ?? 0).toBe(1);
   }
 
   await clickTab(app, "detail:history");
   // history is NOT preloaded by the background Watchlist loader: the detail
   // pager loads page 1, and infinite scroll loads page 2.
-  await until(() => app.run<number>("sheetState.get('AGGY:history').nextPage") >= 1, 30000);
-  const historyRow = feedJson("funds/AGGY/history/001.json").rows[0];
+  await until(() => app.run<number>("sheetState.get('BBAG:history').nextPage") >= 1, 30000);
+  const historyRow = feedJson("funds/BBAG/history/001.json").rows[0];
   await until(() => bodyRowHtml(app).includes(String(historyRow.Date)));
-  expect(app.stats.counts.get("./api/jpmorgan/funds/AGGY/history/001.json") ?? 0).toBe(1);
+  expect(app.stats.counts.get("./api/jpmorgan/funds/BBAG/history/001.json") ?? 0).toBe(1);
 
   const scroll = app.el("table-scroll");
   scroll.scrollHeight = 20000;
   scroll.scrollTop = 20000 - scroll.clientHeight - 100;
   scroll.dispatch("scroll", { target: scroll });
-  await until(() => app.run<number>("sheetState.get('AGGY:history').nextPage") === 2, 30000);
-  expect(app.stats.counts.get("./api/jpmorgan/funds/AGGY/history/002.json") ?? 0).toBe(1);
-  const secondHistoryRow = feedJson("funds/AGGY/history/002.json").rows[0];
+  await until(() => app.run<number>("sheetState.get('BBAG:history').nextPage") === 2, 30000);
+  expect(app.stats.counts.get("./api/jpmorgan/funds/BBAG/history/002.json") ?? 0).toBe(1);
+  const secondHistoryRow = feedJson("funds/BBAG/history/002.json").rows[0];
   await until(() => bodyRowHtml(app).includes(String(secondHistoryRow.Date)));
 
   await clickTab(app, "detail:overview");
@@ -488,7 +488,7 @@ test("10. Holdings, History, Overview and Distributions render real rows", async
   expect(bodyRowHtml(app)).toContain("SEC Yield (30-day)");
 
   await clickTab(app, "detail:distributions");
-  const distributions = feedJson("funds/AGGY/meta.json").distributions;
+  const distributions = feedJson("funds/BBAG/meta.json").distributions;
   await until(() => bodyRowHtml(app).includes(String(distributions.rows[0][0])));
   expect(app.el("table-head").innerHTML).toContain("Ex-Date");
 }, 180000);
@@ -499,8 +499,8 @@ test("10. Holdings, History, Overview and Distributions render real rows", async
 
 test("11. a fund whose files fail to load shows an explanatory state", async () => {
   const app = await bootFresh();
-  toggleRow(app, "AGGY");
-  await until(() => app.el("selected-tabs-bar").innerHTML.includes("AGGY Overview"));
+  toggleRow(app, "BBAG");
+  await until(() => app.el("selected-tabs-bar").innerHTML.includes("BBAG Overview"));
   await clickTab(app, "detail:holdings");
   await until(() => bodyRowHtml(app).length > 100);
   expect(bodyRowHtml(app)).not.toContain("Could not load");
@@ -510,12 +510,12 @@ test("11. a fund whose files fail to load shows an explanatory state", async () 
   await waitForTab(app, "All");
 
   // now the selected fund's files "disappear" — the previous table must go
-  const priorName = String(feedJson("funds/AGGY/holdings/001.json").rows[0].Name);
-  app.stats.blocked.add("funds/AGZD/");
-  toggleRow(app, "AGZD"); // becomes the active fund; its files fail to load
-  toggleRow(app, "AGGY"); // deselect AGGY so AGZD is the only remaining fund
-  await until(() => app.run("state.activeFundTicker") === "AGZD");
-  await clickTab(app, "detail:holdings"); // must show the failure state, not AGGY's table
+  const priorName = String(feedJson("funds/BBAG/holdings/001.json").rows[0].Name);
+  app.stats.blocked.add("funds/BBCB/");
+  toggleRow(app, "BBCB"); // becomes the active fund; its files fail to load
+  toggleRow(app, "BBAG"); // deselect BBAG so BBCB is the only remaining fund
+  await until(() => app.run("state.activeFundTicker") === "BBCB");
+  await clickTab(app, "detail:holdings"); // must show the failure state, not BBAG's table
   await until(() => bodyRowHtml(app).toLowerCase().includes("could not load"), 10000);
   const body = bodyRowHtml(app);
   expect(body).not.toContain(priorName); // prior fund's table is gone
@@ -528,14 +528,14 @@ test("11. a fund whose files fail to load shows an explanatory state", async () 
 
 test("12. bond rows fall back to identifiers; cash and zero-weight rows are kept", async () => {
   const app = await bootFresh();
-  // AGGY: bond rows without exchange tickers (real CUSIPs);
-  // DEM:  rows whose EDGAR CUSIP is the all-zero placeholder 000000000
-  //       (must fall through to the published name, not one garbage key);
-  // EES:  the CASH position row (kept, not dropped).
-  toggleRow(app, "AGGY");
-  toggleRow(app, "DEM");
-  toggleRow(app, "EES");
-  const oracle = expectedWatchlist(["AGGY", "DEM", "EES"]);
+  // BBAG: bond rows without exchange tickers (real CUSIPs, Ticker "-");
+  // BBJP: foreign rows keyed by their local exchange tickers (numeric Tokyo
+  //       codes such as 8306) — the SEDOL identifier must never win over them;
+  // BBSC: the CASH position row (kept, not dropped).
+  toggleRow(app, "BBAG");
+  toggleRow(app, "BBJP");
+  toggleRow(app, "BBSC");
+  const oracle = expectedWatchlist(["BBAG", "BBJP", "BBSC"]);
   await waitForHoldingsSettled(app, 300000);
   expect(app.run<number>("getDedupedWatchlistRows().length")).toBe(oracle.size);
 
@@ -549,10 +549,17 @@ test("12. bond rows fall back to identifiers; cash and zero-weight rows are kept
     expect(shown.has(sample.shown)).toBe(true);
   }
 
-  // the all-zero CUSIP placeholder never becomes a key; DEM rows fall back to Name
+  // numeric local tickers are real tickers: BBJP rows are keyed T:<code>
+  const byLocalTicker = [...oracle.values()].filter((r) => /^T:\d{4}(\.T)?$/.test(r.key));
+  expect(byLocalTicker.length).toBeGreaterThan(100);
+  for (const sample of byLocalTicker.slice(0, 25)) {
+    expect(shown.has(sample.shown)).toBe(true);
+  }
+
+  // placeholder identifiers never become keys; JPMorgan publishes a CUSIP,
+  // SEDOL or internal id for every row, so name fallbacks are the exception
   expect([...oracle.values()].some((r) => r.key === "D:000000000")).toBe(false);
   const byName = [...oracle.values()].filter((r) => r.key.startsWith("N:"));
-  expect(byName.length).toBeGreaterThan(100);
   for (const sample of byName.slice(0, 25)) {
     expect(shown.has(sample.shown)).toBe(true);
   }
@@ -584,7 +591,7 @@ test("12. bond rows fall back to identifiers; cash and zero-weight rows are kept
 
 test("13. sticky classes are on catalog Use/Ticker and Watchlist Ticker cells", async () => {
   const app = await bootFresh();
-  toggleRow(app, "AGGY");
+  toggleRow(app, "BBAG");
   await until(() => app.el("selected-tabs-bar").innerHTML.includes("Watchlist"));
 
   const head = app.el("table-head").innerHTML;
@@ -682,19 +689,19 @@ test("15. index.json / meta.json / page manifests stay consistent", () => {
 test("16. per-tab filter persistence: each tab keeps its own search query independently", async () => {
   const app = await bootFresh();
 
-  // 1. On "All ETFs", search for "yield enhanced" (matches 3 ETFs)
-  setSearch(app, "yield enhanced");
-  expect(app.run<number>("visibleCatalogRows().length")).toBe(3);
-  expect(app.el("ticker-count").textContent).toBe("3 ETFs");
+  // 1. On "All ETFs", search for "equity premium" (matches 4 ETFs)
+  setSearch(app, "equity premium");
+  expect(app.run<number>("visibleCatalogRows().length")).toBe(4);
+  expect(app.el("ticker-count").textContent).toBe("4 ETFs");
   expect(JSON.parse(app.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "yield enhanced",
+    All: "equity premium",
   });
 
-  // select AGGY so detail tabs and Watchlist appear
-  toggleRow(app, "AGGY");
-  await until(() => app.el("selected-tabs-bar").innerHTML.includes("AGGY Overview"));
+  // select JEPI so detail tabs and Watchlist appear
+  toggleRow(app, "JEPI");
+  await until(() => app.el("selected-tabs-bar").innerHTML.includes("JEPI Overview"));
 
-  // 2. Overview tab: search must NOT carry over "yield enhanced"
+  // 2. Overview tab: search must NOT carry over "equity premium"
   await clickTab(app, "detail:overview");
   expect(app.el("search-input").value).toBe("");
   expect(bodyRowHtml(app)).toContain("Holdings Rows");
@@ -706,12 +713,12 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(bodyRowHtml(app)).toContain("YTD (ME)");
   expect(bodyRowHtml(app)).not.toContain("Fund Name");
   expect(JSON.parse(app.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "yield enhanced",
+    All: "equity premium",
     "detail:overview": "returns",
   });
   // site-state mirror stays in sync
   expect(JSON.parse(app.storage.getItem(SITE_STATE_KEY)!).sheetFilter).toEqual({
-    All: "yield enhanced",
+    All: "equity premium",
     "detail:overview": "returns",
   });
 
@@ -721,16 +728,18 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   await until(() => bodyRowHtml(app).length > 100);
   expect(bodyRowHtml(app)).not.toContain("No rows match your search");
 
-  // type a filter on Holdings tab (AGGY holds 5 TREASURY rows)
-  setSearch(app, "treasury");
-  expect(app.el("search-input").value).toBe("treasury");
-  expect(bodyRowCount(app)).toBe(5);
+  // type a filter on Holdings tab (JEPI holds 4 "... HOLDINGS ..." rows; the
+  // shared envelope cache means every page is present once the loader settled)
+  await waitForHoldingsSettled(app);
+  setSearch(app, "holdings");
+  expect(app.el("search-input").value).toBe("holdings");
+  expect(bodyRowCount(app)).toBe(4);
 
-  // 5. Switch back to All ETFs: restores "yield enhanced"
+  // 5. Switch back to All ETFs: restores "equity premium"
   allTabButton(app).click();
   await waitForTab(app, "All");
-  expect(app.el("search-input").value).toBe("yield enhanced");
-  expect(app.el("ticker-count").textContent).toBe("3 ETFs");
+  expect(app.el("search-input").value).toBe("equity premium");
+  expect(app.el("ticker-count").textContent).toBe("4 ETFs");
 
   // 6. Switch back to Overview: restores "returns"
   await clickTab(app, "detail:overview");
@@ -739,20 +748,20 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   // 7. Switch to Watchlist: search is initially empty, then filter by fund badge
   await clickTab(app, "watchlist");
   expect(app.el("search-input").value).toBe("");
-  setSearch(app, "AGGY");
-  expect(app.el("search-input").value).toBe("AGGY");
+  setSearch(app, "JEPI");
+  expect(app.el("search-input").value).toBe("JEPI");
   await until(() => app.run<number>("getDedupedWatchlistRows().length") > 0, 120000);
 
   // 8. Full reload: the active view (Watchlist) restores its filter, and all
   //    per-tab filters survive in storage
   const reloaded = await bootFresh(app.storage);
   expect(reloaded.run("state.activeTab")).toBe("watchlist");
-  expect(reloaded.el("search-input").value).toBe("AGGY");
+  expect(reloaded.el("search-input").value).toBe("JEPI");
   expect(JSON.parse(reloaded.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "yield enhanced",
+    All: "equity premium",
     "detail:overview": "returns",
-    "detail:holdings": "treasury",
-    watchlist: "AGGY",
+    "detail:holdings": "holdings",
+    watchlist: "JEPI",
   });
 
   // 9. The inline one-click clear only removes the active tab's query
@@ -762,9 +771,9 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(reloaded.el("search-input").value).toBe("");
   expect(searchClear.classList.contains("hidden")).toBe(true);
   expect(JSON.parse(reloaded.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "yield enhanced",
+    All: "equity premium",
     "detail:overview": "returns",
-    "detail:holdings": "treasury",
+    "detail:holdings": "holdings",
   });
 
   // #reset-btn still clears selection and every tab filter
@@ -772,7 +781,7 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(reloaded.el("search-input").value).toBe("");
   expect(reloaded.storage.getItem(FILTERS_KEY)).toBeNull();
   expect(reloaded.run<string[]>("[...state.selected]")).toEqual([]);
-  expect(reloaded.el("ticker-count").textContent).toBe("94 ETFs");
+  expect(reloaded.el("ticker-count").textContent).toBe("78 ETFs");
 }, 300000);
 
 // =============================================================================
@@ -785,15 +794,15 @@ test("17. #search-clear-btn visibility, active-tab clearing, and immediate re-re
   const clearBtn = app.el("search-clear-btn");
 
   expect(clearBtn.classList.contains("hidden")).toBe(true);
-  setSearch(app, "emerging"); // matches 13 ETFs
+  setSearch(app, "emerging"); // matches 4 ETFs
   expect(clearBtn.classList.contains("hidden")).toBe(false);
-  expect(app.run<number>("visibleCatalogRows().length")).toBe(13);
-  expect(app.el("ticker-count").textContent).toBe("13 ETFs");
+  expect(app.run<number>("visibleCatalogRows().length")).toBe(4);
+  expect(app.el("ticker-count").textContent).toBe("4 ETFs");
 
   clearBtn.click();
   expect(input.value).toBe("");
   expect(clearBtn.classList.contains("hidden")).toBe(true);
-  expect(app.el("ticker-count").textContent).toBe("94 ETFs");
+  expect(app.el("ticker-count").textContent).toBe("78 ETFs");
   expect(JSON.parse(app.storage.getItem(FILTERS_KEY) ?? "null") ?? {}).toEqual({});
 
   // typing again makes the button visible again
@@ -803,7 +812,7 @@ test("17. #search-clear-btn visibility, active-tab clearing, and immediate re-re
   // tab switch updates visibility to the destination tab's stored query
   await clickTab(app, "All");
   setSearch(app, "");
-  toggleRow(app, "AGGY");
+  toggleRow(app, "BBAG");
   await until(() => app.el("selected-tabs-bar").innerHTML.includes("Watchlist"));
   await clickTab(app, "watchlist");
   expect(clearBtn.classList.contains("hidden")).toBe(true);

@@ -1278,8 +1278,8 @@ export function parseHistoricalData(payload: JsonRecord, ticker: string): Parsed
  * metrics consume: `close` is the NAV, `adjClose` is the NAV with every
  * published distribution reinvested at its reinvestment NAV (ex-date NAV when
  * JPMorgan omits it) — a NAV total-return index. Only the published dividend
- * window is adjusted (the fund page lists the last 12 payments), which covers
- * the month-to-date, quarter-to-date and year-to-date figures derived here.
+ * window is adjusted (the fund page lists the last 12 payments), so windows
+ * that start before `reinvestmentCoverageStart` are never derived from it.
  */
 export function navTotalReturnDays(points: HistoryPoint[], dividends: OfficialDividend[]): ChartDay[] {
   const navPoints = points.filter((point) => point.nav !== null && point.nav > 0);
@@ -1304,6 +1304,30 @@ export function navTotalReturnDays(points: HistoryPoint[], dividends: OfficialDi
     });
   }
   return days;
+}
+
+/** The fund page's dividend schedule publishes at most this many payments. */
+export const DIVIDEND_SCHEDULE_CAP = 12;
+
+/**
+ * First date from which the reinvestment index above is complete. A schedule
+ * shorter than the cap is the fund's whole payout history, so the index is
+ * complete from the first NAV. A capped schedule may hide older payments: the
+ * index is then trusted only from one payment interval (the median gap between
+ * the listed ex-dates) before the earliest listed ex-date — a window starting
+ * earlier would miss reinvestments and understate a frequent payer's return.
+ */
+export function reinvestmentCoverageStart(points: HistoryPoint[], dividends: OfficialDividend[]): string | null {
+  const navPoints = points.filter((point) => point.nav !== null && point.nav > 0);
+  if (!navPoints.length) return null;
+  if (dividends.length < DIVIDEND_SCHEDULE_CAP) return navPoints[0].date;
+  const epochs = dividends.map((dividend) => dividend.epoch).sort((a, b) => a - b);
+  const gaps: number[] = [];
+  for (let i = 1; i < epochs.length; i++) gaps.push(epochs[i] - epochs[i - 1]);
+  gaps.sort((a, b) => a - b);
+  const medianGap = gaps.length ? gaps[Math.floor(gaps.length / 2)] : 0;
+  const covered = epochToIsoDate(epochs[0] - medianGap);
+  return covered > navPoints[0].date ? covered : navPoints[0].date;
 }
 
 // ---------------------------------------------------------------------------
@@ -1815,10 +1839,13 @@ function annualized(start: number, end: number, years: number): number | null {
 // distributions reinvested (or Yahoo adjusted closes in the fallback path).
 // JPMorgan publishes official returns for every fund, so these only fill the
 // gaps (young funds, quarter-to-date) and drive the History-derived blocks.
-export function priceReturns(days: ChartDay[], now = new Date()): PriceReturns {
+export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: string | null = null): PriceReturns {
   const empty: PriceReturns = { ...EMPTY_PRICE_RETURNS };
   if (!days.length) return empty;
   const last = days[days.length - 1];
+  // A window is derivable only when its anchor day lies inside the span the
+  // adjusted series covers (see reinvestmentCoverageStart).
+  const anchored = (day: ChartDay | null): day is ChartDay => day !== null && day.date < last.date && (coveredFrom === null || day.date >= coveredFrom);
   const lastEpoch = Date.parse(`${last.date}T00:00:00Z`) / 1000;
   const atOrBefore = (iso: string): ChartDay | null => {
     const target = Date.parse(`${iso}T00:00:00Z`) / 1000;
@@ -1848,14 +1875,14 @@ export function priceReturns(days: ChartDay[], now = new Date()): PriceReturns {
   const qtdStartDay = atOrBefore(quarterStart);
   return {
     asOfDate: last.date,
-    ytd: ytdStart && ytdStart.date < last.date && ytdStart.adjClose > 0 ? pctChange(ytdStart.adjClose, last.adjClose) : null,
-    yr1: year1 && year1.date < last.date ? pctChange(year1.adjClose, last.adjClose) : null,
-    cagr3y: year3 && year3.date < last.date ? annualized(year3.adjClose, last.adjClose, 3) : null,
-    cagr5y: year5 && year5.date < last.date ? annualized(year5.adjClose, last.adjClose, 5) : null,
-    cagr10y: year10 && year10.date < last.date ? annualized(year10.adjClose, last.adjClose, 10) : null,
-    siAnn: siYears >= 0.75 ? annualized(first.adjClose, last.adjClose, siYears) : null,
-    mo1: mo1StartDay && mo1StartDay.date < last.date ? pctChange(mo1StartDay.adjClose, last.adjClose) : null,
-    qtd: qtdStartDay && qtdStartDay.date < last.date ? pctChange(qtdStartDay.adjClose, last.adjClose) : null,
+    ytd: anchored(ytdStart) && ytdStart.adjClose > 0 ? pctChange(ytdStart.adjClose, last.adjClose) : null,
+    yr1: anchored(year1) ? pctChange(year1.adjClose, last.adjClose) : null,
+    cagr3y: anchored(year3) ? annualized(year3.adjClose, last.adjClose, 3) : null,
+    cagr5y: anchored(year5) ? annualized(year5.adjClose, last.adjClose, 5) : null,
+    cagr10y: anchored(year10) ? annualized(year10.adjClose, last.adjClose, 10) : null,
+    siAnn: siYears >= 0.75 && anchored(first) ? annualized(first.adjClose, last.adjClose, siYears) : null,
+    mo1: anchored(mo1StartDay) ? pctChange(mo1StartDay.adjClose, last.adjClose) : null,
+    qtd: anchored(qtdStartDay) ? pctChange(qtdStartDay.adjClose, last.adjClose) : null,
   };
 }
 
@@ -2309,8 +2336,10 @@ async function processFund(
   let firstTradeDate: number | null = null;
   let historySource = 'am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)';
 
+  let coveredFrom: string | null = null;
   if (historical?.points.length) {
     chartDays = navTotalReturnDays(historical.points, historical.dividends);
+    coveredFrom = reinvestmentCoverageStart(historical.points, historical.dividends);
     history = officialHistoryRows(historical.points);
   } else if (!config.skipYahoo) {
     try {
@@ -2336,7 +2365,7 @@ async function processFund(
     const previousHeaders = await readPreviousSheetHeaders(ticker, 'history');
     historyHeaders = previousHeaders.length ? previousHeaders : HISTORY_HEADERS;
   }
-  const derived = chartDays.length ? priceReturns(chartDays) : EMPTY_PRICE_RETURNS;
+  const derived = chartDays.length ? priceReturns(chartDays, new Date(), coveredFrom) : EMPTY_PRICE_RETURNS;
 
   // The dividend schedule lists the last payments; the product-data "latest
   // dividend" backs it up when the schedule is empty.

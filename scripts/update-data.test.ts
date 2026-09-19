@@ -17,6 +17,8 @@ import {
   parseProductHoldings,
   parseHistoricalData,
   navTotalReturnDays,
+  reinvestmentCoverageStart,
+  DIVIDEND_SCHEDULE_CAP,
   holdingTickerFor,
   decodeDividendFrequency,
   annualizedSinceInception,
@@ -687,6 +689,35 @@ describe('navTotalReturnDays', () => {
   });
 });
 
+describe('reinvestmentCoverageStart', () => {
+  const dividend = (exDate: string, amount = 0.067) => ({ epoch: isoToEpoch(exDate)!, amount, exDate, payDate: '', recordDate: '', reinvestNav: null, type: 'DVDYLD' });
+  const points = [
+    { date: '2025-12-10', nav: 100.06, marketPrice: 100.06, premiumDiscount: 0 },
+    { date: '2026-09-18', nav: 100.11, marketPrice: 100.16, premiumDiscount: 0.05 },
+  ];
+
+  test('a schedule shorter than the page cap is complete: covered since the first NAV', () => {
+    expect(DIVIDEND_SCHEDULE_CAP).toBe(12);
+    expect(reinvestmentCoverageStart(points, [])).toBe('2025-12-10');
+    expect(reinvestmentCoverageStart(points, [dividend('2026-05-01'), dividend('2026-06-01')])).toBe('2025-12-10');
+  });
+
+  test('a capped weekly schedule covers one payment interval before its earliest ex-date', () => {
+    const weekly = ['07/06', '07/10', '07/17', '07/24', '07/31', '08/07', '08/14', '08/21', '08/28', '09/04', '09/11', '09/18']
+      .map((md) => dividend(`2026-${md.replace('/', '-')}`));
+    expect(weekly.length).toBe(DIVIDEND_SCHEDULE_CAP);
+    // median gap 7 days -> 2026-07-06 minus 7 days
+    expect(reinvestmentCoverageStart(points, weekly)).toBe('2026-06-29');
+  });
+
+  test('never reaches back before the first NAV and is null without NAV points', () => {
+    const monthly = Array.from({ length: 12 }, (_, i) => dividend(`2026-${String(i + 1).padStart(2, '0')}-01`));
+    const young = [{ date: '2026-06-15', nav: 50, marketPrice: 50, premiumDiscount: 0 }, points[1]];
+    expect(reinvestmentCoverageStart(young, monthly)).toBe('2026-06-15');
+    expect(reinvestmentCoverageStart([], monthly)).toBeNull();
+  });
+});
+
 describe('annualizedSinceInception', () => {
   test('publishes the official since-inception figure only once the fund is a year old', () => {
     expect(annualizedSinceInception(11.25, '2020-05-20', '2026-08-31')).toBe(11.25);
@@ -980,7 +1011,26 @@ describe('priceReturns', () => {
   test('empty history yields an empty returns block', () => {
     expect(priceReturns([], now).asOfDate).toBe('');
   });
+
+  test('windows that start before the reinvestment coverage are not derived', () => {
+    // A weekly payer whose schedule only covers the last 12 payments: the
+    // since-inception, YTD and 1Y windows would miss reinvestments and must
+    // stay null, while the quarter-to-date and 1-month windows are derived.
+    const covered = priceReturns(days, now, '2026-06-29');
+    expect(covered.siAnn).toBeNull();
+    expect(covered.ytd).toBeNull();
+    expect(covered.yr1).toBeNull();
+    expect(covered.cagr3y).toBeNull();
+    expect(covered.qtd).toBeCloseTo(pctChangeOf(312, 330), 2); // anchored at 2026-07-01 (quarter start)
+    expect(covered.mo1).toBeCloseTo(pctChangeOf(312, 330), 2); // anchored at 2026-07-01 (the 2026-07-21 anchor)
+    // Coverage from the first day changes nothing.
+    expect(priceReturns(days, now, '2015-01-02')).toEqual(priceReturns(days, now));
+  });
 });
+
+function pctChangeOf(start: number, end: number): number {
+  return ((end - start) / start) * 100;
+}
 
 describe('lastCompletedQuarterEnd', () => {
   test('anchors to the last completed quarter', () => {

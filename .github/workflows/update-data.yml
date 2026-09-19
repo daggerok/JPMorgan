@@ -58,20 +58,10 @@ on:
         required: false
         default: ":"
         type: string
-      sec_yield:
-        description: "30-day SEC yield percentage range; colon required"
-        required: false
-        default: ":"
-        type: string
       history_range:
         description: "Yahoo chart range for the fallback history rows (max, 10y, 5y, ...); the official JPMorgan history always covers the fund's whole life"
         required: false
         default: "max"
-        type: string
-      role:
-        description: "am.jpmorgan.com role parameter: adv (default), per or institutional"
-        required: false
-        default: "adv"
         type: string
       edgar_fallback:
         description: "SEC EDGAR Form N-PORT-P fallback for funds whose am.jpmorgan.com product-data lists no holdings (default on)"
@@ -161,9 +151,7 @@ jobs:
       MAX_RETRIES: ${{ inputs.max_retries || '2' }}
       TICKERS: ${{ inputs.tickers || '' }}
       DIVIDEND_YIELD: ${{ inputs.dividend_yield || ':' }}
-      SEC_YIELD: ${{ inputs.sec_yield || ':' }}
       HISTORY_RANGE: ${{ inputs.history_range || 'max' }}
-      ROLE: ${{ inputs.role || 'adv' }}
       EDGAR_FALLBACK: ${{ inputs.edgar_fallback || '1' }}
       SKIP_YAHOO: ${{ inputs.skip_yahoo || '' }}
       SKIP_JPMORGAN: ${{ inputs.skip_jpmorgan || '' }}
