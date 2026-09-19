@@ -1,6 +1,12 @@
 name: Probe sources
 
 on:
+  push:
+    branches:
+      - 'arena/**'
+    paths:
+      - 'scripts/probe.sh'
+      - '.github/workflows/probe.yml'
   workflow_dispatch:
     inputs:
       script:
