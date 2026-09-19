@@ -1,0 +1,53 @@
+# TEMPORARY bootstrap workflow: generates the first api/jpmorgan feed on the
+# working branch (workflow_dispatch is only available on the default branch).
+# Deleted once the feed exists.
+name: Bootstrap JPMorgan ETF data
+
+on:
+  push:
+    branches: ['arena/**']
+    paths:
+      - '.github/workflows/generate-temp.yml'
+      - 'scripts/update-data.ts'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    env:
+      REQUEST_SLEEP: '1'
+      CONCURRENCY: '2'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Run updater unit tests
+        run: bun test scripts/update-data.test.ts
+
+      - name: Generate api/jpmorgan static data
+        run: bun ./scripts/update-data.ts 2>&1 | tee updater.log
+
+      - name: Commit updated data
+        run: |
+          mkdir -p api/jpmorgan
+          cp updater.log api/jpmorgan/updater.log
+          git add api/jpmorgan
+          if git diff --cached --quiet; then
+            echo "api/jpmorgan is already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update JPMorgan ETF data"
+          git push
