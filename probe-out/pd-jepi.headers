@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+x-stk-waf: V2
+x-envoy-upstream-service-time: 211
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+Cache-Control: must-revalidate, max-age=240
+Expires: Sat, 19 Sep 2026 23:05:09 GMT
+Date: Sat, 19 Sep 2026 23:01:09 GMT
+Connection: keep-alive
+Connection: Transfer-Encoding
+Set-Cookie: userGeo=US; path=/
+Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers, Accept-Encoding
+X-User-Type: External
+Set-Cookie: TS01c7814b=0143db3d94c1724608f96e3978909d45ccd9f447d2404c13ddfeaeb56198614c2da32d4ae1230b7238a594de8b6e0ff11a2a74f60d; Path=/
+Transfer-Encoding: chunked
+Set-Cookie: ppnet_4587=!SU+4lMbd1rQpuNiQrF5qsjt876JWuXjIec4Eh0EXj+FQ14hfif+haf6rB6yj/bTAeEzi1nBHOOYZ/w==; path=/; Httponly; Secure
+

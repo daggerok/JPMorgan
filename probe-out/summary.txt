@@ -1,362 +1,1282 @@
 ==================================================================
-### pdp
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/pdp-7ac633d5a7558721f040.js
-exit=0 size=3009064
+### fx-etf
+URL: https://am.jpmorgan.com/FundsMarketingHandler/fund-explorer?country=us&role=adv&userLoggedIn=false&language=en&fundType=etf&version=9.16_1789026120
+exit=0 size=384467
 HTTP/1.1 200 OK
-Content-Type: text/javascript
+Content-Type: application/json;charset=UTF-8
 head:
-/*! For license information please see pdp-7ac633d5a7558721f040.js.LICENSE.txt */
-(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[56185],{197:()=>{},319:(e,t,r)=>{"use strict";var n=r(69675),i=r(6537),a=r(60280);e.exports=function(e){if(!i(e))throw new n("Assertion faile
+[{"name":"JPMorgan Equity Premium Income ETF","displayName":"Equity Premium Income ETF","displayNameTranslatedName":"Equity Premium Income ETF","displayId":"JEPI","fundTypeCode":"N_ETF","shareclassName":"JPMorgan Equity Premium Income ETF-ETF Shares","shareclassShortName":"-","newspaperShortName":null,"fundNameDisclosure":null,"hideUIFundTypes":[";null;null"],"distributor":null,"fundHolidays":null,"fundNameTranslationMap":{},"shareclassNameTranslationMap":{},"shareclassShortNameTranslationMap":{},"shareclassNewspaperShortNameTranslationMap":{},"japanesePhoneticName":null,"categoryName":null,"identifier":"46641Q332","categoryCode":"ETF Shares","assetClass":"U.S. Equity","assetClassCode":"U.S. Equity","ticker":"JEPI","assetsUnderManagement":4.525675398433E10,"oneDayCurrentYield":null,"oneDayCurrentYieldEffectiveDate":"2026-09-18","secYield":0.0744,"unsubSecYield":0.0744,"secYieldEffectiveDate":"2026-08-31","fundInceptionDate":"2020-05-20","shareClassInceptionDate":"2020-05-20","isFeaturedFund":true,"performanceReturnEffectiveDate":"2026-08-31","atNavPerformanceReturn":{"ytd":0.0536,"mt1":0.008,"mt3":0.0467,"mt6":5.0E-4,"yr1":0.0905,"yr2":null,"yr3":0.0951,"yr5":0.0722,"yr10":null,"inception":0.1125},"atNavPerformanceReturnInUSD":null,"withSalesChargePerformanceReturn":{"ytd":null,"mt1":null,"mt3":null,"mt6":null,"yr1":null,"yr2":null,"yr3":null,"yr5":null,"yr10":null,"inception":null},"marketPriceReturns":{"ytd":0.0532,"mt1":0.0076,"mt3":0.0471,"mt6":9.0E-4,"yr1":0.0901,"yr2":n
 ==================================================================
-### pdpv3
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/pdp-v3-606d8b1e464d4dda9df9.js
-exit=0 size=173672
+### fx-etf-noversion
+URL: https://am.jpmorgan.com/FundsMarketingHandler/fund-explorer?country=us&role=adv&language=en&fundType=etf
+exit=0 size=384467
 HTTP/1.1 200 OK
-Content-Type: text/javascript
+Content-Type: application/json;charset=UTF-8
 head:
-/*! For license information please see pdp-v3-606d8b1e464d4dda9df9.js.LICENSE.txt */
-"use strict";(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[64415],{5338:(e,n,t)=>{var r=t(40961);n.H=r.createRoot,r.hydrateRoot},7463:(e,n)=>{function t(e,n){var t=e.length;e.push(n);e
+[{"name":"JPMorgan Equity Premium Income ETF","displayName":"Equity Premium Income ETF","displayNameTranslatedName":"Equity Premium Income ETF","displayId":"JEPI","fundTypeCode":"N_ETF","shareclassName":"JPMorgan Equity Premium Income ETF-ETF Shares","shareclassShortName":"-","newspaperShortName":null,"fundNameDisclosure":null,"hideUIFundTypes":[";null;null"],"distributor":null,"fundHolidays":null,"fundNameTranslationMap":{},"shareclassNameTranslationMap":{},"shareclassShortNameTranslationMap":{},"shareclassNewspaperShortNameTranslationMap":{},"japanesePhoneticName":null,"categoryName":null,"identifier":"46641Q332","categoryCode":"ETF Shares","assetClass":"U.S. Equity","assetClassCode":"U.S. Equity","ticker":"JEPI","assetsUnderManagement":4.525675398433E10,"oneDayCurrentYield":null,"oneDayCurrentYieldEffectiveDate":"2026-09-18","secYield":0.0744,"unsubSecYield":0.0744,"secYieldEffectiveDate":"2026-08-31","fundInceptionDate":"2020-05-20","shareClassInceptionDate":"2020-05-20","isFeaturedFund":true,"performanceReturnEffectiveDate":"2026-08-31","atNavPerformanceReturn":{"ytd":0.0536,"mt1":0.008,"mt3":0.0467,"mt6":5.0E-4,"yr1":0.0905,"yr2":null,"yr3":0.0951,"yr5":0.0722,"yr10":null,"inception":0.1125},"atNavPerformanceReturnInUSD":null,"withSalesChargePerformanceReturn":{"ytd":null,"mt1":null,"mt3":null,"mt6":null,"yr1":null,"yr2":null,"yr3":null,"yr5":null,"yr10":null,"inception":null},"marketPriceReturns":{"ytd":0.0532,"mt1":0.0076,"mt3":0.0471,"mt6":9.0E-4,"yr1":0.0901,"yr2":n
 ==================================================================
-### fxv3
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/fx-v3-8030f81274a0d1818bd8.js
-exit=0 size=4455193
+### pd-jepi
+URL: https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false
+exit=0 size=223742
 HTTP/1.1 200 OK
-Content-Type: text/javascript
+Content-Type: application/json;charset=UTF-8
 head:
-/*! For license information please see fx-v3-8030f81274a0d1818bd8.js.LICENSE.txt */
-(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[39103],{34:e=>{"use strict";e.exports="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 view
+{"fundData":{"stringValueWrapper":{"m12AvailableDates":null,"holdingLatestDate":null,"securityLendingFlag":null,"ukSdrCategorisation":null,"fundIndicatorValue":null,"associatedMasterFundId":null,"associatedMasterFundType":null,"showKeyRiskCard":false,"authorizedParticipants":null,"marketMakers":null,"currencyMapping":null},"cmsHost":"https://am.jpmorgan.com","cachedForRole":"institutional","marketingFundCategoryName":null,"fundIdentifier":"9E03763E1BDA3E1EE053A9B759A9A31F","name":"JPMorgan Equity Premium Income ETF","currencyCode":"USD","fundTypeCode":"N_ETF","regionOfInvestmentCode":null,"fundRange":null,"shareClass":{"secYield":{"effectiveDate":"2026-09-18","thirtyDayUnsubSecYield":null,"thirtyDaySecYield":null,"sevenDaySecYield":null,"sevenDayUnsubSecYield":null,"dividendYield":0.0804,"taxEquivalentYield":null,"taxEquivalentYieldAt35Percentage":null,"oneDayCurrentYield":null,"sevenDayCurrentYield":null,"yieldAmount":null,"thirtyDayCurrentYield":null,"twlvMthSimpleYield":0.0804},"etfSecYield":{"thirtyDayUnsubSecYield":0.0737,"thirtyDaySecYield":0.0737,"effectiveDate":"2026-09-17"},"dailyYield":{"effectiveDate":"2026-09-18","thirtyDayUnsubSecYield":null,"thirtyDaySecYield":null,"sevenDaySecYield":null,"sevenDayUnsubSecYield":null,"dividendYield":0.0804,"taxEquivalentYield":null,"taxEquivalentYieldAt35Percentage":null,"oneDayCurrentYield":null,"sevenDayCurrentYield":null,"yieldAmount":null,"thirtyDayCurrentYield":null,"twlvMthSimpleYield":0.0804},"apacYield":null,"apacFundSha
 ==================================================================
-### fxv2
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/fx-v2-bef1f7b4dd25ae76d9f7.js
-exit=0 size=1473022
+### pd-jpst
+URL: https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q837&country=us&role=adv&language=en&userLoggedIn=false
+exit=0 size=931990
 HTTP/1.1 200 OK
-Content-Type: text/javascript
+Content-Type: application/json;charset=UTF-8
 head:
-/*! For license information please see fx-v2-bef1f7b4dd25ae76d9f7.js.LICENSE.txt */
-(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[26294],{197:()=>{},845:(e,t,r)=>{"use strict";r.d(t,{A:()=>i});var n=r(5564);function i(e,t,r){return function(){if(0===arguments.length)re
+{"fundData":{"stringValueWrapper":{"m12AvailableDates":null,"holdingLatestDate":null,"securityLendingFlag":null,"ukSdrCategorisation":null,"fundIndicatorValue":null,"associatedMasterFundId":null,"associatedMasterFundType":null,"showKeyRiskCard":false,"authorizedParticipants":null,"marketMakers":null,"currencyMapping":null},"cmsHost":"https://am.jpmorgan.com","cachedForRole":"liq","marketingFundCategoryName":null,"fundIdentifier":"4342A6F7C8B14A65E053A9B759A98FF9","name":"JPMorgan Ultra-Short Income ETF","currencyCode":"USD","fundTypeCode":"N_ETF","regionOfInvestmentCode":null,"fundRange":null,"shareClass":{"secYield":{"effectiveDate":"2026-09-18","thirtyDayUnsubSecYield":null,"thirtyDaySecYield":null,"sevenDaySecYield":null,"sevenDayUnsubSecYield":null,"dividendYield":0.0415,"taxEquivalentYield":null,"taxEquivalentYieldAt35Percentage":null,"oneDayCurrentYield":null,"sevenDayCurrentYield":null,"yieldAmount":null,"thirtyDayCurrentYield":null,"twlvMthSimpleYield":0.0415},"etfSecYield":{"thirtyDayUnsubSecYield":0.0434,"thirtyDaySecYield":0.0435,"effectiveDate":"2026-09-17"},"dailyYield":{"effectiveDate":"2026-09-18","thirtyDayUnsubSecYield":null,"thirtyDaySecYield":null,"sevenDaySecYield":null,"sevenDayUnsubSecYield":null,"dividendYield":0.0415,"taxEquivalentYield":null,"taxEquivalentYieldAt35Percentage":null,"oneDayCurrentYield":null,"sevenDayCurrentYield":null,"yieldAmount":null,"thirtyDayCurrentYield":null,"twlvMthSimpleYield":0.0415},"apacYield":null,"apacFundShareclass":null
 ==================================================================
-### card
-URL: https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/card-25b68944a13737010ace.js
-exit=0 size=2095531
+### hist-jepi
+URL: https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false
+exit=0 size=636160
 HTTP/1.1 200 OK
-Content-Type: text/javascript
+Content-Type: application/json;charset=UTF-8
 head:
-/*! For license information please see card-25b68944a13737010ace.js.LICENSE.txt */
-(self.webpackChunkfundsmarketing=self.webpackChunkfundsmarketing||[]).push([[96509],{197:()=>{},319:(e,t,r)=>{"use strict";var n=r(69675),i=r(6537),a=r(60280);e.exports=function(e){if(!i(e))throw new n("Assertion fail
+{"historicalIntraDayNAVList":null,"historicalNAVList":null,"historicalETFNAVMarketPriceList":[{"date":"2020-05-21","time":null,"marketValueNavPrice":50.02,"navPrice":49.86959623,"epochDate":1590019200000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-05-22","time":null,"marketValueNavPrice":50.06,"navPrice":50.0410986,"epochDate":1590105600000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-05-26","time":null,"marketValueNavPrice":50.32,"navPrice":50.2006563,"epochDate":1590451200000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-05-27","time":null,"marketValueNavPrice":50.72,"navPrice":50.47942415,"epochDate":1590537600000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-05-28","time":null,"marketValueNavPrice":51.14,"navPrice":50.97103173,"epochDate":1590624000000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-05-29","time":null,"marketValueNavPrice":51.23,"navPrice":51.13949478,"epochDate":1590710400000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-06-01","time":null,"marketValueNavPrice":51.25,"navPrice":51.10171985,"epochDate":1590969600000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-06-02","time":null,"marketValueNavPrice":51.32,"navPrice":51.19235383,"epochDate":1591056000000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-06-03","time":null,"marketValueNavPrice":51.44,"navPrice":51.316735,"epochDate":1591142400000,"periodTypeCode":null,"currentQuarter":"Q3"},{"date":"2020-0
 ==================================================================
-### endpoints in chunks
-## pdp
-"!=typeof n.__clickOutsideHandlerProp){var t=n.getInstance();if("
-"!=typeof this.__clickOutsideHandlerProp))throw new Error("
-")+e.jsonp+"
-").addListener(this.mediaQueryHandler),this.props.printModeForFeatureTest&&this.beforePrint(),(0,D.rX)("
-"):s,p=!!o||null;return(0,u.jsx)(Ce,{activeCardHandler:()=>null,breakpoint:this.props.breakpoint,tabbedData:a,cardID:"
-")},mouseoutHandler:function(e,t){"
-"+e)}function C(e,t){var r=!0;return h(function(){if(null!=i.deprecationHandler&&i.deprecationHandler(null,e),r){var n,a,o,l=[],d=arguments.length;for(a=0;a<d;a++){if(n="
-"+i):!1!==e.jsonp&&(e.url+=(It.test(e.url)?"
-"+n.namespace:n.origType,n.selector,n.handler),this;if("
-",activeCardHandler:e.activeCardScrollHandler,breakpoint:e.breakpoint,disableButton:!0,headerTitlelabel:"
-",activeCardHandler:this.activeCardScrollHandler,componentId:"
-",children:[this.props.activeCardHandler?(0,u.jsx)(be.Y,{topOffset:"
-",function(e,t,r){var i,a,o,s=!1!==e.jsonp&&(rr.test(e.url)?"
-",onClick:e=>this.props.clickHandler(e),role:"
-",onEnter:this.props.activeCardHandler.bind(this,this.props.id)}),(0,u.jsx)(H.A,{headerTitle:this.props.header,headerTitleId:this.props.id,headerTitleLabel:"
-",onEnter:this.props.activeCardHandler.bind(this,this.props.id)}),(0,u.jsxs)(H.A,{headerTitle:this.props.header,headerTitleId:this.props.id,headerTitleLabel:"
-",onEnter:this.props.activeCardHandler.bind(this,this.props.id)}):null,(0,u.jsx)(H.A,{dataTest:this.props.id+"
-",{children:[(0,u.jsx)(be.Y,{onEnter:this.activeCardScrollHandler.bind(this,t)}),(0,u.jsx)("
-":this.props.id,children:[this.props.activeCardHandler?(0,u.jsx)(be.Y,{topOffset:"
-"===e.dataTypes[0])return i=e.jsonpCallback=y(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,s?e[s]=e[s].replace(rr,"
-"==typeof t.handleClickOutside&&(this.__clickOutsideHandlerProp=t.handleClickOutside(e),"
-"DefaultHandler"
-"DomHandler"
-"__consolidated_events_handlers__"
-"_swipeHandler"
-"}activeCardScrollHandler(e){return"
-"}}}},mouseoverHandler:function(e,r){if(d3.select(r).select("
-"}}}},mouseoverHandler:function(e,t){if(d3.select(t).select("
--- fetch/axios calls --
-.get("$rootScope
-.get("accessCode
-.get("loginService
-.get(`${a}
-.get(`${e}
-.get(`${n}?country=${e}&language=${r}&version=9.16_1789026120
-.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}
-.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${c}
-.get(`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120
-.get(`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120
-.get(`${r}&ac=${t}
-.get(`${r}?query=${e}&country=${t}
-.get(`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120
-.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120
-.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120
-.get(`${this.getFundManagerImageServiceURL()}
--- template urls --
-`${e.cusip}productDropdown`
-`${e}/autocomplete?country=${t}&role=${r}&language=${n}&userLoggedIn=${i}&version=9.16_1789026120`
-`${n}?country=${e}&language=${r}&version=9.16_1789026120`
-`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${c}`
-`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}`
-`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120`
-`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120`
-`${r[0].cusip}shareclassDropdown`
-`${r[r.length-1].cusip}shareclassDropdown`
-`${r}?query=${e}&country=${t}`
-`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120`
-`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120`
-`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120`
-`${t.cusip}shareclassDropdown`
-`${this.props.gaiaRedirectUrl}/autocomplete?country=${this.props.country}&role=${this.props.role}&language=${this.props.language}&userLoggedIn=${this.props.userLoggedIn}&version=9.16_1789026120`
-`/excel?type=${t}_pcf&cusip=`
-`?country=${t}`
-`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
-`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
-`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
--- concat urls --
-",r=encodeURI(this.props.gaiaRedirectUrl+`/excel?type=${t}_pcf&cusip=`+this.props.cusip+"
-"/excel?type="
-"/excel?type=compositionOfFundDistribution&cusip="
-"/excel?type=dailyPerformanceChartCustomSelection&cusip="
-"/excel?type=dividendHistory&cusip="
-"/excel?type=fundDistribution&cusip="
-"/excel?type=performanceChart&cusip="
-"/excel?type=performanceChartCustomSelection&cusip="
-"/excel?type=pricingCompositionHistory&cusip="
-"?country="
-"?type="
-"?type=dailyETFHoldings&cusip="
-## pdpv3
--- fetch/axios calls --
--- template urls --
-`${a}/product-data?${new URLSearchParams({cusip:e,country:n,role:t,language:r||"en",userLoggedIn:!!l}).toString()}`
--- concat urls --
-## fxv3
-")+e.jsonp+"
-"),this.initialised=!0;const e=e=>this.callColumnCellValueChangedHandler(e),t=j(this.gos);this.eventService.addEventListener("
-"+e)}function S(e,t){var i=!0;return p(function(){if(null!=r.deprecationHandler&&r.deprecationHandler(null,e),i){var n,a,s,l=[],c=arguments.length;for(a=0;a<c;a++){if(n="
-"+n.namespace:n.origType,n.selector,n.handler),this;if("
-"+r):!1!==e.jsonp&&(e.url+=(It.test(e.url)?"
-",function(e,t,i){var r,a,s,o=!1!==e.jsonp&&(ii.test(e.url)?"
-",this.overlayEventHandler)),this.containerChanged(!0),this.domManager.addListener("
-",this.overlayEventHandler),this.domManager.addEventListenerOnElement("
-"===e.dataTypes[0])return r=e.jsonpCallback=A(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,o?e[o]=e[o].replace(ii,"
-"DefaultHandler"
-"DomHandler"
--- fetch/axios calls --
-.get("accentedSort
-.get("advancedFilterBuilderParams
-.get("advancedFilterModel
-.get("advancedFilterParent
-.get("aggFuncs
-.get("aggregateOnlyChangedColumns
-.get("alignedGrids
-.get("allowContextMenuWithControlKey
-.get("allowDragFromColumnsToolPanel
-.get("allowShowChangeAfterFilter
-.get("alwaysAggregateAtRootLevel
-.get("alwaysMultiSort
-.get("alwaysShowHorizontalScroll
-.get("alwaysShowVerticalScroll
-.get("animateRows
-.get("applyQuickFilterBeforePivotOrAgg
-.get("asyncTransactionWaitMillis
-.get("autoGroupColumnDef
-.get("autoSizePadding
-.get("autoSizeStrategy
-.get("blockLoadDebounceMillis
-.get("bottom
-.get("cacheBlockSize
-.get("cacheOverflowSize
-.get("cacheQuickFilter
-.get("cellFadeDuration
-.get("cellFlashDuration
-.get("cellSelection
-.get("center
-.get("chartMenuItems
-.get("chartThemeOverrides
-.get("chartThemes
-.get("chartToolPanelsDef
-.get("clipboardDelimiter
-.get("colResizeDefault
-.get("columnDefs
-.get("columnHoverHighlight
-.get("columnMenu
-.get("columnTypes
-.get("components
-.get("copyGroupHeadersToClipboard
-.get("copyHeadersToClipboard
-.get("customChartThemes
-.get("dataTypeDefinitions
-.get("datasource
-.get("debounceVerticalScrollbar
-.get("debug
-.get("defaultColDef
-.get("defaultColGroupDef
-.get("defaultCsvExportParams
-.get("defaultExcelExportParams
-.get("deltaSort
-.get("detailRowAutoHeight
-.get("detailRowHeight
-.get("doesExternalFilterPass
-.get("domLayout
-.get("editType
-.get("embedFullWidthRows
-.get("enableAdvancedFilter
-.get("enableBrowserTooltips
--- template urls --
-`${e.gaiaRedirectUrl||""}/fund-explorer-label?country=${encodeURIComponent(t)}&language=${encodeURIComponent(c)}&version=9.16_1789026120`
-`/excel?type=fundExplorer&fundType=${e}&country={country}&role={role}`
-`?country=${this.country}`
-`ag-dragging-${this.type===lo.FILL?"fill":"range"}-handle`
-`axis[type=${o}]`
-`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${i}${n.queryString}`
-`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${i}${n.queryString}`
-`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
-`series[type=${o}]`
--- concat urls --
-"/excel?type=fundExplorer&fundType=etf&country=at&role=adv"
-"/excel?type=fundExplorer&fundType=etf&country=at&role=per"
-"/excel?type=fundExplorer&fundType=etf&country=de&role=adv"
-"/excel?type=fundExplorer&fundType=etf&country=de&role=per"
-"/excel?type=fundExplorer&fundType=etf&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=etf&country=it&role=adv"
-"/excel?type=fundExplorer&fundType=investment_trusts&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=adv"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=per"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=adv"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=per"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=adv"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=per"
-"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=adv"
-"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=oeics&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=offshore-funds&country=tw&role=per"
-"/excel?type=fundExplorer&fundType=onshore-funds&country=jp&role=per"
-"/excel?type=fundExplorer&fundType=onshore-funds&country=tw&role=per"
-"/excel?type=fundExplorer&fundType=provident-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=adv"
-"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=sar-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=at&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=at&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=de&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=de&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=sicavs&country=it&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=it&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=per"
-"/excel?type=fundExplorer&fundType={fundType}&country={country}&role={role}"
-"?country="
-## fxv2
-")+e.jsonp+"
-"+e)}function w(e,t){var r=!0;return f(function(){if(null!=i.deprecationHandler&&i.deprecationHandler(null,e),r){var n,a,s,l=[],c=arguments.length;for(a=0;a<c;a++){if(n="
-"+i):!1!==e.jsonp&&(e.url+=(Dt.test(e.url)?"
-"+n.namespace:n.origType,n.selector,n.handler),this;if("
-",function(e,t,r){var i,a,s,o=!1!==e.jsonp&&(rr.test(e.url)?"
-"===e.dataTypes[0])return i=e.jsonpCallback=g(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,o?e[o]=e[o].replace(rr,"
-"DefaultHandler"
-"DomHandler"
--- fetch/axios calls --
-.get("$rootScope
-.get("accessCode
-.get("loginService
-.get(`${a}
-.get(`${e}
-.get(`${r}&ac=${t}
--- template urls --
-`${e}/autocomplete?country=${t}&role=${r}&language=${n}&userLoggedIn=${i}&version=9.16_1789026120`
-`?country=${this.country}`
-`?country=${t}`
-`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
-`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
-`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
--- concat urls --
-"/excel?type=fundExplorer&fundType=etf&country=at&role=adv"
-"/excel?type=fundExplorer&fundType=etf&country=at&role=per"
-"/excel?type=fundExplorer&fundType=etf&country=de&role=adv"
-"/excel?type=fundExplorer&fundType=etf&country=de&role=per"
-"/excel?type=fundExplorer&fundType=etf&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=etf&country=it&role=adv"
-"/excel?type=fundExplorer&fundType=investment_trusts&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=adv"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=at&role=per"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=adv"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=de&role=per"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=adv"
-"/excel?type=fundExplorer&fundType=liquidity-fund&country=it&role=per"
-"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=adv"
-"/excel?type=fundExplorer&fundType=mainland-hk-mrf-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=oeics&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=offshore-funds&country=tw&role=per"
-"/excel?type=fundExplorer&fundType=onshore-funds&country=jp&role=per"
-"/excel?type=fundExplorer&fundType=onshore-funds&country=tw&role=per"
-"/excel?type=fundExplorer&fundType=provident-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=adv"
-"/excel?type=fundExplorer&fundType=retail-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=sar-funds&country=hk&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=at&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=at&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=de&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=de&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=gb&role=institutional"
-"/excel?type=fundExplorer&fundType=sicavs&country=it&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=it&role=per"
-"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=adv"
-"/excel?type=fundExplorer&fundType=sicavs&country=sg&role=per"
-"/excel?type=fundExplorer&fundType={fundType}&country={country}&role={role}"
-"?country="
-## card
-"!=typeof n.__clickOutsideHandlerProp){var t=n.getInstance();if("
-"!=typeof this.__clickOutsideHandlerProp))throw new Error("
-")+e.jsonp+"
-")},mouseoutHandler:function(e,t){"
-"+e)}function S(e,t){var r=!0;return h(function(){if(null!=i.deprecationHandler&&i.deprecationHandler(null,e),r){var n,a,o,l=[],c=arguments.length;for(a=0;a<c;a++){if(n="
-"+i):!1!==e.jsonp&&(e.url+=(Mt.test(e.url)?"
-"+n.namespace:n.origType,n.selector,n.handler),this;if("
-",activeCardHandler:e.activeCardScrollHandler,breakpoint:e.breakpoint,disableButton:!0,headerTitlelabel:"
-",function(e,t,r){var i,a,o,s=!1!==e.jsonp&&(rr.test(e.url)?"
-"===e.dataTypes[0])return i=e.jsonpCallback=y(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,s?e[s]=e[s].replace(rr,"
-"==typeof t.handleClickOutside&&(this.__clickOutsideHandlerProp=t.handleClickOutside(e),"
-"DefaultHandler"
-"DomHandler"
-"__consolidated_events_handlers__"
-"}}}},mouseoverHandler:function(e,t){if(d3.select(t).select("
--- fetch/axios calls --
-.get("$rootScope
-.get("accessCode
-.get("loginService
-.get(`${a}
-.get(`${n}?country=${e}&language=${r}&version=9.16_1789026120
-.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}
-.get(`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${u}
-.get(`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120
-.get(`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120
-.get(`${r}&ac=${t}
-.get(`${r}?query=${e}&country=${t}
-.get(`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120
-.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120
-.get(`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120
--- template urls --
-`${e}/autocomplete?country=${t}&role=${r}&language=${n}&userLoggedIn=${i}&version=9.16_1789026120`
-`${n}?country=${e}&language=${r}&version=9.16_1789026120`
-`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}&growthOf10KFromDate=${u}`
-`${o}?country=${t}&role=${n}&currency=${a}&language=${r}&figiIds=${h}`
-`${o}?cusip=${e}&country=${t}&role=${n}&language=${r}&userLoggedIn=${a}&version=9.16_1789026120`
-`${o}?cusip=${t}&country=${r}&language=${n}&role=${a}&userLoggedIn=${e}&version=9.16_1789026120`
-`${r}?query=${e}&country=${t}`
-`${s}?cusip=${t}&country=${r}&role=${n}&language=${o}&userLoggedIn=${e}&version=9.16_1789026120`
-`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&language=${o}&version=9.16_1789026120`
-`${s}?cusip=${t}&country=${r}&role=${n}&userLoggedIn=${e}&version=9.16_1789026120`
-`https://am.jpmorgan.com/jpmorganbr/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
-`https://am.jpmorgan.com/jpmorganca/TVT/${e}${n.cusipSuffix}/${r}${n.queryString}`
-`https://prospectus-express.newriver.com/summary.asp?doctype=${e}&clientid=jpmll&fundid=${t}`
--- concat urls --
-"/excel?type="
-"/excel?type=dividendHistory&cusip="
-"/excel?type=performanceChart&cusip="
-"/excel?type=performanceChartCustomSelection&cusip="
-"?country="
+### basic-jepi
+URL: https://am.jpmorgan.com/FundsMarketingHandler/basic-info?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false
+exit=0 size=5276
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+head:
+{"currencyMapping":null,"visibleData":{"visibleCharts":["PERFORMANCE","PREMIUM_DISCOUNT","ETF_HISTORICAL_NAV_MARKET_PRICE"],"visibleFundFacts":["TICKER","CUSIP","ASSET_CLASS","FUND_INCEPTION_DATE","EXCHANGE","ESG_APPROACH"],"visibleFundStats":["NAV","NAV_CHANGE_AMOUNT","NAV_CHANGE_PERCENTAGE","CLOSING_PRICE","CHANGE_IN_CLOSING_PRICE","CHANGE_IN_CLOSING_PRICE_PERCENTAGE","MEDIAN_BID_ASK_SPREAD_VALUE","PREMIUM_DISCOUNT_PERCENTAGE","NON_FAIR_NAV","MARKET_PRICE_RETURNS","YTD","DAILY_HIGH","DAILY_LOW","NET_ASSETS_FUND","SHARES_OUTSTANDING","EXCHANGE_VOLUME","NUMBER_OF_HOLDINGS","THIRTY_DAY_SEC_YIELD_SUBSIDIZED","THIRTY_DAY_SEC_YIELD_UNSUBSIDIZED","YIELD_TO_MATURITY_GROSS","YIELD_TO_MATURITY_NET","TWELVE_MONTH_ROLLING_DIVIDEND_YIELD","DIVIDEND_YIELD","ETF_DAILY_THIRTY_DAY_SEC_YIELD","ETF_DAILY_THIRTY_DAY_SEC_YIELD_UNSUBSIDIZED"],"visibleFinancialCalendar":[],"visibleDataPoints":["SHOW_ALERTS_SUBCONTENT","SHARECLASS_MARKETPRICE_AMOUNT","SHARECLASS_MARKETPRICE_CHANGEAMOUNT","SHARECLASS_MARKETPRICE_CHANGEPERCENTAGE","NUMBEROFHOLDINGS","SHARECLASS_SHARESOUTSTANDING","SHARECLASS_EXPENSES_GROSSEXPENSE","SHARECLASS_EXPENSES_NETEXPENSE","EXCHANGE_VOLUME","DAILY_HIGH_PRICE","DAILY_LOW_PRICE","_30DAY_SUB_YIELD","_30DAY_UNSUB_YIELD","DIVIDEND_CARD_WITH_RECORD_DATE","CAPITAL_GAINS_CARD_WITH_RECORD_DATE","QUICK_STAT_NAV_WITH_EST_TIMEZONE","QUICK_STAT_YTD_WITHOUT_SALES_CHARGE","QUICK_STAT_30DAY_SEC_YIELD","QUICK_STAT_SHARE_CLASS_EXPENSES","DOWNLOAD_HOLDINGS_AS_PDF","DOWNLOAD_UNDERLYING_HOLDINGS_
+==================================================================
+### py-etf
+URL: https://am.jpmorgan.com/FundsMarketingHandler/performance-and-yields?country=us&role=adv&userLoggedIn=false&language=en&fundType=etf&version=9.16_1789026120
+exit=0 size=355
+HTTP/1.1 404 Not Found
+Content-Type: text/html;charset=UTF-8
+head:
+An error occurred while processing your request: 404 Not Found on GET request for "https://digitalmarketing-ifa-app-proxy.prod.gaiacloud.jpmchase.net/FundsMarketingHandler/performance-and-yields": "{"detail":"No static resource performance-and-yields.","instance":"/performance-and-yields","properties":null,"status":404,"title":"Not Found","type":null}"
+
+==================================================================
+### fx-label
+URL: https://am.jpmorgan.com/FundsMarketingHandler/fund-explorer-label?country=us&role=adv&language=en&version=9.16_1789026120
+exit=0 size=31990
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+head:
+{"date-format":"{month}/{date}/{year}","date-format-month-year":"{month}/{year}","fx-total-funds-label":"{total} Available Shareclasses","fx-shareclass":"{type, select, etf {Inception Date} other {Share Class} }","pdp-overview-sample-withdrawal":"Sample Withdrawal Amount","pdp-overview-fund-facts-cut-off-label":"Cut-off Time","pdp-overview-fund-facts":"{fundType, select, 529Plans {Portfolio Facts} REIT {Portfolio Facts} SMA {Strategy Facts} other {Fund Facts}}","pdp-overview-fund-stats":"{fundType, select, 529Plans {Portfolio Stats} REIT {Portfolio Stats} SMA {Strategy Stats} other {Fund Stats}}","pdp-fund-inception-date":"{fundType, select, 529Plans {Portfolio Inception Date} REIT {Portfolio Inception Date} SMA {Strategy Inception Date} other {Fund Inception Date}}","pdp-shareclass-inception-date":"{fundType, select, Commingled {Class of Units Inception Date} 529Plans {Unit Class Inception Date} INV_TRUST {Trust Inception date} other {Share Class Inception Date}}","pdp-asset-class-label":"Asset Class","pdp-portfolio-top-holding-asset-class":"Asset Class","pdp-bloomberg-ticker-label":"Ticker","fund-currency":"Fund Currency","pdp-fund-manager-in-the-industry":"In the industry","pdp-fund-manager-with-jp-morgan":"With J.P. Morgan","pdp-fund-manager-with":"With {fundSubAdvisor}","pdp-fund-manager-portfolio-manager":"Fund Managers","pdp-quick-stat-taxable-equivalent-yield":"TAXABLE EQUIVALENT YIELD","pdp-quick-stat-daily-yield":"DAILY YIELD","pdp-quick-stat-annualised-distribution
+==================================================================
+### fx-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=fundExplorer&fundType=etf&country=us&role=adv
+exit=0 size=0
+HTTP/1.1 200 OK
+Content-Type: application/ms-excel;;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''JPMAM-PricesPerformance_etf.xlsx
+head:
+
+==================================================================
+### div-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dividendHistory&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=1753
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/html
+head:
+
+<!-- saved from url=(0070)https://am-prod.jpmorgan.com/us/institutional/500-internal-server-down -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+.<meta charset="utf-8">
+.<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+.<title>Site Page Down</title>
+.<meta name="description" content="J.P. Morgan, Asset Management">
+.<meta name="viewport" content="width=1024">
+.
+.<link rel="stylesheet" href="https://fast.fonts.net/cssapi/62222d4d-3e1c-4cfd-a66f-8ddb32f99c5b.css">
+
+.
+..<link rel="stylesheet" href="https://am.jpmorgan.com/akamai/failover/jpmi/css/main.min.css">
+.<script src="https://am.jpmorgan.com/akamai/failover/jpmi/js/vendor/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body class="site-down-bg">
+..<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+.<div class="page-down-container">
+..<div class="page-down">
+...<header class="group"> <a href="https://am-prod.jpmorgan.com/" id="logo"><img itemprop="logo" src="https://am.jpmorgan.com/akamai/failover/jpmi/img/logo.png" alt="J.P. Morgan Asset Management" width="156" height="53">
+...</a> </header>
+...
+...<div class="hr"></div>
+...<p>
+...</p><div>
+....The server encountered a temporary error and was unable to complete your request. Please
+==================================================================
+### dist-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=fundDistribution&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=1753
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/html
+head:
+
+<!-- saved from url=(0070)https://am-prod.jpmorgan.com/us/institutional/500-internal-server-down -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+.<meta charset="utf-8">
+.<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+.<title>Site Page Down</title>
+.<meta name="description" content="J.P. Morgan, Asset Management">
+.<meta name="viewport" content="width=1024">
+.
+.<link rel="stylesheet" href="https://fast.fonts.net/cssapi/62222d4d-3e1c-4cfd-a66f-8ddb32f99c5b.css">
+
+.
+..<link rel="stylesheet" href="https://am.jpmorgan.com/akamai/failover/jpmi/css/main.min.css">
+.<script src="https://am.jpmorgan.com/akamai/failover/jpmi/js/vendor/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body class="site-down-bg">
+..<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+.<div class="page-down-container">
+..<div class="page-down">
+...<header class="group"> <a href="https://am-prod.jpmorgan.com/" id="logo"><img itemprop="logo" src="https://am.jpmorgan.com/akamai/failover/jpmi/img/logo.png" alt="J.P. Morgan Asset Management" width="156" height="53">
+...</a> </header>
+...
+...<div class="hr"></div>
+...<p>
+...</p><div>
+....The server encountered a temporary error and was unable to complete your request. Please
+==================================================================
+### JSON key summaries
+## fx-etf
+ [list len=78]
+[0].name = 'JPMorgan Equity Premium Income ETF'
+[0].displayName = 'Equity Premium Income ETF'
+[0].displayNameTranslatedName = 'Equity Premium Income ETF'
+[0].displayId = 'JEPI'
+[0].fundTypeCode = 'N_ETF'
+[0].shareclassName = 'JPMorgan Equity Premium Income ETF-ETF Shares'
+[0].shareclassShortName = '-'
+[0].newspaperShortName = None
+[0].fundNameDisclosure = None
+[0].hideUIFundTypes [list len=1]
+[0].distributor = None
+[0].fundHolidays = None
+[0].japanesePhoneticName = None
+[0].categoryName = None
+[0].identifier = '46641Q332'
+[0].categoryCode = 'ETF Shares'
+[0].assetClass = 'U.S. Equity'
+[0].assetClassCode = 'U.S. Equity'
+[0].ticker = 'JEPI'
+[0].assetsUnderManagement = 45256753984.33
+[0].oneDayCurrentYield = None
+[0].oneDayCurrentYieldEffectiveDate = '2026-09-18'
+[0].secYield = 0.0744
+[0].unsubSecYield = 0.0744
+[0].secYieldEffectiveDate = '2026-08-31'
+[0].fundInceptionDate = '2020-05-20'
+[0].shareClassInceptionDate = '2020-05-20'
+[0].isFeaturedFund = True
+[0].performanceReturnEffectiveDate = '2026-08-31'
+[0].atNavPerformanceReturn.ytd = 0.0536
+[0].atNavPerformanceReturn.mt1 = 0.008
+[0].atNavPerformanceReturn.mt3 = 0.0467
+[0].atNavPerformanceReturn.mt6 = 0.0005
+[0].atNavPerformanceReturn.yr1 = 0.0905
+[0].atNavPerformanceReturn.yr2 = None
+[0].atNavPerformanceReturn.yr3 = 0.0951
+[0].atNavPerformanceReturn.yr5 = 0.0722
+[0].atNavPerformanceReturn.yr10 = None
+[0].atNavPerformanceReturn.inception = 0.1125
+[0].atNavPerformanceReturnInUSD = None
+[0].withSalesChargePerformanceReturn.ytd = None
+[0].withSalesChargePerformanceReturn.mt1 = None
+[0].withSalesChargePerformanceReturn.mt3 = None
+[0].withSalesChargePerformanceReturn.mt6 = None
+[0].withSalesChargePerformanceReturn.yr1 = None
+[0].withSalesChargePerformanceReturn.yr2 = None
+[0].withSalesChargePerformanceReturn.yr3 = None
+[0].withSalesChargePerformanceReturn.yr5 = None
+[0].withSalesChargePerformanceReturn.yr10 = None
+[0].withSalesChargePerformanceReturn.inception = None
+[0].marketPriceReturns.ytd = 0.0532
+[0].marketPriceReturns.mt1 = 0.0076
+[0].marketPriceReturns.mt3 = 0.0471
+[0].marketPriceReturns.mt6 = 0.0009
+[0].marketPriceReturns.yr1 = 0.0901
+[0].marketPriceReturns.yr2 = None
+[0].marketPriceReturns.yr3 = 0.0948
+[0].marketPriceReturns.yr5 = 0.0719
+[0].marketPriceReturns.yr10 = None
+[0].marketPriceReturns.inception = 0.1125
+[0].performanceReturnEffectiveDateForQuarterEnd = '2026-06-30'
+[0].atNavPerformanceReturnForQuarterEnd.ytd = 0.022
+[0].atNavPerformanceReturnForQuarterEnd.mt1 = 0.0153
+[0].atNavPerformanceReturnForQuarterEnd.mt3 = 0.0188
+[0].atNavPerformanceReturnForQuarterEnd.mt6 = 0.022
+[0].atNavPerformanceReturnForQuarterEnd.yr1 = 0.0777
+[0].atNavPerformanceReturnForQuarterEnd.yr2 = None
+[0].atNavPerformanceReturnForQuarterEnd.yr3 = 0.0899
+[0].atNavPerformanceReturnForQuarterEnd.yr5 = 0.0747
+[0].atNavPerformanceReturnForQuarterEnd.yr10 = None
+[0].atNavPerformanceReturnForQuarterEnd.inception = 0.1103
+[0].withSalesChargePerformanceReturnForQuarterEnd.ytd = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.mt1 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.mt3 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.mt6 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.yr1 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.yr2 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.yr3 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.yr5 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.yr10 = None
+[0].withSalesChargePerformanceReturnForQuarterEnd.inception = None
+[0].marketPriceReturnsForQuarterEnd.ytd = 0.0209
+[0].marketPriceReturnsForQuarterEnd.mt1 = 0.0149
+[0].marketPriceReturnsForQuarterEnd.mt3 = 0.0189
+[0].marketPriceReturnsForQuarterEnd.mt6 = 0.0209
+[0].marketPriceReturnsForQuarterEnd.yr1 = 0.0766
+[0].marketPriceReturnsForQuarterEnd.yr2 = None
+[0].marketPriceReturnsForQuarterEnd.yr3 = 0.0895
+[0].marketPriceReturnsForQuarterEnd.yr5 = 0.0744
+[0].marketPriceReturnsForQuarterEnd.yr10 = None
+[0].marketPriceReturnsForQuarterEnd.inception = 0.1102
+[0].atCumulativeNavNavPerformanceReturn = None
+[0].atCumulativeBidBidPerformanceReturn = None
+[0].atAnnualizedBidBidPerformanceReturn = None
+[0].atAnnualizedNavNavPerformanceReturn = None
+[0].atBidBidPerformanceReturn = None
+[0].atAnnualizedChargesAppliedPerformanceReturn = None
+[0].atCumulativeChargesAppliedPerformanceReturn = None
+[0].currentRateOfReturn = None
+[0].nav = 56.22131617
+[0].navDecimalPoints = 2
+[0].applicationPrice = None
+[0].withdrawPrice = None
+[0].fundShareclassPriceDate = '2026-09-18'
+[0].navDate = '2026-09-18'
+[0].navChangeAmount = 0.01
+[0].navChangePercentage = 0.02
+[0].currencyCode = 'USD'
+[0].shareclassCurrencyCode = None
+[0].currencyCodeSortText = 'USD'
+[0].marketPrice = 56.24
+[0].marketValueNavPrice = 56.21
+[0].wam = None
+[0].wal = None
+[0].fundNumber = '3842671300'
+[0].intraDayNav = None
+[0].intraDayDecimalRounding = 4
+[0].taxAwareFlag = 'no'
+[0].morningStarRating = 3
+[0].ytdReturn = 0.0372
+[0].ytdReturnEffectiveDate = '2026-09-18'
+[0].alerts = None
+[0].shareclassNumber = 'N/A'
+[0].regionOfInvestmentName = None
+[0].valorenNumber = None
+[0].wkn = None
+[0].sedol = None
+[0].fundRange = None
+[0].shareClassIdentifier = '107409'
+[0].fundValuationDate = None
+## pd-jepi
+.fundData.stringValueWrapper.m12AvailableDates = None
+.fundData.stringValueWrapper.holdingLatestDate = None
+.fundData.stringValueWrapper.securityLendingFlag = None
+.fundData.stringValueWrapper.ukSdrCategorisation = None
+.fundData.stringValueWrapper.fundIndicatorValue = None
+.fundData.stringValueWrapper.associatedMasterFundId = None
+.fundData.stringValueWrapper.associatedMasterFundType = None
+.fundData.stringValueWrapper.showKeyRiskCard = False
+.fundData.stringValueWrapper.authorizedParticipants = None
+.fundData.stringValueWrapper.marketMakers = None
+.fundData.stringValueWrapper.currencyMapping = None
+.fundData.cmsHost = 'https://am.jpmorgan.com'
+.fundData.cachedForRole = 'institutional'
+.fundData.marketingFundCategoryName = None
+.fundData.fundIdentifier = '9E03763E1BDA3E1EE053A9B759A9A31F'
+.fundData.name = 'JPMorgan Equity Premium Income ETF'
+.fundData.currencyCode = 'USD'
+.fundData.fundTypeCode = 'N_ETF'
+.fundData.regionOfInvestmentCode = None
+.fundData.fundRange = None
+.fundData.shareClass.secYield.effectiveDate = '2026-09-18'
+.fundData.shareClass.secYield.thirtyDayUnsubSecYield = None
+.fundData.shareClass.secYield.thirtyDaySecYield = None
+.fundData.shareClass.secYield.sevenDaySecYield = None
+.fundData.shareClass.secYield.sevenDayUnsubSecYield = None
+.fundData.shareClass.secYield.dividendYield = 0.0804
+.fundData.shareClass.secYield.taxEquivalentYield = None
+.fundData.shareClass.secYield.taxEquivalentYieldAt35Percentage = None
+.fundData.shareClass.secYield.oneDayCurrentYield = None
+.fundData.shareClass.secYield.sevenDayCurrentYield = None
+.fundData.shareClass.secYield.yieldAmount = None
+.fundData.shareClass.secYield.thirtyDayCurrentYield = None
+.fundData.shareClass.secYield.twlvMthSimpleYield = 0.0804
+.fundData.shareClass.etfSecYield.thirtyDayUnsubSecYield = 0.0737
+.fundData.shareClass.etfSecYield.thirtyDaySecYield = 0.0737
+.fundData.shareClass.etfSecYield.effectiveDate = '2026-09-17'
+.fundData.shareClass.dailyYield.effectiveDate = '2026-09-18'
+.fundData.shareClass.dailyYield.thirtyDayUnsubSecYield = None
+.fundData.shareClass.dailyYield.thirtyDaySecYield = None
+.fundData.shareClass.dailyYield.sevenDaySecYield = None
+.fundData.shareClass.dailyYield.sevenDayUnsubSecYield = None
+.fundData.shareClass.dailyYield.dividendYield = 0.0804
+.fundData.shareClass.dailyYield.taxEquivalentYield = None
+.fundData.shareClass.dailyYield.taxEquivalentYieldAt35Percentage = None
+.fundData.shareClass.dailyYield.oneDayCurrentYield = None
+.fundData.shareClass.dailyYield.sevenDayCurrentYield = None
+.fundData.shareClass.dailyYield.yieldAmount = None
+.fundData.shareClass.dailyYield.thirtyDayCurrentYield = None
+.fundData.shareClass.dailyYield.twlvMthSimpleYield = 0.0804
+.fundData.shareClass.apacYield = None
+.fundData.shareClass.apacFundShareclass = None
+.fundData.shareClass.yieldMonthEnd.effectiveDate = '2026-08-31'
+.fundData.shareClass.yieldMonthEnd.dividendYield = 0.0751
+.fundData.shareClass.yieldMonthEnd.distributionYield = None
+.fundData.shareClass.yieldMonthEnd.sevenDaySecYield = None
+.fundData.shareClass.yieldMonthEnd.sevenDayUnsubSecYield = None
+.fundData.shareClass.yieldMonthEnd.thirtyDaySecYield = 0.0744
+.fundData.shareClass.yieldMonthEnd.thirtyDayUnsubSecYield = 0.0744
+.fundData.shareClass.yieldMonthEnd.twlvMthSimpleYield = 0.0804
+.fundData.shareClass.yieldMonthEnd.taxEquivalentYieldAt35Percentage = None
+.fundData.shareClass.ytdPercentage.ytdDate = '2026-09-18'
+.fundData.shareClass.ytdPercentage.ytdPercentage = 0.0372
+.fundData.shareClass.ytdPercentage.salesChargeAdjustedYtdPercentage = None
+.fundData.shareClass.ticker = 'JEPI'
+.fundData.shareClass.iressTicker = None
+.fundData.shareClass.exchangeTicker = None
+.fundData.shareClass.listingDate = None
+.fundData.shareClass.headerTicker = 'JEPI'
+.fundData.shareClass.sedolCode = None
+.fundData.shareClass.hkTACode = None
+.fundData.shareClass.twTACode = None
+.fundData.shareClass.viivTicker = None
+.fundData.shareClass.wknCode = None
+.fundData.shareClass.originalCurrencyCode = 'USD'
+.fundData.shareClass.currencyCode = 'USD'
+.fundData.shareClass.distributionFrequency = None
+.fundData.shareClass.distributionDate = None
+.fundData.shareClass.reutersInstrumentCode = None
+.fundData.shareClass.shareclassNumber = 'N/A'
+.fundData.shareClass.tradingInfo.nav = 'JEPI.NV'
+.fundData.shareClass.tradingInfo.underlyingTradingValue = 'JEPI.IV'
+.fundData.shareClass.tradingInfo.sharesOutstanding = 'JEPI.SO'
+.fundData.shareClass.tradingInfo.estimatedCash = 'JEPI.EU'
+.fundData.shareClass.tradingInfo.totalCash = 'JEPI.TC'
+.fundData.shareClass.tradingInfo.exchange = 'NYSE-Arca'
+.fundData.shareClass.nav.price = 56.22131617
+.fundData.shareClass.nav.date = '2026-09-18'
+.fundData.shareClass.nav.navEffectiveDate = '2026-09-18'
+.fundData.shareClass.nav.navMovementEffectiveDate = '2026-09-18'
+.fundData.shareClass.nav.changePercentage = 0.02
+.fundData.shareClass.nav.changeAmount = 0.01
+.fundData.shareClass.nav.highNavPrice = None
+.fundData.shareClass.nav.highNavPriceDate = None
+.fundData.shareClass.nav.lowNavPrice = None
+.fundData.shareClass.nav.lowNavPriceDate = None
+.fundData.shareClass.nav.highMktNavPrice = None
+.fundData.shareClass.nav.highMktNavdate = None
+.fundData.shareClass.nav.lowMktNavPrice = None
+.fundData.shareClass.nav.lowMktNavdate = None
+.fundData.shareClass.nav.marketValueNavPrice = 56.21
+.fundData.shareClass.nav.intraDayDateTime = None
+.fundData.shareClass.nav.currencyCode = 'USD'
+.fundData.shareClass.nav.timeZone = None
+.fundData.shareClass.nav.premiumDiscountPercentage = None
+.fundData.shareClass.nav.gearingPercentage = None
+.fundData.shareClass.nav.medianBidAskSpreadValue = 0.00017481
+.fundData.shareClass.nav.navDecimalPoints = 2
+.fundData.shareClass.nav.closingPrice = None
+.fundData.shareClass.shareclassLaunchPrice = None
+.fundData.shareClass.expenses.netExpense = 0.35
+.fundData.shareClass.expenses.grossExpense = 0.35
+.fundData.shareClass.expenses.managementFee = None
+.fundData.shareClass.expenses.investmentManagement = 0.35
+.fundData.shareClass.expenses.mer = None
+.fundData.shareClass.expenses.expenseRecoveries = None
+.fundData.shareClass.expenses.otherIndirectCosts = None
+.fundData.shareClass.expenses.buySpread = None
+.fundData.shareClass.expenses.sellSpread = None
+.fundData.shareClass.categoryCode = 'ETF Shares'
+.fundData.shareClass.displayName = 'Share Class: ETF Shares'
+.fundData.shareClass.shortName = None
+.fundData.shareClass.name = 'JPMorgan Equity Premium Income ETF'
+.fundData.shareClass.cusip = '46641Q332'
+.fundData.shareClass.isin = None
+.fundData.shareClass.marketPrice.amount = 56.24
+.fundData.shareClass.marketPrice.changeAmount = 0.0
+.fundData.shareClass.marketPrice.date = '2026-09-18'
+.fundData.shareClass.marketPrice.changePercentage = 0.02
+.fundData.shareClass.marketPrice.dailyHighPrice = 56.27
+.fundData.shareClass.marketPrice.dailyLowPrice = 56.03
+.fundData.shareClass.marketPrice.premiumDiscountPercentage = 0.0332
+.fundData.shareClass.fundShareclassPerformanceReturn [list len=0]
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd [list len=0]
+.fundData.shareClass.marketPriceReturn.marketPriceReturnPercentage = 0.0369
+.fundData.shareClass.marketPriceReturn.marketPriceReturnDate = '2026-09-18'
+.fundData.shareClass.premiumDiscount = None
+.fundData.shareClass.shareClassInceptionDate = '2020-05-20'
+.fundData.shareClass.netGrossAssetClass = 45256753984.33
+.fundData.shareClass.grossAssetClassEffectiveDate = '2026-09-18'
+.fundData.shareClass.cutOffTime = '16:00:00'
+.fundData.shareClass.cutOffTimeZone = None
+.fundData.shareClass.sharesOutstanding = 804975000.0
+.fundData.shareClass.minimumInvestments.iraInvestments = None
+.fundData.shareClass.minimumInvestments.iraSubsequentInvestments = None
+.fundData.shareClass.minimumInvestments.regularInvestments = None
+.fundData.shareClass.minimumInvestments.regularSubsequentInvestments = None
+.fundData.shareClass.minimumInvestments.investmentLimitAmount = None
+.fundData.shareClass.fees.annualOperatingExpenses = 0.35
+.fundData.shareClass.fees.feeWaiver = 0.0
+.fundData.shareClass.fees.expenseRatio = 0.35
+.fundData.shareClass.fees.expenseCapExpiryDate = None
+.fundData.shareClass.fees.investmentManagement = 0.35
+.fundData.shareClass.fees.serviceFees = 0.0
+.fundData.shareClass.fees.otherExpense = 0.0
+.fundData.shareClass.fees.totalExpenseRatio = None
+.fundData.shareClass.fees.acquiredFund = 0.0
+.fundData.shareClass.fees.expenseLess = None
+.fundData.shareClass.fees.publishedOngoingCharge = None
+.fundData.shareClass.fees.ongoingCharge = None
+.fundData.shareClass.fees.publishedOngoingChargePriips = None
+.fundData.shareClass.fees.ongoingChargePriips = None
+.fundData.shareClass.fees.distributionFee = None
+.fundData.shareClass.fees.subscriptionFees = None
+.fundData.shareClass.fees.redemptionFees = None
+.fundData.shareClass.fees.perfFeeRate = None
+.fundData.shareClass.fees.annualMgmtAdvFees = None
+.fundData.shareClass.fees.annualMgmtAdvFeesText = None
+.fundData.shareClass.fees.opAdminExpenses = None
+.fundData.shareClass.fees.expenseRecoveries = None
+.fundData.shareClass.fees.otherIndirectCosts = None
+.fundData.shareClass.fees.buySpread = None
+.fundData.shareClass.fees.sellSpread = None
+.fundData.shareClass.fees.mer = None
+.fundData.shareClass.fees.managementFee = None
+.fundData.shareClass.fees.custodianFee = None
+.fundData.shareClass.fees.stockholderServiceFee = None
+.fundData.shareClass.fees.incentiveFee = None
+.fundData.shareClass.fees.transactionCosts = None
+.fundData.shareClass.fees.establishmentCosts = None
+.fundData.shareClass.fees.fundsOfFundFee = None
+.fundData.shareClass.fees.creditFacilityCost = None
+.fundData.shareClass.exchangeVolume = 3286087
+.fundData.shareClass.wal = None
+.fundData.shareClass.wam = None
+.fundData.shareClass.walPreviousValuationDate = None
+.fundData.shareClass.performanceReturns [list len=4]
+.fundData.shareClass.performanceReturns[0].performanceFactor = 'At NAV'
+.fundData.shareClass.performanceReturns[0].translationKey = 'pdp-performance-tab-at-nav-label'
+.fundData.shareClass.performanceReturns[0].performanceFactorTranslationMap = None
+.fundData.shareClass.performanceReturns[0].benchmarkIdentifier = None
+.fundData.shareClass.performanceReturns[0].oneMonth = 0.008
+.fundData.shareClass.performanceReturns[0].threeMonths = 0.0467
+.fundData.shareClass.performanceReturns[0].sixMonths = None
+.fundData.shareClass.performanceReturns[0].ytd = 0.0536
+.fundData.shareClass.performanceReturns[0].oneYear = 0.0905
+.fundData.shareClass.performanceReturns[0].threeYears = 0.0951
+.fundData.shareClass.performanceReturns[0].fiveYears = 0.0722
+.fundData.shareClass.performanceReturns[0].inception = 0.1125
+.fundData.shareClass.performanceReturns[0].tenYears = None
+.fundData.shareClass.performanceReturns[0].fifteenYears = None
+.fundData.shareClass.performanceReturns[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.performanceReturns[0].twoYears = None
+.fundData.shareClass.performanceReturns[0].fourYears = None
+.fundData.shareClass.performanceReturns[0].sixYears = None
+.fundData.shareClass.performanceReturns[0].sevenYears = None
+.fundData.shareClass.performanceReturns[0].eightYears = None
+.fundData.shareClass.performanceReturns[0].nineYears = None
+.fundData.shareClass.performanceReturns[0].jan = None
+.fundData.shareClass.performanceReturns[0].feb = None
+.fundData.shareClass.performanceReturns[0].mar = None
+.fundData.shareClass.performanceReturns[0].apr = None
+.fundData.shareClass.performanceReturns[0].may = None
+.fundData.shareClass.performanceReturns[0].jun = None
+.fundData.shareClass.performanceReturns[0].jul = None
+.fundData.shareClass.performanceReturns[0].aug = None
+.fundData.shareClass.performanceReturns[0].sep = None
+.fundData.shareClass.performanceReturns[0].oct = None
+.fundData.shareClass.performanceReturns[0].nov = None
+.fundData.shareClass.performanceReturns[0].dec = None
+.fundData.shareClass.performanceReturns[0].annualizedDistributionRate = None
+.fundData.shareClass.performanceReturns[0].monthlyBenchmarkDataNull = False
+.fundData.shareClass.performanceReturns[0].quarterlyBenchmarkDataNull = False
+.fundData.shareClass.performanceReturns[0].yearlyBenchmarkDataNull = False
+.fundData.shareClass.cumulativePerformanceReturns [list len=2]
+.fundData.shareClass.cumulativePerformanceReturns[0].performanceFactor = 'At NAV'
+.fundData.shareClass.cumulativePerformanceReturns[0].translationKey = 'pdp-performance-tab-at-nav-label'
+.fundData.shareClass.cumulativePerformanceReturns[0].performanceFactorTranslationMap = None
+.fundData.shareClass.cumulativePerformanceReturns[0].benchmarkIdentifier = None
+.fundData.shareClass.cumulativePerformanceReturns[0].oneMonth = None
+.fundData.shareClass.cumulativePerformanceReturns[0].threeMonths = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sixMonths = None
+.fundData.shareClass.cumulativePerformanceReturns[0].ytd = None
+.fundData.shareClass.cumulativePerformanceReturns[0].oneYear = 0.0905
+.fundData.shareClass.cumulativePerformanceReturns[0].threeYears = 0.3132
+.fundData.shareClass.cumulativePerformanceReturns[0].fiveYears = 0.417
+.fundData.shareClass.cumulativePerformanceReturns[0].inception = 0.9541
+.fundData.shareClass.cumulativePerformanceReturns[0].tenYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].fifteenYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.cumulativePerformanceReturns[0].twoYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].fourYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sixYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sevenYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].eightYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].nineYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].jan = None
+.fundData.shareClass.cumulativePerformanceReturns[0].feb = None
+.fundData.shareClass.cumulativePerformanceReturns[0].mar = None
+.fundData.shareClass.cumulativePerformanceReturns[0].apr = None
+.fundData.shareClass.cumulativePerformanceReturns[0].may = None
+.fundData.shareClass.cumulativePerformanceReturns[0].jun = None
+.fundData.shareClass.cumulativePerformanceReturns[0].jul = None
+.fundData.shareClass.cumulativePerformanceReturns[0].aug = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sep = None
+.fundData.shareClass.cumulativePerformanceReturns[0].oct = None
+.fundData.shareClass.cumulativePerformanceReturns[0].nov = None
+.fundData.shareClass.cumulativePerformanceReturns[0].dec = None
+.fundData.shareClass.cumulativePerformanceReturns[0].annualizedDistributionRate = None
+.fundData.shareClass.cumulativePerformanceReturns[0].monthlyBenchmarkDataNull = False
+.fundData.shareClass.cumulativePerformanceReturns[0].quarterlyBenchmarkDataNull = False
+.fundData.shareClass.cumulativePerformanceReturns[0].yearlyBenchmarkDataNull = False
+.fundData.shareClass.annualizedPerformanceReturns [list len=0]
+.fundData.shareClass.performanceSummaryReturns = None
+.fundData.shareClass.morningstarRating [list len=5]
+.fundData.shareClass.morningstarRating[0].periodIndicator = '1YR'
+.fundData.shareClass.morningstarRating[0].rankNumber = None
+.fundData.shareClass.morningstarRating[0].peerGroupCount = 156
+.fundData.shareClass.morningstarRating[0].groupPercentile = None
+.fundData.shareClass.morningstarRating[0].effectiveDate = '2025-08-31'
+.fundData.shareClass.morningstarRatingEffectiveDate = '2026-08-31'
+.fundData.shareClass.fundShareClassValuationDate = '2026-09-18'
+.fundData.shareClass.morningstarRatingCategory = 'Derivative Income'
+.fundData.shareClass.morningstarRanking [list len=3]
+.fundData.shareClass.morningstarRanking[0].periodIndicator = '1YR'
+.fundData.shareClass.morningstarRanking[0].rankNumber = 162
+.fundData.shareClass.morningstarRanking[0].peerGroupCount = 218
+.fundData.shareClass.morningstarRanking[0].groupPercentile = 72.0
+.fundData.shareClass.morningstarRanking[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.morningstarRankingEffectiveDate = '2026-08-31'
+.fundData.shareClass.morningstarRankingCategory = 'Derivative Income'
+.fundData.shareClass.lipperRating [list len=0]
+.fundData.shareClass.lipperRatingEffectiveDate = None
+.fundData.shareClass.lipperRatingCategory = None
+.fundData.shareClass.dailyDividendFactor = None
+.fundData.shareClass.taxAwareFlag = 'no'
+.fundData.shareClass.identifier = '9E39CDF100F16F0DE053A9B759A91C32'
+.fundData.shareClass.htmlCommentaries = None
+.fundData.shareClass.saleCharge = 0.0
+.fundData.shareClass.calendarYearBenchmarkReturns [list len=2]
+.fundData.shareClass.calendarYearBenchmarkReturns[0].performanceFactor = 'S&P 500 Index'
+.fundData.shareClass.calendarYearBenchmarkReturns[0].translationKey = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].performanceFactorTranslationMap = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].benchmarkIdentifier = '4342A6F7DE504A65E053A9B759A98FF9'
+.fundData.shareClass.calendarYearBenchmarkReturns[0].oneMonth = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].threeMonths = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sixMonths = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].ytd = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].oneYear = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].threeYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].fiveYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].inception = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].tenYears = 0.1788
+.fundData.shareClass.calendarYearBenchmarkReturns[0].fifteenYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.calendarYearBenchmarkReturns[0].twoYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].fourYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sixYears = 0.2871
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sevenYears = -0.1811
+.fundData.shareClass.calendarYearBenchmarkReturns[0].eightYears = 0.2629
+.fundData.shareClass.calendarYearBenchmarkReturns[0].nineYears = 0.2502
+.fundData.shareClass.calendarYearBenchmarkReturns[0].jan = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].feb = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].mar = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].apr = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].may = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].jun = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].jul = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].aug = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sep = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].oct = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].nov = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].dec = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].annualizedDistributionRate = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].monthlyBenchmarkDataNull = False
+.fundData.shareClass.calendarYearBenchmarkReturns[0].quarterlyBenchmarkDataNull = False
+.fundData.shareClass.calendarYearBenchmarkReturns[0].yearlyBenchmarkDataNull = False
+.fundData.shareClass.statusTypeCode = 'O-O'
+.fundData.shareClass.intraDayNav = None
+.fundData.shareClass.morningstarOverallRating.morningstarAnalystRatingIndicator = None
+.fundData.shareClass.morningstarOverallRating.fundShareclassIndustryRatingDate = '2026-08-26'
+.fundData.shareClass.morningstarOverallRating.peerGroupName = 'Derivative Income'
+.fundData.shareClass.morningstarOverallRating.value = 0
+.fundData.shareClass.morningstarOverallRating.morningstarMedalistRatingIndicator = 'G'
+.fundData.shareClass.morningstarOverallRating.analystDrivenPercentage = 100
+.fundData.shareClass.morningstarOverallRating.dataCoveragePercentage = 100
+.fundData.shareClass.emeaFundShareclass = None
+.fundData.shareClass.renderPerformanceCard = True
+.fundData.shareClass.nonFairNav.nonFairValueNAVDate = None
+.fundData.shareClass.nonFairNav.nonFairValueNAVPrice = None
+.fundData.shareClass.nonFairNav.currencyCode = None
+.fundData.shareClass.threePMNav.nonFairValueNAVDate = None
+.fundData.shareClass.threePMNav.nonFairValueNAVPrice = None
+.fundData.shareClass.threePMNav.currencyCode = None
+.fundData.shareClass.ukReportingIndicator = None
+.fundData.shareClass.hedgedShareclassIndicator = None
+.fundData.shareClass.settlementCycleRedemptionName = None
+.fundData.riskLevel = None
+.fundData.visibleData.visibleCharts [list len=3]
+.fundData.visibleData.visibleFundFacts [list len=6]
+.fundData.visibleData.visibleFundStats [list len=25]
+.fundData.visibleData.visibleFinancialCalendar [list len=0]
+.fundData.visibleData.visibleDataPoints [list len=57]
+.fundData.visibleData.visibleTopHoldings [list len=5]
+.fundData.visibleData.visibleUnderlyingHoldings [list len=0]
+.fundData.visibleData.visibleProxyHoldings [list len=0]
+.fundData.visibleData.visiblePerformanceCardTabs [list len=5]
+.fundData.visibleData.visibleRegionalDataPoint [list len=0]
+.fundData.visibleData.visibleCards = None
+.fundData.visibleData.visiblePortfolioCards [list len=83]
+.fundData.visibleData.formattingRules [list len=7]
+.fundData.shareclassAllList = None
+.fundData.fundIndustryCreditRatings [list len=0]
+.fundData.objective = "The investment objective of the Fund is to seek current income while maintaining prospects for capi
+.fundData.investmentObjective = None
+.fundData.investmentApproach = None
+.fundData.investmentPolicy = None
+.fundData.riskProfile = None
+.fundData.investorProfile = None
+.fundData.benchmarkUsesAndResemblance = None
+.fundData.typicalInvestment = None
+.fundData.strategy = 'Generates income through a combination of selling options and investing in U.S. large cap stocks, s
+.fundData.dividendsFrequency = 'MDEC'
+.fundData.investmentAdvisors = None
+.fundData.fundManagers [list len=4]
+.fundData.fundManagers[0].firstName = 'Hamilton'
+.fundData.fundManagers[0].lastName = 'Reiner'
+.fundData.fundManagers[0].fullName = None
+.fundData.fundManagers[0].fullNameMap = None
+.fundData.fundManagers[0].profileURL = None
+.fundData.fundManagers[0].imageURL = None
+.fundData.fundManagers[0].industryExperience = 39.666668
+.fundData.fundManagers[0].jpmcExperience = 17.666666
+.fundData.fundManagers[0].fundManagingExperience = 6.3333335
+.fundData.fundManagers[0].fundSubAdvisor = None
+.fundData.fundManagers[0].identifier = '4342A6F7E11E4A65E053A9B759A98FF9'
+.fundData.numberOfHoldings = 135.0
+.fundData.numberOfInvestments = None
+.fundData.assetClass = 'U.S. Equity'
+.fundData.fundInceptionDate = '2020-05-20'
+.fundData.numberOfHoldingsEffectiveDate = '2026-09-18'
+.fundData.numberOfInvestmentsEffectiveDate = None
+.fundData.fundValuationDate = '2026-09-18'
+.fundData.fundNumber = '3842671300'
+.fundData.fundAccountingCode = None
+.fundData.legalEntityIdentifier = None
+.fundData.fundDealingHoliday = None
+.fundData.alerts = None
+.fundData.aum.date = '2026-09-18'
+.fundData.aum.netAsset = 45256753984.33
+.fundData.aum.value = None
+## pd-jpst
+.fundData.stringValueWrapper.m12AvailableDates = None
+.fundData.stringValueWrapper.holdingLatestDate = None
+.fundData.stringValueWrapper.securityLendingFlag = None
+.fundData.stringValueWrapper.ukSdrCategorisation = None
+.fundData.stringValueWrapper.fundIndicatorValue = None
+.fundData.stringValueWrapper.associatedMasterFundId = None
+.fundData.stringValueWrapper.associatedMasterFundType = None
+.fundData.stringValueWrapper.showKeyRiskCard = False
+.fundData.stringValueWrapper.authorizedParticipants = None
+.fundData.stringValueWrapper.marketMakers = None
+.fundData.stringValueWrapper.currencyMapping = None
+.fundData.cmsHost = 'https://am.jpmorgan.com'
+.fundData.cachedForRole = 'liq'
+.fundData.marketingFundCategoryName = None
+.fundData.fundIdentifier = '4342A6F7C8B14A65E053A9B759A98FF9'
+.fundData.name = 'JPMorgan Ultra-Short Income ETF'
+.fundData.currencyCode = 'USD'
+.fundData.fundTypeCode = 'N_ETF'
+.fundData.regionOfInvestmentCode = None
+.fundData.fundRange = None
+.fundData.shareClass.secYield.effectiveDate = '2026-09-18'
+.fundData.shareClass.secYield.thirtyDayUnsubSecYield = None
+.fundData.shareClass.secYield.thirtyDaySecYield = None
+.fundData.shareClass.secYield.sevenDaySecYield = None
+.fundData.shareClass.secYield.sevenDayUnsubSecYield = None
+.fundData.shareClass.secYield.dividendYield = 0.0415
+.fundData.shareClass.secYield.taxEquivalentYield = None
+.fundData.shareClass.secYield.taxEquivalentYieldAt35Percentage = None
+.fundData.shareClass.secYield.oneDayCurrentYield = None
+.fundData.shareClass.secYield.sevenDayCurrentYield = None
+.fundData.shareClass.secYield.yieldAmount = None
+.fundData.shareClass.secYield.thirtyDayCurrentYield = None
+.fundData.shareClass.secYield.twlvMthSimpleYield = 0.0415
+.fundData.shareClass.etfSecYield.thirtyDayUnsubSecYield = 0.0434
+.fundData.shareClass.etfSecYield.thirtyDaySecYield = 0.0435
+.fundData.shareClass.etfSecYield.effectiveDate = '2026-09-17'
+.fundData.shareClass.dailyYield.effectiveDate = '2026-09-18'
+.fundData.shareClass.dailyYield.thirtyDayUnsubSecYield = None
+.fundData.shareClass.dailyYield.thirtyDaySecYield = None
+.fundData.shareClass.dailyYield.sevenDaySecYield = None
+.fundData.shareClass.dailyYield.sevenDayUnsubSecYield = None
+.fundData.shareClass.dailyYield.dividendYield = 0.0415
+.fundData.shareClass.dailyYield.taxEquivalentYield = None
+.fundData.shareClass.dailyYield.taxEquivalentYieldAt35Percentage = None
+.fundData.shareClass.dailyYield.oneDayCurrentYield = None
+.fundData.shareClass.dailyYield.sevenDayCurrentYield = None
+.fundData.shareClass.dailyYield.yieldAmount = None
+.fundData.shareClass.dailyYield.thirtyDayCurrentYield = None
+.fundData.shareClass.dailyYield.twlvMthSimpleYield = 0.0415
+.fundData.shareClass.apacYield = None
+.fundData.shareClass.apacFundShareclass = None
+.fundData.shareClass.yieldMonthEnd.effectiveDate = '2026-08-31'
+.fundData.shareClass.yieldMonthEnd.dividendYield = 0.0395
+.fundData.shareClass.yieldMonthEnd.distributionYield = None
+.fundData.shareClass.yieldMonthEnd.sevenDaySecYield = None
+.fundData.shareClass.yieldMonthEnd.sevenDayUnsubSecYield = None
+.fundData.shareClass.yieldMonthEnd.thirtyDaySecYield = 0.0411
+.fundData.shareClass.yieldMonthEnd.thirtyDayUnsubSecYield = 0.041
+.fundData.shareClass.yieldMonthEnd.twlvMthSimpleYield = 0.0419
+.fundData.shareClass.yieldMonthEnd.taxEquivalentYieldAt35Percentage = None
+.fundData.shareClass.ytdPercentage.ytdDate = '2026-09-18'
+.fundData.shareClass.ytdPercentage.ytdPercentage = 0.0227
+.fundData.shareClass.ytdPercentage.salesChargeAdjustedYtdPercentage = None
+.fundData.shareClass.ticker = 'JPST'
+.fundData.shareClass.iressTicker = None
+.fundData.shareClass.exchangeTicker = None
+.fundData.shareClass.listingDate = None
+.fundData.shareClass.headerTicker = 'JPST'
+.fundData.shareClass.sedolCode = None
+.fundData.shareClass.hkTACode = None
+.fundData.shareClass.twTACode = None
+.fundData.shareClass.viivTicker = None
+.fundData.shareClass.wknCode = None
+.fundData.shareClass.originalCurrencyCode = 'USD'
+.fundData.shareClass.currencyCode = 'USD'
+.fundData.shareClass.distributionFrequency = None
+.fundData.shareClass.distributionDate = None
+.fundData.shareClass.reutersInstrumentCode = None
+.fundData.shareClass.shareclassNumber = ''
+.fundData.shareClass.tradingInfo.nav = 'JPST.NV'
+.fundData.shareClass.tradingInfo.underlyingTradingValue = 'JPST.IV'
+.fundData.shareClass.tradingInfo.sharesOutstanding = 'JPST.SO'
+.fundData.shareClass.tradingInfo.estimatedCash = 'JPST.EU'
+.fundData.shareClass.tradingInfo.totalCash = 'JPST.TC'
+.fundData.shareClass.tradingInfo.exchange = 'NYSE-Arca'
+.fundData.shareClass.nav.price = 50.3374667
+.fundData.shareClass.nav.date = '2026-09-18'
+.fundData.shareClass.nav.navEffectiveDate = '2026-09-18'
+.fundData.shareClass.nav.navMovementEffectiveDate = '2026-09-18'
+.fundData.shareClass.nav.changePercentage = -0.03
+.fundData.shareClass.nav.changeAmount = -0.01
+.fundData.shareClass.nav.highNavPrice = None
+.fundData.shareClass.nav.highNavPriceDate = None
+.fundData.shareClass.nav.lowNavPrice = None
+.fundData.shareClass.nav.lowNavPriceDate = None
+.fundData.shareClass.nav.highMktNavPrice = None
+.fundData.shareClass.nav.highMktNavdate = None
+.fundData.shareClass.nav.lowMktNavPrice = None
+.fundData.shareClass.nav.lowMktNavdate = None
+.fundData.shareClass.nav.marketValueNavPrice = 50.37
+.fundData.shareClass.nav.intraDayDateTime = None
+.fundData.shareClass.nav.currencyCode = 'USD'
+.fundData.shareClass.nav.timeZone = None
+.fundData.shareClass.nav.premiumDiscountPercentage = None
+.fundData.shareClass.nav.gearingPercentage = None
+.fundData.shareClass.nav.medianBidAskSpreadValue = 0.00019847
+.fundData.shareClass.nav.navDecimalPoints = 2
+.fundData.shareClass.nav.closingPrice = None
+.fundData.shareClass.shareclassLaunchPrice = None
+.fundData.shareClass.expenses.netExpense = 0.18
+.fundData.shareClass.expenses.grossExpense = 0.18
+.fundData.shareClass.expenses.managementFee = None
+.fundData.shareClass.expenses.investmentManagement = 0.18
+.fundData.shareClass.expenses.mer = 0.0
+.fundData.shareClass.expenses.expenseRecoveries = None
+.fundData.shareClass.expenses.otherIndirectCosts = None
+.fundData.shareClass.expenses.buySpread = None
+.fundData.shareClass.expenses.sellSpread = None
+.fundData.shareClass.categoryCode = 'ETF Shares'
+.fundData.shareClass.displayName = 'Share Class: ETF Shares'
+.fundData.shareClass.shortName = None
+.fundData.shareClass.name = 'JPMorgan Ultra-Short Income ETF'
+.fundData.shareClass.cusip = '46641Q837'
+.fundData.shareClass.isin = None
+.fundData.shareClass.marketPrice.amount = 50.37
+.fundData.shareClass.marketPrice.changeAmount = -0.01
+.fundData.shareClass.marketPrice.date = '2026-09-18'
+.fundData.shareClass.marketPrice.changePercentage = -0.02
+.fundData.shareClass.marketPrice.dailyHighPrice = 50.38
+.fundData.shareClass.marketPrice.dailyLowPrice = 50.36
+.fundData.shareClass.marketPrice.premiumDiscountPercentage = 0.0646
+.fundData.shareClass.fundShareclassPerformanceReturn [list len=1]
+.fundData.shareClass.fundShareclassPerformanceReturn[0].fundShareclassReturnType = 1
+.fundData.shareClass.fundShareclassPerformanceReturn[0].returnPeriodIndicator = 'INC'
+.fundData.shareClass.fundShareclassPerformanceReturn[0].annualizedNoLoadReturnPercentage = 0.0197
+.fundData.shareClass.fundShareclassPerformanceReturn[0].annualizedLoadReturnPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturn[0].annualizedLoadPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturn[0].annualizedSharePriceReturnPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturn[0].performanceReturnEffectiveDate = '2018-08-24'
+.fundData.shareClass.fundShareclassPerformanceReturn[0].currencyCode = None
+.fundData.shareClass.fundShareclassPerformanceReturn[0].monthEndIndicator = 'N'
+.fundData.shareClass.fundShareclassPerformanceReturn[0].cumulativeNoLoadPercentage = 0.0251
+.fundData.shareClass.fundShareclassPerformanceReturn[0].cumulativeLoadPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturn[0].cumulativeSharePriceReturnPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturn[0].regionCode = 'AM'
+.fundData.shareClass.fundShareclassPerformanceReturn[0].pricingBasisCode = 'NN'
+.fundData.shareClass.fundShareclassPerformanceReturn[0].calendarYear = 0
+.fundData.shareClass.fundShareclassPerformanceReturn[0].fundShareclassIdentifier = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd [list len=2]
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].fundShareclassReturnType = 1
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].returnPeriodIndicator = '1YR'
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].annualizedNoLoadReturnPercentage = 0.0194
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].annualizedLoadReturnPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].annualizedLoadPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].annualizedSharePriceReturnPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].performanceReturnEffectiveDate = '2018-07-31'
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].currencyCode = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].monthEndIndicator = 'Y'
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].cumulativeNoLoadPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].cumulativeLoadPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].cumulativeSharePriceReturnPercentage = None
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].regionCode = 'AM'
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].pricingBasisCode = 'NN'
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].calendarYear = 0
+.fundData.shareClass.fundShareclassPerformanceReturnMonthEnd[0].fundShareclassIdentifier = None
+.fundData.shareClass.marketPriceReturn.marketPriceReturnPercentage = 0.0229
+.fundData.shareClass.marketPriceReturn.marketPriceReturnDate = '2026-09-18'
+.fundData.shareClass.premiumDiscount.amount = -0.0276332
+.fundData.shareClass.premiumDiscount.date = '2017-09-29'
+.fundData.shareClass.shareClassInceptionDate = '2017-05-17'
+.fundData.shareClass.netGrossAssetClass = 41712141777.91
+.fundData.shareClass.grossAssetClassEffectiveDate = '2026-09-18'
+.fundData.shareClass.cutOffTime = None
+.fundData.shareClass.cutOffTimeZone = None
+.fundData.shareClass.sharesOutstanding = 828650000.0
+.fundData.shareClass.minimumInvestments.iraInvestments = None
+.fundData.shareClass.minimumInvestments.iraSubsequentInvestments = None
+.fundData.shareClass.minimumInvestments.regularInvestments = None
+.fundData.shareClass.minimumInvestments.regularSubsequentInvestments = None
+.fundData.shareClass.minimumInvestments.investmentLimitAmount = None
+.fundData.shareClass.fees.annualOperatingExpenses = 0.18
+.fundData.shareClass.fees.feeWaiver = 0.0
+.fundData.shareClass.fees.expenseRatio = 0.18
+.fundData.shareClass.fees.expenseCapExpiryDate = None
+.fundData.shareClass.fees.investmentManagement = 0.18
+.fundData.shareClass.fees.serviceFees = 0.0
+.fundData.shareClass.fees.otherExpense = 0.0
+.fundData.shareClass.fees.totalExpenseRatio = None
+.fundData.shareClass.fees.acquiredFund = 0.0
+.fundData.shareClass.fees.expenseLess = None
+.fundData.shareClass.fees.publishedOngoingCharge = None
+.fundData.shareClass.fees.ongoingCharge = None
+.fundData.shareClass.fees.publishedOngoingChargePriips = None
+.fundData.shareClass.fees.ongoingChargePriips = None
+.fundData.shareClass.fees.distributionFee = None
+.fundData.shareClass.fees.subscriptionFees = None
+.fundData.shareClass.fees.redemptionFees = None
+.fundData.shareClass.fees.perfFeeRate = None
+.fundData.shareClass.fees.annualMgmtAdvFees = None
+.fundData.shareClass.fees.annualMgmtAdvFeesText = None
+.fundData.shareClass.fees.opAdminExpenses = None
+.fundData.shareClass.fees.expenseRecoveries = None
+.fundData.shareClass.fees.otherIndirectCosts = None
+.fundData.shareClass.fees.buySpread = None
+.fundData.shareClass.fees.sellSpread = None
+.fundData.shareClass.fees.mer = 0.0
+.fundData.shareClass.fees.managementFee = None
+.fundData.shareClass.fees.custodianFee = None
+.fundData.shareClass.fees.stockholderServiceFee = None
+.fundData.shareClass.fees.incentiveFee = None
+.fundData.shareClass.fees.transactionCosts = None
+.fundData.shareClass.fees.establishmentCosts = None
+.fundData.shareClass.fees.fundsOfFundFee = None
+.fundData.shareClass.fees.creditFacilityCost = None
+.fundData.shareClass.exchangeVolume = 6114191
+.fundData.shareClass.wal = None
+.fundData.shareClass.wam = None
+.fundData.shareClass.walPreviousValuationDate = None
+.fundData.shareClass.performanceReturns [list len=3]
+.fundData.shareClass.performanceReturns[0].performanceFactor = 'At NAV'
+.fundData.shareClass.performanceReturns[0].translationKey = 'pdp-performance-tab-at-nav-label'
+.fundData.shareClass.performanceReturns[0].performanceFactorTranslationMap = None
+.fundData.shareClass.performanceReturns[0].benchmarkIdentifier = None
+.fundData.shareClass.performanceReturns[0].oneMonth = 0.0034
+.fundData.shareClass.performanceReturns[0].threeMonths = 0.0087
+.fundData.shareClass.performanceReturns[0].sixMonths = None
+.fundData.shareClass.performanceReturns[0].ytd = 0.0229
+.fundData.shareClass.performanceReturns[0].oneYear = 0.0386
+.fundData.shareClass.performanceReturns[0].threeYears = 0.0503
+.fundData.shareClass.performanceReturns[0].fiveYears = 0.0377
+.fundData.shareClass.performanceReturns[0].inception = 0.03
+.fundData.shareClass.performanceReturns[0].tenYears = None
+.fundData.shareClass.performanceReturns[0].fifteenYears = None
+.fundData.shareClass.performanceReturns[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.performanceReturns[0].twoYears = None
+.fundData.shareClass.performanceReturns[0].fourYears = None
+.fundData.shareClass.performanceReturns[0].sixYears = None
+.fundData.shareClass.performanceReturns[0].sevenYears = None
+.fundData.shareClass.performanceReturns[0].eightYears = None
+.fundData.shareClass.performanceReturns[0].nineYears = None
+.fundData.shareClass.performanceReturns[0].jan = None
+.fundData.shareClass.performanceReturns[0].feb = None
+.fundData.shareClass.performanceReturns[0].mar = None
+.fundData.shareClass.performanceReturns[0].apr = None
+.fundData.shareClass.performanceReturns[0].may = None
+.fundData.shareClass.performanceReturns[0].jun = None
+.fundData.shareClass.performanceReturns[0].jul = None
+.fundData.shareClass.performanceReturns[0].aug = None
+.fundData.shareClass.performanceReturns[0].sep = None
+.fundData.shareClass.performanceReturns[0].oct = None
+.fundData.shareClass.performanceReturns[0].nov = None
+.fundData.shareClass.performanceReturns[0].dec = None
+.fundData.shareClass.performanceReturns[0].annualizedDistributionRate = None
+.fundData.shareClass.performanceReturns[0].monthlyBenchmarkDataNull = False
+.fundData.shareClass.performanceReturns[0].quarterlyBenchmarkDataNull = False
+.fundData.shareClass.performanceReturns[0].yearlyBenchmarkDataNull = False
+.fundData.shareClass.cumulativePerformanceReturns [list len=2]
+.fundData.shareClass.cumulativePerformanceReturns[0].performanceFactor = 'At NAV'
+.fundData.shareClass.cumulativePerformanceReturns[0].translationKey = 'pdp-performance-tab-at-nav-label'
+.fundData.shareClass.cumulativePerformanceReturns[0].performanceFactorTranslationMap = None
+.fundData.shareClass.cumulativePerformanceReturns[0].benchmarkIdentifier = None
+.fundData.shareClass.cumulativePerformanceReturns[0].oneMonth = None
+.fundData.shareClass.cumulativePerformanceReturns[0].threeMonths = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sixMonths = None
+.fundData.shareClass.cumulativePerformanceReturns[0].ytd = None
+.fundData.shareClass.cumulativePerformanceReturns[0].oneYear = 0.0386
+.fundData.shareClass.cumulativePerformanceReturns[0].threeYears = 0.1586
+.fundData.shareClass.cumulativePerformanceReturns[0].fiveYears = 0.2034
+.fundData.shareClass.cumulativePerformanceReturns[0].inception = 0.3165
+.fundData.shareClass.cumulativePerformanceReturns[0].tenYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].fifteenYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.cumulativePerformanceReturns[0].twoYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].fourYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sixYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sevenYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].eightYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].nineYears = None
+.fundData.shareClass.cumulativePerformanceReturns[0].jan = None
+.fundData.shareClass.cumulativePerformanceReturns[0].feb = None
+.fundData.shareClass.cumulativePerformanceReturns[0].mar = None
+.fundData.shareClass.cumulativePerformanceReturns[0].apr = None
+.fundData.shareClass.cumulativePerformanceReturns[0].may = None
+.fundData.shareClass.cumulativePerformanceReturns[0].jun = None
+.fundData.shareClass.cumulativePerformanceReturns[0].jul = None
+.fundData.shareClass.cumulativePerformanceReturns[0].aug = None
+.fundData.shareClass.cumulativePerformanceReturns[0].sep = None
+.fundData.shareClass.cumulativePerformanceReturns[0].oct = None
+.fundData.shareClass.cumulativePerformanceReturns[0].nov = None
+.fundData.shareClass.cumulativePerformanceReturns[0].dec = None
+.fundData.shareClass.cumulativePerformanceReturns[0].annualizedDistributionRate = None
+.fundData.shareClass.cumulativePerformanceReturns[0].monthlyBenchmarkDataNull = False
+.fundData.shareClass.cumulativePerformanceReturns[0].quarterlyBenchmarkDataNull = False
+.fundData.shareClass.cumulativePerformanceReturns[0].yearlyBenchmarkDataNull = False
+.fundData.shareClass.annualizedPerformanceReturns [list len=0]
+.fundData.shareClass.performanceSummaryReturns = None
+.fundData.shareClass.morningstarRating [list len=5]
+.fundData.shareClass.morningstarRating[0].periodIndicator = '3YR'
+.fundData.shareClass.morningstarRating[0].rankNumber = 3
+.fundData.shareClass.morningstarRating[0].peerGroupCount = 225
+.fundData.shareClass.morningstarRating[0].groupPercentile = None
+.fundData.shareClass.morningstarRating[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.morningstarRatingEffectiveDate = '2026-08-31'
+.fundData.shareClass.fundShareClassValuationDate = '2026-09-18'
+.fundData.shareClass.morningstarRatingCategory = 'Ultrashort Bond'
+.fundData.shareClass.morningstarRanking [list len=3]
+.fundData.shareClass.morningstarRanking[0].periodIndicator = '3YR'
+.fundData.shareClass.morningstarRanking[0].rankNumber = 125
+.fundData.shareClass.morningstarRanking[0].peerGroupCount = 225
+.fundData.shareClass.morningstarRanking[0].groupPercentile = 52.0
+.fundData.shareClass.morningstarRanking[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.morningstarRankingEffectiveDate = '2026-08-31'
+.fundData.shareClass.morningstarRankingCategory = 'Ultrashort Bond'
+.fundData.shareClass.lipperRating [list len=0]
+.fundData.shareClass.lipperRatingEffectiveDate = None
+.fundData.shareClass.lipperRatingCategory = None
+.fundData.shareClass.dailyDividendFactor = None
+.fundData.shareClass.taxAwareFlag = 'no'
+.fundData.shareClass.identifier = '4342A6F7DA244A65E053A9B759A98FF9'
+.fundData.shareClass.htmlCommentaries = None
+.fundData.shareClass.saleCharge = 0.0
+.fundData.shareClass.calendarYearBenchmarkReturns [list len=1]
+.fundData.shareClass.calendarYearBenchmarkReturns[0].performanceFactor = 'ICE BofA 3-Month US Treasury Bill Index'
+.fundData.shareClass.calendarYearBenchmarkReturns[0].translationKey = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].performanceFactorTranslationMap = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].benchmarkIdentifier = '4342A6F7DEA24A65E053A9B759A98FF9'
+.fundData.shareClass.calendarYearBenchmarkReturns[0].oneMonth = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].threeMonths = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sixMonths = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].ytd = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].oneYear = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].threeYears = 0.0187
+.fundData.shareClass.calendarYearBenchmarkReturns[0].fiveYears = 0.0067
+.fundData.shareClass.calendarYearBenchmarkReturns[0].inception = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].tenYears = 0.0418
+.fundData.shareClass.calendarYearBenchmarkReturns[0].fifteenYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].effectiveDate = '2026-08-31'
+.fundData.shareClass.calendarYearBenchmarkReturns[0].twoYears = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].fourYears = 0.0228
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sixYears = 0.0005
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sevenYears = 0.0147
+.fundData.shareClass.calendarYearBenchmarkReturns[0].eightYears = 0.0505
+.fundData.shareClass.calendarYearBenchmarkReturns[0].nineYears = 0.0525
+.fundData.shareClass.calendarYearBenchmarkReturns[0].jan = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].feb = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].mar = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].apr = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].may = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].jun = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].jul = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].aug = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].sep = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].oct = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].nov = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].dec = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].annualizedDistributionRate = None
+.fundData.shareClass.calendarYearBenchmarkReturns[0].monthlyBenchmarkDataNull = False
+.fundData.shareClass.calendarYearBenchmarkReturns[0].quarterlyBenchmarkDataNull = False
+.fundData.shareClass.calendarYearBenchmarkReturns[0].yearlyBenchmarkDataNull = False
+.fundData.shareClass.statusTypeCode = 'O-O'
+.fundData.shareClass.intraDayNav = None
+.fundData.shareClass.morningstarOverallRating.morningstarAnalystRatingIndicator = None
+.fundData.shareClass.morningstarOverallRating.fundShareclassIndustryRatingDate = '2026-04-30'
+.fundData.shareClass.morningstarOverallRating.peerGroupName = 'Ultrashort Bond'
+.fundData.shareClass.morningstarOverallRating.value = 0
+.fundData.shareClass.morningstarOverallRating.morningstarMedalistRatingIndicator = 'G'
+.fundData.shareClass.morningstarOverallRating.analystDrivenPercentage = 100
+.fundData.shareClass.morningstarOverallRating.dataCoveragePercentage = 100
+.fundData.shareClass.emeaFundShareclass = None
+.fundData.shareClass.renderPerformanceCard = True
+.fundData.shareClass.nonFairNav.nonFairValueNAVDate = None
+.fundData.shareClass.nonFairNav.nonFairValueNAVPrice = None
+.fundData.shareClass.nonFairNav.currencyCode = None
+.fundData.shareClass.threePMNav.nonFairValueNAVDate = None
+.fundData.shareClass.threePMNav.nonFairValueNAVPrice = None
+.fundData.shareClass.threePMNav.currencyCode = None
+.fundData.shareClass.ukReportingIndicator = None
+.fundData.shareClass.hedgedShareclassIndicator = None
+.fundData.shareClass.settlementCycleRedemptionName = None
+.fundData.riskLevel = None
+.fundData.visibleData.visibleCharts [list len=3]
+.fundData.visibleData.visibleFundFacts [list len=6]
+.fundData.visibleData.visibleFundStats [list len=25]
+.fundData.visibleData.visibleFinancialCalendar [list len=0]
+.fundData.visibleData.visibleDataPoints [list len=57]
+.fundData.visibleData.visibleTopHoldings [list len=5]
+.fundData.visibleData.visibleUnderlyingHoldings [list len=0]
+.fundData.visibleData.visibleProxyHoldings [list len=0]
+.fundData.visibleData.visiblePerformanceCardTabs [list len=5]
+.fundData.visibleData.visibleRegionalDataPoint [list len=0]
+.fundData.visibleData.visibleCards = None
+.fundData.visibleData.visiblePortfolioCards [list len=87]
+.fundData.visibleData.formattingRules [list len=7]
+.fundData.shareclassAllList = None
+.fundData.fundIndustryCreditRatings [list len=0]
+.fundData.objective = 'The Fund seeks to provide current income while seeking to maintain a low volatility of principal.'
+.fundData.investmentObjective = None
+.fundData.investmentApproach = None
+.fundData.investmentPolicy = None
+.fundData.riskProfile = None
+## hist-jepi
+.historicalIntraDayNAVList = None
+.historicalNAVList = None
+.historicalETFNAVMarketPriceList [list len=1590]
+.historicalETFNAVMarketPriceList[0].date = '2020-05-21'
+.historicalETFNAVMarketPriceList[0].time = None
+.historicalETFNAVMarketPriceList[0].marketValueNavPrice = 50.02
+.historicalETFNAVMarketPriceList[0].navPrice = 49.86959623
+.historicalETFNAVMarketPriceList[0].epochDate = 1590019200000
+.historicalETFNAVMarketPriceList[0].periodTypeCode = None
+.historicalETFNAVMarketPriceList[0].currentQuarter = 'Q3'
+.historicalNAVListRebasedY = None
+.historicalShareclassPriceList = None
+.historicalIntradayDownloadNAVList = None
+.quarterlyPerformanceReturns [list len=4]
+.quarterlyPerformanceReturns[0].performanceFactor = 'At NAV'
+.quarterlyPerformanceReturns[0].translationKey = 'pdp-performance-tab-at-nav-label'
+.quarterlyPerformanceReturns[0].performanceFactorTranslationMap = None
+.quarterlyPerformanceReturns[0].benchmarkIdentifier = None
+.quarterlyPerformanceReturns[0].oneMonth = 0.0153
+.quarterlyPerformanceReturns[0].threeMonths = 0.0188
+.quarterlyPerformanceReturns[0].sixMonths = None
+.quarterlyPerformanceReturns[0].ytd = 0.022
+.quarterlyPerformanceReturns[0].oneYear = 0.0777
+.quarterlyPerformanceReturns[0].threeYears = 0.0899
+.quarterlyPerformanceReturns[0].fiveYears = 0.0747
+.quarterlyPerformanceReturns[0].inception = 0.1103
+.quarterlyPerformanceReturns[0].tenYears = None
+.quarterlyPerformanceReturns[0].fifteenYears = None
+.quarterlyPerformanceReturns[0].effectiveDate = '2026-06-30'
+.quarterlyPerformanceReturns[0].twoYears = None
+.quarterlyPerformanceReturns[0].fourYears = None
+.quarterlyPerformanceReturns[0].sixYears = None
+.quarterlyPerformanceReturns[0].sevenYears = None
+.quarterlyPerformanceReturns[0].eightYears = None
+.quarterlyPerformanceReturns[0].nineYears = None
+.quarterlyPerformanceReturns[0].jan = None
+.quarterlyPerformanceReturns[0].feb = None
+.quarterlyPerformanceReturns[0].mar = None
+.quarterlyPerformanceReturns[0].apr = None
+.quarterlyPerformanceReturns[0].may = None
+.quarterlyPerformanceReturns[0].jun = None
+.quarterlyPerformanceReturns[0].jul = None
+.quarterlyPerformanceReturns[0].aug = None
+.quarterlyPerformanceReturns[0].sep = None
+.quarterlyPerformanceReturns[0].oct = None
+.quarterlyPerformanceReturns[0].nov = None
+.quarterlyPerformanceReturns[0].dec = None
+.quarterlyPerformanceReturns[0].annualizedDistributionRate = None
+.quarterlyPerformanceReturns[0].monthlyBenchmarkDataNull = False
+.quarterlyPerformanceReturns[0].quarterlyBenchmarkDataNull = False
+.quarterlyPerformanceReturns[0].yearlyBenchmarkDataNull = False
+.historicalCalendarYearPerformanceReturn.labels [list len=10]
+.historicalCalendarYearPerformanceReturn.performanceData [list len=4]
+.historicalCalendarYearPerformanceReturn.performanceData[0].performanceFactor = 'At NAV'
+.historicalCalendarYearPerformanceReturn.performanceData[0].translationKey = 'pdp-performance-tab-at-nav-label'
+.historicalCalendarYearPerformanceReturn.performanceData[0].performanceFactorTranslationMap = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].benchmarkIdentifier = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].oneMonth = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].threeMonths = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].sixMonths = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].ytd = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].oneYear = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].threeYears = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].fiveYears = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].inception = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].tenYears = 0.0807
+.historicalCalendarYearPerformanceReturn.performanceData[0].fifteenYears = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].effectiveDate = '2025-12-31'
+.historicalCalendarYearPerformanceReturn.performanceData[0].twoYears = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].fourYears = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].sixYears = 0.2161
+.historicalCalendarYearPerformanceReturn.performanceData[0].sevenYears = -0.0354
+.historicalCalendarYearPerformanceReturn.performanceData[0].eightYears = 0.0988
+.historicalCalendarYearPerformanceReturn.performanceData[0].nineYears = 0.1256
+.historicalCalendarYearPerformanceReturn.performanceData[0].jan = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].feb = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].mar = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].apr = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].may = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].jun = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].jul = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].aug = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].sep = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].oct = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].nov = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].dec = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].annualizedDistributionRate = None
+.historicalCalendarYearPerformanceReturn.performanceData[0].monthlyBenchmarkDataNull = False
+.historicalCalendarYearPerformanceReturn.performanceData[0].quarterlyBenchmarkDataNull = False
+.historicalCalendarYearPerformanceReturn.performanceData[0].yearlyBenchmarkDataNull = False
+.historicalCalendarYearPerformanceReturn.rawCalendarYearPerformanceList = None
+.historicalCalendarYearPerformanceReturn.rawBenchmarkCalendarYearReturn = None
+.monthByMonthPerformanceReturns [list len=0]
+.fundValuationHistoryList = None
+.fundValuationList = None
+.shareclassValuationTwelveMonthHistoryList = None
+.netInflowOutflowForChartList = None
+.dividendsDistributionHistoryList [list len=12]
+.dividendsDistributionHistoryList[0].dividendAmount = 0.37142
+.dividendsDistributionHistoryList[0].capitalGainShortTerm = None
+.dividendsDistributionHistoryList[0].capitalGainLongTerm = None
+.dividendsDistributionHistoryList[0].reinvestNavPr = '56.98145298'
+.dividendsDistributionHistoryList[0].navPrice = None
+.dividendsDistributionHistoryList[0].exDate = '2026-09-01'
+.dividendsDistributionHistoryList[0].recordDate = '2026-09-01'
+.dividendsDistributionHistoryList[0].payDate = '2026-09-03'
+.dividendsDistributionHistoryList[0].distributionTypeCode = 'DVDYLD'
+.dividendsDistributionHistoryList[0].capitalGain = None
+.dividendsDistributionHistoryList[0].distributionPeriodIncomeProportionPercentage = None
+.dividendsDistributionHistoryList[0].distributionPeriodCapitalProportionPercentage = None
+.dividendsDistributionHistoryList[0].distributionYearIncomeProportionPercentage = None
+.dividendsDistributionHistoryList[0].distributionYearCapitalProportionPercentage = None
+.dividendsDistributionHistoryList[0].annualizedDividendYieldPercentage = None
+.dividendsDistributionHistoryList[0].cumulativeNoLoadPercentage = None
+.dividendsDistributionHistoryList[0].currentRateOfReturn = None
+.dividendsDistributionHistoryList[0].dividendRate = None
+.dividendsDistributionHistoryList[0].reinvestmentNavPriceDate = None
+.dividendsDistributionHistoryList[0].annualizedDividendYieldF2Percentage = None
+.dividendsDistributionHistoryList[0].currentDividendRationPercentage = None
+.dividendsDistributionHistoryList[0].calculatedPeriod = None
+.latestAvailableDistributionHistory = None
+.latestAvailableHistoricalNAV = None
+.capitalGainsDistributionHistoryList [list len=0]
+.performanceDataForChart [list len=76]
+.performanceDataForChart[0].date = '2020-05-31'
+.performanceDataForChart[0].cumulativeNoLoadPercentage = 0.02280000038444996
+.performanceDataForChart[0].sharePricePercentageReturn = 0.0
+.performanceDataForChart[0].shareclassNAV = 0.0
+.performanceDataForChart[0].benchmarkPrice = None
+.performanceDataForChart[0].epochDate = 1590883200000
+.performanceDataForChart[0].benchmarkCumulativeTrailingReturnPercentage = None
+.thirtyDayAverageYieldPerformanceReturn = None
+.premiumDiscountPeriodList [list len=3]
+.premiumDiscountPeriodList[0].premiumDiscountPeriodIdentifier = '5B21A58FD0239155E0630100007F7845'
+.premiumDiscountPeriodList[0].premiumDiscountPeriodTypeCode = 'Q2'
+.premiumDiscountPeriodList[0].reportDate = '2026-09-10'
+.premiumDiscountPeriodList[0].premiumDiscountPeriodDayCount = 62
+.premiumDiscountPeriodList[0].maximumPremiumPercentage = 0.08
+.premiumDiscountPeriodList[0].maximumPremiumValuationDate = '2026-05-01'
+.premiumDiscountPeriodList[0].minimumDiscountPercentage = -0.22
+.premiumDiscountPeriodList[0].minimumDiscountValuationDate = '2026-06-26'
+.premiumDiscountPeriodList[0].premiumDiscountPeriodStartDate = '2026-04-01'
+.premiumDiscountPeriodList[0].premiumDiscountPeriodEndDate = '2026-06-30'
+.premiumDiscountPeriodList[0].premiumDayCount = 40
+.premiumDiscountPeriodList[0].discountDayCount = 22
+.premiumDiscountPeriodList[0].premiumDiscountPeriodRangeList [list len=10]
+.premiumDiscountPeriodList[0].premiumDiscountPeriodRangeList[0].premiumDiscountPeriodIdentifier = '5B21A58FD0239155E0630100007F7845'
+.premiumDiscountPeriodList[0].premiumDiscountPeriodRangeList[0].premiumDiscountRangeTypeCode = 'NEARZERO'
+.premiumDiscountPeriodList[0].premiumDiscountPeriodRangeList[0].order = -1
+.premiumDiscountPeriodList[0].premiumDiscountPeriodRangeList[0].premiumDiscountRangeDayCount = 62
+.premiumDiscountPeriodList[0].premiumDiscountPeriodRangeList[0].premiumDiscountRangeDayPercentage = 1.0
+.fundShareclassWamWalList = None
+.historicalETFClosingPriceList [list len=1591]
+.historicalETFClosingPriceList[0].fundShareclassPriceDate = '2020-05-20'
+.historicalETFClosingPriceList[0].premiumDiscountPercentage = 0.0
+.historicalETFClosingPriceList[0].periodTypeCode = None
+.historicalETFClosingPriceList[0].navPrice = 50.0
+.historicalETFClosingPriceList[0].verifiedIntraDayValue = None
+.historicalETFClosingPriceList[0].date = '2020-05-20'
+.historicalETFClosingPriceList[0].marketValueNavPrice = 50.0
+.historicalETFClosingPriceList[0].currentQuarter = 'Q3'
+.historicalBiMonthlyBonusList = None
+.dailyPerformanceData = None
+.fundShareclassBenchmarkHistoryList = None
+.containsBelgianTisRates = False
+.monthlyPerformanceReturns = None
+.historicalPerformanceScenarios = None
+.historicalHoldings = None
+.fundTypeCode = 'N_ETF'
+.error = None
+.fundDistribution = None
+.cachedForCountry = 'us'
+.cachedForRole = 'institutional'
+.holdingAvailableDates = None
+.pricingCompositionHistoryList = None
+.m12Details = None
+## basic-jepi
+.currencyMapping = None
+.visibleData.visibleCharts [list len=3]
+.visibleData.visibleFundFacts [list len=6]
+.visibleData.visibleFundStats [list len=25]
+.visibleData.visibleFinancialCalendar [list len=0]
+.visibleData.visibleDataPoints [list len=57]
+.visibleData.visibleTopHoldings [list len=5]
+.visibleData.visibleUnderlyingHoldings [list len=0]
+.visibleData.visibleProxyHoldings [list len=0]
+.visibleData.visiblePerformanceCardTabs [list len=5]
+.visibleData.visibleRegionalDataPoint [list len=0]
+.visibleData.visibleCards = None
+.visibleData.visiblePortfolioCards [list len=83]
+.visibleData.formattingRules [list len=7]
+.headerTicker = 'JEPI'
+.currencyCode = 'USD'
+.error = None
+## py-etf
+not json: Expecting value: line 1 column 1 (char 0)
 done
