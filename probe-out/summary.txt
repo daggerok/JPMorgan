@@ -1,0 +1,474 @@
+==================================================================
+### early-nav
+URL: https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/supplemental/early-nav-report/jpm-early-nav-etf.csv
+exit=0 size=11089
+HTTP/1.1 200 OK
+Content-Type: application/xlxs;charset=utf-8
+X-Dispatcher: dispatcher2useast1-29817863
+X-Vhost: am.jpmorgan.com
+Content-Disposition: attachment
+X-Frame-Options: SAMEORIGIN
+X-User-Type: External
+magic: 446174652c204675
+head:
+Date, Fund Name, Ticker, CUSIP, NAV, Previous NAV, NAV Change, % OF NAV Change, Net Assets, Shares Outstanding, Distribution Factor, ST Cap Gains, LT Cap Gains
+2026-09-18,JPMorgan 100% U.S. Treasury Securities Money Market ETF,JMMF,46654Q542,100.11,100.15,-0.04,-0.04,92100940.36,920000.00,0.06,,
+2026-09-18,JPMorgan Active Bond ETF,JBND,46654Q716,51.71,51.91,-0.20,-0.39,8695470627.86,168150000.00,,,
+2026-09-18,JPMorgan Active China ETF,JCHI,46654Q880,52.65,52.39,0.26,0.50,14479590.95,275000.00,,,
+2026-09-18,JPMorgan Active Developing Markets Equity ETF,JADE,46654Q690,79.42,79.17,0.25,0.32,31769
+==================================================================
+### holdings-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=26989
+HTTP/1.1 200 OK
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''JPMorgan-Equity-Premium-Income-ETF-ETF-Shares-Holdings-09-18-2026.xlsx
+x-haproxy-backend-time-ms: 343
+x-haproxy-backend-time-ms: 488
+x-haproxy-request-time-us: 1789858461862678
+x-haproxy-request-time-us: 1789858461891077
+x-stk-waf: V2
+x-trace-id: 4cb14e892268c79732fbe5000e89fb9c
+x-vcap-request-id: c04f137a-3a91-4da6-580d-e3a7a0652892
+x-haproxy-backend-time-ms: 496
+x-haproxy-request-time-us: 1789858461893680
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 570
+X-User-Type: External
+magic: 504b030414000808
+head:
+PK..........3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
+..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK..........3]................[Content_Types].xml...n.0.E.%..J.]TUE`...E*........1...8@%(HT..........heM.........+.I.....c.R....pJ...f...p0Y...J...M)<p...+....)..V$:.).B....m.w..w.\*S....'h....qs.[.L...
+0e....7...~.F.`....|..A.r...`:..:.......Y...|..7.e.
+...7.....[*. wU.......m....UXj..<&.9...a.."}....x...kU.Kzm..+
+==================================================================
+### holdings-xlsx-noua
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=26989
+HTTP/1.1 200 OK
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''JPMorgan-Equity-Premium-Income-ETF-ETF-Shares-Holdings-09-18-2026.xlsx
+x-haproxy-backend-time-ms: 343
+x-haproxy-backend-time-ms: 488
+x-haproxy-request-time-us: 1789858461862678
+x-haproxy-request-time-us: 1789858461891077
+x-stk-waf: V2
+x-trace-id: 4cb14e892268c79732fbe5000e89fb9c
+x-vcap-request-id: c04f137a-3a91-4da6-580d-e3a7a0652892
+x-haproxy-backend-time-ms: 496
+x-haproxy-request-time-us: 1789858461893680
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 570
+X-User-Type: External
+magic: 504b030414000808
+head:
+PK..........3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
+..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK..........3]................[Content_Types].xml...n.0.E.%..J.]TUE`...E*........1...8@%(HT..........heM.........+.I.....c.R....pJ...f...p0Y...J...M)<p...+....)..V$:.).B....m.w..w.\*S....'h....qs.[.L...
+0e....7...~.F.`....|..A.r...`:..:.......Y...|..7.e.
+...7.....[*. wU.......m....UXj..<&.9...a.."}....x...kU.Kzm..+
+==================================================================
+### holdings-csv
+URL: https://am.jpmorgan.com/FundsMarketingHandler/csv?type=dailyETFHoldings&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=298
+HTTP/1.1 404 Not Found
+Content-Type: text/html;charset=UTF-8
+x-stk-waf: V2
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-envoy-upstream-service-time: 127
+X-User-Type: External
+magic: 416e206572726f72
+head:
+An error occurred while processing your request: 404 Not Found on GET request for "https://digitalmarketing-ifa-app-proxy.prod.gaiacloud.jpmchase.net/FundsMarketingHandler/csv": "{"detail":"No static resource csv.","instance":"/csv","properties":null,"status":404,"title":"Not Found","type":null}"
+
+==================================================================
+### holdings-json
+URL: https://am.jpmorgan.com/FundsMarketingHandler/json?type=dailyETFHoldings&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=301
+HTTP/1.1 404 Not Found
+Content-Type: text/html;charset=UTF-8
+x-stk-waf: V2
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-envoy-upstream-service-time: 158
+X-User-Type: External
+magic: 416e206572726f72
+head:
+An error occurred while processing your request: 404 Not Found on GET request for "https://digitalmarketing-ifa-app-proxy.prod.gaiacloud.jpmchase.net/FundsMarketingHandler/json": "{"detail":"No static resource json.","instance":"/json","properties":null,"status":404,"title":"Not Found","type":null}"
+
+==================================================================
+### holdings-bond-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q837&country=us&role=adv&locale=en-US
+exit=0 size=99975
+HTTP/1.1 200 OK
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''JPMorgan-Ultra-Short-Income-ETF-ETF-Shares-Holdings-09-18-2026.xlsx
+x-haproxy-backend-time-ms: 327
+x-haproxy-backend-time-ms: 455
+x-haproxy-request-time-us: 1789858468140057
+x-haproxy-request-time-us: 1789858468163318
+x-stk-waf: V2
+x-trace-id: a069e0b8e94a5bcefed8f9001a433c5d
+x-vcap-request-id: cefce068-cd59-4103-71da-e4c48acfe6a9
+x-haproxy-backend-time-ms: 463
+x-haproxy-request-time-us: 1789858468166517
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 520
+X-User-Type: External
+magic: 504b030414000808
+head:
+PK..........3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
+..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK..........3]................[Content_Types].xml...n.0.E.%..J.]TUE`...E*........1...8@%(HT..........heM.........+.I.....c.R....pJ...f...p0Y...J...M)<p...+....)..V$:.).B....m.w..w.\*S....'h....qs.[.L...
+0e....7...~.F.`....|..A.r...`:..:.......Y...|..7.e.
+...7.....[*. wU.......m....UXj..<&.9...a.."}....x...kU.Kzm..+
+==================================================================
+### holdings-mmf-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q542&country=us&role=adv&locale=en-US
+exit=0 size=17878
+HTTP/1.1 200 OK
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''JPMorgan-100%25-U.S.-Treasury-Securities-Money-Market-ETF-ETF-Shares-Holdings-09-18-2026.xlsx
+x-haproxy-backend-time-ms: 149
+x-haproxy-backend-time-ms: 164
+x-haproxy-request-time-us: 1789858468965847
+x-haproxy-request-time-us: 1789858468968938
+x-stk-waf: V2
+x-trace-id: 98d525aea452282a7476f7dedfec1db0
+x-vcap-request-id: e416fa1c-5586-4ee6-68d1-e7cd15e47bb4
+x-haproxy-backend-time-ms: 168
+x-haproxy-request-time-us: 1789858468970982
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 203
+X-User-Type: External
+magic: 504b030414000808
+head:
+PK..........3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
+..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK..........3]................[Content_Types].xml...n.0.E.%..J.]TUE`...E*........1...8@%(HT..........heM.........+.I.....c.R....pJ...f...p0Y...J...M)<p...+....)..V$:.).B....m.w..w.\*S....'h....qs.[.L...
+0e....7...~.F.`....|..A.r...`:..:.......Y...|..7.e.
+...7.....[*. wU.......m....UXj..<&.9...a.."}....x...kU.Kzm..+
+==================================================================
+### histnav-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q332&country=us&role=adv&locale=en-US&fromDate=2020-05-20&toDate=2026-09-19
+exit=0 size=43796
+HTTP/1.1 200 OK
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''ETF-NAV-and-Market-Price-(As%20of%20-09-19-2026).xlsx
+x-haproxy-backend-time-ms: 664
+x-haproxy-backend-time-ms: 808
+x-haproxy-request-time-us: 178985847013851
+x-haproxy-request-time-us: 178985847035352
+x-stk-waf: V2
+x-trace-id: b343564661723f03dffbde0689040a29
+x-vcap-request-id: 9e6ab1f8-7cc4-4f9f-4cc4-4e38151442e7
+x-haproxy-backend-time-ms: 817
+x-haproxy-request-time-us: 178985847039046
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 860
+X-User-Type: External
+magic: 504b030414000808
+head:
+PK..........3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
+..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK..........3]................[Content_Types].xml.S.n.0.....*6.PU..C......\{.X.%....].8.R.
+q.cfgfW.d.q.ZCB.|..|.*.*h...},^.{Va.^K.<4..6.N...XQ....9..!P..$.......d.c.D.j);.....P.g...E.M'O........H7L.h...R...G..^.'...{.....z.....B..3.......h..h.W...F..j...CQ........}..L.U:..D......%......,.B....[..... ;.....{N..~..X.
+==================================================================
+### perfchart-xlsx
+URL: https://am.jpmorgan.com/FundsMarketingHandler/excel?type=performanceChart&cusip=46641Q332&country=us&role=adv&locale=en-US
+exit=0 size=6963
+HTTP/1.1 200 OK
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8
+content-disposition: attachment; filename*=UTF-8''Growth%20Of%20Hypothetical%20Investment-46641Q332-(AS-OF-08-31-2026).xlsx
+x-haproxy-backend-time-ms: 624
+x-haproxy-backend-time-ms: 787
+x-haproxy-request-time-us: 1789858471228334
+x-haproxy-request-time-us: 1789858471256922
+x-stk-waf: V2
+x-trace-id: b893cf57cd539517a14b6fd8c0eba24f
+x-vcap-request-id: 8f64ef65-81c6-4901-487d-5a1b4ec80208
+x-haproxy-backend-time-ms: 794
+x-haproxy-request-time-us: 1789858471259886
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-envoy-upstream-service-time: 829
+X-User-Type: External
+magic: 504b030414000808
+head:
+PK..........3]................_rels/.rels...j.0.._...8.`.Q..2.m...4[ILb........[K
+..($}...v?.I.Q....u...h....x>=..@...p.H.".~.}...n....*"...H............8..Z.^'.#..7m{..O..3....G..u.....'..y|a......D.......l_.EY........vql.3.ML..eh....*.....\3.Y0...oJ.....:...^.....}.PK....z.....I...PK..........3]................[Content_Types].xml.S.n.0.....*6.PU..C......\{.X.%....].8.R.
+q.cfgfW.d.q.ZCB.|..|.*.*h...},^.{Va.^K.<4..6.N...XQ....9..!P..$.......d.c.D.j);.....P.g...E.M'O........H7L.h...R...G..^.'...{.....z.....B..3.......h..h.W...F..j...CQ........}..L.U:..D......%......,.B....[..... ;.....{N..~..X.
+==================================================================
+### fundpage
+URL: https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332
+exit=0 size=231027
+HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+X-Dispatcher: dispatcher2useast1-29817863
+X-User-Type: External
+X-Frame-Options: SAMEORIGIN
+X-Vhost: am.jpmorgan.com
+magic: 0a20203c21444f43
+head:
+
+  <!DOCTYPE HTML>
+  
+  
+  
+  <html lang="en-US">
+
+  <head>
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <meta content="UEgzQAQUVvl5ylECkxr9zhGU19brVYyHBFJ-u_avkXc" name="google-site-verification"/>
+    <meta name="clr" content="americas, us, en, adv"/>
+
+    <meta name="debugPDP" getrequestResolver="true" request.pathInfo="/content/jpm-am-aem/americas/us/en/adv/products/dynamic-pdp.productpage.46641q332.html" currentPag
+==================================================================
+### explorer
+URL: https://am.jpmorgan.com/us/en/asset-management/adv/products/fund-explorer/etf
+exit=0 size=754194
+HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+X-Dispatcher: dispatcher1useast1-29817863
+X-User-Type: External
+X-Frame-Options: SAMEORIGIN
+X-Vhost: am.jpmorgan.com
+magic: 0a20203c21444f43
+head:
+
+  <!DOCTYPE HTML>
+  
+  
+  
+  <html lang="en-US">
+
+  <head>
+    
+    
+    
+    
+    
+    
+    
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <meta content="UEgzQAQUVvl5ylECkxr9zhGU19brVYyHBFJ-u_avkXc" name="google-site-verification"/>
+    <meta name="clr" content="americas, us, en, adv"/>
+
+    <meta name="debugPDP" getrequestResolver="true" request.pathInfo="/content/jpm-am-aem/americas/us/en/adv/products/fund-explorer.html" currentPage.path="/content/jpm-am-aem/americ
+==================================================================
+### sec-tickers-mf
+URL: https://www.sec.gov/files/company_tickers_mf.json
+exit=0 size=1232363
+HTTP/2 200 
+server: nginx
+content-type: application/json
+x-content-type-options: nosniff
+x-request-id: v-466712d6-b381-11f1-973b-9f72d70e07f2
+x-ah-environment: prod
+x-cache-hits: 6
+x-age: 83
+magic: 7b226669656c6473
+head:
+{"fields":["cik","seriesId","classId","symbol"],"data":[[2110,"S000009184","C000024954","LACAX"],[2110,"S000009184","C000024956","LIACX"],[2110,"S000009184","C000024957","ACRNX"],[2110,"S000009184","C000122736","CRBRX"],[2110,"S000009184","C000122737","CRBYX"],[2110,"S000009184","C000251059","ACRSX"],[2110,"S000009185","C000024958","LAIAX"],[2110,"S000009185","C000024961","ACINX"],[2110,"S000009185","C000097733","CAIRX"],[2110,"S000009185","C000122739","CCYIX"],[2110,"S000009185","C000251060","CCIDX"],[2110,"S000009188","C000024970","LAFAX"],[2110,"S000009188","C000024973","ACFFX"],[2110,"S000
+==================================================================
+### sec-submissions
+URL: https://data.sec.gov/submissions/CIK0001485894.json
+exit=0 size=190392
+HTTP/2 200 
+x-amzn-requestid: d4ae0472-366d-457a-baa2-4c94d88bb9a3
+x-amz-apigw-id: D9_ahGWloAMErZw=
+x-amzn-trace-id: Root=1-6aaf12a9-a5f9a63a961c696817b3702e
+content-type: application/json
+magic: 7b2263696b223a22
+head:
+{"cik":"0001485894","entityType":"investment","sic":"","sicDescription":"","ownerOrg":"","insiderTransactionForOwnerExists":0,"insiderTransactionForIssuerExists":0,"name":"J.P. Morgan Exchange-Traded Fund Trust","tickers":[],"exchanges":[],"ein":"000000000","lei":null,"description":"","website":"","investorWebsite":"","category":"","fiscalYearEnd":null,"stateOfIncorporation":"DE","stateOfIncorporationDescription":"DE","addresses":{"mailing":{"street1":"390 MADISON AVENUE","street2":null,"city":"NEW YORK","stateOrCountry":"NY","zipCode":"10017","stateOrCountryDescription":"NY","isForeignLocatio
+==================================================================
+### yahoo-chart
+URL: https://query1.finance.yahoo.com/v8/finance/chart/JEPI?range=1mo&interval=1d&events=div
+exit=0 size=19
+HTTP/2 429 
+server: ATS
+content-type: text/html
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+magic: 546f6f204d616e79
+head:
+Too Many Requests.
+
+==================================================================
+### yahoo-chart2
+URL: https://query2.finance.yahoo.com/v8/finance/chart/JEPI?range=5d&interval=1d&events=div
+exit=0 size=19
+HTTP/2 429 
+server: ATS
+content-type: text/html
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+magic: 546f6f204d616e79
+head:
+Too Many Requests.
+
+==================================================================
+### fund page analysis
+--- key phrases ---
+Fund Inception Date: 0
+Dividend Schedule: 0
+Ex-Date: 0
+dailyETFHoldings: 0
+Performance - MONTHLY: 0
+30 Day SEC Yield: 0
+12-Month Rolling Dividend Yield: 1
+Number of Holdings: 0
+Exchange: 1
+Benchmark: 1
+portfolio: 22
+holdings-table: 0
+data-cusip: 0
+fundType: 6
+--- script srcs ---
+<script src="https://www.chase.com/apps/chase/clientlibs/foundation/scripts/Reporting.js"
+<script src="https://assets.adobedtm.com/891af3a4d65f/0c36b2d108e7/launch-4b4527f8a939.min.js"
+<script type="text/javascript" src="//cdn.evgnet.com/beacon/k556555555563cz3w23n3n3x2754245/mcp_prod/scripts/evergage.min.js"
+<script src="/FundsMarketingHandler/javascript/intlshim.js"
+<script type="text/javascript" src="/FundsMarketingHandler/javascript/fundsmarketingloader-new.js?1"
+--- explorer analysis ---
+6
+products/jpmorgan-100-u-s-treasury-securities-money-market-etf-etf-shares-46654q542
+products/jpmorgan-core-plus-bond-etf-etf-shares-46641q670
+products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332
+products/jpmorgan-income-etf-etf-shares-46641q159
+products/jpmorgan-short-duration-core-plus-etf-etf-shares-46641q274
+products/jpmorgan-ultra-short-municipal-income-etf-etf-shares-46641q654
+--- xlsx inner files ---
+## holdings-xlsx
+Archive:  holdings-xlsx.bin
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      585  2026-09-19 22:54   _rels/.rels
+     1224  2026-09-19 22:54   [Content_Types].xml
+      183  2026-09-19 22:54   docProps/app.xml
+      432  2026-09-19 22:54   docProps/core.xml
+      992  2026-09-19 22:54   xl/drawings/drawing1.xml
+      290  2026-09-19 22:54   xl/drawings/_rels/drawing1.xml.rels
+     6172  2026-09-19 22:54   xl/media/image1.jpeg
+    15593  2026-09-19 22:54   xl/sharedStrings.xml
+    58605  2026-09-19 22:54   xl/styles.xml
+      351  2026-09-19 22:54   xl/workbook.xml
+      563  2026-09-19 22:54   xl/_rels/workbook.xml.rels
+    92125  2026-09-19 22:54   xl/worksheets/sheet1.xml
+      296  2026-09-19 22:54   xl/worksheets/_rels/sheet1.xml.rels
+---------                     -------
+   177411                     13 files
+## histnav-xlsx
+Archive:  histnav-xlsx.bin
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      585  2026-09-19 22:54   _rels/.rels
+     1052  2026-09-19 22:54   [Content_Types].xml
+      183  2026-09-19 22:54   docProps/app.xml
+      432  2026-09-19 22:54   docProps/core.xml
+    42347  2026-09-19 22:54   xl/sharedStrings.xml
+     2147  2026-09-19 22:54   xl/styles.xml
+      367  2026-09-19 22:54   xl/workbook.xml
+      563  2026-09-19 22:54   xl/_rels/workbook.xml.rels
+   230653  2026-09-19 22:54   xl/worksheets/sheet1.xml
+---------                     -------
+   278329                     9 files
+## perfchart-xlsx
+Archive:  perfchart-xlsx.bin
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      585  2026-09-19 22:54   _rels/.rels
+     1052  2026-09-19 22:54   [Content_Types].xml
+      183  2026-09-19 22:54   docProps/app.xml
+      432  2026-09-19 22:54   docProps/core.xml
+     7807  2026-09-19 22:54   xl/sharedStrings.xml
+     2806  2026-09-19 22:54   xl/styles.xml
+      370  2026-09-19 22:54   xl/workbook.xml
+      563  2026-09-19 22:54   xl/_rels/workbook.xml.rels
+    13690  2026-09-19 22:54   xl/worksheets/sheet1.xml
+---------                     -------
+    27488                     9 files
+## holdings-bond-xlsx
+Archive:  holdings-bond-xlsx.bin
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      585  2026-09-19 22:54   _rels/.rels
+     1224  2026-09-19 22:54   [Content_Types].xml
+      183  2026-09-19 22:54   docProps/app.xml
+      432  2026-09-19 22:54   docProps/core.xml
+      992  2026-09-19 22:54   xl/drawings/drawing1.xml
+      290  2026-09-19 22:54   xl/drawings/_rels/drawing1.xml.rels
+     6172  2026-09-19 22:54   xl/media/image1.jpeg
+    85092  2026-09-19 22:54   xl/sharedStrings.xml
+   332814  2026-09-19 22:54   xl/styles.xml
+      351  2026-09-19 22:54   xl/workbook.xml
+      563  2026-09-19 22:54   xl/_rels/workbook.xml.rels
+   540919  2026-09-19 22:54   xl/worksheets/sheet1.xml
+      296  2026-09-19 22:54   xl/worksheets/_rels/sheet1.xml.rels
+---------                     -------
+   969913                     13 files
+--- xlsx sheet text (holdings) ---
+x:
+[Content_Types].xml
+_rels
+docProps
+xl
+
+x/xl:
+_rels
+drawings
+media
+sharedStrings.xml
+styles.xml
+workbook.xml
+worksheets
+<?xml version="1.0" encoding="UTF-8"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><dimension ref="A6:R150"/><sheetViews><sheetView workbookViewId="0" tabSelected="true"/></sheetViews><sheetFormatPr defaultRowHeight="15.0"/><cols><col min="1" max="1" width="23.4375" customWidth="true"/><col min="2" max="2" width="56.0" customWidth="true"/><col min="3" max="3" width="31.0" customWidth="true"/><col min="4" max="4" width="22.0" customWidth="true"/><col min="5" max="5" width="22.0" customWidth="true"/><col min="6" max="6" width="23.0" customWidth="true"/><col min="7" max="7" width="13.0" customWidth="true"/><col min="8" max="8" width="13.0" customWidth="true"/><col min="9" max="9" width="23.0" customWidth="true"/><col min="10" max="10" width="23.0" customWidth="true"/><col min="11" max="11" width="13.0" customWidth="true"/><col min="12" max="12" width="13.0" customWidth="true"/><col min="13" max="13" width="13.0" customWidth="true"/><col min="14" max="14" width="13.0" customWidth="true"/><col min="15" max="15" width="13.0" customWidth="true"/><col min="16" max="16" width="13.0" customWidth="true"/><col min="17" max="17" width="13.0" customWidth="true"/></cols><sheetData><row r="6"><c r="A6" s="1" t="s"><v>0</v></c><c r="B6" s="2" t="s"><v>1</v></c><c r="H6" s="3" t="s"><v>2</v></c></row><row r="8" ht="45.0" customHeight="true"><c r="A8" s="4" t="s"><v>3</v></c><c r="B8" s="4" t="s"><v>4</v></c><c r="C8" s="4" t="s"><v>5</v></c><c r="D8" s="4" t="s"><v>6</v></c><c r="E8" s="4" t="s"><v>7</v></c><c r="F8" s="4" t="s"><v>8</v></c><c r="G8" s="4" t="s"><v>9</v></c><c r="H8" s="4" t="s"><v>10</v></c><c r="I8" s="4" t="s"><v>11</v></c><c r="J8" s="4" t="s"><v>12</v></c><c r="K8" s="4" t="s"><v>13</v></c><c r="L8" s="4" t="s"><v>14</v></c><c r="M8" s="4" t="s"><v>15</v></c><c r="N8" s="4" t="s"><v>16</v></c><c r="O8" s="4" t="s"><v>17</v></c><c r="P8" s="4" t="s"><v>18</v></c><c r="Q8" s="4" t="s"><v>19</v></c></row><row r="9"><c r="A9" t="s" s="5"><v>21</v></c><c r="B9" t="s" s="5"><v>22</v></c><c r="C9" t="s" s="5"><v>23</v></c><c r="D9" t="s" s="5"><v>24</v></c><c r="E9" t="s" s="5"><v>25</v></c><c r="F9" t="n" s="6"><v>8.7992237914E8</v></c><c r="G9" t="s" s="5"><v>26</v></c><c r="H9" t="s" s="5"><v>27</v></c><c r="I9" t="s" s="5"><v>28</v></c><c r="J9" t="s" s="5"><v>29</v></c><c r="K9" t="n" s="7"><v>0.0</v></c><c r="L9" t="s" s="5"><v>20</v></c><c r="M9" t="s" s="5"><v>20</v></c><c r="N9" t="s" s="5"><v>20</v></c><c r="O9" t="n" s="8"><v>0.0</v></c><c r="P9" t="s" s="5"><v>30</v></c><c r="Q9" t="s" s="5"><v>31</v></c></row><row r="10"><c r="A10" t="s" s="5"><v>32</v></c><c r="B10" t="s" s="5"><v>33</v></c><c r="C10" t="s" s="5"><v>23</v></c><c r="D10" t="s" s="5"><v>24</v></c><c r="E10" t="s" s="5"><v>34</v></c><c r="F10" t="n" s="9"><v>8.7428455003E8</v></c><c r="G10" t="s" s="5"><v>26</v></c><c r="H10" t="s" s="5"><v>27</v></c><c r="I10" t
+<?xml version="1.0" encoding="UTF-8"?>
+<sst count="3830" uniqueCount="587" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><si><t>Holdings</t></si><si><t>JPMorgan Equity Premium Income ETF - 46641Q332</t></si><si><t>As of Date: 09/18/2026</t></si><si><t>Ticker</t></si><si><t>Security Description</t></si><si><t>Security Type</t></si><si><t>Method</t></si><si><t>Shares/Par</t></si><si><t>Market Value (USD)</t></si><si><t>Country</t></si><si><t>Currency</t></si><si><t>Sector</t></si><si><t>Industry</t></si><si><t>Coupon</t></si><si><t>Maturity Date</t></si><si><t>Effective Date</t></si><si><t>Contract Size</t></si><si><t>Strike Price</t></si><si><t>% of Market Value</t></si><si><t>% of Net Assets</t></si><si><t/></si><si><t>MSFT</t></si><si><t>MICROSOFT CORP COMMON</t></si><si><t>DOMESTIC COMMON STOCK</t></si><si><t>Physical</t></si><si><t>1782013</t></si><si><t>United States</t></si><si><t>USD</t></si><si><t>Information Technology</t></si><si><t>Software</t></si><si><t>1.95%</t></si><si><t>1.94%</t></si><si><t>AAPL</t></si><si><t>APPLE INC COMMON STOCK</t></si><si><t>2601031</t></si><si><t>Computers &amp; Peripherals</t></si><si><t>1.93%</t></si><si><t>META</t></si><si><t>META PLATFORMS INC</t></si><si><t>1302859</t></si><si><t>Communication Services</t></si><si><t>Interactive Media &amp; Services</t></si><si><t>1.92%</t></si><si><t>1.91%</t></si><si><t>AMZN</t></si><si><t>AMAZON.COM INC COMMON</t></si><si><t>3343427</t></si><si><t>Consumer Discretionary</t></
+--- xlsx sheet text (histnav) ---
+_rels
+sharedStrings.xml
+styles.xml
+workbook.xml
+worksheets
+<?xml version="1.0" encoding="UTF-8"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><dimension ref="A1:D1603"/><sheetViews><sheetView workbookViewId="0" tabSelected="true"/></sheetViews><sheetFormatPr defaultRowHeight="15.0"/><cols><col min="1" max="1" width="19.53125" customWidth="true"/><col min="2" max="2" width="19.53125" customWidth="true"/><col min="3" max="3" width="19.53125" customWidth="true"/></cols><sheetData><row r="1"><c r="A1" t="s" s="1"><v>1</v></c></row><row r="2"><c r="A2" t="s" s="2"><v>2</v></c></row><row r="4"><c r="A4" t="s" s="3"><v>3</v></c><c r="B4" t="s" s="3"><v>4</v></c><c r="C4" t="s" s="3"><v>5</v></c></row><row r="5"><c r="A5" t="s" s="4"><v>6</v></c><c r="B5" t="n" s="5"><v>50.0</v></c><c r="C5" t="n" s="5"><v>50.0</v></c></row><row r="6"><c r="A6" t="s" s="4"><v>7</v></c><c r="B6" t="n" s="5"><v>49.86959623</v></c><c r="C6" t="n" s="5"><v>49.93</v></c></row><row r="7"><c r="A7" t="s" s="4"><v>8</v></c><c r="B7" t="n" s="5"><v>50.0410986</v></c><c r="C7" t="n" s="5"><v>50.09</v></c></row><row r="8"><c r="A8" t="s" s="4"><v>9</v></c><c r="B8" t="n" s="5"><v>50.2006563</v></c><c r="C8" t="n" s="5"><v>50.24</v></c></row><row r="9"><c r="A9" t="s" s="4"><v>10</v></c><c r="B9" t="n" s="5"><v>50.47942415</v></c><c r="C9" t="n" s="5"><v>50.63</v></c></row><row r="10"><c r="A10" t="s" s="4"><v>11</v></c><c r="B10" t="n" s="5"><v>50.97103173</v></c><c r="C10" t="n" s="5"><v>51.14</v></c></row><row r="11"><c r="A11" t="s" s="4"><v>12</v></c><c r="B11" t="n" s="5"><v>51.13949478</v></c><c r="C11" t="n" s="5"><v>51.19</v></c></row><row r="12"><c r="A12" t="s" s="4"><v>13</v></c><c r="B12" t="n" s="5"><v>51.10171985</v></c><c r="C12" t="n" s="5"><v>51.17</v></c></row><row r="13"><c r="A13" t="s" s="4"><v>14</v></c><c r="B13" t="n" s="5"><v>51.19235383</v></c><c r="C13" t="n" s="5"><v>51.23</v></c></row><row r="14"><c r="A14" t="s" s="4"><v>15</v></c><c r="B14" t="n" s="5"><v>51.316735</v></c><c r="C14" t="n" s="5"><v>51.44</v></c></row><row r="15"><c r="A15" t="s" s="4"><v>16</v></c><c r="B15" t="n" s="5"><v>51.13802099</v></c><c r="C15" t="n" s="5"><v>51.14</v></c></row><row r="16"><c r="A16" t="s" s="4"><v>17</v></c><c r="B16" t="n" s="5"><v>51.21341838</v></c><c r="C16" t="n" s="5"><v>51.42</v></c></row><row r="17"><c r="A17" t="s" s="4"><v>18</v></c><c r="B17" t="n" s="5"><v>51.13854952</v></c><c r="C17" t="n" s="5"><v>51.33</v></c></row><row r="18"><c r="A18" t="s" s="4"><v>19</v></c><c r="B18" t="n" s="5"><v>51.04417602</v></c><c r="C18" t="n" s="5"><v>51.06</v></c></row><row r="19"><c r="A19" t="s" s="4"><v>20</v></c><c r="B19" t="n" s="5"><v>51.04857582</v></c><c r="C19" t="n" s="5"><v>51.11</v></c></row><row r="20"><c r="A20" t="s" s="4"><v>21</v></c><c r="B20" t="n" s="5"><v>49.75319948</v></c><c r="C20" t="n" s="5"><v>50.13</v></c></row><row r="21"><c r="A21" t="s" s="4"><v>22</v></c><c r="B21" t="n" s="5"><v>49.93461986</v></c><c r="C21" t="n" s="5"><v>49.93</v></c></row><row r="22"><
+<?xml version="1.0" encoding="UTF-8"?>
+<sst count="3200" uniqueCount="1601" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><si><t/></si><si><t>ETF NAV and Market Price</t></si><si><t>JPMorgan Equity Premium Income ETF</t></si><si><t>Date</t></si><si><t>NAV</t></si><si><t>Market Price</t></si><si><t>05/20/2020</t></si><si><t>05/21/2020</t></si><si><t>05/22/2020</t></si><si><t>05/26/2020</t></si><si><t>05/27/2020</t></si><si><t>05/28/2020</t></si><si><t>05/29/2020</t></si><si><t>06/01/2020</t></si><si><t>06/02/2020</t></si><si><t>06/03/2020</t></si><si><t>06/04/2020</t></si><si><t>06/05/2020</t></si><si><t>06/08/2020</t></si><si><t>06/09/2020</t></si><si><t>06/10/2020</t></si><si><t>06/11/2020</t></si><si><t>06/12/2020</t></si><si><t>06/15/2020</t></si><si><t>06/16/2020</t></si><si><t>06/17/2020</t></si><si><t>06/18/2020</t></si><si><t>06/19/2020</t></si><si><t>06/22/2020</t></si><si><t>06/23/2020</t></si><si><t>06/24/2020</t></si><si><t>06/25/2020</t></si><si><t>06/26/2020</t></si><si><t>06/29/2020</t></si><si><t>06/30/2020</t></si><si><t>07/01/2020</t></si><si><t>07/02/2020</t></si><si><t>07/06/2020</t></si><si><t>07/07/2020</t></si><si><t>07/08/2020</t></si><si><t>07/09/2020</t></si><si><t>07/10/2020</t></si><si><t>07/13/2020</t></si><si><t>07/14/2020</t></si><si><t>07/15/2020</t></si><si><t>07/16/2020</t></si><si><t>07/17/2020</t></si><si><t>07/20/2020</t></si><si><t>07/21/2020</t></si><si><t>07/22/2020</t></si><si><t>07/23/2020</t></si><si><t>07/24/2020<
+--- xlsx sheet text (perfchart) ---
+_rels
+sharedStrings.xml
+styles.xml
+workbook.xml
+worksheets
+<?xml version="1.0" encoding="UTF-8"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><dimension ref="A1:E92"/><sheetViews><sheetView workbookViewId="0" tabSelected="true"/></sheetViews><sheetFormatPr defaultRowHeight="15.0"/><cols><col min="1" max="1" width="11.71875" customWidth="true"/><col min="2" max="2" width="11.71875" customWidth="true"/><col min="3" max="3" width="19.53125" customWidth="true"/><col min="4" max="4" width="15.625" customWidth="true"/></cols><sheetData><row r="1"><c r="A1" t="s" s="1"><v>1</v></c></row><row r="2"><c r="A2" t="s" s="2"><v>2</v></c></row><row r="4"><c r="A4" t="s" s="3"><v>3</v></c><c r="B4" t="s" s="4"><v>4</v></c><c r="C4" t="s" s="4"><v>5</v></c><c r="D4" t="s" s="4"><v>6</v></c></row><row r="5"><c r="A5" t="s" s="5"><v>7</v></c><c r="B5" t="s" s="6"><v>8</v></c><c r="C5" t="s" s="6"><v>9</v></c><c r="D5" t="s" s="6"><v>10</v></c></row><row r="6"><c r="A6" t="s" s="5"><v>11</v></c><c r="B6" t="s" s="6"><v>12</v></c><c r="C6" t="s" s="6"><v>13</v></c><c r="D6" t="s" s="6"><v>10</v></c></row><row r="7"><c r="A7" t="s" s="5"><v>14</v></c><c r="B7" t="s" s="6"><v>15</v></c><c r="C7" t="s" s="6"><v>16</v></c><c r="D7" t="s" s="6"><v>17</v></c></row><row r="8"><c r="A8" t="s" s="5"><v>18</v></c><c r="B8" t="s" s="6"><v>19</v></c><c r="C8" t="s" s="6"><v>20</v></c><c r="D8" t="s" s="6"><v>21</v></c></row><row r="9"><c r="A9" t="s" s="5"><v>22</v></c><c r="B9" t="s" s="6"><v>23</v></c><c r="C9" t="s" s="6"><v>24</v></c><c r="D9" t="s" s="6"><v>25</v></c></row><row r="10"><c r="A10" t="s" s="5"><v>26</v></c><c r="B10" t="s" s="6"><v>27</v></c><c r="C10" t="s" s="6"><v>28</v></c><c r="D10" t="s" s="6"><v>29</v></c></row><row r="11"><c r="A11" t="s" s="5"><v>30</v></c><c r="B11" t="s" s="6"><v>31</v></c><c r="C11" t="s" s="6"><v>32</v></c><c r="D11" t="s" s="6"><v>33</v></c></row><row r="12"><c r="A12" t="s" s="5"><v>34</v></c><c r="B12" t="s" s="6"><v>35</v></c><c r="C12" t="s" s="6"><v>36</v></c><c r="D12
+<?xml version="1.0" encoding="UTF-8"?>
+<sst count="632" uniqueCount="286" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><si><t/></si><si><t>Growth Of Hypothetical Investment (AS OF 08/31/2026)</t></si><si><t>JPMorgan Equity Premium Income ETF - ETF Shares</t></si><si><t>Date</t></si><si><t>Return</t></si><si><t>Approx. value</t></si><si><t>Approx. %</t></si><si><t>May 31, 2020</t></si><si><t>2.28%</t></si><si><t>$10,228.00</t></si><si><t>2%</t></si><si><t>Jun 30, 2020</t></si><si><t>-0.72%</t></si><si><t>$10,154.00</t></si><si><t>Jul 31, 2020</t></si><si><t>5.79%</t></si><si><t>$10,742.00</t></si><si><t>7%</t></si><si><t>Aug 31, 2020</t></si><si><t>2.1%</t></si><si><t>$10,968.00</t></si><si><t>10%</t></si><si><t>Sep 30, 2020</t></si><si><t>-0.76%</t></si><si><t>$10,885.00</t></si><si><t>9%</t></si><si><t>Oct 31, 2020</t></si><si><t>-1.17%</t></si><si><t>$10,758.00</t></si><si><t>8%</t></si><si><t>Nov 30, 2020</t></si><si><t>7.32%</t></si><si><t>$11,545.00</t></si><s
+--- sec submissions summary ---
+{"cik":"0001485894","entityType":"investment","sic":"","sicDescription":"","ownerOrg":"","insiderTransactionForOwnerExists":0,"insiderTransactionForIssuerExists":0,"name":"J.P. Morgan Exchange-Traded Fund Trust","tickers":[],"exchanges":[],"ein":"000000000","lei":null,"description":"","website":"","investorWebsite":"","category":"","fiscalYearEnd":null,"stateOfIncorporation":"DE","stateOfIncorporationDescription":"DE","addresses":{"mailing":{"street1":"390 MADISON AVENUE","street2":null,"city":"NEW YORK","stateOrCountry":"NY","zipCode":"10017","stateOrCountryDescription":"NY","isForeignLocation":0,"foreignStateTerritory":null,"country":null,"countryCode":null},"business":{"street1":"390 MADISON AVENUE","street2":null,"city":"NEW YORK","stateOrCountry":"NY","zipCode":"10017","stateOrCountryDescription":"NY","isForeignLocation":null,"foreignStateTerritory":null,"country":null,"countryCode":null}},"phone":"(800) 480-4111","flags":"","formerNames":[{"name":"J.P. Morgan Exchange-Traded Fund Trust","from":"2010-03-10T05:00:00.000Z","to":"2026-09-14T04:00:00.000Z"}],"filings":{"recent":{"accessionNumber":["0001193125-26-390101","0002071691-26-021384","0001193125-26-385040","0001193125-26-385037","0001193125-26-384905","0002071691-26-021285","0001193125-26-384408","0001193125-26-381094","0001193125-26-381086","0001193125-26-378424","0001193125-26-378415","0001193125-26-378375","0001193125-26-376630","0001193125-26-376631","0002071691-26-021129","0002071691-26-021128","0002071691-26-0
+--- yahoo ---
+Too Many Requests
+
+done
