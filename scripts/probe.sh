@@ -11,28 +11,23 @@ probe() {
   curl -sS -L --max-time 120 -A "$UA" -D "probe-out/$name.headers" -o "probe-out/$name.bin" "$@" "$url"
   echo "exit=$? size=$(stat -c %s "probe-out/$name.bin" 2>/dev/null)"
   grep -i -E '^(HTTP/|content-type|content-disposition|location)' "probe-out/$name.headers" | head -12
-  echo "head:"; head -c 400 "probe-out/$name.bin" | tr -c '[:print:]\n' '.' ; echo
+  echo "head:"; head -c 300 "probe-out/$name.bin" | tr -c '[:print:]\n' '.' ; echo
 }
-probe loader "https://am.jpmorgan.com/FundsMarketingHandler/javascript/fundsmarketingloader-new.js?1"
-probe intlshim "https://am.jpmorgan.com/FundsMarketingHandler/javascript/intlshim.js"
-probe shell "https://cdn.jpmorganfunds.com/etc/designs/jpm-am-aem/clientlib-site/jpm-am-container-npe-shell-component.min.d70d379a2530c22fd926a8a635feff08.js"
-probe slugtest "https://am.jpmorgan.com/us/en/asset-management/adv/products/x-46641q399" -o /dev/null -w '%{http_code} %{url_effective}\n'
-probe slugtest2 "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-betabuilders-u-s-equity-etf-etf-shares-46641q399" -o /dev/null -w '%{http_code} %{url_effective}\n'
-probe holdings-params "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q837&country=us&role=adv&fundType=N_ETF&locale=en-US&isUnderlyingHolding=false&isProxyHolding=false"
-probe yahoo-ua "https://query2.finance.yahoo.com/v8/finance/chart/JEPI?period1=0&period2=1789900000&interval=1d&events=div%7Csplit" -H "Accept: application/json"
-probe yahoo-chart-plain "https://query1.finance.yahoo.com/v8/finance/chart/JEPI?range=5d&interval=1d" -A "curl/8.5.0"
-probe sec-series "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001485894&type=NPORT-P&dateb=&owner=include&count=10&output=atom" -A "DaggerOk JPMorgan Feed admin@daggerok.example.com"
-
+probe pdp "https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/pdp-7ac633d5a7558721f040.js"
+probe pdpv3 "https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/pdp-v3-606d8b1e464d4dda9df9.js"
+probe fxv3 "https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/fx-v3-8030f81274a0d1818bd8.js"
+probe fxv2 "https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/fx-v2-bef1f7b4dd25ae76d9f7.js"
+probe card "https://am.jpmorgan.com/FundsMarketingHandler/javascript/chunks/card-25b68944a13737010ace.js"
 echo "=================================================================="
-echo "### loader endpoints"
-for f in loader intlshim shell; do
+echo "### endpoints in chunks"
+for f in pdp pdpv3 fxv3 fxv2 card; do
   echo "## $f"
-  grep -o -E '(https?:)?//[a-zA-Z0-9./_-]*|/FundsMarketingHandler/[a-zA-Z0-9./_?=&-]*|"/[a-zA-Z0-9_-]+/[a-zA-Z0-9/_.-]*"' probe-out/$f.bin | sort -u | head -80
-  echo "-- literal keywords --"
-  grep -o -E '.{60}(productData|fundData|getFund|/api/|graphql|fundExplorer|fund-explorer|explorer|performance|dividend|distribution|productDetail|pdp)[A-Za-z]*.{60}' probe-out/$f.bin | head -40 | cut -c1-200
+  grep -o -E '"[^"]{0,80}(FundsMarketingHandler|/api/|graphql|/rest/|/services/|\.json|handler|Handler)[^"]{0,120}"' probe-out/$f.bin | sort -u | head -60 | cut -c1-260
+  echo "-- fetch/axios calls --"
+  grep -o -E '(fetch|axios\.(get|post)|\.get|\.post)\(("|`)[^"`]{3,160}' probe-out/$f.bin | sort -u | head -60 | cut -c1-260
+  echo "-- template urls --"
+  grep -o -E '`[^`]{0,60}(cusip|type=|country=)[^`]{0,160}`' probe-out/$f.bin | sort -u | head -60 | cut -c1-260
+  echo "-- concat urls --"
+  grep -o -E '"[^"]{0,60}\?(type|cusip|country|role|locale|fundType)=[^"]{0,120}"' probe-out/$f.bin | sort -u | head -60 | cut -c1-260
 done
-echo "--- loader script tags it injects ---"
-grep -o -E '(src|href)[=:] *["'"'"'][^"'"'"']+' probe-out/loader.bin | sort -u | head -30
-echo "--- holdings-params sheet header ---"
-(cd probe-out && rm -rf hp && mkdir hp && unzip -o -q holdings-params.bin -d hp 2>/dev/null && head -c 1200 hp/xl/sharedStrings.xml; echo; rm -rf hp)
 echo done
