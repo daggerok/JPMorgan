@@ -1,0 +1,174 @@
+{
+ "ticker": "BBAX",
+ "name": "JPMorgan BetaBuilders Developed Asia Pacific ex-Japan ETF",
+ "category": "International Equity",
+ "categoryPath": "International Equity / Morningstar Developed Asia Pacific ex-Japan Target Market Exposure Index (net total return)",
+ "source": {
+  "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-betabuilders-developed-asia-pacific-ex-japan-etf-etf-shares-46641q233",
+  "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q233&country=us&role=adv&language=en&userLoggedIn=false",
+  "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46641Q233&country=us&role=adv&language=en&userLoggedIn=false",
+  "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q233&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q233&country=us&role=adv&locale=en-US&fromDate=2018-08-07&toDate=2026-09-18",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/BBAX",
+  "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "46641Q233",
+  "isin": null,
+  "indexTicker": "Morningstar Developed Asia Pacific ex-Japan Target Market Exposure Index (net total return)"
+ },
+ "inception": {
+  "fundInceptionDate": "2018-08-07",
+  "shareClassInceptionDate": "2018-08-07",
+  "exchange": "Cboe Global Markets"
+ },
+ "expenseRatio": {
+  "display": "0.19%",
+  "value": 0.19,
+  "gross": 0.19,
+  "net": 0.19
+ },
+ "nav": {
+  "display": "$63.06",
+  "value": 63.05854332,
+  "asOfDate": "Sep 18 2026"
+ },
+ "marketPrice": {
+  "display": "$62.99",
+  "value": 62.99,
+  "asOfDate": "Sep 18 2026"
+ },
+ "premiumDiscount": {
+  "display": "-0.11%",
+  "value": -0.1087
+ },
+ "aum": {
+  "display": "$6,712.50 M",
+  "value": 6712496239.5,
+  "asOfDate": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data net assets"
+ },
+ "yields": {
+  "dividendYield": 3.4,
+  "dividendYieldText": "3.40%",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 18 2026",
+  "distributionRate": null,
+  "secYield": 3.11,
+  "secYieldText": "3.11%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 17 2026",
+  "unsubsidizedSecYield": 3.11
+ },
+ "returns": {
+  "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 1.95,
+   "mo1Text": "1.95%",
+   "qtd": 6.49,
+   "qtdText": "6.49%",
+   "ytd": 17.43,
+   "ytdText": "17.43%",
+   "yr1": 18.62,
+   "yr1Text": "18.62%",
+   "yr3": 15.93,
+   "yr3Text": "15.93%",
+   "yr5": 7.22,
+   "yr5Text": "7.22%",
+   "yr10": null,
+   "yr10Text": "—",
+   "sinceInception": 7.45,
+   "sinceInceptionText": "7.45%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 8.2,
+   "yr1": 14.2,
+   "yr3": 12.04,
+   "yr5": 5.22,
+   "yr10": null,
+   "sinceInception": 6.5
+  }
+ },
+ "distributions": {
+  "frequency": "Quarterly",
+  "paymentsPerYear": 4,
+  "frequencyCode": "QDEC",
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "09/19/2023",
+    "0.41031"
+   ],
+   [
+    "12/19/2023",
+    "0.62108"
+   ],
+   [
+    "03/19/2024",
+    "0.39905"
+   ],
+   [
+    "06/25/2024",
+    "0.517"
+   ],
+   [
+    "09/24/2024",
+    "0.7054"
+   ],
+   [
+    "12/24/2024",
+    "0.39005"
+   ],
+   [
+    "03/25/2025",
+    "0.44679"
+   ],
+   [
+    "06/24/2025",
+    "0.49467"
+   ],
+   [
+    "09/23/2025",
+    "0.6831"
+   ],
+   [
+    "12/23/2025",
+    "0.54987"
+   ],
+   [
+    "03/24/2026",
+    "0.48375"
+   ],
+   [
+    "06/23/2026",
+    "0.53392"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 110,
+  "asOfDate": "2026-09-18",
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json",
+   "history/002.json",
+   "history/003.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 2040,
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+ }
+}

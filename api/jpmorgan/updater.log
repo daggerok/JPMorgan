@@ -1,0 +1,29 @@
+JPMorgan ETF static data updater
+Sources: am.jpmorgan.com fund explorer + per-fund product-data / historicalData JSON, SEC EDGAR N-PORT-P (fallback), Yahoo Finance public chart API (fallback)
+  CONCURRENCY         2
+  REQUEST_SLEEP       1 s between outgoing request starts
+  MAX_FETCHES         all eligible funds (full pass, cursor ignored)
+  HOLDINGS_PAGE_SIZE  250
+  HISTORY_PAGE_SIZE   1000
+  STORE_RAW_DOWNLOADS off
+  MAX_RETRIES         2
+  TICKERS             all JPMorgan ETFs in the catalog
+  HISTORY_RANGE       max (Yahoo chart range, fallback history only)
+  ROLE                adv (am.jpmorgan.com role parameter)
+  API_BASE            https://am.jpmorgan.com/FundsMarketingHandler
+  AUM                 any
+  TER                 any
+  DIVIDEND_YIELD      any
+  SEC_YIELD           any
+  PERFORMANCE_*       any
+  TOTAL_RETURN_*      any
+  SEC_UA              DaggerOk JPMorgan Feed admin@daggerok.example.com
+  SKIP_YAHOO          false
+  SKIP_JPMORGAN       false
+  EDGAR_FALLBACK      true
+
+[ catalog  ] 78 JPMorgan ETFs (am.jpmorgan.com ETF fund explorer JSON)
+
+[ done     ] 78 funds updated, 0 kept from previous runs, 0 failures
+[ done     ] counts: 78 funds / 42,401 holdings rows / 90,939 history rows
+[ cursor   ] full pass complete (cursor reset)
