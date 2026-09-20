@@ -16,72 +16,6 @@
  ],
  "rows": [
   {
-   "Name": "JACOBS SOLUTIONS INC",
-   "Ticker": "J",
-   "Identifier": "46982L108",
-   "Weight": "0.03",
-   "Market Value": "40582.2",
-   "Shares Held": "283",
-   "Asset Category": "DOMESTIC COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "FISERV INC COMMON STOCK",
-   "Ticker": "FISV",
-   "Identifier": "337738108",
-   "Weight": "0.03",
-   "Market Value": "39922.74",
-   "Shares Held": "846",
-   "Asset Category": "DOMESTIC COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "T ROWE PRICE GROUP INC",
-   "Ticker": "TROW",
-   "Identifier": "74144T108",
-   "Weight": "0.03",
-   "Market Value": "39893.28",
-   "Shares Held": "383",
-   "Asset Category": "DOMESTIC COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CORPAY INC",
-   "Ticker": "CPAY",
-   "Identifier": "219948106",
-   "Weight": "0.03",
-   "Market Value": "38980.48",
-   "Shares Held": "98",
-   "Asset Category": "DOMESTIC COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "FORD MOTOR CO COMMON",
-   "Ticker": "F",
-   "Identifier": "345370860",
-   "Weight": "0.03",
-   "Market Value": "38969.5",
-   "Shares Held": "2950",
-   "Asset Category": "DOMESTIC COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "HCA HEALTHCARE INC",
-   "Ticker": "HCA",
-   "Identifier": "40412C101",
-   "Weight": "0.03",
-   "Market Value": "38921.61",
-   "Shares Held": "91",
-   "Asset Category": "DOMESTIC COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
    "Name": "EURO",
    "Ticker": "-",
    "Identifier": "EUR",
@@ -995,17 +929,6 @@
    "Maturity": ""
   },
   {
-   "Name": "LME NICKEL 12/16/2026",
-   "Ticker": "-",
-   "Identifier": "LNZ6COS",
-   "Weight": "0",
-   "Market Value": "19053.91",
-   "Shares Held": "-31",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 16 2026"
-  },
-  {
    "Name": "FIRST SOLAR INC COMMON",
    "Ticker": "FSLR",
    "Identifier": "336433107",
@@ -1413,17 +1336,6 @@
    "Maturity": ""
   },
   {
-   "Name": "WHEAT 12/14/2026",
-   "Ticker": "-",
-   "Identifier": "W0Z6COM",
-   "Weight": "0",
-   "Market Value": "9786.5",
-   "Shares Held": "70",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 14 2026"
-  },
-  {
    "Name": "NEWS CORP COMMON STOCK",
    "Ticker": "NWS",
    "Identifier": "65249B208",
@@ -1620,6 +1532,94 @@
    "Asset Category": "DOMESTIC COMMON STOCK",
    "Coupon": "",
    "Maturity": ""
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "0",
+   "Market Value": "16836166.81",
+   "Shares Held": "16836166",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "JPMORGAN U.S. GOVERNMENT",
+   "Ticker": "MGMXX",
+   "Identifier": "4812C2270",
+   "Weight": "0",
+   "Market Value": "5508181.3",
+   "Shares Held": "5508181",
+   "Asset Category": "MONEY MARKET",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "USD - FOR FUTURES",
+   "Ticker": "-",
+   "Identifier": "USQ",
+   "Weight": "0",
+   "Market Value": "717765.8",
+   "Shares Held": "717765",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "LEAN HOGS 12/14/2026",
+   "Ticker": "-",
+   "Identifier": "LHZ6COS",
+   "Weight": "0",
+   "Market Value": "125773.6",
+   "Shares Held": "-248",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 14 2026"
+  },
+  {
+   "Name": "SOYBEAN 11/13/2026",
+   "Ticker": "-",
+   "Identifier": "S0X6COM",
+   "Weight": "0",
+   "Market Value": "94380.05",
+   "Shares Held": "109",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Nov 13 2026"
+  },
+  {
+   "Name": "LME ZINC 12/16/2026",
+   "Ticker": "-",
+   "Identifier": "LXZ6COM",
+   "Weight": "0",
+   "Market Value": "85828.81",
+   "Shares Held": "53",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 16 2026"
+  },
+  {
+   "Name": "LME NICKEL 12/16/2026",
+   "Ticker": "-",
+   "Identifier": "LNZ6COS",
+   "Weight": "0",
+   "Market Value": "19053.91",
+   "Shares Held": "-31",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 16 2026"
+  },
+  {
+   "Name": "WHEAT 12/14/2026",
+   "Ticker": "-",
+   "Identifier": "W0Z6COM",
+   "Weight": "0",
+   "Market Value": "9786.5",
+   "Shares Held": "70",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 14 2026"
   },
   {
    "Name": "NVR INC COMMON STOCK USD",
@@ -2306,10 +2306,10 @@
   {
    "Name": "CURRENCY CONTRACT - BRL",
    "Ticker": "-",
-   "Identifier": "CCTBRL_14114_S",
+   "Identifier": "CCTBRL_11824_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-949547",
+   "Shares Held": "-354952",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2317,10 +2317,10 @@
   {
    "Name": "CURRENCY CONTRACT - BRL",
    "Ticker": "-",
-   "Identifier": "CCTBRL_11824_S",
+   "Identifier": "CCTBRL_14114_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-354952",
+   "Shares Held": "-949547",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2339,10 +2339,10 @@
   {
    "Name": "CURRENCY CONTRACT - CAD",
    "Ticker": "-",
-   "Identifier": "CCTCAD_14082_S",
+   "Identifier": "CCTCAD_11757_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-637108",
+   "Shares Held": "-103228",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2350,10 +2350,10 @@
   {
    "Name": "CURRENCY CONTRACT - CAD",
    "Ticker": "-",
-   "Identifier": "CCTCAD_11757_S",
+   "Identifier": "CCTCAD_14082_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-103228",
+   "Shares Held": "-637108",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2427,10 +2427,10 @@
   {
    "Name": "CURRENCY CONTRACT - INR",
    "Ticker": "-",
-   "Identifier": "CCTINR_14110_S",
+   "Identifier": "CCTINR_11820_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-2009765",
+   "Shares Held": "-756457",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2438,10 +2438,10 @@
   {
    "Name": "CURRENCY CONTRACT - INR",
    "Ticker": "-",
-   "Identifier": "CCTINR_11820_S",
+   "Identifier": "CCTINR_14110_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-756457",
+   "Shares Held": "-2009765",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2504,10 +2504,10 @@
   {
    "Name": "CURRENCY CONTRACT - SEK",
    "Ticker": "-",
-   "Identifier": "CCTSEK_14086_S",
+   "Identifier": "CCTSEK_11664_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-1240998",
+   "Shares Held": "-1766199",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2526,10 +2526,10 @@
   {
    "Name": "CURRENCY CONTRACT - SEK",
    "Ticker": "-",
-   "Identifier": "CCTSEK_11664_S",
+   "Identifier": "CCTSEK_14086_S",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "-1766199",
+   "Shares Held": "-1240998",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2548,94 +2548,6 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
-   "Identifier": "CCTUSD_11669_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "5936616",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_12472_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "96207",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_14088_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "1780827",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_11662_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "673382",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_14089_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "2386265",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_14111_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "2756235",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_11727_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "3314741",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_11724_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "3420111",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
    "Identifier": "CCTUSD_11648_L",
    "Weight": "0",
    "Market Value": "0",
@@ -2647,54 +2559,10 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
-   "Identifier": "CCTUSD_12415_L",
+   "Identifier": "CCTUSD_11651_L",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "84598",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_12524_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "113291",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_11725_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "55590",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_14087_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "341596",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_11658_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "796246",
+   "Shares Held": "128415",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2713,10 +2581,10 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
-   "Identifier": "CCTUSD_11828_L",
+   "Identifier": "CCTUSD_11658_L",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "547082",
+   "Shares Held": "796246",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2724,10 +2592,65 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
-   "Identifier": "CCTUSD_14109_L",
+   "Identifier": "CCTUSD_11660_L",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "1447386",
+   "Shares Held": "21737",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_11662_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "673382",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_11669_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "5936616",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_11724_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "3420111",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_11725_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "55590",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_11727_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "3314741",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -2746,6 +2669,83 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
+   "Identifier": "CCTUSD_11819_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "1040261",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_11828_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "547082",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_12411_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "82755",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_12415_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "84598",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_12472_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "96207",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_12524_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "113291",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_13054_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "26683",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
    "Identifier": "CCTUSD_14083_L",
    "Weight": "0",
    "Market Value": "0",
@@ -2757,10 +2757,10 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
-   "Identifier": "CCTUSD_11819_L",
+   "Identifier": "CCTUSD_14087_L",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "1040261",
+   "Shares Held": "341596",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""

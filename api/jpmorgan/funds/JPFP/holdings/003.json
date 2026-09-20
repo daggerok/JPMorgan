@@ -18,10 +18,43 @@
   {
    "Name": "CURRENCY CONTRACT - USD",
    "Ticker": "-",
-   "Identifier": "CCTUSD_11660_L",
+   "Identifier": "CCTUSD_14088_L",
    "Weight": "0",
    "Market Value": "0",
-   "Shares Held": "21737",
+   "Shares Held": "1780827",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_14089_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "2386265",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_14109_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "1447386",
+   "Asset Category": "FORWARD CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_14111_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "2756235",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -33,39 +66,6 @@
    "Weight": "0",
    "Market Value": "0",
    "Shares Held": "938926",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_13054_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "26683",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_11651_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "128415",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_12411_L",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "82755",
    "Asset Category": "FORWARD CONTRACTS",
    "Coupon": "",
    "Maturity": ""
@@ -643,6 +643,94 @@
    "Maturity": ""
   },
   {
+   "Name": "COCOA FUTURE 12/15/2026",
+   "Ticker": "-",
+   "Identifier": "CCZ6COM",
+   "Weight": "0",
+   "Market Value": "-7869.03",
+   "Shares Held": "3",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 15 2026"
+  },
+  {
+   "Name": "LME PRI ALUM 12/16/2026",
+   "Ticker": "-",
+   "Identifier": "LAZ26CO",
+   "Weight": "0",
+   "Market Value": "-9889.25",
+   "Shares Held": "28",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 16 2026"
+  },
+  {
+   "Name": "SILVER FUTURE 12/29/2026",
+   "Ticker": "-",
+   "Identifier": "SIZ6COM",
+   "Weight": "0",
+   "Market Value": "-17482.98",
+   "Shares Held": "3",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 29 2026"
+  },
+  {
+   "Name": "CORN FUTURE 12/14/2026",
+   "Ticker": "-",
+   "Identifier": "C0Z6COM",
+   "Weight": "0",
+   "Market Value": "-18098.9",
+   "Shares Held": "98",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 14 2026"
+  },
+  {
+   "Name": "BRENT CRUDE 10/30/2026",
+   "Ticker": "-",
+   "Identifier": "COZ6COM",
+   "Weight": "0",
+   "Market Value": "-19954.84",
+   "Shares Held": "24",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Oct 30 2026"
+  },
+  {
+   "Name": "COTTON NO.2 12/08/2026",
+   "Ticker": "-",
+   "Identifier": "CTZ6COM",
+   "Weight": "0",
+   "Market Value": "-29947.74",
+   "Shares Held": "74",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 08 2026"
+  },
+  {
+   "Name": "SUGAR #11 02/26/2027",
+   "Ticker": "-",
+   "Identifier": "SBH7COM",
+   "Weight": "0",
+   "Market Value": "-55193.74",
+   "Shares Held": "134",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Feb 26 2027"
+  },
+  {
+   "Name": "LME COPPER 12/16/2026",
+   "Ticker": "-",
+   "Identifier": "LPZ26CO",
+   "Weight": "0",
+   "Market Value": "-205412.5",
+   "Shares Held": "14",
+   "Asset Category": "COMMODITY FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 16 2026"
+  },
+  {
    "Name": "E-MINI RUSS 12/18/2026",
    "Ticker": "-",
    "Identifier": "RVYZ6ID",
@@ -687,17 +775,6 @@
    "Maturity": ""
   },
   {
-   "Name": "COCOA FUTURE 12/15/2026",
-   "Ticker": "-",
-   "Identifier": "CCZ6COM",
-   "Weight": "0",
-   "Market Value": "-7869.03",
-   "Shares Held": "3",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 15 2026"
-  },
-  {
    "Name": "CURRENCY CONTRACT - SEK",
    "Ticker": "-",
    "Identifier": "CCTSEK_14101_S",
@@ -729,17 +806,6 @@
    "Asset Category": "EQUITY INDEX FUTURES",
    "Coupon": "",
    "Maturity": "Dec 18 2026"
-  },
-  {
-   "Name": "LME PRI ALUM 12/16/2026",
-   "Ticker": "-",
-   "Identifier": "LAZ26CO",
-   "Weight": "0",
-   "Market Value": "-9889.25",
-   "Shares Held": "28",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 16 2026"
   },
   {
    "Name": "SP500 MIC 12/18/2026",
@@ -808,17 +874,6 @@
    "Maturity": "Dec 29 2026"
   },
   {
-   "Name": "SILVER FUTURE 12/29/2026",
-   "Ticker": "-",
-   "Identifier": "SIZ6COM",
-   "Weight": "0",
-   "Market Value": "-17482.98",
-   "Shares Held": "3",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 29 2026"
-  },
-  {
    "Name": "MSCI EAFE 12/18/2026",
    "Ticker": "-",
    "Identifier": "MFSZ6ID",
@@ -830,17 +885,6 @@
    "Maturity": "Dec 18 2026"
   },
   {
-   "Name": "CORN FUTURE 12/14/2026",
-   "Ticker": "-",
-   "Identifier": "C0Z6COM",
-   "Weight": "0",
-   "Market Value": "-18098.9",
-   "Shares Held": "98",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 14 2026"
-  },
-  {
    "Name": "E-MINI RUSS 12/18/2026",
    "Ticker": "-",
    "Identifier": "RTYZ6ID",
@@ -850,17 +894,6 @@
    "Asset Category": "EQUITY INDEX FUTURES",
    "Coupon": "",
    "Maturity": "Dec 18 2026"
-  },
-  {
-   "Name": "BRENT CRUDE 10/30/2026",
-   "Ticker": "-",
-   "Identifier": "COZ6COM",
-   "Weight": "0",
-   "Market Value": "-19954.84",
-   "Shares Held": "24",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Oct 30 2026"
   },
   {
    "Name": "CURRENCY CONTRACT - GBP",
@@ -894,17 +927,6 @@
    "Asset Category": "EQUITY INDEX FUTURES",
    "Coupon": "",
    "Maturity": "Oct 16 2026"
-  },
-  {
-   "Name": "COTTON NO.2 12/08/2026",
-   "Ticker": "-",
-   "Identifier": "CTZ6COM",
-   "Weight": "0",
-   "Market Value": "-29947.74",
-   "Shares Held": "74",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 08 2026"
   },
   {
    "Name": "DAX INDEX 12/18/2026",
@@ -984,17 +1006,6 @@
    "Maturity": "Dec 10 2026"
   },
   {
-   "Name": "SUGAR #11 02/26/2027",
-   "Ticker": "-",
-   "Identifier": "SBH7COM",
-   "Weight": "0",
-   "Market Value": "-55193.74",
-   "Shares Held": "134",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Feb 26 2027"
-  },
-  {
    "Name": "USD - FOR FUTURES",
    "Ticker": "-",
    "Identifier": "USQ",
@@ -1048,17 +1059,6 @@
    "Asset Category": "CURRENCIES",
    "Coupon": "",
    "Maturity": ""
-  },
-  {
-   "Name": "LME COPPER 12/16/2026",
-   "Ticker": "-",
-   "Identifier": "LPZ26CO",
-   "Weight": "0",
-   "Market Value": "-205412.5",
-   "Shares Held": "14",
-   "Asset Category": "COMMODITY FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 16 2026"
   }
  ]
 }
