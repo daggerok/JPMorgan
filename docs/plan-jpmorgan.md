@@ -78,16 +78,19 @@ Overview tab and `meta.json` record which one supplied it.
 
 | Value | When it is `—` | Why |
 | --- | --- | --- |
-| YTD Return | funds launched in the current calendar year | JPMorgan publishes no YTD figure for them and a partial-year YTD would not be comparable; the Overview shows the derived since-launch figures instead. |
-| TR/CAGR 3Y, 5Y, 10Y | funds younger than the period | not applicable (the same rule as every sibling feed). |
-| TR 1Y | funds younger than one year | not applicable. |
+| YTD Return | funds launched in the current calendar year (JIDE 2026-01-27, ROCQ / ROCY 2026-03-18, JPFP 2026-05-27, JLVP 2026-07-30) | JPMorgan publishes no YTD figure for them and a partial-year YTD would not be comparable; the Overview shows the derived 1-month and quarter-to-date figures instead. |
+| TR/CAGR 3Y, 5Y, 10Y | funds younger than the period (at the time of writing 20 funds lack 3Y, 33 lack 5Y, 60 lack 10Y) | not applicable (the same rule as every sibling feed); a window is also left `—` when JPMorgan publishes no figure and the reinvestment index cannot cover it (BBHY's 10Y until its tenth anniversary is reported officially). |
+| TR 1Y | funds younger than one year (the five above plus JMMF, 2025-12-10) | not applicable. |
 | SI Ann. | funds younger than 0.75 years; a 0.75–1 year old fund that has already paid more than twelve distributions | JPMorgan's since-inception figure for them is cumulative, and annualizing a sub-year return would be misleading; for the frequent payer the capped dividend schedule cannot rebuild the since-launch total return (JMMF, a weekly-paying money market ETF launched 2025-12-10). |
-| Dividend Yield | funds that have not paid a distribution yet | nothing to compute a trailing or indicated yield from. |
-| SEC Yield | only if JPMorgan publishes neither a 30-day nor a 7-day figure | recorded as "not published by JPMorgan for this fund" in `meta.json`. |
+| Dividend Yield | funds that have not paid a distribution yet (JIDE, JPFP, JLVP — annual payers launched in 2026) | nothing to compute a trailing or indicated yield from. |
+| SEC Yield | only if JPMorgan publishes neither a 30-day nor a 7-day figure (JTEK at the time of writing) | recorded as "not published by JPMorgan for this fund" in `meta.json`. |
+| QTD (Overview only) | ETF share classes that did not exist on the first day of the quarter: JLVP (launched 2026-07-30) and the mutual-fund conversions JPRF / LGDS (ETF shares since 2026-07-10; their official returns carry the predecessor fund's record) | the daily NAV history starts after the quarter began, so no quarter-to-date figure can be derived; JPMorgan publishes none either. |
 | Distributions rows | limited to the last twelve payments | that is what the fund page's dividend schedule publishes; older payments are not exposed by any public JPMorgan endpoint. |
 
 Everything else — NAV, net assets, expense ratio, exchange, inception,
-holdings count and as-of date, history count — is published for every fund.
+frequency, holdings count and as-of date, history count — is published for
+every fund (78 funds, 42,401 holdings rows and 90,939 history rows in the
+first full pass, 0 failures).
 
 ## 5. Determinism and freshness
 
