@@ -1,0 +1,128 @@
+{
+ "ticker": "LGDS",
+ "name": "JPMorgan Fundamental Data Science Large Growth ETF",
+ "category": "U.S. Equity",
+ "categoryPath": "U.S. Equity / Russell 1000 Growth Index",
+ "source": {
+  "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-fundamental-data-science-large-growth-etf-etf-shares-46654q450",
+  "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q450&country=us&role=adv&language=en&userLoggedIn=false",
+  "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q450&country=us&role=adv&language=en&userLoggedIn=false",
+  "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q450&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q450&country=us&role=adv&locale=en-US&fromDate=2003-02-28&toDate=2026-09-18",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/LGDS",
+  "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "46654Q450",
+  "isin": null,
+  "indexTicker": "Russell 1000 Growth Index"
+ },
+ "inception": {
+  "fundInceptionDate": "2003-02-28",
+  "shareClassInceptionDate": "2026-07-10",
+  "exchange": "NASDAQ"
+ },
+ "expenseRatio": {
+  "display": "0.4%",
+  "value": 0.4,
+  "gross": 0.4,
+  "net": 0.3
+ },
+ "nav": {
+  "display": "$49.64",
+  "value": 49.63523751,
+  "asOfDate": "Sep 18 2026"
+ },
+ "marketPrice": {
+  "display": "$49.58",
+  "value": 49.58,
+  "asOfDate": "Sep 18 2026"
+ },
+ "premiumDiscount": {
+  "display": "-0.11%",
+  "value": -0.1113
+ },
+ "aum": {
+  "display": "$1,110.99 M",
+  "value": 1110994802.98,
+  "asOfDate": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data net assets"
+ },
+ "yields": {
+  "dividendYield": 0.42,
+  "dividendYieldText": "0.42%",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 18 2026",
+  "distributionRate": null,
+  "secYield": 0.19,
+  "secYieldText": "0.19%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 17 2026",
+  "unsubsidizedSecYield": 0.09
+ },
+ "returns": {
+  "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 2.9,
+   "mo1Text": "2.90%",
+   "qtd": null,
+   "qtdText": "—",
+   "ytd": 5.3,
+   "ytdText": "5.30%",
+   "yr1": 13.73,
+   "yr1Text": "13.73%",
+   "yr3": 22.44,
+   "yr3Text": "22.44%",
+   "yr5": 13.27,
+   "yr5Text": "13.27%",
+   "yr10": 17.4,
+   "yr10Text": "17.40%",
+   "sinceInception": 13.21,
+   "sinceInceptionText": "13.21%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 6.62,
+   "yr1": 21.04,
+   "yr3": 23.84,
+   "yr5": 14.92,
+   "yr10": 18.03,
+   "sinceInception": 13.38
+  }
+ },
+ "distributions": {
+  "frequency": "Annually",
+  "paymentsPerYear": 1,
+  "frequencyCode": "YDEC",
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "12/18/2025",
+    "0.20627"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 103,
+  "asOfDate": "2026-09-18",
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 50,
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+ }
+}

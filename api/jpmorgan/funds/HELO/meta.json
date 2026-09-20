@@ -1,0 +1,168 @@
+{
+ "ticker": "HELO",
+ "name": "JPMorgan Hedged Equity Laddered Overlay ETF",
+ "category": "U.S. Equity",
+ "categoryPath": "U.S. Equity / S&P 500 Index",
+ "source": {
+  "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-hedged-equity-laddered-overlay-etf-etf-shares-46654q724",
+  "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q724&country=us&role=adv&language=en&userLoggedIn=false",
+  "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q724&country=us&role=adv&language=en&userLoggedIn=false",
+  "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q724&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q724&country=us&role=adv&locale=en-US&fromDate=2023-09-28&toDate=2026-09-18",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/HELO",
+  "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "46654Q724",
+  "isin": null,
+  "indexTicker": "S&P 500 Index"
+ },
+ "inception": {
+  "fundInceptionDate": "2023-09-28",
+  "shareClassInceptionDate": "2023-09-28",
+  "exchange": "NYSE-Arca"
+ },
+ "expenseRatio": {
+  "display": "0.5%",
+  "value": 0.5,
+  "gross": 0.5,
+  "net": 0.5
+ },
+ "nav": {
+  "display": "$69.10",
+  "value": 69.09959351,
+  "asOfDate": "Sep 18 2026"
+ },
+ "marketPrice": {
+  "display": "$69.08",
+  "value": 69.08,
+  "asOfDate": "Sep 18 2026"
+ },
+ "premiumDiscount": {
+  "display": "-0.03%",
+  "value": -0.0284
+ },
+ "aum": {
+  "display": "$4,800.69 M",
+  "value": 4800694258.91,
+  "asOfDate": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data net assets"
+ },
+ "yields": {
+  "dividendYield": 0.62,
+  "dividendYieldText": "0.62%",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 18 2026",
+  "distributionRate": null,
+  "secYield": 0.58,
+  "secYieldText": "0.58%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 17 2026",
+  "unsubsidizedSecYield": 0.58
+ },
+ "returns": {
+  "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 1.58,
+   "mo1Text": "1.58%",
+   "qtd": 2.32,
+   "qtdText": "2.32%",
+   "ytd": 4.87,
+   "ytdText": "4.87%",
+   "yr1": 8.91,
+   "yr1Text": "8.91%",
+   "yr3": null,
+   "yr3Text": "—",
+   "yr5": null,
+   "yr5Text": "—",
+   "yr10": null,
+   "yr10Text": "—",
+   "sinceInception": 12.55,
+   "sinceInceptionText": "12.55%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 2.08,
+   "yr1": 8.7,
+   "yr3": null,
+   "yr5": null,
+   "yr10": null,
+   "sinceInception": 12.26
+  }
+ },
+ "distributions": {
+  "frequency": "Quarterly",
+  "paymentsPerYear": 4,
+  "frequencyCode": "QDEC",
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "12/19/2023",
+    "0.10286"
+   ],
+   [
+    "03/19/2024",
+    "0.05255"
+   ],
+   [
+    "06/25/2024",
+    "0.08419"
+   ],
+   [
+    "09/24/2024",
+    "0.08158"
+   ],
+   [
+    "12/24/2024",
+    "0.15096"
+   ],
+   [
+    "03/25/2025",
+    "0.088"
+   ],
+   [
+    "06/24/2025",
+    "0.10085"
+   ],
+   [
+    "09/23/2025",
+    "0.12705"
+   ],
+   [
+    "12/16/2025",
+    "0.12631"
+   ],
+   [
+    "03/24/2026",
+    "0.06954"
+   ],
+   [
+    "06/23/2026",
+    "0.10707"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 156,
+  "asOfDate": "2026-09-18",
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 746,
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+ }
+}

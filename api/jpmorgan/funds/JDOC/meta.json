@@ -1,0 +1,136 @@
+{
+ "ticker": "JDOC",
+ "name": "JPMorgan Healthcare Leaders ETF",
+ "category": "International Equity",
+ "categoryPath": "International Equity / MSCI World Health Care Index (net total return)",
+ "source": {
+  "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-healthcare-leaders-etf-etf-shares-46654q765",
+  "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q765&country=us&role=adv&language=en&userLoggedIn=false",
+  "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q765&country=us&role=adv&language=en&userLoggedIn=false",
+  "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q765&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q765&country=us&role=adv&locale=en-US&fromDate=2023-11-01&toDate=2026-09-18",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JDOC",
+  "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "46654Q765",
+  "isin": null,
+  "indexTicker": "MSCI World Health Care Index (net total return)"
+ },
+ "inception": {
+  "fundInceptionDate": "2023-11-01",
+  "shareClassInceptionDate": "2023-11-01",
+  "exchange": "NASDAQ"
+ },
+ "expenseRatio": {
+  "display": "0.65%",
+  "value": 0.65,
+  "gross": 0.65,
+  "net": 0.65
+ },
+ "nav": {
+  "display": "$61.27",
+  "value": 61.273213,
+  "asOfDate": "Sep 18 2026"
+ },
+ "marketPrice": {
+  "display": "$61.32",
+  "value": 61.32,
+  "asOfDate": "Sep 18 2026"
+ },
+ "premiumDiscount": {
+  "display": "0.08%",
+  "value": 0.0764
+ },
+ "aum": {
+  "display": "$9.19 M",
+  "value": 9190981.95,
+  "asOfDate": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data net assets"
+ },
+ "yields": {
+  "dividendYield": 0.84,
+  "dividendYieldText": "0.84%",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 18 2026",
+  "distributionRate": null,
+  "secYield": 0.81,
+  "secYieldText": "0.81%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 17 2026",
+  "unsubsidizedSecYield": 0.81
+ },
+ "returns": {
+  "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 3.12,
+   "mo1Text": "3.12%",
+   "qtd": 1.6,
+   "qtdText": "1.60%",
+   "ytd": 7.85,
+   "ytdText": "7.85%",
+   "yr1": 22.23,
+   "yr1Text": "22.23%",
+   "yr3": null,
+   "yr3Text": "—",
+   "yr5": null,
+   "yr5Text": "—",
+   "yr10": null,
+   "yr10Text": "—",
+   "sinceInception": 12.17,
+   "sinceInceptionText": "12.17%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 4.1,
+   "yr1": 20.39,
+   "yr3": null,
+   "yr5": null,
+   "yr10": null,
+   "sinceInception": 11.5
+  }
+ },
+ "distributions": {
+  "frequency": "Annually",
+  "paymentsPerYear": 1,
+  "frequencyCode": "YDEC",
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "12/19/2023",
+    "0.07965"
+   ],
+   [
+    "12/24/2024",
+    "0.3276"
+   ],
+   [
+    "12/16/2025",
+    "0.5121"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 64,
+  "asOfDate": "2026-09-18",
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 722,
+  "asOf": "Sep 18 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+ }
+}
