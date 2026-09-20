@@ -1040,6 +1040,17 @@ function holdingsContainer(fundData: JsonRecord): { name: string; block: JsonRec
   return null;
 }
 
+/** Published order: weight desc, then market value desc, then name / identifier / ticker (code-unit order, locale independent). */
+export function compareHoldingRows(a: JsonRecord, b: JsonRecord): number {
+  const numeric = (value: unknown): number => numberOrNull(value) ?? Number.NEGATIVE_INFINITY;
+  const text = (x: unknown, y: unknown): number => (String(x ?? '') < String(y ?? '') ? -1 : String(x ?? '') > String(y ?? '') ? 1 : 0);
+  const byWeight = numeric(b.Weight) - numeric(a.Weight);
+  if (byWeight) return byWeight;
+  const byValue = numeric(b['Market Value']) - numeric(a['Market Value']);
+  if (byValue) return byValue;
+  return text(a.Name, b.Name) || text(a.Identifier, b.Identifier) || text(a.Ticker, b.Ticker);
+}
+
 export function parseProductHoldings(fundData: JsonRecord, ticker: string): ParsedHoldings | null {
   const container = fundData && typeof fundData === 'object' ? holdingsContainer(fundData) : null;
   if (!container) return null;
@@ -1073,6 +1084,10 @@ export function parseProductHoldings(fundData: JsonRecord, ticker: string): Pars
     holdings.push(row);
   }
   if (!holdings.length) return null;
+  // am.jpmorgan.com returns the list in descending weight order but breaks
+  // ties (zero-weight currency contracts, equal-sized lots) differently from
+  // one request to the next; a canonical tie-break keeps reruns byte-identical.
+  holdings.sort(compareHoldingRows);
   const headers = hasBondColumns ? BOND_SHEET_HEADERS : HOLDINGS_HEADERS;
   return {
     asOfDate: isoOrNull(block?.effectiveDate ?? block?.asOfDate ?? fundData?.numberOfHoldingsEffectiveDate),

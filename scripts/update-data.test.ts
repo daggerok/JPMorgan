@@ -15,6 +15,7 @@ import {
   parseEarlyNavCsv,
   parseProductData,
   parseProductHoldings,
+  compareHoldingRows,
   parseHistoricalData,
   navTotalReturnDays,
   reinvestmentCoverageStart,
@@ -529,9 +530,13 @@ describe('parseProductHoldings', () => {
     expect(bonds.rows[0].Identifier).toBe('91282CJN2');
     expect(bonds.rows[0].Coupon).toBe('4.25');
     expect(bonds.rows[0].Maturity).toBe('Nov 15 2028');
+    // published weight order: Treasury 1.51, repo 0.06, corporate 0.03
+    expect(bonds.rows.map((row) => row.Identifier)).toEqual(['91282CJN2', 'REPO0001', '14040HCX5']);
     expect(bonds.rows[1].Ticker).toBe('-');
-    expect(bonds.rows[2].Coupon).toBe('');
-    expect(bonds.rows[2].Maturity).toBe('');
+    expect(bonds.rows[1].Coupon).toBe('');
+    expect(bonds.rows[1].Maturity).toBe('');
+    expect(bonds.rows[2].Ticker).toBe('-');
+    expect(bonds.rows[2].Coupon).toBe('5.7');
     expect(weightsSum(bonds.rows)).toBe(1.6);
   });
 
@@ -547,6 +552,25 @@ describe('parseProductHoldings', () => {
   test('returns null when the fund publishes no positions', () => {
     expect(parseProductHoldings({ dailyHoldingsAll: { data: [] } }, 'XXXX')).toBeNull();
     expect(parseProductHoldings({}, 'XXXX')).toBeNull();
+  });
+
+  test('orders rows canonically so a reshuffled source answer produces byte-identical pages', () => {
+    const rows = [
+      { securityDescription: 'CURRENCY CONTRACT - CNY', securityId: 'CCTCNY_46707_S', securityTicker: null, securityType: 'SPOT CONTRACTS', shares: -10707163, marketValue: 0, netAssetValuePercent: 0 },
+      { securityDescription: 'CURRENCY CONTRACT - CNY', securityId: 'CCTCNY_42963_S', securityTicker: null, securityType: 'SPOT CONTRACTS', shares: -10652727, marketValue: 0, netAssetValuePercent: 0 },
+      { securityDescription: 'KOREA 5% 09/26', securityId: '49151FB90', securityTicker: null, securityType: 'MUNICIPAL BONDS', shares: 1000000, marketValue: 1021341.4, netAssetValuePercent: 0.01 },
+      { securityDescription: 'KOREA 5% 09/26', securityId: '49151F3A6', securityTicker: null, securityType: 'MUNICIPAL BONDS', shares: 1000000, marketValue: 1021341.4, netAssetValuePercent: 0.01 },
+      { securityDescription: 'APPLE INC COMMON STOCK', securityId: '037833100', securityTicker: 'AAPL', securityType: 'DOMESTIC COMMON STOCK', shares: 10, marketValue: 2000, netAssetValuePercent: 1.5 },
+      { securityDescription: 'USD CASH', securityId: null, securityTicker: null, securityType: 'CURRENCIES', shares: 0, marketValue: 0.74, netAssetValuePercent: 0 },
+    ];
+    const ids = (order: typeof rows) => parseProductHoldings({ dailyHoldingsAll: { data: order } }, 'XXXX')!.rows.map((row) => row.Identifier);
+    const expected = ['037833100', '49151F3A6', '49151FB90', '-', 'CCTCNY_42963_S', 'CCTCNY_46707_S'];
+    expect(ids(rows)).toEqual(expected);
+    expect(ids([...rows].reverse())).toEqual(expected);
+    expect(ids([rows[1], rows[3], rows[5], rows[0], rows[2], rows[4]])).toEqual(expected);
+    // blank weights sort last; the comparator is locale independent
+    expect(compareHoldingRows({ Weight: '' }, { Weight: '-0.04' })).toBeGreaterThan(0);
+    expect(compareHoldingRows({ Weight: '0', Name: 'B' }, { Weight: '0', Name: 'a' })).toBeLessThan(0);
   });
 });
 

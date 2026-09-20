@@ -92,10 +92,14 @@ holdings count and as-of date, history count — is published for every fund.
 ## 5. Determinism and freshness
 
 - Per-fund files are rewritten only when their content changes
-  (`writeIfChanged`), pages are removed when a fund shrinks, rows are sorted
-  as published, and numbers are written as plain decimal strings. Two runs
-  against unchanged sources differ only in `index.json#generatedAt` and
-  `update-state.json#savedAt` (the sibling convention).
+  (`writeIfChanged`), pages are removed when a fund shrinks, and numbers are
+  written as plain decimal strings. Holdings rows keep the published
+  descending-weight order with a canonical tie-break (market value, name,
+  identifier, ticker — `compareHoldingRows`) because am.jpmorgan.com answers
+  equal rows (zero-weight currency contracts, equal lots) in a different
+  order from one request to the next. Two runs against unchanged sources
+  differ only in `index.json#generatedAt` and `update-state.json#savedAt`
+  (the sibling convention).
 - `api/jpmorgan/raw/**` is written only with `STORE_RAW_DOWNLOADS=1` (never
   by the workflow).
 - The workflow is `workflow_dispatch` only and commits `api/jpmorgan/**`
