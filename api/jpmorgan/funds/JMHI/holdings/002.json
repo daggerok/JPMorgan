@@ -2,7 +2,7 @@
  "ticker": "JMHI",
  "page": 2,
  "pageSize": 250,
- "totalRows": 258,
+ "totalRows": 256,
  "headers": [
   "Name",
   "Ticker",
@@ -16,32 +16,10 @@
  ],
  "rows": [
   {
-   "Name": "MONTGOMERY CNTY VAR 04/53",
-   "Ticker": "-",
-   "Identifier": "61361TAA9",
-   "Weight": "0.06",
-   "Market Value": "176662.1",
-   "Shares Held": "175000",
-   "Asset Category": "DEMAND NOTES",
-   "Coupon": "4.1",
-   "Maturity": "Apr 01 2053"
-  },
-  {
-   "Name": "CALIFORNIA SCH ZERO 08/30",
-   "Ticker": "-",
-   "Identifier": "13058RAR5",
-   "Weight": "0.06",
-   "Market Value": "175394.42",
-   "Shares Held": "200000",
-   "Asset Category": "MUNICIPAL BONDS",
-   "Coupon": "",
-   "Maturity": "Aug 01 2030"
-  },
-  {
    "Name": "PUBLIC FIN 5.25% 12/51",
    "Ticker": "-",
    "Identifier": "74443XAC1",
-   "Weight": "0.05",
+   "Weight": "0.06",
    "Market Value": "160000",
    "Shares Held": "800000",
    "Asset Category": "MUNICIPAL BONDS",
@@ -53,7 +31,7 @@
    "Ticker": "-",
    "Identifier": "63608TAB6",
    "Weight": "0.03",
-   "Market Value": "96086.23",
+   "Market Value": "94467.56",
    "Shares Held": "100000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "5.25",
@@ -64,7 +42,7 @@
    "Ticker": "-",
    "Identifier": "864809CD8",
    "Weight": "0.03",
-   "Market Value": "77128.9",
+   "Market Value": "73990.8",
    "Shares Held": "1000000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "",
@@ -82,26 +60,26 @@
    "Maturity": ""
   },
   {
-   "Name": "CASH",
-   "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "-0.01",
-   "Market Value": "-18669.63",
-   "Shares Held": "-18669",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
    "Name": "US 10YR NOTE 12/21/2026",
    "Ticker": "-",
    "Identifier": "TYZ6COM",
-   "Weight": "-0.09",
-   "Market Value": "-270052.97",
+   "Weight": "-0.14",
+   "Market Value": "-388177.97",
    "Shares Held": "105",
    "Asset Category": "INTEREST RATE FUTURES",
    "Coupon": "",
    "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "-0.69",
+   "Market Value": "-1931301.98",
+   "Shares Held": "-1931301",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   }
  ]
 }
