@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+import { hasOutputFilters, printConfig, printFilter, createReporter } from './update-output.ts';
 
 // J.P. Morgan Asset Management (US ETFs) static data updater.
 //
@@ -2250,7 +2251,6 @@ async function processFund(
     config,
   );
   if (reasons.length) {
-    console.log(`[ ${ticker.padEnd(5)} ] skipped (${reasons.join(', ')})`);
     return null;
   }
 
@@ -2694,9 +2694,7 @@ async function main(): Promise<void> {
   const config = readConfig();
   requestSleepMs = Math.max(0, config.requestSleep) * 1000;
 
-  console.log('JPMorgan ETF static data updater');
-  console.log('Sources: am.jpmorgan.com fund explorer + per-fund product-data / historicalData JSON, SEC EDGAR N-PORT-P (fallback), Yahoo Finance public chart API (fallback)');
-  for (const line of configLines(config)) console.log(`  ${line}`);
+  printConfig('JPMorgan', config);
   console.log('');
 
   // 1) Catalog discovery: fund explorer JSON, early-NAV CSV, previous index, seed.
@@ -2797,21 +2795,25 @@ async function main(): Promise<void> {
   let lastProcessedTicker: string | null = cursor;
   let failures = 0;
 
+  printFilter(universe.length, universe.length, hasOutputFilters(config));
+  const output = createReporter(API_ROOT, config.maxFetches > 0 ? Math.min(config.maxFetches, ordered.length) : ordered.length);
   async function worker(): Promise<void> {
     for (;;) {
       const item = queue.shift();
       if (!item) return;
       if (config.maxFetches > 0 && processed >= config.maxFetches) return;
       processed += 1;
+      const before = await output.before(item.fund.ticker);
       try {
         const row = await processFund(item.fund, config, previousIndex.get(item.fund.ticker) || {});
         if (row) {
           results.push(row);
           lastProcessedTicker = item.fund.ticker;
         }
+        await output.result(item.fund.ticker, before, row ? undefined : 'skipped');
       } catch (error) {
         failures += 1;
-        console.warn(`[ error    ] ${item.fund.ticker}: ${errorMessage(error)}`);
+        await output.result(item.fund.ticker, before, 'failed', String(error));
       }
       if (config.maxFetches > 0 && processed >= config.maxFetches) {
         console.log(`[ cursor   ] batch of ${config.maxFetches} reached — rerun to continue after ${lastProcessedTicker}`);
