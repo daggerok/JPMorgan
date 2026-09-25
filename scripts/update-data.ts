@@ -1065,7 +1065,7 @@ export function decodeDividendFrequency(code: unknown): { frequency: string; pay
   return DIVIDEND_FREQUENCY_CODES[text[0]] ?? null;
 }
 
-// Security types whose "securityTicker" is an exchange symbol. Bonds, outputMoney
+// Security types whose "securityTicker" is an exchange symbol. Bonds, money
 // market paper, repos, currencies and derivatives carry issuer codes instead
 // ("T", "COF", "SPX"), which would collide across funds in the Watchlist.
 const EQUITY_LIKE_SECURITY_TYPE = /(COMMON|PREFERRED|STOCK|REIT|ADR|GDR|EQUITY|SHARE|UNIT|FUND|ETF|TRUST|MONEY MARKET|WARRANT|RIGHT|MLP|PARTNERSHIP)/i;
@@ -1239,7 +1239,7 @@ export function parseProductData(payload: JsonRecord, ticker: string): ProductDa
   const benchmark = cleanText(((fundData.benchmarks ?? [])[0] ?? {})?.benchmark?.name ?? fundData.primaryBenchmark);
 
   // Yields: the daily 30-day SEC yield (etfSecYield) is the freshest; month-end
-  // and the outputMoney-market 7-day figure are the fallbacks. Dividend yield is the
+  // and the money-market 7-day figure are the fallbacks. Dividend yield is the
   // "12-month rolling dividend yield" the fund page shows, month-end otherwise.
   let secYield = fractionToPercent(dailySecYield.thirtyDaySecYield);
   let secYieldDate = isoOrNull(dailySecYield.effectiveDate);
@@ -1254,7 +1254,7 @@ export function parseProductData(payload: JsonRecord, ticker: string): ProductDa
   if (secYield === null) {
     secYield = fractionToPercent(monthEndYield.sevenDaySecYield ?? sc.sevenDaySecYield);
     secYieldDate = isoOrNull(monthEndYield.effectiveDate);
-    secYieldKind = '7-day SEC yield (outputMoney market fund, official JPMorgan product-data)';
+    secYieldKind = '7-day SEC yield (money market fund, official JPMorgan product-data)';
     unsubsidizedSecYield = fractionToPercent(monthEndYield.sevenDayUnsubSecYield);
   }
   let dividendYield = fractionToPercent(rollingYield.dividendYield);
