@@ -2,1009 +2,1021 @@
  "ticker": "JIDE",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 166,
+ "totalRows": 168,
  "headers": [
   "Date",
-  "Close",
-  "Adj Close",
-  "Volume"
+  "NAV",
+  "Market Price",
+  "Premium/Discount"
  ],
  "rows": [
   {
+   "Date": "Jan 27 2026",
+   "NAV": "49.8",
+   "Market Price": "49.8",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Jan 28 2026",
+   "NAV": "49.3758436",
+   "Market Price": "49.32",
+   "Premium/Discount": "-0.1131"
+  },
+  {
    "Date": "Jan 29 2026",
-   "Close": "49.869999",
-   "Adj Close": "49.869999",
-   "Volume": "2000"
+   "NAV": "49.67919455",
+   "Market Price": "49.87",
+   "Premium/Discount": "0.3841"
   },
   {
    "Date": "Jan 30 2026",
-   "Close": "49.389999",
-   "Adj Close": "49.389999",
-   "Volume": "15300"
+   "NAV": "49.2233239",
+   "Market Price": "49.39",
+   "Premium/Discount": "0.3386"
   },
   {
    "Date": "Feb 02 2026",
-   "Close": "49.669998",
-   "Adj Close": "49.669998",
-   "Volume": "500"
+   "NAV": "49.59586229",
+   "Market Price": "49.67",
+   "Premium/Discount": "0.1495"
   },
   {
    "Date": "Feb 03 2026",
-   "Close": "49.900002",
-   "Adj Close": "49.900002",
-   "Volume": "10100"
+   "NAV": "49.68776092",
+   "Market Price": "49.9",
+   "Premium/Discount": "0.4271"
   },
   {
    "Date": "Feb 04 2026",
-   "Close": "49.799999",
-   "Adj Close": "49.799999",
-   "Volume": "600"
+   "NAV": "49.60221825",
+   "Market Price": "49.8",
+   "Premium/Discount": "0.3987"
   },
   {
    "Date": "Feb 05 2026",
-   "Close": "49.290001",
-   "Adj Close": "49.290001",
-   "Volume": "200"
+   "NAV": "49.10689946",
+   "Market Price": "49.29",
+   "Premium/Discount": "0.3729"
   },
   {
    "Date": "Feb 06 2026",
-   "Close": "50.299999",
-   "Adj Close": "50.299999",
-   "Volume": "200"
+   "NAV": "50.28234929",
+   "Market Price": "50.3",
+   "Premium/Discount": "0.0351"
   },
   {
    "Date": "Feb 09 2026",
-   "Close": "51.23",
-   "Adj Close": "51.23",
-   "Volume": "400"
+   "NAV": "51.11865113",
+   "Market Price": "51.23",
+   "Premium/Discount": "0.2178"
   },
   {
    "Date": "Feb 10 2026",
-   "Close": "51.130001",
-   "Adj Close": "51.130001",
-   "Volume": "100"
+   "NAV": "50.96225646",
+   "Market Price": "51.13",
+   "Premium/Discount": "0.3292"
   },
   {
    "Date": "Feb 11 2026",
-   "Close": "51.43",
-   "Adj Close": "51.43",
-   "Volume": "100"
+   "NAV": "51.28893617",
+   "Market Price": "51.43",
+   "Premium/Discount": "0.275"
   },
   {
    "Date": "Feb 12 2026",
-   "Close": "51.049999",
-   "Adj Close": "51.049999",
-   "Volume": "800"
+   "NAV": "50.84895333",
+   "Market Price": "51.05",
+   "Premium/Discount": "0.3954"
   },
   {
    "Date": "Feb 13 2026",
-   "Close": "51.16",
-   "Adj Close": "51.16",
-   "Volume": "400"
+   "NAV": "51.03426617",
+   "Market Price": "51.16",
+   "Premium/Discount": "0.2464"
   },
   {
    "Date": "Feb 17 2026",
-   "Close": "51.259998",
-   "Adj Close": "51.259998",
-   "Volume": "200"
+   "NAV": "51.10715917",
+   "Market Price": "51.26",
+   "Premium/Discount": "0.2991"
   },
   {
    "Date": "Feb 18 2026",
-   "Close": "51.290001",
-   "Adj Close": "51.290001",
-   "Volume": "500"
+   "NAV": "51.21872738",
+   "Market Price": "51.29",
+   "Premium/Discount": "0.1392"
   },
   {
    "Date": "Feb 19 2026",
-   "Close": "51.150002",
-   "Adj Close": "51.150002",
-   "Volume": "300"
+   "NAV": "51.09996271",
+   "Market Price": "51.15",
+   "Premium/Discount": "0.0979"
   },
   {
    "Date": "Feb 20 2026",
-   "Close": "51.580002",
-   "Adj Close": "51.580002",
-   "Volume": "600"
+   "NAV": "51.46325379",
+   "Market Price": "51.58",
+   "Premium/Discount": "0.2269"
   },
   {
    "Date": "Feb 23 2026",
-   "Close": "51.580002",
-   "Adj Close": "51.580002",
-   "Volume": "1200"
+   "NAV": "51.21797658",
+   "Market Price": "51.58",
+   "Premium/Discount": "0.7068"
   },
   {
    "Date": "Feb 24 2026",
-   "Close": "51.349998",
-   "Adj Close": "51.349998",
-   "Volume": "900"
+   "NAV": "51.25617846",
+   "Market Price": "51.35",
+   "Premium/Discount": "0.183"
   },
   {
    "Date": "Feb 25 2026",
-   "Close": "52.09",
-   "Adj Close": "52.09",
-   "Volume": "1200"
+   "NAV": "51.93987483",
+   "Market Price": "52.09",
+   "Premium/Discount": "0.289"
   },
   {
    "Date": "Feb 26 2026",
-   "Close": "52.02",
-   "Adj Close": "52.02",
-   "Volume": "200"
+   "NAV": "51.86119583",
+   "Market Price": "52.02",
+   "Premium/Discount": "0.3062"
   },
   {
    "Date": "Feb 27 2026",
-   "Close": "51.860001",
-   "Adj Close": "51.860001",
-   "Volume": "100"
+   "NAV": "51.92321233",
+   "Market Price": "51.86",
+   "Premium/Discount": "-0.1217"
   },
   {
    "Date": "Mar 02 2026",
-   "Close": "51.02",
-   "Adj Close": "51.02",
-   "Volume": "4900"
+   "NAV": "50.94646588",
+   "Market Price": "51.02",
+   "Premium/Discount": "0.1443"
   },
   {
    "Date": "Mar 03 2026",
-   "Close": "49.48",
-   "Adj Close": "49.48",
-   "Volume": "37400"
+   "NAV": "49.34482025",
+   "Market Price": "49.48",
+   "Premium/Discount": "0.2739"
   },
   {
    "Date": "Mar 04 2026",
-   "Close": "50.040001",
-   "Adj Close": "50.040001",
-   "Volume": "1300"
+   "NAV": "49.98461121",
+   "Market Price": "50.04",
+   "Premium/Discount": "0.1108"
   },
   {
    "Date": "Mar 05 2026",
-   "Close": "48.77",
-   "Adj Close": "48.77",
-   "Volume": "1800"
+   "NAV": "48.74471008",
+   "Market Price": "48.77",
+   "Premium/Discount": "0.0519"
   },
   {
    "Date": "Mar 06 2026",
-   "Close": "48.189999",
-   "Adj Close": "48.189999",
-   "Volume": "1400"
+   "NAV": "48.19246713",
+   "Market Price": "48.19",
+   "Premium/Discount": "-0.0051"
   },
   {
    "Date": "Mar 09 2026",
-   "Close": "48.549999",
-   "Adj Close": "48.549999",
-   "Volume": "600"
+   "NAV": "48.48763983",
+   "Market Price": "48.55",
+   "Premium/Discount": "0.1286"
   },
   {
    "Date": "Mar 10 2026",
-   "Close": "48.860001",
-   "Adj Close": "48.860001",
-   "Volume": "400"
+   "NAV": "48.81974492",
+   "Market Price": "48.86",
+   "Premium/Discount": "0.0825"
   },
   {
    "Date": "Mar 11 2026",
-   "Close": "48.790001",
-   "Adj Close": "48.790001",
-   "Volume": "100"
+   "NAV": "48.74758863",
+   "Market Price": "48.79",
+   "Premium/Discount": "0.087"
   },
   {
    "Date": "Mar 12 2026",
-   "Close": "47.889999",
-   "Adj Close": "47.889999",
-   "Volume": "800"
+   "NAV": "47.67688467",
+   "Market Price": "47.89",
+   "Premium/Discount": "0.447"
   },
   {
    "Date": "Mar 13 2026",
-   "Close": "47.240002",
-   "Adj Close": "47.240002",
-   "Volume": "900"
+   "NAV": "47.11963371",
+   "Market Price": "47.24",
+   "Premium/Discount": "0.2554"
   },
   {
    "Date": "Mar 16 2026",
-   "Close": "48.040001",
-   "Adj Close": "48.040001",
-   "Volume": "300"
+   "NAV": "47.93787563",
+   "Market Price": "48.04",
+   "Premium/Discount": "0.213"
   },
   {
    "Date": "Mar 17 2026",
-   "Close": "48.200001",
-   "Adj Close": "48.200001",
-   "Volume": "300"
+   "NAV": "48.11886563",
+   "Market Price": "48.2",
+   "Premium/Discount": "0.1686"
   },
   {
    "Date": "Mar 18 2026",
-   "Close": "47.389999",
-   "Adj Close": "47.389999",
-   "Volume": "100"
+   "NAV": "47.24907854",
+   "Market Price": "47.39",
+   "Premium/Discount": "0.2983"
   },
   {
    "Date": "Mar 19 2026",
-   "Close": "47.150002",
-   "Adj Close": "47.150002",
-   "Volume": "700"
+   "NAV": "47.06567388",
+   "Market Price": "47.15",
+   "Premium/Discount": "0.1792"
   },
   {
    "Date": "Mar 20 2026",
-   "Close": "45.48",
-   "Adj Close": "45.48",
-   "Volume": "11800"
+   "NAV": "45.51130938",
+   "Market Price": "45.48",
+   "Premium/Discount": "-0.0688"
   },
   {
    "Date": "Mar 23 2026",
-   "Close": "46.790001",
-   "Adj Close": "46.790001",
-   "Volume": "100"
+   "NAV": "46.67678254",
+   "Market Price": "46.79",
+   "Premium/Discount": "0.2426"
   },
   {
    "Date": "Mar 24 2026",
-   "Close": "46.529999",
-   "Adj Close": "46.529999",
-   "Volume": "100"
+   "NAV": "46.41475629",
+   "Market Price": "46.53",
+   "Premium/Discount": "0.2483"
   },
   {
    "Date": "Mar 25 2026",
-   "Close": "47.290001",
-   "Adj Close": "47.290001",
-   "Volume": "100"
+   "NAV": "47.22286313",
+   "Market Price": "47.29",
+   "Premium/Discount": "0.1422"
   },
   {
    "Date": "Mar 26 2026",
-   "Close": "46.169998",
-   "Adj Close": "46.169998",
-   "Volume": "1600"
+   "NAV": "46.07978717",
+   "Market Price": "46.17",
+   "Premium/Discount": "0.1958"
   },
   {
    "Date": "Mar 27 2026",
-   "Close": "45.700001",
-   "Adj Close": "45.700001",
-   "Volume": "100"
+   "NAV": "45.6007165",
+   "Market Price": "45.7",
+   "Premium/Discount": "0.2177"
   },
   {
    "Date": "Mar 30 2026",
-   "Close": "45.610001",
-   "Adj Close": "45.610001",
-   "Volume": "100"
+   "NAV": "45.556489",
+   "Market Price": "45.61",
+   "Premium/Discount": "0.1175"
   },
   {
    "Date": "Mar 31 2026",
-   "Close": "47.139999",
-   "Adj Close": "47.139999",
-   "Volume": "500"
+   "NAV": "47.09804438",
+   "Market Price": "47.14",
+   "Premium/Discount": "0.0891"
   },
   {
    "Date": "Apr 01 2026",
-   "Close": "48.130001",
-   "Adj Close": "48.130001",
-   "Volume": "100"
+   "NAV": "48.01515354",
+   "Market Price": "48.13",
+   "Premium/Discount": "0.2392"
   },
   {
    "Date": "Apr 02 2026",
-   "Close": "47.740002",
-   "Adj Close": "47.740002",
-   "Volume": "100"
+   "NAV": "47.66252917",
+   "Market Price": "47.74",
+   "Premium/Discount": "0.1625"
   },
   {
    "Date": "Apr 06 2026",
-   "Close": "47.939999",
-   "Adj Close": "47.939999",
-   "Volume": "2300"
+   "NAV": "47.69706579",
+   "Market Price": "47.94",
+   "Premium/Discount": "0.5093"
   },
   {
    "Date": "Apr 07 2026",
-   "Close": "47.91",
-   "Adj Close": "47.91",
-   "Volume": "100"
+   "NAV": "47.79950167",
+   "Market Price": "47.91",
+   "Premium/Discount": "0.2312"
   },
   {
    "Date": "Apr 08 2026",
-   "Close": "49.959999",
-   "Adj Close": "49.959999",
-   "Volume": "800"
+   "NAV": "49.98214258",
+   "Market Price": "49.96",
+   "Premium/Discount": "-0.0443"
   },
   {
    "Date": "Apr 09 2026",
-   "Close": "50.009998",
-   "Adj Close": "50.009998",
-   "Volume": "100"
+   "NAV": "50.0501605",
+   "Market Price": "50.01",
+   "Premium/Discount": "-0.0802"
   },
   {
    "Date": "Apr 10 2026",
-   "Close": "50.080002",
-   "Adj Close": "50.080002",
-   "Volume": "100"
+   "NAV": "49.96942467",
+   "Market Price": "50.08",
+   "Premium/Discount": "0.2213"
   },
   {
    "Date": "Apr 13 2026",
-   "Close": "50.189999",
-   "Adj Close": "50.189999",
-   "Volume": "100"
+   "NAV": "50.22246904",
+   "Market Price": "50.19",
+   "Premium/Discount": "-0.0647"
   },
   {
    "Date": "Apr 14 2026",
-   "Close": "50.630001",
-   "Adj Close": "50.630001",
-   "Volume": "100"
+   "NAV": "50.49134408",
+   "Market Price": "50.63",
+   "Premium/Discount": "0.2746"
   },
   {
    "Date": "Apr 15 2026",
-   "Close": "50.450001",
-   "Adj Close": "50.450001",
-   "Volume": "100"
+   "NAV": "50.27931238",
+   "Market Price": "50.45",
+   "Premium/Discount": "0.3395"
   },
   {
    "Date": "Apr 16 2026",
-   "Close": "50.119999",
-   "Adj Close": "50.119999",
-   "Volume": "300"
+   "NAV": "50.01238092",
+   "Market Price": "50.12",
+   "Premium/Discount": "0.2152"
   },
   {
    "Date": "Apr 17 2026",
-   "Close": "50.73",
-   "Adj Close": "50.73",
-   "Volume": "300"
+   "NAV": "50.58854925",
+   "Market Price": "50.73",
+   "Premium/Discount": "0.2796"
   },
   {
    "Date": "Apr 20 2026",
-   "Close": "50.349998",
-   "Adj Close": "50.349998",
-   "Volume": "100"
+   "NAV": "50.28261383",
+   "Market Price": "50.35",
+   "Premium/Discount": "0.134"
   },
   {
    "Date": "Apr 21 2026",
-   "Close": "49.16",
-   "Adj Close": "49.16",
-   "Volume": "100"
+   "NAV": "49.07882942",
+   "Market Price": "49.16",
+   "Premium/Discount": "0.1654"
   },
   {
    "Date": "Apr 22 2026",
-   "Close": "49.299999",
-   "Adj Close": "49.299999",
-   "Volume": "800"
+   "NAV": "49.25095071",
+   "Market Price": "49.3",
+   "Premium/Discount": "0.0996"
   },
   {
    "Date": "Apr 23 2026",
-   "Close": "48.93",
-   "Adj Close": "48.93",
-   "Volume": "1700"
+   "NAV": "48.85657929",
+   "Market Price": "48.93",
+   "Premium/Discount": "0.1503"
   },
   {
    "Date": "Apr 24 2026",
-   "Close": "48.959999",
-   "Adj Close": "48.959999",
-   "Volume": "1500"
+   "NAV": "48.98635646",
+   "Market Price": "48.96",
+   "Premium/Discount": "-0.0538"
   },
   {
    "Date": "Apr 27 2026",
-   "Close": "48.849998",
-   "Adj Close": "48.849998",
-   "Volume": "100"
+   "NAV": "48.702766",
+   "Market Price": "48.85",
+   "Premium/Discount": "0.3023"
   },
   {
    "Date": "Apr 28 2026",
-   "Close": "48.580002",
-   "Adj Close": "48.580002",
-   "Volume": "100"
+   "NAV": "48.45951617",
+   "Market Price": "48.58",
+   "Premium/Discount": "0.2486"
   },
   {
    "Date": "Apr 29 2026",
-   "Close": "48.029999",
-   "Adj Close": "48.029999",
-   "Volume": "200"
+   "NAV": "48.05388096",
+   "Market Price": "48.03",
+   "Premium/Discount": "-0.0497"
   },
   {
    "Date": "Apr 30 2026",
-   "Close": "49.290001",
-   "Adj Close": "49.290001",
-   "Volume": "24500"
+   "NAV": "49.19795513",
+   "Market Price": "49.29",
+   "Premium/Discount": "0.1871"
   },
   {
    "Date": "May 01 2026",
-   "Close": "48.959999",
-   "Adj Close": "48.959999",
-   "Volume": "200"
+   "NAV": "48.89723488",
+   "Market Price": "48.96",
+   "Premium/Discount": "0.1284"
   },
   {
    "Date": "May 04 2026",
-   "Close": "48.23",
-   "Adj Close": "48.23",
-   "Volume": "200"
+   "NAV": "48.29640308",
+   "Market Price": "48.23",
+   "Premium/Discount": "-0.1375"
   },
   {
    "Date": "May 05 2026",
-   "Close": "48.900002",
-   "Adj Close": "48.900002",
-   "Volume": "500"
+   "NAV": "48.89433767",
+   "Market Price": "48.9",
+   "Premium/Discount": "0.0116"
   },
   {
    "Date": "May 06 2026",
-   "Close": "50.259998",
-   "Adj Close": "50.259998",
-   "Volume": "100"
+   "NAV": "50.16612971",
+   "Market Price": "50.26",
+   "Premium/Discount": "0.1871"
   },
   {
    "Date": "May 07 2026",
-   "Close": "49.450001",
-   "Adj Close": "49.450001",
-   "Volume": "100"
+   "NAV": "49.39594",
+   "Market Price": "49.45",
+   "Premium/Discount": "0.1094"
   },
   {
    "Date": "May 08 2026",
-   "Close": "49.93",
-   "Adj Close": "49.93",
-   "Volume": "100"
+   "NAV": "49.88490325",
+   "Market Price": "49.93",
+   "Premium/Discount": "0.0904"
   },
   {
    "Date": "May 11 2026",
-   "Close": "49.91",
-   "Adj Close": "49.91",
-   "Volume": "100"
+   "NAV": "49.83616517",
+   "Market Price": "49.91",
+   "Premium/Discount": "0.1482"
   },
   {
    "Date": "May 12 2026",
-   "Close": "49.740002",
-   "Adj Close": "49.740002",
-   "Volume": "100"
+   "NAV": "49.62491488",
+   "Market Price": "49.74",
+   "Premium/Discount": "0.2319"
   },
   {
    "Date": "May 13 2026",
-   "Close": "49.849998",
-   "Adj Close": "49.849998",
-   "Volume": "100"
+   "NAV": "49.80545288",
+   "Market Price": "49.85",
+   "Premium/Discount": "0.0894"
   },
   {
    "Date": "May 14 2026",
-   "Close": "49.700001",
-   "Adj Close": "49.700001",
-   "Volume": "100"
+   "NAV": "49.641494",
+   "Market Price": "49.7",
+   "Premium/Discount": "0.1179"
   },
   {
    "Date": "May 15 2026",
-   "Close": "48.740002",
-   "Adj Close": "48.740002",
-   "Volume": "100"
+   "NAV": "48.74111654",
+   "Market Price": "48.74",
+   "Premium/Discount": "-0.0023"
   },
   {
    "Date": "May 18 2026",
-   "Close": "49.080002",
-   "Adj Close": "49.080002",
-   "Volume": "200"
+   "NAV": "48.99090271",
+   "Market Price": "49.08",
+   "Premium/Discount": "0.1819"
   },
   {
    "Date": "May 19 2026",
-   "Close": "48.700001",
-   "Adj Close": "48.700001",
-   "Volume": "100"
+   "NAV": "48.68709204",
+   "Market Price": "48.7",
+   "Premium/Discount": "0.0265"
   },
   {
    "Date": "May 20 2026",
-   "Close": "49.560001",
-   "Adj Close": "49.560001",
-   "Volume": "200"
+   "NAV": "49.44042379",
+   "Market Price": "49.56",
+   "Premium/Discount": "0.2419"
   },
   {
    "Date": "May 21 2026",
-   "Close": "49.610001",
-   "Adj Close": "49.610001",
-   "Volume": "800"
+   "NAV": "49.49481296",
+   "Market Price": "49.61",
+   "Premium/Discount": "0.2327"
   },
   {
    "Date": "May 22 2026",
-   "Close": "49.48",
-   "Adj Close": "49.48",
-   "Volume": "100"
+   "NAV": "49.417392",
+   "Market Price": "49.48",
+   "Premium/Discount": "0.1267"
   },
   {
    "Date": "May 26 2026",
-   "Close": "50",
-   "Adj Close": "50",
-   "Volume": "200"
+   "NAV": "49.98991521",
+   "Market Price": "50",
+   "Premium/Discount": "0.0202"
   },
   {
    "Date": "May 27 2026",
-   "Close": "49.900002",
-   "Adj Close": "49.900002",
-   "Volume": "100"
+   "NAV": "49.79974946",
+   "Market Price": "49.9",
+   "Premium/Discount": "0.2013"
   },
   {
    "Date": "May 28 2026",
-   "Close": "49.77",
-   "Adj Close": "49.77",
-   "Volume": "0"
+   "NAV": "49.74168692",
+   "Market Price": "49.77",
+   "Premium/Discount": "0.0569"
   },
   {
    "Date": "May 29 2026",
-   "Close": "49.889999",
-   "Adj Close": "49.889999",
-   "Volume": "100"
+   "NAV": "49.89347333",
+   "Market Price": "49.89",
+   "Premium/Discount": "-0.007"
   },
   {
    "Date": "Jun 01 2026",
-   "Close": "49.57",
-   "Adj Close": "49.57",
-   "Volume": "100"
+   "NAV": "49.67961325",
+   "Market Price": "49.57",
+   "Premium/Discount": "-0.2206"
   },
   {
    "Date": "Jun 02 2026",
-   "Close": "49.799999",
-   "Adj Close": "49.799999",
-   "Volume": "700"
+   "NAV": "49.72151529",
+   "Market Price": "49.8",
+   "Premium/Discount": "0.1578"
   },
   {
    "Date": "Jun 03 2026",
-   "Close": "49.369999",
-   "Adj Close": "49.369999",
-   "Volume": "300"
+   "NAV": "49.32218",
+   "Market Price": "49.37",
+   "Premium/Discount": "0.097"
   },
   {
    "Date": "Jun 04 2026",
-   "Close": "49.720001",
-   "Adj Close": "49.720001",
-   "Volume": "100"
+   "NAV": "49.57258975",
+   "Market Price": "49.72",
+   "Premium/Discount": "0.2974"
   },
   {
    "Date": "Jun 05 2026",
-   "Close": "48.48",
-   "Adj Close": "48.48",
-   "Volume": "1200"
+   "NAV": "48.40191075",
+   "Market Price": "48.48",
+   "Premium/Discount": "0.1613"
   },
   {
    "Date": "Jun 08 2026",
-   "Close": "48.900002",
-   "Adj Close": "48.900002",
-   "Volume": "700"
+   "NAV": "48.78939963",
+   "Market Price": "48.9",
+   "Premium/Discount": "0.2267"
   },
   {
    "Date": "Jun 09 2026",
-   "Close": "49.040001",
-   "Adj Close": "49.040001",
-   "Volume": "100"
+   "NAV": "48.89646004",
+   "Market Price": "49.04",
+   "Premium/Discount": "0.2936"
   },
   {
    "Date": "Jun 10 2026",
-   "Close": "48.450001",
-   "Adj Close": "48.450001",
-   "Volume": "100"
+   "NAV": "48.25713554",
+   "Market Price": "48.45",
+   "Premium/Discount": "0.3997"
   },
   {
    "Date": "Jun 11 2026",
-   "Close": "50.049999",
-   "Adj Close": "50.049999",
-   "Volume": "200"
+   "NAV": "49.85068508",
+   "Market Price": "50.05",
+   "Premium/Discount": "0.3998"
   },
   {
    "Date": "Jun 12 2026",
-   "Close": "50.279999",
-   "Adj Close": "50.279999",
-   "Volume": "100"
+   "NAV": "50.14358817",
+   "Market Price": "50.28",
+   "Premium/Discount": "0.272"
   },
   {
    "Date": "Jun 15 2026",
-   "Close": "50.470001",
-   "Adj Close": "50.470001",
-   "Volume": "300"
+   "NAV": "50.40582079",
+   "Market Price": "50.47",
+   "Premium/Discount": "0.1273"
   },
   {
    "Date": "Jun 16 2026",
-   "Close": "50.529999",
-   "Adj Close": "50.529999",
-   "Volume": "200"
+   "NAV": "50.39118129",
+   "Market Price": "50.53",
+   "Premium/Discount": "0.2755"
   },
   {
    "Date": "Jun 17 2026",
-   "Close": "50.380001",
-   "Adj Close": "50.380001",
-   "Volume": "100"
+   "NAV": "50.23781975",
+   "Market Price": "50.38",
+   "Premium/Discount": "0.283"
   },
   {
    "Date": "Jun 18 2026",
-   "Close": "50.599998",
-   "Adj Close": "50.599998",
-   "Volume": "400"
+   "NAV": "50.54766075",
+   "Market Price": "50.6",
+   "Premium/Discount": "0.1035"
   },
   {
    "Date": "Jun 22 2026",
-   "Close": "50.619999",
-   "Adj Close": "50.619999",
-   "Volume": "100"
+   "NAV": "50.56157552",
+   "Market Price": "50.62",
+   "Premium/Discount": "0.1156"
   },
   {
    "Date": "Jun 23 2026",
-   "Close": "49.68",
-   "Adj Close": "49.68",
-   "Volume": "200"
+   "NAV": "49.51653954",
+   "Market Price": "49.68",
+   "Premium/Discount": "0.3301"
   },
   {
    "Date": "Jun 24 2026",
-   "Close": "49.52",
-   "Adj Close": "49.52",
-   "Volume": "500"
+   "NAV": "49.36950277",
+   "Market Price": "49.52",
+   "Premium/Discount": "0.3048"
   },
   {
    "Date": "Jun 25 2026",
-   "Close": "50.060001",
-   "Adj Close": "50.060001",
-   "Volume": "100"
+   "NAV": "49.88338671",
+   "Market Price": "50.06",
+   "Premium/Discount": "0.3541"
   },
   {
    "Date": "Jun 26 2026",
-   "Close": "49.73",
-   "Adj Close": "49.73",
-   "Volume": "100"
+   "NAV": "49.598673",
+   "Market Price": "49.73",
+   "Premium/Discount": "0.2648"
   },
   {
    "Date": "Jun 29 2026",
-   "Close": "50.27",
-   "Adj Close": "50.27",
-   "Volume": "100"
+   "NAV": "50.2894061",
+   "Market Price": "50.27",
+   "Premium/Discount": "-0.0386"
   },
   {
    "Date": "Jun 30 2026",
-   "Close": "50.41",
-   "Adj Close": "50.41",
-   "Volume": "100"
+   "NAV": "50.39112906",
+   "Market Price": "50.41",
+   "Premium/Discount": "0.0374"
   },
   {
    "Date": "Jul 01 2026",
-   "Close": "50.009998",
-   "Adj Close": "50.009998",
-   "Volume": "100"
+   "NAV": "49.7557604",
+   "Market Price": "50.01",
+   "Premium/Discount": "0.511"
   },
   {
    "Date": "Jul 02 2026",
-   "Close": "50.580002",
-   "Adj Close": "50.580002",
-   "Volume": "100"
+   "NAV": "50.4819594",
+   "Market Price": "50.58",
+   "Premium/Discount": "0.1942"
   },
   {
    "Date": "Jul 06 2026",
-   "Close": "51.169998",
-   "Adj Close": "51.169998",
-   "Volume": "200"
+   "NAV": "51.12613354",
+   "Market Price": "51.17",
+   "Premium/Discount": "0.0858"
   },
   {
    "Date": "Jul 07 2026",
-   "Close": "50.470001",
-   "Adj Close": "50.470001",
-   "Volume": "100"
+   "NAV": "50.40276406",
+   "Market Price": "50.47",
+   "Premium/Discount": "0.1334"
   },
   {
    "Date": "Jul 08 2026",
-   "Close": "49.939999",
-   "Adj Close": "49.939999",
-   "Volume": "100"
+   "NAV": "49.89286517",
+   "Market Price": "49.94",
+   "Premium/Discount": "0.0945"
   },
   {
    "Date": "Jul 09 2026",
-   "Close": "50.27",
-   "Adj Close": "50.27",
-   "Volume": "100"
+   "NAV": "50.26177704",
+   "Market Price": "50.27",
+   "Premium/Discount": "0.0164"
   },
   {
    "Date": "Jul 10 2026",
-   "Close": "50.380001",
-   "Adj Close": "50.380001",
-   "Volume": "100"
+   "NAV": "50.21818929",
+   "Market Price": "50.38",
+   "Premium/Discount": "0.3222"
   },
   {
    "Date": "Jul 13 2026",
-   "Close": "49.900002",
-   "Adj Close": "49.900002",
-   "Volume": "200"
+   "NAV": "49.81690031",
+   "Market Price": "49.9",
+   "Premium/Discount": "0.1668"
   },
   {
    "Date": "Jul 14 2026",
-   "Close": "50.369999",
-   "Adj Close": "50.369999",
-   "Volume": "100"
+   "NAV": "50.21169502",
+   "Market Price": "50.37",
+   "Premium/Discount": "0.3153"
   },
   {
    "Date": "Jul 15 2026",
-   "Close": "50.709999",
-   "Adj Close": "50.709999",
-   "Volume": "100"
+   "NAV": "50.64577133",
+   "Market Price": "50.71",
+   "Premium/Discount": "0.1268"
   },
   {
    "Date": "Jul 16 2026",
-   "Close": "50.419998",
-   "Adj Close": "50.419998",
-   "Volume": "100"
+   "NAV": "50.357911",
+   "Market Price": "50.42",
+   "Premium/Discount": "0.1233"
   },
   {
    "Date": "Jul 17 2026",
-   "Close": "50.119999",
-   "Adj Close": "50.119999",
-   "Volume": "200"
+   "NAV": "50.03661521",
+   "Market Price": "50.12",
+   "Premium/Discount": "0.1666"
   },
   {
    "Date": "Jul 20 2026",
-   "Close": "49.84",
-   "Adj Close": "49.84",
-   "Volume": "100"
+   "NAV": "49.76030296",
+   "Market Price": "49.84",
+   "Premium/Discount": "0.1602"
   },
   {
    "Date": "Jul 21 2026",
-   "Close": "50.57",
-   "Adj Close": "50.57",
-   "Volume": "100"
+   "NAV": "50.50546898",
+   "Market Price": "50.57",
+   "Premium/Discount": "0.1278"
   },
   {
    "Date": "Jul 22 2026",
-   "Close": "50.639999",
-   "Adj Close": "50.639999",
-   "Volume": "100"
+   "NAV": "50.549632",
+   "Market Price": "50.64",
+   "Premium/Discount": "0.1788"
   },
   {
    "Date": "Jul 23 2026",
-   "Close": "49.709999",
-   "Adj Close": "49.709999",
-   "Volume": "100"
+   "NAV": "49.77323017",
+   "Market Price": "49.71",
+   "Premium/Discount": "-0.127"
   },
   {
    "Date": "Jul 24 2026",
-   "Close": "49.970001",
-   "Adj Close": "49.970001",
-   "Volume": "100"
+   "NAV": "49.81794906",
+   "Market Price": "49.97",
+   "Premium/Discount": "0.3052"
   },
   {
    "Date": "Jul 27 2026",
-   "Close": "50.209999",
-   "Adj Close": "50.209999",
-   "Volume": "100"
+   "NAV": "50.06055119",
+   "Market Price": "50.21",
+   "Premium/Discount": "0.2985"
   },
   {
    "Date": "Jul 28 2026",
-   "Close": "50.07",
-   "Adj Close": "50.07",
-   "Volume": "100"
+   "NAV": "49.89702096",
+   "Market Price": "50.07",
+   "Premium/Discount": "0.3467"
   },
   {
    "Date": "Jul 29 2026",
-   "Close": "49.830002",
-   "Adj Close": "49.830002",
-   "Volume": "100"
+   "NAV": "49.8046604",
+   "Market Price": "49.83",
+   "Premium/Discount": "0.0509"
   },
   {
    "Date": "Jul 30 2026",
-   "Close": "51.27",
-   "Adj Close": "51.27",
-   "Volume": "100"
+   "NAV": "51.26704475",
+   "Market Price": "51.27",
+   "Premium/Discount": "0.0058"
   },
   {
    "Date": "Jul 31 2026",
-   "Close": "51.16",
-   "Adj Close": "51.16",
-   "Volume": "100"
+   "NAV": "51.06305588",
+   "Market Price": "51.16",
+   "Premium/Discount": "0.1899"
   },
   {
    "Date": "Aug 03 2026",
-   "Close": "51.380001",
-   "Adj Close": "51.380001",
-   "Volume": "100"
+   "NAV": "51.424191",
+   "Market Price": "51.38",
+   "Premium/Discount": "-0.0859"
   },
   {
    "Date": "Aug 04 2026",
-   "Close": "51.990002",
-   "Adj Close": "51.990002",
-   "Volume": "200"
+   "NAV": "51.9010959",
+   "Market Price": "51.99",
+   "Premium/Discount": "0.1713"
   },
   {
    "Date": "Aug 05 2026",
-   "Close": "52.200001",
-   "Adj Close": "52.200001",
-   "Volume": "100"
+   "NAV": "52.06193862",
+   "Market Price": "52.2",
+   "Premium/Discount": "0.2652"
   },
   {
    "Date": "Aug 06 2026",
-   "Close": "52.279999",
-   "Adj Close": "52.279999",
-   "Volume": "200"
+   "NAV": "52.18458433",
+   "Market Price": "52.28",
+   "Premium/Discount": "0.1828"
   },
   {
    "Date": "Aug 07 2026",
-   "Close": "52.810001",
-   "Adj Close": "52.810001",
-   "Volume": "400"
+   "NAV": "52.73007294",
+   "Market Price": "52.81",
+   "Premium/Discount": "0.1516"
   },
   {
    "Date": "Aug 10 2026",
-   "Close": "52.84",
-   "Adj Close": "52.84",
-   "Volume": "3000"
+   "NAV": "52.69295754",
+   "Market Price": "52.84",
+   "Premium/Discount": "0.2791"
   },
   {
    "Date": "Aug 11 2026",
-   "Close": "52.869999",
-   "Adj Close": "52.869999",
-   "Volume": "200"
+   "NAV": "52.73820687",
+   "Market Price": "52.87",
+   "Premium/Discount": "0.2499"
   },
   {
    "Date": "Aug 12 2026",
-   "Close": "53.040001",
-   "Adj Close": "53.040001",
-   "Volume": "300"
+   "NAV": "52.89492021",
+   "Market Price": "53.04",
+   "Premium/Discount": "0.2743"
   },
   {
    "Date": "Aug 13 2026",
-   "Close": "53.119999",
-   "Adj Close": "53.119999",
-   "Volume": "100"
+   "NAV": "53.07233142",
+   "Market Price": "53.12",
+   "Premium/Discount": "0.0898"
   },
   {
    "Date": "Aug 14 2026",
-   "Close": "53.09",
-   "Adj Close": "53.09",
-   "Volume": "700"
+   "NAV": "53.04188662",
+   "Market Price": "53.09",
+   "Premium/Discount": "0.0907"
   },
   {
    "Date": "Aug 17 2026",
-   "Close": "53.080002",
-   "Adj Close": "53.080002",
-   "Volume": "400"
+   "NAV": "52.95676406",
+   "Market Price": "53.08",
+   "Premium/Discount": "0.2327"
   },
   {
    "Date": "Aug 18 2026",
-   "Close": "52.389999",
-   "Adj Close": "52.389999",
-   "Volume": "500"
+   "NAV": "52.29239617",
+   "Market Price": "52.39",
+   "Premium/Discount": "0.1867"
   },
   {
    "Date": "Aug 19 2026",
-   "Close": "52.529999",
-   "Adj Close": "52.529999",
-   "Volume": "1200"
+   "NAV": "52.36766852",
+   "Market Price": "52.53",
+   "Premium/Discount": "0.31"
   },
   {
    "Date": "Aug 20 2026",
-   "Close": "52.259998",
-   "Adj Close": "52.259998",
-   "Volume": "6000"
+   "NAV": "52.05603838",
+   "Market Price": "52.26",
+   "Premium/Discount": "0.3918"
   },
   {
    "Date": "Aug 21 2026",
-   "Close": "52.610001",
-   "Adj Close": "52.610001",
-   "Volume": "5000"
+   "NAV": "52.55625213",
+   "Market Price": "52.61",
+   "Premium/Discount": "0.1023"
   },
   {
    "Date": "Aug 24 2026",
-   "Close": "52.549999",
-   "Adj Close": "52.549999",
-   "Volume": "6300"
+   "NAV": "52.49432846",
+   "Market Price": "52.55",
+   "Premium/Discount": "0.1061"
   },
   {
    "Date": "Aug 25 2026",
-   "Close": "53",
-   "Adj Close": "53",
-   "Volume": "100"
+   "NAV": "52.84927315",
+   "Market Price": "53",
+   "Premium/Discount": "0.2852"
   },
   {
    "Date": "Aug 26 2026",
-   "Close": "52.77",
-   "Adj Close": "52.77",
-   "Volume": "100"
+   "NAV": "52.705634",
+   "Market Price": "52.77",
+   "Premium/Discount": "0.1221"
   },
   {
    "Date": "Aug 27 2026",
-   "Close": "52.529999",
-   "Adj Close": "52.529999",
-   "Volume": "100"
+   "NAV": "52.45743319",
+   "Market Price": "52.53",
+   "Premium/Discount": "0.1383"
   },
   {
    "Date": "Aug 28 2026",
-   "Close": "52.490002",
-   "Adj Close": "52.490002",
-   "Volume": "100"
+   "NAV": "52.35492948",
+   "Market Price": "52.49",
+   "Premium/Discount": "0.258"
   },
   {
    "Date": "Aug 31 2026",
-   "Close": "52.34",
-   "Adj Close": "52.34",
-   "Volume": "100"
+   "NAV": "52.26647077",
+   "Market Price": "52.34",
+   "Premium/Discount": "0.1407"
   },
   {
    "Date": "Sep 01 2026",
-   "Close": "51.779999",
-   "Adj Close": "51.779999",
-   "Volume": "100"
+   "NAV": "51.79573515",
+   "Market Price": "51.78",
+   "Premium/Discount": "-0.0304"
   },
   {
    "Date": "Sep 02 2026",
-   "Close": "52.040001",
-   "Adj Close": "52.040001",
-   "Volume": "300"
+   "NAV": "51.94785396",
+   "Market Price": "52.04",
+   "Premium/Discount": "0.1774"
   },
   {
    "Date": "Sep 03 2026",
-   "Close": "52.580002",
-   "Adj Close": "52.580002",
-   "Volume": "300"
+   "NAV": "52.5704169",
+   "Market Price": "52.58",
+   "Premium/Discount": "0.0182"
   },
   {
    "Date": "Sep 04 2026",
-   "Close": "52.66",
-   "Adj Close": "52.66",
-   "Volume": "400"
+   "NAV": "52.56753317",
+   "Market Price": "52.66",
+   "Premium/Discount": "0.1759"
   },
   {
    "Date": "Sep 08 2026",
-   "Close": "52.470001",
-   "Adj Close": "52.470001",
-   "Volume": "700"
+   "NAV": "52.3554955",
+   "Market Price": "52.47",
+   "Premium/Discount": "0.2187"
   },
   {
    "Date": "Sep 09 2026",
-   "Close": "51.790001",
-   "Adj Close": "51.790001",
-   "Volume": "100"
+   "NAV": "51.80773765",
+   "Market Price": "51.79",
+   "Premium/Discount": "-0.0342"
   },
   {
    "Date": "Sep 10 2026",
-   "Close": "51.41",
-   "Adj Close": "51.41",
-   "Volume": "100"
+   "NAV": "51.35277635",
+   "Market Price": "51.41",
+   "Premium/Discount": "0.1114"
   },
   {
    "Date": "Sep 11 2026",
-   "Close": "51.869999",
-   "Adj Close": "51.869999",
-   "Volume": "700"
+   "NAV": "51.75962563",
+   "Market Price": "51.87",
+   "Premium/Discount": "0.2132"
   },
   {
    "Date": "Sep 14 2026",
-   "Close": "51.610001",
-   "Adj Close": "51.610001",
-   "Volume": "100"
+   "NAV": "51.46574527",
+   "Market Price": "51.61",
+   "Premium/Discount": "0.2803"
   },
   {
    "Date": "Sep 15 2026",
-   "Close": "51.419998",
-   "Adj Close": "51.419998",
-   "Volume": "500"
+   "NAV": "51.2668546",
+   "Market Price": "51.42",
+   "Premium/Discount": "0.2987"
   },
   {
    "Date": "Sep 16 2026",
-   "Close": "51.299999",
-   "Adj Close": "51.299999",
-   "Volume": "500"
+   "NAV": "51.05822785",
+   "Market Price": "51.3",
+   "Premium/Discount": "0.4735"
   },
   {
    "Date": "Sep 17 2026",
-   "Close": "51.880001",
-   "Adj Close": "51.880001",
-   "Volume": "100"
+   "NAV": "51.8395295",
+   "Market Price": "51.88",
+   "Premium/Discount": "0.0781"
   },
   {
    "Date": "Sep 18 2026",
-   "Close": "51.419998",
-   "Adj Close": "51.419998",
-   "Volume": "100"
+   "NAV": "51.343891",
+   "Market Price": "51.42",
+   "Premium/Discount": "0.1482"
   },
   {
    "Date": "Sep 21 2026",
-   "Close": "52.02",
-   "Adj Close": "52.02",
-   "Volume": "100"
+   "NAV": "51.94179475",
+   "Market Price": "52.02",
+   "Premium/Discount": "0.1506"
   },
   {
    "Date": "Sep 22 2026",
-   "Close": "52.130001",
-   "Adj Close": "52.130001",
-   "Volume": "100"
+   "NAV": "51.97603169",
+   "Market Price": "52.13",
+   "Premium/Discount": "0.2962"
   },
   {
    "Date": "Sep 23 2026",
-   "Close": "51.330002",
-   "Adj Close": "51.330002",
-   "Volume": "100"
+   "NAV": "51.26481137",
+   "Market Price": "51.33",
+   "Premium/Discount": "0.1272"
   },
   {
    "Date": "Sep 24 2026",
-   "Close": "51.299999",
-   "Adj Close": "51.299999",
-   "Volume": "1700"
+   "NAV": "51.06578831",
+   "Market Price": "51.3",
+   "Premium/Discount": "0.4586"
   },
   {
    "Date": "Sep 25 2026",
-   "Close": "51.8008",
-   "Adj Close": "51.8008",
-   "Volume": "896"
+   "NAV": "51.67710525",
+   "Market Price": "51.8",
+   "Premium/Discount": "0.2378"
   }
  ]
 }

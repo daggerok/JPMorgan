@@ -2,7 +2,7 @@
  "ticker": "JCHI",
  "page": 1,
  "pageSize": 250,
- "totalRows": 50,
+ "totalRows": 56,
  "headers": [
   "Name",
   "Ticker",
@@ -14,454 +14,508 @@
  ],
  "rows": [
   {
-   "Name": "JPMorgan Prime Money Market Fund",
-   "Ticker": "-",
+   "Name": "TENCENT HOLDINGS LTD",
+   "Ticker": "700",
+   "Identifier": "BMMV2K8",
+   "Weight": "11.12",
+   "Market Value": "1595934.17",
+   "Shares Held": "28700",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ALIBABA GROUP HOLDING",
+   "Ticker": "9988",
+   "Identifier": "BK6YZP5",
+   "Weight": "7.36",
+   "Market Value": "1055811.68",
+   "Shares Held": "76200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA MERCHANTS BANK CO",
+   "Ticker": "600036",
+   "Identifier": "BP3R273",
+   "Weight": "4.61",
+   "Market Value": "660985.68",
+   "Shares Held": "109100",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "PING AN INSURANCE GROUP",
+   "Ticker": "601318",
+   "Identifier": "BP3R284",
+   "Weight": "4.43",
+   "Market Value": "635866.7",
+   "Shares Held": "80200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA CONSTRUCTION BANK",
+   "Ticker": "939",
+   "Identifier": "B0LMTQ3",
+   "Weight": "3.65",
+   "Market Value": "524497.02",
+   "Shares Held": "427000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "NETEASE INC COMMON STOCK",
+   "Ticker": "9999",
+   "Identifier": "BM93SF4",
+   "Weight": "3.5",
+   "Market Value": "502911.98",
+   "Shares Held": "21400",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CONTEMPORARY AMPEREX",
+   "Ticker": "300750",
+   "Identifier": "BHQPSY7",
+   "Weight": "3.26",
+   "Market Value": "468467.85",
+   "Shares Held": "10700",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "KWEICHOW MOUTAI CO LTD",
+   "Ticker": "600519",
+   "Identifier": "BP3R2F1",
+   "Weight": "2.82",
+   "Market Value": "405202.39",
+   "Shares Held": "2200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WUXI APPTEC CO LTD",
+   "Ticker": "2359",
+   "Identifier": "BGHH0L6",
+   "Weight": "2.72",
+   "Market Value": "390475.62",
+   "Shares Held": "15000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BANK OF CHINA LTD COMMON",
+   "Ticker": "3988",
+   "Identifier": "B154564",
+   "Weight": "2.41",
+   "Market Value": "346381.1",
+   "Shares Held": "451000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ZIJIN MINING GROUP CO",
+   "Ticker": "2899",
+   "Identifier": "6725299",
+   "Weight": "2.31",
+   "Market Value": "332242.46",
+   "Shares Held": "80000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CITIC SECURITIES CO LTD",
+   "Ticker": "600030",
+   "Identifier": "BP3R2J5",
+   "Weight": "2.31",
+   "Market Value": "331155.75",
+   "Shares Held": "84500",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "JIANGSU HENGRUI",
+   "Ticker": "600276",
+   "Identifier": "BP3R369",
+   "Weight": "2.28",
+   "Market Value": "327582.05",
+   "Shares Held": "49000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "FUYAO GLASS INDUSTRY",
+   "Ticker": "600660",
+   "Identifier": "BP3R6K4",
+   "Weight": "2.26",
+   "Market Value": "324179.35",
+   "Shares Held": "41500",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MEITUAN COMMON STOCK HKD",
+   "Ticker": "3690",
+   "Identifier": "BGJW376",
+   "Weight": "2.1",
+   "Market Value": "302045.91",
+   "Shares Held": "33100",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA INTERNATIONAL",
+   "Ticker": "3908",
+   "Identifier": "BZ169C6",
+   "Weight": "2.03",
+   "Market Value": "291380.27",
+   "Shares Held": "114000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "HUAQIN CO LTD COMMON",
+   "Ticker": "603296",
+   "Identifier": "BSNVN51",
+   "Weight": "1.96",
+   "Market Value": "281601.52",
+   "Shares Held": "23800",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "HONGFA TECHNOLOGY CO LTD",
+   "Ticker": "600885",
+   "Identifier": "BYQDM93",
+   "Weight": "1.85",
+   "Market Value": "265397.26",
+   "Shares Held": "53260",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MONTAGE TECHNOLOGY CO",
+   "Ticker": "688008",
+   "Identifier": "BK71F77",
+   "Weight": "1.59",
+   "Market Value": "228720.8",
+   "Shares Held": "7100",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "H WORLD GROUP LTD",
+   "Ticker": "1179",
+   "Identifier": "BMB5YK5",
+   "Weight": "1.54",
+   "Market Value": "221688.07",
+   "Shares Held": "53000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SUZHOU TFC OPTICAL",
+   "Ticker": "300394",
+   "Identifier": "BL5P4J3",
+   "Weight": "1.5",
+   "Market Value": "214840.7",
+   "Shares Held": "5340",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "LUXSHARE PRECISION",
+   "Ticker": "002475",
+   "Identifier": "BD5CN80",
+   "Weight": "1.48",
+   "Market Value": "212111.39",
+   "Shares Held": "27200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "HANGZHOU TIGERMED",
+   "Ticker": "3347",
+   "Identifier": "BMZC7F8",
+   "Weight": "1.42",
+   "Market Value": "204141.81",
+   "Shares Held": "35500",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "PETROCHINA CO LTD COMMON",
+   "Ticker": "857",
+   "Identifier": "6226576",
+   "Weight": "1.36",
+   "Market Value": "194906.62",
+   "Shares Held": "160000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "NAURA TECHNOLOGY GROUP",
+   "Ticker": "002371",
+   "Identifier": "BD5LYF1",
+   "Weight": "1.33",
+   "Market Value": "190568.73",
+   "Shares Held": "1950",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SG MICRO CORP COMMON",
+   "Ticker": "300661",
+   "Identifier": "BHQPSR0",
+   "Weight": "1.32",
+   "Market Value": "189222.29",
+   "Shares Held": "10500",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ZHONGJI INNOLIGHT CO LTD",
+   "Ticker": "300308",
+   "Identifier": "BFFJRM7",
+   "Weight": "1.31",
+   "Market Value": "188249.54",
+   "Shares Held": "1400",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA SHENHUA ENERGY CO",
+   "Ticker": "1088",
+   "Identifier": "B09N7M0",
+   "Weight": "1.31",
+   "Market Value": "187362.77",
+   "Shares Held": "33000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "JPMORGAN PRIME MONEY",
+   "Ticker": "JIMXX",
    "Identifier": "46637K844",
-   "Weight": "0.2631112271",
-   "Market Value": "40072.57",
-   "Shares Held": "40068.564",
-   "Asset Category": "STIV"
+   "Weight": "1.3",
+   "Market Value": "186209.4",
+   "Shares Held": "186228",
+   "Asset Category": "MONEY MARKET"
   },
   {
-   "Name": "PetroChina Co. Ltd.",
-   "Ticker": "PCCYF",
-   "Identifier": "CNE1000003W8",
-   "Weight": "1.9648215878",
-   "Market Value": "299247.78",
-   "Shares Held": "194000",
-   "Asset Category": "EC"
+   "Name": "POP MART INTERNATIONAL",
+   "Ticker": "9992",
+   "Identifier": "BN6PP37",
+   "Weight": "1.29",
+   "Market Value": "184724.36",
+   "Shares Held": "9600",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "BYD Co. Ltd.",
-   "Ticker": "BYDDF",
-   "Identifier": "CNE100000296",
-   "Weight": "1.5459230481",
-   "Market Value": "235448.37",
-   "Shares Held": "17700",
-   "Asset Category": "EC"
+   "Name": "XCMG CONSTRUCTION",
+   "Ticker": "000425",
+   "Identifier": "BD5CM27",
+   "Weight": "1.28",
+   "Market Value": "184004.42",
+   "Shares Held": "172100",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "China Life Insurance Co. Ltd.",
-   "Ticker": "CILJF",
-   "Identifier": "CNE1000002L3",
-   "Weight": "1.1626485474",
-   "Market Value": "177074.6",
-   "Shares Held": "48000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Zijin Mining Group Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100000502",
-   "Weight": "2.1344333366",
-   "Market Value": "325080.12",
+   "Name": "SANY HEAVY INDUSTRY CO",
+   "Ticker": "600031",
+   "Identifier": "BP3R3H0",
+   "Weight": "1.25",
+   "Market Value": "179522.57",
    "Shares Held": "70000",
-   "Asset Category": "EC"
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "Weichai Power Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE1000004L9",
-   "Weight": "1.5339952286",
-   "Market Value": "233631.73",
+   "Name": "CHINA LIFE INSURANCE CO",
+   "Ticker": "2628",
+   "Identifier": "6718976",
+   "Weight": "1.25",
+   "Market Value": "179480.88",
+   "Shares Held": "48000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WEICHAI POWER CO LTD",
+   "Ticker": "2338",
+   "Identifier": "6743956",
+   "Weight": "1.23",
+   "Market Value": "176601.81",
    "Shares Held": "47000",
-   "Asset Category": "EC"
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "Qfin Holdings, Inc.",
+   "Name": "LONCIN MOTOR CO LTD",
+   "Ticker": "603766",
+   "Identifier": "BP3RD25",
+   "Weight": "1.19",
+   "Market Value": "170713.88",
+   "Shares Held": "78800",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHUANGXIN INDUSTRIES",
+   "Ticker": "2788",
+   "Identifier": "BMFPS09",
+   "Weight": "1.17",
+   "Market Value": "167851.69",
+   "Shares Held": "87500",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ADVANCED",
+   "Ticker": "688012",
+   "Identifier": "BK71F66",
+   "Weight": "1.17",
+   "Market Value": "167357.6",
+   "Shares Held": "3297",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MUYUAN FOODS GROUP CO",
+   "Ticker": "2714",
+   "Identifier": "BVYDL20",
+   "Weight": "1.1",
+   "Market Value": "157376.3",
+   "Shares Held": "34000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WUXI BIOLOGICS CAYMAN",
+   "Ticker": "2269",
+   "Identifier": "BL6B9P1",
+   "Weight": "1.06",
+   "Market Value": "151911.7",
+   "Shares Held": "23000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA HONGQIAO GROUP LTD",
+   "Ticker": "1378",
+   "Identifier": "B44ZV94",
+   "Weight": "0.99",
+   "Market Value": "142470.47",
+   "Shares Held": "54000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "FOSHAN HAITIAN",
+   "Ticker": "3288",
+   "Identifier": "BN4Q3S3",
+   "Weight": "0.99",
+   "Market Value": "142432.59",
+   "Shares Held": "40800",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "HAIDILAO INTERNATIONAL",
+   "Ticker": "6862",
+   "Identifier": "BGN9715",
+   "Weight": "0.93",
+   "Market Value": "133162.81",
+   "Shares Held": "113000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "NEXCHIP SEMICONDUCTOR",
+   "Ticker": "2249",
+   "Identifier": "BTFGMT8",
+   "Weight": "0.92",
+   "Market Value": "131368.79",
+   "Shares Held": "37600",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHANGZHOU XINGYU",
+   "Ticker": "601799",
+   "Identifier": "BS7K3D2",
+   "Weight": "0.88",
+   "Market Value": "126504.04",
+   "Shares Held": "12000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "LUXSHARE PRECISION",
+   "Ticker": "2475",
+   "Identifier": "BTFGMR6",
+   "Weight": "0.88",
+   "Market Value": "125912.51",
+   "Shares Held": "17400",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WUS PRINTED CIRCUIT",
+   "Ticker": "002463",
+   "Identifier": "BD5C7Z5",
+   "Weight": "0.72",
+   "Market Value": "103979.08",
+   "Shares Held": "5600",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SHENZHEN INOVANCE",
+   "Ticker": "300124",
+   "Identifier": "BD5CMN8",
+   "Weight": "0.71",
+   "Market Value": "101395.74",
+   "Shares Held": "13100",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "XIAOMI CORP COMMON STOCK",
+   "Ticker": "1810",
+   "Identifier": "BG0ZMJ9",
+   "Weight": "0.66",
+   "Market Value": "95208.74",
+   "Shares Held": "28200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BYD CO LTD COMMON STOCK",
+   "Ticker": "1211",
+   "Identifier": "6536651",
+   "Weight": "0.63",
+   "Market Value": "90857.4",
+   "Shares Held": "9000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "XPENG INC COMMON STOCK",
+   "Ticker": "9868",
+   "Identifier": "BP6FB33",
+   "Weight": "0.56",
+   "Market Value": "80273.63",
+   "Shares Held": "15700",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "QFIN HOLDINGS INC ADR",
    "Ticker": "QFIN",
    "Identifier": "88557W101",
-   "Weight": "0.8881012187",
-   "Market Value": "135260.28",
+   "Weight": "0.54",
+   "Market Value": "77350.68",
    "Shares Held": "10341",
-   "Asset Category": "EC"
+   "Asset Category": "ADR"
   },
   {
-   "Name": "China Shenhua Energy Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE1000002R0",
-   "Weight": "1.3459495412",
-   "Market Value": "204991.85",
-   "Shares Held": "33000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "China Construction Bank Corp.",
-   "Ticker": "-",
-   "Identifier": "CNE1000002H1",
-   "Weight": "4.1652923292",
-   "Market Value": "634385.58",
-   "Shares Held": "562000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Minth Group Ltd.",
-   "Ticker": "-",
-   "Identifier": "KYG6145U1094",
-   "Weight": "0.7465736594",
-   "Market Value": "113705.24",
+   "Name": "MINTH GROUP LTD COMMON",
+   "Ticker": "425",
+   "Identifier": "B0RJCG9",
+   "Weight": "0.53",
+   "Market Value": "76499.16",
    "Shares Held": "26000",
-   "Asset Category": "EC"
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "Bank of China Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE1000001Z5",
-   "Weight": "2.438785769",
-   "Market Value": "371433.84",
-   "Shares Held": "572000",
-   "Asset Category": "EC"
+   "Name": "VICTORY GIANT TECHNOLOGY",
+   "Ticker": "2476",
+   "Identifier": "BP9QBT9",
+   "Weight": "0.31",
+   "Market Value": "44717.17",
+   "Shares Held": "1600",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "China Hongqiao Group Ltd.",
-   "Ticker": "-",
-   "Identifier": "KYG211501005",
-   "Weight": "1.5008568961",
-   "Market Value": "228584.67",
-   "Shares Held": "54000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "WUS Printed Circuit Kunshan Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100000SP5",
-   "Weight": "1.8297975213",
-   "Market Value": "278683.24",
-   "Shares Held": "18300",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Sungrow Power Supply Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE1000018M7",
-   "Weight": "1.0418481876",
-   "Market Value": "158676.37",
-   "Shares Held": "7800",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "XCMG Construction Machinery Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000000FH0",
-   "Weight": "1.6513508711",
-   "Market Value": "251505.32",
-   "Shares Held": "172100",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Shenzhen Inovance Technology Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100000V46",
-   "Weight": "0.7547520396",
-   "Market Value": "114950.83",
-   "Shares Held": "11400",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Luxshare Precision Industry Co. Ltd.",
-   "Ticker": "LXSPY",
-   "Identifier": "CNE100000TP3",
-   "Weight": "1.4608213156",
-   "Market Value": "222487.14",
-   "Shares Held": "22400",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "NAURA Technology Group Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100000ML7",
-   "Weight": "3.039801936",
-   "Market Value": "462970.27",
-   "Shares Held": "5850",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Inner Mongolia Berun Chemical Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000000P20",
-   "Weight": "1.3827983117",
-   "Market Value": "210604.02",
-   "Shares Held": "159900",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Zhongji Innolight Co. Ltd.",
-   "Ticker": "ZHJIY",
-   "Identifier": "CNE100001CY9",
-   "Weight": "2.1563936062",
-   "Market Value": "328424.73",
-   "Shares Held": "2600",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Xiaomi Corp.",
-   "Ticker": "-",
-   "Identifier": "KYG9830T1067",
-   "Weight": "0.8819854404",
-   "Market Value": "134328.83",
-   "Shares Held": "35800",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "WuXi AppTec Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100003F19",
-   "Weight": "1.9032521908",
-   "Market Value": "289870.59",
-   "Shares Held": "16500",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Haidilao International Holding Ltd.",
-   "Ticker": "-",
-   "Identifier": "KYG4290A1013",
-   "Weight": "1.101995877",
-   "Market Value": "167837.03",
-   "Shares Held": "91000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "SG Micro Corp.",
-   "Ticker": "-",
-   "Identifier": "CNE100002NT4",
-   "Weight": "0.9334899518",
-   "Market Value": "142173.11",
-   "Shares Held": "10500",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Contemporary Amperex Technology Co. Ltd.",
-   "Ticker": "CYATY",
-   "Identifier": "CNE100003662",
-   "Weight": "4.2583593794",
-   "Market Value": "648559.95",
-   "Shares Held": "10100",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Alibaba Group Holding Ltd.",
-   "Ticker": "BABA",
-   "Identifier": "KYG017191142",
-   "Weight": "8.245767425",
-   "Market Value": "1255853.26",
-   "Shares Held": "76200",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Advanced Micro-Fabrication Equipment, Inc.",
-   "Ticker": "-",
-   "Identifier": "CNE100003MM9",
-   "Weight": "1.3358314064",
-   "Market Value": "203450.83",
-   "Shares Held": "3661",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Montage Technology Co. Ltd.",
-   "Ticker": "MNTGY",
-   "Identifier": "CNE100003MN7",
-   "Weight": "1.303830151",
-   "Market Value": "198576.95",
-   "Shares Held": "7730",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "NetEase, Inc.",
-   "Ticker": "NTES",
-   "Identifier": "KYG6427A1022",
-   "Weight": "2.997181767",
-   "Market Value": "456479.1",
-   "Shares Held": "19500",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "H World Group Ltd.",
-   "Ticker": "HTHT",
-   "Identifier": "KYG465871120",
-   "Weight": "1.7967226151",
-   "Market Value": "273645.84",
-   "Shares Held": "53000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Chuangxin Industries Holdings Ltd.",
-   "Ticker": "CHXIY",
-   "Identifier": "KYG2137R1056",
-   "Weight": "1.6695429887",
-   "Market Value": "254276.03",
-   "Shares Held": "87500",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Tencent Holdings Ltd.",
-   "Ticker": "-",
-   "Identifier": "KYG875721634",
-   "Weight": "11.4444140702",
-   "Market Value": "1743016.02",
-   "Shares Held": "28700",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Foshan Haitian Flavouring & Food Co. Ltd.",
-   "Ticker": "FHFFY",
-   "Identifier": "CNE100006Z53",
-   "Weight": "1.1970712295",
-   "Market Value": "182317.27",
-   "Shares Held": "40800",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Pop Mart International Group Ltd.",
-   "Ticker": "-",
-   "Identifier": "KYG7170M1033",
-   "Weight": "1.2829491132",
-   "Market Value": "195396.71",
-   "Shares Held": "9600",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "China Merchants Bank Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000001B33",
-   "Weight": "4.0176866141",
-   "Market Value": "611904.82",
-   "Shares Held": "109100",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Ping An Insurance Group Co. of China Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000001R84",
-   "Weight": "4.592619343",
-   "Market Value": "699468.67",
-   "Shares Held": "80200",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Kweichow Moutai Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE0000018R8",
-   "Weight": "2.9281856505",
-   "Market Value": "445970.8",
-   "Shares Held": "2200",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "CITIC Securities Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000001DB6",
-   "Weight": "2.2191208284",
-   "Market Value": "337978.26",
-   "Shares Held": "84500",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Jiangsu Hengrui Pharmaceuticals Co. Ltd.",
-   "Ticker": "JHPCY",
-   "Identifier": "CNE0000014W7",
-   "Weight": "2.2734168188",
-   "Market Value": "346247.69",
-   "Shares Held": "43700",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Sany Heavy Industry Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000001F70",
-   "Weight": "1.3734271102",
-   "Market Value": "209176.76",
-   "Shares Held": "70000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Fuyao Glass Industry Group Co. Ltd.",
-   "Ticker": "FIGIF",
-   "Identifier": "CNE000000230",
-   "Weight": "1.2618719529",
-   "Market Value": "192186.6",
-   "Shares Held": "22200",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Loncin Motor Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100001JP2",
-   "Weight": "1.1633474184",
-   "Market Value": "177181.04",
-   "Shares Held": "78800",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "XPeng, Inc.",
-   "Ticker": "XPEV",
-   "Identifier": "KYG982AW1003",
-   "Weight": "0.8239014692",
-   "Market Value": "125482.48",
-   "Shares Held": "15700",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "GenFleet Therapeutics Shanghai, Inc.",
-   "Ticker": "-",
-   "Identifier": "CNE1000074L2",
-   "Weight": "0.4893637036",
-   "Market Value": "74531.45",
-   "Shares Held": "13400",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Changzhou Xingyu Automotive Lighting Systems Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE1000011H2",
-   "Weight": "1.0430601813",
-   "Market Value": "158860.96",
-   "Shares Held": "8700",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Huaqin Co. Ltd.",
-   "Ticker": "HUAQY",
-   "Identifier": "CNE100006M82",
-   "Weight": "1.7049341364",
-   "Market Value": "259666.2",
-   "Shares Held": "17000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Hongfa Technology Co. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE000000JK6",
-   "Weight": "1.6016589991",
-   "Market Value": "243937.11",
-   "Shares Held": "53260",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "China International Capital Corp. Ltd.",
-   "Ticker": "-",
-   "Identifier": "CNE100002359",
-   "Weight": "1.028487827",
-   "Market Value": "156641.55",
-   "Shares Held": "60000",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Chinese Renminbi (Yuan)",
-   "Ticker": "-",
-   "Identifier": "CNY",
-   "Weight": "0.009746047",
-   "Market Value": "1484.35",
-   "Shares Held": "10139.96",
-   "Asset Category": "STIV"
-  },
-  {
-   "Name": "Hong Kong Dollar",
+   "Name": "HONG KONG DOLLAR",
    "Ticker": "-",
    "Identifier": "HKD",
-   "Weight": "0.0059769101",
-   "Market Value": "910.3",
-   "Shares Held": "7129.91",
-   "Asset Category": "STIV"
+   "Weight": "0.09",
+   "Market Value": "13557.16",
+   "Shares Held": "106320",
+   "Asset Category": "CURRENCIES"
+  },
+  {
+   "Name": "CHINESE RENMINBI (YUAN)",
+   "Ticker": "-",
+   "Identifier": "CNY",
+   "Weight": "0.05",
+   "Market Value": "6722.59",
+   "Shares Held": "45149",
+   "Asset Category": "CURRENCIES"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "-0.83",
+   "Market Value": "-119697.79",
+   "Shares Held": "-119697",
+   "Asset Category": "CURRENCIES"
   }
  ]
 }

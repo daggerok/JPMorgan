@@ -2,43 +2,43 @@
  "ticker": "JCAL",
  "name": "JPMorgan California Tax Free Bond ETF",
  "category": "Fixed Income Tax Exempt",
- "categoryPath": "Fixed Income Tax Exempt",
+ "categoryPath": "Fixed Income Tax Exempt / Bloomberg California Municipal Bond Index",
  "source": {
   "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-california-tax-free-bond-etf-etf-shares-46654q484",
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q484&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q484&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q484&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q484&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q484&country=us&role=adv&locale=en-US&fromDate=2016-12-23&toDate=2026-09-24",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JCAL",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "Yahoo Finance public chart API (adjusted close)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
   "cusip": "46654Q484",
   "isin": null,
-  "indexTicker": null
+  "indexTicker": "Bloomberg California Municipal Bond Index"
  },
  "inception": {
-  "fundInceptionDate": null,
-  "shareClassInceptionDate": null,
+  "fundInceptionDate": "2016-12-23",
+  "shareClassInceptionDate": "2026-06-12",
   "exchange": "NYSE-Arca"
  },
  "expenseRatio": {
   "display": "0.44%",
   "value": 0.44,
-  "gross": null,
-  "net": null
+  "gross": 0.44,
+  "net": 0.34
  },
  "nav": {
   "display": "$47.64",
   "value": 47.64382446,
-  "asOfDate": "Sep 25 2026"
+  "asOfDate": "Sep 24 2026"
  },
  "marketPrice": {
   "display": "$47.78",
   "value": 47.78,
-  "asOfDate": "Sep 25 2026"
+  "asOfDate": "Sep 24 2026"
  },
  "premiumDiscount": {
   "display": "0.29%",
@@ -47,27 +47,27 @@
  "aum": {
   "display": "$485.26 M",
   "value": 485259784.53,
-  "asOfDate": "—",
-  "source": "previous run"
+  "asOfDate": "Sep 24 2026",
+  "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
   "dividendYield": 3.63,
   "dividendYieldText": "3.63%",
-  "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 24 2026",
   "distributionRate": null,
   "secYield": 3.66,
   "secYieldText": "3.66%",
-  "secYieldKind": "30-day SEC yield (month-end, am.jpmorgan.com fund explorer)",
-  "unsubsidizedSecYield": null
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 23 2026",
+  "unsubsidizedSecYield": 3.58
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Sep 25 2026",
+   "asOfDate": "Aug 31 2026",
    "mo1": 0.02,
    "mo1Text": "0.02%",
-   "qtd": -4.67,
-   "qtdText": "-4.67%",
+   "qtd": -4.76,
+   "qtdText": "-4.76%",
    "ytd": 0.02,
    "ytdText": "0.02%",
    "yr1": 3.43,
@@ -94,23 +94,59 @@
  "distributions": {
   "frequency": "Monthly",
   "paymentsPerYear": 12,
-  "frequencyCode": null,
+  "frequencyCode": "MDEC",
   "headers": [
    "Ex-Date",
    "Amount"
   ],
   "rows": [
    [
+    "09/26/2025",
+    "0.144565"
+   ],
+   [
+    "10/29/2025",
+    "0.142761"
+   ],
+   [
+    "11/25/2025",
+    "0.141959"
+   ],
+   [
+    "12/29/2025",
+    "0.134644"
+   ],
+   [
+    "01/28/2026",
+    "0.131386"
+   ],
+   [
+    "02/25/2026",
+    "0.134393"
+   ],
+   [
+    "03/27/2026",
+    "0.136848"
+   ],
+   [
+    "04/28/2026",
+    "0.152833"
+   ],
+   [
+    "05/27/2026",
+    "0.143513"
+   ],
+   [
     "07/01/2026",
-    "0.137"
+    "0.13666"
    ],
    [
     "08/03/2026",
-    "0.142"
+    "0.14184"
    ],
    [
     "09/01/2026",
-    "0.142"
+    "0.14199"
    ]
   ]
  },
@@ -121,8 +157,8 @@
   ],
   "pageSize": 250,
   "totalRows": 310,
-  "asOfDate": null,
-  "asOf": "—",
+  "asOfDate": "2026-09-24",
+  "asOf": "Sep 24 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -130,8 +166,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 72,
+  "totalRows": 73,
   "asOf": "Sep 25 2026",
-  "source": "Yahoo Finance public chart API (adjusted close)"
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  }
 }

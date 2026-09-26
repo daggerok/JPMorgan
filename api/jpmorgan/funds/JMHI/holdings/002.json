@@ -1,0 +1,85 @@
+{
+ "ticker": "JMHI",
+ "page": 2,
+ "pageSize": 250,
+ "totalRows": 256,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "PUBLIC FIN 5.25% 12/51",
+   "Ticker": "-",
+   "Identifier": "74443XAC1",
+   "Weight": "0.06",
+   "Market Value": "160000",
+   "Shares Held": "800000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "5.25",
+   "Maturity": "Dec 01 2051"
+  },
+  {
+   "Name": "NATIONAL FIN 5.25% 12/35",
+   "Ticker": "-",
+   "Identifier": "63608TAB6",
+   "Weight": "0.03",
+   "Market Value": "94467.56",
+   "Shares Held": "100000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "5.25",
+   "Maturity": "Dec 01 2035"
+  },
+  {
+   "Name": "SUFFOLK TOB ZERO 06/66",
+   "Ticker": "-",
+   "Identifier": "864809CD8",
+   "Weight": "0.03",
+   "Market Value": "73990.8",
+   "Shares Held": "1000000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "",
+   "Maturity": "Jun 01 2066"
+  },
+  {
+   "Name": "USD CCP COLL VM BAML",
+   "Ticker": "-",
+   "Identifier": "USVL",
+   "Weight": "0",
+   "Market Value": "-0.11",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "US 10YR NOTE 12/21/2026",
+   "Ticker": "-",
+   "Identifier": "TYZ6COM",
+   "Weight": "-0.14",
+   "Market Value": "-388177.97",
+   "Shares Held": "105",
+   "Asset Category": "INTEREST RATE FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "-0.69",
+   "Market Value": "-1931301.98",
+   "Shares Held": "-1931301",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  }
+ ]
+}

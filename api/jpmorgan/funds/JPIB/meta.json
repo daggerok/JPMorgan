@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q852&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46641Q852&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q852&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q852&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q852&country=us&role=adv&locale=en-US&fromDate=2017-04-05&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JPIB",
   "holdingsSource": "SEC EDGAR Form N-PORT-P (accession 0002071691-26-017007, report period 2026-05-31)",
   "historySource": "Yahoo Finance public chart API (adjusted close)",
@@ -20,9 +20,9 @@
   "indexTicker": null
  },
  "inception": {
-  "fundInceptionDate": null,
+  "fundInceptionDate": "2017-04-05",
   "shareClassInceptionDate": null,
-  "exchange": "NYSE-Arca"
+  "exchange": "NYSEArca"
  },
  "expenseRatio": {
   "display": "0.5%",
@@ -45,25 +45,25 @@
   "value": 0.2813
  },
  "aum": {
-  "display": "$2,010.03 M",
-  "value": 2010034716.12,
-  "asOfDate": "May 31 2026",
-  "source": "SEC Form N-PORT-P net assets (report period 2026-05-31)"
+  "display": "$2,213.04 M",
+  "value": 2213043555.75,
+  "asOfDate": "Sep 25 2026",
+  "source": "am.jpmorgan.com fund explorer \"assetsUnderManagement\""
  },
  "yields": {
-  "dividendYield": 3.7,
-  "dividendYieldText": "3.70%",
+  "dividendYield": 3.64,
+  "dividendYieldText": "3.64%",
   "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
   "distributionRate": null,
-  "secYield": 4.94,
-  "secYieldText": "4.94%",
+  "secYield": 4.65,
+  "secYieldText": "4.65%",
   "secYieldKind": "30-day SEC yield (month-end, am.jpmorgan.com fund explorer)",
   "unsubsidizedSecYield": null
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Sep 24 2026",
+   "asOfDate": "Aug 31 2026",
    "mo1": 0.16,
    "mo1Text": "0.16%",
    "qtd": -2.34,

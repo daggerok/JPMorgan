@@ -2,33 +2,33 @@
  "ticker": "JCPI",
  "name": "JPMorgan Inflation Managed Bond ETF",
  "category": "Fixed Income Taxable",
- "categoryPath": "Fixed Income Taxable",
+ "categoryPath": "Fixed Income Taxable / Bloomberg 1-10 Year U.S. TIPS Index",
  "source": {
   "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-inflation-managed-bond-etf-etf-shares-46654q104",
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q104&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q104&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q104&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q104&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q104&country=us&role=adv&locale=en-US&fromDate=2010-03-31&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JCPI",
-  "holdingsSource": "SEC EDGAR Form N-PORT-P (accession 0002071691-26-017033, report period 2026-05-31)",
-  "historySource": "Yahoo Finance public chart API (adjusted close)",
+  "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
   "cusip": "46654Q104",
   "isin": null,
-  "indexTicker": null
+  "indexTicker": "Bloomberg 1-10 Year U.S. TIPS Index"
  },
  "inception": {
-  "fundInceptionDate": null,
-  "shareClassInceptionDate": null,
+  "fundInceptionDate": "2010-03-31",
+  "shareClassInceptionDate": "2022-04-08",
   "exchange": "NYSE-Arca"
  },
  "expenseRatio": {
   "display": "0.39%",
   "value": 0.39,
-  "gross": null,
-  "net": null
+  "gross": 0.39,
+  "net": 0.25
  },
  "nav": {
   "display": "$46.14",
@@ -45,29 +45,29 @@
   "value": 0.189
  },
  "aum": {
-  "display": "$845.45 M",
-  "value": 845446608.65,
-  "asOfDate": "May 31 2026",
-  "source": "SEC Form N-PORT-P net assets (report period 2026-05-31)"
+  "display": "$881.01 M",
+  "value": 881013568.61,
+  "asOfDate": "Sep 25 2026",
+  "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
   "dividendYield": 1.44,
   "dividendYieldText": "1.44%",
-  "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 25 2026",
   "distributionRate": null,
   "secYield": 3.14,
   "secYieldText": "3.14%",
-  "secYieldKind": "30-day SEC yield (month-end, am.jpmorgan.com fund explorer)",
-  "unsubsidizedSecYield": null
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 24 2026",
+  "unsubsidizedSecYield": 3
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Sep 24 2026",
+   "asOfDate": "Aug 31 2026",
    "mo1": -0.09,
    "mo1Text": "-0.09%",
-   "qtd": -2.33,
-   "qtdText": "-2.33%",
+   "qtd": -2.3,
+   "qtdText": "-2.30%",
    "ytd": 0.71,
    "ytdText": "0.71%",
    "yr1": 1.1,
@@ -94,211 +94,43 @@
  "distributions": {
   "frequency": "Monthly",
   "paymentsPerYear": 12,
-  "frequencyCode": null,
+  "frequencyCode": "MDEC",
   "headers": [
    "Ex-Date",
    "Amount"
   ],
   "rows": [
    [
-    "05/02/2022",
-    "0.15"
-   ],
-   [
-    "06/01/2022",
-    "0.219"
-   ],
-   [
-    "07/01/2022",
-    "0.115"
-   ],
-   [
-    "08/01/2022",
-    "0.223"
-   ],
-   [
-    "09/01/2022",
-    "0.282"
-   ],
-   [
-    "10/03/2022",
-    "0.063"
-   ],
-   [
-    "11/01/2022",
-    "0.072"
-   ],
-   [
-    "12/01/2022",
-    "0.11"
-   ],
-   [
-    "12/15/2022",
-    "0.14"
-   ],
-   [
-    "12/29/2022",
-    "0.136"
-   ],
-   [
-    "02/01/2023",
-    "0.073"
-   ],
-   [
-    "03/01/2023",
-    "0.044"
-   ],
-   [
-    "04/03/2023",
-    "0.219"
-   ],
-   [
-    "05/01/2023",
-    "0.15"
-   ],
-   [
-    "06/01/2023",
-    "0.173"
-   ],
-   [
-    "07/03/2023",
-    "0.154"
-   ],
-   [
-    "08/01/2023",
-    "0.134"
-   ],
-   [
-    "09/01/2023",
-    "0.135"
-   ],
-   [
-    "10/02/2023",
-    "0.129"
-   ],
-   [
-    "11/01/2023",
-    "0.148"
-   ],
-   [
-    "12/01/2023",
-    "0.138"
-   ],
-   [
-    "12/28/2023",
-    "0.11"
-   ],
-   [
-    "02/01/2024",
-    "0.108"
-   ],
-   [
-    "03/01/2024",
-    "0.075"
-   ],
-   [
-    "04/01/2024",
-    "0.196"
-   ],
-   [
-    "05/01/2024",
-    "0.207"
-   ],
-   [
-    "06/03/2024",
-    "0.218"
-   ],
-   [
-    "07/01/2024",
-    "0.183"
-   ],
-   [
-    "08/01/2024",
-    "0.157"
-   ],
-   [
-    "09/03/2024",
-    "0.139"
-   ],
-   [
-    "10/01/2024",
-    "0.147"
-   ],
-   [
-    "11/01/2024",
-    "0.14"
-   ],
-   [
-    "12/02/2024",
-    "0.155"
-   ],
-   [
-    "12/31/2024",
-    "0.139"
-   ],
-   [
-    "02/03/2025",
-    "0.16"
-   ],
-   [
-    "03/03/2025",
-    "0.149"
-   ],
-   [
-    "04/01/2025",
-    "0.167"
-   ],
-   [
-    "05/01/2025",
-    "0.144"
-   ],
-   [
-    "06/02/2025",
-    "0.165"
-   ],
-   [
-    "07/01/2025",
-    "0.159"
-   ],
-   [
-    "08/01/2025",
-    "0.159"
-   ],
-   [
-    "09/02/2025",
-    "0.163"
-   ],
-   [
     "10/01/2025",
-    "0.153"
+    "0.15296"
    ],
    [
     "11/03/2025",
-    "0.166"
+    "0.16555"
    ],
    [
     "12/01/2025",
-    "0.163"
+    "0.16335"
    ],
    [
     "12/31/2025",
-    "0.146"
+    "0.14593"
    ],
    [
     "02/02/2026",
-    "0.036"
+    "0.03639"
    ],
    [
     "03/02/2026",
-    "0.11"
+    "0.10989"
    ],
    [
     "04/01/2026",
-    "0.19"
+    "0.18999"
    ],
    [
     "05/01/2026",
-    "0.158"
+    "0.15845"
    ],
    [
     "06/01/2026",
@@ -306,15 +138,15 @@
    ],
    [
     "07/01/2026",
-    "0.278"
+    "0.27788"
    ],
    [
     "08/03/2026",
-    "0.239"
+    "0.23902"
    ],
    [
     "09/01/2026",
-    "0.055"
+    "0.05456"
    ]
   ]
  },
@@ -326,10 +158,10 @@
    "holdings/004.json"
   ],
   "pageSize": 250,
-  "totalRows": 765,
-  "asOfDate": "2026-05-31",
-  "asOf": "May 31 2026",
-  "source": "SEC EDGAR Form N-PORT-P (accession 0002071691-26-017033, report period 2026-05-31)"
+  "totalRows": 794,
+  "asOfDate": "2026-09-24",
+  "asOf": "Sep 24 2026",
+  "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
   "pages": [
@@ -337,8 +169,8 @@
    "history/002.json"
   ],
   "pageSize": 1000,
-  "totalRows": 1118,
-  "asOf": "Sep 24 2026",
-  "source": "Yahoo Finance public chart API (adjusted close)"
+  "totalRows": 1119,
+  "asOf": "Sep 25 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  }
 }

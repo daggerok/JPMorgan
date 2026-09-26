@@ -1,6 +1,6 @@
 {
  "ticker": "ROCQ",
- "name": "JPMorgan NASDAQ Equity Premium Yield ETF",
+ "name": "JPMorgan Nasdaq Equity Premium Yield ETF",
  "category": "U.S. Equity",
  "categoryPath": "U.S. Equity",
  "source": {
@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q492&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q492&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q492&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q492&country=us&role=adv&locale=en-US",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q492&country=us&role=adv&locale=en-US&fromDate=2026-03-18&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/ROCQ",
   "holdingsSource": "SEC EDGAR Form N-PORT-P (accession 0002071691-26-021115, report period 2026-06-30)",
   "historySource": "Yahoo Finance public chart API (adjusted close)",
@@ -20,9 +20,9 @@
   "indexTicker": null
  },
  "inception": {
-  "fundInceptionDate": null,
+  "fundInceptionDate": "2026-03-18",
   "shareClassInceptionDate": null,
-  "exchange": "NASDAQ"
+  "exchange": "NasdaqGM"
  },
  "expenseRatio": {
   "display": "0.35%",
@@ -45,25 +45,25 @@
   "value": 0.0798
  },
  "aum": {
-  "display": "$377.48 M",
-  "value": 377481614.78,
-  "asOfDate": "Jun 30 2026",
-  "source": "SEC Form N-PORT-P net assets (report period 2026-06-30)"
+  "display": "$675.98 M",
+  "value": 675975458.31,
+  "asOfDate": "Sep 25 2026",
+  "source": "am.jpmorgan.com fund explorer \"assetsUnderManagement\""
  },
  "yields": {
-  "dividendYield": 10.42,
-  "dividendYieldText": "10.42%",
+  "dividendYield": 10.43,
+  "dividendYieldText": "10.43%",
   "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
   "distributionRate": null,
-  "secYield": 0.26,
-  "secYieldText": "0.26%",
+  "secYield": 0.24,
+  "secYieldText": "0.24%",
   "secYieldKind": "30-day SEC yield (month-end, am.jpmorgan.com fund explorer)",
   "unsubsidizedSecYield": null
  },
  "returns": {
   "derivedFrom": "derived from the official daily NAV history with published distributions reinvested (NAV total return), not official published returns",
   "monthEnd": {
-   "asOfDate": "Sep 24 2026",
+   "asOfDate": "Aug 31 2026",
    "mo1": 2.64,
    "mo1Text": "2.64%",
    "qtd": 2.85,
