@@ -11,7 +11,7 @@
   "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q815&country=us&role=adv&locale=en-US&fromDate=1993-02-09&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JMSI",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "Yahoo Finance public chart API (adjusted close)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
@@ -66,8 +66,8 @@
    "asOfDate": "Aug 31 2026",
    "mo1": -0.01,
    "mo1Text": "-0.01%",
-   "qtd": -5.24,
-   "qtdText": "-5.24%",
+   "qtd": -4.95,
+   "qtdText": "-4.95%",
    "ytd": 0.03,
    "ytdText": "0.03%",
    "yr1": 3.62,
@@ -101,156 +101,52 @@
   ],
   "rows": [
    [
-    "08/01/2023",
-    "0.101"
-   ],
-   [
-    "09/01/2023",
-    "0.186"
-   ],
-   [
-    "10/02/2023",
-    "0.152"
-   ],
-   [
-    "11/01/2023",
-    "0.166"
-   ],
-   [
-    "12/01/2023",
-    "0.153"
-   ],
-   [
-    "12/28/2023",
-    "0.146"
-   ],
-   [
-    "02/01/2024",
-    "0.146"
-   ],
-   [
-    "03/01/2024",
-    "0.154"
-   ],
-   [
-    "04/01/2024",
-    "0.149"
-   ],
-   [
-    "05/01/2024",
-    "0.157"
-   ],
-   [
-    "06/03/2024",
-    "0.156"
-   ],
-   [
-    "07/01/2024",
-    "0.155"
-   ],
-   [
-    "08/01/2024",
-    "0.154"
-   ],
-   [
-    "09/03/2024",
-    "0.157"
-   ],
-   [
-    "10/01/2024",
-    "0.154"
-   ],
-   [
-    "11/01/2024",
-    "0.153"
-   ],
-   [
-    "12/02/2024",
-    "0.152"
-   ],
-   [
-    "12/31/2024",
-    "0.146"
-   ],
-   [
-    "02/03/2025",
-    "0.148"
-   ],
-   [
-    "03/03/2025",
-    "0.153"
-   ],
-   [
-    "04/01/2025",
-    "0.149"
-   ],
-   [
-    "05/01/2025",
-    "0.165"
-   ],
-   [
-    "06/02/2025",
-    "0.152"
-   ],
-   [
-    "07/01/2025",
-    "0.152"
-   ],
-   [
-    "08/01/2025",
-    "0.142"
-   ],
-   [
-    "09/02/2025",
-    "0.154"
-   ],
-   [
     "10/01/2025",
-    "0.159"
+    "0.15896"
    ],
    [
     "11/03/2025",
-    "0.157"
+    "0.1569"
    ],
    [
     "12/01/2025",
-    "0.158"
+    "0.15796"
    ],
    [
     "12/31/2025",
-    "0.152"
+    "0.15232"
    ],
    [
     "02/02/2026",
-    "0.141"
+    "0.14106"
    ],
    [
     "03/02/2026",
-    "0.154"
+    "0.15414"
    ],
    [
     "04/01/2026",
-    "0.153"
+    "0.15264"
    ],
    [
     "05/01/2026",
-    "0.159"
+    "0.15884"
    ],
    [
     "06/01/2026",
-    "0.15"
+    "0.14994"
    ],
    [
     "07/01/2026",
-    "0.153"
+    "0.15324"
    ],
    [
     "08/03/2026",
-    "0.154"
+    "0.1543"
    ],
    [
     "09/01/2026",
-    "0.152"
+    "0.15163"
    ]
   ]
  },
@@ -270,8 +166,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 803,
+  "totalRows": 804,
   "asOf": "Sep 25 2026",
-  "source": "Yahoo Finance public chart API (adjusted close)"
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  }
 }

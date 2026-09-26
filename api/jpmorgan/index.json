@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-26T01:21:00Z",
+ "generatedAt": "2026-09-26T01:21:51Z",
  "source": {
   "provider": "J.P. Morgan Asset Management (US ETFs)",
   "market": "us",
@@ -14,8 +14,8 @@
  },
  "counts": {
   "funds": 78,
-  "holdings": 41868,
-  "history": 91034
+  "holdings": 42582,
+  "history": 91329
  },
  "funds": [
   {
@@ -3342,15 +3342,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.152"
+    "dividend": "0.15163"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": -0.01,
      "mo1Text": "-0.01%",
-     "qtd": -5.24,
-     "qtdText": "-5.24%",
+     "qtd": -4.95,
+     "qtdText": "-4.95%",
      "ytd": 0.03,
      "ytdText": "0.03%",
      "yr1": 3.62,
@@ -3391,7 +3391,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 302,
-   "history": 803
+   "history": 804
   },
   {
    "ticker": "JMST",
@@ -3417,7 +3417,7 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.104"
+    "dividend": "0.10355"
    },
    "returns": {
     "monthEnd": {
@@ -3466,7 +3466,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 1555,
-   "history": 1992
+   "history": 1996
   },
   {
    "ticker": "JMTG",
@@ -3492,15 +3492,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.198"
+    "dividend": "0.19849"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.29,
      "mo1Text": "0.29%",
-     "qtd": -3.07,
-     "qtdText": "-3.07%",
+     "qtd": -2.58,
+     "qtdText": "-2.58%",
      "ytd": 0.5,
      "ytdText": "0.50%",
      "yr1": 2.94,
@@ -3541,7 +3541,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 2593,
-   "history": 312
+   "history": 314
   },
   {
    "ticker": "JMUB",
@@ -3567,15 +3567,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.15"
+    "dividend": "0.15049"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": -0.04,
      "mo1Text": "-0.04%",
-     "qtd": -4.33,
-     "qtdText": "-4.33%",
+     "qtd": -4.75,
+     "qtdText": "-4.75%",
      "ytd": 0.24,
      "ytdText": "0.24%",
      "yr1": 3.62,
@@ -3616,7 +3616,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 2100,
-   "history": 1981
+   "history": 1987
   },
   {
    "ticker": "JOYT",
@@ -3717,15 +3717,15 @@
    "distributions": {
     "frequency": "Annually",
     "exDate": "12/16/2025",
-    "dividend": "0.523"
+    "dividend": "0.52282"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 1.36,
      "mo1Text": "1.36%",
-     "qtd": 1.67,
-     "qtdText": "1.67%",
+     "qtd": 2.33,
+     "qtdText": "2.33%",
      "ytd": 8.63,
      "ytdText": "8.63%",
      "yr1": 12.61,
@@ -3766,7 +3766,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 42,
-   "history": 792
+   "history": 794
   },
   {
    "ticker": "JPEM",
@@ -3792,15 +3792,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.797"
+    "dividend": "0.79674"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 2.4,
      "mo1Text": "2.40%",
-     "qtd": 4.33,
-     "qtdText": "4.33%",
+     "qtd": 4.12,
+     "qtdText": "4.12%",
      "ytd": 12.04,
      "ytdText": "12.04%",
      "yr1": 20.31,
@@ -3841,7 +3841,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 588,
-   "history": 2944
+   "history": 2947
   },
   {
    "ticker": "JPFP",
@@ -3874,8 +3874,8 @@
      "asOfDate": "Aug 31 2026",
      "mo1": 4.07,
      "mo1Text": "4.07%",
-     "qtd": 9.16,
-     "qtdText": "9.16%",
+     "qtd": 9.27,
+     "qtdText": "9.27%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -3916,7 +3916,7 @@
     "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
    },
    "holdings": 616,
-   "history": 77
+   "history": 85
   },
   {
    "ticker": "JPHY",
@@ -3942,15 +3942,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.282"
+    "dividend": "0.28227"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.8,
      "mo1Text": "0.80%",
-     "qtd": -1.15,
-     "qtdText": "-1.15%",
+     "qtd": -1.03,
+     "qtdText": "-1.03%",
      "ytd": 2.84,
      "ytdText": "2.84%",
      "yr1": 5.09,
@@ -3991,7 +3991,7 @@
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 568,
-   "history": 315
+   "history": 316
   },
   {
    "ticker": "JPIB",
@@ -4009,7 +4009,7 @@
    "aumValue": 2213043555.75,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Apr 05 2017",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$46.82",
    "closePriceValue": 46.82,
    "premiumDiscount": "0.28%",
@@ -4017,15 +4017,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.142"
+    "dividend": "0.14213"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.16,
      "mo1Text": "0.16%",
-     "qtd": -2.34,
-     "qtdText": "-2.34%",
+     "qtd": -2.25,
+     "qtdText": "-2.25%",
      "ytd": 0.62,
      "ytdText": "0.62%",
      "yr1": 2.62,
@@ -4052,21 +4052,21 @@
    "metrics": {
     "ytd": 0.62,
     "tr1y": 2.62,
-    "tr3y": 18.76,
-    "tr5y": 13.97,
+    "tr3y": 18.75,
+    "tr5y": 13.94,
     "tr10y": null,
     "cagr3y": 5.9,
     "cagr5y": 2.65,
     "cagr10y": null,
     "siAnn": 3.56,
-    "dividendYield": 3.64,
-    "dividendYieldText": "3.64%",
-    "secYield": 4.65,
-    "secYieldText": "4.65%",
+    "dividendYield": 3.7,
+    "dividendYieldText": "3.70%",
+    "secYield": 4.94,
+    "secYieldText": "4.94%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 1219,
-   "history": 2375
+   "holdings": 1488,
+   "history": 2382
   },
   {
    "ticker": "JPIE",
@@ -4084,7 +4084,7 @@
    "aumValue": 10892699249.02,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Oct 28 2021",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$45.08",
    "closePriceValue": 45.08,
    "premiumDiscount": "0.42%",
@@ -4092,15 +4092,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.218"
+    "dividend": "0.21794"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.45,
      "mo1Text": "0.45%",
-     "qtd": -0.9,
-     "qtdText": "-0.90%",
+     "qtd": -0.7,
+     "qtdText": "-0.70%",
      "ytd": 2.3,
      "ytdText": "2.30%",
      "yr1": 4.09,
@@ -4127,21 +4127,21 @@
    "metrics": {
     "ytd": 2.3,
     "tr1y": 4.09,
-    "tr3y": 21.68,
+    "tr3y": 21.69,
     "tr5y": null,
     "tr10y": null,
     "cagr3y": 6.76,
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 3.52,
-    "dividendYield": 5.8,
-    "dividendYieldText": "5.80%",
-    "secYield": 5.87,
-    "secYieldText": "5.87%",
+    "dividendYield": 5.91,
+    "dividendYieldText": "5.91%",
+    "secYield": 5.9,
+    "secYieldText": "5.90%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 2588,
-   "history": 1228
+   "holdings": 2812,
+   "history": 1232
   },
   {
    "ticker": "JPIN",
@@ -4159,7 +4159,7 @@
    "aumValue": 358346167.48,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Nov 05 2014",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$74.94",
    "closePriceValue": 74.94,
    "premiumDiscount": "0.38%",
@@ -4167,15 +4167,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.512"
+    "dividend": "0.51193"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 2.56,
      "mo1Text": "2.56%",
-     "qtd": 4.06,
-     "qtdText": "4.06%",
+     "qtd": 4.98,
+     "qtdText": "4.98%",
      "ytd": 14.38,
      "ytdText": "14.38%",
      "yr1": 21.7,
@@ -4202,21 +4202,21 @@
    "metrics": {
     "ytd": 14.38,
     "tr1y": 21.7,
-    "tr3y": 68.22,
-    "tr5y": 54.71,
-    "tr10y": 117.7,
+    "tr3y": 68.21,
+    "tr5y": 54.68,
+    "tr10y": 117.6,
     "cagr3y": 18.93,
     "cagr5y": 9.12,
     "cagr10y": 8.09,
     "siAnn": 7.23,
-    "dividendYield": 2.73,
-    "dividendYieldText": "2.73%",
-    "secYield": 2.71,
-    "secYieldText": "2.71%",
+    "dividendYield": 2.72,
+    "dividendYieldText": "2.72%",
+    "secYield": 2.84,
+    "secYieldText": "2.84%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 468,
-   "history": 2985
+   "holdings": 470,
+   "history": 2989
   },
   {
    "ticker": "JPLD",
@@ -4234,7 +4234,7 @@
    "aumValue": 4057245309.45,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Feb 02 1993",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$51.47",
    "closePriceValue": 51.47,
    "premiumDiscount": "0.13%",
@@ -4242,15 +4242,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.189"
+    "dividend": "0.18908"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.31,
      "mo1Text": "0.31%",
-     "qtd": -0.33,
-     "qtdText": "-0.33%",
+     "qtd": -0.2,
+     "qtdText": "-0.20%",
      "ytd": 1.69,
      "ytdText": "1.69%",
      "yr1": 3.47,
@@ -4277,21 +4277,21 @@
    "metrics": {
     "ytd": 1.69,
     "tr1y": 3.47,
-    "tr3y": 17.79,
-    "tr5y": 18.08,
-    "tr10y": 32.19,
+    "tr3y": 17.8,
+    "tr5y": 18.07,
+    "tr10y": 32.14,
     "cagr3y": 5.61,
     "cagr5y": 3.38,
     "cagr10y": 2.83,
     "siAnn": 3.63,
-    "dividendYield": 4.41,
-    "dividendYieldText": "4.41%",
-    "secYield": 4.59,
-    "secYieldText": "4.59%",
+    "dividendYield": 4.48,
+    "dividendYieldText": "4.48%",
+    "secYield": 4.66,
+    "secYieldText": "4.66%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 711,
-   "history": 792
+   "holdings": 777,
+   "history": 794
   },
   {
    "ticker": "JPMB",
@@ -4309,7 +4309,7 @@
    "aumValue": 96209580.49,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Jan 29 2018",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$38.60",
    "closePriceValue": 38.6,
    "premiumDiscount": "0.30%",
@@ -4317,15 +4317,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.154"
+    "dividend": "0.15403"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 1.06,
      "mo1Text": "1.06%",
-     "qtd": -2.63,
-     "qtdText": "-2.63%",
+     "qtd": -2.82,
+     "qtdText": "-2.82%",
      "ytd": 1.69,
      "ytdText": "1.69%",
      "yr1": 6.18,
@@ -4352,21 +4352,21 @@
    "metrics": {
     "ytd": 1.69,
     "tr1y": 6.18,
-    "tr3y": 24.75,
-    "tr5y": 6.04,
+    "tr3y": 24.73,
+    "tr5y": 6.05,
     "tr10y": null,
     "cagr3y": 7.65,
     "cagr5y": 1.18,
     "cagr10y": null,
     "siAnn": 2.62,
-    "dividendYield": 4.79,
-    "dividendYieldText": "4.79%",
-    "secYield": 5.99,
-    "secYieldText": "5.99%",
+    "dividendYield": 4.87,
+    "dividendYieldText": "4.87%",
+    "secYield": 6.28,
+    "secYieldText": "6.28%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 204,
-   "history": 2174
+   "holdings": 215,
+   "history": 2177
   },
   {
    "ticker": "JPME",
@@ -4384,7 +4384,7 @@
    "aumValue": 470963385.2,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "May 11 2016",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$120.86",
    "closePriceValue": 120.86,
    "premiumDiscount": "0.08%",
@@ -4392,15 +4392,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.578"
+    "dividend": "0.57778"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.46,
      "mo1Text": "0.46%",
-     "qtd": -2.38,
-     "qtdText": "-2.38%",
+     "qtd": -2.08,
+     "qtdText": "-2.08%",
      "ytd": 17.14,
      "ytdText": "17.14%",
      "yr1": 18.99,
@@ -4427,21 +4427,21 @@
    "metrics": {
     "ytd": 17.14,
     "tr1y": 18.99,
-    "tr3y": 51.37,
-    "tr5y": 51.9,
-    "tr10y": 182.92,
+    "tr3y": 51.36,
+    "tr5y": 51.93,
+    "tr10y": 182.88,
     "cagr3y": 14.82,
     "cagr5y": 8.72,
     "cagr10y": 10.96,
     "siAnn": 11.25,
-    "dividendYield": 1.91,
-    "dividendYieldText": "1.91%",
-    "secYield": 1.94,
-    "secYieldText": "1.94%",
+    "dividendYield": 1.9,
+    "dividendYieldText": "1.90%",
+    "secYield": 2.08,
+    "secYieldText": "2.08%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 355,
-   "history": 2580
+   "holdings": 347,
+   "history": 2609
   },
   {
    "ticker": "JPRE",
@@ -4459,7 +4459,7 @@
    "aumValue": 455930942.22,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Jan 01 1998",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$50.02",
    "closePriceValue": 50.02,
    "premiumDiscount": "0.09%",
@@ -4467,15 +4467,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.312"
+    "dividend": "0.31176"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": -2.22,
      "mo1Text": "-2.22%",
-     "qtd": -3.8,
-     "qtdText": "-3.80%",
+     "qtd": -4.13,
+     "qtdText": "-4.13%",
      "ytd": 12.95,
      "ytdText": "12.95%",
      "yr1": 11.27,
@@ -4503,20 +4503,20 @@
     "ytd": 12.95,
     "tr1y": 11.27,
     "tr3y": 34.19,
-    "tr5y": 15.76,
-    "tr10y": 68.88,
+    "tr5y": 15.78,
+    "tr10y": 68.81,
     "cagr3y": 10.3,
     "cagr5y": 2.97,
     "cagr10y": 5.38,
     "siAnn": 8.62,
-    "dividendYield": 2.5,
-    "dividendYieldText": "2.50%",
-    "secYield": 2.75,
-    "secYieldText": "2.75%",
+    "dividendYield": 2.47,
+    "dividendYieldText": "2.47%",
+    "secYield": 3.05,
+    "secYieldText": "3.05%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 39,
-   "history": 1089
+   "holdings": 38,
+   "history": 1091
   },
   {
    "ticker": "JPRF",
@@ -4534,7 +4534,7 @@
    "aumValue": 2241097555.09,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Mar 31 2022",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$48.73",
    "closePriceValue": 48.73,
    "premiumDiscount": "0.23%",
@@ -4542,7 +4542,7 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.228"
+    "dividend": "0.22839"
    },
    "returns": {
     "monthEnd": {
@@ -4584,14 +4584,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 4.77,
-    "dividendYield": 5.61,
-    "dividendYieldText": "5.61%",
-    "secYield": 5.43,
-    "secYieldText": "5.43%",
+    "dividendYield": 5.72,
+    "dividendYieldText": "5.72%",
+    "secYield": 5.69,
+    "secYieldText": "5.69%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 202,
-   "history": 53
+   "history": 55
   },
   {
    "ticker": "JPSE",
@@ -4609,7 +4609,7 @@
    "aumValue": 571272285.03,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Nov 15 2016",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$57.18",
    "closePriceValue": 57.18,
    "premiumDiscount": "0.09%",
@@ -4617,7 +4617,7 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.251"
+    "dividend": "0.25128"
    },
    "returns": {
     "monthEnd": {
@@ -4652,21 +4652,21 @@
    "metrics": {
     "ytd": 18.69,
     "tr1y": 21.36,
-    "tr3y": 49.68,
+    "tr3y": 49.66,
     "tr5y": 44.97,
     "tr10y": null,
     "cagr3y": 14.39,
     "cagr5y": 7.71,
     "cagr10y": null,
     "siAnn": 10.72,
-    "dividendYield": 1.76,
-    "dividendYieldText": "1.76%",
-    "secYield": 1.59,
-    "secYieldText": "1.59%",
+    "dividendYield": 1.75,
+    "dividendYieldText": "1.75%",
+    "secYield": 1.71,
+    "secYieldText": "1.71%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 555,
-   "history": 2473
+   "holdings": 552,
+   "history": 2478
   },
   {
    "ticker": "JPST",
@@ -4684,7 +4684,7 @@
    "aumValue": 41775814791.64,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "May 17 2017",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$50.37",
    "closePriceValue": 50.37,
    "premiumDiscount": "0.04%",
@@ -4692,15 +4692,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.172"
+    "dividend": "0.17166"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.34,
      "mo1Text": "0.34%",
-     "qtd": 0.54,
-     "qtdText": "0.54%",
+     "qtd": 0.61,
+     "qtdText": "0.61%",
      "ytd": 2.29,
      "ytdText": "2.29%",
      "yr1": 3.86,
@@ -4728,20 +4728,20 @@
     "ytd": 2.29,
     "tr1y": 3.86,
     "tr3y": 15.86,
-    "tr5y": 20.33,
+    "tr5y": 20.34,
     "tr10y": null,
     "cagr3y": 5.03,
     "cagr5y": 3.77,
     "cagr10y": null,
     "siAnn": 3,
-    "dividendYield": 4.1,
-    "dividendYieldText": "4.10%",
-    "secYield": 4.11,
-    "secYieldText": "4.11%",
+    "dividendYield": 4.15,
+    "dividendYieldText": "4.15%",
+    "secYield": 4.41,
+    "secYieldText": "4.41%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 806,
-   "history": 2350
+   "history": 2353
   },
   {
    "ticker": "JPSV",
@@ -4759,7 +4759,7 @@
    "aumValue": 26009748.67,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Mar 07 2023",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$66.75",
    "closePriceValue": 66.75,
    "premiumDiscount": "0.09%",
@@ -4767,15 +4767,15 @@
    "distributions": {
     "frequency": "Annually",
     "exDate": "12/16/2025",
-    "dividend": "0.822"
+    "dividend": "0.8223"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": -0.79,
      "mo1Text": "-0.79%",
-     "qtd": -3.77,
-     "qtdText": "-3.77%",
+     "qtd": -3.33,
+     "qtdText": "-3.33%",
      "ytd": 19.71,
      "ytdText": "19.71%",
      "yr1": 17.31,
@@ -4809,14 +4809,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 11.01,
-    "dividendYield": 1.23,
-    "dividendYieldText": "1.23%",
-    "secYield": 1.44,
-    "secYieldText": "1.44%",
+    "dividendYield": 1.4,
+    "dividendYieldText": "1.40%",
+    "secYield": 1.56,
+    "secYieldText": "1.56%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 107,
-   "history": 891
+   "holdings": 113,
+   "history": 892
   },
   {
    "ticker": "JPUS",
@@ -4834,7 +4834,7 @@
    "aumValue": 453532352.69,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Sep 29 2015",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$137.48",
    "closePriceValue": 137.48,
    "premiumDiscount": "0.03%",
@@ -4842,15 +4842,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.725"
+    "dividend": "0.72517"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.75,
      "mo1Text": "0.75%",
-     "qtd": -1.5,
-     "qtdText": "-1.50%",
+     "qtd": -1.15,
+     "qtdText": "-1.15%",
      "ytd": 16.49,
      "ytdText": "16.49%",
      "yr1": 19.16,
@@ -4877,21 +4877,21 @@
    "metrics": {
     "ytd": 16.49,
     "tr1y": 19.16,
-    "tr3y": 55.16,
-    "tr5y": 58.72,
-    "tr10y": 199.67,
+    "tr3y": 55.17,
+    "tr5y": 58.74,
+    "tr10y": 199.71,
     "cagr3y": 15.77,
     "cagr5y": 9.68,
     "cagr10y": 11.6,
     "siAnn": 12.22,
-    "dividendYield": 2.11,
-    "dividendYieldText": "2.11%",
-    "secYield": 2.08,
-    "secYieldText": "2.08%",
+    "dividendYield": 2.09,
+    "dividendYieldText": "2.09%",
+    "secYield": 2.22,
+    "secYieldText": "2.22%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 375,
-   "history": 2762
+   "holdings": 373,
+   "history": 2764
   },
   {
    "ticker": "JQUA",
@@ -4909,7 +4909,7 @@
    "aumValue": 8958314329.43,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Nov 08 2017",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$74.29",
    "closePriceValue": 74.29,
    "premiumDiscount": "-0.03%",
@@ -4917,15 +4917,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.181"
+    "dividend": "0.18062"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 3.66,
      "mo1Text": "3.66%",
-     "qtd": 3.2,
-     "qtdText": "3.20%",
+     "qtd": 3.31,
+     "qtdText": "3.31%",
      "ytd": 19.09,
      "ytdText": "19.09%",
      "yr1": 22.51,
@@ -4952,21 +4952,21 @@
    "metrics": {
     "ytd": 19.09,
     "tr1y": 22.51,
-    "tr3y": 71.55,
-    "tr5y": 85.47,
+    "tr3y": 71.57,
+    "tr5y": 85.5,
     "tr10y": null,
     "cagr3y": 19.71,
     "cagr5y": 13.15,
     "cagr10y": null,
     "siAnn": 14.96,
-    "dividendYield": 0.97,
-    "dividendYieldText": "0.97%",
-    "secYield": 0.99,
-    "secYieldText": "0.99%",
+    "dividendYield": 0.96,
+    "dividendYieldText": "0.96%",
+    "secYield": 1.02,
+    "secYieldText": "1.02%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 293,
-   "history": 2229
+   "holdings": 312,
+   "history": 2231
   },
   {
    "ticker": "JSCP",
@@ -4984,7 +4984,7 @@
    "aumValue": 1830550088.52,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Mar 01 2021",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$46.14",
    "closePriceValue": 46.14,
    "premiumDiscount": "0.07%",
@@ -4992,15 +4992,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.182"
+    "dividend": "0.18222"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.33,
      "mo1Text": "0.33%",
-     "qtd": -1.12,
-     "qtdText": "-1.12%",
+     "qtd": -0.86,
+     "qtdText": "-0.86%",
      "ytd": 1.15,
      "ytdText": "1.15%",
      "yr1": 2.81,
@@ -5027,21 +5027,21 @@
    "metrics": {
     "ytd": 1.15,
     "tr1y": 2.81,
-    "tr3y": 17.42,
-    "tr5y": 12.98,
+    "tr3y": 17.43,
+    "tr5y": 12.95,
     "tr10y": null,
     "cagr3y": 5.5,
     "cagr5y": 2.47,
     "cagr10y": null,
     "siAnn": 2.42,
-    "dividendYield": 4.73,
-    "dividendYieldText": "4.73%",
-    "secYield": 4.78,
-    "secYieldText": "4.78%",
+    "dividendYield": 4.81,
+    "dividendYieldText": "4.81%",
+    "secYield": 4.97,
+    "secYieldText": "4.97%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 1227,
-   "history": 1399
+   "holdings": 1319,
+   "history": 1401
   },
   {
    "ticker": "JTEK",
@@ -5059,23 +5059,23 @@
    "aumValue": 4737897355.75,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Oct 04 2023",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$105.50",
    "closePriceValue": 105.5,
    "premiumDiscount": "0.04%",
    "premiumDiscountValue": 0.0357,
    "distributions": {
     "frequency": "Annually",
-    "exDate": "—",
-    "dividend": "—"
+    "exDate": "12/16/2025",
+    "dividend": "0"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 7.27,
      "mo1Text": "7.27%",
-     "qtd": -2.08,
-     "qtdText": "-2.08%",
+     "qtd": -2.54,
+     "qtdText": "-2.54%",
      "ytd": 12.44,
      "ytdText": "12.44%",
      "yr1": 18.85,
@@ -5109,14 +5109,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 27.44,
-    "dividendYield": null,
-    "dividendYieldText": "—",
+    "dividendYield": 0,
+    "dividendYieldText": "0.00%",
     "secYield": null,
     "secYieldText": "—",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 63,
-   "history": 745
+   "holdings": 70,
+   "history": 747
   },
   {
    "ticker": "JTNY",
@@ -5134,7 +5134,7 @@
    "aumValue": 423965944.98,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Jan 01 1997",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$47.22",
    "closePriceValue": 47.22,
    "premiumDiscount": "-0.10%",
@@ -5142,15 +5142,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.15"
+    "dividend": "0.15027"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": -0.2,
      "mo1Text": "-0.20%",
-     "qtd": -5.22,
-     "qtdText": "-5.22%",
+     "qtd": -5.04,
+     "qtdText": "-5.04%",
      "ytd": 0.17,
      "ytdText": "0.17%",
      "yr1": 3.62,
@@ -5177,21 +5177,21 @@
    "metrics": {
     "ytd": 0.17,
     "tr1y": 3.62,
-    "tr3y": 9.08,
+    "tr3y": 9.07,
     "tr5y": 3.65,
-    "tr10y": 16.28,
+    "tr10y": 16.26,
     "cagr3y": 2.94,
     "cagr5y": 0.72,
     "cagr10y": 1.52,
     "siAnn": 5.26,
-    "dividendYield": 3.81,
-    "dividendYieldText": "3.81%",
-    "secYield": 3.64,
-    "secYieldText": "3.64%",
+    "dividendYield": 3.87,
+    "dividendYieldText": "3.87%",
+    "secYield": 3.78,
+    "secYieldText": "3.78%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 232,
-   "history": 72
+   "history": 73
   },
   {
    "ticker": "JUSA",
@@ -5209,7 +5209,7 @@
    "aumValue": 725446951.19,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Mar 13 2025",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$69.24",
    "closePriceValue": 69.24,
    "premiumDiscount": "-0.02%",
@@ -5217,15 +5217,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.132"
+    "dividend": "0.13168"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 2.21,
      "mo1Text": "2.21%",
-     "qtd": 3.28,
-     "qtdText": "3.28%",
+     "qtd": 3.54,
+     "qtdText": "3.54%",
      "ytd": 12.14,
      "ytdText": "12.14%",
      "yr1": 19.24,
@@ -5259,14 +5259,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 25.58,
-    "dividendYield": 0.76,
-    "dividendYieldText": "0.76%",
-    "secYield": 0.9,
-    "secYieldText": "0.90%",
+    "dividendYield": 0.75,
+    "dividendYieldText": "0.75%",
+    "secYield": 0.93,
+    "secYieldText": "0.93%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 251,
-   "history": 386
+   "holdings": 262,
+   "history": 387
   },
   {
    "ticker": "JVAL",
@@ -5284,7 +5284,7 @@
    "aumValue": 994706340.78,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Nov 08 2017",
-   "exchange": "NYSEArca",
+   "exchange": "NYSE-Arca",
    "closePrice": "$58.73",
    "closePriceValue": 58.73,
    "premiumDiscount": "0.08%",
@@ -5292,15 +5292,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.216"
+    "dividend": "0.21649"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 2.91,
      "mo1Text": "2.91%",
-     "qtd": 0.59,
-     "qtdText": "0.59%",
+     "qtd": 1.26,
+     "qtdText": "1.26%",
      "ytd": 21.95,
      "ytdText": "21.95%",
      "yr1": 29.96,
@@ -5328,20 +5328,20 @@
     "ytd": 21.95,
     "tr1y": 29.96,
     "tr3y": 74.49,
-    "tr5y": 79.64,
+    "tr5y": 79.66,
     "tr10y": null,
     "cagr3y": 20.39,
     "cagr5y": 12.43,
     "cagr10y": null,
     "siAnn": 12.98,
-    "dividendYield": 1.47,
-    "dividendYieldText": "1.47%",
-    "secYield": 1.66,
-    "secYieldText": "1.66%",
+    "dividendYield": 1.46,
+    "dividendYieldText": "1.46%",
+    "secYield": 1.72,
+    "secYieldText": "1.72%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 388,
-   "history": 2229
+   "holdings": 398,
+   "history": 2231
   },
   {
    "ticker": "LCDS",
@@ -5359,7 +5359,7 @@
    "aumValue": 16674115.39,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Aug 07 2024",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$74.10",
    "closePriceValue": 74.1,
    "premiumDiscount": "-0.01%",
@@ -5367,7 +5367,7 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.173"
+    "dividend": "0.17314"
    },
    "returns": {
     "monthEnd": {
@@ -5411,12 +5411,12 @@
     "siAnn": 21.8,
     "dividendYield": 0.93,
     "dividendYieldText": "0.93%",
-    "secYield": 0.75,
-    "secYieldText": "0.75%",
+    "secYield": 0.76,
+    "secYieldText": "0.76%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 113,
-   "history": 535
+   "holdings": 115,
+   "history": 536
   },
   {
    "ticker": "LGDS",
@@ -5434,15 +5434,15 @@
    "aumValue": 1137844152.59,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Feb 28 2003",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$50.83",
    "closePriceValue": 50.83,
    "premiumDiscount": "-0.01%",
    "premiumDiscountValue": -0.0094,
    "distributions": {
     "frequency": "Annually",
-    "exDate": "—",
-    "dividend": "—"
+    "exDate": "12/18/2025",
+    "dividend": "0.20627"
    },
    "returns": {
     "monthEnd": {
@@ -5477,21 +5477,21 @@
    "metrics": {
     "ytd": 5.3,
     "tr1y": 13.73,
-    "tr3y": 83.56,
-    "tr5y": 86.46,
-    "tr10y": 397.37,
+    "tr3y": 83.57,
+    "tr5y": 86.5,
+    "tr10y": 397.41,
     "cagr3y": 22.44,
     "cagr5y": 13.27,
     "cagr10y": 17.4,
     "siAnn": 13.21,
-    "dividendYield": null,
-    "dividendYieldText": "—",
-    "secYield": 0.17,
-    "secYieldText": "0.17%",
+    "dividendYield": 0.41,
+    "dividendYieldText": "0.41%",
+    "secYield": 0.19,
+    "secYieldText": "0.19%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
    "holdings": 103,
-   "history": 54
+   "history": 55
   },
   {
    "ticker": "LVDS",
@@ -5509,7 +5509,7 @@
    "aumValue": 112637850.59,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Feb 28 2003",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$59.25",
    "closePriceValue": 59.25,
    "premiumDiscount": "0.06%",
@@ -5517,15 +5517,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.203"
+    "dividend": "0.20275"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 0.72,
      "mo1Text": "0.72%",
-     "qtd": 2.91,
-     "qtdText": "2.91%",
+     "qtd": 3.34,
+     "qtdText": "3.34%",
      "ytd": 22.18,
      "ytdText": "22.18%",
      "yr1": 27.65,
@@ -5553,20 +5553,20 @@
     "ytd": 22.18,
     "tr1y": 27.65,
     "tr3y": 71.38,
-    "tr5y": 79.8,
-    "tr10y": 231.14,
+    "tr5y": 79.79,
+    "tr10y": 231.02,
     "cagr3y": 19.67,
     "cagr5y": 12.45,
     "cagr10y": 12.72,
     "siAnn": 11.01,
-    "dividendYield": 1.37,
-    "dividendYieldText": "1.37%",
-    "secYield": 1.3,
-    "secYieldText": "1.30%",
+    "dividendYield": 1.36,
+    "dividendYieldText": "1.36%",
+    "secYield": 1.36,
+    "secYieldText": "1.36%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 132,
-   "history": 303
+   "holdings": 133,
+   "history": 304
   },
   {
    "ticker": "MCDS",
@@ -5584,7 +5584,7 @@
    "aumValue": 9228673.09,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Aug 07 2024",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$65.90",
    "closePriceValue": 65.9,
    "premiumDiscount": "-0.03%",
@@ -5592,7 +5592,7 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.193"
+    "dividend": "0.19317"
    },
    "returns": {
     "monthEnd": {
@@ -5634,14 +5634,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 17.17,
-    "dividendYield": 1.17,
-    "dividendYieldText": "1.17%",
-    "secYield": 0.99,
-    "secYieldText": "0.99%",
+    "dividendYield": 1.16,
+    "dividendYieldText": "1.16%",
+    "secYield": 1.06,
+    "secYieldText": "1.06%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 205,
-   "history": 443
+   "holdings": 208,
+   "history": 536
   },
   {
    "ticker": "ROCQ",
@@ -5659,7 +5659,7 @@
    "aumValue": 675975458.31,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Mar 18 2026",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$56.85",
    "closePriceValue": 56.85,
    "premiumDiscount": "0.08%",
@@ -5667,15 +5667,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.494"
+    "dividend": "0.49357"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 2.64,
      "mo1Text": "2.64%",
-     "qtd": 2.85,
-     "qtdText": "2.85%",
+     "qtd": 3.03,
+     "qtdText": "3.03%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -5709,14 +5709,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": null,
-    "dividendYield": 10.43,
-    "dividendYieldText": "10.43%",
-    "secYield": 0.24,
-    "secYieldText": "0.24%",
+    "dividendYield": 10.42,
+    "dividendYieldText": "10.42%",
+    "secYield": 0.26,
+    "secYieldText": "0.26%",
     "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
    },
-   "holdings": 101,
-   "history": 130
+   "holdings": 103,
+   "history": 133
   },
   {
    "ticker": "ROCY",
@@ -5734,7 +5734,7 @@
    "aumValue": 755074549.12,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Mar 18 2026",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$55.34",
    "closePriceValue": 55.34,
    "premiumDiscount": "0.04%",
@@ -5742,15 +5742,15 @@
    "distributions": {
     "frequency": "Monthly",
     "exDate": "09/01/2026",
-    "dividend": "0.261"
+    "dividend": "0.26131"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": 1.31,
      "mo1Text": "1.31%",
-     "qtd": 3.54,
-     "qtdText": "3.54%",
+     "qtd": 3.99,
+     "qtdText": "3.99%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -5784,14 +5784,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": null,
-    "dividendYield": 5.66,
-    "dividendYieldText": "5.66%",
-    "secYield": 0.74,
-    "secYieldText": "0.74%",
+    "dividendYield": 5.67,
+    "dividendYieldText": "5.67%",
+    "secYield": 0.76,
+    "secYieldText": "0.76%",
     "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
    },
-   "holdings": 117,
-   "history": 131
+   "holdings": 118,
+   "history": 133
   },
   {
    "ticker": "SCDS",
@@ -5809,7 +5809,7 @@
    "aumValue": 9418634.82,
    "asOfDate": "Sep 25 2026",
    "inceptionDate": "Aug 07 2024",
-   "exchange": "NasdaqGM",
+   "exchange": "NASDAQ",
    "closePrice": "$72.48",
    "closePriceValue": 72.48,
    "premiumDiscount": "0.04%",
@@ -5817,15 +5817,15 @@
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/22/2026",
-    "dividend": "0.303"
+    "dividend": "0.30333"
    },
    "returns": {
     "monthEnd": {
      "asOfDate": "Aug 31 2026",
      "mo1": -0.2,
      "mo1Text": "-0.20%",
-     "qtd": -4.56,
-     "qtdText": "-4.56%",
+     "qtd": -4.62,
+     "qtdText": "-4.62%",
      "ytd": 25.05,
      "ytdText": "25.05%",
      "yr1": 29.64,
@@ -5859,14 +5859,14 @@
     "cagr5y": null,
     "cagr10y": null,
     "siAnn": 22.66,
-    "dividendYield": 1.67,
-    "dividendYieldText": "1.67%",
-    "secYield": 0.84,
-    "secYieldText": "0.84%",
+    "dividendYield": 1.66,
+    "dividendYieldText": "1.66%",
+    "secYield": 0.92,
+    "secYieldText": "0.92%",
     "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)"
    },
-   "holdings": 277,
-   "history": 443
+   "holdings": 279,
+   "history": 536
   }
  ]
 }

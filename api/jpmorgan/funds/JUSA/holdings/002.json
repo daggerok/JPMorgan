@@ -2,7 +2,7 @@
  "ticker": "JUSA",
  "page": 2,
  "pageSize": 250,
- "totalRows": 251,
+ "totalRows": 262,
  "headers": [
   "Name",
   "Ticker",
@@ -10,17 +10,142 @@
   "Weight",
   "Market Value",
   "Shares Held",
-  "Asset Category"
+  "Asset Category",
+  "Coupon",
+  "Maturity"
  ],
  "rows": [
   {
-   "Name": "Best Buy Co., Inc.",
-   "Ticker": "BBY",
-   "Identifier": "086516101",
-   "Weight": "0.062148317",
-   "Market Value": "263758.88",
-   "Shares Held": "3476",
-   "Asset Category": "EC"
+   "Name": "ALIGN TECHNOLOGY INC",
+   "Ticker": "ALGN",
+   "Identifier": "016255101",
+   "Weight": "0.02",
+   "Market Value": "122179.38",
+   "Shares Held": "839",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "INVESCO LTD COMMON STOCK",
+   "Ticker": "IVZ",
+   "Identifier": "G491BT108",
+   "Weight": "0.02",
+   "Market Value": "116369.24",
+   "Shares Held": "3793",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CHENIERE ENERGY INC",
+   "Ticker": "LNG",
+   "Identifier": "16411R208",
+   "Weight": "0.02",
+   "Market Value": "116037.6",
+   "Shares Held": "420",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "UDR INC REIT USD 0.01",
+   "Ticker": "UDR",
+   "Identifier": "902653104",
+   "Weight": "0.02",
+   "Market Value": "112660.9",
+   "Shares Held": "3358",
+   "Asset Category": "REIT",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "0.02",
+   "Market Value": "112394.12",
+   "Shares Held": "112394",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "POOL CORP COMMON STOCK",
+   "Ticker": "POOL",
+   "Identifier": "73278L105",
+   "Weight": "0.01",
+   "Market Value": "103656.11",
+   "Shares Held": "641",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "MGM RESORTS",
+   "Ticker": "MGM",
+   "Identifier": "552953101",
+   "Weight": "0.01",
+   "Market Value": "69266.64",
+   "Shares Held": "2056",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "GENERAC HOLDINGS INC",
+   "Ticker": "GNRC",
+   "Identifier": "368736104",
+   "Weight": "0.01",
+   "Market Value": "64960.4",
+   "Shares Held": "328",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SOLVENTUM CORP COMMON",
+   "Ticker": "SOLV",
+   "Identifier": "83444M101",
+   "Weight": "0.01",
+   "Market Value": "40219.86",
+   "Shares Held": "454",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "S&P500 EMINI 12/18/2026",
+   "Ticker": "-",
+   "Identifier": "ESZ6IDX",
+   "Weight": "0",
+   "Market Value": "33863.45",
+   "Shares Held": "17",
+   "Asset Category": "EQUITY INDEX FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 18 2026"
+  },
+  {
+   "Name": "TPG INC RIGHT USD",
+   "Ticker": "-",
+   "Identifier": "436CVR021",
+   "Weight": "0",
+   "Market Value": "1.47",
+   "Shares Held": "147",
+   "Asset Category": "RIGHTS",
+   "Coupon": "",
+   "Maturity": "Dec 27 2027"
+  },
+  {
+   "Name": "USD - FOR FUTURES",
+   "Ticker": "-",
+   "Identifier": "USQ",
+   "Weight": "-0.01",
+   "Market Value": "-90175.95",
+   "Shares Held": "-90175",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   }
  ]
 }
