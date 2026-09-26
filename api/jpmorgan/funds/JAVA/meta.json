@@ -2,33 +2,33 @@
  "ticker": "JAVA",
  "name": "JPMorgan Active Value ETF",
  "category": "U.S. Equity",
- "categoryPath": "U.S. Equity / Russell 1000 Value Index",
+ "categoryPath": "U.S. Equity",
  "source": {
   "fundPage": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-active-value-etf-etf-shares-46641q167",
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q167&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46641Q167&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q167&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q167&country=us&role=adv&locale=en-US&fromDate=2021-10-04&toDate=2026-09-25",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q167&country=us&role=adv&locale=en-US",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JAVA",
-  "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "holdingsSource": "SEC EDGAR Form N-PORT-P (accession 0002071691-26-021105, report period 2026-06-30)",
+  "historySource": "Yahoo Finance public chart API (adjusted close)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
   "cusip": "46641Q167",
   "isin": null,
-  "indexTicker": "Russell 1000 Value Index"
+  "indexTicker": null
  },
  "inception": {
-  "fundInceptionDate": "2021-10-04",
-  "shareClassInceptionDate": "2021-10-04",
+  "fundInceptionDate": null,
+  "shareClassInceptionDate": null,
   "exchange": "NYSE-Arca"
  },
  "expenseRatio": {
   "display": "0.44%",
   "value": 0.44,
-  "gross": 0.44,
-  "net": 0.44
+  "gross": null,
+  "net": null
  },
  "nav": {
   "display": "$80.94",
@@ -45,29 +45,29 @@
   "value": -0.0113
  },
  "aum": {
-  "display": "$6,972.91 M",
-  "value": 6972907929.6,
-  "asOfDate": "Sep 25 2026",
-  "source": "am.jpmorgan.com product-data net assets"
+  "display": "$6,685.89 M",
+  "value": 6685886974.81,
+  "asOfDate": "Jun 30 2026",
+  "source": "SEC Form N-PORT-P net assets (report period 2026-06-30)"
  },
  "yields": {
   "dividendYield": 1.14,
   "dividendYieldText": "1.14%",
-  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 25 2026",
+  "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
   "distributionRate": null,
   "secYield": 1.13,
   "secYieldText": "1.13%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 24 2026",
-  "unsubsidizedSecYield": 1.13
+  "secYieldKind": "30-day SEC yield (month-end, am.jpmorgan.com fund explorer)",
+  "unsubsidizedSecYield": null
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Aug 31 2026",
+   "asOfDate": "Sep 24 2026",
    "mo1": 1.29,
    "mo1Text": "1.29%",
-   "qtd": 1.74,
-   "qtdText": "1.74%",
+   "qtd": 1.14,
+   "qtdText": "1.14%",
    "ytd": 15.84,
    "ytdText": "15.84%",
    "yr1": 23.15,
@@ -94,59 +94,99 @@
  "distributions": {
   "frequency": "Quarterly",
   "paymentsPerYear": 4,
-  "frequencyCode": "QDEC",
+  "frequencyCode": null,
   "headers": [
    "Ex-Date",
    "Amount"
   ],
   "rows": [
    [
+    "12/15/2021",
+    "0.075"
+   ],
+   [
+    "12/21/2021",
+    "0.177"
+   ],
+   [
+    "03/22/2022",
+    "0.114"
+   ],
+   [
+    "06/21/2022",
+    "0.179"
+   ],
+   [
+    "09/20/2022",
+    "0.134"
+   ],
+   [
+    "12/20/2022",
+    "0.2"
+   ],
+   [
+    "12/29/2022",
+    "0.012"
+   ],
+   [
+    "03/21/2023",
+    "0.152"
+   ],
+   [
+    "06/20/2023",
+    "0.247"
+   ],
+   [
+    "09/19/2023",
+    "0.216"
+   ],
+   [
     "12/19/2023",
-    "0.30108"
+    "0.301"
    ],
    [
     "03/19/2024",
-    "0.16046"
+    "0.161"
    ],
    [
     "06/25/2024",
-    "0.25274"
+    "0.253"
    ],
    [
     "09/24/2024",
-    "0.25668"
+    "0.257"
    ],
    [
     "12/24/2024",
-    "0.24765"
+    "0.248"
    ],
    [
     "03/25/2025",
-    "0.16895"
+    "0.169"
    ],
    [
     "06/24/2025",
-    "0.24543"
+    "0.245"
    ],
    [
     "09/23/2025",
-    "0.25056"
+    "0.251"
    ],
    [
     "12/16/2025",
-    "0.29589"
+    "0.296"
    ],
    [
     "03/24/2026",
-    "0.17993"
+    "0.18"
    ],
    [
     "06/23/2026",
-    "0.23684"
+    "0.237"
    ],
    [
     "09/22/2026",
-    "0.23273"
+    "0.233"
    ]
   ]
  },
@@ -155,10 +195,10 @@
    "holdings/001.json"
   ],
   "pageSize": 250,
-  "totalRows": 149,
-  "asOfDate": "2026-09-24",
-  "asOf": "Sep 24 2026",
-  "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
+  "totalRows": 161,
+  "asOfDate": "2026-06-30",
+  "asOf": "Jun 30 2026",
+  "source": "SEC EDGAR Form N-PORT-P (accession 0002071691-26-021105, report period 2026-06-30)"
  },
  "history": {
   "pages": [
@@ -166,8 +206,8 @@
    "history/002.json"
   ],
   "pageSize": 1000,
-  "totalRows": 1250,
-  "asOf": "Sep 25 2026",
-  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+  "totalRows": 1248,
+  "asOf": "Sep 24 2026",
+  "source": "Yahoo Finance public chart API (adjusted close)"
  }
 }

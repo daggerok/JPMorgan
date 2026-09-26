@@ -8,10 +8,10 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q542&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q542&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q542&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q542&country=us&role=adv&locale=en-US&fromDate=2025-12-10&toDate=2026-09-25",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q542&country=us&role=adv&locale=en-US",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JMMF",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "historySource": "Yahoo Finance public chart API (adjusted close)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
@@ -20,15 +20,15 @@
   "indexTicker": null
  },
  "inception": {
-  "fundInceptionDate": "2025-12-10",
-  "shareClassInceptionDate": "2025-12-10",
+  "fundInceptionDate": null,
+  "shareClassInceptionDate": null,
   "exchange": "NYSE-Arca"
  },
  "expenseRatio": {
   "display": "0.16%",
   "value": 0.16,
-  "gross": 0.16,
-  "net": 0.16
+  "gross": null,
+  "net": null
  },
  "nav": {
   "display": "$100.10",
@@ -47,27 +47,27 @@
  "aum": {
   "display": "$92.10 M",
   "value": 92096057.59,
-  "asOfDate": "Sep 25 2026",
-  "source": "am.jpmorgan.com product-data net assets"
+  "asOfDate": "—",
+  "source": "previous run"
  },
  "yields": {
   "dividendYield": 4.09,
   "dividendYieldText": "4.09%",
-  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 25 2026",
+  "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
   "distributionRate": null,
   "secYield": 3.63,
   "secYieldText": "3.63%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 25 2026",
-  "unsubsidizedSecYield": 3.63
+  "secYieldKind": "30-day SEC yield (month-end, am.jpmorgan.com fund explorer)",
+  "unsubsidizedSecYield": null
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Aug 31 2026",
+   "asOfDate": "Sep 24 2026",
    "mo1": 0.29,
    "mo1Text": "0.29%",
-   "qtd": null,
-   "qtdText": "—",
+   "qtd": 0.79,
+   "qtdText": "0.79%",
    "ytd": 2.35,
    "ytdText": "2.35%",
    "yr1": null,
@@ -78,8 +78,8 @@
    "yr5Text": "—",
    "yr10": null,
    "yr10Text": "—",
-   "sinceInception": null,
-   "sinceInceptionText": "—"
+   "sinceInception": 3.41,
+   "sinceInceptionText": "3.41%"
   },
   "quarterEnd": {
    "asOfDate": "Jun 30 2026",
@@ -92,61 +92,173 @@
   }
  },
  "distributions": {
-  "frequency": "Weekly",
-  "paymentsPerYear": 52,
-  "frequencyCode": "WDEC",
+  "frequency": "Unknown",
+  "paymentsPerYear": null,
+  "frequencyCode": null,
   "headers": [
    "Ex-Date",
    "Amount"
   ],
   "rows": [
    [
+    "12/19/2025",
+    "0.064"
+   ],
+   [
+    "12/24/2025",
+    "0.068"
+   ],
+   [
+    "12/31/2025",
+    "0.067"
+   ],
+   [
+    "01/09/2026",
+    "0.067"
+   ],
+   [
+    "01/16/2026",
+    "0.067"
+   ],
+   [
+    "01/23/2026",
+    "0.067"
+   ],
+   [
+    "01/30/2026",
+    "0.067"
+   ],
+   [
+    "02/06/2026",
+    "0.067"
+   ],
+   [
+    "02/13/2026",
+    "0.067"
+   ],
+   [
+    "02/20/2026",
+    "0.066"
+   ],
+   [
+    "02/27/2026",
+    "0.067"
+   ],
+   [
+    "03/06/2026",
+    "0.066"
+   ],
+   [
+    "03/13/2026",
+    "0.066"
+   ],
+   [
+    "03/20/2026",
+    "0.067"
+   ],
+   [
+    "03/27/2026",
+    "0.065"
+   ],
+   [
+    "04/06/2026",
+    "0.064"
+   ],
+   [
+    "04/10/2026",
+    "0.065"
+   ],
+   [
+    "04/17/2026",
+    "0.066"
+   ],
+   [
+    "04/24/2026",
+    "0.067"
+   ],
+   [
+    "05/01/2026",
+    "0.069"
+   ],
+   [
+    "05/08/2026",
+    "0.068"
+   ],
+   [
+    "05/15/2026",
+    "0.065"
+   ],
+   [
+    "05/22/2026",
+    "0.067"
+   ],
+   [
+    "05/29/2026",
+    "0.066"
+   ],
+   [
+    "06/05/2026",
+    "0.068"
+   ],
+   [
+    "06/12/2026",
+    "0.067"
+   ],
+   [
+    "06/22/2026",
+    "0.068"
+   ],
+   [
+    "06/26/2026",
+    "0.068"
+   ],
+   [
+    "07/06/2026",
+    "0.07"
+   ],
+   [
     "07/10/2026",
-    "0.0694"
+    "0.069"
    ],
    [
     "07/17/2026",
-    "0.06712"
+    "0.067"
    ],
    [
     "07/24/2026",
-    "0.06808"
+    "0.068"
    ],
    [
     "07/31/2026",
-    "0.0661"
+    "0.066"
    ],
    [
     "08/07/2026",
-    "0.06808"
+    "0.068"
    ],
    [
     "08/14/2026",
-    "0.06676"
+    "0.067"
    ],
    [
     "08/21/2026",
-    "0.06556"
+    "0.066"
    ],
    [
     "08/28/2026",
-    "0.06728"
+    "0.067"
    ],
    [
     "09/04/2026",
-    "0.06711"
+    "0.067"
    ],
    [
     "09/11/2026",
-    "0.06823"
+    "0.068"
    ],
    [
     "09/18/2026",
-    "0.06365"
-   ],
-   [
-    "09/25/2026",
-    "0.07046"
+    "0.064"
    ]
   ]
  },
@@ -156,8 +268,8 @@
   ],
   "pageSize": 250,
   "totalRows": 60,
-  "asOfDate": "2026-09-24",
-  "asOf": "Sep 24 2026",
+  "asOfDate": null,
+  "asOf": "—",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -165,8 +277,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 199,
-  "asOf": "Sep 25 2026",
-  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+  "totalRows": 196,
+  "asOf": "Sep 24 2026",
+  "source": "Yahoo Finance public chart API (adjusted close)"
  }
 }

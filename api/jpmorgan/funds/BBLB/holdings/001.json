@@ -2,7 +2,7 @@
  "ticker": "BBLB",
  "page": 1,
  "pageSize": 250,
- "totalRows": 42,
+ "totalRows": 41,
  "headers": [
   "Name",
   "Ticker",
@@ -10,472 +10,377 @@
   "Weight",
   "Market Value",
   "Shares Held",
-  "Asset Category",
-  "Coupon",
-  "Maturity"
+  "Asset Category"
  ],
  "rows": [
   {
-   "Name": "UNITED STATES OF 5% 05/56",
+   "Name": "JPMorgan Prime Money Market Fund",
    "Ticker": "-",
-   "Identifier": "912810UU0",
-   "Weight": "4.06",
-   "Market Value": "1316437.5",
-   "Shares Held": "1416000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "5",
-   "Maturity": "May 15 2056"
+   "Identifier": "46637K844",
+   "Weight": "1.1526599543",
+   "Market Value": "362278.25",
+   "Shares Held": "362205.811",
+   "Asset Category": "STIV"
   },
   {
-   "Name": "UNITED STATES 4.75% 08/55",
+   "Name": "United States of America",
    "Ticker": "-",
-   "Identifier": "912810UM8",
-   "Weight": "4.04",
-   "Market Value": "1309731.25",
-   "Shares Held": "1468000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Aug 15 2055"
+   "Identifier": "912810RS9",
+   "Weight": "1.0760820534",
+   "Market Value": "338210",
+   "Shares Held": "496000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "UNITED STATES 4.75% 05/55",
+   "Name": "United States of America",
    "Ticker": "-",
-   "Identifier": "912810UK2",
-   "Weight": "4",
-   "Market Value": "1297354.21",
-   "Shares Held": "1454000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.75",
-   "Maturity": "May 15 2055"
+   "Identifier": "912810RT7",
+   "Weight": "1.3653846501",
+   "Market Value": "429137.11",
+   "Shares Held": "663000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "UNITED 4.625% 02/55",
-   "Ticker": "-",
-   "Identifier": "912810UG1",
-   "Weight": "3.99",
-   "Market Value": "1293728.12",
-   "Shares Held": "1480000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.625",
-   "Maturity": "Feb 15 2055"
-  },
-  {
-   "Name": "UNITED 4.625% 11/55",
-   "Ticker": "-",
-   "Identifier": "912810UP1",
-   "Weight": "3.99",
-   "Market Value": "1293200.63",
-   "Shares Held": "1479000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.625",
-   "Maturity": "Nov 15 2055"
-  },
-  {
-   "Name": "UNITED STATES 4.5% 11/54",
-   "Ticker": "-",
-   "Identifier": "912810UE6",
-   "Weight": "3.91",
-   "Market Value": "1267365.62",
-   "Shares Held": "1480000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.5",
-   "Maturity": "Nov 15 2054"
-  },
-  {
-   "Name": "UNITED STATES 4.75% 11/53",
-   "Ticker": "-",
-   "Identifier": "912810TV0",
-   "Weight": "3.89",
-   "Market Value": "1262175.94",
-   "Shares Held": "1416000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Nov 15 2053"
-  },
-  {
-   "Name": "UNITED STATES 4.75% 02/56",
-   "Ticker": "-",
-   "Identifier": "912810UR7",
-   "Weight": "3.88",
-   "Market Value": "1257972.81",
-   "Shares Held": "1409000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Feb 15 2056"
-  },
-  {
-   "Name": "UNITED 4.625% 05/54",
-   "Ticker": "-",
-   "Identifier": "912810UA4",
-   "Weight": "3.84",
-   "Market Value": "1244402.39",
-   "Shares Held": "1423000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.625",
-   "Maturity": "May 15 2054"
-  },
-  {
-   "Name": "UNITED STATES 4.25% 08/54",
-   "Ticker": "-",
-   "Identifier": "912810UC0",
-   "Weight": "3.68",
-   "Market Value": "1192001.25",
-   "Shares Held": "1452000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.25",
-   "Maturity": "Aug 15 2054"
-  },
-  {
-   "Name": "UNITED STATES 4.25% 02/54",
-   "Ticker": "-",
-   "Identifier": "912810TX6",
-   "Weight": "3.6",
-   "Market Value": "1165953.13",
-   "Shares Held": "1420000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.25",
-   "Maturity": "Feb 15 2054"
-  },
-  {
-   "Name": "UNITED 4.125% 08/53",
-   "Ticker": "-",
-   "Identifier": "912810TT5",
-   "Weight": "3.35",
-   "Market Value": "1084943.79",
-   "Shares Held": "1349000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4.125",
-   "Maturity": "Aug 15 2053"
-  },
-  {
-   "Name": "UNITED 3.625% 05/53",
-   "Ticker": "-",
-   "Identifier": "912810TR9",
-   "Weight": "2.79",
-   "Market Value": "906158.68",
-   "Shares Held": "1233000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3.625",
-   "Maturity": "May 15 2053"
-  },
-  {
-   "Name": "UNITED STATES OF 4% 11/52",
-   "Ticker": "-",
-   "Identifier": "912810TL2",
-   "Weight": "2.78",
-   "Market Value": "901212.82",
-   "Shares Held": "1144000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "4",
-   "Maturity": "Nov 15 2052"
-  },
-  {
-   "Name": "UNITED 2.375% 05/51",
-   "Ticker": "-",
-   "Identifier": "912810SX7",
-   "Weight": "2.59",
-   "Market Value": "839339.11",
-   "Shares Held": "1463000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.375",
-   "Maturity": "May 15 2051"
-  },
-  {
-   "Name": "UNITED 3.625% 02/53",
-   "Ticker": "-",
-   "Identifier": "912810TN8",
-   "Weight": "2.57",
-   "Market Value": "832771.72",
-   "Shares Held": "1132000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3.625",
-   "Maturity": "Feb 15 2053"
-  },
-  {
-   "Name": "UNITED STATES OF 2% 08/51",
-   "Ticker": "-",
-   "Identifier": "912810SZ2",
-   "Weight": "2.43",
-   "Market Value": "788139.96",
-   "Shares Held": "1511000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2",
-   "Maturity": "Aug 15 2051"
-  },
-  {
-   "Name": "UNITED 1.875% 02/51",
-   "Ticker": "-",
-   "Identifier": "912810SU3",
-   "Weight": "2.39",
-   "Market Value": "775513.6",
-   "Shares Held": "1524000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "1.875",
-   "Maturity": "Feb 15 2051"
-  },
-  {
-   "Name": "UNITED 2.875% 05/52",
-   "Ticker": "-",
-   "Identifier": "912810TG3",
-   "Weight": "2.32",
-   "Market Value": "751447.27",
-   "Shares Held": "1182000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.875",
-   "Maturity": "May 15 2052"
-  },
-  {
-   "Name": "UNITED STATES OF 3% 08/52",
-   "Ticker": "-",
-   "Identifier": "912810TJ7",
-   "Weight": "2.26",
-   "Market Value": "733307.5",
-   "Shares Held": "1126000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3",
-   "Maturity": "Aug 15 2052"
-  },
-  {
-   "Name": "UNITED STATES 2.25% 02/52",
-   "Ticker": "-",
-   "Identifier": "912810TD0",
-   "Weight": "2.22",
-   "Market Value": "718541.25",
-   "Shares Held": "1302000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.25",
-   "Maturity": "Feb 15 2052"
-  },
-  {
-   "Name": "UNITED 1.875% 11/51",
-   "Ticker": "-",
-   "Identifier": "912810TB4",
-   "Weight": "2.14",
-   "Market Value": "693827.35",
-   "Shares Held": "1380000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "1.875",
-   "Maturity": "Nov 15 2051"
-  },
-  {
-   "Name": "UNITED 1.625% 11/50",
-   "Ticker": "-",
-   "Identifier": "912810SS8",
-   "Weight": "2.11",
-   "Market Value": "684196.88",
-   "Shares Held": "1431000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "1.625",
-   "Maturity": "Nov 15 2050"
-  },
-  {
-   "Name": "UNITED STATES OF 3% 02/49",
-   "Ticker": "-",
-   "Identifier": "912810SF6",
-   "Weight": "2.08",
-   "Market Value": "674405.63",
-   "Shares Held": "1004000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3",
-   "Maturity": "Feb 15 2049"
-  },
-  {
-   "Name": "UNITED 3.375% 11/48",
-   "Ticker": "-",
-   "Identifier": "912810SE9",
-   "Weight": "2.07",
-   "Market Value": "672277.81",
-   "Shares Held": "932000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3.375",
-   "Maturity": "Nov 15 2048"
-  },
-  {
-   "Name": "UNITED 1.375% 08/50",
-   "Ticker": "-",
-   "Identifier": "912810SP4",
-   "Weight": "2.04",
-   "Market Value": "663225",
-   "Shares Held": "1480000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "1.375",
-   "Maturity": "Aug 15 2050"
-  },
-  {
-   "Name": "UNITED STATES OF 3% 08/48",
-   "Ticker": "-",
-   "Identifier": "912810SD1",
-   "Weight": "1.98",
-   "Market Value": "641509.77",
-   "Shares Held": "950000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3",
-   "Maturity": "Aug 15 2048"
-  },
-  {
-   "Name": "UNITED STATES OF 2% 02/50",
-   "Ticker": "-",
-   "Identifier": "912810SL3",
-   "Weight": "1.82",
-   "Market Value": "591321.17",
-   "Shares Held": "1106000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2",
-   "Maturity": "Feb 15 2050"
-  },
-  {
-   "Name": "UNITED 2.875% 05/49",
-   "Ticker": "-",
-   "Identifier": "912810SH2",
-   "Weight": "1.79",
-   "Market Value": "581287.93",
-   "Shares Held": "889000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.875",
-   "Maturity": "May 15 2049"
-  },
-  {
-   "Name": "UNITED STATES 1.25% 05/50",
-   "Ticker": "-",
-   "Identifier": "912810SN9",
-   "Weight": "1.77",
-   "Market Value": "574692.42",
-   "Shares Held": "1319000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "1.25",
-   "Maturity": "May 15 2050"
-  },
-  {
-   "Name": "UNITED 3.125% 05/48",
-   "Ticker": "-",
-   "Identifier": "912810SC3",
-   "Weight": "1.65",
-   "Market Value": "535032.19",
-   "Shares Held": "772000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3.125",
-   "Maturity": "May 15 2048"
-  },
-  {
-   "Name": "UNITED STATES 2.25% 08/49",
-   "Ticker": "-",
-   "Identifier": "912810SJ8",
-   "Weight": "1.63",
-   "Market Value": "528370.12",
-   "Shares Held": "925000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.25",
-   "Maturity": "Aug 15 2049"
-  },
-  {
-   "Name": "UNITED STATES OF 3% 02/48",
-   "Ticker": "-",
-   "Identifier": "912810SA7",
-   "Weight": "1.51",
-   "Market Value": "490962.19",
-   "Shares Held": "723000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3",
-   "Maturity": "Feb 15 2048"
-  },
-  {
-   "Name": "UNITED 5.125% 08/56",
-   "Ticker": "-",
-   "Identifier": "912810UW6",
-   "Weight": "1.44",
-   "Market Value": "466477.5",
-   "Shares Held": "492000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "5.125",
-   "Maturity": "Aug 15 2056"
-  },
-  {
-   "Name": "UNITED 2.375% 11/49",
-   "Ticker": "-",
-   "Identifier": "912810SK5",
-   "Weight": "1.43",
-   "Market Value": "463013.08",
-   "Shares Held": "791000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.375",
-   "Maturity": "Nov 15 2049"
-  },
-  {
-   "Name": "UNITED STATES 2.75% 11/47",
-   "Ticker": "-",
-   "Identifier": "912810RZ3",
-   "Weight": "1.38",
-   "Market Value": "447361.25",
-   "Shares Held": "688000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.75",
-   "Maturity": "Nov 15 2047"
-  },
-  {
-   "Name": "UNITED STATES 2.75% 08/47",
-   "Ticker": "-",
-   "Identifier": "912810RY6",
-   "Weight": "1.29",
-   "Market Value": "417500",
-   "Shares Held": "640000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.75",
-   "Maturity": "Aug 15 2047"
-  },
-  {
-   "Name": "UNITED STATES OF 3% 02/47",
-   "Ticker": "-",
-   "Identifier": "912810RV2",
-   "Weight": "0.91",
-   "Market Value": "295641.8",
-   "Shares Held": "430000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3",
-   "Maturity": "Feb 15 2047"
-  },
-  {
-   "Name": "UNITED STATES OF 3% 05/47",
-   "Ticker": "-",
-   "Identifier": "912810RX8",
-   "Weight": "0.76",
-   "Market Value": "245439.77",
-   "Shares Held": "358000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "3",
-   "Maturity": "May 15 2047"
-  },
-  {
-   "Name": "UNITED 2.875% 11/46",
+   "Name": "United States of America",
    "Ticker": "-",
    "Identifier": "912810RU4",
-   "Weight": "0.46",
-   "Market Value": "147756.56",
-   "Shares Held": "219000",
-   "Asset Category": "TREASURY BONDS",
-   "Coupon": "2.875",
-   "Maturity": "Nov 15 2046"
+   "Weight": "0.6298393432",
+   "Market Value": "197956.99",
+   "Shares Held": "273000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "JPMORGAN PRIME MONEY",
-   "Ticker": "JIMXX",
-   "Identifier": "46637K844",
-   "Weight": "0.07",
-   "Market Value": "21935.15",
-   "Shares Held": "21937",
-   "Asset Category": "MONEY MARKET",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CASH",
+   "Name": "United States of America",
    "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "0",
-   "Market Value": "1.04",
-   "Shares Held": "1",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
+   "Identifier": "912810RV2",
+   "Weight": "0.9268723523",
+   "Market Value": "291313.75",
+   "Shares Held": "394000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810RX8",
+   "Weight": "0.7720401138",
+   "Market Value": "242650.35",
+   "Shares Held": "329000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810RY6",
+   "Weight": "1.2819018601",
+   "Market Value": "402898.67",
+   "Shares Held": "574000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810RZ3",
+   "Weight": "1.4140279433",
+   "Market Value": "444425.58",
+   "Shares Held": "635000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SA7",
+   "Weight": "1.5840873426",
+   "Market Value": "497874.84",
+   "Shares Held": "681000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SC3",
+   "Weight": "1.6850769481",
+   "Market Value": "529615.63",
+   "Shares Held": "710000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SD1",
+   "Weight": "2.0429891061",
+   "Market Value": "642106.56",
+   "Shares Held": "883000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SE9",
+   "Weight": "2.1553935301",
+   "Market Value": "677435",
+   "Shares Held": "872000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SF6",
+   "Weight": "2.1436324474",
+   "Market Value": "673738.52",
+   "Shares Held": "931000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SH2",
+   "Weight": "1.8140622182",
+   "Market Value": "570155.39",
+   "Shares Held": "809000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SJ8",
+   "Weight": "1.5438702037",
+   "Market Value": "485234.69",
+   "Shares Held": "787000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SK5",
+   "Weight": "1.464520153",
+   "Market Value": "460295.16",
+   "Shares Held": "729000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SL3",
+   "Weight": "1.6967522841",
+   "Market Value": "533285.16",
+   "Shares Held": "924000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SN9",
+   "Weight": "1.6917659589",
+   "Market Value": "531717.97",
+   "Shares Held": "1130000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SP4",
+   "Weight": "2.0969359397",
+   "Market Value": "659061.92",
+   "Shares Held": "1359000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SS8",
+   "Weight": "2.1294823232",
+   "Market Value": "669291.17",
+   "Shares Held": "1294000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SU3",
+   "Weight": "2.4660070123",
+   "Market Value": "775060.07",
+   "Shares Held": "1409000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SX7",
+   "Weight": "2.7653649198",
+   "Market Value": "869147.54",
+   "Shares Held": "1403000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810SZ2",
+   "Weight": "2.6454979506",
+   "Market Value": "831473.64",
+   "Shares Held": "1475000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TB4",
+   "Weight": "2.3417642539",
+   "Market Value": "736010.87",
+   "Shares Held": "1353000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TD0",
+   "Weight": "2.2425041875",
+   "Market Value": "704813.67",
+   "Shares Held": "1182000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TG3",
+   "Weight": "2.589678115",
+   "Market Value": "813929.6",
+   "Shares Held": "1187000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TJ7",
+   "Weight": "2.3413656189",
+   "Market Value": "735885.58",
+   "Shares Held": "1047000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TL2",
+   "Weight": "2.8689509499",
+   "Market Value": "901704.38",
+   "Shares Held": "1062000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TN8",
+   "Weight": "2.8463499496",
+   "Market Value": "894600.94",
+   "Shares Held": "1128000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TR9",
+   "Weight": "2.7125943599",
+   "Market Value": "852561.88",
+   "Shares Held": "1076000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TT5",
+   "Weight": "3.4404784563",
+   "Market Value": "1081334.1",
+   "Shares Held": "1247000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TV0",
+   "Weight": "3.7879805441",
+   "Market Value": "1190553.17",
+   "Shares Held": "1239000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810TX6",
+   "Weight": "3.8373238109",
+   "Market Value": "1206061.64",
+   "Shares Held": "1362000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UA4",
+   "Weight": "4.0796526149",
+   "Market Value": "1282225",
+   "Shares Held": "1360000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UC0",
+   "Weight": "3.6467043114",
+   "Market Value": "1146150.39",
+   "Shares Held": "1294000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UE6",
+   "Weight": "3.867519874",
+   "Market Value": "1215552.19",
+   "Shares Held": "1316000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UG1",
+   "Weight": "4.0803287257",
+   "Market Value": "1282437.5",
+   "Shares Held": "1360000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UK2",
+   "Weight": "3.9719123691",
+   "Market Value": "1248362.5",
+   "Shares Held": "1297000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UM8",
+   "Weight": "4.1633003123",
+   "Market Value": "1308515.27",
+   "Shares Held": "1359000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UP1",
+   "Weight": "3.9979535803",
+   "Market Value": "1256547.19",
+   "Shares Held": "1331000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United States of America",
+   "Ticker": "-",
+   "Identifier": "912810UR7",
+   "Weight": "3.9770706969",
+   "Market Value": "1249983.75",
+   "Shares Held": "1297000",
+   "Asset Category": "DBT"
   }
  ]
 }

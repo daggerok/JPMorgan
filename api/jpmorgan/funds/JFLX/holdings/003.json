@@ -2,7 +2,7 @@
  "ticker": "JFLX",
  "page": 3,
  "pageSize": 250,
- "totalRows": 2083,
+ "totalRows": 1751,
  "headers": [
   "Name",
   "Ticker",
@@ -10,2760 +10,2258 @@
   "Weight",
   "Market Value",
   "Shares Held",
-  "Asset Category",
-  "Coupon",
-  "Maturity"
+  "Asset Category"
  ],
  "rows": [
   {
-   "Name": "NGG FINANCE PLC VAR 09/82",
-   "Ticker": "-",
-   "Identifier": "BKS11J0",
-   "Weight": "0.05",
-   "Market Value": "802958.15",
-   "Shares Held": "718000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.125",
-   "Maturity": "Sep 05 2082"
-  },
-  {
-   "Name": "AMERICAN 5.34% 08/31",
-   "Ticker": "-",
-   "Identifier": "024945AG2",
-   "Weight": "0.05",
-   "Market Value": "801048.51",
-   "Shares Held": "802000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.34",
-   "Maturity": "Aug 12 2031"
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_43048_S",
-   "Weight": "0.05",
-   "Market Value": "795810.3",
-   "Shares Held": "-40302772672",
-   "Asset Category": "FORWARD CONTRACTS",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "FEDERAL 6.125% 09/28",
-   "Ticker": "-",
-   "Identifier": "BN12759",
-   "Weight": "0.05",
-   "Market Value": "794992",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Sep 28 2028"
-  },
-  {
-   "Name": "FHLMC VAR 06/50",
-   "Ticker": "-",
-   "Identifier": "3137H8C74",
-   "Weight": "0.05",
-   "Market Value": "793827.52",
-   "Shares Held": "4600000",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "3.9317",
-   "Maturity": "Jun 25 2050"
-  },
-  {
-   "Name": "NCL CORP LTD 0.75% 09/30",
-   "Ticker": "-",
-   "Identifier": "62886HBX8",
-   "Weight": "0.05",
-   "Market Value": "793800",
-   "Shares Held": "945000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "0.75",
-   "Maturity": "Sep 15 2030"
-  },
-  {
-   "Name": "HCA INC 5.25% 06/49",
-   "Ticker": "-",
-   "Identifier": "404119BZ1",
-   "Weight": "0.05",
-   "Market Value": "793421.19",
-   "Shares Held": "950000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.25",
-   "Maturity": "Jun 15 2049"
-  },
-  {
-   "Name": "FORVIA SE 5.625% 06/30",
-   "Ticker": "-",
-   "Identifier": "BT3LLW1",
-   "Weight": "0.05",
-   "Market Value": "787440.48",
-   "Shares Held": "685000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.625",
-   "Maturity": "Jun 15 2030"
-  },
-  {
-   "Name": "MORGAN STANLEY VAR 10/30",
-   "Ticker": "-",
-   "Identifier": "61747YFU4",
-   "Weight": "0.05",
-   "Market Value": "786825.28",
-   "Shares Held": "810000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.654",
-   "Maturity": "Oct 18 2030"
-  },
-  {
-   "Name": "CITIGROUP INC VAR 11/32",
-   "Ticker": "-",
-   "Identifier": "172967NE7",
-   "Weight": "0.05",
-   "Market Value": "784922.57",
-   "Shares Held": "920000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.52",
-   "Maturity": "Nov 03 2032"
-  },
-  {
-   "Name": "SOPAIPILLA 7.534% 11/48",
-   "Ticker": "-",
-   "Identifier": "83577VAA8",
-   "Weight": "0.05",
-   "Market Value": "783296.55",
-   "Shares Held": "785000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.534",
-   "Maturity": "Nov 30 2048"
-  },
-  {
-   "Name": "CCO HOLDINGS 4.25% 02/31",
-   "Ticker": "-",
-   "Identifier": "1248EPCK7",
-   "Weight": "0.05",
-   "Market Value": "777061.88",
-   "Shares Held": "890000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.25",
-   "Maturity": "Feb 01 2031"
-  },
-  {
-   "Name": "WULF COMPUTE 7.75% 10/30",
-   "Ticker": "-",
-   "Identifier": "982911AA7",
-   "Weight": "0.05",
-   "Market Value": "775699.66",
-   "Shares Held": "753000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.75",
-   "Maturity": "Oct 15 2030"
-  },
-  {
-   "Name": "DEUTSCHE BANK VAR 02/32",
-   "Ticker": "-",
-   "Identifier": "25160PAR8",
-   "Weight": "0.05",
-   "Market Value": "770629.56",
-   "Shares Held": "810000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.725",
-   "Maturity": "Feb 06 2032"
-  },
-  {
-   "Name": "ORACLE CORP 6.55% 02/46",
-   "Ticker": "-",
-   "Identifier": "68389XEA9",
-   "Weight": "0.05",
-   "Market Value": "768915.24",
-   "Shares Held": "897000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.55",
-   "Maturity": "Feb 04 2046"
-  },
-  {
-   "Name": "UNICREDIT SPA VAR 06/37",
-   "Ticker": "-",
-   "Identifier": "O8E5944",
-   "Weight": "0.05",
-   "Market Value": "768364.79",
-   "Shares Held": "700000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.175",
-   "Maturity": "Jun 24 2037"
-  },
-  {
-   "Name": "SS&C 6.5% 06/32",
-   "Ticker": "-",
-   "Identifier": "78466CAD8",
-   "Weight": "0.05",
-   "Market Value": "767194.43",
-   "Shares Held": "775000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Jun 01 2032"
-  },
-  {
-   "Name": "UNITED 3.771% 05/61",
-   "Ticker": "-",
-   "Identifier": "91087BAN0",
-   "Weight": "0.05",
-   "Market Value": "766168",
-   "Shares Held": "1378000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.771",
-   "Maturity": "May 24 2061"
-  },
-  {
-   "Name": "EXETER 5% 05/32",
-   "Ticker": "-",
-   "Identifier": "30168HAF4",
-   "Weight": "0.05",
-   "Market Value": "765773.39",
-   "Shares Held": "790000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5",
-   "Maturity": "May 17 2032"
-  },
-  {
-   "Name": "LIFE360 INC ZERO 06/30",
-   "Ticker": "-",
-   "Identifier": "532206AC3",
-   "Weight": "0.05",
-   "Market Value": "765277.5",
-   "Shares Held": "835000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "",
-   "Maturity": "Jun 01 2030"
-  },
-  {
-   "Name": "EURO-BUND 12/08/2026",
-   "Ticker": "-",
-   "Identifier": "RXZ6COS",
-   "Weight": "0.05",
-   "Market Value": "765113.31",
-   "Shares Held": "-317",
-   "Asset Category": "INTEREST RATE FUTURES",
-   "Coupon": "",
-   "Maturity": "Dec 08 2026"
-  },
-  {
-   "Name": "SBA SMALL 5.688% 09/33",
-   "Ticker": "-",
-   "Identifier": "831641FW0",
-   "Weight": "0.05",
-   "Market Value": "762378.56",
-   "Shares Held": "765941",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.688",
-   "Maturity": "Sep 10 2033"
-  },
-  {
-   "Name": "ESENTIA 6.125% 07/33",
-   "Ticker": "-",
-   "Identifier": "BV3N585",
-   "Weight": "0.05",
-   "Market Value": "761165",
-   "Shares Held": "790000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.125",
-   "Maturity": "Jul 30 2033"
-  },
-  {
-   "Name": "BOX INC 1.5% 09/29",
-   "Ticker": "-",
-   "Identifier": "10316TAD6",
-   "Weight": "0.05",
-   "Market Value": "759900",
-   "Shares Held": "745000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "1.5",
-   "Maturity": "Sep 15 2029"
-  },
-  {
-   "Name": "EXETER 5.98% 09/30",
-   "Ticker": "-",
-   "Identifier": "30165AAF2",
-   "Weight": "0.05",
-   "Market Value": "757500.15",
-   "Shares Held": "750000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.98",
-   "Maturity": "Sep 16 2030"
-  },
-  {
-   "Name": "MORGAN STANLEY VAR 04/29",
-   "Ticker": "-",
-   "Identifier": "61747YFD2",
-   "Weight": "0.05",
-   "Market Value": "757331.62",
-   "Shares Held": "760000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.164",
-   "Maturity": "Apr 20 2029"
-  },
-  {
-   "Name": "CITIGROUP INC VAR 07/36",
-   "Ticker": "-",
-   "Identifier": "OCA1336",
-   "Weight": "0.05",
-   "Market Value": "756602.87",
-   "Shares Held": "697000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.296",
-   "Maturity": "Jul 23 2036"
-  },
-  {
-   "Name": "WELLS FARGO & CO VAR",
-   "Ticker": "-",
-   "Identifier": "95002YAC7",
-   "Weight": "0.05",
-   "Market Value": "751858.5",
-   "Shares Held": "740000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.85",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "AMBER FINCO 6.625% 07/29",
-   "Ticker": "-",
-   "Identifier": "BN0XKT8",
-   "Weight": "0.05",
-   "Market Value": "743126.79",
-   "Shares Held": "635000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.625",
-   "Maturity": "Jul 15 2029"
-  },
-  {
-   "Name": "WABASH NATIONAL 4% 08/32",
-   "Ticker": "-",
-   "Identifier": "929566AM9",
-   "Weight": "0.05",
-   "Market Value": "736865.94",
-   "Shares Held": "747000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4",
-   "Maturity": "Aug 01 2032"
-  },
-  {
-   "Name": "VODAFONE GROUP VAR 08/84",
-   "Ticker": "-",
-   "Identifier": "BR2Q8J9",
-   "Weight": "0.05",
-   "Market Value": "734867.12",
-   "Shares Held": "620000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Aug 30 2084"
-  },
-  {
-   "Name": "PERU LNG SRL 5.375% 03/30",
-   "Ticker": "-",
-   "Identifier": "BD216F8",
-   "Weight": "0.05",
-   "Market Value": "734350.59",
-   "Shares Held": "752817",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.375",
-   "Maturity": "Mar 22 2030"
-  },
-  {
-   "Name": "COHERENT CORP 5% 12/29",
-   "Ticker": "-",
-   "Identifier": "902104AC2",
-   "Weight": "0.05",
-   "Market Value": "733273.42",
-   "Shares Held": "761000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5",
-   "Maturity": "Dec 15 2029"
-  },
-  {
-   "Name": "YINSON 8.498% 01/45",
-   "Ticker": "-",
-   "Identifier": "98585VAA6",
-   "Weight": "0.05",
-   "Market Value": "732858.12",
-   "Shares Held": "695766",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "8.498",
-   "Maturity": "Jan 31 2045"
-  },
-  {
-   "Name": "LYFT INC 0.625% 03/29",
-   "Ticker": "-",
-   "Identifier": "55087PAD6",
-   "Weight": "0.05",
-   "Market Value": "732611.2",
-   "Shares Held": "716000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "0.625",
-   "Maturity": "Mar 01 2029"
-  },
-  {
-   "Name": "ILIAD 5.625% 10/28",
-   "Ticker": "-",
-   "Identifier": "BLCW936",
-   "Weight": "0.05",
-   "Market Value": "732133.75",
-   "Shares Held": "644000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.625",
-   "Maturity": "Oct 15 2028"
-  },
-  {
-   "Name": "CROWN CASTLE 4.8% 09/28",
-   "Ticker": "-",
-   "Identifier": "22822VBB6",
-   "Weight": "0.05",
-   "Market Value": "731607.89",
-   "Shares Held": "740000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.8",
-   "Maturity": "Sep 01 2028"
-  },
-  {
-   "Name": "VOLKSWAGEN VAR",
-   "Ticker": "-",
-   "Identifier": "BRJ7YV9",
-   "Weight": "0.05",
-   "Market Value": "731369.84",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.875",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "CARS-DB5 LP 2.28% 08/51",
-   "Ticker": "-",
-   "Identifier": "12510HAL4",
-   "Weight": "0.05",
-   "Market Value": "730306.89",
-   "Shares Held": "881350",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "2.28",
-   "Maturity": "Aug 15 2051"
-  },
-  {
-   "Name": "CITIGROUP INC VAR 09/31",
-   "Ticker": "-",
-   "Identifier": "172967QF1",
-   "Weight": "0.05",
-   "Market Value": "727347.66",
-   "Shares Held": "761000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.503",
-   "Maturity": "Sep 11 2031"
-  },
-  {
-   "Name": "AERCAP 4.125% 02/29",
-   "Ticker": "-",
-   "Identifier": "00774MBT1",
-   "Weight": "0.05",
-   "Market Value": "726213.55",
-   "Shares Held": "750000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.125",
-   "Maturity": "Feb 28 2029"
-  },
-  {
-   "Name": "CCO HOLDINGS 5.125% 05/27",
-   "Ticker": "-",
-   "Identifier": "1248EPBT9",
-   "Weight": "0.05",
-   "Market Value": "724241.63",
-   "Shares Held": "728000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.125",
-   "Maturity": "May 01 2027"
-  },
-  {
-   "Name": "TELECOM 7.875% 07/28",
-   "Ticker": "-",
-   "Identifier": "BQB6C46",
-   "Weight": "0.05",
-   "Market Value": "723817.8",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.875",
-   "Maturity": "Jul 31 2028"
-  },
-  {
-   "Name": "BRIDGECREST 5.19% 02/32",
-   "Ticker": "-",
-   "Identifier": "10807VAF2",
-   "Weight": "0.05",
-   "Market Value": "722207.37",
-   "Shares Held": "740000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.19",
-   "Maturity": "Feb 17 2032"
-  },
-  {
-   "Name": "CREDIT AGRICOLE VAR 10/29",
-   "Ticker": "-",
-   "Identifier": "22535WAJ6",
-   "Weight": "0.05",
-   "Market Value": "719766.42",
-   "Shares Held": "710000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.316",
-   "Maturity": "Oct 03 2029"
-  },
-  {
-   "Name": "STANDARD VAR 11/28",
-   "Ticker": "-",
-   "Identifier": "853254CN8",
-   "Weight": "0.05",
-   "Market Value": "718207",
-   "Shares Held": "700000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.767",
-   "Maturity": "Nov 16 2028"
-  },
-  {
-   "Name": "PROVIDENT VAR 06/55",
-   "Ticker": "-",
-   "Identifier": "74389DAA5",
-   "Weight": "0.05",
-   "Market Value": "717231.45",
-   "Shares Held": "738135",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "6",
-   "Maturity": "Jun 25 2055"
-  },
-  {
-   "Name": "SCF EQUIPMENT 6.21% 06/36",
-   "Ticker": "-",
-   "Identifier": "78439XAG9",
-   "Weight": "0.05",
-   "Market Value": "715885.04",
-   "Shares Held": "755000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.21",
-   "Maturity": "Jun 20 2036"
-  },
-  {
-   "Name": "PRUDENTIAL VAR 03/54",
-   "Ticker": "-",
-   "Identifier": "744320BP6",
-   "Weight": "0.05",
-   "Market Value": "715771.66",
-   "Shares Held": "720000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Mar 15 2054"
-  },
-  {
-   "Name": "AES CORP/THE 3.95% 07/30",
-   "Ticker": "-",
-   "Identifier": "00130HCC7",
-   "Weight": "0.05",
-   "Market Value": "715360.1",
-   "Shares Held": "768000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3.95",
-   "Maturity": "Jul 15 2030"
-  },
-  {
-   "Name": "BANCO SANTANDER SA VAR",
-   "Ticker": "-",
-   "Identifier": "BSCBV47",
-   "Weight": "0.05",
-   "Market Value": "711306.47",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "LHOME MORTGAGE STEP 07/39",
-   "Ticker": "-",
-   "Identifier": "50205PAA0",
-   "Weight": "0.05",
-   "Market Value": "710532.19",
-   "Shares Held": "710861",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "5.921",
-   "Maturity": "Jul 25 2039"
-  },
-  {
-   "Name": "GNMA 2026-20 4.5% 06/57",
-   "Ticker": "-",
-   "Identifier": "38384TLY6",
-   "Weight": "0.04",
-   "Market Value": "703878.19",
-   "Shares Held": "749861",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "4.5",
-   "Maturity": "Jun 16 2057"
-  },
-  {
-   "Name": "NEW RESIDENTIAL VAR 11/59",
-   "Ticker": "-",
-   "Identifier": "64830PAA4",
-   "Weight": "0.04",
-   "Market Value": "703400.58",
-   "Shares Held": "746719",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "2.7099",
-   "Maturity": "Nov 25 2059"
-  },
-  {
-   "Name": "CHARTER 2.25% 01/29",
-   "Ticker": "-",
-   "Identifier": "161175CD4",
-   "Weight": "0.04",
-   "Market Value": "703328.21",
-   "Shares Held": "765000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.25",
-   "Maturity": "Jan 15 2029"
-  },
-  {
-   "Name": "BANK OF AMERICA CORP VAR",
-   "Ticker": "-",
-   "Identifier": "06055HAK9",
-   "Weight": "0.04",
-   "Market Value": "702546.38",
-   "Shares Held": "714000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.25",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "LENDMARK 5.04% 05/35",
-   "Ticker": "-",
-   "Identifier": "525951AC3",
-   "Weight": "0.04",
-   "Market Value": "700702.84",
-   "Shares Held": "735000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.04",
-   "Maturity": "May 21 2035"
-  },
-  {
-   "Name": "CITIGROUP INC VAR 12/49",
-   "Ticker": "-",
-   "Identifier": "172967PR6",
-   "Weight": "0.04",
-   "Market Value": "699094.76",
-   "Shares Held": "710000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.75",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "NISOURCE INC VAR 11/54",
-   "Ticker": "-",
-   "Identifier": "65473PAR6",
-   "Weight": "0.04",
-   "Market Value": "697482.96",
-   "Shares Held": "691000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.95",
-   "Maturity": "Nov 30 2054"
-  },
-  {
-   "Name": "LHOME MORTGAGE STEP 09/39",
-   "Ticker": "-",
-   "Identifier": "50205WAA5",
-   "Weight": "0.04",
-   "Market Value": "696918.17",
-   "Shares Held": "697000",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "5.323",
-   "Maturity": "Sep 25 2039"
-  },
-  {
-   "Name": "SANTANDER 5.14% 02/32",
-   "Ticker": "-",
-   "Identifier": "802920AG3",
-   "Weight": "0.04",
-   "Market Value": "694908.96",
-   "Shares Held": "699000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.14",
-   "Maturity": "Feb 17 2032"
-  },
-  {
-   "Name": "CONGOLESE 9.5% 02/35",
-   "Ticker": "-",
-   "Identifier": "BT3F8W2",
-   "Weight": "0.04",
-   "Market Value": "693322",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.5",
-   "Maturity": "Feb 17 2035"
-  },
-  {
-   "Name": "VENTAS REALTY LP 5% 01/35",
-   "Ticker": "-",
-   "Identifier": "92277GBA4",
-   "Weight": "0.04",
-   "Market Value": "691050.17",
-   "Shares Held": "740000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5",
-   "Maturity": "Jan 15 2035"
-  },
-  {
-   "Name": "LENDMARK 4.94% 09/34",
-   "Ticker": "-",
-   "Identifier": "52604QAA1",
-   "Weight": "0.04",
-   "Market Value": "689523.31",
-   "Shares Held": "700000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "4.94",
-   "Maturity": "Sep 20 2034"
-  },
-  {
-   "Name": "ORACLE CORP 6.85% 02/66",
-   "Ticker": "-",
-   "Identifier": "68389XEC5",
-   "Weight": "0.04",
-   "Market Value": "689002.18",
-   "Shares Held": "820000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.85",
-   "Maturity": "Feb 04 2066"
-  },
-  {
-   "Name": "MASTERBRAND INC 7% 07/32",
-   "Ticker": "-",
-   "Identifier": "57638PAA2",
-   "Weight": "0.04",
-   "Market Value": "688797.22",
-   "Shares Held": "713000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7",
-   "Maturity": "Jul 15 2032"
-  },
-  {
-   "Name": "OBX 2025-NQM10 STEP 05/65",
-   "Ticker": "-",
-   "Identifier": "67121LAA4",
-   "Weight": "0.04",
-   "Market Value": "687795.55",
-   "Shares Held": "695336",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "5.453",
-   "Maturity": "May 25 2065"
-  },
-  {
-   "Name": "GOLDMAN SACHS VAR 01/31",
-   "Ticker": "-",
-   "Identifier": "38141GC36",
-   "Weight": "0.04",
-   "Market Value": "687728.94",
-   "Shares Held": "700000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.207",
-   "Maturity": "Jan 28 2031"
-  },
-  {
-   "Name": "GOLDMAN SACHS VAR 04/34",
-   "Ticker": "-",
-   "Identifier": "38141GF25",
-   "Weight": "0.04",
-   "Market Value": "687699.19",
-   "Shares Held": "725000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.094",
-   "Maturity": "Apr 20 2034"
-  },
-  {
-   "Name": "MID-STATE 6.742% 10/40",
-   "Ticker": "-",
-   "Identifier": "59548PAC3",
-   "Weight": "0.04",
-   "Market Value": "686880.95",
-   "Shares Held": "683614",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.742",
-   "Maturity": "Oct 15 2040"
-  },
-  {
-   "Name": "AMERICAN VAR 09/49",
-   "Ticker": "-",
-   "Identifier": "025816EV7",
-   "Weight": "0.04",
-   "Market Value": "684595.58",
-   "Shares Held": "687000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.45",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "SEMPRA CALLABLE VAR 10/54",
-   "Ticker": "-",
-   "Identifier": "816851BS7",
-   "Weight": "0.04",
-   "Market Value": "683657.72",
-   "Shares Held": "680000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.875",
-   "Maturity": "Oct 01 2054"
-  },
-  {
-   "Name": "COOPERATIEVE RABOBANK VAR",
-   "Ticker": "-",
-   "Identifier": "BMVVCR6",
-   "Weight": "0.04",
-   "Market Value": "682648.81",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.375",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "FNMA MORTPASS 3.5% 05/58",
-   "Ticker": "-",
-   "Identifier": "3140FXJH6",
-   "Weight": "0.04",
-   "Market Value": "679910.66",
-   "Shares Held": "797732",
-   "Asset Category": "FNMA",
-   "Coupon": "3.5",
-   "Maturity": "May 01 2058"
-  },
-  {
-   "Name": "ELM TRUST VAR 06/39",
-   "Ticker": "-",
-   "Identifier": "26860XBC4",
-   "Weight": "0.04",
-   "Market Value": "678718.27",
-   "Shares Held": "680000",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "6.3957",
-   "Maturity": "Jun 10 2039"
-  },
-  {
-   "Name": "ONEMAIN DIRECT 6.1% 07/37",
-   "Ticker": "-",
-   "Identifier": "682684AD7",
-   "Weight": "0.04",
-   "Market Value": "677666.32",
-   "Shares Held": "690000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.1",
-   "Maturity": "Jul 14 2037"
-  },
-  {
-   "Name": "GNMA 2026-H15 VAR 10/75",
-   "Ticker": "-",
-   "Identifier": "38385QGY7",
-   "Weight": "0.04",
-   "Market Value": "677364.97",
-   "Shares Held": "9013134",
-   "Asset Category": "INTEREST ONLY (IO)",
-   "Coupon": "1.3246",
-   "Maturity": "Oct 20 2075"
-  },
-  {
-   "Name": "WILLIAMS COS 5.8% 09/36",
-   "Ticker": "-",
-   "Identifier": "969457CY4",
-   "Weight": "0.04",
-   "Market Value": "677156.8",
-   "Shares Held": "695000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.8",
-   "Maturity": "Sep 15 2036"
-  },
-  {
-   "Name": "VOLKSWAGEN VAR",
-   "Ticker": "-",
-   "Identifier": "BDZSRK8",
-   "Weight": "0.04",
-   "Market Value": "677011.15",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.625",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "DRIVE AUTO 5.41% 09/32",
-   "Ticker": "-",
-   "Identifier": "262102AF3",
-   "Weight": "0.04",
-   "Market Value": "674167.91",
-   "Shares Held": "680000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.41",
-   "Maturity": "Sep 15 2032"
-  },
-  {
-   "Name": "ALTICE FRANCE 6.5% 04/32",
-   "Ticker": "-",
-   "Identifier": "02090DAD0",
-   "Weight": "0.04",
-   "Market Value": "671917.65",
-   "Shares Held": "708659",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Apr 15 2032"
-  },
-  {
-   "Name": "ARDAGH GROUP SA 11% 12/30",
-   "Ticker": "-",
-   "Identifier": "BSBFX00",
-   "Weight": "0.04",
-   "Market Value": "669386.56",
-   "Shares Held": "635162",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5",
-   "Maturity": "Dec 01 2030"
-  },
-  {
-   "Name": "JAZZ 1.875% 09/32",
-   "Ticker": "-",
-   "Identifier": "472145AJ0",
-   "Weight": "0.04",
-   "Market Value": "667895",
-   "Shares Held": "695000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "1.875",
-   "Maturity": "Sep 15 2032"
-  },
-  {
-   "Name": "CREDIT 6.03% 05/34",
-   "Ticker": "-",
-   "Identifier": "22537GAC4",
-   "Weight": "0.04",
-   "Market Value": "665843.47",
-   "Shares Held": "663000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.03",
-   "Maturity": "May 15 2034"
-  },
-  {
-   "Name": "ARAB 7.625% 05/34",
-   "Ticker": "-",
-   "Identifier": "03846JAJ9",
-   "Weight": "0.04",
-   "Market Value": "664329",
-   "Shares Held": "687000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.625",
-   "Maturity": "May 20 2034"
-  },
-  {
-   "Name": "OPORTUN 5.45% 01/34",
-   "Ticker": "-",
-   "Identifier": "68390VAC0",
-   "Weight": "0.04",
-   "Market Value": "662771.71",
-   "Shares Held": "670000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.45",
-   "Maturity": "Jan 09 2034"
-  },
-  {
-   "Name": "AXA SA CALLABLE VAR 03/43",
-   "Ticker": "-",
-   "Identifier": "BM9S9D4",
-   "Weight": "0.04",
-   "Market Value": "658321.36",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.25",
-   "Maturity": "Mar 10 2043"
-  },
-  {
-   "Name": "FHLMC VAR 01/31",
-   "Ticker": "-",
-   "Identifier": "3137FXZ50",
-   "Weight": "0.04",
-   "Market Value": "657305.9",
-   "Shares Held": "64682730",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "0.4043",
-   "Maturity": "Jan 25 2031"
-  },
-  {
-   "Name": "TAKE-TWO 3.7% 04/27",
-   "Ticker": "-",
-   "Identifier": "874054AG4",
-   "Weight": "0.04",
-   "Market Value": "656198.16",
-   "Shares Held": "660000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3.7",
-   "Maturity": "Apr 14 2027"
-  },
-  {
-   "Name": "GREENKO WIND 7.25% 09/28",
-   "Ticker": "-",
-   "Identifier": "BTTRN72",
-   "Weight": "0.04",
-   "Market Value": "655001.75",
-   "Shares Held": "650100",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.25",
-   "Maturity": "Sep 27 2028"
-  },
-  {
-   "Name": "REPSOL EUROPE VAR 12/49",
-   "Ticker": "-",
-   "Identifier": "BS848B6",
-   "Weight": "0.04",
-   "Market Value": "652612.37",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.197",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "INTESA SANPAOLO SPA VAR",
-   "Ticker": "-",
-   "Identifier": "BL83717",
-   "Weight": "0.04",
-   "Market Value": "650250.65",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.125",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "STAPLES INC 10.75% 09/29",
-   "Ticker": "-",
-   "Identifier": "855030AQ5",
-   "Weight": "0.04",
-   "Market Value": "647246.43",
-   "Shares Held": "665000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "10.75",
-   "Maturity": "Sep 01 2029"
-  },
-  {
-   "Name": "PSA TRUST VAR 08/43",
-   "Ticker": "-",
-   "Identifier": "74449KAC3",
-   "Weight": "0.04",
-   "Market Value": "644089.45",
-   "Shares Held": "660000",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "5.8556",
-   "Maturity": "Aug 15 2043"
-  },
-  {
-   "Name": "CREDIT 5.28% 08/36",
-   "Ticker": "-",
-   "Identifier": "22535XAE5",
-   "Weight": "0.04",
-   "Market Value": "643707.24",
-   "Shares Held": "660000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.28",
-   "Maturity": "Aug 15 2036"
-  },
-  {
-   "Name": "EURONET 0.625% 10/30",
-   "Ticker": "-",
-   "Identifier": "298736AN9",
-   "Weight": "0.04",
-   "Market Value": "643493.75",
-   "Shares Held": "745000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "0.625",
-   "Maturity": "Oct 01 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 6.875% 10/40",
-   "Ticker": "-",
-   "Identifier": "BJLTPQ9",
-   "Weight": "0.04",
-   "Market Value": "643212.35",
-   "Shares Held": "560000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.875",
-   "Maturity": "Oct 17 2040"
-  },
-  {
-   "Name": "STUDIO CITY 5% 01/29",
-   "Ticker": "-",
-   "Identifier": "BMF1DG8",
-   "Weight": "0.04",
-   "Market Value": "641335.2",
-   "Shares Held": "680000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5",
-   "Maturity": "Jan 15 2029"
-  },
-  {
-   "Name": "HSBC HOLDINGS VAR 05/30",
-   "Ticker": "-",
-   "Identifier": "404280CC1",
-   "Weight": "0.04",
-   "Market Value": "638375.78",
-   "Shares Held": "666000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3.973",
-   "Maturity": "May 22 2030"
-  },
-  {
-   "Name": "ROMANIA 2.875% 04/42",
-   "Ticker": "-",
-   "Identifier": "BL53YN1",
-   "Weight": "0.04",
-   "Market Value": "637570.49",
-   "Shares Held": "900000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.875",
-   "Maturity": "Apr 13 2042"
-  },
-  {
-   "Name": "META PLATFORMS 5.5% 11/45",
-   "Ticker": "-",
+   "Name": "Meta Platforms, Inc.",
+   "Ticker": "META",
+   "Identifier": "30303M8J4",
+   "Weight": "0.0231770377",
+   "Market Value": "313018.4",
+   "Shares Held": "399000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Meta Platforms, Inc.",
+   "Ticker": "META",
+   "Identifier": "30303M8V7",
+   "Weight": "0.0015245633",
+   "Market Value": "20590.05",
+   "Shares Held": "23000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Meta Platforms, Inc.",
+   "Ticker": "META",
    "Identifier": "30303M8X3",
-   "Weight": "0.04",
-   "Market Value": "637495.32",
+   "Weight": "0.0524747445",
+   "Market Value": "708699.74",
    "Shares Held": "755000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.5",
-   "Maturity": "Nov 15 2045"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "AVIS BUDGET 6.23% 04/29",
-   "Ticker": "-",
-   "Identifier": "05377RGG3",
-   "Weight": "0.04",
-   "Market Value": "637294.95",
-   "Shares Held": "635000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.23",
-   "Maturity": "Apr 20 2029"
+   "Name": "Meta Platforms, Inc.",
+   "Ticker": "META",
+   "Identifier": "30303MAD4",
+   "Weight": "0.0228611036",
+   "Market Value": "308751.54",
+   "Shares Held": "316000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "HERTZ VEHICLE 5.9% 12/31",
-   "Ticker": "-",
-   "Identifier": "42806MDG1",
-   "Weight": "0.04",
-   "Market Value": "637271.65",
-   "Shares Held": "660000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.9",
-   "Maturity": "Dec 25 2031"
-  },
-  {
-   "Name": "REPUBLIC OF 4.875% 04/43",
-   "Ticker": "-",
-   "Identifier": "900123CB4",
-   "Weight": "0.04",
-   "Market Value": "636750",
-   "Shares Held": "900000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.875",
-   "Maturity": "Apr 16 2043"
-  },
-  {
-   "Name": "IHEARTCOMMUN 9.125% 05/29",
-   "Ticker": "-",
-   "Identifier": "45174HBJ5",
-   "Weight": "0.04",
-   "Market Value": "635492.05",
-   "Shares Held": "749000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "9.125",
-   "Maturity": "May 01 2029"
-  },
-  {
-   "Name": "KINGDOM OF 5.125% 05/38",
-   "Ticker": "-",
-   "Identifier": "AG4F582",
-   "Weight": "0.04",
-   "Market Value": "635009.37",
-   "Shares Held": "574000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.125",
-   "Maturity": "May 26 2038"
-  },
-  {
-   "Name": "AZULE ENERGY 8.25% 01/31",
-   "Ticker": "-",
-   "Identifier": "BV970C0",
-   "Weight": "0.04",
-   "Market Value": "634410",
-   "Shares Held": "630000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "8.25",
-   "Maturity": "Jan 22 2031"
-  },
-  {
-   "Name": "HCA INC 4.625% 03/52",
-   "Ticker": "-",
-   "Identifier": "404119CL1",
-   "Weight": "0.04",
-   "Market Value": "634132.04",
-   "Shares Held": "840000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.625",
-   "Maturity": "Mar 15 2052"
-  },
-  {
-   "Name": "CONGOLESE 9.5% 05/36",
-   "Ticker": "-",
-   "Identifier": "BTSL0X0",
-   "Weight": "0.04",
-   "Market Value": "634055.4",
-   "Shares Held": "660000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.5",
-   "Maturity": "May 26 2036"
-  },
-  {
-   "Name": "IHS HOLDING 8.25% 11/31",
-   "Ticker": "-",
-   "Identifier": "BR85BK2",
-   "Weight": "0.04",
-   "Market Value": "632222.3",
-   "Shares Held": "610000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "8.25",
-   "Maturity": "Nov 29 2031"
-  },
-  {
-   "Name": "ECOPETROL SA 6.875% 04/30",
-   "Ticker": "-",
-   "Identifier": "279158AN9",
-   "Weight": "0.04",
-   "Market Value": "631260",
-   "Shares Held": "630000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.875",
-   "Maturity": "Apr 29 2030"
-  },
-  {
-   "Name": "MEDCO 8.625% 05/30",
-   "Ticker": "-",
-   "Identifier": "BVK50W3",
-   "Weight": "0.04",
-   "Market Value": "630435",
-   "Shares Held": "610000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "8.625",
-   "Maturity": "May 19 2030"
-  },
-  {
-   "Name": "TOWD POINT STEP 12/65",
-   "Ticker": "-",
-   "Identifier": "89183TAA6",
-   "Weight": "0.04",
-   "Market Value": "629316.46",
-   "Shares Held": "646014",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "4.98",
-   "Maturity": "Dec 25 2065"
-  },
-  {
-   "Name": "HCA INC 5.2% 06/28",
-   "Ticker": "-",
-   "Identifier": "404119CP2",
-   "Weight": "0.04",
-   "Market Value": "629026.66",
-   "Shares Held": "630000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.2",
-   "Maturity": "Jun 01 2028"
-  },
-  {
-   "Name": "LIVE NATION 4.75% 10/27",
-   "Ticker": "-",
-   "Identifier": "538034AR0",
-   "Weight": "0.04",
-   "Market Value": "628610.49",
-   "Shares Held": "635000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Oct 15 2027"
-  },
-  {
-   "Name": "ELECTRICITE DE FRANCE VAR",
-   "Ticker": "-",
-   "Identifier": "BMX6M35",
-   "Weight": "0.04",
-   "Market Value": "627766.9",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.375",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "GNMA 2021-107 XI 3% 06/51",
-   "Ticker": "-",
-   "Identifier": "38382UFA4",
-   "Weight": "0.04",
-   "Market Value": "625456.83",
-   "Shares Held": "3979467",
-   "Asset Category": "INTEREST ONLY (IO)",
-   "Coupon": "3",
-   "Maturity": "Jun 20 2051"
-  },
-  {
-   "Name": "REPUBLIC OF 4.75% 01/34",
-   "Ticker": "-",
-   "Identifier": "YD00BB8",
-   "Weight": "0.04",
-   "Market Value": "624761.72",
-   "Shares Held": "566000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.75",
-   "Maturity": "Jan 21 2034"
-  },
-  {
-   "Name": "TURKCELL 7.45% 01/30",
-   "Ticker": "-",
-   "Identifier": "BP5WSG7",
-   "Weight": "0.04",
-   "Market Value": "624364.8",
-   "Shares Held": "620000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.45",
-   "Maturity": "Jan 24 2030"
-  },
-  {
-   "Name": "GNMA 2021-133 VAR 07/63",
-   "Ticker": "-",
-   "Identifier": "38381DXB1",
-   "Weight": "0.04",
-   "Market Value": "621879.36",
-   "Shares Held": "9974359",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "0.8835",
-   "Maturity": "Jul 16 2063"
-  },
-  {
-   "Name": "WELLTOWER OP 2.8% 06/31",
-   "Ticker": "-",
-   "Identifier": "95040QAM6",
-   "Weight": "0.04",
-   "Market Value": "620490.51",
-   "Shares Held": "700000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.8",
-   "Maturity": "Jun 01 2031"
-  },
-  {
-   "Name": "GENERADORA 6.874% 09/44",
-   "Ticker": "-",
-   "Identifier": "36875RAB2",
-   "Weight": "0.04",
-   "Market Value": "620046.93",
-   "Shares Held": "620000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.874",
-   "Maturity": "Sep 30 2044"
-  },
-  {
-   "Name": "SANTANDER STEP 03/66",
-   "Ticker": "-",
-   "Identifier": "802929AD1",
-   "Weight": "0.04",
-   "Market Value": "617141.23",
-   "Shares Held": "630032",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "5.176",
-   "Maturity": "Mar 25 2066"
-  },
-  {
-   "Name": "RAC BOND CO 5.25% 11/46",
-   "Ticker": "-",
-   "Identifier": "BPBKTM8",
-   "Weight": "0.04",
-   "Market Value": "616038.6",
-   "Shares Held": "472000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.25",
-   "Maturity": "Nov 04 2046"
-  },
-  {
-   "Name": "CELANESE US 7.375% 02/34",
-   "Ticker": "-",
-   "Identifier": "15089QBD5",
-   "Weight": "0.04",
-   "Market Value": "615846.89",
-   "Shares Held": "606000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.375",
-   "Maturity": "Feb 15 2034"
-  },
-  {
-   "Name": "VARSITY BRANDS INC",
-   "Ticker": "-",
-   "Identifier": "LX293871",
-   "Weight": "0.04",
-   "Market Value": "614441.74",
-   "Shares Held": "614110",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "6.4837",
-   "Maturity": "Aug 26 2031"
-  },
-  {
-   "Name": "IQVIA INC 2.25% 01/28",
-   "Ticker": "-",
-   "Identifier": "BK5HL68",
-   "Weight": "0.04",
-   "Market Value": "610428.2",
-   "Shares Held": "550000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.25",
-   "Maturity": "Jan 15 2028"
-  },
-  {
-   "Name": "ENTERGY CORP VAR 06/56",
-   "Ticker": "-",
-   "Identifier": "29364GAR4",
-   "Weight": "0.04",
-   "Market Value": "608570.93",
-   "Shares Held": "630000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.875",
-   "Maturity": "Jun 15 2056"
-  },
-  {
-   "Name": "ISLAMIC 7.375% 04/31",
-   "Ticker": "-",
-   "Identifier": "BNYK8D5",
-   "Weight": "0.04",
-   "Market Value": "608232.4",
-   "Shares Held": "620000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Apr 08 2031"
-  },
-  {
-   "Name": "VELOCITY VAR 06/52",
-   "Ticker": "-",
-   "Identifier": "92257BAA0",
-   "Weight": "0.04",
-   "Market Value": "607512.5",
-   "Shares Held": "631776",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "5.22",
-   "Maturity": "Jun 25 2052"
-  },
-  {
-   "Name": "CHARTER 7.087% 09/38",
-   "Ticker": "-",
-   "Identifier": "161175CU6",
-   "Weight": "0.04",
-   "Market Value": "607037.26",
-   "Shares Held": "644000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.087",
-   "Maturity": "Sep 01 2038"
-  },
-  {
-   "Name": "REPUBLIC OF 5.75% 05/47",
-   "Ticker": "-",
-   "Identifier": "900123CM0",
-   "Weight": "0.04",
-   "Market Value": "607020",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "May 11 2047"
-  },
-  {
-   "Name": "GNMA 2014-36 WY 2% 03/44",
-   "Ticker": "-",
-   "Identifier": "38379AXJ4",
-   "Weight": "0.04",
-   "Market Value": "606903.68",
-   "Shares Held": "810000",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "2",
-   "Maturity": "Mar 16 2044"
-  },
-  {
-   "Name": "NISSAN MOTOR 5.25% 07/29",
-   "Ticker": "-",
-   "Identifier": "BVR27Z9",
-   "Weight": "0.04",
-   "Market Value": "603265.42",
-   "Shares Held": "529000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.25",
-   "Maturity": "Jul 17 2029"
-  },
-  {
-   "Name": "GNMA 2021-78 IB 3% 05/51",
-   "Ticker": "-",
-   "Identifier": "38382QK90",
-   "Weight": "0.04",
-   "Market Value": "601888.28",
-   "Shares Held": "3652505",
-   "Asset Category": "INTEREST ONLY (IO)",
-   "Coupon": "3",
-   "Maturity": "May 20 2051"
-  },
-  {
-   "Name": "AXA SA CALLABLE VAR 12/49",
-   "Ticker": "-",
-   "Identifier": "BVMTH55",
-   "Weight": "0.04",
-   "Market Value": "601766.18",
-   "Shares Held": "531000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.75",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "GUARA NORTE 5.198% 06/34",
-   "Ticker": "-",
-   "Identifier": "400666AA1",
-   "Weight": "0.04",
-   "Market Value": "598570.65",
-   "Shares Held": "626631",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.198",
-   "Maturity": "Jun 15 2034"
-  },
-  {
-   "Name": "REPUBLIC 5.15% 06/39",
-   "Ticker": "-",
-   "Identifier": "76042LAB9",
-   "Weight": "0.04",
-   "Market Value": "597398.77",
-   "Shares Held": "620000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.15",
-   "Maturity": "Jun 20 2039"
-  },
-  {
-   "Name": "TELEFONICA 4.665% 03/38",
-   "Ticker": "-",
-   "Identifier": "87938WAV5",
-   "Weight": "0.04",
-   "Market Value": "597347.81",
-   "Shares Held": "700000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.665",
-   "Maturity": "Mar 06 2038"
-  },
-  {
-   "Name": "INTESA SANPAOLO SPA VAR",
-   "Ticker": "-",
-   "Identifier": "BNRQZN9",
-   "Weight": "0.04",
-   "Market Value": "597333.02",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "SANTANDER 4.95% 01/32",
-   "Ticker": "-",
-   "Identifier": "802923AF9",
-   "Weight": "0.04",
-   "Market Value": "596988.08",
-   "Shares Held": "609000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "4.95",
-   "Maturity": "Jan 15 2032"
-  },
-  {
-   "Name": "HUNTINGTON 5.442% 10/32",
-   "Ticker": "-",
-   "Identifier": "44644NAG4",
-   "Weight": "0.04",
-   "Market Value": "593707.3",
-   "Shares Held": "593402",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.442",
-   "Maturity": "Oct 20 2032"
-  },
-  {
-   "Name": "JBS NV/JBS 5.95% 04/35",
-   "Ticker": "-",
-   "Identifier": "472140AB8",
-   "Weight": "0.04",
-   "Market Value": "593584.99",
-   "Shares Held": "609000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.95",
-   "Maturity": "Apr 20 2035"
-  },
-  {
-   "Name": "WEC US HOLDINGS LTD.",
-   "Ticker": "-",
-   "Identifier": "LX224734",
-   "Weight": "0.04",
-   "Market Value": "591584.86",
-   "Shares Held": "591371",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "5.6834",
-   "Maturity": "Jan 27 2031"
-  },
-  {
-   "Name": "1261229 BC LTD 10% 04/32",
-   "Ticker": "-",
-   "Identifier": "68288AAA5",
-   "Weight": "0.04",
-   "Market Value": "591268.31",
-   "Shares Held": "570000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "10",
-   "Maturity": "Apr 15 2032"
-  },
-  {
-   "Name": "VERIZON VAR 05/56",
-   "Ticker": "-",
-   "Identifier": "92343VHN7",
-   "Weight": "0.04",
-   "Market Value": "590616.62",
-   "Shares Held": "624000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.2",
-   "Maturity": "May 14 2056"
-  },
-  {
-   "Name": "STELLANTIS 5.8% 06/31",
-   "Ticker": "-",
-   "Identifier": "85855FAE3",
-   "Weight": "0.04",
-   "Market Value": "590287.88",
-   "Shares Held": "625000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.8",
-   "Maturity": "Jun 15 2031"
-  },
-  {
-   "Name": "AT&T INC 6.05% 08/56",
-   "Ticker": "-",
-   "Identifier": "00206RMZ2",
-   "Weight": "0.04",
-   "Market Value": "588983.33",
-   "Shares Held": "660000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.05",
-   "Maturity": "Aug 15 2056"
-  },
-  {
-   "Name": "FHLMC STACR FLT 04/42",
-   "Ticker": "-",
-   "Identifier": "35564KUX5",
-   "Weight": "0.04",
-   "Market Value": "586026.2",
-   "Shares Held": "580000",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "6.5432",
-   "Maturity": "Apr 25 2042"
-  },
-  {
-   "Name": "GCI LLC 4.75% 10/28",
-   "Ticker": "-",
-   "Identifier": "36166TAB6",
-   "Weight": "0.04",
-   "Market Value": "585636.01",
-   "Shares Held": "605000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Oct 15 2028"
-  },
-  {
-   "Name": "CITIGROUP INC VAR 12/49",
-   "Ticker": "-",
-   "Identifier": "17327CBC6",
-   "Weight": "0.04",
-   "Market Value": "585564.23",
-   "Shares Held": "590000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.875",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "AMERICAN HOME FLT 12/46",
-   "Ticker": "-",
-   "Identifier": "008684AA0",
-   "Weight": "0.04",
-   "Market Value": "580727.8",
-   "Shares Held": "675969",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "3.9718",
-   "Maturity": "Dec 25 2046"
-  },
-  {
-   "Name": "WYNN MACAU 5.625% 08/28",
-   "Ticker": "-",
-   "Identifier": "BMVV9P3",
-   "Weight": "0.04",
-   "Market Value": "580165",
-   "Shares Held": "589000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.625",
-   "Maturity": "Aug 26 2028"
-  },
-  {
-   "Name": "CREDIT AGRICOLE SA VAR",
-   "Ticker": "-",
-   "Identifier": "BQS6Z06",
-   "Weight": "0.04",
-   "Market Value": "578667.51",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "BPCE SA VAR 01/36",
-   "Ticker": "-",
-   "Identifier": "05571ABA2",
-   "Weight": "0.04",
-   "Market Value": "578607.45",
-   "Shares Held": "590000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.293",
-   "Maturity": "Jan 14 2036"
-  },
-  {
-   "Name": "FAR EAST 5.875% 03/28",
-   "Ticker": "-",
-   "Identifier": "BSY4XB5",
-   "Weight": "0.04",
-   "Market Value": "578362.5",
-   "Shares Held": "582000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.875",
-   "Maturity": "Mar 05 2028"
-  },
-  {
-   "Name": "SIRIUS XM RADIO 4% 07/28",
-   "Ticker": "-",
-   "Identifier": "82967NBJ6",
-   "Weight": "0.04",
-   "Market Value": "578315.1",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4",
-   "Maturity": "Jul 15 2028"
-  },
-  {
-   "Name": "EXETER 5.57% 10/31",
-   "Ticker": "-",
-   "Identifier": "30166XAF1",
-   "Weight": "0.04",
-   "Market Value": "576584.26",
-   "Shares Held": "580000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.57",
-   "Maturity": "Oct 15 2031"
-  },
-  {
-   "Name": "STIFEL SBA IO VAR 08/36",
-   "Ticker": "-",
-   "Identifier": "86063EAA0",
-   "Weight": "0.04",
-   "Market Value": "576126.89",
-   "Shares Held": "10324114",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "2.5447",
-   "Maturity": "Aug 25 2036"
-  },
-  {
-   "Name": "NEXSTAR MEDIA 6.5% 09/33",
-   "Ticker": "-",
-   "Identifier": "65346UAB5",
-   "Weight": "0.04",
-   "Market Value": "575805.43",
-   "Shares Held": "591000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Sep 15 2033"
-  },
-  {
-   "Name": "SCHAEFFLER 5.375% 04/31",
-   "Ticker": "-",
-   "Identifier": "BS9G6Z1",
-   "Weight": "0.04",
-   "Market Value": "575579.12",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.375",
-   "Maturity": "Apr 01 2031"
-  },
-  {
-   "Name": "ARAB 7.625% 05/32",
-   "Ticker": "-",
-   "Identifier": "BMHWV98",
-   "Weight": "0.04",
-   "Market Value": "573475",
-   "Shares Held": "580000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.625",
-   "Maturity": "May 29 2032"
-  },
-  {
-   "Name": "ALLIANZ SE VAR 09/54",
-   "Ticker": "-",
-   "Identifier": "018820AD2",
-   "Weight": "0.04",
-   "Market Value": "570132.72",
-   "Shares Held": "600000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.6",
-   "Maturity": "Sep 03 2054"
-  },
-  {
-   "Name": "GFL 5.5% 02/34",
-   "Ticker": "-",
-   "Identifier": "36273TAA8",
-   "Weight": "0.04",
-   "Market Value": "569698",
-   "Shares Held": "625000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.5",
-   "Maturity": "Feb 01 2034"
-  },
-  {
-   "Name": "STELLANTIS 6.45% 03/35",
-   "Ticker": "-",
-   "Identifier": "85855CAL4",
-   "Weight": "0.04",
-   "Market Value": "569569.91",
-   "Shares Held": "620000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.45",
-   "Maturity": "Mar 18 2035"
-  },
-  {
-   "Name": "CENTER STREET STEP 12/30",
-   "Ticker": "-",
-   "Identifier": "151704AA1",
-   "Weight": "0.04",
-   "Market Value": "569469.98",
-   "Shares Held": "580000",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "5.375",
-   "Maturity": "Dec 25 2030"
-  },
-  {
-   "Name": "ATHENAHEALTH GROUP INC",
-   "Ticker": "-",
-   "Identifier": "LX290634",
-   "Weight": "0.04",
-   "Market Value": "567010.82",
-   "Shares Held": "566478",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "6.9364",
-   "Maturity": "Feb 16 2032"
-  },
-  {
-   "Name": "CHARIOT BUYER LLC",
-   "Ticker": "-",
-   "Identifier": "LX266563",
-   "Weight": "0.04",
-   "Market Value": "563924.6",
-   "Shares Held": "564099",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "6.4364",
-   "Maturity": "Sep 08 2032"
-  },
-  {
-   "Name": "ABERTIS VAR 12/49",
-   "Ticker": "-",
-   "Identifier": "BS88CC7",
-   "Weight": "0.04",
-   "Market Value": "562410.58",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.87",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "ORACLE CORP 5.375% 09/54",
-   "Ticker": "-",
-   "Identifier": "68389XCU7",
-   "Weight": "0.04",
-   "Market Value": "562078.28",
-   "Shares Held": "799000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.375",
-   "Maturity": "Sep 27 2054"
-  },
-  {
-   "Name": "REPUBLIC OF 6.125% 06/33",
-   "Ticker": "-",
-   "Identifier": "BYW5KQ6",
-   "Weight": "0.04",
-   "Market Value": "560239.4",
-   "Shares Held": "580000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Jun 15 2033"
-  },
-  {
-   "Name": "GREENKO POWER 4.3% 12/28",
-   "Ticker": "-",
-   "Identifier": "39530MAA6",
-   "Weight": "0.04",
-   "Market Value": "558536.08",
-   "Shares Held": "583327",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.3",
-   "Maturity": "Dec 13 2028"
-  },
-  {
-   "Name": "SURINAME 8.5% 11/35",
-   "Ticker": "-",
-   "Identifier": "86886PAF9",
-   "Weight": "0.04",
-   "Market Value": "558206.09",
-   "Shares Held": "529000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.5",
-   "Maturity": "Nov 06 2035"
-  },
-  {
-   "Name": "EXETER 6.76% 09/28",
-   "Ticker": "-",
-   "Identifier": "30166YAF9",
-   "Weight": "0.04",
-   "Market Value": "557922.65",
-   "Shares Held": "555677",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.76",
-   "Maturity": "Sep 15 2028"
-  },
-  {
-   "Name": "CREDIT 5.39% 01/35",
-   "Ticker": "-",
-   "Identifier": "22535LAE1",
-   "Weight": "0.04",
-   "Market Value": "557288.37",
-   "Shares Held": "560000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.39",
-   "Maturity": "Jan 16 2035"
-  },
-  {
-   "Name": "AMS-OSRAM AG 2.125% 11/27",
-   "Ticker": "-",
-   "Identifier": "BMVM6Z5",
-   "Weight": "0.04",
-   "Market Value": "556869.97",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.125",
-   "Maturity": "Nov 03 2027"
-  },
-  {
-   "Name": "DRC 8.75% 04/32",
-   "Ticker": "-",
-   "Identifier": "24811WAA6",
-   "Weight": "0.04",
-   "Market Value": "556187.5",
-   "Shares Held": "550000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.75",
-   "Maturity": "Apr 16 2032"
-  },
-  {
-   "Name": "ENEL FINANCE 5% 06/32",
-   "Ticker": "-",
-   "Identifier": "29278GAX6",
-   "Weight": "0.04",
-   "Market Value": "554828.82",
-   "Shares Held": "580000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5",
-   "Maturity": "Jun 15 2032"
-  },
-  {
-   "Name": "COOPER-STANDA 9.25% 03/31",
-   "Ticker": "-",
-   "Identifier": "216762AK0",
-   "Weight": "0.04",
-   "Market Value": "553790.63",
-   "Shares Held": "569000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "9.25",
-   "Maturity": "Mar 01 2031"
-  },
-  {
-   "Name": "CF INDUSTRIES 4.95% 06/43",
-   "Ticker": "-",
-   "Identifier": "12527GAD5",
-   "Weight": "0.04",
-   "Market Value": "552197.16",
-   "Shares Held": "649000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.95",
-   "Maturity": "Jun 01 2043"
-  },
-  {
-   "Name": "STANDARD 6.5% 08/32",
-   "Ticker": "-",
-   "Identifier": "853191AA2",
-   "Weight": "0.04",
-   "Market Value": "551389.88",
-   "Shares Held": "565000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Aug 15 2032"
-  },
-  {
-   "Name": "ORBIA ADVANCE 6.8% 05/30",
-   "Ticker": "-",
-   "Identifier": "BTVJ3P4",
-   "Weight": "0.03",
-   "Market Value": "549322.55",
-   "Shares Held": "553000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.8",
-   "Maturity": "May 13 2030"
-  },
-  {
-   "Name": "OBX 2026-NQM2 STEP 12/65",
-   "Ticker": "-",
-   "Identifier": "67123VAE2",
-   "Weight": "0.03",
-   "Market Value": "548992.68",
-   "Shares Held": "566083",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "4.818",
-   "Maturity": "Dec 01 2065"
-  },
-  {
-   "Name": "WESTLAKE 6.02% 10/29",
-   "Ticker": "-",
-   "Identifier": "96043RAG2",
-   "Weight": "0.03",
-   "Market Value": "548822.56",
-   "Shares Held": "544000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.02",
-   "Maturity": "Oct 15 2029"
-  },
-  {
-   "Name": "RCI BANQUE SA VAR 03/37",
-   "Ticker": "-",
-   "Identifier": "BTLN7G5",
-   "Weight": "0.03",
-   "Market Value": "548636.51",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Mar 24 2037"
-  },
-  {
-   "Name": "NEXTERA ENERGY VAR 09/54",
-   "Ticker": "-",
-   "Identifier": "65339KCW8",
-   "Weight": "0.03",
-   "Market Value": "548357.75",
-   "Shares Held": "545000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.7",
-   "Maturity": "Sep 01 2054"
-  },
-  {
-   "Name": "AMERICAN 6.53% 04/30",
-   "Ticker": "-",
-   "Identifier": "02531BAG4",
-   "Weight": "0.03",
-   "Market Value": "547467.37",
-   "Shares Held": "542000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "6.53",
-   "Maturity": "Apr 12 2030"
-  },
-  {
-   "Name": "BANK OF AMERICA VAR 05/49",
-   "Ticker": "-",
-   "Identifier": "06055HAH6",
-   "Weight": "0.03",
-   "Market Value": "543326.84",
-   "Shares Held": "541000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.625",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "FOUNDRY JV 5.5% 01/31",
-   "Ticker": "-",
-   "Identifier": "350930AF0",
-   "Weight": "0.03",
-   "Market Value": "543241.58",
-   "Shares Held": "550000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.5",
-   "Maturity": "Jan 25 2031"
-  },
-  {
-   "Name": "HUB INTERNATIONAL LIMITED",
-   "Ticker": "-",
-   "Identifier": "LX257819",
-   "Weight": "0.03",
-   "Market Value": "543003.25",
-   "Shares Held": "543046",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "5.9837",
-   "Maturity": "Jun 20 2030"
-  },
-  {
-   "Name": "UNITED 5.375% 05/40",
-   "Ticker": "-",
-   "Identifier": "BNYL526",
-   "Weight": "0.03",
-   "Market Value": "542762.54",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.375",
-   "Maturity": "May 16 2040"
-  },
-  {
-   "Name": "SOCIETE VAR 08/34",
-   "Ticker": "-",
-   "Identifier": "83368RCT7",
-   "Weight": "0.03",
-   "Market Value": "542295.71",
-   "Shares Held": "576000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.4",
-   "Maturity": "Aug 08 2034"
-  },
-  {
-   "Name": "FHLMC VAR 03/31",
-   "Ticker": "-",
-   "Identifier": "3137FYUL8",
-   "Weight": "0.03",
-   "Market Value": "539468.85",
-   "Shares Held": "30247084",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "0.5987",
-   "Maturity": "Mar 25 2031"
-  },
-  {
-   "Name": "LIBERTY 2.375% 08/32",
-   "Ticker": "-",
-   "Identifier": "531229AS1",
-   "Weight": "0.03",
-   "Market Value": "538727.5",
-   "Shares Held": "565000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.375",
-   "Maturity": "Aug 15 2032"
-  },
-  {
-   "Name": "DRIVE AUTO 4.94% 05/32",
-   "Ticker": "-",
-   "Identifier": "26207AAG8",
-   "Weight": "0.03",
-   "Market Value": "534971.59",
-   "Shares Held": "537000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "4.94",
-   "Maturity": "May 17 2032"
-  },
-  {
-   "Name": "ITRON INC ZERO 03/32",
-   "Ticker": "-",
-   "Identifier": "465741AR7",
-   "Weight": "0.03",
-   "Market Value": "530146",
-   "Shares Held": "556000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "",
-   "Maturity": "Mar 15 2032"
-  },
-  {
-   "Name": "VODAFONE GROUP VAR 08/80",
-   "Ticker": "-",
-   "Identifier": "BMF69W1",
-   "Weight": "0.03",
-   "Market Value": "529940.27",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3",
-   "Maturity": "Aug 27 2080"
-  },
-  {
-   "Name": "KAZMUNAYGAS 6.375% 10/48",
-   "Ticker": "-",
-   "Identifier": "BFM6YV9",
-   "Weight": "0.03",
-   "Market Value": "528842",
-   "Shares Held": "562000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.375",
-   "Maturity": "Oct 24 2048"
-  },
-  {
-   "Name": "AHEAD DB HOLDINGS LLC",
-   "Ticker": "-",
-   "Identifier": "LX238570",
-   "Weight": "0.03",
-   "Market Value": "528239.84",
-   "Shares Held": "528900",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "6.2322",
-   "Maturity": "Feb 03 2031"
-  },
-  {
-   "Name": "UNICREDIT SPA VAR",
-   "Ticker": "-",
-   "Identifier": "X5CA9F0",
-   "Weight": "0.03",
-   "Market Value": "523766.83",
-   "Shares Held": "450000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.5",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "BUSINESS JET 7.974% 09/39",
-   "Ticker": "-",
-   "Identifier": "12326TAC2",
-   "Weight": "0.03",
-   "Market Value": "523763.1",
-   "Shares Held": "527640",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "7.974",
-   "Maturity": "Sep 15 2039"
-  },
-  {
-   "Name": "NEXTERA ENERGY VAR 06/54",
-   "Ticker": "-",
-   "Identifier": "65339KDB3",
-   "Weight": "0.03",
-   "Market Value": "518839.78",
-   "Shares Held": "520000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.75",
-   "Maturity": "Jun 15 2054"
-  },
-  {
-   "Name": "CLEAR CHANNEL 7.5% 06/29",
-   "Ticker": "-",
-   "Identifier": "18453HAD8",
-   "Weight": "0.03",
-   "Market Value": "517359.02",
-   "Shares Held": "520000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.5",
-   "Maturity": "Jun 01 2029"
-  },
-  {
-   "Name": "HCA INC 4.6% 11/32",
-   "Ticker": "-",
-   "Identifier": "404119DE6",
-   "Weight": "0.03",
-   "Market Value": "514599.23",
-   "Shares Held": "550000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.6",
-   "Maturity": "Nov 15 2032"
-  },
-  {
-   "Name": "ECOPETROL SA 7.375% 09/43",
-   "Ticker": "-",
-   "Identifier": "279158AE9",
-   "Weight": "0.03",
-   "Market Value": "514393",
-   "Shares Held": "550000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Sep 18 2043"
-  },
-  {
-   "Name": "DRIVE AUTO 4.67% 05/32",
-   "Ticker": "-",
-   "Identifier": "26207AAF0",
-   "Weight": "0.03",
-   "Market Value": "512367.88",
-   "Shares Held": "513000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "4.67",
-   "Maturity": "May 17 2032"
-  },
-  {
-   "Name": "STIFEL SBA IO VAR 10/51",
-   "Ticker": "-",
-   "Identifier": "826545AB1",
-   "Weight": "0.03",
-   "Market Value": "511648.22",
-   "Shares Held": "8941147",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "1.9026",
-   "Maturity": "Oct 25 2051"
-  },
-  {
-   "Name": "MORGAN STANLEY VAR 01/41",
-   "Ticker": "-",
-   "Identifier": "61748UAP7",
-   "Weight": "0.03",
-   "Market Value": "511094.55",
-   "Shares Held": "555000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.314",
-   "Maturity": "Jan 18 2041"
-  },
-  {
-   "Name": "SCF EQUIPMENT 5.33% 06/36",
-   "Ticker": "-",
-   "Identifier": "78439XAF1",
-   "Weight": "0.03",
-   "Market Value": "509831.35",
-   "Shares Held": "535000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.33",
-   "Maturity": "Jun 20 2036"
-  },
-  {
-   "Name": "BOEING CO/THE 3.95% 08/59",
-   "Ticker": "-",
-   "Identifier": "097023CR4",
-   "Weight": "0.03",
-   "Market Value": "508981.96",
-   "Shares Held": "784000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3.95",
-   "Maturity": "Aug 01 2059"
-  },
-  {
-   "Name": "AT&T INC 3.5% 09/53",
-   "Ticker": "-",
-   "Identifier": "00206RKJ0",
-   "Weight": "0.03",
-   "Market Value": "508436.09",
-   "Shares Held": "860000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3.5",
-   "Maturity": "Sep 15 2053"
-  },
-  {
-   "Name": "ALTAR BIDCO, INC",
-   "Ticker": "-",
-   "Identifier": "LX200277",
-   "Weight": "0.03",
-   "Market Value": "507982.38",
-   "Shares Held": "506478",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "6.8577",
-   "Maturity": "Feb 01 2029"
-  },
-  {
-   "Name": "ISTANBUL 10.5% 12/28",
-   "Ticker": "-",
-   "Identifier": "BNKBFH5",
-   "Weight": "0.03",
-   "Market Value": "507811.2",
-   "Shares Held": "480000",
-   "Asset Category": "AGENCY BACKED BONDS",
-   "Coupon": "10.5",
-   "Maturity": "Dec 06 2028"
-  },
-  {
-   "Name": "GOLDMAN SACHS VAR 07/57",
-   "Ticker": "-",
-   "Identifier": "38145GAX8",
-   "Weight": "0.03",
-   "Market Value": "507749.96",
-   "Shares Held": "530000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.215",
-   "Maturity": "Jul 21 2057"
-  },
-  {
-   "Name": "REPUBLIC OF 7.95% 11/54",
-   "Ticker": "-",
-   "Identifier": "BT6NWZ4",
-   "Weight": "0.03",
-   "Market Value": "507500",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.95",
-   "Maturity": "Nov 19 2054"
-  },
-  {
-   "Name": "GUARA NORTE 5.198% 06/34",
-   "Ticker": "-",
-   "Identifier": "BLH1VR6",
-   "Weight": "0.03",
-   "Market Value": "507103.68",
-   "Shares Held": "530876",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.198",
-   "Maturity": "Jun 15 2034"
-  },
-  {
-   "Name": "FLUOR CORP 1.125% 08/29",
-   "Ticker": "-",
-   "Identifier": "343412AJ1",
-   "Weight": "0.03",
-   "Market Value": "507078",
-   "Shares Held": "396000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "1.125",
-   "Maturity": "Aug 15 2029"
-  },
-  {
-   "Name": "BANK OF AMERICA VAR 02/37",
-   "Ticker": "-",
-   "Identifier": "060505GR9",
-   "Weight": "0.03",
-   "Market Value": "506543.42",
-   "Shares Held": "545000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.045",
-   "Maturity": "Feb 06 2037"
-  },
-  {
-   "Name": "BARCLAYS PLC VAR 02/37",
-   "Ticker": "-",
-   "Identifier": "06738EDK8",
-   "Weight": "0.03",
-   "Market Value": "503352.77",
-   "Shares Held": "550000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.207",
-   "Maturity": "Feb 24 2037"
-  },
-  {
-   "Name": "LENDMARK 4.47% 02/34",
-   "Ticker": "-",
-   "Identifier": "52590AAA2",
-   "Weight": "0.03",
-   "Market Value": "502472.64",
-   "Shares Held": "511000",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "4.47",
-   "Maturity": "Feb 21 2034"
-  },
-  {
-   "Name": "MERIDIAN ARC 6.25% 04/31",
-   "Ticker": "-",
-   "Identifier": "58990CAA1",
-   "Weight": "0.03",
-   "Market Value": "501592.02",
-   "Shares Held": "534000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.25",
-   "Maturity": "Apr 30 2031"
-  },
-  {
-   "Name": "BANK OF AMERICA VAR 06/41",
-   "Ticker": "-",
-   "Identifier": "06051GJE0",
-   "Weight": "0.03",
-   "Market Value": "497883.24",
-   "Shares Held": "740000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.676",
-   "Maturity": "Jun 19 2041"
-  },
-  {
-   "Name": "FHLMC VAR 11/48",
-   "Ticker": "-",
-   "Identifier": "3137F83T8",
-   "Weight": "0.03",
-   "Market Value": "497693.19",
-   "Shares Held": "5100000",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "2.8681",
-   "Maturity": "Nov 25 2048"
-  },
-  {
-   "Name": "SANMINA CORP",
-   "Ticker": "-",
-   "Identifier": "LX291020",
-   "Weight": "0.03",
-   "Market Value": "496237.5",
-   "Shares Held": "495000",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "5.4334",
-   "Maturity": "Oct 27 2032"
-  },
-  {
-   "Name": "PETSMART LLC / 7.5% 09/32",
-   "Ticker": "-",
-   "Identifier": "71677KAC2",
-   "Weight": "0.03",
-   "Market Value": "495676",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.5",
-   "Maturity": "Sep 15 2032"
-  },
-  {
-   "Name": "ALTICE FRANCE 4.75% 10/30",
-   "Ticker": "-",
-   "Identifier": "BV2HG07",
-   "Weight": "0.03",
-   "Market Value": "491533.41",
-   "Shares Held": "457317",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Oct 15 2030"
-  },
-  {
-   "Name": "AXA SA CALLABLE VAR 07/42",
-   "Ticker": "-",
-   "Identifier": "BMC8T75",
-   "Weight": "0.03",
-   "Market Value": "491398.38",
-   "Shares Held": "500000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "1.875",
-   "Maturity": "Jul 10 2042"
-  },
-  {
-   "Name": "ROSSINI SARL 6.75% 12/29",
-   "Ticker": "-",
-   "Identifier": "BQ3QR50",
-   "Weight": "0.03",
-   "Market Value": "491174.65",
-   "Shares Held": "419000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.75",
-   "Maturity": "Dec 31 2029"
-  },
-  {
-   "Name": "FHLMC VAR 03/49",
-   "Ticker": "-",
-   "Identifier": "3137FXZ68",
-   "Weight": "0.03",
-   "Market Value": "490895.91",
-   "Shares Held": "5100000",
-   "Asset Category": "COMMERCIAL MORTGAGE BACKED SECURITIES",
-   "Coupon": "2.7398",
-   "Maturity": "Mar 25 2049"
-  },
-  {
-   "Name": "AADVANTAGE LOYALTY IP LTD",
-   "Ticker": "-",
-   "Identifier": "LX259608",
-   "Weight": "0.03",
-   "Market Value": "490845.59",
-   "Shares Held": "490845",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "5.9792",
-   "Maturity": "Apr 20 2028"
-  },
-  {
-   "Name": "AMKOR 5.875% 10/33",
-   "Ticker": "-",
-   "Identifier": "031652BL3",
-   "Weight": "0.03",
-   "Market Value": "490079.21",
-   "Shares Held": "513000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.875",
-   "Maturity": "Oct 01 2033"
-  },
-  {
-   "Name": "PNC FINANCIAL VAR 10/32",
-   "Ticker": "-",
-   "Identifier": "693475CA1",
-   "Weight": "0.03",
-   "Market Value": "488461.09",
-   "Shares Held": "510000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.812",
-   "Maturity": "Oct 21 2032"
-  },
-  {
-   "Name": "ROCKET SOFTWARE, INC.",
-   "Ticker": "-",
-   "Identifier": "LX217143",
-   "Weight": "0.03",
-   "Market Value": "488241.91",
-   "Shares Held": "488818",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "7.4364",
-   "Maturity": "Nov 28 2028"
-  },
-  {
-   "Name": "IQVIA INC 6.25% 06/32",
-   "Ticker": "-",
-   "Identifier": "46266TAG3",
-   "Weight": "0.03",
-   "Market Value": "488222.97",
-   "Shares Held": "492000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.25",
-   "Maturity": "Jun 01 2032"
-  },
-  {
-   "Name": "PAPREC 4.125% 07/30",
-   "Ticker": "-",
-   "Identifier": "BV6H9H1",
-   "Weight": "0.03",
-   "Market Value": "483631.88",
-   "Shares Held": "440000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.125",
-   "Maturity": "Jul 15 2030"
-  },
-  {
-   "Name": "QUIKRETE HOLDINGS, INC",
-   "Ticker": "-",
-   "Identifier": "LX228418",
-   "Weight": "0.03",
-   "Market Value": "479679.09",
-   "Shares Held": "478975",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "5.9364",
-   "Maturity": "Mar 19 2029"
-  },
-  {
-   "Name": "BRITISH POUND",
-   "Ticker": "-",
-   "Identifier": "GBP",
-   "Weight": "0.03",
-   "Market Value": "472017.06",
-   "Shares Held": "357034",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "XPO INC 7.125% 02/32",
-   "Ticker": "-",
-   "Identifier": "983793AK6",
-   "Weight": "0.03",
-   "Market Value": "471859.68",
-   "Shares Held": "465000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "7.125",
-   "Maturity": "Feb 01 2032"
-  },
-  {
-   "Name": "ALBERTSONS 5.625% 03/32",
-   "Ticker": "-",
-   "Identifier": "01309QAE8",
-   "Weight": "0.03",
-   "Market Value": "471526.78",
-   "Shares Held": "505000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.625",
-   "Maturity": "Mar 31 2032"
-  },
-  {
-   "Name": "TRIVIUM 6.625% 07/30",
-   "Ticker": "-",
-   "Identifier": "BVMTJK4",
-   "Weight": "0.03",
-   "Market Value": "470606.44",
-   "Shares Held": "403000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.625",
-   "Maturity": "Jul 15 2030"
-  },
-  {
-   "Name": "INEOS 6.375% 04/29",
-   "Ticker": "-",
-   "Identifier": "BS7XRX9",
-   "Weight": "0.03",
-   "Market Value": "470399.07",
-   "Shares Held": "423000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.375",
-   "Maturity": "Apr 15 2029"
-  },
-  {
-   "Name": "META PLATFORMS 6.3% 05/56",
-   "Ticker": "-",
+   "Name": "Meta Platforms, Inc.",
+   "Ticker": "META",
    "Identifier": "30303MAK8",
-   "Weight": "0.03",
-   "Market Value": "469738.96",
-   "Shares Held": "524000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.3",
-   "Maturity": "May 15 2056"
+   "Weight": "0.1210316291",
+   "Market Value": "1634597.46",
+   "Shares Held": "1620000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "Q-PARK 5.125% 03/29",
-   "Ticker": "-",
-   "Identifier": "BRF3H89",
-   "Weight": "0.03",
-   "Market Value": "468492.72",
-   "Shares Held": "409000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.125",
-   "Maturity": "Mar 01 2029"
-  },
-  {
-   "Name": "BOXER PARENT COMPANY INC",
-   "Ticker": "-",
-   "Identifier": "LX258132",
-   "Weight": "0.03",
-   "Market Value": "468130.93",
-   "Shares Held": "493824",
-   "Asset Category": "LOAN ASSIGNMENTS",
-   "Coupon": "6.5141",
-   "Maturity": "Jul 30 2031"
-  },
-  {
-   "Name": "GS STEP 06/56",
-   "Ticker": "-",
-   "Identifier": "362980AA2",
-   "Weight": "0.03",
-   "Market Value": "467976.61",
-   "Shares Held": "479212",
-   "Asset Category": "ASSET BACKED",
-   "Coupon": "5.227",
-   "Maturity": "Jun 25 2056"
-  },
-  {
-   "Name": "NATWEST GROUP VAR 12/49",
-   "Ticker": "-",
-   "Identifier": "639057AQ1",
-   "Weight": "0.03",
-   "Market Value": "467254.48",
-   "Shares Held": "440000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "8.125",
-   "Maturity": "Dec 31 2164"
-  },
-  {
-   "Name": "STANDARD VAR 08/37",
-   "Ticker": "-",
-   "Identifier": "85325C2S0",
-   "Weight": "0.03",
-   "Market Value": "466386.38",
-   "Shares Held": "485000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.846",
-   "Maturity": "Aug 13 2037"
-  },
-  {
-   "Name": "GS VAR 11/55",
-   "Ticker": "-",
-   "Identifier": "36272KAA8",
-   "Weight": "0.03",
-   "Market Value": "465498.93",
-   "Shares Held": "478450",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "6",
-   "Maturity": "Nov 25 2055"
-  },
-  {
-   "Name": "FREMF 2018-KF48 FLT 06/28",
+   "Name": "FREMF Mortgage Trust",
    "Ticker": "-",
    "Identifier": "30308EAG0",
-   "Weight": "0.03",
-   "Market Value": "464089.75",
-   "Shares Held": "480433",
-   "Asset Category": "CMO/REMIC",
-   "Coupon": "5.7842",
-   "Maturity": "Jun 25 2028"
+   "Weight": "0.0341547086",
+   "Market Value": "461277.77",
+   "Shares Held": "480433.82",
+   "Asset Category": "ABS-MBS"
   },
   {
-   "Name": "ILIAD SA 5.375% 02/29",
+   "Name": "Fair Isaac Corp.",
+   "Ticker": "FICO",
+   "Identifier": "303250AG9",
+   "Weight": "0.0030796718",
+   "Market Value": "41592.63",
+   "Shares Held": "42000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "N/A",
    "Ticker": "-",
-   "Identifier": "BM92RP4",
-   "Weight": "0.03",
-   "Market Value": "464032.8",
+   "Identifier": "30376",
+   "Weight": "0.0001083911",
+   "Market Value": "1463.88",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30405",
+   "Weight": "-0.009831562",
+   "Market Value": "-132780.55",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30406",
+   "Weight": "-0.0038685615",
+   "Market Value": "-52247.01",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30494",
+   "Weight": "-0.004921947",
+   "Market Value": "-66473.55",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30538",
+   "Weight": "-0.009983764",
+   "Market Value": "-134836.12",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30594",
+   "Weight": "0.0002318434",
+   "Market Value": "3131.17",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30643",
+   "Weight": "-0.0003976043",
+   "Market Value": "-5369.86",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30649",
+   "Weight": "-0.0028763508",
+   "Market Value": "-38846.67",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30727",
+   "Weight": "0.0018673782",
+   "Market Value": "25219.95",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30793",
+   "Weight": "-0.0000845283",
+   "Market Value": "-1141.6",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30804",
+   "Weight": "0.0004106419",
+   "Market Value": "5545.94",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30902",
+   "Weight": "0.0000655909",
+   "Market Value": "885.84",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30906",
+   "Weight": "-0.0024707817",
+   "Market Value": "-33369.24",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30910",
+   "Weight": "0.0009802222",
+   "Market Value": "13238.43",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30934",
+   "Weight": "-0.0055385866",
+   "Market Value": "-74801.6",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "30992",
+   "Weight": "0.0009833839",
+   "Market Value": "13281.13",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31004",
+   "Weight": "-0.0020518158",
+   "Market Value": "-27710.88",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31006",
+   "Weight": "0.0000642536",
+   "Market Value": "867.78",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31049",
+   "Weight": "-0.0027522358",
+   "Market Value": "-37170.43",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31244",
+   "Weight": "0.0003306873",
+   "Market Value": "4466.11",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31245",
+   "Weight": "-0.0003261832",
+   "Market Value": "-4405.28",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31246",
+   "Weight": "-0.0017896064",
+   "Market Value": "-24169.6",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31247",
+   "Weight": "0.0018275331",
+   "Market Value": "24681.82",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31248",
+   "Weight": "-0.0093193004",
+   "Market Value": "-125862.18",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31249",
+   "Weight": "0.0092660104",
+   "Market Value": "125142.47",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31250",
+   "Weight": "-0.0027501086",
+   "Market Value": "-37141.7",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31251",
+   "Weight": "0.0027659243",
+   "Market Value": "37355.3",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31252",
+   "Weight": "-0.005263846",
+   "Market Value": "-71091.08",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31253",
+   "Weight": "0.0052938544",
+   "Market Value": "71496.36",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31254",
+   "Weight": "0.0004341122",
+   "Market Value": "5862.92",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31255",
+   "Weight": "-0.0004412545",
+   "Market Value": "-5959.38",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31256",
+   "Weight": "0.0000102084",
+   "Market Value": "137.87",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31257",
+   "Weight": "-0.0026004803",
+   "Market Value": "-35120.89",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31258",
+   "Weight": "-0.0020538454",
+   "Market Value": "-27738.29",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31260",
+   "Weight": "-0.0001701472",
+   "Market Value": "-2297.93",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31261",
+   "Weight": "0.0001700858",
+   "Market Value": "2297.1",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31262",
+   "Weight": "0.004247694",
+   "Market Value": "57367.4",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31263",
+   "Weight": "-0.0042568829",
+   "Market Value": "-57491.5",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31286",
+   "Weight": "0.0000095102",
+   "Market Value": "128.44",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31287",
+   "Weight": "-0.0000092162",
+   "Market Value": "-124.47",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31288",
+   "Weight": "0.0039665583",
+   "Market Value": "53570.51",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31289",
+   "Weight": "-0.0039624918",
+   "Market Value": "-53515.59",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31292",
+   "Weight": "0.0002327682",
+   "Market Value": "3143.66",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31305",
+   "Weight": "0.0167881637",
+   "Market Value": "226733.21",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31306",
+   "Weight": "-0.0168331586",
+   "Market Value": "-227340.89",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "FHLMC Pool",
+   "Ticker": "-",
+   "Identifier": "3132DWHT3",
+   "Weight": "0.18360069",
+   "Market Value": "2479626.39",
+   "Shares Held": "2459853.11",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC Pool",
+   "Ticker": "-",
+   "Identifier": "3132XGXW1",
+   "Weight": "0.0639240042",
+   "Market Value": "863328.17",
+   "Shares Held": "860887.06",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136A8L73",
+   "Weight": "0.0001184773",
+   "Market Value": "1600.1",
+   "Shares Held": "118949.1",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136AA3F0",
+   "Weight": "0.0000755349",
+   "Market Value": "1020.14",
+   "Shares Held": "78333.42",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136ASU38",
+   "Weight": "0.0129798102",
+   "Market Value": "175299.34",
+   "Shares Held": "1705978.33",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136ATE34",
+   "Weight": "0.0058125741",
+   "Market Value": "78501.95",
+   "Shares Held": "816588.83",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136AVDL0",
+   "Weight": "0.0084690389",
+   "Market Value": "114378.94",
+   "Shares Held": "1095753.75",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136B3XY1",
+   "Weight": "0.0614862489",
+   "Market Value": "830404.97",
+   "Shares Held": "843166.81",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136BX2H6",
+   "Weight": "0.0343918817",
+   "Market Value": "464480.92",
+   "Shares Held": "464031.41",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3136BYBF8",
+   "Weight": "0.1048596881",
+   "Market Value": "1416186.67",
+   "Shares Held": "1436306.16",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137AMW94",
+   "Weight": "0.0004645138",
+   "Market Value": "6273.51",
+   "Shares Held": "267406.25",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137APSV3",
+   "Weight": "0.0001113358",
+   "Market Value": "1503.65",
+   "Shares Held": "177310.83",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137ARQE9",
+   "Weight": "0.0000220724",
+   "Market Value": "298.1",
+   "Shares Held": "38994.5446",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137ARXB7",
+   "Weight": "0.0035942903",
+   "Market Value": "48542.83",
+   "Shares Held": "379626.73",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137AVHL4",
+   "Weight": "0.0001018278",
+   "Market Value": "1375.24",
+   "Shares Held": "106551.56",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137B05Q3",
+   "Weight": "0.0018058057",
+   "Market Value": "24388.38",
+   "Shares Held": "387686.44",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137B0H31",
+   "Weight": "0.0131053149",
+   "Market Value": "176994.35",
+   "Shares Held": "1235259.96",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137B2TV2",
+   "Weight": "0.0000625143",
+   "Market Value": "844.29",
+   "Shares Held": "53063.91",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137B8A72",
+   "Weight": "0.0057676029",
+   "Market Value": "77894.59",
+   "Shares Held": "581374.48",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137BRSR7",
+   "Weight": "0.0086282987",
+   "Market Value": "116529.83",
+   "Shares Held": "1397526.72",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137BY4V9",
+   "Weight": "0.0146739572",
+   "Market Value": "198179.71",
+   "Shares Held": "1860293.89",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137BYHQ6",
+   "Weight": "0.0342074403",
+   "Market Value": "461989.94",
+   "Shares Held": "4302115.1",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F64R5",
+   "Weight": "0.0106479174",
+   "Market Value": "143805.87",
+   "Shares Held": "16803284.98",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F72R5",
+   "Weight": "0.0116556876",
+   "Market Value": "157416.35",
+   "Shares Held": "4344989.12",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F83S0",
+   "Weight": "0.0172315448",
+   "Market Value": "232721.31",
+   "Shares Held": "6518457.29",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F83T8",
+   "Weight": "0.0401764628",
+   "Market Value": "542604.81",
+   "Shares Held": "5100000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F8ZX4",
+   "Weight": "0.0233970378",
+   "Market Value": "315989.62",
+   "Shares Held": "11163935.72",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F9YZ8",
+   "Weight": "0.0171169629",
+   "Market Value": "231173.82",
+   "Shares Held": "8484345.79",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137F9ZA2",
+   "Weight": "0.0256630553",
+   "Market Value": "346593.41",
+   "Shares Held": "15478171.5036",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FCJN5",
+   "Weight": "0.0046121756",
+   "Market Value": "62289.92",
+   "Shares Held": "2151623",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FEBT6",
+   "Weight": "0.0094291331",
+   "Market Value": "127345.53",
+   "Shares Held": "3940000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FL6H2",
+   "Weight": "0.0284653928",
+   "Market Value": "384440.49",
+   "Shares Held": "6650000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FQXM0",
+   "Weight": "0.001959721",
+   "Market Value": "26467.09",
+   "Shares Held": "3149644",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FWHG8",
+   "Weight": "0.0211954101",
+   "Market Value": "286255.45",
+   "Shares Held": "3308382.14",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FWV80",
+   "Weight": "0.0352612287",
+   "Market Value": "476221.92",
+   "Shares Held": "2969544.04",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FXQX9",
+   "Weight": "0.0208540368",
+   "Market Value": "281645.02",
+   "Shares Held": "5013662.94",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FXZ50",
+   "Weight": "0.0541627563",
+   "Market Value": "731497.25",
+   "Shares Held": "64929056.9424",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FXZ68",
+   "Weight": "0.0395459838",
+   "Market Value": "534089.85",
+   "Shares Held": "5100000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FYTY2",
+   "Weight": "0.0193760559",
+   "Market Value": "261684.09",
+   "Shares Held": "8174741.12",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137FYUL8",
+   "Weight": "0.0446513296",
+   "Market Value": "603040.3",
+   "Shares Held": "30398853.79",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137H0GP7",
+   "Weight": "0.0024513252",
+   "Market Value": "33106.47",
+   "Shares Held": "3690881.7",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137H2N83",
+   "Weight": "0.0279932666",
+   "Market Value": "378064.17",
+   "Shares Held": "11903633.67",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137H2N91",
+   "Weight": "0.007258677",
+   "Market Value": "98032.35",
+   "Shares Held": "766660",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137H4SK7",
+   "Weight": "0.0229836563",
+   "Market Value": "310406.68",
+   "Shares Held": "20580722.14",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137H8C74",
+   "Weight": "0.0630169712",
+   "Market Value": "851078.2",
+   "Shares Held": "4600000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137HJZV2",
+   "Weight": "0.0081079663",
+   "Market Value": "109502.46",
+   "Shares Held": "437736",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137HP2L6",
+   "Weight": "0.24208248",
+   "Market Value": "3269454.52",
+   "Shares Held": "3334990.76",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137HPKU6",
+   "Weight": "0.4580118857",
+   "Market Value": "6185697.66",
+   "Shares Held": "6353445.78",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "3137HPLY7",
+   "Weight": "0.3104010565",
+   "Market Value": "4192133.76",
+   "Shares Held": "4249069.59",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "31393UVP5",
+   "Weight": "0.0013944907",
+   "Market Value": "18833.35",
+   "Shares Held": "229301.38",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "31394EH35",
+   "Weight": "0.0007431069",
+   "Market Value": "10036.06",
+   "Shares Held": "200975.3",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "31394EM88",
+   "Weight": "0.0002894694",
+   "Market Value": "3909.44",
+   "Shares Held": "39366.89",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "31395BR88",
+   "Weight": "0.0011286843",
+   "Market Value": "15243.49",
+   "Shares Held": "159534.31",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "31395LYX3",
+   "Weight": "0.0003158726",
+   "Market Value": "4266.03",
+   "Shares Held": "70317.94",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "31398TJQ5",
+   "Weight": "0.0010050298",
+   "Market Value": "13573.47",
+   "Shares Held": "134274.91",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31406",
+   "Weight": "-0.0186501278",
+   "Market Value": "-251880.04",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31407",
+   "Weight": "0.0115242859",
+   "Market Value": "155641.7",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31408",
+   "Weight": "0.0007904579",
+   "Market Value": "10675.56",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31409",
+   "Weight": "-0.0004398884",
+   "Market Value": "-5940.93",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3140FXJH6",
+   "Weight": "0.055625308",
+   "Market Value": "751249.8",
+   "Shares Held": "828210.22",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3140LLCB5",
+   "Weight": "0.1189941267",
+   "Market Value": "1607079.89",
+   "Shares Held": "1600000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3140XQF85",
+   "Weight": "0.8552102339",
+   "Market Value": "11550075.68",
+   "Shares Held": "11355922.01",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "3140XQJK4",
+   "Weight": "0.2091592068",
+   "Market Value": "2824807.95",
+   "Shares Held": "2801125",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31410",
+   "Weight": "-0.0004394241",
+   "Market Value": "-5934.66",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31411",
+   "Weight": "-0.0018688702",
+   "Market Value": "-25240.1",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31412",
+   "Weight": "-0.0020089194",
+   "Market Value": "-27131.54",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31413",
+   "Weight": "0.0011297001",
+   "Market Value": "15257.21",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31414",
+   "Weight": "0.0007515116",
+   "Market Value": "10149.57",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31415",
+   "Weight": "-0.0034657764",
+   "Market Value": "-46807.18",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31416",
+   "Weight": "0.000436689",
+   "Market Value": "5897.72",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31417",
+   "Weight": "-0.0002448462",
+   "Market Value": "-3306.78",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31418",
+   "Weight": "0.0019117866",
+   "Market Value": "25819.71",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "FNMA",
+   "Ticker": "-",
+   "Identifier": "31418EJ50",
+   "Weight": "0.6499076105",
+   "Market Value": "8777352.97",
+   "Shares Held": "9351788.64",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31419",
+   "Weight": "0.0197184924",
+   "Market Value": "266308.88",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31420",
+   "Weight": "0.0018769654",
+   "Market Value": "25349.43",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31421",
+   "Weight": "-0.0127251732",
+   "Market Value": "-171860.33",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31422",
+   "Weight": "-0.0007434564",
+   "Market Value": "-10040.78",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "Fells Point Funding Trust",
+   "Ticker": "-",
+   "Identifier": "314382AA0",
+   "Weight": "0.0610675222",
+   "Market Value": "824749.84",
+   "Shares Held": "832000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31497",
+   "Weight": "0.0017554064",
+   "Market Value": "23707.71",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31547",
+   "Weight": "0.0011907425",
+   "Market Value": "16081.62",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31638",
+   "Weight": "-0.0000520142",
+   "Market Value": "-702.48",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31643",
+   "Weight": "-0.0001435892",
+   "Market Value": "-1939.25",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31644",
+   "Weight": "-0.0000640878",
+   "Market Value": "-865.54",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "FIGRE Trust",
+   "Ticker": "-",
+   "Identifier": "31684UAA9",
+   "Weight": "0.1106652021",
+   "Market Value": "1494593.27",
+   "Shares Held": "1495791.4",
+   "Asset Category": "ABS-O"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31699",
+   "Weight": "0.0000707947",
+   "Market Value": "956.12",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31726",
+   "Weight": "-0.0000005798",
+   "Market Value": "-7.83",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31819",
+   "Weight": "0.0001177606",
+   "Market Value": "1590.42",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31827",
+   "Weight": "-0.0002153576",
+   "Market Value": "-2908.52",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31843",
+   "Weight": "-0.0000162755",
+   "Market Value": "-219.81",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31844",
+   "Weight": "-0.0000097123",
+   "Market Value": "-131.17",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31845",
+   "Weight": "0.0000012847",
+   "Market Value": "17.35",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31908",
+   "Weight": "0.0008115307",
+   "Market Value": "10960.16",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31946",
+   "Weight": "0.0000348035",
+   "Market Value": "470.04",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "31947",
+   "Weight": "0.0020227789",
+   "Market Value": "27318.72",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32487",
+   "Weight": "0.0000936231",
+   "Market Value": "1264.43",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32488",
+   "Weight": "-0.000003831",
+   "Market Value": "-51.74",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32493",
+   "Weight": "0.0006640023",
+   "Market Value": "8967.71",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32673",
+   "Weight": "-0.0000846312",
+   "Market Value": "-1142.99",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32845",
+   "Weight": "0.0030124616",
+   "Market Value": "40684.92",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32846",
+   "Weight": "-0.0005330457",
+   "Market Value": "-7199.07",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32847",
+   "Weight": "0.0005412986",
+   "Market Value": "7310.53",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32848",
+   "Weight": "-0.0030207146",
+   "Market Value": "-40796.38",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32896",
+   "Weight": "0.0001877526",
+   "Market Value": "2535.7",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "32961",
+   "Weight": "-0.001572768",
+   "Market Value": "-21241.08",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33040",
+   "Weight": "0.0044141176",
+   "Market Value": "59615.04",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33041",
+   "Weight": "-0.0001122947",
+   "Market Value": "-1516.6",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33042",
+   "Weight": "0.0006004033",
+   "Market Value": "8108.77",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33045",
+   "Weight": "0.0000082648",
+   "Market Value": "111.62",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33126",
+   "Weight": "0.0001689581",
+   "Market Value": "2281.87",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33129",
+   "Weight": "0.000109504",
+   "Market Value": "1478.91",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33130",
+   "Weight": "0.0000591772",
+   "Market Value": "799.22",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "N/A",
+   "Ticker": "-",
+   "Identifier": "33224",
+   "Weight": "-0.0000209988",
+   "Market Value": "-283.6",
+   "Shares Held": "1",
+   "Asset Category": "DFE"
+  },
+  {
+   "Name": "Five9, Inc.",
+   "Ticker": "FIVN",
+   "Identifier": "338307AF8",
+   "Weight": "0.0802841376",
+   "Market Value": "1084280.6",
+   "Shares Held": "1222000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Flash Compute LLC",
+   "Ticker": "-",
+   "Identifier": "33853QAA9",
+   "Weight": "0.01534315",
+   "Market Value": "207217.52",
+   "Shares Held": "201000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Fluor Corp.",
+   "Ticker": "FLR",
+   "Identifier": "343412AJ1",
+   "Weight": "0.0356840241",
+   "Market Value": "481932",
+   "Shares Held": "396000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397B36",
+   "Weight": "0.0968884953",
+   "Market Value": "1308531.41",
+   "Shares Held": "1385000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397B93",
+   "Weight": "0.1309998884",
+   "Market Value": "1769224.18",
+   "Shares Held": "1875000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397C27",
+   "Weight": "0.0563965789",
+   "Market Value": "761666.23",
+   "Shares Held": "760000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397D42",
+   "Weight": "0.0635081393",
+   "Market Value": "857711.69",
+   "Shares Held": "809000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397J38",
+   "Weight": "0.0147738207",
+   "Market Value": "199528.42",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397J61",
+   "Weight": "0.0992749731",
+   "Market Value": "1340762.08",
+   "Shares Held": "1345000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Ford Motor Credit Co. LLC",
+   "Ticker": "-",
+   "Identifier": "345397J95",
+   "Weight": "0.1667174283",
+   "Market Value": "2251608.83",
+   "Shares Held": "2195000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Foundry JV Holdco LLC",
+   "Ticker": "-",
+   "Identifier": "350930AD5",
+   "Weight": "0.0775153256",
+   "Market Value": "1046886.3",
+   "Shares Held": "990000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Foundry JV Holdco LLC",
+   "Ticker": "-",
+   "Identifier": "350930AF0",
+   "Weight": "0.0417250637",
+   "Market Value": "563519.5",
+   "Shares Held": "550000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Foundry JV Holdco LLC",
+   "Ticker": "-",
+   "Identifier": "350930AH6",
+   "Weight": "0.0599126865",
+   "Market Value": "809153.16",
+   "Shares Held": "770000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Foundry JV Holdco LLC",
+   "Ticker": "-",
+   "Identifier": "350930AJ2",
+   "Weight": "0.0156225894",
+   "Market Value": "210991.5",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "35563QAA5",
+   "Weight": "0.0780994348",
+   "Market Value": "1054775.01",
+   "Shares Held": "1053167.24",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "35564K2G3",
+   "Weight": "0.1290103314",
+   "Market Value": "1742354.14",
+   "Shares Held": "1700000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "35564K2K4",
+   "Weight": "0.1315320337",
+   "Market Value": "1776411.09",
+   "Shares Held": "1700000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "FHLMC",
+   "Ticker": "-",
+   "Identifier": "35564KUX5",
+   "Weight": "0.0436339522",
+   "Market Value": "589300.07",
+   "Shares Held": "580000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "Freeport-McMoRan, Inc.",
+   "Ticker": "FCX",
+   "Identifier": "35671DCF0",
+   "Weight": "0.0848274067",
+   "Market Value": "1145639.9",
+   "Shares Held": "1163000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GCI LLC",
+   "Ticker": "-",
+   "Identifier": "36166TAB6",
+   "Weight": "0.043230078",
+   "Market Value": "583845.53",
+   "Shares Held": "605000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GCAT Trust",
+   "Ticker": "-",
+   "Identifier": "36166XAA9",
+   "Weight": "0.1129065595",
+   "Market Value": "1524864.01",
+   "Shares Held": "1737554",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GCAT Trust",
+   "Ticker": "-",
+   "Identifier": "36167FAA7",
+   "Weight": "0.0071350811",
+   "Market Value": "96363.12",
+   "Shares Held": "97318.59",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GCAT Trust",
+   "Ticker": "-",
+   "Identifier": "36168HAA2",
+   "Weight": "0.0855100192",
+   "Market Value": "1154858.95",
+   "Shares Held": "1369648.78",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GFL Environmental, Inc.",
+   "Ticker": "GFL",
+   "Identifier": "36168QAL8",
+   "Weight": "0.0061547056",
+   "Market Value": "83122.62",
+   "Shares Held": "85000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GFL Environmental, Inc.",
+   "Ticker": "GFL",
+   "Identifier": "36168QAN4",
+   "Weight": "0.0054686871",
+   "Market Value": "73857.57",
+   "Shares Held": "75000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "36179XDD5",
+   "Weight": "2.2068150138",
+   "Market Value": "29804227.56",
+   "Shares Held": "31767750.27",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "3622ADUR7",
+   "Weight": "0.2486517362",
+   "Market Value": "3358175.87",
+   "Shares Held": "3309480.5",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GSR Mortgage Loan Trust",
+   "Ticker": "-",
+   "Identifier": "36242DQU0",
+   "Weight": "0.0157766773",
+   "Market Value": "213072.54",
+   "Shares Held": "290434.23",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GS Mortgage Securities Trust",
+   "Ticker": "-",
+   "Identifier": "36250GAW5",
+   "Weight": "0.0121617651",
+   "Market Value": "164251.2",
+   "Shares Held": "190000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GLS Auto Receivables Issuer Trust",
+   "Ticker": "-",
+   "Identifier": "36265NAE3",
+   "Weight": "0.0538770839",
+   "Market Value": "727639.09",
+   "Shares Held": "724071.45",
+   "Asset Category": "ABS-O"
+  },
+  {
+   "Name": "GS Mortgage-Backed Securities Trust",
+   "Ticker": "-",
+   "Identifier": "36272KAA8",
+   "Weight": "0.0381784109",
+   "Market Value": "515620.04",
+   "Shares Held": "510277.94",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GS Mortgage-Backed Securities Trust",
+   "Ticker": "-",
+   "Identifier": "36272MAA4",
+   "Weight": "0.0698924181",
+   "Market Value": "943934.82",
+   "Shares Held": "934155.15",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GS Mortgage-Backed Securities Trust",
+   "Ticker": "-",
+   "Identifier": "36273FAA8",
+   "Weight": "0.1997430632",
+   "Market Value": "2697637.85",
+   "Shares Held": "2669688.88",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GFL Environmental Holdings US, Inc.",
+   "Ticker": "-",
+   "Identifier": "36273TAA8",
+   "Weight": "0.0451983244",
+   "Market Value": "610427.76",
+   "Shares Held": "625000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GS Mortgage-Backed Securities Trust",
+   "Ticker": "-",
+   "Identifier": "36275BAA5",
+   "Weight": "0.1258733935",
+   "Market Value": "1699988.1",
+   "Shares Held": "1700000",
+   "Asset Category": "ABS-O"
+  },
+  {
+   "Name": "GS Mortgage-Backed Securities Trust",
+   "Ticker": "-",
+   "Identifier": "362980AA2",
+   "Weight": "0.0374160356",
+   "Market Value": "505323.75",
+   "Shares Held": "507437.79",
+   "Asset Category": "ABS-O"
+  },
+  {
+   "Name": "Gap, Inc. (The)",
+   "Ticker": "GAP",
+   "Identifier": "364760AP3",
+   "Weight": "0.0034657667",
+   "Market Value": "46807.05",
+   "Shares Held": "50000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Garda World Security Corp.",
+   "Ticker": "-",
+   "Identifier": "36485MAL3",
+   "Weight": "0.0057958314",
+   "Market Value": "78275.83",
+   "Shares Held": "80000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Garda World Security Corp.",
+   "Ticker": "-",
+   "Identifier": "36485MAN9",
+   "Weight": "0.003796668",
+   "Market Value": "51276.05",
+   "Shares Held": "50000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Garda World Security Corp.",
+   "Ticker": "-",
+   "Identifier": "36485MAP4",
+   "Weight": "0.003298836",
+   "Market Value": "44552.56",
+   "Shares Held": "43000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Garda World Security Corp.",
+   "Ticker": "-",
+   "Identifier": "36485MAQ2",
+   "Weight": "0.0042174849",
+   "Market Value": "56959.41",
+   "Shares Held": "56000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Generadora de Gatun SA",
+   "Ticker": "-",
+   "Identifier": "36875RAB2",
+   "Weight": "0.0468123762",
+   "Market Value": "632226.4",
+   "Shares Held": "620000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "General Motors Financial Co., Inc.",
+   "Ticker": "-",
+   "Identifier": "37045XDE3",
+   "Weight": "0.0505714411",
+   "Market Value": "682994.6",
+   "Shares Held": "762000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "General Motors Financial Co., Inc.",
+   "Ticker": "-",
+   "Identifier": "37045XEY8",
+   "Weight": "0.0411338493",
+   "Market Value": "555534.83",
+   "Shares Held": "540000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "General Motors Financial Co., Inc.",
+   "Ticker": "-",
+   "Identifier": "37045XFA9",
+   "Weight": "0.1594538614",
+   "Market Value": "2153510.44",
+   "Shares Held": "2140000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "General Motors Financial Co., Inc.",
+   "Ticker": "-",
+   "Identifier": "37045XFC5",
+   "Weight": "0.2707754802",
+   "Market Value": "3656968.97",
+   "Shares Held": "3545000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Genesis Energy LP",
+   "Ticker": "GEL",
+   "Identifier": "37185LAP7",
+   "Weight": "0.0019210102",
+   "Market Value": "25944.28",
+   "Shares Held": "25000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Genesis Energy LP",
+   "Ticker": "GEL",
+   "Identifier": "37185LAR3",
+   "Weight": "0.0022522106",
+   "Market Value": "30417.32",
+   "Shares Held": "29000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Genesis Energy LP",
+   "Ticker": "GEL",
+   "Identifier": "37185LAS1",
+   "Weight": "0.0043854331",
+   "Market Value": "59227.64",
+   "Shares Held": "59000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Wrangler Holdco Corp.",
+   "Ticker": "-",
+   "Identifier": "37441QAA9",
+   "Weight": "0.0228085963",
+   "Market Value": "308042.4",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Glencore Funding LLC",
+   "Ticker": "-",
+   "Identifier": "378272BP2",
+   "Weight": "0.1463214369",
+   "Market Value": "1976149.96",
+   "Shares Held": "1866000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Glencore Funding LLC",
+   "Ticker": "-",
+   "Identifier": "378272BU1",
+   "Weight": "0.1706456016",
+   "Market Value": "2304660.93",
+   "Shares Held": "2237000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Glencore Funding LLC",
+   "Ticker": "-",
+   "Identifier": "378272CA4",
+   "Weight": "0.0975108962",
+   "Market Value": "1316937.27",
+   "Shares Held": "1280000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Global Payments, Inc.",
+   "Ticker": "GPN",
+   "Identifier": "37940XAY8",
+   "Weight": "0.2390972975",
+   "Market Value": "3229138.02",
+   "Shares Held": "3310000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Global Medical Response, Inc.",
+   "Ticker": "-",
+   "Identifier": "37960BAD7",
+   "Weight": "0.0033850791",
+   "Market Value": "45717.32",
+   "Shares Held": "44000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Global Infrastructure Solutions, Inc.",
+   "Ticker": "-",
+   "Identifier": "37960XAA5",
+   "Weight": "0.0011090079",
+   "Market Value": "14977.75",
+   "Shares Held": "15000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GLS Auto Receivables Issuer Trust",
+   "Ticker": "-",
+   "Identifier": "38014QAE6",
+   "Weight": "0.0069239129",
+   "Market Value": "93511.18",
+   "Shares Held": "92815.98",
+   "Asset Category": "ABS-O"
+  },
+  {
+   "Name": "Go Daddy Operating Co. LLC",
+   "Ticker": "-",
+   "Identifier": "38016LAA3",
+   "Weight": "0.0070367888",
+   "Market Value": "95035.63",
+   "Shares Held": "95000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GA79",
+   "Weight": "0.0928052745",
+   "Market Value": "1253385.31",
+   "Shares Held": "1195000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GB60",
+   "Weight": "0.0295706741",
+   "Market Value": "399367.91",
    "Shares Held": "400000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.375",
-   "Maturity": "Feb 15 2029"
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GC28",
+   "Weight": "0.0340174487",
+   "Market Value": "459424",
+   "Shares Held": "448000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GC36",
+   "Weight": "0.0525175521",
+   "Market Value": "709277.88",
+   "Shares Held": "700000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GC93",
+   "Weight": "0.0544677645",
+   "Market Value": "735616.55",
+   "Shares Held": "725000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GYB4",
+   "Weight": "0.2087280437",
+   "Market Value": "2818984.86",
+   "Shares Held": "3130000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GYN8",
+   "Weight": "0.1005187916",
+   "Market Value": "1357560.52",
+   "Shares Held": "1525000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38141GZK3",
+   "Weight": "0.0928454765",
+   "Market Value": "1253928.26",
+   "Shares Held": "1270000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goldman Sachs Group, Inc. (The)",
+   "Ticker": "GS",
+   "Identifier": "38145GAS9",
+   "Weight": "0.0762008532",
+   "Market Value": "1029133.64",
+   "Shares Held": "1052000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goodyear Tire & Rubber Co. (The)",
+   "Ticker": "-",
+   "Identifier": "382550BN0",
+   "Weight": "0.0130829182",
+   "Market Value": "176691.87",
+   "Shares Held": "185000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Goodyear Tire & Rubber Co. (The)",
+   "Ticker": "-",
+   "Identifier": "382550BS9",
+   "Weight": "0.0068782953",
+   "Market Value": "92895.09",
+   "Shares Held": "95000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38376RCK0",
+   "Weight": "0.000398047",
+   "Market Value": "5375.84",
+   "Shares Held": "178019.72",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38378BXV6",
+   "Weight": "0.0000014616",
+   "Market Value": "19.74",
+   "Shares Held": "1974266.77",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38379AXJ4",
+   "Weight": "0.0473757117",
+   "Market Value": "639834.55",
+   "Shares Held": "810000",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38379HNC5",
+   "Weight": "0.0073959562",
+   "Market Value": "99886.38",
+   "Shares Held": "1194227.45",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38380M4K4",
+   "Weight": "0.030426514",
+   "Market Value": "410926.49",
+   "Shares Held": "8455973.59",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38380RQC7",
+   "Weight": "0.0352860148",
+   "Market Value": "476556.67",
+   "Shares Held": "7685059.18",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38380RZA1",
+   "Weight": "0.1659259353",
+   "Market Value": "2240919.29",
+   "Shares Held": "2525677.57",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381DXB1",
+   "Weight": "0.0479901988",
+   "Market Value": "648133.53",
+   "Shares Held": "10042260.75",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381L5V0",
+   "Weight": "0.0845916493",
+   "Market Value": "1142455.87",
+   "Shares Held": "16365874.43",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381L8C9",
+   "Weight": "0.080184942",
+   "Market Value": "1082940.91",
+   "Shares Held": "27286631.37",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381ME63",
+   "Weight": "0.1731993529",
+   "Market Value": "2339150.72",
+   "Shares Held": "2378679.62",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381MR93",
+   "Weight": "0.0356809816",
+   "Market Value": "481890.91",
+   "Shares Held": "7210416.91",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381MVS6",
+   "Weight": "0.0655725248",
+   "Market Value": "885592.33",
+   "Shares Held": "889647.7",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381SEL7",
+   "Weight": "0.2733701592",
+   "Market Value": "3692011.51",
+   "Shares Held": "3787754.58",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381SQX8",
+   "Weight": "0.2414076043",
+   "Market Value": "3260339.96",
+   "Shares Held": "3350818.77",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381SRT6",
+   "Weight": "0.2282837503",
+   "Market Value": "3083095.23",
+   "Shares Held": "3032473.24",
+   "Asset Category": "ABS-MBS"
+  },
+  {
+   "Name": "GNMA",
+   "Ticker": "-",
+   "Identifier": "38381SZD2",
+   "Weight": "0.164220501",
+   "Market Value": "2217886.48",
+   "Shares Held": "2197926.45",
+   "Asset Category": "ABS-MBS"
   }
  ]
 }
