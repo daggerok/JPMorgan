@@ -8,10 +8,10 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q781&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q781&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q781&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q781&country=us&role=adv&locale=en-US&fromDate=2011-07-29&toDate=2026-09-24",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q781&country=us&role=adv&locale=en-US&fromDate=2011-07-29&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JPEF",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
+  "historySource": "Yahoo Finance public chart API (adjusted close)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
@@ -31,23 +31,23 @@
   "net": 0.44
  },
  "nav": {
-  "display": "$81.34",
-  "value": 81.3440187,
-  "asOfDate": "Sep 24 2026"
+  "display": "$81.86",
+  "value": 81.85875537,
+  "asOfDate": "Sep 25 2026"
  },
  "marketPrice": {
-  "display": "$81.36",
-  "value": 81.36,
-  "asOfDate": "Sep 24 2026"
+  "display": "$81.88",
+  "value": 81.88,
+  "asOfDate": "Sep 25 2026"
  },
  "premiumDiscount": {
-  "display": "0.02%",
-  "value": 0.0196
+  "display": "0.03%",
+  "value": 0.026
  },
  "aum": {
-  "display": "$2,019.78 M",
-  "value": 2019781013.55,
-  "asOfDate": "Sep 24 2026",
+  "display": "$2,034.61 M",
+  "value": 2034608451.04,
+  "asOfDate": "Sep 25 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
@@ -57,7 +57,7 @@
   "distributionRate": null,
   "secYield": 0.59,
   "secYieldText": "0.59%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 23 2026",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 24 2026",
   "unsubsidizedSecYield": 0.5
  },
  "returns": {
@@ -66,8 +66,8 @@
    "asOfDate": "Aug 31 2026",
    "mo1": 1.36,
    "mo1Text": "1.36%",
-   "qtd": 1.68,
-   "qtdText": "1.68%",
+   "qtd": 1.67,
+   "qtdText": "1.67%",
    "ytd": 8.63,
    "ytdText": "8.63%",
    "yr1": 12.61,
@@ -101,24 +101,20 @@
   ],
   "rows": [
    [
-    "12/20/2021",
-    "0.15717"
-   ],
-   [
-    "12/20/2022",
-    "0.2176"
-   ],
-   [
     "12/19/2023",
-    "0.2039"
+    "0.204"
+   ],
+   [
+    "12/16/2024",
+    "0.092"
    ],
    [
     "12/24/2024",
-    "0.38806"
+    "0.388"
    ],
    [
     "12/16/2025",
-    "0.52282"
+    "0.523"
    ]
   ]
  },
@@ -137,8 +133,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 793,
+  "totalRows": 792,
   "asOf": "Sep 24 2026",
-  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+  "source": "Yahoo Finance public chart API (adjusted close)"
  }
 }

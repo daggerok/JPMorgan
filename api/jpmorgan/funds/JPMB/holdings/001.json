@@ -2,7 +2,7 @@
  "ticker": "JPMB",
  "page": 1,
  "pageSize": 250,
- "totalRows": 215,
+ "totalRows": 204,
  "headers": [
   "Name",
   "Ticker",
@@ -10,2375 +10,1844 @@
   "Weight",
   "Market Value",
   "Shares Held",
-  "Asset Category",
-  "Coupon",
-  "Maturity"
+  "Asset Category"
  ],
  "rows": [
   {
-   "Name": "FEDERATIVE 6.625% 03/35",
-   "Ticker": "-",
-   "Identifier": "105756CL2",
-   "Weight": "2.66",
-   "Market Value": "2574000",
-   "Shares Held": "2600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.625",
-   "Maturity": "Mar 15 2035"
-  },
-  {
-   "Name": "REPUBLIC OF 7.125% 02/32",
-   "Ticker": "-",
-   "Identifier": "900123DP2",
-   "Weight": "1.44",
-   "Market Value": "1389297",
-   "Shares Held": "1400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.125",
-   "Maturity": "Feb 12 2032"
-  },
-  {
-   "Name": "REPUBLIC OF 5.125% 02/28",
-   "Ticker": "-",
-   "Identifier": "900123CP3",
-   "Weight": "1.39",
-   "Market Value": "1347893.96",
-   "Shares Held": "1372000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.125",
-   "Maturity": "Feb 17 2028"
-  },
-  {
-   "Name": "FEDERAL 7.375% 09/33",
-   "Ticker": "-",
-   "Identifier": "BP5GRZ1",
-   "Weight": "1.34",
-   "Market Value": "1298193",
-   "Shares Held": "1300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Sep 28 2033"
-  },
-  {
-   "Name": "REPUBLIC OF 8.25% 01/37",
-   "Ticker": "-",
-   "Identifier": "BN72KY3",
-   "Weight": "1.3",
-   "Market Value": "1252463.8",
-   "Shares Held": "1180000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.25",
-   "Maturity": "Jan 30 2037"
-  },
-  {
-   "Name": "KINGDOM OF 6.75% 09/29",
-   "Ticker": "-",
-   "Identifier": "BFB5LX8",
-   "Weight": "1.2",
-   "Market Value": "1159704",
-   "Shares Held": "1200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.75",
-   "Maturity": "Sep 20 2029"
-  },
-  {
-   "Name": "REPUBLIC OF 6.95% 09/35",
-   "Ticker": "-",
-   "Identifier": "900123DR8",
-   "Weight": "1.19",
-   "Market Value": "1147908",
-   "Shares Held": "1200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.95",
-   "Maturity": "Sep 16 2035"
-  },
-  {
-   "Name": "REPUBLIC OF STEP 07/35",
-   "Ticker": "-",
-   "Identifier": "BQKQW58",
-   "Weight": "1.13",
-   "Market Value": "1092876",
-   "Shares Held": "1200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5",
-   "Maturity": "Jul 03 2035"
-  },
-  {
-   "Name": "ROMANIA BOND 7.125% 01/33",
-   "Ticker": "-",
-   "Identifier": "BPZK623",
-   "Weight": "1.1",
-   "Market Value": "1063587.2",
-   "Shares Held": "1040000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.125",
-   "Maturity": "Jan 17 2033"
-  },
-  {
-   "Name": "REPUBLIC OF 7.158% 03/45",
-   "Ticker": "-",
-   "Identifier": "P3699PGJ0",
-   "Weight": "1.07",
-   "Market Value": "1033500",
-   "Shares Held": "1000000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.158",
-   "Maturity": "Mar 12 2045"
-  },
-  {
-   "Name": "REPUBLIC OF 7.1% 11/36",
-   "Ticker": "-",
-   "Identifier": "BT6NX06",
-   "Weight": "1.06",
-   "Market Value": "1021300",
-   "Shares Held": "1000000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.1",
-   "Maturity": "Nov 19 2036"
-  },
-  {
-   "Name": "REPUBLIC OF 7.75% 11/36",
-   "Ticker": "-",
-   "Identifier": "195325EP6",
-   "Weight": "1.01",
-   "Market Value": "972116",
-   "Shares Held": "950000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.75",
-   "Maturity": "Nov 07 2036"
-  },
-  {
-   "Name": "ARAB 5.875% 02/31",
-   "Ticker": "-",
-   "Identifier": "BLH1TJ4",
-   "Weight": "0.97",
-   "Market Value": "938750",
-   "Shares Held": "1000000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.875",
-   "Maturity": "Feb 16 2031"
-  },
-  {
-   "Name": "REPUBLIC OF 3% 01/30",
-   "Ticker": "-",
-   "Identifier": "195325DR3",
-   "Weight": "0.93",
-   "Market Value": "901310",
-   "Shares Held": "1000000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3",
-   "Maturity": "Jan 30 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 5.625% 02/44",
-   "Ticker": "-",
-   "Identifier": "195325BR5",
-   "Weight": "0.91",
-   "Market Value": "875325",
-   "Shares Held": "1100000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "Feb 26 2044"
-  },
-  {
-   "Name": "JPMORGAN U.S. GOVERNMENT",
-   "Ticker": "MGMXX",
-   "Identifier": "4812C2270",
-   "Weight": "0.9",
-   "Market Value": "866180.99",
-   "Shares Held": "866180",
-   "Asset Category": "MONEY MARKET",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "REPUBLIC OF 7.375% 04/30",
-   "Ticker": "-",
-   "Identifier": "195325ER2",
-   "Weight": "0.85",
-   "Market Value": "823760",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Apr 25 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 7.95% 11/54",
-   "Ticker": "-",
-   "Identifier": "BT6NWZ4",
-   "Weight": "0.84",
-   "Market Value": "812000",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.95",
-   "Maturity": "Nov 19 2054"
-  },
-  {
-   "Name": "FEDERAL 7.143% 02/30",
-   "Ticker": "-",
-   "Identifier": "BDFK834",
-   "Weight": "0.84",
-   "Market Value": "810000",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.143",
-   "Maturity": "Feb 23 2030"
-  },
-  {
-   "Name": "SERBIA 6.5% 09/33",
-   "Ticker": "-",
-   "Identifier": "BPTJVP4",
-   "Weight": "0.84",
-   "Market Value": "809800",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Sep 26 2033"
-  },
-  {
-   "Name": "DOMINICAN 6.95% 03/37",
-   "Ticker": "-",
-   "Identifier": "BMTYZR8",
-   "Weight": "0.83",
-   "Market Value": "804432",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.95",
-   "Maturity": "Mar 15 2037"
-  },
-  {
-   "Name": "KINGDOM OF 3% 12/32",
-   "Ticker": "-",
-   "Identifier": "BMHLJ13",
-   "Weight": "0.82",
-   "Market Value": "797759.55",
-   "Shares Held": "945000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3",
-   "Maturity": "Dec 15 2032"
-  },
-  {
-   "Name": "FEDERATIVE 6% 10/33",
-   "Ticker": "-",
-   "Identifier": "105756CF5",
-   "Weight": "0.81",
-   "Market Value": "780232",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6",
-   "Maturity": "Oct 20 2033"
-  },
-  {
-   "Name": "KINGDOM OF 7.5% 02/36",
-   "Ticker": "-",
-   "Identifier": "BRBZFW9",
-   "Weight": "0.79",
-   "Market Value": "762672",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.5",
-   "Maturity": "Feb 12 2036"
-  },
-  {
-   "Name": "REPUBLIC OF 6.6% 06/36",
-   "Ticker": "-",
-   "Identifier": "P5015VAQ9",
-   "Weight": "0.79",
-   "Market Value": "760825.35",
-   "Shares Held": "750000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.6",
-   "Maturity": "Jun 13 2036"
-  },
-  {
-   "Name": "REPUBLIC OF 4.2% 10/50",
-   "Ticker": "-",
-   "Identifier": "455780CT1",
-   "Weight": "0.77",
-   "Market Value": "742855.8",
-   "Shares Held": "1020000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.2",
-   "Maturity": "Oct 15 2050"
-  },
-  {
-   "Name": "REPUBLIC OF 7.375% 09/37",
-   "Ticker": "-",
-   "Identifier": "195325BK0",
-   "Weight": "0.77",
-   "Market Value": "742259",
-   "Shares Held": "749000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Sep 18 2037"
-  },
-  {
-   "Name": "REPUBLIC OF THE 5% 01/37",
-   "Ticker": "-",
-   "Identifier": "718286BW6",
-   "Weight": "0.76",
-   "Market Value": "736504",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5",
-   "Maturity": "Jan 13 2037"
-  },
-  {
-   "Name": "KINGDOM OF 2.25% 02/33",
-   "Ticker": "-",
-   "Identifier": "BMFDCG7",
-   "Weight": "0.76",
-   "Market Value": "732582",
-   "Shares Held": "900000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.25",
-   "Maturity": "Feb 02 2033"
-  },
-  {
-   "Name": "ORIENTAL 5.75% 10/34",
-   "Ticker": "-",
-   "Identifier": "760942BE1",
-   "Weight": "0.75",
-   "Market Value": "727175",
-   "Shares Held": "725000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Oct 28 2034"
-  },
-  {
-   "Name": "DOMINICAN 7.45% 04/44",
-   "Ticker": "-",
-   "Identifier": "BLZGST4",
-   "Weight": "0.74",
-   "Market Value": "719810",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.45",
-   "Maturity": "Apr 30 2044"
-  },
-  {
-   "Name": "GACI FIRST 4.875% 02/35",
-   "Ticker": "-",
-   "Identifier": "BMXD0G5",
-   "Weight": "0.73",
-   "Market Value": "710360.85",
-   "Shares Held": "771000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.875",
-   "Maturity": "Feb 14 2035"
-  },
-  {
-   "Name": "ISLAMIC 7.375% 04/31",
-   "Ticker": "-",
-   "Identifier": "BNYK8D5",
-   "Weight": "0.73",
-   "Market Value": "707315.42",
-   "Shares Held": "721000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Apr 08 2031"
-  },
-  {
-   "Name": "PETROLEOS 7.69% 01/50",
-   "Ticker": "-",
-   "Identifier": "71654QDD1",
-   "Weight": "0.72",
-   "Market Value": "700400",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.69",
-   "Maturity": "Jan 23 2050"
-  },
-  {
-   "Name": "FEDERAL 10.375% 12/34",
-   "Ticker": "-",
-   "Identifier": "BPG4R43",
-   "Weight": "0.72",
-   "Market Value": "699414",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "10.375",
-   "Maturity": "Dec 09 2034"
-  },
-  {
-   "Name": "MAGYARORSZAG 6% 09/35",
-   "Ticker": "-",
-   "Identifier": "BV4K8B9",
-   "Weight": "0.72",
-   "Market Value": "694743",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6",
-   "Maturity": "Sep 26 2035"
-  },
-  {
-   "Name": "KINGDOM OF 5.25% 01/50",
-   "Ticker": "-",
-   "Identifier": "BHN66T4",
-   "Weight": "0.7",
-   "Market Value": "672296",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.25",
-   "Maturity": "Jan 16 2050"
-  },
-  {
-   "Name": "REPUBLIC OF 5.95% 01/31",
-   "Ticker": "-",
-   "Identifier": "900123DA5",
-   "Weight": "0.69",
-   "Market Value": "671447",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.95",
-   "Maturity": "Jan 15 2031"
-  },
-  {
-   "Name": "HASHEMITE 7.5% 01/29",
-   "Ticker": "-",
-   "Identifier": "BPK45P6",
-   "Weight": "0.69",
-   "Market Value": "664937",
-   "Shares Held": "650000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.5",
-   "Maturity": "Jan 13 2029"
-  },
-  {
-   "Name": "REPUBLIC OF 6.8% 11/36",
-   "Ticker": "-",
-   "Identifier": "900123DS6",
-   "Weight": "0.68",
-   "Market Value": "654675",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.8",
-   "Maturity": "Nov 04 2036"
-  },
-  {
-   "Name": "OMAN 7.375% 10/32",
-   "Ticker": "-",
-   "Identifier": "BN4LSF0",
-   "Weight": "0.67",
-   "Market Value": "649146",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Oct 28 2032"
-  },
-  {
-   "Name": "CNAC HK 5.125% 03/28",
-   "Ticker": "-",
-   "Identifier": "BFWX7G6",
-   "Weight": "0.67",
-   "Market Value": "647634",
-   "Shares Held": "650000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.125",
-   "Maturity": "Mar 14 2028"
-  },
-  {
-   "Name": "DOMINICAN 5.3% 01/41",
-   "Ticker": "-",
-   "Identifier": "P3579ECJ4",
-   "Weight": "0.66",
-   "Market Value": "637725",
-   "Shares Held": "750000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.3",
-   "Maturity": "Jan 21 2041"
-  },
-  {
-   "Name": "REPUBLIC OF 4.85% 09/29",
-   "Ticker": "-",
-   "Identifier": "836205BA1",
-   "Weight": "0.66",
-   "Market Value": "633573.27",
-   "Shares Held": "649000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.85",
-   "Maturity": "Sep 30 2029"
-  },
-  {
-   "Name": "MAGYARORSZAG 6.25% 09/32",
-   "Ticker": "-",
-   "Identifier": "BPXYFH5",
-   "Weight": "0.63",
-   "Market Value": "613788",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.25",
-   "Maturity": "Sep 22 2032"
-  },
-  {
-   "Name": "FEDERATIVE 5% 01/45",
-   "Ticker": "-",
-   "Identifier": "105756BW9",
-   "Weight": "0.63",
-   "Market Value": "610400",
-   "Shares Held": "800000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5",
-   "Maturity": "Jan 27 2045"
-  },
-  {
-   "Name": "REPUBLIC OF 7.5% 02/34",
-   "Ticker": "-",
-   "Identifier": "195325EG6",
-   "Weight": "0.63",
-   "Market Value": "608700",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.5",
-   "Maturity": "Feb 02 2034"
-  },
-  {
-   "Name": "OMAN 6.75% 01/48",
-   "Ticker": "-",
-   "Identifier": "BFFXP14",
-   "Weight": "0.63",
-   "Market Value": "608004",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.75",
-   "Maturity": "Jan 17 2048"
-  },
-  {
-   "Name": "REPUBLIC OF 5.5% 04/53",
-   "Ticker": "-",
-   "Identifier": "731011AW2",
-   "Weight": "0.63",
-   "Market Value": "605759",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.5",
-   "Maturity": "Apr 04 2053"
-  },
-  {
-   "Name": "UNITED 6.875% 05/37",
-   "Ticker": "-",
-   "Identifier": "91087BBC3",
-   "Weight": "0.62",
-   "Market Value": "600486",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.875",
-   "Maturity": "May 13 2037"
-  },
-  {
-   "Name": "ARAB REPUBLIC 8.5% 01/47",
-   "Ticker": "-",
-   "Identifier": "BD31H09",
-   "Weight": "0.62",
-   "Market Value": "600437.5",
-   "Shares Held": "650000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.5",
-   "Maturity": "Jan 31 2047"
-  },
-  {
-   "Name": "REPUBLIC OF 5.875% 06/30",
-   "Ticker": "-",
-   "Identifier": "836205AY0",
-   "Weight": "0.62",
-   "Market Value": "599034",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.875",
-   "Maturity": "Jun 22 2030"
-  },
-  {
-   "Name": "UNITED 7.375% 05/55",
-   "Ticker": "-",
-   "Identifier": "91087BBD1",
-   "Weight": "0.62",
-   "Market Value": "595875",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "May 13 2055"
-  },
-  {
-   "Name": "FEDERATIVE 6.125% 01/32",
-   "Ticker": "-",
-   "Identifier": "105756CK4",
-   "Weight": "0.62",
-   "Market Value": "595050",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Jan 22 2032"
-  },
-  {
-   "Name": "DOMINICAN 4.875% 09/32",
-   "Ticker": "-",
-   "Identifier": "BJP84G5",
-   "Weight": "0.62",
-   "Market Value": "594912.5",
-   "Shares Held": "650000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.875",
-   "Maturity": "Sep 23 2032"
-  },
-  {
-   "Name": "KINGDOM OF 7% 10/28",
-   "Ticker": "-",
-   "Identifier": "BDFD907",
-   "Weight": "0.61",
-   "Market Value": "588786",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7",
-   "Maturity": "Oct 12 2028"
-  },
-  {
-   "Name": "REPUBLIC OF 5.5% 07/37",
-   "Ticker": "-",
-   "Identifier": "BVLK2R6",
-   "Weight": "0.61",
-   "Market Value": "586248",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.5",
-   "Maturity": "Jul 01 2037"
-  },
-  {
-   "Name": "KINGDOM OF 4.75% 01/30",
-   "Ticker": "-",
-   "Identifier": "BPQWK04",
-   "Weight": "0.6",
-   "Market Value": "584328",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.75",
-   "Maturity": "Jan 16 2030"
-  },
-  {
-   "Name": "KINGDOM OF 4.375% 04/29",
-   "Ticker": "-",
-   "Identifier": "BHN6649",
-   "Weight": "0.6",
-   "Market Value": "582828",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.375",
-   "Maturity": "Apr 16 2029"
-  },
-  {
-   "Name": "FEDERATIVE 7.25% 01/56",
-   "Ticker": "-",
-   "Identifier": "105756CN8",
-   "Weight": "0.59",
-   "Market Value": "571200",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.25",
-   "Maturity": "Jan 12 2056"
-  },
-  {
-   "Name": "REPUBLIC OF 6.5% 09/33",
-   "Ticker": "-",
-   "Identifier": "900123DD9",
-   "Weight": "0.59",
-   "Market Value": "570000.42",
-   "Shares Held": "601000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Sep 20 2033"
-  },
-  {
-   "Name": "DEMOCRATIC STEP 03/33",
-   "Ticker": "-",
-   "Identifier": "BPLNMN9",
-   "Weight": "0.59",
-   "Market Value": "570000",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.35",
-   "Maturity": "Mar 15 2033"
-  },
-  {
-   "Name": "KINGDOM OF 5.625% 05/34",
-   "Ticker": "-",
-   "Identifier": "BP4DVH3",
-   "Weight": "0.59",
-   "Market Value": "569665.96",
-   "Shares Held": "659000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "May 18 2034"
-  },
-  {
-   "Name": "DOMINICAN 4.5% 01/30",
-   "Ticker": "-",
-   "Identifier": "P3579ECF2",
-   "Weight": "0.59",
-   "Market Value": "569148",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.5",
-   "Maturity": "Jan 30 2030"
-  },
-  {
-   "Name": "DOMINICAN 7.05% 02/31",
-   "Ticker": "-",
-   "Identifier": "BQXTZM2",
-   "Weight": "0.58",
-   "Market Value": "564575",
-   "Shares Held": "550000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.05",
-   "Maturity": "Feb 03 2031"
-  },
-  {
-   "Name": "REPUBLIC OF 7.75% 01/38",
-   "Ticker": "-",
-   "Identifier": "B2NMTZ4",
-   "Weight": "0.58",
-   "Market Value": "560830",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.75",
-   "Maturity": "Jan 17 2038"
-  },
-  {
-   "Name": "UNITED 4.75% 04/32",
-   "Ticker": "-",
-   "Identifier": "91087BAK6",
-   "Weight": "0.58",
-   "Market Value": "559224",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.75",
-   "Maturity": "Apr 27 2032"
-  },
-  {
-   "Name": "KINGDOM OF 5.625% 09/31",
-   "Ticker": "-",
-   "Identifier": "BJLBK37",
-   "Weight": "0.56",
-   "Market Value": "542484",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "Sep 30 2031"
-  },
-  {
-   "Name": "DOMINICAN 5.875% 01/60",
-   "Ticker": "-",
-   "Identifier": "BJV2XC0",
-   "Weight": "0.56",
-   "Market Value": "542139",
-   "Shares Held": "650000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.875",
-   "Maturity": "Jan 30 2060"
-  },
-  {
-   "Name": "REPUBLIC OF 6.875% 01/36",
-   "Ticker": "-",
-   "Identifier": "BS298B7",
-   "Weight": "0.56",
-   "Market Value": "537702.96",
-   "Shares Held": "516000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.875",
-   "Maturity": "Jan 31 2036"
-  },
-  {
-   "Name": "REPUBLIC OF 5.75% 05/47",
-   "Ticker": "-",
-   "Identifier": "900123CM0",
-   "Weight": "0.55",
-   "Market Value": "531142.5",
-   "Shares Held": "700000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "May 11 2047"
-  },
-  {
-   "Name": "KINGDOM OF 5.45% 09/32",
-   "Ticker": "-",
-   "Identifier": "BLNPBC7",
-   "Weight": "0.55",
-   "Market Value": "529002",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.45",
-   "Maturity": "Sep 16 2032"
-  },
-  {
-   "Name": "ARAB 8.625% 02/30",
-   "Ticker": "-",
-   "Identifier": "BV0XZW2",
-   "Weight": "0.54",
-   "Market Value": "520000",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.625",
-   "Maturity": "Feb 04 2030"
-  },
-  {
-   "Name": "EXPORT-IMPORT 2.25% 01/31",
-   "Ticker": "-",
-   "Identifier": "30216KAF9",
-   "Weight": "0.54",
-   "Market Value": "519012",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.25",
-   "Maturity": "Jan 13 2031"
-  },
-  {
-   "Name": "DEMOCRATIC STEP 02/38",
-   "Ticker": "-",
-   "Identifier": "BPLNMD9",
-   "Weight": "0.53",
-   "Market Value": "512035",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.6",
-   "Maturity": "Feb 15 2038"
-  },
-  {
-   "Name": "REPUBLIC OF 8% 11/29",
-   "Ticker": "-",
-   "Identifier": "BKWCVZ5",
-   "Weight": "0.52",
-   "Market Value": "505725",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8",
-   "Maturity": "Nov 26 2029"
-  },
-  {
-   "Name": "REPUBLIC OF 8.75% 04/32",
-   "Ticker": "-",
-   "Identifier": "BP2R4G7",
-   "Weight": "0.52",
-   "Market Value": "503540",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.75",
-   "Maturity": "Apr 14 2032"
-  },
-  {
-   "Name": "EAGLE FUNDING 5.5% 08/30",
-   "Ticker": "-",
-   "Identifier": "BPK5PZ9",
-   "Weight": "0.51",
-   "Market Value": "492941.45",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.5",
-   "Maturity": "Aug 17 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 3.7% 03/41",
-   "Ticker": "-",
-   "Identifier": "718286CA3",
-   "Weight": "0.51",
-   "Market Value": "489937.5",
-   "Shares Held": "650000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.7",
-   "Maturity": "Mar 01 2041"
-  },
-  {
-   "Name": "REPUBLIC OF 9.375% 05/48",
-   "Ticker": "-",
-   "Identifier": "BF5DW13",
-   "Weight": "0.5",
-   "Market Value": "487929.92",
-   "Shares Held": "514000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.375",
-   "Maturity": "May 08 2048"
-  },
-  {
-   "Name": "REPUBLIC OF 2.252% 09/32",
-   "Ticker": "-",
-   "Identifier": "698299BN3",
-   "Weight": "0.5",
-   "Market Value": "486060",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.252",
-   "Maturity": "Sep 29 2032"
-  },
-  {
-   "Name": "REPUBLIC OF 5.65% 09/47",
-   "Ticker": "-",
-   "Identifier": "836205AX2",
-   "Weight": "0.49",
-   "Market Value": "476784",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.65",
-   "Maturity": "Sep 27 2047"
-  },
-  {
-   "Name": "GOVERNMENT 7.875% 07/45",
-   "Ticker": "-",
-   "Identifier": "470160CB6",
-   "Weight": "0.47",
-   "Market Value": "454740",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.875",
-   "Maturity": "Jul 28 2045"
-  },
-  {
-   "Name": "MAGYARORSZAG 6.75% 09/52",
-   "Ticker": "-",
-   "Identifier": "BPXYFD1",
-   "Weight": "0.47",
-   "Market Value": "451454.76",
-   "Shares Held": "444000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.75",
-   "Maturity": "Sep 25 2052"
-  },
-  {
-   "Name": "DOMINICAN 7.15% 02/55",
-   "Ticker": "-",
-   "Identifier": "BR3T2L7",
-   "Weight": "0.46",
-   "Market Value": "446134.5",
-   "Shares Held": "450000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.15",
-   "Maturity": "Feb 24 2055"
-  },
-  {
-   "Name": "REPUBLIC OF 6.125% 06/33",
-   "Ticker": "-",
-   "Identifier": "BYW5KQ6",
-   "Weight": "0.45",
-   "Market Value": "434668.5",
-   "Shares Held": "450000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Jun 15 2033"
-  },
-  {
-   "Name": "REPUBLIC OF 4.5% 04/56",
-   "Ticker": "-",
-   "Identifier": "698299BM5",
-   "Weight": "0.45",
-   "Market Value": "430638",
-   "Shares Held": "600000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.5",
-   "Maturity": "Apr 01 2056"
-  },
-  {
-   "Name": "REPUBLIC OF 6.875% 03/36",
-   "Ticker": "-",
-   "Identifier": "900123AY6",
-   "Weight": "0.44",
-   "Market Value": "427612.5",
-   "Shares Held": "450000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.875",
-   "Maturity": "Mar 17 2036"
-  },
-  {
-   "Name": "FEDERAL 8.747% 01/31",
-   "Ticker": "-",
-   "Identifier": "BGT0PT6",
-   "Weight": "0.44",
-   "Market Value": "426000",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.747",
-   "Maturity": "Jan 21 2031"
-  },
-  {
-   "Name": "REPUBLIC OF 7.3% 11/54",
-   "Ticker": "-",
-   "Identifier": "BLFDK44",
-   "Weight": "0.43",
-   "Market Value": "419000",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.3",
-   "Maturity": "Nov 13 2054"
-  },
-  {
-   "Name": "REPUBLIC OF 6.375% 01/32",
-   "Ticker": "-",
-   "Identifier": "718286BD8",
-   "Weight": "0.43",
-   "Market Value": "416420",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.375",
-   "Maturity": "Jan 15 2032"
-  },
-  {
-   "Name": "REPUBLIC OF 9.244% 01/31",
-   "Ticker": "-",
-   "Identifier": "BNNSVN1",
-   "Weight": "0.43",
-   "Market Value": "415384",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.244",
-   "Maturity": "Jan 15 2031"
-  },
-  {
-   "Name": "PETROLEOS 6.625% 06/35",
-   "Ticker": "-",
-   "Identifier": "706451BG5",
-   "Weight": "0.43",
-   "Market Value": "412605",
-   "Shares Held": "450000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.625",
-   "Maturity": "Jun 15 2035"
-  },
-  {
-   "Name": "BENIN 7.96% 02/38",
-   "Ticker": "-",
-   "Identifier": "BRBZFN0",
-   "Weight": "0.43",
-   "Market Value": "411830",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.96",
-   "Maturity": "Feb 13 2038"
-  },
-  {
-   "Name": "REPUBLIC OF 9.875% 03/37",
-   "Ticker": "-",
-   "Identifier": "BTPDZY5",
-   "Weight": "0.43",
-   "Market Value": "411504",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.875",
-   "Maturity": "Mar 31 2037"
-  },
-  {
-   "Name": "TRANSNET/SOUT 8.25% 02/28",
-   "Ticker": "-",
-   "Identifier": "BQS96F7",
-   "Weight": "0.42",
-   "Market Value": "409020",
-   "Shares Held": "400000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "8.25",
-   "Maturity": "Feb 06 2028"
-  },
-  {
-   "Name": "DEMOCRATIC STEP 06/35",
-   "Ticker": "-",
-   "Identifier": "BPLNMB7",
-   "Weight": "0.42",
-   "Market Value": "405645",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.6",
-   "Maturity": "Jun 15 2035"
-  },
-  {
-   "Name": "GOVERNMENT OF 6.25% 09/37",
-   "Ticker": "-",
-   "Identifier": "470160CG5",
-   "Weight": "0.41",
-   "Market Value": "399592",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.25",
-   "Maturity": "Sep 17 2037"
-  },
-  {
-   "Name": "OMAN 5.625% 01/28",
-   "Ticker": "-",
-   "Identifier": "BD0YTB6",
-   "Weight": "0.41",
-   "Market Value": "399504",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "Jan 17 2028"
-  },
-  {
-   "Name": "ARAB 6.588% 02/28",
-   "Ticker": "-",
-   "Identifier": "BF0VM34",
-   "Weight": "0.41",
-   "Market Value": "399500",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.588",
-   "Maturity": "Feb 21 2028"
-  },
-  {
-   "Name": "ROP SUKUK 5.045% 06/29",
-   "Ticker": "-",
-   "Identifier": "BNKDVM8",
-   "Weight": "0.41",
-   "Market Value": "396500",
-   "Shares Held": "400000",
-   "Asset Category": "AGENCY BACKED BONDS",
-   "Coupon": "5.045",
-   "Maturity": "Jun 06 2029"
-  },
-  {
-   "Name": "FEDERATIVE 5.5% 11/30",
-   "Ticker": "-",
-   "Identifier": "105756CM0",
-   "Weight": "0.41",
-   "Market Value": "395100",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.5",
-   "Maturity": "Nov 06 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 6.5% 01/36",
-   "Ticker": "-",
-   "Identifier": "BRBNS91",
-   "Weight": "0.41",
-   "Market Value": "393840",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Jan 28 2036"
-  },
-  {
-   "Name": "TVF VARLIK 6.95% 01/30",
-   "Ticker": "-",
-   "Identifier": "BSFSBS9",
-   "Weight": "0.41",
-   "Market Value": "393002",
-   "Shares Held": "400000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "6.95",
-   "Maturity": "Jan 23 2030"
-  },
-  {
-   "Name": "GACI FIRST 5.25% 01/30",
-   "Ticker": "-",
-   "Identifier": "BSPRY21",
-   "Weight": "0.41",
-   "Market Value": "392664",
-   "Shares Held": "400000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.25",
-   "Maturity": "Jan 29 2030"
-  },
-  {
-   "Name": "BANK 5.75% 07/34",
+   "Name": "Bank Gospodarstwa Krajowego",
    "Ticker": "-",
    "Identifier": "06237MAC7",
-   "Weight": "0.41",
-   "Market Value": "392536",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Jul 09 2034"
-  },
-  {
-   "Name": "REPUBLIC OF 5.65% 01/37",
-   "Ticker": "-",
-   "Identifier": "168863EE4",
-   "Weight": "0.41",
-   "Market Value": "391800",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.65",
-   "Maturity": "Jan 13 2037"
-  },
-  {
-   "Name": "REPUBLIC OF 5.6% 01/35",
-   "Ticker": "-",
-   "Identifier": "455780EA0",
-   "Weight": "0.4",
-   "Market Value": "391480",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.6",
-   "Maturity": "Jan 15 2035"
-  },
-  {
-   "Name": "PERTAMINA 5.25% 05/30",
-   "Ticker": "-",
-   "Identifier": "BMGDTB0",
-   "Weight": "0.4",
-   "Market Value": "391364",
-   "Shares Held": "400000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.25",
-   "Maturity": "May 21 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 6.125% 01/31",
-   "Ticker": "-",
-   "Identifier": "195325EU5",
-   "Weight": "0.4",
-   "Market Value": "390600",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Jan 21 2031"
-  },
-  {
-   "Name": "PETRONAS 5.34% 04/35",
-   "Ticker": "-",
-   "Identifier": "BRBFV87",
-   "Weight": "0.4",
-   "Market Value": "389308",
-   "Shares Held": "400000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.34",
-   "Maturity": "Apr 03 2035"
-  },
-  {
-   "Name": "PETRONAS 3.404% 04/61",
-   "Ticker": "-",
-   "Identifier": "Y6886MAC4",
-   "Weight": "0.4",
-   "Market Value": "384733.39",
-   "Shares Held": "634000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "3.404",
-   "Maturity": "Apr 28 2061"
-  },
-  {
-   "Name": "REPUBLIC OF 5.375% 02/35",
-   "Ticker": "-",
-   "Identifier": "715638EB4",
-   "Weight": "0.4",
-   "Market Value": "384428",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.375",
-   "Maturity": "Feb 08 2035"
-  },
-  {
-   "Name": "REPUBLIC OF 4.85% 01/33",
-   "Ticker": "-",
-   "Identifier": "455780DR4",
-   "Weight": "0.39",
-   "Market Value": "380980",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.85",
-   "Maturity": "Jan 11 2033"
-  },
-  {
-   "Name": "FEDERATIVE 5.5% 02/33",
-   "Ticker": "-",
-   "Identifier": "105756CP3",
-   "Weight": "0.39",
-   "Market Value": "380224",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.5",
-   "Maturity": "Feb 04 2033"
-  },
-  {
-   "Name": "FEDERAL 7.625% 11/47",
-   "Ticker": "-",
-   "Identifier": "BF2RBB1",
-   "Weight": "0.39",
-   "Market Value": "380000",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.625",
-   "Maturity": "Nov 28 2047"
-  },
-  {
-   "Name": "REPUBLIC OF 7.3% 04/52",
-   "Ticker": "-",
-   "Identifier": "836205BE3",
-   "Weight": "0.39",
-   "Market Value": "379556",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.3",
-   "Maturity": "Apr 20 2052"
-  },
-  {
-   "Name": "REPUBLIC OF 5.227% 02/34",
-   "Ticker": "-",
-   "Identifier": "698299CB8",
-   "Weight": "0.39",
-   "Market Value": "379216",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.227",
-   "Maturity": "Feb 23 2034"
-  },
-  {
-   "Name": "CORP 5.529% 01/37",
-   "Ticker": "-",
-   "Identifier": "BWRNK72",
-   "Weight": "0.39",
-   "Market Value": "375456",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.529",
-   "Maturity": "Jan 30 2037"
-  },
-  {
-   "Name": "ARAB 8.7002% 03/49",
-   "Ticker": "-",
-   "Identifier": "BGSGVT7",
-   "Weight": "0.39",
-   "Market Value": "373500",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.7002",
-   "Maturity": "Mar 01 2049"
-  },
-  {
-   "Name": "CORP NACIONAL 3% 09/29",
-   "Ticker": "-",
-   "Identifier": "P3143NBE3",
-   "Weight": "0.38",
-   "Market Value": "372122",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3",
-   "Maturity": "Sep 30 2029"
-  },
-  {
-   "Name": "PETROLEOS 5.625% 06/47",
-   "Ticker": "-",
-   "Identifier": "P7808BAB3",
-   "Weight": "0.38",
-   "Market Value": "369010",
-   "Shares Held": "500000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "Jun 19 2047"
-  },
-  {
-   "Name": "PERUSAHAAN 2.8% 06/30",
-   "Ticker": "-",
-   "Identifier": "71567RAP1",
-   "Weight": "0.38",
-   "Market Value": "364000",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.8",
-   "Maturity": "Jun 23 2030"
-  },
-  {
-   "Name": "ROMANIA BOND 7.5% 02/37",
-   "Ticker": "-",
-   "Identifier": "BQPGTT6",
-   "Weight": "0.37",
-   "Market Value": "360577",
-   "Shares Held": "350000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.5",
-   "Maturity": "Feb 10 2037"
-  },
-  {
-   "Name": "ORIENTAL 4.975% 04/55",
-   "Ticker": "-",
-   "Identifier": "760942BD3",
-   "Weight": "0.37",
-   "Market Value": "359856",
-   "Shares Held": "432000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.975",
-   "Maturity": "Apr 20 2055"
-  },
-  {
-   "Name": "REPUBLIC OF 5.33% 01/54",
-   "Ticker": "-",
-   "Identifier": "168863EA2",
-   "Weight": "0.37",
-   "Market Value": "354100",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.33",
-   "Maturity": "Jan 05 2054"
-  },
-  {
-   "Name": "ARAB 7.903% 02/48",
-   "Ticker": "-",
-   "Identifier": "BYWJDR0",
-   "Weight": "0.36",
-   "Market Value": "346000",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.903",
-   "Maturity": "Feb 21 2048"
-  },
-  {
-   "Name": "MAGYARORSZAG 2.125% 09/31",
-   "Ticker": "-",
-   "Identifier": "BNZJFF2",
-   "Weight": "0.35",
-   "Market Value": "336836",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.125",
-   "Maturity": "Sep 22 2031"
-  },
-  {
-   "Name": "REPUBLIC OF 9.65% 11/54",
-   "Ticker": "-",
-   "Identifier": "BR84P63",
-   "Weight": "0.35",
-   "Market Value": "335310",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.65",
-   "Maturity": "Nov 21 2054"
-  },
-  {
-   "Name": "REPUBLIC OF 4.875% 10/33",
-   "Ticker": "-",
-   "Identifier": "731011AV4",
-   "Weight": "0.34",
-   "Market Value": "333042.5",
-   "Shares Held": "350000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.875",
-   "Maturity": "Oct 04 2033"
-  },
-  {
-   "Name": "CHINA LIFE VAR 08/33",
-   "Ticker": "-",
-   "Identifier": "BQVVX37",
-   "Weight": "0.34",
-   "Market Value": "329838.95",
-   "Shares Held": "329000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "5.35",
-   "Maturity": "Aug 15 2033"
-  },
-  {
-   "Name": "FEDERATIVE 7.125% 05/54",
-   "Ticker": "-",
-   "Identifier": "105756CJ7",
-   "Weight": "0.33",
-   "Market Value": "319345.45",
-   "Shares Held": "335000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.125",
-   "Maturity": "May 13 2054"
-  },
-  {
-   "Name": "REPUBLIC OF 5.75% 09/49",
-   "Ticker": "-",
-   "Identifier": "836205BB9",
-   "Weight": "0.33",
-   "Market Value": "316750",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Sep 30 2049"
-  },
-  {
-   "Name": "PETROLEOS 8.75% 06/29",
-   "Ticker": "-",
-   "Identifier": "71654QDL3",
-   "Weight": "0.33",
-   "Market Value": "316554",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.75",
-   "Maturity": "Jun 02 2029"
-  },
-  {
-   "Name": "REPUBLIC OF PERU 3% 01/34",
-   "Ticker": "-",
-   "Identifier": "715638DU3",
-   "Weight": "0.32",
-   "Market Value": "312511.5",
-   "Shares Held": "378000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3",
-   "Maturity": "Jan 15 2034"
-  },
-  {
-   "Name": "DEMOCRATIC STEP 01/30",
-   "Ticker": "-",
-   "Identifier": "BT22PN4",
-   "Weight": "0.32",
-   "Market Value": "310125",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.1",
-   "Maturity": "Jan 15 2030"
-  },
-  {
-   "Name": "DOMINICAN 6% 07/28",
-   "Ticker": "-",
-   "Identifier": "P3579ECB1",
-   "Weight": "0.31",
-   "Market Value": "301836",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6",
-   "Maturity": "Jul 19 2028"
-  },
-  {
-   "Name": "DOMINICAN 6.95% 03/37",
-   "Ticker": "-",
-   "Identifier": "25714PFB9",
-   "Weight": "0.31",
-   "Market Value": "301662",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.95",
-   "Maturity": "Mar 15 2037"
-  },
-  {
-   "Name": "REPUBLIC OF STEP 07/29",
-   "Ticker": "-",
-   "Identifier": "BQKQVZ1",
-   "Weight": "0.31",
-   "Market Value": "295265",
-   "Shares Held": "302250",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5",
-   "Maturity": "Jul 03 2029"
-  },
-  {
-   "Name": "ROMANIA BOND 6.625% 05/36",
-   "Ticker": "-",
-   "Identifier": "BV5PKW8",
-   "Weight": "0.3",
-   "Market Value": "291621",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.625",
-   "Maturity": "May 16 2036"
-  },
-  {
-   "Name": "REPUBLIC OF 4.5% 03/29",
-   "Ticker": "-",
-   "Identifier": "195325DP7",
-   "Weight": "0.3",
-   "Market Value": "288300",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.5",
-   "Maturity": "Mar 15 2029"
-  },
-  {
-   "Name": "REPUBLIC OF 5.125% 09/34",
-   "Ticker": "-",
-   "Identifier": "731011AY8",
-   "Weight": "0.3",
-   "Market Value": "286623",
-   "Shares Held": "300000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.125",
-   "Maturity": "Sep 18 2034"
-  },
-  {
-   "Name": "MFB MAGYAR 6.5% 06/28",
-   "Ticker": "-",
-   "Identifier": "BRBH8C6",
-   "Weight": "0.3",
-   "Market Value": "286201.8",
-   "Shares Held": "282000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Jun 29 2028"
-  },
-  {
-   "Name": "CORP NACIONAL 3.7% 01/50",
-   "Ticker": "-",
-   "Identifier": "P3143NBF0",
-   "Weight": "0.27",
-   "Market Value": "257924",
-   "Shares Held": "400000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.7",
-   "Maturity": "Jan 30 2050"
-  },
-  {
-   "Name": "ROMANIA BOND 5.75% 09/30",
-   "Ticker": "-",
-   "Identifier": "BV5PKX9",
-   "Weight": "0.25",
-   "Market Value": "244665",
-   "Shares Held": "250000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Sep 16 2030"
-  },
-  {
-   "Name": "PETROLEOS 6.7% 02/32",
-   "Ticker": "-",
-   "Identifier": "71643VAB1",
-   "Weight": "0.25",
-   "Market Value": "243725",
-   "Shares Held": "250000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.7",
-   "Maturity": "Feb 16 2032"
-  },
-  {
-   "Name": "ROMANIA 6.125% 01/44",
-   "Ticker": "-",
-   "Identifier": "77586TAE6",
-   "Weight": "0.23",
-   "Market Value": "224705",
-   "Shares Held": "250000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Jan 22 2044"
-  },
-  {
-   "Name": "FEDERAL 9.1297% 01/46",
-   "Ticker": "-",
-   "Identifier": "BP9MBG4",
-   "Weight": "0.22",
-   "Market Value": "215500",
+   "Weight": "0.3216545387",
+   "Market Value": "206556",
    "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.1297",
-   "Maturity": "Jan 13 2046"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "SURINAME 8.5% 11/35",
+   "Name": "Federative Republic of Brazil",
    "Ticker": "-",
-   "Identifier": "BSLN7R9",
-   "Weight": "0.22",
-   "Market Value": "211042",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.5",
-   "Maturity": "Nov 06 2035"
+   "Identifier": "105756BW9",
+   "Weight": "0.9947564791",
+   "Market Value": "638800",
+   "Shares Held": "800000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "OMAN GOVERNMENT 7% 01/51",
-   "Ticker": "-",
-   "Identifier": "BMY0LP1",
-   "Weight": "0.22",
-   "Market Value": "210288",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7",
-   "Maturity": "Jan 25 2051"
-  },
-  {
-   "Name": "FEDERAL 8.375% 03/29",
-   "Ticker": "-",
-   "Identifier": "BJN44R6",
-   "Weight": "0.22",
-   "Market Value": "208522",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.375",
-   "Maturity": "Mar 24 2029"
-  },
-  {
-   "Name": "REPUBLIC OF 5.875% 08/54",
-   "Ticker": "-",
-   "Identifier": "715638EC2",
-   "Weight": "0.21",
-   "Market Value": "207225",
-   "Shares Held": "225000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.875",
-   "Maturity": "Aug 08 2054"
-  },
-  {
-   "Name": "REPUBLIC OF 6.5% 07/45",
-   "Ticker": "-",
-   "Identifier": "BYQDTJ2",
-   "Weight": "0.21",
-   "Market Value": "206376",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Jul 21 2045"
-  },
-  {
-   "Name": "REPUBLIC OF 6.55% 04/34",
-   "Ticker": "-",
-   "Identifier": "V6A61BA",
-   "Weight": "0.21",
-   "Market Value": "204250",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.55",
-   "Maturity": "Apr 03 2034"
-  },
-  {
-   "Name": "KINGDOM OF 6% 09/44",
-   "Ticker": "-",
-   "Identifier": "BQSC1P1",
-   "Weight": "0.21",
-   "Market Value": "204217",
-   "Shares Held": "260000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6",
-   "Maturity": "Sep 19 2044"
-  },
-  {
-   "Name": "ISLAMIC 6.875% 12/27",
-   "Ticker": "-",
-   "Identifier": "BFD9P70",
-   "Weight": "0.21",
-   "Market Value": "199628",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.875",
-   "Maturity": "Dec 05 2027"
-  },
-  {
-   "Name": "REPUBLIC OF 5.875% 04/32",
-   "Ticker": "-",
-   "Identifier": "836205BC7",
-   "Weight": "0.21",
-   "Market Value": "199242",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.875",
-   "Maturity": "Apr 20 2032"
-  },
-  {
-   "Name": "REPUBLIC OF 4.75% 02/29",
-   "Ticker": "-",
-   "Identifier": "455780CH7",
-   "Weight": "0.21",
-   "Market Value": "198502",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.75",
-   "Maturity": "Feb 11 2029"
-  },
-  {
-   "Name": "MAGYARORSZAG 5.25% 06/29",
-   "Ticker": "-",
-   "Identifier": "BMY36F5",
-   "Weight": "0.2",
-   "Market Value": "198000",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.25",
-   "Maturity": "Jun 16 2029"
-  },
-  {
-   "Name": "ARAB 7.625% 05/32",
-   "Ticker": "-",
-   "Identifier": "BMHWV98",
-   "Weight": "0.2",
-   "Market Value": "197750",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.625",
-   "Maturity": "May 29 2032"
-  },
-  {
-   "Name": "REPUBLIC OF 4.875% 02/30",
-   "Ticker": "-",
-   "Identifier": "857524AF9",
-   "Weight": "0.2",
-   "Market Value": "197600",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.875",
-   "Maturity": "Feb 12 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 4.85% 01/29",
-   "Ticker": "-",
-   "Identifier": "168863EB0",
-   "Weight": "0.2",
-   "Market Value": "197400",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.85",
-   "Maturity": "Jan 22 2029"
-  },
-  {
-   "Name": "HAZINE 6.75% 09/30",
-   "Ticker": "-",
-   "Identifier": "BVLJYM2",
-   "Weight": "0.2",
-   "Market Value": "196875",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.75",
-   "Maturity": "Sep 01 2030"
-  },
-  {
-   "Name": "FEDERATIVE 4.5% 05/29",
+   "Name": "Federative Republic of Brazil",
    "Ticker": "-",
    "Identifier": "105756CA6",
-   "Weight": "0.2",
-   "Market Value": "196582",
+   "Weight": "0.3090316582",
+   "Market Value": "198450",
    "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.5",
-   "Maturity": "May 30 2029"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "HAZINE 6.5% 04/30",
+   "Name": "Federative Republic of Brazil",
    "Ticker": "-",
-   "Identifier": "BS9F7X3",
-   "Weight": "0.2",
-   "Market Value": "196501",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Apr 26 2030"
+   "Identifier": "105756CF5",
+   "Weight": "0.6276402613",
+   "Market Value": "403050",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "REPUBLIC OF 3.24% 02/28",
+   "Name": "Federative Republic of Brazil",
+   "Ticker": "-",
+   "Identifier": "105756CJ7",
+   "Weight": "0.522239599",
+   "Market Value": "335365.15",
+   "Shares Held": "335000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federative Republic of Brazil",
+   "Ticker": "-",
+   "Identifier": "105756CK4",
+   "Weight": "0.6391793119",
+   "Market Value": "410460",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federative Republic of Brazil",
+   "Ticker": "-",
+   "Identifier": "105756CL2",
+   "Weight": "2.2501537937",
+   "Market Value": "1444975",
+   "Shares Held": "1400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federative Republic of Brazil",
+   "Ticker": "-",
+   "Identifier": "105756CM0",
+   "Weight": "0.6305211309",
+   "Market Value": "404900",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federative Republic of Brazil",
+   "Ticker": "-",
+   "Identifier": "105756CN8",
+   "Weight": "0.3112896371",
+   "Market Value": "199900",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federative Republic of Brazil",
+   "Ticker": "-",
+   "Identifier": "105756CP3",
+   "Weight": "0.3076301541",
+   "Market Value": "197550",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Chile",
    "Ticker": "-",
    "Identifier": "168863CF3",
-   "Weight": "0.2",
-   "Market Value": "194400",
+   "Weight": "0.3063220836",
+   "Market Value": "196710",
    "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.24",
-   "Maturity": "Feb 06 2028"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "ROMANIA BOND 6.375% 01/34",
-   "Ticker": "-",
-   "Identifier": "BN7B4N7",
-   "Weight": "0.2",
-   "Market Value": "194240",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.375",
-   "Maturity": "Jan 30 2034"
-  },
-  {
-   "Name": "BANK 5.375% 05/33",
-   "Ticker": "-",
-   "Identifier": "BNC3K29",
-   "Weight": "0.2",
-   "Market Value": "194196",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.375",
-   "Maturity": "May 22 2033"
-  },
-  {
-   "Name": "GACI FIRST 4.75% 02/30",
-   "Ticker": "-",
-   "Identifier": "BMXD0F4",
-   "Weight": "0.2",
-   "Market Value": "193588",
-   "Shares Held": "200000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.75",
-   "Maturity": "Feb 14 2030"
-  },
-  {
-   "Name": "HASHEMITE 7.375% 10/47",
-   "Ticker": "-",
-   "Identifier": "BF032N0",
-   "Weight": "0.2",
-   "Market Value": "192270",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.375",
-   "Maturity": "Oct 10 2047"
-  },
-  {
-   "Name": "REPUBLIC OF 5.125% 07/34",
-   "Ticker": "-",
-   "Identifier": "BS3FR95",
-   "Weight": "0.2",
-   "Market Value": "192008",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.125",
-   "Maturity": "Jul 30 2034"
-  },
-  {
-   "Name": "ARAB REPUBLIC 7.3% 09/33",
-   "Ticker": "-",
-   "Identifier": "BM8QR02",
-   "Weight": "0.2",
-   "Market Value": "191750",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.3",
-   "Maturity": "Sep 30 2033"
-  },
-  {
-   "Name": "FEDERAL 7.625% 11/47",
-   "Ticker": "-",
-   "Identifier": "BD1K5R1",
-   "Weight": "0.2",
-   "Market Value": "190000",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.625",
-   "Maturity": "Nov 28 2047"
-  },
-  {
-   "Name": "ARAB 8.875% 05/50",
-   "Ticker": "-",
-   "Identifier": "BMQC081",
-   "Weight": "0.2",
-   "Market Value": "189250",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.875",
-   "Maturity": "May 29 2050"
-  },
-  {
-   "Name": "UNITED 5.625% 02/34",
-   "Ticker": "-",
-   "Identifier": "91087BBQ2",
-   "Weight": "0.2",
-   "Market Value": "189000",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "Feb 09 2034"
-  },
-  {
-   "Name": "REPUBLIC OF 5.662% 02/38",
-   "Ticker": "-",
-   "Identifier": "698299CC6",
-   "Weight": "0.2",
-   "Market Value": "188990",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.662",
-   "Maturity": "Feb 23 2038"
-  },
-  {
-   "Name": "SINOPEC GROUP 2.95% 11/29",
-   "Ticker": "-",
-   "Identifier": "BJVBGB7",
-   "Weight": "0.19",
-   "Market Value": "187745",
-   "Shares Held": "200000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.95",
-   "Maturity": "Nov 12 2029"
-  },
-  {
-   "Name": "KINGDOM OF 4.875% 01/36",
-   "Ticker": "-",
-   "Identifier": "BTY65Z6",
-   "Weight": "0.19",
-   "Market Value": "185766",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.875",
-   "Maturity": "Jan 12 2036"
-  },
-  {
-   "Name": "PERUSAHAAN 5.45% 02/36",
-   "Ticker": "-",
-   "Identifier": "71568QAX5",
-   "Weight": "0.19",
-   "Market Value": "184776",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.45",
-   "Maturity": "Feb 03 2036"
-  },
-  {
-   "Name": "REPUBLIC OF 6.75% 02/41",
-   "Ticker": "-",
-   "Identifier": "BTY5047",
-   "Weight": "0.19",
-   "Market Value": "184600",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.75",
-   "Maturity": "Feb 25 2041"
-  },
-  {
-   "Name": "REPUBLIC OF 5% 03/37",
-   "Ticker": "-",
-   "Identifier": "BSY4VX3",
-   "Weight": "0.19",
-   "Market Value": "184250",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5",
-   "Maturity": "Mar 05 2037"
-  },
-  {
-   "Name": "REPUBLIC OF 9.125% 11/49",
-   "Ticker": "-",
-   "Identifier": "BKWCW07",
-   "Weight": "0.19",
-   "Market Value": "184162",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.125",
-   "Maturity": "Nov 26 2049"
-  },
-  {
-   "Name": "REPUBLIC OF 5.75% 01/51",
-   "Ticker": "-",
-   "Identifier": "718286DL8",
-   "Weight": "0.19",
-   "Market Value": "183536",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Jan 27 2051"
-  },
-  {
-   "Name": "STATE GRID 1.625% 08/30",
-   "Ticker": "-",
-   "Identifier": "BLB3DW7",
-   "Weight": "0.18",
-   "Market Value": "175714",
-   "Shares Held": "200000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "1.625",
-   "Maturity": "Aug 05 2030"
-  },
-  {
-   "Name": "REPUBLIC OF 6.125% 01/41",
-   "Ticker": "-",
-   "Identifier": "195325BM6",
-   "Weight": "0.18",
-   "Market Value": "173400",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.125",
-   "Maturity": "Jan 18 2041"
-  },
-  {
-   "Name": "KINGDOM OF 5.625% 05/34",
-   "Ticker": "-",
-   "Identifier": "M63633CD7",
-   "Weight": "0.18",
-   "Market Value": "172888",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.625",
-   "Maturity": "May 18 2034"
-  },
-  {
-   "Name": "PETRONAS 2.48% 01/32",
-   "Ticker": "-",
-   "Identifier": "BLD3FC9",
-   "Weight": "0.18",
-   "Market Value": "172110",
-   "Shares Held": "200000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.48",
-   "Maturity": "Jan 28 2032"
-  },
-  {
-   "Name": "PETRONAS 2.48% 01/32",
-   "Ticker": "-",
-   "Identifier": "Y6886MAE0",
-   "Weight": "0.18",
-   "Market Value": "172110",
-   "Shares Held": "200000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "2.48",
-   "Maturity": "Jan 28 2032"
-  },
-  {
-   "Name": "PARAGUAY 5.4% 03/50",
-   "Ticker": "-",
-   "Identifier": "BJ9VJT8",
-   "Weight": "0.18",
-   "Market Value": "171218",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.4",
-   "Maturity": "Mar 30 2050"
-  },
-  {
-   "Name": "ARAB REPUBLIC 7.5% 02/61",
-   "Ticker": "-",
-   "Identifier": "BLH1JM7",
-   "Weight": "0.17",
-   "Market Value": "161000",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "7.5",
-   "Maturity": "Feb 16 2061"
-  },
-  {
-   "Name": "REPUBLIC OF 3.23% 07/21",
-   "Ticker": "-",
-   "Identifier": "715638DR0",
-   "Weight": "0.17",
-   "Market Value": "160297.5",
-   "Shares Held": "319000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.23",
-   "Maturity": "Jul 28 2121"
-  },
-  {
-   "Name": "REPUBLIC OF 9.25% 04/30",
-   "Ticker": "-",
-   "Identifier": "WCDC0C4",
-   "Weight": "0.16",
-   "Market Value": "158581.5",
-   "Shares Held": "150000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "9.25",
-   "Maturity": "Apr 17 2030"
-  },
-  {
-   "Name": "AEROPUERTO 5.125% 08/61",
-   "Ticker": "-",
-   "Identifier": "BMCH585",
-   "Weight": "0.16",
-   "Market Value": "158400",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.125",
-   "Maturity": "Aug 11 2061"
-  },
-  {
-   "Name": "ROMANIA BOND 4% 02/51",
-   "Ticker": "-",
-   "Identifier": "BMVZ933",
-   "Weight": "0.16",
-   "Market Value": "157980",
-   "Shares Held": "250000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4",
-   "Maturity": "Feb 14 2051"
-  },
-  {
-   "Name": "UNITED 6.05% 01/40",
-   "Ticker": "-",
-   "Identifier": "91086QAV0",
-   "Weight": "0.16",
-   "Market Value": "152305",
-   "Shares Held": "166000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.05",
-   "Maturity": "Jan 11 2040"
-  },
-  {
-   "Name": "REPUBLIC OF 5.2% 05/49",
-   "Ticker": "-",
-   "Identifier": "195325DQ5",
-   "Weight": "0.15",
-   "Market Value": "145800",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.2",
-   "Maturity": "May 15 2049"
-  },
-  {
-   "Name": "REPUBLIC OF 3.3% 03/41",
-   "Ticker": "-",
-   "Identifier": "715638DS8",
-   "Weight": "0.15",
-   "Market Value": "145100",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.3",
-   "Maturity": "Mar 11 2041"
-  },
-  {
-   "Name": "REPUBLIC OF 2.78% 12/60",
-   "Ticker": "-",
-   "Identifier": "715638DQ2",
-   "Weight": "0.15",
-   "Market Value": "143922",
-   "Shares Held": "289000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.78",
-   "Maturity": "Dec 01 2060"
-  },
-  {
-   "Name": "PERTAMINA 4.175% 01/50",
-   "Ticker": "-",
-   "Identifier": "69370RAG2",
-   "Weight": "0.15",
-   "Market Value": "140598",
-   "Shares Held": "200000",
-   "Asset Category": "CORPORATE BONDS",
-   "Coupon": "4.175",
-   "Maturity": "Jan 21 2050"
-  },
-  {
-   "Name": "DOMINICAN 6.4% 06/49",
-   "Ticker": "-",
-   "Identifier": "25714PEB0",
-   "Weight": "0.14",
-   "Market Value": "136942.5",
-   "Shares Held": "150000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.4",
-   "Maturity": "Jun 05 2049"
-  },
-  {
-   "Name": "KINGDOM OF 4% 12/50",
-   "Ticker": "-",
-   "Identifier": "BMHFZL7",
-   "Weight": "0.14",
-   "Market Value": "133356",
-   "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4",
-   "Maturity": "Dec 15 2050"
-  },
-  {
-   "Name": "ORIENTAL 4.375% 01/31",
-   "Ticker": "-",
-   "Identifier": "917288BK7",
-   "Weight": "0.14",
-   "Market Value": "131105.6",
-   "Shares Held": "134000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.375",
-   "Maturity": "Jan 23 2031"
-  },
-  {
-   "Name": "REPUBLIC OF 8.75% 11/33",
-   "Ticker": "-",
-   "Identifier": "715638AP7",
-   "Weight": "0.13",
-   "Market Value": "125712",
-   "Shares Held": "108000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "8.75",
-   "Maturity": "Nov 21 2033"
-  },
-  {
-   "Name": "PETROLEOS 6.5% 06/41",
-   "Ticker": "-",
-   "Identifier": "71654QAZ5",
-   "Weight": "0.12",
-   "Market Value": "114750",
-   "Shares Held": "135000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "6.5",
-   "Maturity": "Jun 02 2041"
-  },
-  {
-   "Name": "UNITED 5.75% 10/10",
-   "Ticker": "-",
-   "Identifier": "91086QAZ1",
-   "Weight": "0.12",
-   "Market Value": "113445",
-   "Shares Held": "150000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Oct 12 2110"
-  },
-  {
-   "Name": "PETROLEOS 10% 02/33",
-   "Ticker": "-",
-   "Identifier": "71654QDP4",
-   "Weight": "0.12",
-   "Market Value": "113425",
-   "Shares Held": "100000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "10",
-   "Maturity": "Feb 07 2033"
-  },
-  {
-   "Name": "REPUBLIC OF 3.25% 09/71",
+   "Name": "Republic of Chile",
    "Ticker": "-",
    "Identifier": "168863DU9",
-   "Weight": "0.12",
-   "Market Value": "113200",
+   "Weight": "0.1950083976",
+   "Market Value": "125228",
    "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.25",
-   "Maturity": "Sep 21 2071"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "UNITED 3.75% 04/71",
+   "Name": "Republic of Chile",
    "Ticker": "-",
-   "Identifier": "BM9RCD2",
-   "Weight": "0.11",
-   "Market Value": "106210",
+   "Identifier": "168863EA2",
+   "Weight": "0.5941754574",
+   "Market Value": "381560",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Chile",
+   "Ticker": "-",
+   "Identifier": "168863EB0",
+   "Weight": "0.3144352352",
+   "Market Value": "201920",
    "Shares Held": "200000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "3.75",
-   "Maturity": "Apr 19 2071"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "REPUBLIC OF 4.625% 03/29",
+   "Name": "Republic of Colombia",
    "Ticker": "-",
-   "Identifier": "731011AX0",
-   "Weight": "0.1",
-   "Market Value": "98991",
-   "Shares Held": "100000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4.625",
-   "Maturity": "Mar 18 2029"
+   "Identifier": "195325BK0",
+   "Weight": "0.5532166085",
+   "Market Value": "355257.57",
+   "Shares Held": "349000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "ROMANIA BOND 5.75% 03/35",
+   "Name": "Republic of Colombia",
    "Ticker": "-",
-   "Identifier": "77586RAV2",
-   "Weight": "0.1",
-   "Market Value": "92170",
-   "Shares Held": "100000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.75",
-   "Maturity": "Mar 24 2035"
+   "Identifier": "195325BM6",
+   "Weight": "0.2785878743",
+   "Market Value": "178900",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
   },
   {
-   "Name": "REPUBLIC OF 2.783% 01/31",
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325BR5",
+   "Weight": "0.8883978888",
+   "Market Value": "570500",
+   "Shares Held": "700000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325DP7",
+   "Weight": "0.4529194145",
+   "Market Value": "290850",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325DQ5",
+   "Weight": "0.233708598",
+   "Market Value": "150080",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325DR3",
+   "Weight": "1.1225736548",
+   "Market Value": "720880",
+   "Shares Held": "800000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325EP6",
+   "Weight": "0.9782498751",
+   "Market Value": "628200",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325ER2",
+   "Weight": "0.9731110266",
+   "Market Value": "624900",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Colombia",
+   "Ticker": "-",
+   "Identifier": "195325EU5",
+   "Weight": "0.310121717",
+   "Market Value": "199150",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "25714PEB0",
+   "Weight": "0.2251020079",
+   "Market Value": "144553.13",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "25714PFB9",
+   "Weight": "0.2454267296",
+   "Market Value": "157605",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Export-Import Bank of India",
+   "Ticker": "-",
+   "Identifier": "30216KAF9",
+   "Weight": "0.5587142887",
+   "Market Value": "358788",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Indonesia",
+   "Ticker": "-",
+   "Identifier": "455780CH7",
+   "Weight": "0.313547616",
+   "Market Value": "201350",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Indonesia",
+   "Ticker": "-",
+   "Identifier": "455780CT1",
+   "Weight": "0.5527181869",
+   "Market Value": "354937.5",
+   "Shares Held": "450000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Indonesia",
+   "Ticker": "-",
+   "Identifier": "455780EA0",
+   "Weight": "0.317674267",
+   "Market Value": "204000",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Jamaica",
+   "Ticker": "-",
+   "Identifier": "470160AV4",
+   "Weight": "0.3707173048",
+   "Market Value": "238062.5",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Jamaica",
+   "Ticker": "-",
+   "Identifier": "470160CB6",
+   "Weight": "0.7390245209",
+   "Market Value": "474577.32",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "JPMorgan U.S. Government Money Market Fund",
+   "Ticker": "-",
+   "Identifier": "4812C2270",
+   "Weight": "0.8468707611",
+   "Market Value": "543832.64",
+   "Shares Held": "543832.64",
+   "Asset Category": "STIV"
+  },
+  {
+   "Name": "Pertamina Persero PT",
+   "Ticker": "-",
+   "Identifier": "69370RAG2",
+   "Weight": "0.2396945778",
+   "Market Value": "153924",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Panama",
+   "Ticker": "-",
+   "Identifier": "698299BM5",
+   "Weight": "0.4833818851",
+   "Market Value": "310412",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Panama",
+   "Ticker": "-",
+   "Identifier": "698299BN3",
+   "Weight": "0.2625920406",
+   "Market Value": "168628",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Panama",
+   "Ticker": "-",
+   "Identifier": "698299CB8",
+   "Weight": "0.3088759356",
+   "Market Value": "198350",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Panama",
+   "Ticker": "-",
+   "Identifier": "698299CC6",
+   "Weight": "0.3118346665",
+   "Market Value": "200250",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos Mexicanos",
+   "Ticker": "-",
+   "Identifier": "706451BG5",
+   "Weight": "0.3751943319",
+   "Market Value": "240937.5",
+   "Shares Held": "250000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638AP7",
+   "Weight": "0.2054501327",
+   "Market Value": "131933.34",
+   "Shares Held": "108000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
    "Ticker": "-",
    "Identifier": "715638DF6",
-   "Weight": "0.09",
-   "Market Value": "89650",
+   "Weight": "0.1436541722",
+   "Market Value": "92250",
    "Shares Held": "100000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "2.783",
-   "Maturity": "Jan 23 2031"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "ORIENTAL 5.1% 06/50",
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638DQ2",
+   "Weight": "0.2456310378",
+   "Market Value": "157736.2",
+   "Shares Held": "289000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638DR0",
+   "Weight": "0.2722716067",
+   "Market Value": "174843.9",
+   "Shares Held": "319000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638DS8",
+   "Weight": "0.2413078648",
+   "Market Value": "154960",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638DU3",
+   "Weight": "0.510049394",
+   "Market Value": "327537",
+   "Shares Held": "378000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638EB4",
+   "Weight": "0.314721765",
+   "Market Value": "202104",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Peru",
+   "Ticker": "-",
+   "Identifier": "715638EC2",
+   "Weight": "0.0380741952",
+   "Market Value": "24450",
+   "Shares Held": "25000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Perusahaan Penerbit SBSN Indonesia III",
+   "Ticker": "-",
+   "Identifier": "71567RAP1",
+   "Weight": "0.5785782738",
+   "Market Value": "371544",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos Mexicanos",
+   "Ticker": "-",
+   "Identifier": "71643VAB1",
+   "Weight": "0.235219108",
+   "Market Value": "151050",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos Mexicanos",
+   "Ticker": "-",
+   "Identifier": "71654QAZ5",
+   "Weight": "0.1875653985",
+   "Market Value": "120448.35",
+   "Shares Held": "135000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos Mexicanos",
+   "Ticker": "-",
+   "Identifier": "71654QDD1",
+   "Weight": "0.1425687851",
+   "Market Value": "91553",
+   "Shares Held": "100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos Mexicanos",
+   "Ticker": "-",
+   "Identifier": "71654QDL3",
+   "Weight": "0.5023224347",
+   "Market Value": "322575",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos Mexicanos",
+   "Ticker": "-",
+   "Identifier": "71654QDP4",
+   "Weight": "0.1828962875",
+   "Market Value": "117450",
+   "Shares Held": "100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of the Philippines",
+   "Ticker": "-",
+   "Identifier": "718286BD8",
+   "Weight": "0.6725662544",
+   "Market Value": "431900",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of the Philippines",
+   "Ticker": "-",
+   "Identifier": "718286BW6",
+   "Weight": "0.6034253846",
+   "Market Value": "387500",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of the Philippines",
+   "Ticker": "-",
+   "Identifier": "718286CA3",
+   "Weight": "0.8148189225",
+   "Market Value": "523250",
+   "Shares Held": "650000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Poland",
+   "Ticker": "-",
+   "Identifier": "731011AV4",
+   "Weight": "0.5442118355",
+   "Market Value": "349475",
+   "Shares Held": "350000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Poland",
+   "Ticker": "-",
+   "Identifier": "731011AW2",
+   "Weight": "0.4327424268",
+   "Market Value": "277893",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Poland",
+   "Ticker": "-",
+   "Identifier": "731011AX0",
+   "Weight": "0.1570961539",
+   "Market Value": "100882",
+   "Shares Held": "100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Poland",
+   "Ticker": "-",
+   "Identifier": "731011AY8",
+   "Weight": "0.3133981222",
+   "Market Value": "201254",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oriental Republic of Uruguay",
    "Ticker": "-",
    "Identifier": "760942BA9",
-   "Weight": "0.09",
-   "Market Value": "86276",
+   "Weight": "0.143968732",
+   "Market Value": "92452",
    "Shares Held": "100000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "5.1",
-   "Maturity": "Jun 18 2050"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "DEMOCRATIC 4% 04/28",
+   "Name": "Oriental Republic of Uruguay",
    "Ticker": "-",
-   "Identifier": "BPLNMC8",
-   "Weight": "0.05",
-   "Market Value": "51317.25",
+   "Identifier": "760942BD3",
+   "Weight": "0.4657258919",
+   "Market Value": "299073.9",
+   "Shares Held": "332000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oriental Republic of Uruguay",
+   "Ticker": "-",
+   "Identifier": "760942BE1",
+   "Weight": "0.6947242993",
+   "Market Value": "446129.17",
+   "Shares Held": "425000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "77586RAV2",
+   "Weight": "0.1504670394",
+   "Market Value": "96625",
+   "Shares Held": "100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "77586TAE6",
+   "Weight": "0.220806974",
+   "Market Value": "141795",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "836205AX2",
+   "Weight": "0.5240068178",
+   "Market Value": "336500",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "836205AY0",
+   "Weight": "0.6439942571",
+   "Market Value": "413552",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "836205BA1",
+   "Weight": "0.777250826",
+   "Market Value": "499125",
+   "Shares Held": "500000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "836205BB9",
+   "Weight": "0.5246608531",
+   "Market Value": "336920",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "836205BE3",
+   "Weight": "0.3110560531",
+   "Market Value": "199750",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Poland",
+   "Ticker": "-",
+   "Identifier": "857524AF9",
+   "Weight": "0.3173565927",
+   "Market Value": "203796",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123AY6",
+   "Weight": "0.6909415307",
+   "Market Value": "443700",
+   "Shares Held": "450000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123CM0",
+   "Weight": "0.855696126",
+   "Market Value": "549500",
+   "Shares Held": "700000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123CP3",
+   "Weight": "1.6979611709",
+   "Market Value": "1090375",
+   "Shares Held": "1100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123DA5",
+   "Weight": "0.7653769717",
+   "Market Value": "491500",
+   "Shares Held": "500000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123DD9",
+   "Weight": "0.3067425348",
+   "Market Value": "196980",
+   "Shares Held": "201000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123DP2",
+   "Weight": "1.4330379617",
+   "Market Value": "920250",
+   "Shares Held": "900000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123DR8",
+   "Weight": "0.9263942227",
+   "Market Value": "594900",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Turkiye (The)",
+   "Ticker": "-",
+   "Identifier": "900123DS6",
+   "Weight": "0.3034318707",
+   "Market Value": "194854",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91086QAV0",
+   "Weight": "0.2525541567",
+   "Market Value": "162182",
+   "Shares Held": "166000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91086QAZ1",
+   "Weight": "0.190534485",
+   "Market Value": "122355",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91087BAK6",
+   "Weight": "0.5980529521",
+   "Market Value": "384050",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91087BBC3",
+   "Weight": "0.3259664997",
+   "Market Value": "209325",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91087BBD1",
+   "Weight": "0.6600150064",
+   "Market Value": "423840",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91087BBQ2",
+   "Weight": "0.3061539031",
+   "Market Value": "196602",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oriental Republic of Uruguay",
+   "Ticker": "-",
+   "Identifier": "917288BK7",
+   "Weight": "0.2098160672",
+   "Market Value": "134737",
+   "Shares Held": "134000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Indonesia",
+   "Ticker": "-",
+   "Identifier": "USY20721AL30",
+   "Weight": "0.5560234008",
+   "Market Value": "357060",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oman Government International Bond",
+   "Ticker": "-",
+   "Identifier": "XS1750113661",
+   "Weight": "0.6306768536",
+   "Market Value": "405000",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS1717013095",
+   "Weight": "0.3087980742",
+   "Market Value": "198300",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS1558078496",
+   "Weight": "0.5921323758",
+   "Market Value": "380248",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS1405766541",
+   "Weight": "0.9450061974",
+   "Market Value": "606852",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS1777972511",
+   "Weight": "1.2851356748",
+   "Market Value": "825272",
+   "Shares Held": "800000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hashemite Kingdom of Jordan",
+   "Ticker": "-",
+   "Identifier": "XS1577950311",
+   "Weight": "0.3050700733",
+   "Market Value": "195906",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS1775618439",
+   "Weight": "0.629004392",
+   "Market Value": "403926",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS1717013095",
+   "Weight": "0.6175961484",
+   "Market Value": "396600",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Angola",
+   "Ticker": "-",
+   "Identifier": "XS1819680528",
+   "Weight": "0.4578246789",
+   "Market Value": "294000",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS1675862012",
+   "Weight": "0.7836743865",
+   "Market Value": "503250",
+   "Shares Held": "500000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Islamic Republic of Pakistan",
+   "Ticker": "-",
+   "Identifier": "XS1729875598",
+   "Weight": "0.3120044042",
+   "Market Value": "200359",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oman Government International Bond",
+   "Ticker": "-",
+   "Identifier": "XS1750114396",
+   "Weight": "0.3392138281",
+   "Market Value": "217832",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "CNAC HK Finbridge Co. Ltd.",
+   "Ticker": "-",
+   "Identifier": "XS1788513734",
+   "Weight": "0.7097610058",
+   "Market Value": "455785.25",
+   "Shares Held": "450000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS1953057491",
+   "Weight": "0.5965035115",
+   "Market Value": "383055",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Saudi Arabia",
+   "Ticker": "-",
+   "Identifier": "XS1936302865",
+   "Weight": "0.6190038815",
+   "Market Value": "397504",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Saudi Arabia",
+   "Ticker": "-",
+   "Identifier": "XS1936302949",
+   "Weight": "1.1476761508",
+   "Market Value": "737000",
+   "Shares Held": "800000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Paraguay Government International Bond",
+   "Ticker": "-",
+   "Identifier": "USP75744AG08",
+   "Weight": "0.2834775665",
+   "Market Value": "182040",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS2058948451",
+   "Weight": "0.2995699482",
+   "Market Value": "192374",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS2445169985",
+   "Weight": "0.3313093448",
+   "Market Value": "212756",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECH82",
+   "Weight": "0.2217926985",
+   "Market Value": "142428",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECG00",
+   "Weight": "0.6819680112",
+   "Market Value": "437937.5",
+   "Shares Held": "500000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Sinopec Group Overseas Development 2018 Ltd.",
+   "Ticker": "-",
+   "Identifier": "USG82016AL31",
+   "Weight": "0.2985639797",
+   "Market Value": "191728",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Angola",
+   "Ticker": "-",
+   "Identifier": "XS2083302419",
+   "Weight": "0.7917525006",
+   "Market Value": "508437.5",
+   "Shares Held": "500000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Angola",
+   "Ticker": "-",
+   "Identifier": "XS2083302500",
+   "Weight": "0.2968463585",
+   "Market Value": "190625",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "State Grid Overseas Investment BVI Ltd.",
+   "Ticker": "-",
+   "Identifier": "XS2152902479",
+   "Weight": "0.2800111796",
+   "Market Value": "179814",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petronas Capital Ltd.",
+   "Ticker": "-",
+   "Identifier": "USY6886MAE04",
+   "Weight": "0.2789226781",
+   "Market Value": "179115",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Costa Rica",
+   "Ticker": "-",
+   "Identifier": "USP3699PGN17",
+   "Weight": "0.6955038315",
+   "Market Value": "446629.76",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS2297221405",
+   "Weight": "0.2616141022",
+   "Market Value": "168000",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS2297226545",
+   "Weight": "0.6060041522",
+   "Market Value": "389156",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS2226916216",
+   "Weight": "0.5851591142",
+   "Market Value": "375770",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579EAY34",
+   "Weight": "0.5022932367",
+   "Market Value": "322556.25",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS2391395154",
+   "Weight": "0.3104175901",
+   "Market Value": "199340",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "United Mexican States",
+   "Ticker": "-",
+   "Identifier": "91087BAP5",
+   "Weight": "0.1788755279",
+   "Market Value": "114868",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Aeropuerto Internacional de Tocumen SA",
+   "Ticker": "-",
+   "Identifier": "USP0092AAG42",
+   "Weight": "0.2611469342",
+   "Market Value": "167700",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Saudi Arabia",
+   "Ticker": "-",
+   "Identifier": "XS2294322818",
+   "Weight": "0.9292750922",
+   "Market Value": "596750",
+   "Shares Held": "700000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Pertamina Hulu Energi PT",
+   "Ticker": "-",
+   "Identifier": "74449AAA9",
+   "Weight": "0.3128297344",
+   "Market Value": "200889",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Morocco",
+   "Ticker": "-",
+   "Identifier": "XS2270577344",
+   "Weight": "0.2199800865",
+   "Market Value": "141264",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Morocco",
+   "Ticker": "-",
+   "Identifier": "XS2270576965",
+   "Weight": "0.5439393209",
+   "Market Value": "349300",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS2176897754",
+   "Weight": "0.3193342707",
+   "Market Value": "205066",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS2176899701",
+   "Weight": "0.3049984408",
+   "Market Value": "195860",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECW59",
+   "Weight": "0.2454267296",
+   "Market Value": "157605",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "XS2201851685",
+   "Weight": "0.2648142033",
+   "Market Value": "170055",
+   "Shares Held": "250000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Gaci First Investment Co.",
+   "Ticker": "-",
+   "Identifier": "XS2585987683",
+   "Weight": "0.3091095196",
+   "Market Value": "198500",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Gaci First Investment Co.",
+   "Ticker": "-",
+   "Identifier": "XS2585988061",
+   "Weight": "0.8677829155",
+   "Market Value": "557261.74",
+   "Shares Held": "571000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oman Government International Bond",
+   "Ticker": "-",
+   "Identifier": "XS2288906857",
+   "Weight": "0.3519332566",
+   "Market Value": "226000",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hungary",
+   "Ticker": "-",
+   "Identifier": "XS2010026305",
+   "Weight": "0.3150409965",
+   "Market Value": "202309",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Oman Government International Bond",
+   "Ticker": "-",
+   "Identifier": "XS2234859283",
+   "Weight": "0.7074045324",
+   "Market Value": "454272",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Cote d'Ivoire",
+   "Ticker": "-",
+   "Identifier": "XS2752065479",
+   "Weight": "0.8226829179",
+   "Market Value": "528300",
+   "Shares Held": "480000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "XS2756521303",
+   "Weight": "0.1584867575",
+   "Market Value": "101775",
+   "Shares Held": "100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Bank Gospodarstwa Krajowego",
+   "Ticker": "-",
+   "Identifier": "XS2625207571",
+   "Weight": "0.3168800813",
+   "Market Value": "203490",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "ROP Sukuk Trust",
+   "Ticker": "-",
+   "Identifier": "USY7329CAA37",
+   "Weight": "0.3145598134",
+   "Market Value": "202000",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Angola",
+   "Ticker": "-",
+   "Identifier": "XS3204248440",
+   "Weight": "0.3272512118",
+   "Market Value": "210150",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Islamic Republic of Pakistan",
+   "Ticker": "-",
+   "Identifier": "XS2322319638",
+   "Weight": "0.7969954496",
+   "Market Value": "511804.35",
+   "Shares Held": "521000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hungary",
+   "Ticker": "-",
+   "Identifier": "XS2388586401",
+   "Weight": "0.5388004724",
+   "Market Value": "346000",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Bapco Energies Sukuk Ltd.",
+   "Ticker": "-",
+   "Identifier": "XS2976035316",
+   "Weight": "0.3061507887",
+   "Market Value": "196600",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Angola",
+   "Ticker": "-",
+   "Identifier": "XS2446175577",
+   "Weight": "0.4782632806",
+   "Market Value": "307125",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS2408003064",
+   "Weight": "0.2876976511",
+   "Market Value": "184750",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS2384701020",
+   "Weight": "1.1203950945",
+   "Market Value": "719481",
+   "Shares Held": "700000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS3218073057",
+   "Weight": "0.3480401896",
+   "Market Value": "223500",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Federal Republic of Nigeria",
+   "Ticker": "-",
+   "Identifier": "XS2948512913",
+   "Weight": "0.3758289018",
+   "Market Value": "241345",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hashemite Kingdom of Jordan",
+   "Ticker": "-",
+   "Identifier": "XS2602742285",
+   "Weight": "0.7331618423",
+   "Market Value": "470812.5",
+   "Shares Held": "450000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Eagle Funding Luxco Sarl",
+   "Ticker": "-",
+   "Identifier": "USL2660VAA37",
+   "Weight": "0.3912532332",
+   "Market Value": "251250",
+   "Shares Held": "250000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Democratic Socialist Republic of Sri Lanka",
+   "Ticker": "-",
+   "Identifier": "XS2966242179",
+   "Weight": "0.2479883677",
+   "Market Value": "159250",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Democratic Socialist Republic of Sri Lanka",
+   "Ticker": "-",
+   "Identifier": "XS2966242500",
+   "Weight": "0.0793554991",
+   "Market Value": "50959.5",
    "Shares Held": "53000",
-   "Asset Category": "SOVEREIGN DEBT",
-   "Coupon": "4",
-   "Maturity": "Apr 15 2028"
+   "Asset Category": "DBT"
   },
   {
-   "Name": "CASH",
+   "Name": "Democratic Socialist Republic of Sri Lanka",
    "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "0.03",
-   "Market Value": "27582.3",
-   "Shares Held": "27582",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
+   "Identifier": "XS2966242096",
+   "Weight": "0.4549048786",
+   "Market Value": "292125",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Democratic Socialist Republic of Sri Lanka",
+   "Ticker": "-",
+   "Identifier": "XS2966241445",
+   "Weight": "0.8572533528",
+   "Market Value": "550500",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Saudi Arabia",
+   "Ticker": "-",
+   "Identifier": "XS2747598444",
+   "Weight": "0.623669333",
+   "Market Value": "400500",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Serbia International Bond",
+   "Ticker": "-",
+   "Identifier": "XS2580270275",
+   "Weight": "0.988761156",
+   "Market Value": "634950",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hungary",
+   "Ticker": "-",
+   "Identifier": "XS2574267345",
+   "Weight": "0.4091749204",
+   "Market Value": "262758.72",
+   "Shares Held": "244000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hungary",
+   "Ticker": "-",
+   "Identifier": "XS2574267261",
+   "Weight": "0.3301320814",
+   "Market Value": "212000",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "XS2571923007",
+   "Weight": "0.5803854355",
+   "Market Value": "372704.5",
+   "Shares Held": "350000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Ghana",
+   "Ticker": "-",
+   "Identifier": "XS2893147251",
+   "Weight": "0.4066668665",
+   "Market Value": "261148.13",
+   "Shares Held": "265125",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Ghana",
+   "Ticker": "-",
+   "Identifier": "XS2893151287",
+   "Weight": "0.9968887586",
+   "Market Value": "640169.28",
+   "Shares Held": "684000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "XS2999564581",
+   "Weight": "0.2521679645",
+   "Market Value": "161934",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Transnet",
+   "Ticker": "-",
+   "Identifier": "XS2582981952",
+   "Weight": "0.3239031742",
+   "Market Value": "208000",
+   "Shares Held": "200000",
+   "Asset Category": "SN"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS1110833123",
+   "Weight": "0.3417846538",
+   "Market Value": "219482.9",
+   "Shares Held": "260000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "China Life Insurance Overseas Co. Ltd.",
+   "Ticker": "-",
+   "Identifier": "XS2621319040",
+   "Weight": "0.521421432",
+   "Market Value": "334839.75",
+   "Shares Held": "329000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECR64",
+   "Weight": "0.6573054318",
+   "Market Value": "422100",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECX33",
+   "Weight": "0.4904003063",
+   "Market Value": "314919",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of El Salvador",
+   "Ticker": "-",
+   "Identifier": "USP01012CH71",
+   "Weight": "0.2622914959",
+   "Market Value": "168435",
+   "Shares Held": "150000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petronas Capital Ltd.",
+   "Ticker": "-",
+   "Identifier": "USY68856BE59",
+   "Weight": "0.3210235192",
+   "Market Value": "206150.78",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "MFB Magyar Fejlesztesi Bank Zrt.",
+   "Ticker": "-",
+   "Identifier": "XS2630760796",
+   "Weight": "0.4535548564",
+   "Market Value": "291258.06",
+   "Shares Held": "282000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Trinidad & Tobago",
+   "Ticker": "-",
+   "Identifier": "USP93960AL92",
+   "Weight": "0.3204994501",
+   "Market Value": "205814.24",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Benin Government International Bond",
+   "Ticker": "-",
+   "Identifier": "XS2759982064",
+   "Weight": "0.3285343667",
+   "Market Value": "210974",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS2764424813",
+   "Weight": "0.9727466356",
+   "Market Value": "624666",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Panama",
+   "Ticker": "-",
+   "Identifier": "698299BW3",
+   "Weight": "0.5382952458",
+   "Market Value": "345675.56",
+   "Shares Held": "316000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Latvia",
+   "Ticker": "-",
+   "Identifier": "XS2829701718",
+   "Weight": "0.3118564677",
+   "Market Value": "200264",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Zambia",
+   "Ticker": "-",
+   "Identifier": "XS2837240261",
+   "Weight": "0.3271811366",
+   "Market Value": "210105",
+   "Shares Held": "212118",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Zambia",
+   "Ticker": "-",
+   "Identifier": "XS2837240428",
+   "Weight": "0.2808604911",
+   "Market Value": "180359.4",
+   "Shares Held": "228000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hazine Mustesarligi Varlik Kiralama A/S",
+   "Ticker": "-",
+   "Identifier": "XS2900389870",
+   "Weight": "0.3146314458",
+   "Market Value": "202046",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "TVF Varlik Kiralama A/S",
+   "Ticker": "-",
+   "Identifier": "XS2911679004",
+   "Weight": "0.3122473316",
+   "Market Value": "200515",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Suriname Government International Bond",
+   "Ticker": "-",
+   "Identifier": "USP68788AF84",
+   "Weight": "0.333645185",
+   "Market Value": "214256",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Bulgaria",
+   "Ticker": "-",
+   "Identifier": "XS2890436087",
+   "Weight": "0.304182454",
+   "Market Value": "195336",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Democratic Socialist Republic of Sri Lanka",
+   "Ticker": "-",
+   "Identifier": "XS2966241361",
+   "Weight": "0.1526082263",
+   "Market Value": "98000",
+   "Shares Held": "100000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "XS2917537875",
+   "Weight": "0.6633786163",
+   "Market Value": "426000",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of South Africa",
+   "Ticker": "-",
+   "Identifier": "XS2908172260",
+   "Weight": "0.9974037647",
+   "Market Value": "640500",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Cote d'Ivoire",
+   "Ticker": "-",
+   "Identifier": "XS3299474083",
+   "Weight": "0.2976249719",
+   "Market Value": "191125",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Arab Republic of Egypt",
+   "Ticker": "-",
+   "Identifier": "XS2989586941",
+   "Weight": "0.3328494421",
+   "Market Value": "213745",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hungary",
+   "Ticker": "-",
+   "Identifier": "XS3101499260",
+   "Weight": "0.3235325542",
+   "Market Value": "207762",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "XS3114897633",
+   "Weight": "0.3179701401",
+   "Market Value": "204190",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Romania",
+   "Ticker": "-",
+   "Identifier": "XS3114901336",
+   "Weight": "0.3931141192",
+   "Market Value": "252445",
+   "Shares Held": "250000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Hazine Mustesarligi Varlik Kiralama A/S",
+   "Ticker": "-",
+   "Identifier": "XS3072231809",
+   "Weight": "0.3165312625",
+   "Market Value": "203266",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Kazakhstan",
+   "Ticker": "-",
+   "Identifier": "XS3093658014",
+   "Weight": "0.3202592635",
+   "Market Value": "205660",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Corp. Nacional del Cobre de Chile",
+   "Ticker": "-",
+   "Identifier": "USP3143NBZ61",
+   "Weight": "0.3062302072",
+   "Market Value": "196651",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Kazakhstan",
+   "Ticker": "-",
+   "Identifier": "XS1263139856",
+   "Weight": "0.3398772067",
+   "Market Value": "218258",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Cote d'Ivoire",
+   "Ticker": "-",
+   "Identifier": "XS1631415400",
+   "Weight": "0.6971431864",
+   "Market Value": "447682.5",
+   "Shares Held": "450000",
+   "Asset Category": "DBT"
   },
   {
    "Name": "EURO",
    "Ticker": "-",
    "Identifier": "EUR",
-   "Weight": "0.01",
-   "Market Value": "7216.53",
-   "Shares Held": "6343",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
+   "Weight": "0.0113412361",
+   "Market Value": "7282.97",
+   "Shares Held": "6243.97",
+   "Asset Category": "STIV"
+  },
+  {
+   "Name": "Kingdom of Bahrain",
+   "Ticker": "-",
+   "Identifier": "XS2408003064",
+   "Weight": "0.2876976511",
+   "Market Value": "184750",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Corp. Nacional del Cobre de Chile",
+   "Ticker": "-",
+   "Identifier": "USP3143NBE33",
+   "Weight": "0.5872925149",
+   "Market Value": "377140",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Corp. Nacional del Cobre de Chile",
+   "Ticker": "-",
+   "Identifier": "USP3143NBF08",
+   "Weight": "0.4298693434",
+   "Market Value": "276048",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECB13",
+   "Weight": "0.475114568",
+   "Market Value": "305103",
+   "Shares Held": "300000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECF27",
+   "Weight": "0.903587079",
+   "Market Value": "580254",
+   "Shares Held": "600000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Dominican Republic",
+   "Ticker": "-",
+   "Identifier": "USP3579ECJ49",
+   "Weight": "1.0414927484",
+   "Market Value": "668812.5",
+   "Shares Held": "750000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Costa Rica",
+   "Ticker": "-",
+   "Identifier": "USP3699PGJ05",
+   "Weight": "0.6826757708",
+   "Market Value": "438392",
+   "Shares Held": "400000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Republic of Guatemala",
+   "Ticker": "-",
+   "Identifier": "USP5015VAQ97",
+   "Weight": "0.8709688458",
+   "Market Value": "559307.64",
+   "Shares Held": "526000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petroleos del Peru SA",
+   "Ticker": "-",
+   "Identifier": "USP7808BAB38",
+   "Weight": "0.2257978858",
+   "Market Value": "145000",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petronas Capital Ltd.",
+   "Ticker": "-",
+   "Identifier": "USY6886MAC48",
+   "Weight": "0.4164941667",
+   "Market Value": "267458.9",
+   "Shares Held": "397000",
+   "Asset Category": "DBT"
+  },
+  {
+   "Name": "Petronas Capital Ltd.",
+   "Ticker": "-",
+   "Identifier": "USY6886MAE04",
+   "Weight": "0.2789226781",
+   "Market Value": "179115",
+   "Shares Held": "200000",
+   "Asset Category": "DBT"
   }
  ]
 }
