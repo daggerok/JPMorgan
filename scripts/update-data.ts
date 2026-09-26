@@ -8,6 +8,9 @@ import { fileURLToPath as outputFileURLToPath } from 'node:url';
 /** Presentation only: no requests, writes, filtering, or changes to updater state. */
 
 const outputClean = (value: unknown): string => String(value ?? 'null').replace(/[\r\n\t]+/g, ' ');
+/** Presentation only: per-fund retry and fallback notices are printed when VERBOSE is enabled. */
+const outputVerbose = (): boolean => /^(1|true|yes|on)$/i.test((globalThis as any).process?.env?.VERBOSE ?? '');
+function outputNote(message: string): void { if (outputVerbose()) console.warn(message); }
 /** Names are the canonical environment knobs, not internal parser properties. */
 function outputConfigEntries(config: Record<string, any>): [string, string][] {
   const values = new Map<string, string>();
@@ -36,7 +39,8 @@ function outputConfigEntries(config: Record<string, any>): [string, string][] {
   });
 }
 function outputPrintConfig(brand: string, config: Record<string, any>): void {
-  console.log(`[ config ] ${brand} updater:\n${outputConfigEntries(config).map(([key, value]) => `            ${key}=${/TOKEN|PASSWORD|SECRET|COOKIE/i.test(key) ? '<redacted>' : outputClean(value)}`).join('\n')}`);
+  const entries: [string, string][] = [...outputConfigEntries(config), ['VERBOSE', String(outputVerbose())]];
+  console.log(`[ config ] ${brand} updater:\n${entries.map(([key, value]) => `            ${key}=${/TOKEN|PASSWORD|SECRET|COOKIE/i.test(key) ? '<redacted>' : outputClean(value)}`).join('\n')}`);
 }
 function outputHasOutputFilters(config: Record<string, any>): boolean {
   return outputConfigEntries(config).some(([name, value]) =>
@@ -2389,10 +2393,10 @@ async function processFund(
       product = parseProductData(payload, ticker);
       if (config.storeRawDownloads) await storeRaw(ticker, `product-data-${(product.holdings?.asOfDate || product.navDate || 'latest').replace(/-/g, '')}.json`, payload);
     } catch (error) {
-      console.warn(`[ product  ] ${ticker}: ${errorMessage(error)}${config.edgarFallback ? ' — holdings via SEC EDGAR N-PORT-P' : ''}`);
+      outputNote(`[ product  ] ${ticker}: ${errorMessage(error)}${config.edgarFallback ? ' — holdings via SEC EDGAR N-PORT-P' : ''}`);
     }
   } else if (!config.skipJpmorgan) {
-    console.warn(`[ product  ] ${ticker}: no CUSIP in the catalog — product-data skipped${config.edgarFallback ? ', holdings via SEC EDGAR N-PORT-P' : ''}`);
+    outputNote(`[ product  ] ${ticker}: no CUSIP in the catalog — product-data skipped${config.edgarFallback ? ', holdings via SEC EDGAR N-PORT-P' : ''}`);
   }
 
   let holdings: ParsedHoldings | null = product?.holdings ?? null;
@@ -2405,7 +2409,7 @@ async function processFund(
       holdings.rows = holdings.rows.map((row) => ({ ...row, Weight: String(round((numberOrNull(row.Weight) || 0) * 100, 6)) }));
     }
   } else if (product) {
-    console.warn(`[ holdings ] ${ticker}: product-data lists no positions${config.edgarFallback ? ' — trying SEC EDGAR N-PORT-P' : ''}`);
+    outputNote(`[ holdings ] ${ticker}: product-data lists no positions${config.edgarFallback ? ' — trying SEC EDGAR N-PORT-P' : ''}`);
   }
 
   if (!holdings && config.edgarFallback) {
@@ -2421,7 +2425,7 @@ async function processFund(
           ? !parsed.seriesId || parsed.seriesId.toUpperCase() === filing.seriesId.toUpperCase()
           : Boolean(filedSeries && wantedSeries && (filedSeries === wantedSeries || filedSeries.includes(wantedSeries) || wantedSeries.includes(filedSeries)));
         if (!belongsToFund) {
-          console.warn(`[ edgar    ] ${ticker}: ${filing.accession.accession} reports "${parsed.seriesName || 'unknown series'}" — skipped`);
+          outputNote(`[ edgar    ] ${ticker}: ${filing.accession.accession} reports "${parsed.seriesName || 'unknown series'}" — skipped`);
         } else if (parsed.holdings.length) {
           holdingsEdgar = parsed;
           holdings = {
@@ -2433,7 +2437,7 @@ async function processFund(
         }
       }
     } catch (error) {
-      console.warn(`[ edgar    ] ${ticker}: ${errorMessage(error)} — keeping previous holdings`);
+      outputNote(`[ edgar    ] ${ticker}: ${errorMessage(error)} — keeping previous holdings`);
     }
   }
 
@@ -2452,12 +2456,12 @@ async function processFund(
       const payload = await fetchJson(jpmorganHistoricalDataUrl(cusip, config.role), `[ history  ] ${ticker}`, jpmorganHeaders(), config);
       historical = parseHistoricalData(payload, ticker);
       if (!historical.points.length) {
-        console.warn(`[ history  ] ${ticker}: historicalData has no daily rows${config.skipYahoo ? '' : ' — trying the Yahoo chart feed'}`);
+        outputNote(`[ history  ] ${ticker}: historicalData has no daily rows${config.skipYahoo ? '' : ' — trying the Yahoo chart feed'}`);
         historical = historical.dividends.length || historical.quarterEnd.asOfDate ? historical : null;
       }
       if (config.storeRawDownloads) await storeRaw(ticker, `historical-data-${(historical?.points.at(-1)?.date || 'latest').replace(/-/g, '')}.json`, payload);
     } catch (error) {
-      console.warn(`[ history  ] ${ticker}: ${errorMessage(error)}${config.skipYahoo ? ' — keeping previous history' : ' — trying the Yahoo chart feed'}`);
+      outputNote(`[ history  ] ${ticker}: ${errorMessage(error)}${config.skipYahoo ? ' — keeping previous history' : ' — trying the Yahoo chart feed'}`);
     }
   }
 
@@ -2491,7 +2495,7 @@ async function processFund(
       historyHeaders = YAHOO_HISTORY_HEADERS;
       historySource = 'Yahoo Finance public chart API (adjusted close)';
     } catch (error) {
-      console.warn(`[ chart    ] ${ticker}: ${errorMessage(error)} — keeping previous history`);
+      outputNote(`[ chart    ] ${ticker}: ${errorMessage(error)} — keeping previous history`);
     }
   }
 
@@ -2724,7 +2728,7 @@ async function loadFundTickerMap(config: UpdaterConfig): Promise<Map<string, Sec
   try {
     const payload = await fetchJson(SEC_FUND_TICKERS_URL, '[edgar   ] fund ticker table', secHeaders(config), config);
     fundTickerMap = parseFundTickerMap(payload);
-    console.log(`[ edgar    ] SEC fund ticker table: ${fundTickerMap.size} ETF / mutual-fund share classes`);
+    outputNote(`[ edgar    ] SEC fund ticker table: ${fundTickerMap.size} ETF / mutual-fund share classes`);
   } catch (error) {
     console.warn(`[ edgar    ] fund ticker table: ${errorMessage(error)} — falling back to full-text search`);
     fundTickerMap = new Map<string, SecSeriesRef>();
@@ -2737,7 +2741,7 @@ async function loadCompanyTickerMap(config: UpdaterConfig): Promise<Map<string, 
   try {
     const payload = await fetchJson(SEC_COMPANY_TICKERS_URL, '[ edgar    ] company ticker table', secHeaders(config), config);
     companyTickerMap = parseCompanyTickerMap(payload);
-    console.log(`[ edgar    ] SEC company ticker table: ${companyTickerMap.size} issuer names`);
+    outputNote(`[ edgar    ] SEC company ticker table: ${companyTickerMap.size} issuer names`);
   } catch (error) {
     console.warn(`[ edgar    ] company ticker table: ${errorMessage(error)} — N-PORT tickers stay "-"`);
     companyTickerMap = new Map<string, string>();
@@ -2770,7 +2774,7 @@ async function resolveRegistrantCik(fund: CatalogFund, config: UpdaterConfig): P
       const payload = await fetchJson(eftsSearchUrl(fund.ticker), `[edgar   ] search ${fund.ticker}`, secHeaders(config), config);
       cik = pickEftsCik(payload, fund.name);
     } catch (error) {
-      console.warn(`[ edgar    ] search ${fund.ticker}: ${errorMessage(error)}`);
+      outputNote(`[ edgar    ] search ${fund.ticker}: ${errorMessage(error)}`);
     }
   }
   cikByTicker.set(fund.ticker, cik);
@@ -2792,7 +2796,7 @@ async function resolveNportFiling(
       const [newest] = parseEdgarAtomFilings(atom);
       if (newest) return { accession: newest, cik: ref.cik, seriesId: ref.seriesId };
     } catch (error) {
-      console.warn(`[ edgar    ] ${fund.ticker} series ${ref.seriesId}: ${errorMessage(error)} — scanning registrant submissions`);
+      outputNote(`[ edgar    ] ${fund.ticker} series ${ref.seriesId}: ${errorMessage(error)} — scanning registrant submissions`);
     }
   }
   const cik = ref?.cik || (await resolveRegistrantCik(fund, config));
@@ -2802,7 +2806,7 @@ async function resolveNportFiling(
     const [newest] = parseNportAccessions(submissions);
     if (newest) return { accession: newest, cik, seriesId: ref?.seriesId || '' };
   } catch (error) {
-    console.warn(`[ edgar    ] ${fund.ticker}: ${errorMessage(error)}`);
+    outputNote(`[ edgar    ] ${fund.ticker}: ${errorMessage(error)}`);
   }
   return null;
 }
