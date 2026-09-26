@@ -2,7 +2,7 @@
  "ticker": "SCDS",
  "page": 2,
  "pageSize": 250,
- "totalRows": 277,
+ "totalRows": 279,
  "headers": [
   "Name",
   "Ticker",
@@ -10,251 +10,329 @@
   "Weight",
   "Market Value",
   "Shares Held",
-  "Asset Category"
+  "Asset Category",
+  "Coupon",
+  "Maturity"
  ],
  "rows": [
   {
-   "Name": "Donnelley Financial Solutions, Inc.",
-   "Ticker": "DFIN",
-   "Identifier": "25787G100",
-   "Weight": "0.347945439",
-   "Market Value": "32049.8",
-   "Shares Held": "764",
-   "Asset Category": "EC"
+   "Name": "VIKING THERAPEUTICS INC",
+   "Ticker": "VKTX",
+   "Identifier": "92686J106",
+   "Weight": "0.1",
+   "Market Value": "9775.5",
+   "Shares Held": "266",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "Liberty Energy, Inc.",
-   "Ticker": "LBRT",
-   "Identifier": "53115L104",
-   "Weight": "0.4950169771",
-   "Market Value": "45596.79",
-   "Shares Held": "1741",
-   "Asset Category": "EC"
+   "Name": "SPROUTS FARMERS MARKET",
+   "Ticker": "SFM",
+   "Identifier": "85208M102",
+   "Weight": "0.1",
+   "Market Value": "9682.16",
+   "Shares Held": "148",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "Joby Aviation, Inc.",
-   "Ticker": "JOBY",
-   "Identifier": "KYG651631007",
-   "Weight": "0.0912224183",
-   "Market Value": "8402.64",
-   "Shares Held": "942",
-   "Asset Category": "EC"
+   "Name": "ACCEL ENTERTAINMENT INC",
+   "Ticker": "ACEL",
+   "Identifier": "00436Q106",
+   "Weight": "0.1",
+   "Market Value": "9571.68",
+   "Shares Held": "867",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "Green Brick Partners, Inc.",
+   "Name": "RIGETTI COMPUTING INC",
+   "Ticker": "RGTI",
+   "Identifier": "76655K103",
+   "Weight": "0.1",
+   "Market Value": "9174",
+   "Shares Held": "556",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "GREEN BRICK PARTNERS INC",
    "Ticker": "GRBK",
    "Identifier": "392709101",
-   "Weight": "0.1077493327",
-   "Market Value": "9924.96",
-   "Shares Held": "124",
-   "Asset Category": "EC"
+   "Weight": "0.1",
+   "Market Value": "9083.86",
+   "Shares Held": "134",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "Atmus Filtration Technologies, Inc.",
-   "Ticker": "ATMU",
-   "Identifier": "04956D107",
-   "Weight": "0.5269965652",
-   "Market Value": "48542.48",
-   "Shares Held": "952",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Select Water Solutions, Inc.",
-   "Ticker": "WTTR",
-   "Identifier": "81617J301",
-   "Weight": "0.2715724042",
-   "Market Value": "25014.96",
-   "Shares Held": "1252",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Sionna Therapeutics, Inc.",
-   "Ticker": "SION",
-   "Identifier": "829401108",
-   "Weight": "0.3424198573",
-   "Market Value": "31540.83",
-   "Shares Held": "717",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Rambus, Inc.",
-   "Ticker": "RMBS",
-   "Identifier": "750917106",
-   "Weight": "0.4769969821",
-   "Market Value": "43936.94",
-   "Shares Held": "331",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Provident Financial Services, Inc.",
-   "Ticker": "PFS",
-   "Identifier": "74386T105",
-   "Weight": "0.5892575832",
-   "Market Value": "54277.44",
-   "Shares Held": "2296",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Core Natural Resources, Inc.",
-   "Ticker": "CNR",
-   "Identifier": "218937100",
-   "Weight": "0.108591138",
-   "Market Value": "10002.5",
-   "Shares Held": "125",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "ACM Research, Inc.",
-   "Ticker": "ACMR",
-   "Identifier": "00108J109",
-   "Weight": "0.3870967647",
-   "Market Value": "35656.09",
-   "Shares Held": "281",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "RLJ Lodging Trust",
-   "Ticker": "RLJ",
-   "Identifier": "74965L101",
-   "Weight": "0.1772774076",
-   "Market Value": "16329.3",
-   "Shares Held": "1378",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Inmode Ltd.",
-   "Ticker": "INMD",
-   "Identifier": "IL0011595993",
-   "Weight": "0.2866493378",
-   "Market Value": "26403.72",
-   "Shares Held": "1806",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Akero Therapeutics, Inc.",
-   "Ticker": "-",
-   "Identifier": "009CVR044",
-   "Weight": "0.0018911848",
-   "Market Value": "174.2",
-   "Shares Held": "268",
-   "Asset Category": "-"
-  },
-  {
-   "Name": "StoneX Group, Inc.",
-   "Ticker": "SNEX",
-   "Identifier": "861896108",
-   "Weight": "0.5133068623",
-   "Market Value": "47281.5",
-   "Shares Held": "399",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "V2X, Inc.",
-   "Ticker": "VVX",
-   "Identifier": "92242T101",
-   "Weight": "0.4022982212",
-   "Market Value": "37056.32",
-   "Shares Held": "497",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Thryv Holdings, Inc.",
-   "Ticker": "THRY",
-   "Identifier": "886029206",
-   "Weight": "0.0251084641",
-   "Market Value": "2312.78",
-   "Shares Held": "587",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Maze Therapeutics, Inc.",
-   "Ticker": "MAZE",
-   "Identifier": "578784100",
-   "Weight": "0.1331454914",
-   "Market Value": "12264.24",
-   "Shares Held": "411",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Alkermes plc",
-   "Ticker": "ALKS",
-   "Identifier": "IE00B56GVS15",
-   "Weight": "0.6097761786",
-   "Market Value": "56167.44",
-   "Shares Held": "1072",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Victoria's Secret & Co.",
-   "Ticker": "VSXY",
-   "Identifier": "926400102",
-   "Weight": "0.348922515",
-   "Market Value": "32139.8",
-   "Shares Held": "385",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Graham Holdings Co.",
-   "Ticker": "GHC",
-   "Identifier": "384637104",
-   "Weight": "0.5080601814",
-   "Market Value": "46798.22",
-   "Shares Held": "41",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "LCI Industries",
-   "Ticker": "LCII",
-   "Identifier": "50189K103",
-   "Weight": "0.5218619224",
-   "Market Value": "48069.52",
-   "Shares Held": "454",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Iridium Communications, Inc.",
-   "Ticker": "IRDM",
-   "Identifier": "46269C102",
-   "Weight": "0.3394199083",
-   "Market Value": "31264.5",
-   "Shares Held": "570",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "CareTrust REIT, Inc.",
-   "Ticker": "CTRE",
-   "Identifier": "14174T107",
-   "Weight": "0.4757285204",
-   "Market Value": "43820.1",
-   "Shares Held": "1086",
-   "Asset Category": "EC"
-  },
-  {
-   "Name": "Upstart Holdings, Inc.",
+   "Name": "UPSTART HOLDINGS INC",
    "Ticker": "UPST",
    "Identifier": "91680M107",
-   "Weight": "0.1292397931",
-   "Market Value": "11904.48",
-   "Shares Held": "336",
-   "Asset Category": "EC"
+   "Weight": "0.1",
+   "Market Value": "8968.96",
+   "Shares Held": "364",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "BankUnited, Inc.",
-   "Ticker": "BKU",
-   "Identifier": "06652K103",
-   "Weight": "0.5475582605",
-   "Market Value": "50436.45",
-   "Shares Held": "1041",
-   "Asset Category": "EC"
+   "Name": "OMNICELL INC COMMON",
+   "Ticker": "OMCL",
+   "Identifier": "68213N109",
+   "Weight": "0.1",
+   "Market Value": "8918.1",
+   "Shares Held": "270",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "Applied Industrial Technologies, Inc.",
-   "Ticker": "AIT",
-   "Identifier": "03820C105",
-   "Weight": "0.4331888038",
-   "Market Value": "39901.7",
-   "Shares Held": "118",
-   "Asset Category": "EC"
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "0.09",
+   "Market Value": "8046.63",
+   "Shares Held": "8046",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "D-WAVE QUANTUM INC",
+   "Ticker": "QBTS",
+   "Identifier": "26740W109",
+   "Weight": "0.08",
+   "Market Value": "7586.32",
+   "Shares Held": "434",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "FIRST WATCH RESTAURANT",
+   "Ticker": "FWRG",
+   "Identifier": "33748L101",
+   "Weight": "0.08",
+   "Market Value": "7491.26",
+   "Shares Held": "733",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ANI PHARMACEUTICALS INC",
+   "Ticker": "ANIP",
+   "Identifier": "00182C103",
+   "Weight": "0.08",
+   "Market Value": "7404",
+   "Shares Held": "100",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "BLOOMIN' BRANDS INC",
+   "Ticker": "BLMN",
+   "Identifier": "094235108",
+   "Weight": "0.07",
+   "Market Value": "6763.96",
+   "Shares Held": "833",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "JOBY AVIATION INC COMMON",
+   "Ticker": "JOBY",
+   "Identifier": "G65163100",
+   "Weight": "0.07",
+   "Market Value": "6426",
+   "Shares Held": "1020",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "PROCEPT BIOROBOTICS CORP",
+   "Ticker": "PRCT",
+   "Identifier": "74276L105",
+   "Weight": "0.07",
+   "Market Value": "6370",
+   "Shares Held": "364",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "INOGEN INC COMMON STOCK",
+   "Ticker": "INGN",
+   "Identifier": "45780L104",
+   "Weight": "0.07",
+   "Market Value": "6333.53",
+   "Shares Held": "1211",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "EVOLENT HEALTH INC",
+   "Ticker": "EVH",
+   "Identifier": "30050B101",
+   "Weight": "0.07",
+   "Market Value": "6304.32",
+   "Shares Held": "1791",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "UNISYS CORP COMMON STOCK",
+   "Ticker": "UIS",
+   "Identifier": "909214306",
+   "Weight": "0.06",
+   "Market Value": "5361.92",
+   "Shares Held": "2272",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "PETCO HEALTH & WELLNESS",
+   "Ticker": "WOOF",
+   "Identifier": "71601V105",
+   "Weight": "0.05",
+   "Market Value": "5159.37",
+   "Shares Held": "2253",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CONDUENT INC COMMON",
+   "Ticker": "CNDT",
+   "Identifier": "206787103",
+   "Weight": "0.05",
+   "Market Value": "5113.31",
+   "Shares Held": "3137",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "VITAL FARMS INC COMMON",
+   "Ticker": "VITL",
+   "Identifier": "92847W103",
+   "Weight": "0.05",
+   "Market Value": "4954.19",
+   "Shares Held": "491",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ORION SA COMMON STOCK",
+   "Ticker": "OEC",
+   "Identifier": "L72967109",
+   "Weight": "0.05",
+   "Market Value": "4490.92",
+   "Shares Held": "746",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "VERRA MOBILITY CORP",
+   "Ticker": "VRRM",
+   "Identifier": "92511U102",
+   "Weight": "0.04",
+   "Market Value": "3880.5",
+   "Shares Held": "1194",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ANGI INC COMMON STOCK",
+   "Ticker": "ANGI",
+   "Identifier": "00183L201",
+   "Weight": "0.02",
+   "Market Value": "1904.04",
+   "Shares Held": "369",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "USD - FOR FUTURES",
+   "Ticker": "-",
+   "Identifier": "USQ",
+   "Weight": "0.02",
+   "Market Value": "1821.08",
+   "Shares Held": "1821",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "THRYV HOLDINGS INC",
+   "Ticker": "THRY",
+   "Identifier": "886029206",
+   "Weight": "0.01",
+   "Market Value": "1138.44",
+   "Shares Held": "636",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "AKERO THERAPEUTICS INC",
+   "Ticker": "-",
+   "Identifier": "009CVR044",
+   "Weight": "0",
+   "Market Value": "174.2",
+   "Shares Held": "268",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ARCELLX INC COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "039CVR014",
+   "Weight": "0",
+   "Market Value": "18.55",
+   "Shares Held": "265",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CONTRA BLUEPRINT MEDIC",
+   "Ticker": "-",
+   "Identifier": "096CVR048",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "205",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "MICRO EMIN 12/18/2026",
+   "Ticker": "-",
+   "Identifier": "HWRZ6ID",
+   "Weight": "-0.1",
+   "Market Value": "-9814.3",
+   "Shares Held": "28",
+   "Asset Category": "EQUITY INDEX FUTURES",
+   "Coupon": "",
+   "Maturity": "Dec 18 2026"
   }
  ]
 }

@@ -11,7 +11,7 @@
   "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q633&country=us&role=adv&locale=en-US&fromDate=2025-06-24&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JPHY",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "Yahoo Finance public chart API (adjusted close)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
@@ -66,8 +66,8 @@
    "asOfDate": "Aug 31 2026",
    "mo1": 0.8,
    "mo1Text": "0.80%",
-   "qtd": -1.15,
-   "qtdText": "-1.15%",
+   "qtd": -1.03,
+   "qtdText": "-1.03%",
    "ytd": 2.84,
    "ytdText": "2.84%",
    "yr1": 5.09,
@@ -101,64 +101,52 @@
   ],
   "rows": [
    [
-    "08/01/2025",
-    "0.313"
-   ],
-   [
-    "09/02/2025",
-    "0.281"
-   ],
-   [
     "10/01/2025",
-    "0.263"
+    "0.26345"
    ],
    [
     "11/03/2025",
-    "0.259"
+    "0.25892"
    ],
    [
     "12/01/2025",
-    "0.262"
-   ],
-   [
-    "12/15/2025",
-    "0.035"
+    "0.26178"
    ],
    [
     "12/31/2025",
-    "0.264"
+    "0.26438"
    ],
    [
     "02/02/2026",
-    "0.26"
+    "0.26041"
    ],
    [
     "03/02/2026",
-    "0.261"
+    "0.26147"
    ],
    [
     "04/01/2026",
-    "0.255"
+    "0.25458"
    ],
    [
     "05/01/2026",
-    "0.262"
+    "0.26224"
    ],
    [
     "06/01/2026",
-    "0.262"
+    "0.26191"
    ],
    [
     "07/01/2026",
-    "0.269"
+    "0.26898"
    ],
    [
     "08/03/2026",
-    "0.267"
+    "0.2668"
    ],
    [
     "09/01/2026",
-    "0.282"
+    "0.28227"
    ]
   ]
  },
@@ -179,8 +167,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 315,
-  "asOf": "Sep 24 2026",
-  "source": "Yahoo Finance public chart API (adjusted close)"
+  "totalRows": 316,
+  "asOf": "Sep 25 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  }
 }

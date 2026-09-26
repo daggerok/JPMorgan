@@ -11,7 +11,7 @@
   "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q575&country=us&role=adv&locale=en-US&fromDate=2000-08-18&toDate=2026-09-25",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JMTG",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
-  "historySource": "Yahoo Finance public chart API (adjusted close)",
+  "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
   "provider": "J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
  },
  "identifiers": {
@@ -66,8 +66,8 @@
    "asOfDate": "Aug 31 2026",
    "mo1": 0.29,
    "mo1Text": "0.29%",
-   "qtd": -3.07,
-   "qtdText": "-3.07%",
+   "qtd": -2.58,
+   "qtdText": "-2.58%",
    "ytd": 0.5,
    "ytdText": "0.50%",
    "yr1": 2.94,
@@ -101,16 +101,8 @@
   ],
   "rows": [
    [
-    "08/01/2025",
-    "0.182"
-   ],
-   [
-    "09/02/2025",
-    "0.178"
-   ],
-   [
     "10/01/2025",
-    "0.177"
+    "0.17705"
    ],
    [
     "11/03/2025",
@@ -118,27 +110,27 @@
    ],
    [
     "12/01/2025",
-    "0.175"
+    "0.17489"
    ],
    [
     "12/31/2025",
-    "0.181"
+    "0.18063"
    ],
    [
     "02/02/2026",
-    "0.182"
+    "0.18243"
    ],
    [
     "03/02/2026",
-    "0.18"
+    "0.17965"
    ],
    [
     "04/01/2026",
-    "0.176"
+    "0.17563"
    ],
    [
     "05/01/2026",
-    "0.174"
+    "0.17439"
    ],
    [
     "06/01/2026",
@@ -146,15 +138,15 @@
    ],
    [
     "07/01/2026",
-    "0.195"
+    "0.19495"
    ],
    [
     "08/03/2026",
-    "0.184"
+    "0.18424"
    ],
    [
     "09/01/2026",
-    "0.198"
+    "0.19849"
    ]
   ]
  },
@@ -183,8 +175,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 312,
-  "asOf": "Sep 24 2026",
-  "source": "Yahoo Finance public chart API (adjusted close)"
+  "totalRows": 314,
+  "asOf": "Sep 25 2026",
+  "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  }
 }
