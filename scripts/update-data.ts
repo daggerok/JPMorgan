@@ -1869,7 +1869,12 @@ export function parseChart(payload: JsonRecord): ParsedChart {
     days.push({
       date: epochToIsoDate(timestamps[i]),
       close: round(close, 6),
-      adjClose: round(adjClose, 6),
+      // Yahoo recomputes the split/dividend-adjusted close on every request;
+      // at 6 decimals the last digit or two jitters between otherwise
+      // identical requests, making every history row (and the fund) look
+      // "updated" on every single run. 2 decimals is well past any
+      // meaningful precision for a price and absorbs that jitter.
+      adjClose: round(adjClose, 2),
       volume: typeof volumes[i] === 'number' ? (volumes[i] as number) : 0,
     });
   }
@@ -2128,6 +2133,20 @@ function fundFilterReasons(
 // Deterministic writers (iShares/SPDR/Fidelity-style)
 // ---------------------------------------------------------------------------
 
+// Comparing raw text would treat a run that only refreshed generatedAt (with
+// every fund's actual data unchanged) as a real change and rewrite the file
+// every time. Compare with both timestamps stripped instead.
+export function samePublishedContent(previous: string, value: unknown): boolean {
+  const withoutRunTimestamp = (item: unknown): unknown => {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) return item;
+    const { generatedAt, savedAt, ...content } = item as Record<string, unknown>;
+    return content;
+  };
+  try {
+    return JSON.stringify(withoutRunTimestamp(JSON.parse(previous))) === JSON.stringify(withoutRunTimestamp(value));
+  } catch { return false; }
+}
+
 async function writeIfChanged(file: URL, value: unknown): Promise<boolean> {
   const next = `${JSON.stringify(value, null, 1)}\n`;
   let previous: string | null = null;
@@ -2136,7 +2155,7 @@ async function writeIfChanged(file: URL, value: unknown): Promise<boolean> {
   } catch {
     // First write.
   }
-  if (previous === next) return false;
+  if (previous === next || (previous !== null && samePublishedContent(previous, value))) return false;
   await writeFile(file, next, 'utf8');
   return true;
 }
