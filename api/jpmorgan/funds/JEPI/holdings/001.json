@@ -2,7 +2,7 @@
  "ticker": "JEPI",
  "page": 1,
  "pageSize": 250,
- "totalRows": 137,
+ "totalRows": 138,
  "headers": [
   "Name",
   "Ticker",
@@ -14,20 +14,11 @@
  ],
  "rows": [
   {
-   "Name": "META PLATFORMS INC",
-   "Ticker": "META",
-   "Identifier": "30303M102",
-   "Weight": "2.23",
-   "Market Value": "1013059026.21",
-   "Shares Held": "1302819",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
    "Name": "MICROSOFT CORP COMMON",
    "Ticker": "MSFT",
    "Identifier": "594918104",
-   "Weight": "1.95",
-   "Market Value": "887290346.94",
+   "Weight": "2.01",
+   "Market Value": "919793260.86",
    "Shares Held": "1781958",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -35,9 +26,18 @@
    "Name": "APPLE INC COMMON STOCK",
    "Ticker": "AAPL",
    "Identifier": "037833100",
-   "Weight": "1.92",
-   "Market Value": "873711124",
+   "Weight": "1.94",
+   "Market Value": "887106016.5",
    "Shares Held": "2600950",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "META PLATFORMS INC",
+   "Ticker": "META",
+   "Identifier": "30303M102",
+   "Weight": "1.92",
+   "Market Value": "879070879.96",
+   "Shares Held": "1169506",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -45,7 +45,7 @@
    "Ticker": "NVDA",
    "Identifier": "67066G104",
    "Weight": "1.88",
-   "Market Value": "855756700.08",
+   "Market Value": "857623833.32",
    "Shares Held": "3810476",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -54,7 +54,7 @@
    "Ticker": "AMZN",
    "Identifier": "023135106",
    "Weight": "1.83",
-   "Market Value": "833757889.74",
+   "Market Value": "834727453.41",
    "Shares Held": "3343323",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -62,9 +62,18 @@
    "Name": "JOHNSON & COMMON",
    "Ticker": "JNJ",
    "Identifier": "478160104",
-   "Weight": "1.81",
-   "Market Value": "823080225.16",
+   "Weight": "1.8",
+   "Market Value": "824722250.14",
    "Shares Held": "3040787",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "TRANE TECHNOLOGIES PLC",
+   "Ticker": "TT",
+   "Identifier": "G8994E103",
+   "Weight": "1.79",
+   "Market Value": "819478473.24",
+   "Shares Held": "1803271",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -72,17 +81,8 @@
    "Ticker": "MA",
    "Identifier": "57636Q104",
    "Weight": "1.77",
-   "Market Value": "805398245.12",
+   "Market Value": "807631984.6",
    "Shares Held": "1422764",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "TRANE TECHNOLOGIES PLC",
-   "Ticker": "TT",
-   "Identifier": "G8994E103",
-   "Weight": "1.74",
-   "Market Value": "790806464.34",
-   "Shares Held": "1803271",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -90,7 +90,7 @@
    "Ticker": "GOOGL",
    "Identifier": "02079K305",
    "Weight": "1.73",
-   "Market Value": "785744958.24",
+   "Market Value": "789325289.28",
    "Shares Held": "2295084",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -98,8 +98,8 @@
    "Name": "3M CO COMMON STOCK USD",
    "Ticker": "MMM",
    "Identifier": "88579Y101",
-   "Weight": "1.71",
-   "Market Value": "779602063.2",
+   "Weight": "1.73",
+   "Market Value": "789049246.75",
    "Shares Held": "4653785",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -107,62 +107,62 @@
    "Name": "ABBVIE INC COMMON STOCK",
    "Ticker": "ABBV",
    "Identifier": "00287Y109",
-   "Weight": "1.7",
-   "Market Value": "774191228.48",
+   "Weight": "1.69",
+   "Market Value": "771913508.36",
    "Shares Held": "2920154",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "LAM RESEARCH CORP COMMON",
-   "Ticker": "LRCX",
-   "Identifier": "512807306",
-   "Weight": "1.58",
-   "Market Value": "717214299.76",
-   "Shares Held": "2334986",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BROADCOM INC COMMON",
-   "Ticker": "AVGO",
-   "Identifier": "11135F101",
-   "Weight": "1.58",
-   "Market Value": "717019447.92",
-   "Shares Held": "2046522",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "EOG RESOURCES INC COMMON",
-   "Ticker": "EOG",
-   "Identifier": "26875P101",
-   "Weight": "1.56",
-   "Market Value": "710873217.18",
-   "Shares Held": "4976013",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "NEXTERA ENERGY INC",
    "Ticker": "NEE",
    "Identifier": "65339F101",
-   "Weight": "1.55",
-   "Market Value": "706964271.72",
-   "Shares Held": "9348906",
+   "Weight": "1.65",
+   "Market Value": "753817149.36",
+   "Shares Held": "9908217",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "JPMORGAN PRIME MONEY",
    "Ticker": "JIMXX",
    "Identifier": "46637K844",
-   "Weight": "1.54",
-   "Market Value": "700575486.62",
-   "Shares Held": "700645551",
+   "Weight": "1.63",
+   "Market Value": "743644269.12",
+   "Shares Held": "743718640",
    "Asset Category": "MONEY MARKET"
+  },
+  {
+   "Name": "BROADCOM INC COMMON",
+   "Ticker": "AVGO",
+   "Identifier": "11135F101",
+   "Weight": "1.62",
+   "Market Value": "741321549.52",
+   "Shares Held": "2101192",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "LAM RESEARCH CORP COMMON",
+   "Ticker": "LRCX",
+   "Identifier": "512807306",
+   "Weight": "1.61",
+   "Market Value": "736010937.06",
+   "Shares Held": "2334986",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "EOG RESOURCES INC COMMON",
+   "Ticker": "EOG",
+   "Identifier": "26875P101",
+   "Weight": "1.53",
+   "Market Value": "698383424.55",
+   "Shares Held": "4976013",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "EATON CORP PLC COMMON",
    "Ticker": "ETN",
    "Identifier": "G29183103",
-   "Weight": "1.52",
-   "Market Value": "692280600",
+   "Weight": "1.51",
+   "Market Value": "692249132.7",
    "Shares Held": "1573365",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -170,8 +170,8 @@
    "Name": "VISA INC COMMON STOCK",
    "Ticker": "V",
    "Identifier": "92826C839",
-   "Weight": "1.48",
-   "Market Value": "673131462.78",
+   "Weight": "1.47",
+   "Market Value": "672033906.18",
    "Shares Held": "1829261",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -180,7 +180,7 @@
    "Ticker": "LOW",
    "Identifier": "548661107",
    "Weight": "1.43",
-   "Market Value": "649703353.65",
+   "Market Value": "652426392.8",
    "Shares Held": "3446885",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -188,8 +188,8 @@
    "Name": "PHILIP MORRIS",
    "Ticker": "PM",
    "Identifier": "718172109",
-   "Weight": "1.39",
-   "Market Value": "632588078",
+   "Weight": "1.38",
+   "Market Value": "629218679.36",
    "Shares Held": "3303332",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -198,8 +198,26 @@
    "Ticker": "ROST",
    "Identifier": "778296103",
    "Weight": "1.33",
-   "Market Value": "605047678.4",
+   "Market Value": "606898291.52",
    "Shares Held": "2570296",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "HOWMET AEROSPACE INC",
+   "Ticker": "HWM",
+   "Identifier": "443201108",
+   "Weight": "1.31",
+   "Market Value": "596946335.36",
+   "Shares Held": "2567732",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CITIGROUP INC COMMON",
+   "Ticker": "C",
+   "Identifier": "172967424",
+   "Weight": "1.3",
+   "Market Value": "596084899.32",
+   "Shares Held": "4439119",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -207,7 +225,7 @@
    "Ticker": "AMD",
    "Identifier": "007903107",
    "Weight": "1.27",
-   "Market Value": "579101685.4",
+   "Market Value": "580362482.7",
    "Shares Held": "920290",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -215,36 +233,18 @@
    "Name": "MONDELEZ INTERNATIONAL",
    "Ticker": "MDLZ",
    "Identifier": "609207105",
-   "Weight": "1.27",
-   "Market Value": "578505764.62",
+   "Weight": "1.25",
+   "Market Value": "572707399.25",
    "Shares Held": "9505517",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "HOWMET AEROSPACE INC",
-   "Ticker": "HWM",
-   "Identifier": "443201108",
-   "Weight": "1.27",
-   "Market Value": "578265603.72",
-   "Shares Held": "2520994",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "COSTCO WHOLESALE CORP",
    "Ticker": "COST",
    "Identifier": "22160K105",
-   "Weight": "1.21",
-   "Market Value": "550218185.92",
+   "Weight": "1.24",
+   "Market Value": "566350709.81",
    "Shares Held": "613754",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CITIGROUP INC COMMON",
-   "Ticker": "C",
-   "Identifier": "172967424",
-   "Weight": "1.2",
-   "Market Value": "548151195.7",
-   "Shares Held": "4149517",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -252,8 +252,17 @@
    "Ticker": "RTX",
    "Identifier": "75513E101",
    "Weight": "1.19",
-   "Market Value": "539836524.24",
+   "Market Value": "542097649.6",
    "Shares Held": "2862184",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "VERTIV HOLDINGS CO",
+   "Ticker": "VRT",
+   "Identifier": "92537N108",
+   "Weight": "1.17",
+   "Market Value": "533705790.56",
+   "Shares Held": "2107177",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -261,7 +270,7 @@
    "Ticker": "PEP",
    "Identifier": "713448108",
    "Weight": "1.16",
-   "Market Value": "528449335.7",
+   "Market Value": "530428701.14",
    "Shares Held": "4123678",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -270,7 +279,7 @@
    "Ticker": "VRTX",
    "Identifier": "92532F100",
    "Weight": "1.12",
-   "Market Value": "510338096.24",
+   "Market Value": "514060268.12",
    "Shares Held": "976948",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -278,8 +287,8 @@
    "Name": "ECOLAB INC COMMON STOCK",
    "Ticker": "ECL",
    "Identifier": "278865100",
-   "Weight": "1.07",
-   "Market Value": "488678486.25",
+   "Weight": "1.09",
+   "Market Value": "495989941.25",
    "Shares Held": "1774625",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -287,27 +296,9 @@
    "Name": "REGENERON",
    "Ticker": "REGN",
    "Identifier": "75886F107",
-   "Weight": "1.05",
-   "Market Value": "480068517.72",
-   "Shares Held": "603086",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "VERTIV HOLDINGS CO",
-   "Ticker": "VRT",
-   "Identifier": "92537N108",
    "Weight": "1.04",
-   "Market Value": "473041916.6",
-   "Shares Held": "1928422",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ELI LILLY AND COMPANY",
-   "Ticker": "LLY",
-   "Identifier": "532457108",
-   "Weight": "1",
-   "Market Value": "455238026.42",
-   "Shares Held": "385178",
+   "Market Value": "475255891.44",
+   "Shares Held": "603086",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -315,8 +306,17 @@
    "Ticker": "DIS",
    "Identifier": "254687106",
    "Weight": "1",
-   "Market Value": "454991467.84",
+   "Market Value": "457534523.6",
    "Shares Held": "4310264",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ELI LILLY AND COMPANY",
+   "Ticker": "LLY",
+   "Identifier": "532457108",
+   "Weight": "1",
+   "Market Value": "455842755.88",
+   "Shares Held": "385178",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -324,7 +324,7 @@
    "Ticker": "-",
    "Identifier": "JPH994038",
    "Weight": "0.99",
-   "Market Value": "450355999.61",
+   "Market Value": "451476886.12",
    "Shares Held": "57975",
    "Asset Category": "Equity Linked Notes"
   },
@@ -333,16 +333,25 @@
    "Ticker": "-",
    "Identifier": "JPH994037",
    "Weight": "0.99",
-   "Market Value": "449527682.29",
+   "Market Value": "451002071.3",
    "Shares Held": "57963",
+   "Asset Category": "Equity Linked Notes"
+  },
+  {
+   "Name": "SPX_24",
+   "Ticker": "-",
+   "Identifier": "JPH994039",
+   "Weight": "0.98",
+   "Market Value": "449913701.98",
+   "Shares Held": "57561",
    "Asset Category": "Equity Linked Notes"
   },
   {
    "Name": "SPX_27",
    "Ticker": "-",
    "Identifier": "JPH994042",
-   "Weight": "0.99",
-   "Market Value": "449210661.2",
+   "Weight": "0.98",
+   "Market Value": "449895522.49",
    "Shares Held": "57436",
    "Asset Category": "Equity Linked Notes"
   },
@@ -350,62 +359,62 @@
    "Name": "SPX_26",
    "Ticker": "-",
    "Identifier": "JPH994041",
-   "Weight": "0.99",
-   "Market Value": "448600380.49",
+   "Weight": "0.98",
+   "Market Value": "447808672.46",
    "Shares Held": "58044",
-   "Asset Category": "Equity Linked Notes"
-  },
-  {
-   "Name": "SPX_24",
-   "Ticker": "-",
-   "Identifier": "JPH994039",
-   "Weight": "0.99",
-   "Market Value": "448508713.26",
-   "Shares Held": "57561",
    "Asset Category": "Equity Linked Notes"
   },
   {
    "Name": "SPX_25",
    "Ticker": "-",
    "Identifier": "JPH994040",
-   "Weight": "0.98",
-   "Market Value": "446905916.3",
+   "Weight": "0.97",
+   "Market Value": "445451954.2",
    "Shares Held": "58311",
    "Asset Category": "Equity Linked Notes"
-  },
-  {
-   "Name": "EQUINIX INC REIT USD",
-   "Ticker": "EQIX",
-   "Identifier": "29444U700",
-   "Weight": "0.95",
-   "Market Value": "431665655.4",
-   "Shares Held": "417165",
-   "Asset Category": "REIT"
   },
   {
    "Name": "EMERSON ELECTRIC CO",
    "Ticker": "EMR",
    "Identifier": "291011104",
-   "Weight": "0.93",
-   "Market Value": "425052271.14",
+   "Weight": "0.94",
+   "Market Value": "430741775.73",
    "Shares Held": "2722251",
    "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "EQUINIX INC REIT USD",
+   "Ticker": "EQIX",
+   "Identifier": "29444U700",
+   "Weight": "0.92",
+   "Market Value": "420535693.2",
+   "Shares Held": "417165",
+   "Asset Category": "REIT"
   },
   {
    "Name": "SEMPRA COMMON STOCK USD",
    "Ticker": "SRE",
    "Identifier": "816851109",
    "Weight": "0.91",
-   "Market Value": "415742636.4",
+   "Market Value": "416758729.8",
    "Shares Held": "5347860",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "PROGRESSIVE CORP/THE",
+   "Ticker": "PGR",
+   "Identifier": "743315103",
+   "Weight": "0.9",
+   "Market Value": "412706266.5",
+   "Shares Held": "2008303",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SPX_4",
    "Ticker": "-",
    "Identifier": "JPH994049",
-   "Weight": "0.91",
-   "Market Value": "412074368.58",
+   "Weight": "0.9",
+   "Market Value": "411966343.25",
    "Shares Held": "52803",
    "Asset Category": "Equity Linked Notes"
   },
@@ -413,8 +422,8 @@
    "Name": "SPX_6",
    "Ticker": "-",
    "Identifier": "JPH994051",
-   "Weight": "0.9",
-   "Market Value": "408003020.67",
+   "Weight": "0.89",
+   "Market Value": "406422216.92",
    "Shares Held": "52959",
    "Asset Category": "Equity Linked Notes"
   },
@@ -422,36 +431,27 @@
    "Name": "SPX_5",
    "Ticker": "-",
    "Identifier": "JPH994050",
-   "Weight": "0.9",
-   "Market Value": "407535647.82",
+   "Weight": "0.89",
+   "Market Value": "406416041.19",
    "Shares Held": "52945",
    "Asset Category": "Equity Linked Notes"
-  },
-  {
-   "Name": "PROGRESSIVE CORP/THE",
-   "Ticker": "PGR",
-   "Identifier": "743315103",
-   "Weight": "0.89",
-   "Market Value": "406018617.51",
-   "Shares Held": "2008303",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ENTERGY CORP COMMON",
    "Ticker": "ETR",
    "Identifier": "29364G103",
    "Weight": "0.89",
-   "Market Value": "403586803.2",
+   "Market Value": "405272526.4",
    "Shares Held": "4111520",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "CHIPOTLE MEXICAN GRILL",
-   "Ticker": "CMG",
-   "Identifier": "169656105",
-   "Weight": "0.88",
-   "Market Value": "399056186.1",
-   "Shares Held": "12466610",
+   "Name": "NETFLIX INC COMMON STOCK",
+   "Ticker": "NFLX",
+   "Identifier": "64110L106",
+   "Weight": "0.87",
+   "Market Value": "398430070.83",
+   "Shares Held": "5600254",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -459,7 +459,7 @@
    "Ticker": "-",
    "Identifier": "JPH994043",
    "Weight": "0.85",
-   "Market Value": "388867501.9",
+   "Market Value": "387945612.58",
    "Shares Held": "50433",
    "Asset Category": "Equity Linked Notes"
   },
@@ -468,25 +468,43 @@
    "Ticker": "-",
    "Identifier": "JPH994044",
    "Weight": "0.85",
-   "Market Value": "388140708.79",
+   "Market Value": "386385278.08",
    "Shares Held": "50679",
    "Asset Category": "Equity Linked Notes"
+  },
+  {
+   "Name": "CHUBB LTD COMMON STOCK",
+   "Ticker": "CB",
+   "Identifier": "H1467J104",
+   "Weight": "0.85",
+   "Market Value": "386343159.74",
+   "Shares Held": "1158902",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SPX_3",
    "Ticker": "-",
    "Identifier": "JPH994048",
-   "Weight": "0.85",
-   "Market Value": "387573639.62",
+   "Weight": "0.84",
+   "Market Value": "385153952.78",
    "Shares Held": "51062",
    "Asset Category": "Equity Linked Notes"
+  },
+  {
+   "Name": "CHIPOTLE MEXICAN GRILL",
+   "Ticker": "CMG",
+   "Identifier": "169656105",
+   "Weight": "0.84",
+   "Market Value": "383411119.91",
+   "Shares Held": "12237827",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SPX_30",
    "Ticker": "-",
    "Identifier": "JPH994045",
-   "Weight": "0.85",
-   "Market Value": "386068108.3",
+   "Weight": "0.84",
+   "Market Value": "383329768.07",
    "Shares Held": "50977",
    "Asset Category": "Equity Linked Notes"
   },
@@ -494,89 +512,71 @@
    "Name": "SPX_1",
    "Ticker": "-",
    "Identifier": "JPH994046",
-   "Weight": "0.85",
-   "Market Value": "385434852.47",
+   "Weight": "0.84",
+   "Market Value": "382350260.38",
    "Shares Held": "51412",
    "Asset Category": "Equity Linked Notes"
   },
   {
-   "Name": "NETFLIX INC COMMON STOCK",
-   "Ticker": "NFLX",
-   "Identifier": "64110L106",
-   "Weight": "0.84",
-   "Market Value": "382495956.48",
-   "Shares Held": "5333184",
+   "Name": "MICRON TECHNOLOGY INC",
+   "Ticker": "MU",
+   "Identifier": "595112103",
+   "Weight": "0.83",
+   "Market Value": "380868401.64",
+   "Shares Held": "351913",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SPX_2",
    "Ticker": "-",
    "Identifier": "JPH994047",
-   "Weight": "0.84",
-   "Market Value": "382163029.19",
+   "Weight": "0.83",
+   "Market Value": "378210077.47",
    "Shares Held": "51643",
    "Asset Category": "Equity Linked Notes"
-  },
-  {
-   "Name": "CHUBB LTD COMMON STOCK",
-   "Ticker": "CB",
-   "Identifier": "H1467J104",
-   "Weight": "0.79",
-   "Market Value": "357399845",
-   "Shares Held": "1067375",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "WALMART INC COMMON STOCK",
    "Ticker": "WMT",
    "Identifier": "931142103",
-   "Weight": "0.77",
-   "Market Value": "348309068.66",
+   "Weight": "0.76",
+   "Market Value": "349571644.52",
    "Shares Held": "3237374",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "MICRON TECHNOLOGY INC",
-   "Ticker": "MU",
-   "Identifier": "595112103",
-   "Weight": "0.75",
-   "Market Value": "341944523.8",
-   "Shares Held": "316460",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "CORPAY INC",
    "Ticker": "CPAY",
    "Identifier": "219948106",
-   "Weight": "0.74",
-   "Market Value": "336667919.04",
+   "Weight": "0.73",
+   "Market Value": "334809315.67",
    "Shares Held": "840997",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "YUM BRANDS INC COMMON",
-   "Ticker": "YUM",
-   "Identifier": "988498101",
-   "Weight": "0.74",
-   "Market Value": "334787263.02",
-   "Shares Held": "2437653",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "THE PROCTER & GAMBLE",
    "Ticker": "PG",
    "Identifier": "742718109",
-   "Weight": "0.69",
-   "Market Value": "314478541.92",
-   "Shares Held": "2158694",
+   "Weight": "0.73",
+   "Market Value": "332056598.09",
+   "Shares Held": "2270783",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "YUM BRANDS INC COMMON",
+   "Ticker": "YUM",
+   "Identifier": "988498101",
+   "Weight": "0.72",
+   "Market Value": "331071175.32",
+   "Shares Held": "2388164",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ARTHUR J GALLAGHER & CO",
    "Ticker": "AJG",
    "Identifier": "363576109",
-   "Weight": "0.69",
-   "Market Value": "313464157.17",
+   "Weight": "0.7",
+   "Market Value": "318943189.9",
    "Shares Held": "1380109",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -585,7 +585,7 @@
    "Ticker": "ISRG",
    "Identifier": "46120E602",
    "Weight": "0.68",
-   "Market Value": "308038709.44",
+   "Market Value": "312402693.96",
    "Shares Held": "771022",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -594,7 +594,7 @@
    "Ticker": "SO",
    "Identifier": "842587107",
    "Weight": "0.66",
-   "Market Value": "302400707.13",
+   "Market Value": "302364224.96",
    "Shares Held": "3648217",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -603,17 +603,17 @@
    "Ticker": "AON",
    "Identifier": "G0403H108",
    "Weight": "0.66",
-   "Market Value": "299895860.25",
+   "Market Value": "301959687.75",
    "Shares Held": "1086225",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "CONOCOPHILLIPS COMMON",
-   "Ticker": "COP",
-   "Identifier": "20825C104",
+   "Name": "BRISTOL-MYERS SQUIBB CO",
+   "Ticker": "BMY",
+   "Identifier": "110122108",
    "Weight": "0.65",
-   "Market Value": "298041266.16",
-   "Shares Held": "2304324",
+   "Market Value": "296293061.54",
+   "Shares Held": "4713539",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -621,26 +621,35 @@
    "Ticker": "T",
    "Identifier": "00206R102",
    "Weight": "0.65",
-   "Market Value": "296610995.2",
+   "Market Value": "295795169.28",
    "Shares Held": "11654656",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CONOCOPHILLIPS COMMON",
+   "Ticker": "COP",
+   "Identifier": "20825C104",
+   "Weight": "0.64",
+   "Market Value": "293340445.2",
+   "Shares Held": "2304324",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "STRYKER CORP COMMON",
    "Ticker": "SYK",
    "Identifier": "863667101",
-   "Weight": "0.65",
-   "Market Value": "296249970.25",
-   "Shares Held": "1098239",
+   "Weight": "0.61",
+   "Market Value": "278377521.84",
+   "Shares Held": "1022094",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "BRISTOL-MYERS SQUIBB CO",
-   "Ticker": "BMY",
-   "Identifier": "110122108",
-   "Weight": "0.64",
-   "Market Value": "289882648.5",
-   "Shares Held": "4713539",
+   "Name": "DOVER CORP COMMON STOCK",
+   "Ticker": "DOV",
+   "Identifier": "260003108",
+   "Weight": "0.6",
+   "Market Value": "273765557.52",
+   "Shares Held": "1426754",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -648,35 +657,8 @@
    "Ticker": "TMUS",
    "Identifier": "872590104",
    "Weight": "0.59",
-   "Market Value": "270513426.75",
+   "Market Value": "270644307.15",
    "Shares Held": "1636005",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "DOVER CORP COMMON STOCK",
-   "Ticker": "DOV",
-   "Identifier": "260003108",
-   "Weight": "0.59",
-   "Market Value": "268072809.06",
-   "Shares Held": "1426754",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "VENTAS INC REIT USD 0.25",
-   "Ticker": "VTR",
-   "Identifier": "92276F100",
-   "Weight": "0.57",
-   "Market Value": "261163366.65",
-   "Shares Held": "3007755",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "AMPHENOL CORP COMMON",
-   "Ticker": "APH",
-   "Identifier": "032095101",
-   "Weight": "0.56",
-   "Market Value": "256280863.84",
-   "Shares Held": "3084748",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -684,35 +666,44 @@
    "Ticker": "MCK",
    "Identifier": "58155Q103",
    "Weight": "0.56",
-   "Market Value": "255490124.88",
+   "Market Value": "254690763.12",
    "Shares Held": "293883",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "ACCENTURE PLC COMMON",
-   "Ticker": "ACN",
-   "Identifier": "G1151C101",
-   "Weight": "0.54",
-   "Market Value": "245318290.16",
-   "Shares Held": "1382776",
+   "Name": "VENTAS INC REIT USD 0.25",
+   "Ticker": "VTR",
+   "Identifier": "92276F100",
+   "Weight": "0.55",
+   "Market Value": "252137091.5",
+   "Shares Held": "2911850",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "DOORDASH INC COMMON",
+   "Ticker": "DASH",
+   "Identifier": "25809K105",
+   "Weight": "0.55",
+   "Market Value": "252042246.32",
+   "Shares Held": "1303487",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "MCDONALD'S CORP COMMON",
    "Ticker": "MCD",
    "Identifier": "580135101",
-   "Weight": "0.54",
-   "Market Value": "244782405",
+   "Weight": "0.53",
+   "Market Value": "244245375",
    "Shares Held": "1032750",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "DOORDASH INC COMMON",
-   "Ticker": "DASH",
-   "Identifier": "25809K105",
-   "Weight": "0.54",
-   "Market Value": "244442917.11",
-   "Shares Held": "1303487",
+   "Name": "ACCENTURE PLC COMMON",
+   "Ticker": "ACN",
+   "Identifier": "G1151C101",
+   "Weight": "0.53",
+   "Market Value": "243520681.36",
+   "Shares Held": "1382776",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -720,26 +711,26 @@
    "Ticker": "MDT",
    "Identifier": "G5960L103",
    "Weight": "0.52",
-   "Market Value": "236878840.76",
+   "Market Value": "239172348.16",
    "Shares Held": "2698244",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "AMPHENOL CORP COMMON",
+   "Ticker": "APH",
+   "Identifier": "032095101",
+   "Weight": "0.52",
+   "Market Value": "236522549.79",
+   "Shares Held": "2812731",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "DEERE & CO COMMON STOCK",
    "Ticker": "DE",
    "Identifier": "244199105",
-   "Weight": "0.52",
-   "Market Value": "235863330.94",
-   "Shares Held": "339401",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CADENCE DESIGN SYSTEMS",
-   "Ticker": "CDNS",
-   "Identifier": "127387108",
    "Weight": "0.51",
-   "Market Value": "232824998",
-   "Shares Held": "723059",
+   "Market Value": "234342814.46",
+   "Shares Held": "339401",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -747,8 +738,17 @@
    "Ticker": "MRK",
    "Identifier": "58933Y105",
    "Weight": "0.51",
-   "Market Value": "231445455.36",
+   "Market Value": "232696680.96",
    "Shares Held": "1564032",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "INTEL CORP COMMON STOCK",
+   "Ticker": "INTC",
+   "Identifier": "458140100",
+   "Weight": "0.49",
+   "Market Value": "223004043",
+   "Shares Held": "1813041",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -756,7 +756,7 @@
    "Ticker": "AXP",
    "Identifier": "025816109",
    "Weight": "0.48",
-   "Market Value": "217727425.54",
+   "Market Value": "220028215.91",
    "Shares Held": "712319",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -765,44 +765,53 @@
    "Ticker": "SPGI",
    "Identifier": "78409V104",
    "Weight": "0.47",
-   "Market Value": "214730221.75",
+   "Market Value": "214756846.7",
    "Shares Held": "532499",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "INTEL CORP COMMON STOCK",
-   "Ticker": "INTC",
-   "Identifier": "458140100",
-   "Weight": "0.47",
-   "Market Value": "211809059.98",
-   "Shares Held": "1662682",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "TESLA INC COMMON STOCK",
    "Ticker": "TSLA",
    "Identifier": "88160R101",
-   "Weight": "0.44",
-   "Market Value": "200231478.18",
-   "Shares Held": "529797",
+   "Weight": "0.46",
+   "Market Value": "212229589.51",
+   "Shares Held": "570341",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "CHURCH & DWIGHT CO INC",
-   "Ticker": "CHD",
-   "Identifier": "171340102",
-   "Weight": "0.4",
-   "Market Value": "183976318.37",
-   "Shares Held": "1929889",
+   "Name": "AUTOZONE INC COMMON",
+   "Ticker": "AZO",
+   "Identifier": "053332102",
+   "Weight": "0.45",
+   "Market Value": "206870196.16",
+   "Shares Held": "72026",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CADENCE DESIGN SYSTEMS",
+   "Ticker": "CDNS",
+   "Identifier": "127387108",
+   "Weight": "0.43",
+   "Market Value": "197011545.57",
+   "Shares Held": "604089",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "FEDEX CORP COMMON STOCK",
    "Ticker": "FDX",
    "Identifier": "31428X106",
-   "Weight": "0.4",
-   "Market Value": "182023030.08",
+   "Weight": "0.41",
+   "Market Value": "186131799.2",
    "Shares Held": "651152",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CHURCH & DWIGHT CO INC",
+   "Ticker": "CHD",
+   "Identifier": "171340102",
+   "Weight": "0.41",
+   "Market Value": "186002701.82",
+   "Shares Held": "1929889",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -810,8 +819,17 @@
    "Ticker": "VZ",
    "Identifier": "92343V104",
    "Weight": "0.39",
-   "Market Value": "178703412.16",
+   "Market Value": "177797055.04",
    "Shares Held": "3776488",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "NXP SEMICONDUCTORS NV",
+   "Ticker": "NXPI",
+   "Identifier": "N6596X109",
+   "Weight": "0.37",
+   "Market Value": "170397665.28",
+   "Shares Held": "715716",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -819,53 +837,26 @@
    "Ticker": "BURL",
    "Identifier": "122017106",
    "Weight": "0.37",
-   "Market Value": "170372457.59",
+   "Market Value": "170278857.37",
    "Shares Held": "668573",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "AUTOZONE INC COMMON",
-   "Ticker": "AZO",
-   "Identifier": "053332102",
-   "Weight": "0.37",
-   "Market Value": "167813020",
-   "Shares Held": "58640",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CUMMINS INC COMMON STOCK",
-   "Ticker": "CMI",
-   "Identifier": "231021106",
-   "Weight": "0.36",
-   "Market Value": "165980074.59",
-   "Shares Held": "318537",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "NXP SEMICONDUCTORS NV",
-   "Ticker": "NXPI",
-   "Identifier": "N6596X109",
-   "Weight": "0.36",
-   "Market Value": "164729194.56",
-   "Shares Held": "715716",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "KEURIG DR PEPPER INC",
    "Ticker": "KDP",
    "Identifier": "49271V100",
-   "Weight": "0.36",
-   "Market Value": "163351463.52",
+   "Weight": "0.37",
+   "Market Value": "167794961.88",
    "Shares Held": "5289879",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "FORTINET INC COMMON",
-   "Ticker": "FTNT",
-   "Identifier": "34959E109",
-   "Weight": "0.35",
-   "Market Value": "160142814.35",
-   "Shares Held": "896305",
+   "Name": "CUMMINS INC COMMON STOCK",
+   "Ticker": "CMI",
+   "Identifier": "231021106",
+   "Weight": "0.37",
+   "Market Value": "167251037.22",
+   "Shares Held": "318537",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -873,17 +864,17 @@
    "Ticker": "STX",
    "Identifier": "G7997R103",
    "Weight": "0.35",
-   "Market Value": "158176349.76",
+   "Market Value": "160081268.49",
    "Shares Held": "174603",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "AUTODESK INC COMMON",
-   "Ticker": "ADSK",
-   "Identifier": "052769106",
-   "Weight": "0.33",
-   "Market Value": "151268267.4",
-   "Shares Held": "715724",
+   "Name": "FORTINET INC COMMON",
+   "Ticker": "FTNT",
+   "Identifier": "34959E109",
+   "Weight": "0.34",
+   "Market Value": "155473065.3",
+   "Shares Held": "896305",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -891,8 +882,17 @@
    "Ticker": "XOM",
    "Identifier": "30233Q108",
    "Weight": "0.32",
-   "Market Value": "147812985.32",
+   "Market Value": "146399946.42",
    "Shares Held": "911638",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "AUTODESK INC COMMON",
+   "Ticker": "ADSK",
+   "Identifier": "052769106",
+   "Weight": "0.31",
+   "Market Value": "143391256.8",
+   "Shares Held": "684772",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -900,26 +900,8 @@
    "Ticker": "UNH",
    "Identifier": "91324P102",
    "Weight": "0.3",
-   "Market Value": "138204310.35",
+   "Market Value": "138786595.65",
    "Shares Held": "368535",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ANALOG DEVICES INC",
-   "Ticker": "ADI",
-   "Identifier": "032654105",
-   "Weight": "0.3",
-   "Market Value": "136680918.13",
-   "Shares Held": "357233",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "THERMO FISHER SCIENTIFIC",
-   "Ticker": "TMO",
-   "Identifier": "883556102",
-   "Weight": "0.3",
-   "Market Value": "135625763.97",
-   "Shares Held": "199923",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -927,17 +909,17 @@
    "Ticker": "USB",
    "Identifier": "902973304",
    "Weight": "0.3",
-   "Market Value": "134256577.6",
+   "Market Value": "136394567.62",
    "Shares Held": "2298914",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "TJX COS INC/THE COMMON",
-   "Ticker": "TJX",
-   "Identifier": "872540109",
-   "Weight": "0.29",
-   "Market Value": "134207841.92",
-   "Shares Held": "1019584",
+   "Name": "THERMO FISHER SCIENTIFIC",
+   "Ticker": "TMO",
+   "Identifier": "883556102",
+   "Weight": "0.3",
+   "Market Value": "134948025",
+   "Shares Held": "199923",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -945,16 +927,25 @@
    "Ticker": "UNP",
    "Identifier": "907818108",
    "Weight": "0.29",
-   "Market Value": "133327655.11",
+   "Market Value": "133191442.67",
    "Shares Held": "486473",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "TJX COS INC/THE COMMON",
+   "Ticker": "TJX",
+   "Identifier": "872540109",
+   "Weight": "0.29",
+   "Market Value": "132607095.04",
+   "Shares Held": "1019584",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "PALANTIR TECHNOLOGIES",
    "Ticker": "PLTR",
    "Identifier": "69608A108",
-   "Weight": "0.29",
-   "Market Value": "130138262.93",
+   "Weight": "0.28",
+   "Market Value": "128165140.09",
    "Shares Held": "675727",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -962,26 +953,17 @@
    "Name": "AMERICAN TOWER CORP REIT",
    "Ticker": "AMT",
    "Identifier": "03027X100",
-   "Weight": "0.27",
-   "Market Value": "124614554.1",
+   "Weight": "0.28",
+   "Market Value": "125933266.05",
    "Shares Held": "745035",
    "Asset Category": "REIT"
-  },
-  {
-   "Name": "TEXAS INSTRUMENTS INC",
-   "Ticker": "TXN",
-   "Identifier": "882508104",
-   "Weight": "0.26",
-   "Market Value": "116120758.6",
-   "Shares Held": "429044",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "GENERAL DYNAMICS CORP",
    "Ticker": "GD",
    "Identifier": "369550108",
    "Weight": "0.25",
-   "Market Value": "115386479.64",
+   "Market Value": "115534019.52",
    "Shares Held": "343116",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -989,8 +971,8 @@
    "Name": "HUMANA INC COMMON STOCK",
    "Ticker": "HUM",
    "Identifier": "444859102",
-   "Weight": "0.23",
-   "Market Value": "103916354.88",
+   "Weight": "0.24",
+   "Market Value": "108728005.62",
    "Shares Held": "273234",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -999,8 +981,17 @@
    "Ticker": "BRK.B",
    "Identifier": "084670702",
    "Weight": "0.22",
-   "Market Value": "102344416.2",
+   "Market Value": "102405193.2",
    "Shares Held": "202590",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ANALOG DEVICES INC",
+   "Ticker": "ADI",
+   "Identifier": "032654105",
+   "Weight": "0.22",
+   "Market Value": "100372723.2",
+   "Shares Held": "255012",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1008,7 +999,7 @@
    "Ticker": "MO",
    "Identifier": "02209S103",
    "Weight": "0.22",
-   "Market Value": "100111294.08",
+   "Market Value": "100024089.12",
    "Shares Held": "1453416",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1017,7 +1008,7 @@
    "Ticker": "BKR",
    "Identifier": "05722G100",
    "Weight": "0.21",
-   "Market Value": "94910910.75",
+   "Market Value": "95805515.25",
    "Shares Held": "1656675",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1026,7 +1017,7 @@
    "Ticker": "KMB",
    "Identifier": "494368103",
    "Weight": "0.2",
-   "Market Value": "92452622.86",
+   "Market Value": "93603288.09",
    "Shares Held": "950963",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1035,8 +1026,26 @@
    "Ticker": "GLW",
    "Identifier": "219350105",
    "Weight": "0.2",
-   "Market Value": "91632617.7",
+   "Market Value": "93172212.12",
    "Shares Held": "594438",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "VULCAN MATERIALS CO",
+   "Ticker": "VMC",
+   "Identifier": "929160109",
+   "Weight": "0.19",
+   "Market Value": "88002040",
+   "Shares Held": "359192",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "TEXAS INSTRUMENTS INC",
+   "Ticker": "TXN",
+   "Identifier": "882508104",
+   "Weight": "0.19",
+   "Market Value": "87817286.7",
+   "Shares Held": "315810",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1044,25 +1053,16 @@
    "Ticker": "WELL",
    "Identifier": "95040Q104",
    "Weight": "0.19",
-   "Market Value": "88579538.97",
+   "Market Value": "87730182.49",
    "Shares Held": "379177",
    "Asset Category": "REIT"
-  },
-  {
-   "Name": "VULCAN MATERIALS CO",
-   "Ticker": "VMC",
-   "Identifier": "929160109",
-   "Weight": "0.19",
-   "Market Value": "86816706.4",
-   "Shares Held": "359192",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "BANK OF AMERICA CORP",
    "Ticker": "BAC",
    "Identifier": "060505104",
    "Weight": "0.19",
-   "Market Value": "84720553.71",
+   "Market Value": "85733631.9",
    "Shares Held": "1512057",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1071,35 +1071,17 @@
    "Ticker": "EW",
    "Identifier": "28176E108",
    "Weight": "0.18",
-   "Market Value": "82496092.94",
+   "Market Value": "83034968.62",
    "Shares Held": "962278",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "HILTON WORLDWIDE",
-   "Ticker": "HLT",
-   "Identifier": "43300A203",
-   "Weight": "0.18",
-   "Market Value": "81163476.03",
-   "Shares Held": "260031",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "CVS HEALTH CORP COMMON",
    "Ticker": "CVS",
    "Identifier": "126650100",
-   "Weight": "0.17",
-   "Market Value": "78327307.8",
+   "Weight": "0.18",
+   "Market Value": "82084808.28",
    "Shares Held": "920956",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ORACLE CORP COMMON STOCK",
-   "Ticker": "ORCL",
-   "Identifier": "68389X105",
-   "Weight": "0.17",
-   "Market Value": "76313309.68",
-   "Shares Held": "546892",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1107,7 +1089,7 @@
    "Ticker": "LDOS",
    "Identifier": "525327102",
    "Weight": "0.16",
-   "Market Value": "73792163.9",
+   "Market Value": "73947704.74",
    "Shares Held": "598234",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1116,26 +1098,44 @@
    "Ticker": "WDC",
    "Identifier": "958102105",
    "Weight": "0.15",
-   "Market Value": "67817136.31",
+   "Market Value": "68796042.81",
    "Shares Held": "150601",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "TRANSDIGM GROUP INC",
-   "Ticker": "TDG",
-   "Identifier": "893641100",
-   "Weight": "0.13",
-   "Market Value": "60144916.48",
-   "Shares Held": "54416",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "AMERICAN WATER WORKS CO",
    "Ticker": "AWK",
    "Identifier": "030420103",
-   "Weight": "0.13",
-   "Market Value": "59603214.09",
-   "Shares Held": "453153",
+   "Weight": "0.15",
+   "Market Value": "68294176.08",
+   "Shares Held": "521688",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "AFFIRM HOLDINGS INC",
+   "Ticker": "AFRM",
+   "Identifier": "00827B106",
+   "Weight": "0.12",
+   "Market Value": "56192405.76",
+   "Shares Held": "785688",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ORACLE CORP COMMON STOCK",
+   "Ticker": "ORCL",
+   "Identifier": "68389X105",
+   "Weight": "0.12",
+   "Market Value": "56159587.5",
+   "Shares Held": "409625",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "HILTON WORLDWIDE",
+   "Ticker": "HLT",
+   "Identifier": "43300A203",
+   "Weight": "0.12",
+   "Market Value": "54982872.92",
+   "Shares Held": "175127",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1143,26 +1143,17 @@
    "Ticker": "MAR",
    "Identifier": "571903202",
    "Weight": "0.12",
-   "Market Value": "54344149.02",
+   "Market Value": "54424542.06",
    "Shares Held": "154602",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "HEWLETT PACKARD",
-   "Ticker": "HPE",
-   "Identifier": "42824C109",
-   "Weight": "0.1",
-   "Market Value": "47363688",
-   "Shares Held": "745650",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "AFFIRM HOLDINGS INC",
-   "Ticker": "AFRM",
-   "Identifier": "00827B106",
-   "Weight": "0.1",
-   "Market Value": "46692912.13",
-   "Shares Held": "652409",
+   "Name": "TRANSDIGM GROUP INC",
+   "Ticker": "TDG",
+   "Identifier": "893641100",
+   "Weight": "0.12",
+   "Market Value": "54200439.6",
+   "Shares Held": "48558",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1170,34 +1161,34 @@
    "Ticker": "UPS",
    "Identifier": "911312106",
    "Weight": "0.1",
-   "Market Value": "46007694.6",
+   "Market Value": "46962335.52",
    "Shares Held": "499812",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "TOAST INC COMMON STOCK",
+   "Ticker": "TOST",
+   "Identifier": "888787108",
+   "Weight": "0.1",
+   "Market Value": "44545154.4",
+   "Shares Held": "1455724",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "CASH",
    "Ticker": "-",
    "Identifier": "CASH",
-   "Weight": "0.09",
-   "Market Value": "43068687.49",
-   "Shares Held": "43068687",
+   "Weight": "0.08",
+   "Market Value": "34404476.15",
+   "Shares Held": "34404476",
    "Asset Category": "CURRENCIES"
-  },
-  {
-   "Name": "TOAST INC COMMON STOCK",
-   "Ticker": "TOST",
-   "Identifier": "888787108",
-   "Weight": "0.09",
-   "Market Value": "39809454.74",
-   "Shares Held": "1322134",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "LINDE PLC COMMON STOCK",
    "Ticker": "LIN",
    "Identifier": "G54950103",
    "Weight": "0.07",
-   "Market Value": "31197317.74",
+   "Market Value": "31313939.49",
    "Shares Held": "66641",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1206,7 +1197,7 @@
    "Ticker": "CMS",
    "Identifier": "125896100",
    "Weight": "0.07",
-   "Market Value": "30201534.42",
+   "Market Value": "30288140.7",
    "Shares Held": "481146",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1215,7 +1206,7 @@
    "Ticker": "FDXF",
    "Identifier": "314352105",
    "Weight": "0.06",
-   "Market Value": "28440436.14",
+   "Market Value": "28283002.92",
    "Shares Held": "249894",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1224,8 +1215,26 @@
    "Ticker": "BBY",
    "Identifier": "086516101",
    "Weight": "0.06",
-   "Market Value": "26621959",
+   "Market Value": "26478609.99",
    "Shares Held": "292549",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CROWDSTRIKE HOLDINGS INC",
+   "Ticker": "CRWD",
+   "Identifier": "22788C105",
+   "Weight": "0.04",
+   "Market Value": "18598117.32",
+   "Shares Held": "73764",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "HEWLETT PACKARD",
+   "Ticker": "HPE",
+   "Identifier": "42824C109",
+   "Weight": "0.04",
+   "Market Value": "17551196.64",
+   "Shares Held": "278856",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1233,7 +1242,7 @@
    "Ticker": "MNST",
    "Identifier": "61174X109",
    "Weight": "0.04",
-   "Market Value": "16321659.03",
+   "Market Value": "16489962.99",
    "Shares Held": "382509",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
