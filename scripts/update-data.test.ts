@@ -1127,7 +1127,10 @@ describe('deriveCatalogMetrics', () => {
       null,
       null,
       706.32,
+      null,
+      '2026-07-31',
     );
+    expect(metrics.performanceAsOf).toBe('2026-07-31');
     expect(metrics.ytd).toBe(15.97);
     expect(metrics.tr1y).toBe(18.34);
     expect(metrics.cagr3y).toBe(20.15);
@@ -1153,6 +1156,29 @@ describe('deriveCatalogMetrics', () => {
     expect(metrics.dividendYield).toBe(18.7);
     expect(metrics.dividendYieldText).toBe('18.70%');
     expect(metrics.returnsBasis).toContain('not official NAV returns');
+    expect(metrics.performanceAsOf).toBe('2026-08-21');
+  });
+
+  test('metrics end with returnsBasis then performanceAsOf; mixed basis is explained; no returns -> null date', () => {
+    const mixed = deriveCatalogMetrics(
+      { ytd: 1, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null },
+      { asOfDate: '2026-08-21', ytd: 9, yr1: 5, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null },
+      null, null, null, null, 10, null, '2026-07-31',
+    );
+    expect(mixed.ytd).toBe(1);
+    expect(mixed.tr1y).toBe(5);
+    expect(mixed.returnsBasis).toContain('official JPMorgan NAV total returns');
+    expect(mixed.returnsBasis).toContain('1y derived from the daily NAV history');
+    expect(mixed.performanceAsOf).toBe('2026-07-31');
+    expect(Object.keys(mixed).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
+    const none = deriveCatalogMetrics(
+      { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null },
+      { asOfDate: '2026-08-21', ytd: null, yr1: null, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null },
+      null, null, null, null, 10,
+    );
+    expect(none.returnsBasis).toBeTruthy();
+    expect(none.returnsBasis).not.toBe('-');
+    expect(none.performanceAsOf).toBeNull();
   });
 
   test('official cumulative figures replace the annualized-to-total approximation', () => {

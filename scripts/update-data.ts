@@ -2076,6 +2076,7 @@ export function deriveCatalogMetrics(
   paymentsPerYear: number | null,
   price: number | null,
   officialCumulative: CumulativeReturns | null = null,
+  officialAsOf: string | null = null,
 ): JsonRecord {
   const coalesce = (value: number | null | undefined): number | null => (typeof value === 'number' && Number.isFinite(value) ? value : null);
   const ytd = coalesce(official.ytd) ?? coalesce(derived.ytd);
@@ -2086,6 +2087,29 @@ export function deriveCatalogMetrics(
   const siAnn = coalesce(official.sinceInception) ?? coalesce(derived.siAnn);
   const dividendYield = coalesce(publishedDividendYield) ?? indicatedYield(latestDistribution, paymentsPerYear, price);
   const text = (value: number | null): string | null => (value === null ? null : `${value.toFixed(2)}%`);
+  // Section 9a: returnsBasis is never empty; performanceAsOf is the date the
+  // returns are as of (official performance table date, or the last NAV-history
+  // date when derived), never the NAV date of the fund page, null when unknown.
+  const hasOfficial = Object.values(official).some((value) => value !== null);
+  const derivedFields = (
+    [
+      ['ytd', official.ytd, derived.ytd],
+      ['1y', official.yr1, derived.yr1],
+      ['3y', official.yr3, derived.cagr3y],
+      ['5y', official.yr5, derived.cagr5y],
+      ['10y', official.yr10, derived.cagr10y],
+      ['since inception', official.sinceInception, derived.siAnn],
+    ] as Array<[string, number | null | undefined, number | null | undefined]>
+  )
+    .filter(([, o, d]) => coalesce(o) === null && coalesce(d) !== null)
+    .map(([label]) => label);
+  const hasReturns = [ytd, tr1y, cagr3y, cagr5y, cagr10y, siAnn].some((value) => value !== null);
+  const returnsBasis = !hasOfficial
+    ? 'derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns'
+    : derivedFields.length
+      ? `official JPMorgan NAV total returns (fund explorer / product-data JSON); ${derivedFields.join(', ')} derived from the daily NAV history with published distributions reinvested`
+      : 'official JPMorgan NAV total returns (fund explorer / product-data JSON)';
+  const performanceAsOf = hasReturns ? (hasOfficial ? officialAsOf || derived.asOfDate : derived.asOfDate) || null : null;
   return {
     ytd,
     tr1y,
@@ -2100,9 +2124,8 @@ export function deriveCatalogMetrics(
     dividendYieldText: text(dividendYield) ?? '—',
     secYield: coalesce(publishedSecYield),
     secYieldText: text(coalesce(publishedSecYield)) ?? '—',
-    returnsBasis: Object.values(official).some((value) => value !== null)
-      ? 'official JPMorgan NAV total returns (fund explorer / product-data JSON)'
-      : 'derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns',
+    returnsBasis,
+    performanceAsOf,
   };
 }
 
@@ -2592,6 +2615,7 @@ async function processFund(
     frequency.paymentsPerYear,
     price,
     product?.cumulative ?? null,
+    returnsAsOfDate,
   );
 
   const historyManifest = await writePages(fundDir, ticker, 'history', historyHeaders, history, config.historyPageSize);
@@ -3077,7 +3101,7 @@ function catalogFundFromIndex(ticker: string, row: JsonRecord): CatalogFund {
       yr10: numberOrNull(monthEnd.yr10),
       sinceInception: numberOrNull(monthEnd.sinceInception),
     },
-    returnsAsOfDate: null,
+    returnsAsOfDate: isoOrNull(metrics.performanceAsOf),
     mo1: numberOrNull(monthEnd.mo1),
     marketReturns: { ...EMPTY_RETURNS },
     quarterEnd: {

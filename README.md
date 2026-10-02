@@ -44,6 +44,8 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `siAnn` - since-inception annualized -> *SI Ann.*
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
 - `secYield` - 30-day SEC yield when published; unavailable values stay empty and are never shown as 0
+- `returnsBasis` - always a non-empty label of how the returns were computed: official JPMorgan NAV total returns, derived from the daily NAV history with distributions reinvested (or Yahoo adjusted closes, an estimate), or a mixed label naming the derived periods
+- `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the JPMorgan performance table date for official returns, the last history date when derived; it is not the NAV date and is `null` when no return is available
 
 Returns, NAV history and holdings come from the official am.jpmorgan.com JSON. Yahoo Finance values (history fallback, market-price returns) and SEC N-PORT-P holdings are fallbacks and are estimates, not official figures. Funds that are filtered out or fail keep their previously published metadata and data files.
 
