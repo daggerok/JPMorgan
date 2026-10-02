@@ -64,7 +64,7 @@ All values are strings in `scripts/update-data.config.json`. Every control is al
 | `HOLDINGS_PAGE_SIZE` | `250` | Rows in each generated current-holdings JSON page. |
 | `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. Legacy alias: `HISTORICAL_PAGE_SIZE`. |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the source fund-explorer, product-data and historicalData JSON under `api/jpmorgan/raw`. |
-| `MAX_RETRIES` | `2` | Retries after the initial request. Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
+| `MAX_RETRIES` | `2` | Retries after the initial request (integer >= 1). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
 | `HISTORY_RANGE` | `max` | Yahoo chart range for the fallback history rows; the official history always covers the whole life of the fund. |
 | `EDGAR_FALLBACK` | `true` | SEC EDGAR N-PORT-P fallback for funds whose product-data lists no holdings. |
 | `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
@@ -73,7 +73,7 @@ All values are strings in `scripts/update-data.config.json`. Every control is al
 | `API_BASE` | empty | Override the FundsMarketingHandler JSON base URL, e.g. a local mirror for offline runs. |
 | `FUND_EXPLORER_URL` | empty | Override the catalog JSON URL. |
 | `EARLY_NAV_URL` | empty | Override the early-NAV report CSV used as the catalog fallback. |
-| `SEC_UA` | empty (declared UA) | SEC User-Agent; SEC policy requires a declared contact. The protected `SEC_UA` Actions variable wins when nonblank. |
+| `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent; SEC policy requires a declared contact. The protected `SEC_UA` Actions variable wins when nonblank. |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices. |
 | `PERFORMANCE_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Annualized return ranges (strict `min:max`). |
 | `TOTAL_RETURN_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Cumulative return ranges (strict `min:max`). |
@@ -102,7 +102,7 @@ bun build --target=bun scripts/update-data.ts --outfile=/dev/null
 git diff --check
 ```
 
-`bun test` also covers the config file, `--help`, README controls table and workflow checks (`scripts/config-docs.test.ts`).
+`bun test` also covers the config file, `--help`, README controls table and workflow checks.
 
 ## Brands table
 
@@ -127,7 +127,7 @@ git diff --check
 | **ProShares** | [proshares.com](https://www.proshares.com/our-etfs/find-proshares-etfs) \| [ProShares](https://daggerok.github.io/ProShares/) |
 | **Schwab** | [schwabassetmanagement.com](https://www.schwabassetmanagement.com/products) \| [Schwab](https://daggerok.github.io/Schwab/) |
 | **SPDR** | [ssga.com](https://www.ssga.com/us/en/intermediary/etfs/fund-finder) \| [SPDR](https://daggerok.github.io/SPDR/) |
-| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) (deployment pending) |
+| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) |
 | **Tema ETFs** | [temaetfs.com](https://temaetfs.com/funds) \| [Tema](https://daggerok.github.io/Tema/) |
 | **Themes ETFs** | [themesetfs.com/etfs](https://themesetfs.com/etfs) \| [Themes](https://daggerok.github.io/Themes/) |
 | **VanEck** | [vaneck.com](https://www.vaneck.com/us/en/etf-mutual-fund-finder/) \| [VanEck](https://daggerok.github.io/VanEck/) |
