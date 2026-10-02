@@ -1,15 +1,4 @@
 #!/usr/bin/env bun
-// Checked-in JSON is the runtime default; any nonblank environment value wins.
-import { readFileSync as readUpdaterConfig } from 'node:fs';
-try {
-  const updaterDefaults = JSON.parse(readUpdaterConfig(new URL('./update-data.config.json', import.meta.url), 'utf8')) as Record<string, unknown>;
-  for (const [key, value] of Object.entries(updaterDefaults)) {
-    const current = process.env[key];
-    if ((current === undefined || current.trim() === '') && value !== null && value !== undefined) process.env[key] = String(value);
-  }
-} catch (error) {
-  if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-}
 // Bun provides Node-compatible fs/promises and process globals for this script.
 /// <reference types="bun" />
 import { readFile as outputReadFile, readdir as outputReadDir } from 'node:fs/promises';
@@ -217,8 +206,8 @@ export function jpmorganFundPageUrl(name: string, cusip: string): string {
   return `${PRODUCTS_BASE}/${slug}-etf-shares-${String(cusip ?? '').toLowerCase()}`;
 }
 
-export function jpmorganFundExplorerUrl(role = 'adv', fundType = 'etf'): string {
-  return `${apiBase}/fund-explorer?country=${JPMORGAN_COUNTRY}&role=${encodeURIComponent(role)}&userLoggedIn=false&language=${JPMORGAN_LANGUAGE}&fundType=${encodeURIComponent(fundType)}`;
+export function jpmorganFundExplorerUrl(role = 'adv', fundType = 'etf', base = apiBase): string {
+  return `${base}/fund-explorer?country=${JPMORGAN_COUNTRY}&role=${encodeURIComponent(role)}&userLoggedIn=false&language=${JPMORGAN_LANGUAGE}&fundType=${encodeURIComponent(fundType)}`;
 }
 
 export function jpmorganProductDataUrl(cusip: string, role = 'adv'): string {
@@ -254,7 +243,7 @@ const EDGAR_BROWSE_URL = 'https://www.sec.gov/cgi-bin/browse-edgar';
 // registrant CIK + series/class ids, and operating company name -> ticker.
 const SEC_FUND_TICKERS_URL = 'https://www.sec.gov/files/company_tickers_mf.json';
 const SEC_COMPANY_TICKERS_URL = 'https://www.sec.gov/files/company_tickers.json';
-const SEC_UA_DEFAULT = 'DaggerOk JPMorgan Feed admin@daggerok.example.com';
+const SEC_UA_DEFAULT = 'daggerok ETF feed daggerok@gmail.com';
 
 const API_ROOT = new URL('../api/jpmorgan/', import.meta.url);
 const INDEX_FILE = new URL('index.json', API_ROOT);
@@ -388,7 +377,7 @@ type ReturnPeriod = 'YTD' | '1Y' | '3Y' | '5Y' | '10Y';
 const RETURN_PERIODS: readonly ReturnPeriod[] = ['YTD', '1Y', '3Y', '5Y', '10Y'];
 type RangeMap = Partial<Record<ReturnPeriod, Range>>;
 
-type UpdaterConfig = {
+export type UpdaterConfig = {
   concurrency: number;
   requestSleep: number;
   maxFetches: number;
@@ -436,6 +425,11 @@ function envValue(env: Record<string, string | undefined>, name: string, aliases
 function parsePositiveInt(raw: string, fallback: number): number {
   const value = Number.parseInt(raw, 10);
   return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
+function parseNonNegativeInt(raw: string, fallback: number): number {
+  const value = Number.parseInt(raw, 10);
+  return Number.isFinite(value) && value >= 0 ? value : fallback;
 }
 
 function parseNonNegativeFloat(raw: string, fallback: number): number {
@@ -512,9 +506,9 @@ function parseRanges(env: Record<string, string | undefined>, prefix: 'PERFORMAN
   return ranges;
 }
 
-function readConfig(env: Record<string, string | undefined> = process.env): UpdaterConfig {
+export function readConfig(env: Record<string, string | undefined> = process.env): UpdaterConfig {
   const role = envValue(env, 'ROLE') || 'adv';
-  apiBase = (envValue(env, 'API_BASE') || FUNDS_MARKETING_HANDLER).replace(/\/+$/, '');
+  const apiBase = (envValue(env, 'API_BASE') || FUNDS_MARKETING_HANDLER).replace(/\/+$/, '');
   return {
     concurrency: parsePositiveInt(envValue(env, 'CONCURRENCY'), CONCURRENCY_FALLBACK),
     requestSleep: parseNonNegativeFloat(envValue(env, 'REQUEST_SLEEP'), REQUEST_SLEEP_FALLBACK),
@@ -530,7 +524,7 @@ function readConfig(env: Record<string, string | undefined> = process.env): Upda
     historyRange: envValue(env, 'HISTORY_RANGE') || 'max',
     role,
     apiBase,
-    fundExplorerUrl: envValue(env, 'FUND_EXPLORER_URL') || jpmorganFundExplorerUrl(role),
+    fundExplorerUrl: envValue(env, 'FUND_EXPLORER_URL') || jpmorganFundExplorerUrl(role, 'etf', apiBase),
     earlyNavUrl: envValue(env, 'EARLY_NAV_URL') || EARLY_NAV_CSV_URL,
     secUa: envValue(env, 'SEC_UA') || SEC_UA_DEFAULT,
     skipYahoo: parseBoolean(envValue(env, 'SKIP_YAHOO'), false),
@@ -571,7 +565,7 @@ function configLines(config: UpdaterConfig): string[] {
     `SEC_YIELD           ${rangeLabel(config.secYieldRange)}`,
     `PERFORMANCE_*       ${RETURN_PERIODS.filter((p) => config.performanceRanges[p]).map((p) => `${p}=${rangeLabel(config.performanceRanges[p])}`).join(' ') || 'any'}`,
     `TOTAL_RETURN_*      ${RETURN_PERIODS.filter((p) => config.totalReturnRanges[p]).map((p) => `${p}=${rangeLabel(config.totalReturnRanges[p])}`).join(' ') || 'any'}`,
-    `SEC_UA              ${config.secUa}`,
+    `SEC_UA              ${config.secUa ? '(declared, redacted)' : 'unset'}`,
     `SKIP_YAHOO          ${config.skipYahoo}`,
     `SKIP_JPMORGAN       ${config.skipJpmorgan}`,
     `EDGAR_FALLBACK      ${config.edgarFallback}`,
@@ -584,6 +578,8 @@ JPMorgan ETF static data updater (Bun, no dependencies).
   bun ./scripts/update-data.ts            update ./api/jpmorgan from am.jpmorgan.com (+ SEC / Yahoo fallbacks)
   ./scripts/update-data.ts -h | --help    print this help
 
+Defaults live in scripts/update-data.config.json; an explicit environment
+variable overrides the file value (also accepted with a JPMORGAN_ prefix).
 Environment variables (all optional; strict "min:max" ranges; AND logic):
 
   MAX_FETCHES          Batch size: continue after the ticker cursor saved in
@@ -598,7 +594,8 @@ Environment variables (all optional; strict "min:max" ranges; AND logic):
                        10 requests per second, Yahoo throttles hard, keep >= 1.
   CONCURRENCY          Parallel fund workers (default 2). Starts are still
                        globally spaced by REQUEST_SLEEP.
-  MAX_RETRIES          Retries after the initial request (default 2). Only
+  MAX_RETRIES          Retries after the initial request, integer >= 1
+                       (default 2). Only
                        network errors and HTTP 403/408/425/429/5xx responses
                        are retried with bounded exponential backoff.
   TICKERS              Space-, comma- or semicolon-separated ticker allowlist,
@@ -639,6 +636,7 @@ Environment variables (all optional; strict "min:max" ranges; AND logic):
   SKIP_YAHOO           1/true to never call the Yahoo chart API, even when the
                        official JPMorgan history is unavailable for a fund
                        (previously published history rows are kept instead).
+  VERBOSE              1/true to print per-fund retry and fallback notices.
   SKIP_JPMORGAN        1/true to keep the previously published catalog values,
                        holdings and official returns; only the fallbacks
                        (SEC N-PORT-P holdings, Yahoo history) run.
@@ -2852,8 +2850,8 @@ async function resolveNportFiling(
 // Main
 // ---------------------------------------------------------------------------
 
-async function main(): Promise<void> {
-  const config = readConfig();
+async function runUpdater(config: UpdaterConfig): Promise<void> {
+  apiBase = config.apiBase;
   requestSleepMs = Math.max(0, config.requestSleep) * 1000;
   nextRequestAtLanes = new Array(Math.max(1, config.concurrency)).fill(0);
 
@@ -3094,16 +3092,86 @@ function catalogFundFromIndex(ticker: string, row: JsonRecord): CatalogFund {
 }
 
 // ---------------------------------------------------------------------------
-// Entry point (kept at the end: main() relies on the let bindings above)
+// Controls: config file < advanced JSON < nonblank inputs < environment
 // ---------------------------------------------------------------------------
 
-if ((import.meta as { main?: boolean }).main) {
-  if (process.argv.includes('-h') || process.argv.includes('--help')) {
-    console.log(USAGE.trim());
-  } else {
-    await main().catch((error) => {
-      console.error(error instanceof Error ? error.stack : String(error));
-      process.exitCode = 1;
-    });
+// Allowlisted scalar controls only, so GitHub Actions can resolve them without
+// interpolating user input into bash. The explicit environment wins; every
+// control also accepts a `JPMORGAN_<NAME>` alias, plus the legacy aliases below.
+export const CONTROL_NAMES = [
+  'MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY', 'AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD', 'TICKERS',
+  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'STORE_RAW_DOWNLOADS', 'MAX_RETRIES', 'HISTORY_RANGE',
+  'EDGAR_FALLBACK', 'SKIP_YAHOO', 'SKIP_JPMORGAN', 'ROLE', 'API_BASE', 'FUND_EXPLORER_URL', 'EARLY_NAV_URL',
+  'SEC_UA', 'VERBOSE',
+  ...['PERFORMANCE', 'TOTAL_RETURN'].flatMap((prefix) => ['YTD', '1Y', '3Y', '5Y', '10Y'].map((period) => `${prefix}_${period}`)),
+] as const;
+export type ControlName = (typeof CONTROL_NAMES)[number];
+export const CONFIG_FILE_URL = new URL('./update-data.config.json', import.meta.url);
+const LEGACY_ALIASES: Partial<Record<ControlName, string>> = { MAX_FETCHES: 'JPMORGAN_LIMIT', HISTORY_PAGE_SIZE: 'HISTORICAL_PAGE_SIZE' };
+
+export function resolveControls(
+  file: unknown = {},
+  advanced: unknown = {},
+  inputs: unknown = {},
+  env: Record<string, string | undefined> = {},
+): Record<string, string> {
+  const result: Record<string, string> = {};
+  const known = new Set<string>(CONTROL_NAMES);
+  const apply = (value: unknown, skipEmpty = false): void => {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Configuration must be a JSON object');
+    for (const [key, raw] of Object.entries(value)) {
+      if (!known.has(key)) throw new Error(`Unknown updater control: ${key}`);
+      if (skipEmpty && (raw === '' || raw === undefined || raw === null)) continue;
+      if (!['string', 'number', 'boolean'].includes(typeof raw)) throw new Error(`${key}: expected string, number or boolean`);
+      const text = String(raw);
+      if (/[\r\n\0]/.test(text)) throw new Error(`${key}: multiline/control characters are not allowed`);
+      result[key] = text;
+    }
+  };
+  apply(file);
+  apply(advanced);
+  apply(inputs, true);
+  for (const key of CONTROL_NAMES) {
+    const alias = LEGACY_ALIASES[key];
+    const value = env[`JPMORGAN_${key}`] ?? env[key] ?? (alias ? env[alias] : undefined);
+    if (value !== undefined) apply({ [key]: value });
   }
+  for (const key of ['MAX_FETCHES', 'CONCURRENCY', 'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES']) {
+    const v = result[key];
+    if (v === undefined || v === '') continue;
+    const min = key === 'MAX_FETCHES' ? 0 : 1;
+    if (!/^\d+$/.test(v) || !Number.isSafeInteger(Number(v)) || Number(v) < min) throw new Error(`${key}: expected integer >= ${min}`);
+  }
+  if (result.REQUEST_SLEEP && (!Number.isFinite(Number(result.REQUEST_SLEEP)) || Number(result.REQUEST_SLEEP) < 0)) throw new Error('REQUEST_SLEEP: expected nonnegative seconds');
+  for (const key of ['STORE_RAW_DOWNLOADS', 'SKIP_YAHOO', 'SKIP_JPMORGAN', 'EDGAR_FALLBACK', 'VERBOSE']) {
+    if (result[key] && !/^(0|1|true|false|yes|no|y|n|on|off)$/i.test(result[key])) throw new Error(`${key}: expected boolean`);
+  }
+  readConfig(result); // validate every min:max filter before any request or write
+  return result;
+}
+
+export async function runtimeControls(env: Record<string, string | undefined> = process.env): Promise<Record<string, string>> {
+  let file: unknown = {};
+  try { file = JSON.parse(await outputReadFile(CONFIG_FILE_URL, 'utf8')); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+  return resolveControls(file, {}, {}, env);
+}
+
+export async function main(argv: string[] = process.argv.slice(2), env: Record<string, string | undefined> = process.env): Promise<void> {
+  if (argv.some((arg) => arg === '--help' || arg === '-h')) {
+    console.log(USAGE.trim());
+    return;
+  }
+  if (argv.length) throw new Error(`unsupported argument(s): ${argv.join(' ')}. Use --help for usage.`);
+  const controls = await runtimeControls(env);
+  if (controls.VERBOSE !== undefined && env === process.env) process.env.VERBOSE = controls.VERBOSE;
+  await runUpdater(readConfig(controls));
+}
+
+// Entry point (kept at the end: runUpdater() relies on the let bindings above)
+if ((import.meta as { main?: boolean }).main) {
+  await main().catch((error) => {
+    console.error(error instanceof Error ? error.stack : String(error));
+    process.exitCode = 1;
+  });
 }
