@@ -7,6 +7,8 @@ import {
   readConfig,
   resolveControls,
   runtimeControls,
+  isCertError,
+  installSystemCa,
   parseRange,
   parseAumRange,
   normalizeNumberText,
@@ -1596,4 +1598,81 @@ test('README: structure, no stale artifact mentions, verification commands', () 
   }
   for (const stale of ['worklog', '.prompt', 'evidence/', 'fixtures', 'config-docs.test', 'admin@daggerok.example.com']) expect(doc).not.toContain(stale);
   for (const cmd of ['bun install --frozen-lockfile', 'bun test', 'bun build --target=bun scripts/update-data.ts --outfile=/dev/null', 'git diff --check']) expect(doc).toContain(cmd);
+});
+
+test('USE_SYSTEM_CA resolver accepts auto/true/false case-insensitively and rejects other values', () => {
+  expect(resolveControls(file).USE_SYSTEM_CA).toBe('auto');
+  expect(file.USE_SYSTEM_CA).toBe('auto');
+  for (const value of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) {
+    expect(resolveControls({}, {}, {}, { USE_SYSTEM_CA: value }).USE_SYSTEM_CA).toBe(value.toLowerCase());
+  }
+  expect(() => resolveControls({}, {}, {}, { USE_SYSTEM_CA: 'maybe' })).toThrow('USE_SYSTEM_CA');
+  expect(() => resolveControls({ USE_SYSTEM_CA: 'maybe' })).toThrow('USE_SYSTEM_CA');
+});
+
+describe('isCertError', () => {
+  test('detects untrusted-certificate errors, including nested causes', () => {
+    expect(isCertError({ code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' })).toBe(true);
+    expect(isCertError(new Error('unable to get local issuer certificate'))).toBe(true);
+    expect(isCertError(new Error('fetch failed', { cause: new Error('unable to get local issuer certificate') }))).toBe(true);
+  });
+  test('ignores other failures', () => {
+    expect(isCertError({ code: 'ECONNRESET' })).toBe(false);
+    expect(isCertError(new Error('HTTP 403 Forbidden'))).toBe(false);
+    expect(isCertError(null)).toBe(false);
+  });
+});
+
+describe('installSystemCa', () => {
+  const originalFetch = globalThis.fetch;
+  const reexecSpy = () => {
+    const calls: number[] = [];
+    const reexec = (() => { calls.push(1); return undefined as never; }) as () => never;
+    return { calls, reexec };
+  };
+  const restore = () => { globalThis.fetch = originalFetch; };
+
+  test('mode false and an already active system CA leave fetch unchanged', () => {
+    try {
+      const a = reexecSpy();
+      installSystemCa('false', a.reexec, false);
+      expect(globalThis.fetch).toBe(originalFetch);
+      installSystemCa('auto', a.reexec, true);
+      installSystemCa('true', a.reexec, true);
+      expect(globalThis.fetch).toBe(originalFetch);
+      expect(a.calls.length).toBe(0);
+    } finally { restore(); }
+  });
+
+  test('mode true restarts immediately', () => {
+    try {
+      const a = reexecSpy();
+      installSystemCa('true', a.reexec, false);
+      expect(a.calls.length).toBe(1);
+    } finally { restore(); }
+  });
+
+  test('mode auto wraps fetch: cert error restarts once, other errors are rethrown, success passes through', async () => {
+    try {
+      const a = reexecSpy();
+      let next: () => Promise<Response> = async () => new Response('ok');
+      globalThis.fetch = (async () => next()) as unknown as typeof fetch;
+      installSystemCa('auto', a.reexec, false);
+      expect(globalThis.fetch).not.toBe(originalFetch);
+      expect(await (await fetch('https://example.invalid/')).text()).toBe('ok');
+      expect(a.calls.length).toBe(0);
+
+      next = async () => { throw new Error('ECONNRESET'); };
+      await expect(fetch('https://example.invalid/')).rejects.toThrow('ECONNRESET');
+      expect(a.calls.length).toBe(0);
+
+      const quiet = console.error;
+      console.error = () => {};
+      try {
+        next = async () => { throw Object.assign(new Error('fetch failed'), { cause: { code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' } }); };
+        await fetch('https://example.invalid/');
+      } finally { console.error = quiet; }
+      expect(a.calls.length).toBe(1);
+    } finally { restore(); }
+  });
 });

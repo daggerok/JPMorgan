@@ -637,6 +637,10 @@ Environment variables (all optional; strict "min:max" ranges; AND logic):
                        official JPMorgan history is unavailable for a fund
                        (previously published history rows are kept instead).
   VERBOSE              1/true to print per-fund retry and fallback notices.
+  USE_SYSTEM_CA        auto (default) restarts the updater once with Bun's
+                       --use-system-ca when a request fails with an untrusted
+                       certificate error; true always uses the system CA
+                       store; false never restarts.
   SKIP_JPMORGAN        1/true to keep the previously published catalog values,
                        holdings and official returns; only the fallbacks
                        (SEC N-PORT-P holdings, Yahoo history) run.
@@ -3091,6 +3095,42 @@ function catalogFundFromIndex(ticker: string, row: JsonRecord): CatalogFund {
   };
 }
 
+// --- TLS trust store (identical in every ETF repo) ---
+const SYSTEM_CA_MARKER = 'ETF_UPDATER_SYSTEM_CA';
+const CERT_ERROR = /UNABLE_TO_GET_ISSUER_CERT|UNABLE_TO_VERIFY_LEAF_SIGNATURE|SELF_SIGNED_CERT|CERT_HAS_EXPIRED|unable to get (?:local )?issuer certificate|self[- ]signed certificate|certificate has expired/i;
+
+export function isCertError(error: unknown): boolean {
+  const e = error as { code?: unknown; message?: unknown; cause?: unknown } | null;
+  return CERT_ERROR.test(`${String(e?.code ?? '')} ${String(e?.message ?? '')}`) || (e?.cause ? isCertError(e.cause) : false);
+}
+
+export function systemCaActive(env: Record<string, string | undefined> = process.env, execArgv: string[] = process.execArgv): boolean {
+  return execArgv.includes('--use-system-ca') || env.NODE_USE_SYSTEM_CA === '1' || env[SYSTEM_CA_MARKER] === '1';
+}
+
+export function reexecWithSystemCa(): never {
+  const child = Bun.spawnSync([process.execPath, '--use-system-ca', ...process.argv.slice(1)], {
+    env: { ...process.env, [SYSTEM_CA_MARKER]: '1' },
+    stdio: ['inherit', 'inherit', 'inherit'],
+  });
+  process.exit(child.exitCode ?? 1);
+}
+
+/** mode: auto (restart once on an untrusted-certificate error), true (restart now), false (never). */
+export function installSystemCa(mode: string, reexec: () => never = reexecWithSystemCa, active: boolean = systemCaActive()): void {
+  if (mode === 'false' || active) return;
+  if (mode === 'true') reexec();
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = (async (...args: Parameters<typeof fetch>) => {
+    try { return await realFetch(...args); }
+    catch (error) {
+      if (!isCertError(error)) throw error;
+      console.error('[ notice   ] TLS certificate not trusted; restarting once with --use-system-ca');
+      return reexec();
+    }
+  }) as typeof fetch;
+}
+
 // ---------------------------------------------------------------------------
 // Controls: config file < advanced JSON < nonblank inputs < environment
 // ---------------------------------------------------------------------------
@@ -3102,7 +3142,7 @@ export const CONTROL_NAMES = [
   'MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY', 'AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD', 'TICKERS',
   'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'STORE_RAW_DOWNLOADS', 'MAX_RETRIES', 'HISTORY_RANGE',
   'EDGAR_FALLBACK', 'SKIP_YAHOO', 'SKIP_JPMORGAN', 'ROLE', 'API_BASE', 'FUND_EXPLORER_URL', 'EARLY_NAV_URL',
-  'SEC_UA', 'VERBOSE',
+  'SEC_UA', 'VERBOSE', 'USE_SYSTEM_CA',
   ...['PERFORMANCE', 'TOTAL_RETURN'].flatMap((prefix) => ['YTD', '1Y', '3Y', '5Y', '10Y'].map((period) => `${prefix}_${period}`)),
 ] as const;
 export type ControlName = (typeof CONTROL_NAMES)[number];
@@ -3146,6 +3186,8 @@ export function resolveControls(
   for (const key of ['STORE_RAW_DOWNLOADS', 'SKIP_YAHOO', 'SKIP_JPMORGAN', 'EDGAR_FALLBACK', 'VERBOSE']) {
     if (result[key] && !/^(0|1|true|false|yes|no|y|n|on|off)$/i.test(result[key])) throw new Error(`${key}: expected boolean`);
   }
+  if (result.USE_SYSTEM_CA && !/^(auto|true|false)$/i.test(result.USE_SYSTEM_CA)) throw new Error('USE_SYSTEM_CA: expected auto, true or false');
+  if (result.USE_SYSTEM_CA) result.USE_SYSTEM_CA = result.USE_SYSTEM_CA.toLowerCase();
   readConfig(result); // validate every min:max filter before any request or write
   return result;
 }
@@ -3165,6 +3207,7 @@ export async function main(argv: string[] = process.argv.slice(2), env: Record<s
   if (argv.length) throw new Error(`unsupported argument(s): ${argv.join(' ')}. Use --help for usage.`);
   const controls = await runtimeControls(env);
   if (controls.VERBOSE !== undefined && env === process.env) process.env.VERBOSE = controls.VERBOSE;
+  installSystemCa(controls.USE_SYSTEM_CA || 'auto');
   await runUpdater(readConfig(controls));
 }
 
