@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q781&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q781&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q781&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q781&country=us&role=adv&locale=en-US&fromDate=2011-07-29&toDate=2026-09-25",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q781&country=us&role=adv&locale=en-US&fromDate=2011-07-29&toDate=2026-10-02",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JPEF",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -25,29 +25,29 @@
   "exchange": "NASDAQ"
  },
  "expenseRatio": {
-  "display": "0.55%",
-  "value": 0.55,
+  "display": "0.44%",
+  "value": 0.44,
   "gross": 0.55,
   "net": 0.44
  },
  "nav": {
-  "display": "$81.86",
-  "value": 81.85875537,
-  "asOfDate": "Sep 25 2026"
+  "display": "$82.05",
+  "value": 82.04835205,
+  "asOfDate": "Oct 02 2026"
  },
  "marketPrice": {
-  "display": "$81.88",
-  "value": 81.88,
-  "asOfDate": "Sep 25 2026"
+  "display": "$82.06",
+  "value": 82.06,
+  "asOfDate": "Oct 02 2026"
  },
  "premiumDiscount": {
-  "display": "0.03%",
-  "value": 0.026
+  "display": "0.01%",
+  "value": 0.0142
  },
  "aum": {
-  "display": "$2,034.61 M",
-  "value": 2034608451.04,
-  "asOfDate": "Sep 25 2026",
+  "display": "$2,039.32 M",
+  "value": 2039320897.54,
+  "asOfDate": "Oct 02 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
@@ -55,19 +55,20 @@
   "dividendYieldText": "0.70%",
   "dividendYieldKind": "12-month rolling dividend yield (month-end, official JPMorgan product-data), as of Aug 31 2026",
   "distributionRate": null,
-  "secYield": 0.59,
-  "secYieldText": "0.59%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Sep 24 2026",
-  "unsubsidizedSecYield": 0.5
+  "secYield": 0.6,
+  "secYieldText": "0.60%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 01 2026",
+  "unsubsidizedSecYield": 0.51
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Aug 31 2026",
+   "priceReturnsAsOf": "Oct 02 2026",
    "mo1": 1.36,
    "mo1Text": "1.36%",
-   "qtd": 2.33,
-   "qtdText": "2.33%",
+   "qtd": 1.09,
+   "qtdText": "1.09%",
    "ytd": 8.63,
    "ytdText": "8.63%",
    "yr1": 12.61,
@@ -128,8 +129,8 @@
   ],
   "pageSize": 250,
   "totalRows": 42,
-  "asOfDate": "2026-09-25",
-  "asOf": "Sep 25 2026",
+  "asOfDate": "2026-10-02",
+  "asOf": "Oct 02 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -137,8 +138,25 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 794,
-  "asOf": "Sep 25 2026",
+  "totalRows": 799,
+  "asOf": "Oct 02 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
+ },
+ "metrics": {
+  "ytd": 8.63,
+  "tr1y": 12.61,
+  "tr3y": 67.22,
+  "tr5y": 76.83,
+  "tr10y": 321.76,
+  "cagr3y": 18.69,
+  "cagr5y": 12.08,
+  "cagr10y": 15.48,
+  "siAnn": 14.54,
+  "dividendYield": 0.7,
+  "dividendYieldText": "0.70%",
+  "secYield": 0.6,
+  "secYieldText": "0.60%",
+  "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
+  "performanceAsOf": "2026-08-31"
  }
 }

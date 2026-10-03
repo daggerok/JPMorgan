@@ -2,7 +2,7 @@
  "ticker": "JMHI",
  "page": 2,
  "pageSize": 250,
- "totalRows": 255,
+ "totalRows": 261,
  "headers": [
   "Name",
   "Ticker",
@@ -15,6 +15,61 @@
   "Maturity"
  ],
  "rows": [
+  {
+   "Name": "PUERTO RICO ZERO 07/51",
+   "Ticker": "-",
+   "Identifier": "74529JQH1",
+   "Weight": "0.09",
+   "Market Value": "254246.53",
+   "Shares Held": "1020000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "",
+   "Maturity": "Jul 01 2051"
+  },
+  {
+   "Name": "AQUARION WTR ZERO 08/53",
+   "Ticker": "-",
+   "Identifier": "03843TBH3",
+   "Weight": "0.07",
+   "Market Value": "208799.7",
+   "Shares Held": "1000000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "",
+   "Maturity": "Aug 01 2053"
+  },
+  {
+   "Name": "MARICOPA 5.125% 10/30",
+   "Ticker": "-",
+   "Identifier": "56678RAJ2",
+   "Weight": "0.07",
+   "Market Value": "199580.79",
+   "Shares Held": "210000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "5.125",
+   "Maturity": "Oct 01 2030"
+  },
+  {
+   "Name": "MONTGOMERY CNTY VAR 04/53",
+   "Ticker": "-",
+   "Identifier": "61361TAA9",
+   "Weight": "0.06",
+   "Market Value": "175927.52",
+   "Shares Held": "175000",
+   "Asset Category": "DEMAND NOTES",
+   "Coupon": "4.1",
+   "Maturity": "Apr 01 2053"
+  },
+  {
+   "Name": "CALIFORNIA SCH ZERO 08/30",
+   "Ticker": "-",
+   "Identifier": "13058RAR5",
+   "Weight": "0.06",
+   "Market Value": "173868.98",
+   "Shares Held": "200000",
+   "Asset Category": "MUNICIPAL BONDS",
+   "Coupon": "",
+   "Maturity": "Aug 01 2030"
+  },
   {
    "Name": "PUBLIC FIN 5.25% 12/51",
    "Ticker": "-",
@@ -31,7 +86,7 @@
    "Ticker": "-",
    "Identifier": "63608TAB6",
    "Weight": "0.03",
-   "Market Value": "93955.89",
+   "Market Value": "97246.59",
    "Shares Held": "100000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "5.25",
@@ -41,8 +96,8 @@
    "Name": "SUFFOLK TOB ZERO 06/66",
    "Ticker": "-",
    "Identifier": "864809CD8",
-   "Weight": "0.03",
-   "Market Value": "73465",
+   "Weight": "0.02",
+   "Market Value": "72161.4",
    "Shares Held": "1000000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "",
@@ -63,12 +118,23 @@
    "Name": "US 10YR NOTE 12/21/2026",
    "Ticker": "-",
    "Identifier": "TYZ6COM",
-   "Weight": "-0.13",
-   "Market Value": "-352084.22",
+   "Weight": "-0.15",
+   "Market Value": "-422631.09",
    "Shares Held": "105",
    "Asset Category": "INTEREST RATE FUTURES",
    "Coupon": "",
    "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "-1.81",
+   "Market Value": "-5271232.09",
+   "Shares Held": "-5271232",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   }
  ]
 }
