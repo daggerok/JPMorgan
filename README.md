@@ -41,11 +41,19 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `ytd` / `tr1y` - official YTD and 1-year returns -> *YTD Return*, *TR 1Y*
 - `cagr3y` / `cagr5y` / `cagr10y` - published annualized 3Y/5Y/10Y figures -> *CAGR 3Y/5Y/10Y*
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
-- `siAnn` - since-inception annualized -> *SI Ann.*
+- `siAnn` - since-inception annualized -> *SI Ann.*; only for funds with at least one year of history, `null` otherwise
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
 - `secYield` - 30-day SEC yield when published; unavailable values stay empty and are never shown as 0
 - `returnsBasis` - always a non-empty label of how the returns were computed: official JPMorgan NAV total returns, derived from the daily NAV history with distributions reinvested (or Yahoo adjusted closes, an estimate), or a mixed label naming the derived periods
 - `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the JPMorgan performance table date for official returns, the last history date when derived; it is not the NAV date and is `null` when no return is available
+
+Expense ratio: `terValue` (index row) and `expenseRatio.value` (meta) are the NET ratio after waivers, `terGrossValue` and `expenseRatio.gross` the GROSS one (`null` when not published). The `TER` filter applies to the net ratio. Rows published before this change keep the gross value in `terValue` until the next refresh of that fund.
+
+Dates: `returns.monthEnd.asOfDate` is the date of the official month-end table; `returns.monthEnd.priceReturnsAsOf` is the later date up to which `qtd` and every figure JPMorgan does not publish (young funds, derived periods) are computed from the daily NAV history. A fund without any official figure is dated by its NAV history only. A published exact `0.00` (for example a YTD or a dividend yield) is kept: it is what the source says, and the NAV history agrees for the checked cases.
+
+Fund-level consistency: a fund is computed completely in memory and written once (history and holdings pages first, then `meta.json`, stale pages last; the index is written at the end of the run). If am.jpmorgan.com product-data or historicalData fails for a fund that already has a published state, the whole fund keeps its previous state and counts as a failure; the SEC and Yahoo fallbacks apply to new funds only. The Yahoo schema (`Date/Close/Adj Close/Volume`) never replaces a published official NAV history, and an older N-PORT-P filing never replaces fresher published holdings. A fund with a `meta.json` but no index row is rebuilt into the index; a row without `meta.json` has `dataFile: null` and a full `metrics` object of nulls.
+
+Run behavior: every request has a 45 s timeout (headers and body) and is retried per `MAX_RETRIES`; files are written through a temporary file and renamed; a rerun with identical upstream data writes nothing; the run stops taking new funds after 25 minutes, still writes the full index and saves a cursor so the next run resumes; funds new to the catalog are printed as `NEW FUNDS: A, B` (and added to the step summary); the process exits with an error when every examined fund failed.
 
 Returns, NAV history and holdings come from the official am.jpmorgan.com JSON. Yahoo Finance values (history fallback, market-price returns) and SEC N-PORT-P holdings are fallbacks and are estimates, not official figures. Funds that are filtered out or fail keep their previously published metadata and data files.
 
@@ -55,11 +63,11 @@ All values are strings in `scripts/update-data.config.json`. Every control is al
 
 | Control | Default | Meaning |
 | --- | --: | --- |
-| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/jpmorgan/update-state.json`; `0` is a full pass over every fund. Legacy alias: `JPMORGAN_LIMIT`. |
+| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/jpmorgan/update-state.json`; `0` is a full pass over every fund. Only funds that pass `TICKERS` and the filters count, the cursor wraps around and belongs to one filter set (a cursor saved for other filters is ignored). Legacy alias: `JPMORGAN_LIMIT`. |
 | `REQUEST_SLEEP` | `1` | Minimum delay in seconds between outgoing request starts, including retries. |
 | `CONCURRENCY` | `2` | Number of parallel fund update workers, each with its own paced request lane. |
-| `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. |
-| `TER` | `:` | Expense ratio range in % (strict `min:max`). |
+| `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. Anything else (for example `abc:` or two colons) is an error. |
+| `TER` | `:` | NET expense ratio range in % (strict `min:max`). |
 | `DIVIDEND_YIELD` | `:` | Dividend-yield percentage range. |
 | `SEC_YIELD` | `:` | 30-day SEC yield percentage range. |
 | `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `JEPI JEPQ JPST BBJP`. |
@@ -67,21 +75,21 @@ All values are strings in `scripts/update-data.config.json`. Every control is al
 | `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. Legacy alias: `HISTORICAL_PAGE_SIZE`. |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the source fund-explorer, product-data and historicalData JSON under `api/jpmorgan/raw`. |
 | `MAX_RETRIES` | `2` | Retries after the initial request (integer >= 1). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
-| `HISTORY_RANGE` | `max` | Yahoo chart range for the fallback history rows; the official history always covers the whole life of the fund. |
+| `HISTORY_RANGE` | `max` | `max` or `Ny` (for example `5y`): how far back the Yahoo fallback history reaches, sent as explicit `period1`/`period2`; anything else is an error. The official history always covers the whole life of the fund. |
 | `EDGAR_FALLBACK` | `true` | SEC EDGAR N-PORT-P fallback for funds whose product-data lists no holdings. |
 | `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
 | `SKIP_JPMORGAN` | `false` | Keep the previously published catalog, holdings and official returns; only the fallbacks run. |
-| `ROLE` | `adv` | am.jpmorgan.com role parameter (`adv`, `per` or `institutional`). |
-| `API_BASE` | empty | Override the FundsMarketingHandler JSON base URL, e.g. a local mirror for offline runs. |
-| `FUND_EXPLORER_URL` | empty | Override the catalog JSON URL. |
-| `EARLY_NAV_URL` | empty | Override the early-NAV report CSV used as the catalog fallback. |
+| `ROLE` | `adv` | am.jpmorgan.com role parameter (`adv`, `per` or `institutional`; letters only). |
+| `API_BASE` | empty | Override the FundsMarketingHandler JSON base URL, e.g. a local mirror for offline runs. Must be an `https` URL (`http` only for localhost). |
+| `FUND_EXPLORER_URL` | empty | Override the catalog JSON URL (`https`, or `http` for localhost). |
+| `EARLY_NAV_URL` | empty | Override the early-NAV report CSV used as the catalog fallback (`https`, or `http` for localhost). |
 | `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent; SEC policy requires a declared contact. The protected `SEC_UA` Actions variable wins when nonblank. |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices. |
 | `USE_SYSTEM_CA` | `auto` | TLS trust store: `auto` restarts the updater once with Bun's `--use-system-ca` when a request fails with an untrusted-certificate error; `true` always uses the system CA store; `false` never restarts. Not an individual workflow input: use `advanced`, the config file or the CLI environment. |
 | `PERFORMANCE_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Annualized return ranges (strict `min:max`). |
 | `TOTAL_RETURN_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Cumulative return ranges (strict `min:max`). |
 
-`TICKERS` combines with the AUM, TER and yield filters using AND logic; it does not override them.
+`TICKERS` combines with the AUM, TER, yield and return filters using AND logic; it does not override them. A return filter excludes funds whose value for that period is `null`.
 
 ### Examples
 

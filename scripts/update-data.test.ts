@@ -1,9 +1,19 @@
 // Bun's test runner provides these globals at runtime.
 // @ts-ignore bun types are intentionally not required for this zero-dependency Bun script.
-import { describe, expect, test } from 'bun:test';
+import { afterEach, describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
+import * as MOD from './update-data';
 import {
   CONTROL_NAMES,
+  runUpdater,
+  setApiRootForTests,
+  configureFetchForTests,
+  paceRequests,
+  fetchWithRetry,
+  chartUrl,
+  emptyMetrics,
+  indexRowFromMeta,
+  isOlderReport,
   readConfig,
   resolveControls,
   runtimeControls,
@@ -1700,5 +1710,434 @@ describe('installSystemCa', () => {
       } finally { console.error = quiet; }
       expect(a.calls.length).toBe(1);
     } finally { restore(); }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Mocked end-to-end pipeline (fetch mocked, temporary api root, no network)
+// ---------------------------------------------------------------------------
+
+type MockFund = { ticker: string; cusip: string; young?: boolean };
+const MOCK_FUNDS: MockFund[] = ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF'].map((ticker, i) => ({ ticker, cusip: `4664${i}Q332` }));
+
+function mockExplorerEntry(fund: MockFund): Record<string, any> {
+  const entry = structuredClone(FUND_EXPLORER_FIXTURE[0]) as Record<string, any>;
+  entry.ticker = fund.ticker;
+  entry.identifier = fund.cusip;
+  entry.name = `JPMorgan ${fund.ticker} ETF`;
+  if (fund.young) {
+    entry.atNavPerformanceReturn = { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, inception: null };
+    entry.atNavPerformanceReturnForQuarterEnd = {};
+  }
+  return entry;
+}
+
+function mockProduct(fund: MockFund): Record<string, any> {
+  const payload = structuredClone(PRODUCT_DATA_FIXTURE) as Record<string, any>;
+  payload.fundData.name = `JPMorgan ${fund.ticker} ETF`;
+  payload.fundData.shareClass.ticker = fund.ticker;
+  payload.fundData.shareClass.cusip = fund.cusip;
+  payload.fundData.shareClass.expenses = { netExpense: 0.25, grossExpense: 0.35 };
+  if (fund.young) {
+    payload.fundData.shareClass.performanceReturns = [];
+    payload.fundData.shareClass.cumulativePerformanceReturns = [];
+  }
+  return payload;
+}
+
+type MockRequest = { url: string; userAgent: string };
+function installMockFetch(options: { delayMs?: number; failProduct?: string[]; failHistory?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean } = {}): { requests: MockRequest[]; peak: () => number } {
+  const requests: MockRequest[] = [];
+  let inFlight = 0;
+  let peak = 0;
+  const funds = options.funds ?? MOCK_FUNDS;
+  globalThis.fetch = (async (input: unknown, init?: RequestInit) => {
+    const url = String(input);
+    requests.push({ url, userAgent: String((init?.headers as Record<string, string>)?.['User-Agent'] ?? '') });
+    inFlight += 1;
+    peak = Math.max(peak, inFlight);
+    try {
+      if (options.delayMs) await new Promise((resolve) => setTimeout(resolve, options.delayMs));
+      const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } });
+      const cusip = /cusip=([^&]+)/.exec(url)?.[1];
+      const fund = funds.find((item) => item.cusip === cusip);
+      if (/fund-explorer/.test(url)) return json(funds.map(mockExplorerEntry));
+      if (/product-data/.test(url) && fund) return options.failProduct?.includes(fund.ticker) ? new Response('boom', { status: 404 }) : json(mockProduct(fund));
+      if (/historicalData/.test(url) && fund) {
+        if (options.failHistory?.includes(fund.ticker)) return new Response('boom', { status: 404 });
+        return json(options.emptyHistory?.includes(fund.ticker) ? {} : HISTORICAL_DATA_FIXTURE);
+      }
+      if (/query1\.finance\.yahoo\.com/.test(url) && options.yahoo) {
+        return json({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2], open: [50, 51], high: [50, 51], low: [50, 51] }], adjclose: [{ adjclose: [50, 51] }] } }] } });
+      }
+      return new Response('not found', { status: 404 });
+    } finally {
+      inFlight -= 1;
+    }
+  }) as typeof fetch;
+  return { requests, peak: () => peak };
+}
+
+const pipelineControls = (extra: Record<string, string> = {}) =>
+  readConfig(resolveControls({}, {}, {}, { REQUEST_SLEEP: '0', CONCURRENCY: '1', SKIP_YAHOO: 'true', EDGAR_FALLBACK: 'false', ...extra }));
+
+async function withTempFeed<T>(run: (root: URL) => Promise<T>): Promise<T> {
+  const { mkdtemp, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { pathToFileURL } = await import('node:url');
+  const dir = await mkdtemp(join(tmpdir(), 'jpm-feed-'));
+  setApiRootForTests(pathToFileURL(`${dir}/`));
+  try {
+    return await run(pathToFileURL(`${dir}/`));
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+}
+
+const readJsonFile = async (root: URL, path: string) => JSON.parse(await Bun.file(new URL(path, root)).text());
+const readIndex = async (root: URL): Promise<{ funds: Record<string, any>[]; counts: Record<string, number> }> => readJsonFile(root, 'index.json');
+
+describe('strict controls (no silent fallbacks)', () => {
+  test('AUM and range bounds with a stray colon or a non-number are errors', () => {
+    expect(() => parseAumRange('abc:')).toThrow(/AUM/);
+    expect(() => parseAumRange('1B:2B:3B')).toThrow(/exactly one colon/);
+    expect(() => parseAumRange('x1B:')).toThrow(/AUM/);
+    expect(() => parseRange('1:2:3', 'PERFORMANCE_1Y')).toThrow(/exactly one colon/);
+    expect(parseAumRange('1B:')).toEqual({ min: 1e9, max: undefined });
+  });
+
+  test('HISTORY_RANGE accepts only max or Ny, ROLE and the URL controls are validated', () => {
+    expect(() => resolveControls({}, {}, {}, { HISTORY_RANGE: 'garbage' })).toThrow(/HISTORY_RANGE/);
+    expect(() => resolveControls({}, {}, {}, { HISTORY_RANGE: '6mo' })).toThrow(/HISTORY_RANGE/);
+    expect(resolveControls({}, {}, {}, { HISTORY_RANGE: '5y' }).HISTORY_RANGE).toBe('5y');
+    expect(resolveControls({}, {}, {}, { HISTORY_RANGE: 'MAX' }).HISTORY_RANGE).toBe('MAX');
+    expect(() => resolveControls({}, {}, {}, { ROLE: 'ad v' })).toThrow(/ROLE/);
+    expect(() => resolveControls({}, {}, {}, { API_BASE: 'ftp://example.test' })).toThrow(/API_BASE/);
+    expect(() => resolveControls({}, {}, {}, { FUND_EXPLORER_URL: 'http://am.jpmorgan.com/x' })).toThrow(/FUND_EXPLORER_URL/);
+    expect(() => resolveControls({}, {}, {}, { EARLY_NAV_URL: 'not a url' })).toThrow(/EARLY_NAV_URL/);
+    expect(resolveControls({}, {}, {}, { API_BASE: 'http://localhost:8080/mirror' }).API_BASE).toBe('http://localhost:8080/mirror');
+  });
+
+  test('HISTORY_RANGE really shrinks the Yahoo request: explicit period1/period2, never range=', () => {
+    const now = Date.UTC(2026, 8, 25);
+    const max = new URL(chartUrl('JEPI', { historyRange: 'max' }, now));
+    const five = new URL(chartUrl('JEPI', { historyRange: '5y' }, now));
+    expect(max.searchParams.get('period1')).toBe('0');
+    expect(Number(five.searchParams.get('period1'))).toBe(Math.floor(now / 1000 - 5 * 365.25 * 86_400));
+    expect(five.searchParams.get('period2')).toBe(String(Math.floor(now / 1000)));
+    expect(five.searchParams.has('range')).toBe(false);
+  });
+});
+
+describe('fetch layer', () => {
+  const realFetch = globalThis.fetch;
+  afterEach(() => { globalThis.fetch = realFetch; configureFetchForTests({ timeoutMs: 45_000, sleepMs: 0, deadlineMs: 25 * 60_000 }); });
+
+  test('every fetch has a timeout and a hanging request is retried then fails', async () => {
+    configureFetchForTests({ timeoutMs: 30, sleepMs: 0, lanes: 1 });
+    let calls = 0;
+    globalThis.fetch = (async (_url: unknown, init?: RequestInit) => {
+      calls += 1;
+      const signal = init?.signal;
+      if (!signal) { await new Promise((resolve) => setTimeout(resolve, 150)); return new Response('late', { status: 200 }); }
+      return new Promise<Response>((_resolve, reject) => signal.addEventListener('abort', () => reject(new Error('aborted'))));
+    }) as typeof fetch;
+    await expect(fetchWithRetry('https://example.test/x', 't', {}, 1)).rejects.toThrow(/network error/);
+    expect(calls).toBe(2);
+  });
+
+  test('pacing reserves the lane slot synchronously: 6 simultaneous requests on 2 lanes start 0,0,S,S,2S,2S', async () => {
+    configureFetchForTests({ sleepMs: 200, lanes: 2 });
+    const t0 = Date.now();
+    const starts: number[] = [];
+    await Promise.all([0, 1, 2, 3, 4, 5].map(async () => { await paceRequests(); starts.push(Date.now() - t0); }));
+    starts.sort((a, b) => a - b);
+    expect(starts[1]).toBeLessThan(100);
+    expect(starts[2]).toBeGreaterThanOrEqual(150);
+    expect(starts[3]).toBeGreaterThanOrEqual(150);
+    expect(starts[4]).toBeGreaterThanOrEqual(350);
+    expect(starts[5]).toBeGreaterThanOrEqual(350);
+  });
+});
+
+describe('metrics and dates', () => {
+  test('a derived since-inception needs at least one year of history', () => {
+    const day = (date: string, adjClose: number) => ({ date, close: adjClose, adjClose, volume: 1 });
+    const ten = priceReturns([day('2025-11-25', 100), day('2026-09-25', 110)], new Date('2026-09-26T00:00:00Z'));
+    expect(ten.siAnn).toBeNull();
+    const two = priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], new Date('2026-09-26T00:00:00Z'));
+    expect(two.siAnn).toBeCloseTo(10, 1);
+  });
+
+  test('an N-PORT filing older than the published holdings never replaces them', () => {
+    expect(isOlderReport('2026-06-30', '2026-08-31')).toBe(true);
+    expect(isOlderReport('2026-08-31', '2026-08-31')).toBe(false);
+    expect(isOlderReport('2026-09-30', '2026-08-31')).toBe(false);
+    expect(isOlderReport('2026-06-30', '')).toBe(false);
+    expect(isOlderReport('', '2026-08-31')).toBe(false);
+  });
+
+  test('emptyMetrics carries the full contract key set with null, never 0', () => {
+    const metrics = emptyMetrics();
+    expect(Object.keys(metrics)).toEqual(['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf']);
+    expect(Object.values(metrics).includes(0)).toBe(false);
+    expect(metrics.returnsBasis).toBeTruthy();
+  });
+});
+
+describe('update pipeline (mocked fetch, temporary api root)', () => {
+  const realFetch = globalThis.fetch;
+  const realLog = console.log;
+  afterEach(() => {
+    globalThis.fetch = realFetch;
+    console.log = realLog;
+    configureFetchForTests({ timeoutMs: 45_000, sleepMs: 0, deadlineMs: 25 * 60_000 });
+    // runUpdater throws on a failed run; keep the test process exit status clean regardless
+    (globalThis as any).process.exitCode = 0;
+  });
+  const capture = (): string[] => { const lines: string[] = []; console.log = (...args: unknown[]) => { lines.push(args.join(' ')); }; return lines; };
+
+  test('a one-ticker run keeps every published row and file', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      expect((await readIndex(root)).funds.length).toBe(6);
+      const mock = installMockFetch();
+      await runUpdater(pipelineControls({ TICKERS: 'CCC' }));
+      const index = await readIndex(root);
+      expect(index.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF']);
+      expect(index.counts.funds).toBe(6);
+      expect(mock.requests.some((request) => request.url.includes('46642Q332'))).toBe(true);
+      expect(mock.requests.some((request) => request.url.includes('46640Q332'))).toBe(false);
+    });
+  });
+
+  test('terValue is the NET expense ratio, terGrossValue the gross one', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
+      const row = (await readIndex(root)).funds.find((fund) => fund.ticker === 'AAA')!;
+      expect(row.terValue).toBe(0.25);
+      expect(row.terGrossValue).toBe(0.35);
+      expect(row.ter).toBe('0.25%');
+      const meta = await readJsonFile(root, 'funds/AAA/meta.json');
+      expect(meta.expenseRatio.value).toBe(0.25);
+      expect(meta.expenseRatio.gross).toBe(0.35);
+      expect(meta.expenseRatio.net).toBe(0.25);
+    });
+  });
+
+  test('MAX_FETCHES counts only funds that pass the filters, so a late ticker is reached', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls({ TICKERS: 'FFF', MAX_FETCHES: '1' }));
+      expect((await readJsonFile(root, 'funds/FFF/meta.json')).ticker).toBe('FFF');
+      expect((await readJsonFile(root, 'update-state.json')).cursor).toBe('FFF');
+    });
+  });
+
+  test('the cursor wraps around and is ignored for a different filter set', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      const seen: string[] = [];
+      for (let run = 0; run < 4; run++) {
+        await runUpdater(pipelineControls({ MAX_FETCHES: '2' }));
+        seen.push((await readJsonFile(root, 'update-state.json')).cursor);
+      }
+      expect(seen).toEqual(['BBB', 'DDD', 'FFF', 'BBB']);
+      await runUpdater(pipelineControls({ MAX_FETCHES: '1', TICKERS: 'CCC' }));
+      expect((await readJsonFile(root, 'update-state.json')).cursor).toBe('CCC');
+    });
+  });
+
+  test('a run where no fund received fresh data fails instead of exiting green', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      globalThis.fetch = (async () => new Response('', { status: 404 })) as typeof fetch;
+      await expect(runUpdater(pipelineControls())).rejects.toThrow(/every examined fund failed/);
+      expect((await readIndex(root)).funds.length).toBe(6);
+    });
+  });
+
+  test('CONCURRENCY really runs funds in parallel: peak in-flight 1 at c=1, N at c=N', async () => {
+    capture();
+    for (const [concurrency, expected] of [[1, 1], [3, 3]] as const) {
+      const mock = installMockFetch({ delayMs: 15 });
+      await withTempFeed(async () => {
+        await runUpdater(pipelineControls({ CONCURRENCY: String(concurrency) }));
+      });
+      expect(mock.peak()).toBe(expected);
+    }
+  });
+
+  test('an unchanged rerun writes nothing and leaves no temporary files', async () => {
+    capture();
+    installMockFetch();
+    const { readdirSync, statSync } = await import('node:fs');
+    const { join } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const snapshot = (dir: string): Record<string, number> => {
+      const out: Record<string, number> = {};
+      const walk = (path: string): void => {
+        for (const name of readdirSync(path)) {
+          const full = join(path, name);
+          if (statSync(full).isDirectory()) walk(full); else out[full] = statSync(full).mtimeMs;
+        }
+      };
+      walk(dir);
+      return out;
+    };
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const dir = fileURLToPath(root);
+      const first = snapshot(dir);
+      await new Promise((resolve) => setTimeout(resolve, 30));
+      await runUpdater(pipelineControls());
+      expect(snapshot(dir)).toEqual(first);
+      expect(Object.keys(first).some((name) => name.endsWith('.tmp'))).toBe(false);
+    });
+  });
+
+  test('new funds are announced as NEW FUNDS', async () => {
+    const lines = capture();
+    installMockFetch({ funds: MOCK_FUNDS.slice(0, 2) });
+    await withTempFeed(async () => {
+      await runUpdater(pipelineControls());
+      installMockFetch();
+      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
+    });
+    expect(lines).toContain('NEW FUNDS: CCC, DDD, EEE, FFF');
+  });
+
+  test('a fund whose product-data failed keeps its previous complete state, byte for byte', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const before = { meta: await Bun.file(new URL('funds/BBB/meta.json', root)).text(), row: (await readIndex(root)).funds[1] };
+      installMockFetch({ failProduct: ['BBB'] });
+      await runUpdater(pipelineControls());
+      expect(await Bun.file(new URL('funds/BBB/meta.json', root)).text()).toBe(before.meta);
+      expect((await readIndex(root)).funds[1]).toEqual(before.row);
+    });
+  });
+
+  test('an official NAV history is never replaced by the Yahoo schema', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const headersBefore = (await readJsonFile(root, 'funds/AAA/history/001.json')).headers;
+      expect(headersBefore).toContain('NAV');
+      installMockFetch({ emptyHistory: ['AAA'], yahoo: true });
+      await runUpdater(pipelineControls({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
+      expect((await readJsonFile(root, 'funds/AAA/history/001.json')).headers).toEqual(headersBefore);
+      expect((await readJsonFile(root, 'funds/AAA/meta.json')).history.source).toBe('previous run');
+    });
+  });
+
+  test('a fund that lost its index row is rebuilt from meta.json, a row without meta gets dataFile null and full metrics', async () => {
+    capture();
+    installMockFetch();
+    const { writeFile } = await import('node:fs/promises');
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const index = await readIndex(root);
+      const trimmed = { ...index, funds: index.funds.filter((fund) => fund.ticker !== 'DDD').concat([{ ticker: 'ZZZ', name: 'Ghost' }]) };
+      await writeFile(new URL('index.json', root), JSON.stringify(trimmed), 'utf8');
+      installMockFetch();
+      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
+      const after = await readIndex(root);
+      expect(after.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF', 'ZZZ']);
+      const ddd = after.funds.find((fund) => fund.ticker === 'DDD')!;
+      expect(ddd.dataFile).toBe('./funds/DDD/meta.json');
+      expect(ddd.metrics.ytd).toBe(5.36);
+      expect(ddd.terValue).toBe(0.25);
+      expect(ddd.holdings).toBeGreaterThan(0);
+      const ghost = after.funds.find((fund) => fund.ticker === 'ZZZ')!;
+      expect(ghost.dataFile).toBeNull();
+      expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
+      expect(ghost.metrics.returnsBasis).toBeTruthy();
+    });
+  });
+
+  test('indexRowFromMeta matches the row the updater wrote', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
+      const row = (await readIndex(root)).funds[0];
+      const rebuilt = indexRowFromMeta(await readJsonFile(root, 'funds/AAA/meta.json'));
+      expect(rebuilt.metrics).toEqual(row.metrics);
+      for (const key of ['ticker', 'name', 'cusip', 'ter', 'terValue', 'terGrossValue', 'navValue', 'aumValue', 'closePriceValue', 'holdings', 'history', 'dataFile', 'asOfDate', 'inceptionDate', 'exchange']) {
+        expect(rebuilt[key]).toEqual(row[key]);
+      }
+      expect(rebuilt.returns).toEqual(row.returns);
+      expect(rebuilt.distributions).toEqual(row.distributions);
+    });
+  });
+
+  test('a fund without official returns is dated by its price history, not by the product-data table date', async () => {
+    capture();
+    const young = [{ ...MOCK_FUNDS[0], young: true }];
+    installMockFetch({ funds: young });
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const row = (await readIndex(root)).funds[0];
+      expect(row.returns.monthEnd.asOfDate).toBe('Sep 18 2026');
+      expect(row.returns.monthEnd.priceReturnsAsOf).toBe('Sep 18 2026');
+      expect(row.metrics.performanceAsOf === null || row.metrics.performanceAsOf === '2026-09-18').toBe(true);
+    });
+  });
+
+  test('an official month-end table keeps its own date and reports the later price-return date separately', async () => {
+    capture();
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
+      const row = (await readIndex(root)).funds[0];
+      expect(row.returns.monthEnd.asOfDate).toBe('Aug 31 2026');
+      expect(row.returns.monthEnd.priceReturnsAsOf).toBe('Sep 18 2026');
+      expect(row.metrics.performanceAsOf).toBe('2026-08-31');
+    });
+  });
+
+  test('SEC_YIELD is a working filter, not a no-op', async () => {
+    capture();
+    await withTempFeed(async (root) => {
+      installMockFetch();
+      await runUpdater(pipelineControls());
+      const mock = installMockFetch();
+      await runUpdater(pipelineControls({ SEC_YIELD: '20:' }));
+      expect(mock.requests.some((request) => /product-data|historicalData/.test(request.url))).toBe(false);
+      expect((await readIndex(root)).funds.length).toBe(6);
+    });
+  });
+
+  test('the soft deadline stops taking funds, still writes the full index and resumes where it stopped', async () => {
+    capture();
+    installMockFetch({ delayMs: 25 });
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      configureFetchForTests({ deadlineMs: 60 });
+      await runUpdater(pipelineControls());
+      const state = await readJsonFile(root, 'update-state.json');
+      expect(state.partial).toBe(true);
+      expect(state.cursor).not.toBeNull();
+      expect(state.cursor).not.toBe('FFF');
+      expect((await readIndex(root)).funds.length).toBe(6);
+      configureFetchForTests({ deadlineMs: 25 * 60_000 });
+      await runUpdater(pipelineControls());
+      const done = await readJsonFile(root, 'update-state.json');
+      expect(done.partial).toBe(false);
+      expect(done.cursor).toBeNull();
+    });
   });
 });
