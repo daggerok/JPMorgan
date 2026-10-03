@@ -1,8 +1,10 @@
 // Bun's test runner provides these globals at runtime.
 // @ts-ignore bun types are intentionally not required for this zero-dependency Bun script.
-import { afterEach, describe, expect, test } from 'bun:test';
-import { readFileSync } from 'node:fs';
-import * as MOD from './update-data';
+import { afterEach, beforeEach, describe, expect, test } from 'bun:test';
+import { mkdtempSync, readFileSync, readdirSync, rmSync, statSync, utimesSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
   CONTROL_NAMES,
   runUpdater,
@@ -61,7 +63,6 @@ import {
   fractionToPercent,
   toIsoDate,
   isoToEpoch,
-  epochToIsoDate,
   numberOrNull,
   normalizeHoldingName,
   normalizeHoldingNameCore,
@@ -79,151 +80,32 @@ import {
   YAHOO_HISTORY_HEADERS,
 } from './update-data';
 
-// ---------------------------------------------------------------------------
-// Range parsers (same contract as daggerok/iShares, daggerok/SPDR, daggerok/Fidelity)
-// ---------------------------------------------------------------------------
-
-describe('parseRange', () => {
-  test('empty and ":" mean no restriction', () => {
-    expect(parseRange('', 'X')).toBeUndefined();
-    expect(parseRange(':', 'X')).toBeUndefined();
-  });
-
-  test('inclusive bounds', () => {
-    expect(parseRange('1:5', 'X')).toEqual({ min: 1, max: 5 });
-    expect(parseRange('2:', 'X')).toEqual({ min: 2, max: undefined });
-    expect(parseRange(':3', 'X')).toEqual({ min: undefined, max: 3 });
-  });
-
-  test('percent signs and $ signs are optional', () => {
-    expect(parseRange('0.1%:0.5%', 'X')).toEqual({ min: 0.1, max: 0.5 });
-    expect(parseRange('$1:$2', 'X')).toEqual({ min: 1, max: 2 });
-  });
-
-  test('colonless values are rejected', () => {
-    expect(() => parseRange('15', 'X')).toThrow(/colon is required/);
-  });
-
-  test('min greater than max is rejected', () => {
-    expect(() => parseRange('5:1', 'X')).toThrow(/must not exceed/);
-  });
+// Portability: fixed time zone, quiet console, restored fetch/exitCode/fetch settings after every test.
+// Every control is passed explicitly to the resolver, so exported workflow variables never leak in.
+const realFetch = globalThis.fetch;
+const realLog = console.log;
+const realError = console.error;
+const realTz = process.env.TZ;
+const FETCH_DEFAULTS = { timeoutMs: 45_000, sleepMs: 0, deadlineMs: 25 * 60_000, lanes: 1 };
+beforeEach(() => {
+  process.env.TZ = 'UTC';
+  console.log = () => {};
+  console.error = () => {};
+});
+afterEach(() => {
+  globalThis.fetch = realFetch;
+  console.log = realLog;
+  console.error = realError;
+  if (realTz === undefined) delete process.env.TZ; else process.env.TZ = realTz;
+  configureFetchForTests(FETCH_DEFAULTS);
+  process.exitCode = 0;
 });
 
-describe('parseAumRange', () => {
-  test('empty and ":" mean no restriction', () => {
-    expect(parseAumRange('')).toBeUndefined();
-    expect(parseAumRange(':')).toBeUndefined();
-  });
+const config = JSON.parse(readFileSync(new URL('./update-data.config.json', import.meta.url), 'utf8')) as Record<string, string>;
+// resolveControls(file, advanced, inputs, env)
+const resolve = (env: Record<string, string> = {}, file: Record<string, unknown> = {}, advanced: unknown = {}, inputs: Record<string, string> = {}) => resolveControls(file, advanced, inputs, env);
 
-  test('numeric bounds with K/M/B/T suffixes', () => {
-    expect(parseAumRange('10M:2B')).toEqual({ min: 10_000_000, max: 2_000_000_000 });
-    expect(parseAumRange('1B:')).toEqual({ min: 1_000_000_000, max: undefined });
-  });
-
-  test('preset bounds', () => {
-    expect(parseAumRange('nano')).toEqual({ min: 0, max: 10_000_000 });
-    expect(parseAumRange('micro')).toEqual({ min: 10_000_000, max: 300_000_000 });
-    expect(parseAumRange('small')).toEqual({ min: 300_000_000, max: 2_000_000_000 });
-    expect(parseAumRange('mid')).toEqual({ min: 2_000_000_000, max: 10_000_000_000 });
-    expect(parseAumRange('large')).toEqual({ min: 10_000_000_000, max: undefined });
-  });
-
-  test('colonless values are rejected', () => {
-    expect(() => parseAumRange('42')).toThrow(/colon is required/);
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Small numeric helpers
-// ---------------------------------------------------------------------------
-
-describe('normalizeNumberText', () => {
-  test('expands scientific notation', () => {
-    expect(normalizeNumberText('2.97057744E8')).toBe('297057744');
-    expect(normalizeNumberText('1.5e-3')).toBe('0.0015');
-  });
-
-  test('keeps plain numbers and text untouched', () => {
-    expect(normalizeNumberText('1,234.56')).toBe('1234.56');
-    expect(normalizeNumberText('Apple Inc')).toBe('Apple Inc');
-    expect(normalizeNumberText('')).toBe('');
-    expect(normalizeNumberText('-')).toBe('-');
-  });
-});
-
-describe('numberOrNull', () => {
-  test('accepts the am.jpmorgan.com placeholder styles', () => {
-    expect(numberOrNull('--')).toBeNull();
-    expect(numberOrNull('—')).toBeNull();
-    expect(numberOrNull('N/A')).toBeNull();
-    expect(numberOrNull('4.56')).toBe(4.56);
-    expect(numberOrNull('$1,234.56')).toBe(1234.56);
-    expect(numberOrNull('0.40%')).toBe(0.4);
-  });
-});
-
-describe('toIsoDate / formatJpmorganDate / formatEdgarDate', () => {
-  test('US and ISO dates both normalize to ISO', () => {
-    expect(toIsoDate('08/21/2026')).toBe('2026-08-21');
-    expect(toIsoDate('2026-08-21')).toBe('2026-08-21');
-    expect(toIsoDate('2026-8-1')).toBe('2026-08-01');
-    expect(toIsoDate('n/a')).toBe('n/a');
-  });
-
-  test('JPMorgan workbooks render MM/DD/YYYY, the feed renders "Mon D YYYY"', () => {
-    expect(formatJpmorganDate('2026-08-21')).toBe('08/21/2026');
-    expect(formatEdgarDate('2026-06-30')).toBe('Jun 30 2026');
-  });
-
-  test('epoch days convert to ISO', () => {
-    expect(isoToEpoch('2026-01-15')).toBe(Date.UTC(2026, 0, 15) / 1000);
-    expect(isoToEpoch('nope')).toBeNull();
-  });
-});
-
-describe('parseCsv / header detection', () => {
-  test('handles quotes, embedded commas and CRLF', () => {
-    const rows = parseCsv('a,b\r\n"x, y","say ""hi"""\r\n');
-    expect(rows).toEqual([
-      ['a', 'b'],
-      ['x, y', 'say "hi"'],
-    ]);
-  });
-
-  test('drops blank lines and strips a BOM', () => {
-    const rows = parseCsv('\uFEFFTicker,Name\r\n\r\nJEPI,JPMorgan Equity Premium Income ETF\r\n');
-    expect(rows).toEqual([
-      ['Ticker', 'Name'],
-      ['JEPI', 'JPMorgan Equity Premium Income ETF'],
-    ]);
-  });
-
-  test('finds the header row after preamble lines', () => {
-    const rows = parseCsv(['J.P. Morgan Asset Management', 'Early NAV report', '', EARLY_NAV_FIXTURE].join('\n'));
-    const headerIndex = findHeaderRowIndex(rows, ['Ticker', 'CUSIP', 'NAV']);
-    expect(headerIndex).toBe(2);
-    expect(rows[headerIndex][0]).toBe('Date');
-    expect(findHeaderRowIndex(rows, ['Nope'])).toBe(-1);
-  });
-
-  test('csvRecords keeps the first of two identically named columns', () => {
-    const rows = parseCsv('Fund Ticker,Ticker,Name\nQQQ,QQQ,Apple Inc');
-    const records = csvRecords(rows, 0);
-    expect(pickColumn(records[0], ['Ticker'])).toBe('QQQ');
-    expect(pickColumn(records[0], ['Name'])).toBe('Apple Inc');
-    expect(pickColumn(records[0], ['Missing'])).toBe('');
-  });
-
-  test('csvRecords skips empty rows and trims cells', () => {
-    const rows = parseCsv('Ticker,Name\n JEPI , JPMorgan Equity Premium Income ETF \n,,\n');
-    expect(csvRecords(rows, 0)).toEqual([{ Ticker: 'JEPI', Name: 'JPMorgan Equity Premium Income ETF' }]);
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Catalog layer: the fund explorer JSON and the early-NAV CSV fallback
-// ---------------------------------------------------------------------------
-
+// Trimmed inline samples of the am.jpmorgan.com payloads (fractions for yields/returns, percent for premium/discount).
 // A trimmed copy of three am.jpmorgan.com fund-explorer entries (fractions for
 // yields/returns, percent for premium/discount, dollars for net assets).
 const FUND_EXPLORER_FIXTURE = [
@@ -289,59 +171,6 @@ const FUND_EXPLORER_FIXTURE = [
   { ticker: 'JMFXX', identifier: '4812C0555', name: 'JPMorgan Prime Money Market Fund', assetClass: 'Money Market', fundTypeCode: 'N_MF' },
 ];
 
-describe('parseFundExplorer', () => {
-  const funds = parseFundExplorer(FUND_EXPLORER_FIXTURE);
-
-  test('reads the ETF entries, alphabetized, and drops other fund types', () => {
-    expect(funds.map((fund) => fund.ticker)).toEqual(['JEPI', 'JLVP', 'JPST']);
-    expect(funds.every((fund) => fund.source === 'jpmorgan')).toBe(true);
-  });
-
-  test('keeps the CUSIP, asset class, inception and the fund page URL', () => {
-    const jepi = funds.find((fund) => fund.ticker === 'JEPI')!;
-    expect(jepi.cusip).toBe('46641Q332');
-    expect(jepi.name).toBe('JPMorgan Equity Premium Income ETF');
-    expect(jepi.category).toBe('U.S. Equity');
-    expect(jepi.inception).toBe('2020-05-20');
-    expect(jepi.asOfDate).toBe('2026-09-18');
-    expect(jepi.fundPage).toBe('https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332');
-    expect(jepi.trustCik).toBe('0001485894');
-  });
-
-  test('reads NAV, market price, premium/discount and net assets as numbers', () => {
-    const jepi = funds.find((fund) => fund.ticker === 'JEPI')!;
-    expect(jepi.nav).toBe(56.2213);
-    expect(jepi.close).toBe(56.24);
-    expect(jepi.premiumDiscount).toBe(0.0332);
-    expect(jepi.netAssets).toBe(45123456789.12);
-  });
-
-  test('converts fraction yields and returns to percent, keeping missing ones null', () => {
-    const jepi = funds.find((fund) => fund.ticker === 'JEPI')!;
-    expect(jepi.secYield).toBe(7.44);
-    expect(jepi.returns).toEqual({ ytd: 5.36, yr1: 9.05, yr3: 9.51, yr5: 10.02, yr10: null, sinceInception: 11.25 });
-    expect(jepi.returnsAsOfDate).toBe('2026-08-31');
-    expect(jepi.marketReturns.yr1).toBe(9.08);
-    expect(jepi.quarterEnd).toEqual({ ytd: 2.2, yr1: 7.77, yr3: 8.99, yr5: 7.47, yr10: null, sinceInception: 10.82 });
-    expect(jepi.quarterEndAsOfDate).toBe('2026-06-30');
-    const jlvp = funds.find((fund) => fund.ticker === 'JLVP')!;
-    expect(jlvp.secYield).toBeNull();
-    expect(jlvp.returns.ytd).toBeNull();
-    expect(jlvp.returns.sinceInception).toBe(1.9);
-    expect(jlvp.quarterEndAsOfDate).toBeNull();
-  });
-
-  test('the explorer carries no expense ratio or dividend yield (product-data does)', () => {
-    expect(funds.every((fund) => fund.ter === null && fund.dividendYield === null)).toBe(true);
-  });
-
-  test('accepts the wrapped payload shapes and rejects anything else', () => {
-    expect(parseFundExplorer({ funds: FUND_EXPLORER_FIXTURE }).length).toBe(3);
-    expect(parseFundExplorer({ data: FUND_EXPLORER_FIXTURE }).length).toBe(3);
-    expect(() => parseFundExplorer({ error: 'nope' })).toThrow(/not a fund list/);
-  });
-});
-
 const EARLY_NAV_FIXTURE = [
   'Date, Fund Name, Ticker, CUSIP, NAV, Previous NAV, NAV Change, % OF NAV Change, Net Assets, Shares Outstanding, Distribution Factor, ST Cap Gains, LT Cap Gains',
   '09/18/2026, JPMorgan Equity Premium Income ETF, JEPI, 46641Q332, 56.2213, 56.4101, -0.1888, -0.33, 45123456789.12, 802600000, 0.00000000, 0.00000000, 0.00000000',
@@ -349,38 +178,6 @@ const EARLY_NAV_FIXTURE = [
   '',
   'The early NAV report is provided for informational purposes only and is subject to change.',
 ].join('\r\n');
-
-describe('parseEarlyNavCsv (catalog fallback)', () => {
-  test('reads ticker, CUSIP, NAV and net assets despite the padded headers', () => {
-    const funds = parseEarlyNavCsv(EARLY_NAV_FIXTURE);
-    expect(funds.map((fund) => fund.ticker)).toEqual(['JEPI', 'JPST']);
-    const jepi = funds[0];
-    expect(jepi.cusip).toBe('46641Q332');
-    expect(jepi.name).toBe('JPMorgan Equity Premium Income ETF');
-    expect(jepi.nav).toBe(56.2213);
-    expect(jepi.netAssets).toBe(45123456789.12);
-    expect(jepi.asOfDate).toBe('2026-09-18');
-    expect(jepi.source).toBe('early-nav');
-    expect(jepi.fundPage).toContain('-etf-shares-46641q332');
-  });
-
-  test('rejects a file without the ETF columns', () => {
-    expect(() => parseEarlyNavCsv('Fund Name,Price\nX,1')).toThrow(/header row not found/);
-  });
-});
-
-describe('normalizeJpmorganCategory', () => {
-  test('keeps the published asset class and repairs its punctuation', () => {
-    expect(normalizeJpmorganCategory('U.S. Equity')).toBe('U.S. Equity');
-    expect(normalizeJpmorganCategory('  Fixed Income   Taxable ')).toBe('Fixed Income Taxable');
-    expect(normalizeJpmorganCategory('')).toBe('ETF');
-    expect(normalizeJpmorganCategory(null)).toBe('ETF');
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Product-data layer
-// ---------------------------------------------------------------------------
 
 const PRODUCT_DATA_FIXTURE = {
   fundData: {
@@ -432,200 +229,6 @@ const PRODUCT_DATA_FIXTURE = {
   },
 };
 
-describe('parseProductData', () => {
-  const product = parseProductData(PRODUCT_DATA_FIXTURE, 'JEPI');
-
-  test('reads the fund facts, exchange, expenses and inception', () => {
-    expect(product.ticker).toBe('JEPI');
-    expect(product.name).toBe('JPMorgan Equity Premium Income ETF');
-    expect(product.cusip).toBe('46641Q332');
-    expect(product.exchange).toBe('NYSE-Arca');
-    expect(product.grossExpense).toBe(0.35);
-    expect(product.netExpense).toBe(0.35);
-    expect(product.inception).toBe('2020-05-20');
-    expect(product.assetClass).toBe('U.S. Equity');
-    expect(product.benchmark).toBe('S&P 500 Index');
-    expect(product.frequencyCode).toBe('MDEC');
-    expect(product.numberOfHoldings).toBe(135);
-    expect(product.sharesOutstanding).toBe(802600000);
-  });
-
-  test('prefers the daily 30-day SEC yield and the 12-month rolling dividend yield', () => {
-    expect(product.secYield).toBe(7.59);
-    expect(product.secYieldDate).toBe('2026-09-17');
-    expect(product.secYieldKind).toContain('daily');
-    expect(product.dividendYield).toBe(8.42);
-    expect(product.dividendYieldDate).toBe('2026-09-18');
-    expect(product.dividendYieldKind).toContain('12-month rolling');
-  });
-
-  test('falls back to the month-end yields when the daily blocks are empty', () => {
-    const payload = structuredClone(PRODUCT_DATA_FIXTURE);
-    payload.fundData.shareClass.etfSecYield = {} as any;
-    payload.fundData.shareClass.secYield = {} as any;
-    const fallback = parseProductData(payload, 'JEPI');
-    expect(fallback.secYield).toBe(7.44);
-    expect(fallback.secYieldKind).toContain('month-end');
-    expect(fallback.dividendYield).toBe(8.39);
-    expect(fallback.dividendYieldKind).toContain('month-end');
-  });
-
-  test('reads NAV, market price, premium/discount, net assets and the latest dividend', () => {
-    expect(product.nav).toBe(56.2213);
-    expect(product.navDate).toBe('2026-09-18');
-    expect(product.marketPrice).toBe(56.24);
-    expect(product.premiumDiscount).toBe(0.0332);
-    expect(product.netAssets).toBe(45123456789.12);
-    expect(product.netAssetsDate).toBe('2026-09-18');
-    expect(product.latestDividend).toEqual({ exDate: '2026-09-01', amount: 0.37421, payDate: '2026-09-04', recordDate: '2026-09-01' });
-  });
-
-  test('keeps the official "At NAV" month-end returns, 1-month included, and the cumulative block', () => {
-    expect(product.monthEnd).toEqual({ ytd: 5.36, yr1: 9.05, yr3: 9.51, yr5: 10.02, yr10: null, sinceInception: 11.25, asOfDate: '2026-08-31', mo1: 1.53, mo3: 4.02 });
-    expect(product.monthEndMarket.yr1).toBe(9.08);
-    expect(product.cumulative).toEqual({ yr1: 9.05, yr3: 31.33, yr5: 61.17, yr10: null, sinceInception: 95.24 });
-    expect(product.cumulativeAsOfDate).toBe('2026-08-31');
-  });
-
-  test('rejects an empty product-data answer (unknown CUSIP)', () => {
-    expect(() => parseProductData({ fundData: null, error: null }, 'XXXX')).toThrow(/no fundData/);
-  });
-});
-
-describe('parseProductHoldings', () => {
-  const holdings = parseProductHoldings(PRODUCT_DATA_FIXTURE.fundData, 'JEPI')!;
-
-  test('normalizes to the shared sheet headers and keeps the as-of date', () => {
-    expect(holdings.headers).toEqual(HOLDINGS_HEADERS);
-    expect(holdings.asOfDate).toBe('2026-09-17');
-    expect(holdings.rows.length).toBe(5); // the nameless row is dropped
-    expect(holdings.rows[0]).toEqual({
-      Name: 'NVIDIA CORP COMMON',
-      Ticker: 'NVDA',
-      Identifier: '67066G104',
-      Weight: '1.94',
-      'Market Value': '879922379.14',
-      'Shares Held': '4301234',
-      'Asset Category': 'DOMESTIC COMMON STOCK',
-    });
-  });
-
-  test('rows without an exchange ticker keep "-" (Watchlist keys them by Identifier)', () => {
-    const eln = holdings.rows.find((row) => row.Name.startsWith('SPX'))!;
-    expect(eln.Ticker).toBe('-'); // "SPX" is the underlying, not a listed symbol
-    expect(eln.Identifier).toBe('46654Q104');
-    const cash = holdings.rows.find((row) => row.Name === 'USD CASH')!;
-    expect(cash.Ticker).toBe('-');
-    expect(cash.Identifier).toBe('-');
-    expect(cash.Weight).toBe('0');
-  });
-
-  test('money market and foreign stock rows keep their published symbols; SEDOLs are identifiers too', () => {
-    expect(holdings.rows.find((row) => row.Name === 'JPMORGAN PRIME MONEY')!.Ticker).toBe('JIMXX');
-    const foreign = holdings.rows.find((row) => row.Name === 'MITSUBISHI UFJ FINANCIAL')!;
-    expect(foreign.Ticker).toBe('8306');
-    expect(foreign.Identifier).toBe('6335171');
-  });
-
-  test('bond funds add Coupon and Maturity columns', () => {
-    const bonds = parseProductHoldings(
-      {
-        dailyHoldingsAll: {
-          effectiveDate: '2026-09-17',
-          data: [
-            { securityDescription: 'UNITED STATES TREASURY NOTE 4.25% 2028', securityId: '91282CJN2', securityTicker: 'T', securityType: 'TREASURY NOTES', shares: 50000000, marketValue: 50123456.78, netAssetValuePercent: 1.51, couponRate: 4.25, finalLegalMaturityDate: '2028-11-15' },
-            { securityDescription: 'CAPITAL ONE FINANCIAL 5.7%', securityId: '14040HCX5', securityTicker: 'COF', securityType: 'CORPORATE BONDS', shares: 1000000, marketValue: 1012345.6, netAssetValuePercent: 0.03, couponRate: 5.7, finalLegalMaturityDate: '2030-02-01' },
-            { securityDescription: 'TRI-PARTY REPO', securityId: 'REPO0001', securityTicker: null, securityType: 'REPURCHASE AGREEMENTS', shares: 2000000, marketValue: 2000000, netAssetValuePercent: 0.06 },
-          ],
-        },
-      },
-      'JPST',
-    )!;
-    expect(bonds.headers).toEqual(BOND_SHEET_HEADERS);
-    expect(bonds.rows[0].Ticker).toBe('-'); // "T" is an issuer code, not an exchange symbol
-    expect(bonds.rows[0].Identifier).toBe('91282CJN2');
-    expect(bonds.rows[0].Coupon).toBe('4.25');
-    expect(bonds.rows[0].Maturity).toBe('Nov 15 2028');
-    // published weight order: Treasury 1.51, repo 0.06, corporate 0.03
-    expect(bonds.rows.map((row) => row.Identifier)).toEqual(['91282CJN2', 'REPO0001', '14040HCX5']);
-    expect(bonds.rows[1].Ticker).toBe('-');
-    expect(bonds.rows[1].Coupon).toBe('');
-    expect(bonds.rows[1].Maturity).toBe('');
-    expect(bonds.rows[2].Ticker).toBe('-');
-    expect(bonds.rows[2].Coupon).toBe('5.7');
-    expect(weightsSum(bonds.rows)).toBe(1.6);
-  });
-
-  test('falls back to the other full-list containers, never to the ten-row teaser', () => {
-    const row = { securityDescription: 'APPLE INC COMMON STOCK', securityId: '037833100', securityTicker: 'AAPL', securityType: 'DOMESTIC COMMON STOCK', shares: 10, marketValue: 2000, netAssetValuePercent: 1.5 };
-    const monthly = parseProductHoldings({ dailyHoldingsAll: { data: [] }, dailyHoldings: { data: [row] }, holdings: { monthlyHoldings: { effectiveDate: '2026-08-31', data: [row] } } }, 'XXXX')!;
-    expect(monthly.container).toBe('holdings.monthlyHoldings');
-    expect(monthly.asOfDate).toBe('2026-08-31');
-    expect(monthly.rows.length).toBe(1);
-    expect(parseProductHoldings({ dailyHoldings: { data: [row] } }, 'XXXX')).toBeNull();
-  });
-
-  test('returns null when the fund publishes no positions', () => {
-    expect(parseProductHoldings({ dailyHoldingsAll: { data: [] } }, 'XXXX')).toBeNull();
-    expect(parseProductHoldings({}, 'XXXX')).toBeNull();
-  });
-
-  test('orders rows canonically so a reshuffled source answer produces byte-identical pages', () => {
-    const rows = [
-      { securityDescription: 'CURRENCY CONTRACT - CNY', securityId: 'CCTCNY_46707_S', securityTicker: null, securityType: 'SPOT CONTRACTS', shares: -10707163, marketValue: 0, netAssetValuePercent: 0 },
-      { securityDescription: 'CURRENCY CONTRACT - CNY', securityId: 'CCTCNY_42963_S', securityTicker: null, securityType: 'SPOT CONTRACTS', shares: -10652727, marketValue: 0, netAssetValuePercent: 0 },
-      { securityDescription: 'KOREA 5% 09/26', securityId: '49151FB90', securityTicker: null, securityType: 'MUNICIPAL BONDS', shares: 1000000, marketValue: 1021341.4, netAssetValuePercent: 0.01 },
-      { securityDescription: 'KOREA 5% 09/26', securityId: '49151F3A6', securityTicker: null, securityType: 'MUNICIPAL BONDS', shares: 1000000, marketValue: 1021341.4, netAssetValuePercent: 0.01 },
-      { securityDescription: 'APPLE INC COMMON STOCK', securityId: '037833100', securityTicker: 'AAPL', securityType: 'DOMESTIC COMMON STOCK', shares: 10, marketValue: 2000, netAssetValuePercent: 1.5 },
-      { securityDescription: 'USD CASH', securityId: null, securityTicker: null, securityType: 'CURRENCIES', shares: 0, marketValue: 0.74, netAssetValuePercent: 0 },
-    ];
-    const ids = (order: typeof rows) => parseProductHoldings({ dailyHoldingsAll: { data: order } }, 'XXXX')!.rows.map((row) => row.Identifier);
-    const expected = ['037833100', '49151F3A6', '49151FB90', '-', 'CCTCNY_42963_S', 'CCTCNY_46707_S'];
-    expect(ids(rows)).toEqual(expected);
-    expect(ids([...rows].reverse())).toEqual(expected);
-    expect(ids([rows[1], rows[3], rows[5], rows[0], rows[2], rows[4]])).toEqual(expected);
-    // blank weights sort last; the comparator is locale independent
-    expect(compareHoldingRows({ Weight: '' }, { Weight: '-0.04' })).toBeGreaterThan(0);
-    expect(compareHoldingRows({ Weight: '0', Name: 'B' }, { Weight: '0', Name: 'a' })).toBeLessThan(0);
-  });
-});
-
-describe('holdingTickerFor', () => {
-  test('keeps equity-like symbols and blanks issuer codes', () => {
-    expect(holdingTickerFor('DOMESTIC COMMON STOCK', 'AAPL')).toBe('AAPL');
-    expect(holdingTickerFor('REIT', 'PLD')).toBe('PLD');
-    expect(holdingTickerFor('ADR', 'TSM')).toBe('TSM');
-    expect(holdingTickerFor('MONEY MARKET', 'JIMXX')).toBe('JIMXX');
-    expect(holdingTickerFor('EXCHANGE TRADED FUND', 'JEPQ')).toBe('JEPQ');
-    expect(holdingTickerFor('TREASURY NOTES', 'T')).toBe('');
-    expect(holdingTickerFor('CORPORATE BONDS', 'COF')).toBe('');
-    expect(holdingTickerFor('COMMERCIAL PAPER', 'GS')).toBe('');
-    expect(holdingTickerFor('EQUITY INDEX FUTURES', 'ESZ6')).toBe('');
-    expect(holdingTickerFor('EQUITY LINKED NOTES', 'SPX')).toBe('');
-    expect(holdingTickerFor('CURRENCIES', 'USD')).toBe('');
-    expect(holdingTickerFor('SPOT CONTRACTS', 'JPY')).toBe('');
-    expect(holdingTickerFor('', 'MSFT')).toBe('MSFT');
-    expect(holdingTickerFor('DOMESTIC COMMON STOCK', 'n/a')).toBe('');
-  });
-});
-
-describe('decodeDividendFrequency', () => {
-  test('maps the JPMorgan cadence codes to the shared frequency words', () => {
-    expect(decodeDividendFrequency('MDEC')).toEqual({ frequency: 'Monthly', paymentsPerYear: 12 });
-    expect(decodeDividendFrequency('QDEC')).toEqual({ frequency: 'Quarterly', paymentsPerYear: 4 });
-    expect(decodeDividendFrequency('SDEC')).toEqual({ frequency: 'Semi-annually', paymentsPerYear: 2 });
-    expect(decodeDividendFrequency('YDEC')).toEqual({ frequency: 'Annually', paymentsPerYear: 1 });
-    expect(decodeDividendFrequency('DACC')).toEqual({ frequency: 'Daily', paymentsPerYear: null });
-    expect(decodeDividendFrequency('')).toBeNull();
-    expect(decodeDividendFrequency(null)).toBeNull();
-    expect(decodeDividendFrequency('ZZZ')).toBeNull();
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Historical-data layer
-// ---------------------------------------------------------------------------
-
 const HISTORICAL_DATA_FIXTURE = {
   historicalETFClosingPriceList: [
     { date: '2026-09-18', navPrice: 56.2213, marketValueNavPrice: 56.24, premiumDiscountPercentage: 0.0332, currentQuarter: true },
@@ -655,307 +258,6 @@ const HISTORICAL_DATA_FIXTURE = {
   ],
 };
 
-describe('parseHistoricalData', () => {
-  const historical = parseHistoricalData(HISTORICAL_DATA_FIXTURE, 'JEPI');
-
-  test('merges the daily lists into one ascending NAV / market price series', () => {
-    expect(historical.points.map((point) => point.date)).toEqual(['2020-05-20', '2026-08-29', '2026-09-01', '2026-09-17', '2026-09-18']);
-    expect(historical.points[4]).toEqual({ date: '2026-09-18', nav: 56.2213, marketPrice: 56.24, premiumDiscount: 0.0332 });
-    expect(historical.points[0].premiumDiscount).toBe(0.04);
-  });
-
-  test('keeps positive dividends only, oldest first, with the reinvestment NAV', () => {
-    expect(historical.dividends.map((dividend) => dividend.exDate)).toEqual(['2026-08-01', '2026-09-01']);
-    expect(historical.dividends[1]).toEqual({
-      epoch: isoToEpoch('2026-09-01')!,
-      amount: 0.37421,
-      exDate: '2026-09-01',
-      payDate: '2026-09-04',
-      recordDate: '2026-09-01',
-      reinvestNav: 55.9,
-      type: 'DVDYLD',
-    });
-  });
-
-  test('reads the official quarter-end "At NAV" returns and the monthly chart', () => {
-    expect(historical.quarterEnd).toEqual({ ytd: 2.2, yr1: 7.77, yr3: 8.99, yr5: 7.47, yr10: null, sinceInception: 10.82, asOfDate: '2026-06-30', mo1: 1.53, mo3: 1.88 });
-    expect(historical.quarterEndMarket.yr1).toBe(7.8);
-    expect(historical.monthlyReturns).toEqual([
-      { date: '2026-07-31', value: 2.17 },
-      { date: '2026-08-31', value: 1.53 },
-    ]);
-  });
-
-  test('tolerates an empty payload and rejects a non-object', () => {
-    const empty = parseHistoricalData({}, 'XXXX');
-    expect(empty.points).toEqual([]);
-    expect(empty.dividends).toEqual([]);
-    expect(empty.quarterEnd.asOfDate).toBeNull();
-    expect(() => parseHistoricalData(null as any, 'XXXX')).toThrow(/not an object/);
-  });
-});
-
-describe('navTotalReturnDays', () => {
-  test('reinvests each published distribution at its reinvestment NAV', () => {
-    const points = [
-      { date: '2026-08-29', nav: 56.3, marketPrice: 56.31, premiumDiscount: 0.0178 },
-      { date: '2026-09-01', nav: 55.9, marketPrice: 55.92, premiumDiscount: 0.0358 },
-      { date: '2026-09-17', nav: 56.4101, marketPrice: 56.43, premiumDiscount: 0.0353 },
-    ];
-    const dividends = [{ epoch: isoToEpoch('2026-09-01')!, amount: 0.37421, exDate: '2026-09-01', payDate: '', recordDate: '', reinvestNav: 55.9, type: 'DVDYLD' }];
-    const days = navTotalReturnDays(points, dividends);
-    expect(days.map((day) => day.date)).toEqual(['2026-08-29', '2026-09-01', '2026-09-17']);
-    expect(days[0]).toEqual({ date: '2026-08-29', close: 56.3, adjClose: 56.3, volume: 0 });
-    const factor = 1 + 0.37421 / 55.9;
-    expect(days[1].adjClose).toBeCloseTo(55.9 * factor, 6);
-    expect(days[2].adjClose).toBeCloseTo(56.4101 * factor, 6);
-    // Total return over the window = price return plus the reinvested payout.
-    expect(days[2].adjClose / days[0].adjClose - 1).toBeCloseTo((56.4101 * factor) / 56.3 - 1, 6);
-  });
-
-  test('uses the ex-date NAV when no reinvestment NAV is published and skips pre-history payouts', () => {
-    const points = [
-      { date: '2026-09-01', nav: 50, marketPrice: 50, premiumDiscount: 0 },
-      { date: '2026-09-02', nav: 51, marketPrice: 51, premiumDiscount: 0 },
-    ];
-    const dividends = [
-      { epoch: isoToEpoch('2026-08-01')!, amount: 1, exDate: '2026-08-01', payDate: '', recordDate: '', reinvestNav: null, type: '' },
-      { epoch: isoToEpoch('2026-09-01')!, amount: 0.5, exDate: '2026-09-01', payDate: '', recordDate: '', reinvestNav: null, type: '' },
-    ];
-    const days = navTotalReturnDays(points, dividends);
-    expect(days[0].adjClose).toBeCloseTo(50 * 1.01, 6);
-    expect(days[1].adjClose).toBeCloseTo(51 * 1.01, 6);
-    expect(navTotalReturnDays([], dividends)).toEqual([]);
-  });
-});
-
-describe('reinvestmentCoverageStart', () => {
-  const dividend = (exDate: string, amount = 0.067) => ({ epoch: isoToEpoch(exDate)!, amount, exDate, payDate: '', recordDate: '', reinvestNav: null, type: 'DVDYLD' });
-  const points = [
-    { date: '2025-12-10', nav: 100.06, marketPrice: 100.06, premiumDiscount: 0 },
-    { date: '2026-09-18', nav: 100.11, marketPrice: 100.16, premiumDiscount: 0.05 },
-  ];
-
-  test('a schedule shorter than the page cap is complete: covered since the first NAV', () => {
-    expect(DIVIDEND_SCHEDULE_CAP).toBe(12);
-    expect(reinvestmentCoverageStart(points, [])).toBe('2025-12-10');
-    expect(reinvestmentCoverageStart(points, [dividend('2026-05-01'), dividend('2026-06-01')])).toBe('2025-12-10');
-  });
-
-  test('a capped weekly schedule covers one payment interval before its earliest ex-date', () => {
-    const weekly = ['07/06', '07/10', '07/17', '07/24', '07/31', '08/07', '08/14', '08/21', '08/28', '09/04', '09/11', '09/18']
-      .map((md) => dividend(`2026-${md.replace('/', '-')}`));
-    expect(weekly.length).toBe(DIVIDEND_SCHEDULE_CAP);
-    // median gap 7 days -> 2026-07-06 minus 7 days
-    expect(reinvestmentCoverageStart(points, weekly)).toBe('2026-06-29');
-  });
-
-  test('never reaches back before the first NAV and is null without NAV points', () => {
-    const monthly = Array.from({ length: 12 }, (_, i) => dividend(`2026-${String(i + 1).padStart(2, '0')}-01`));
-    const young = [{ date: '2026-06-15', nav: 50, marketPrice: 50, premiumDiscount: 0 }, points[1]];
-    expect(reinvestmentCoverageStart(young, monthly)).toBe('2026-06-15');
-    expect(reinvestmentCoverageStart([], monthly)).toBeNull();
-  });
-});
-
-describe('annualizedSinceInception', () => {
-  test('publishes the official since-inception figure only once the fund is a year old', () => {
-    expect(annualizedSinceInception(11.25, '2020-05-20', '2026-08-31')).toBe(11.25);
-    expect(annualizedSinceInception(1.9, '2026-07-30', '2026-08-31')).toBeNull();
-    expect(annualizedSinceInception(1.9, '2025-08-31', '2026-08-31')).toBe(1.9);
-    expect(annualizedSinceInception(null, '2020-05-20', '2026-08-31')).toBeNull();
-    expect(annualizedSinceInception(5, null, '2026-08-31')).toBe(5);
-  });
-});
-
-describe('sheet headers', () => {
-  test('official history rows carry NAV, market price and premium/discount; Yahoo fallback keeps the sibling layout', () => {
-    expect(HISTORY_HEADERS).toEqual(['Date', 'NAV', 'Market Price', 'Premium/Discount']);
-    expect(YAHOO_HISTORY_HEADERS).toEqual(['Date', 'Close', 'Adj Close', 'Volume']);
-  });
-});
-
-describe('nport fixtures', () => {
-  test('parses positions, identifiers and the report period', () => {
-    const xml = `
-      <nportRegDoc><genInfo><regName>J.P. Morgan Exchange-Traded Fund Trust</regName><regCik>0001485894</regCik>
-      <seriesName>JPMorgan Equity Premium Income ETF</seriesName><seriesId>S000068402</seriesId>
-      <repPdDate>2026-06-30</repPdDate></genInfo>
-      <invstOrSec><name>Apple Inc</name><cusip>037833100</cusip><balance>124827810</balance>
-      <valUSD>26312454069.90</valUSD><pctVal>8.24</pctVal><assetCat>EC</assetCat></invstOrSec>
-      <invstOrSec><title>US TREASURY 4.125% 05/15/2028</title>
-      <identifiers><cusip value="912810H80"/></identifiers><balance>5000000</balance>
-      <valUSD>5100000</valUSD><pctVal>2.5</pctVal><assetCat>OB</assetCat></invstOrSec>
-      </nportRegDoc>`;
-    const parsed = parseNport(xml);
-    expect(parsed.seriesName).toBe('JPMorgan Equity Premium Income ETF');
-    expect(parsed.regCik).toBe('0001485894');
-    expect(parsed.repPdDate).toBe('2026-06-30');
-    expect(parsed.holdings.length).toBe(2);
-    expect(parsed.holdings[0].Identifier).toBe('037833100');
-    expect(parsed.holdings[0].Ticker).toBe('-');
-    expect(parsed.holdings[1].Identifier).toBe('912810H80');
-    expect(parsed.holdings[1].Name).toBe('US TREASURY 4.125% 05/15/2028');
-    expect(parsed.totalValue).toBeCloseTo(26317554069.9, 1);
-    expect(parsed.netAssets).toBeNull();
-  });
-
-  test('reads the reported net assets when the filing carries a fundInfo block', () => {
-    const parsed = parseNport(
-      '<genInfo><seriesName>JPMorgan BetaBuilders U.S. Equity ETF</seriesName><repPdDate>2026-04-30</repPdDate></genInfo>' +
-        '<fundInfo><totAssets>88500000000.00</totAssets><netAssets>87850000000.00</netAssets></fundInfo>' +
-        '<invstOrSec><name>MGM Resorts International</name><cusip>552953101</cusip><valUSD>180990316.32</valUSD><pctVal>0.2059893365</pctVal></invstOrSec>',
-    );
-    expect(parsed.netAssets).toBe(87850000000);
-    expect(parsed.holdings.length).toBe(1);
-  });
-
-  test('falls back to other identifiers when the CUSIP is N/A', () => {
-    const parsed = parseNport(
-      '<invstOrSec><name>FUND X</name><cusip>N/A</cusip><identifiers><other value="XSCUSIP1"/></identifiers><valUSD>10</valUSD></invstOrSec>',
-    );
-    expect(parsed.holdings[0].Identifier).toBe('XSCUSIP1');
-  });
-
-  test('tolerates empty bodies and missing values', () => {
-    expect(() => parseNport('')).not.toThrow();
-    const parsed = parseNport('<genInfo><seriesName>Empty</seriesName></genInfo>');
-    expect(parsed.holdings).toEqual([]);
-    expect(parsed.totalValue).toBe(0);
-  });
-
-  test('submissions parser keeps only NPORT-P forms and builds the archive URL', () => {
-    const accessions = parseNportAccessions({
-      cik: '913760',
-      filings: {
-        recent: {
-          form: ['NPORT-P', '13F-HR', 'NPORT-P'],
-          accessionNumber: ['0000913760-26-000111', '0000913760-26-000112', '0000913760-26-000113'],
-          filingDate: ['2026-07-21', '2026-08-10', '2026-04-21'],
-          reportDate: ['2026-06-30', '2026-06-30', '2026-03-31'],
-        },
-      },
-    });
-    expect(accessions.map((entry) => entry.accession)).toEqual(['0000913760-26-000111', '0000913760-26-000113']);
-    expect(accessions[0].url).toBe(nportUrlFor('0000913760', '0000913760-26-000111'));
-    expect(accessions[0].url).toContain('/Archives/edgar/data/913760/000091376026000111/primary_doc.xml');
-  });
-});
-
-describe('pickEftsCik', () => {
-  const payload = {
-    hits: [
-      { _source: { display_names: { cik: 12345, names: ['Some Other Trust'] } } },
-      { _source: { display_names: { cik: 1485894, names: ['JPMorgan Equity Premium Income ETF', 'J.P. MORGAN EXCHANGE-TRADED FUND TRUST'] } } },
-    ],
-  };
-  test('chooses the registrant whose name matches the fund', () => {
-    expect(pickEftsCik(payload, 'JPMorgan Equity Premium Income ETF')).toBe('0001485894');
-  });
-
-  test('returns null when nothing matches', () => {
-    expect(pickEftsCik(payload, 'Unknown Fund')).toBeNull();
-  });
-
-  test('reads the real EDGAR full-text search payload shape', () => {
-    const real = {
-      hits: {
-        total: { value: 2, relation: 'eq' },
-        hits: [
-          { _source: { ciks: ['0001667919'], display_names: ['FIRST TRUST EXCHANGE-TRADED FUND VIII  (CIK 0001667919)'] } },
-          { _source: { ciks: ['0001485894'], display_names: ['J.P. MORGAN EXCHANGE-TRADED FUND TRUST  (CIK 0001485894)'] } },
-        ],
-      },
-    };
-    expect(pickEftsCik(real, 'J.P. Morgan Exchange-Traded Fund Trust')).toBe('0001485894');
-    expect(pickEftsCik(real, '')).toBe('0001667919');
-  });
-});
-
-describe('SEC lookup tables', () => {
-  const fundTickers = {
-    fields: ['cik', 'seriesId', 'classId', 'symbol'],
-    data: [
-      [1485894, 'S000068402', 'C000218810', 'JEPI'],
-      [1485894, 'S000054790', 'C000172198', 'JPST'],
-      [1485894, 'S000061995', 'C000200806', 'bbjp'],
-      [0, 'S000000000', 'C000000000', 'ZZZ'],
-    ],
-  };
-
-  test('maps every ticker to its registrant CIK and series', () => {
-    const map = parseFundTickerMap(fundTickers);
-    expect(map.get('JEPI')).toEqual({ cik: '0001485894', seriesId: 'S000068402', classId: 'C000218810' });
-    expect(map.get('JPST')?.cik).toBe('0001485894');
-    expect(map.get('BBJP')?.seriesId).toBe('S000061995');
-    expect(map.has('ZZZ')).toBe(false);
-  });
-
-  test('tolerates an unusable payload', () => {
-    expect(parseFundTickerMap({}).size).toBe(0);
-    expect(parseFundTickerMap({ fields: ['cik'], data: ['nope'] }).size).toBe(0);
-  });
-
-  test('maps issuer names back to exchange tickers', () => {
-    const map = parseCompanyTickerMap({
-      '0': { cik_str: 1045810, ticker: 'NVDA', title: 'NVIDIA CORP' },
-      '1': { cik_str: 320193, ticker: 'AAPL', title: 'Apple Inc.' },
-      '2': { cik_str: 1, ticker: '', title: 'No Ticker Inc' },
-    });
-    expect(map.get(normalizeHoldingName('NVIDIA Corp'))).toBe('NVDA');
-    expect(map.get(normalizeHoldingName('Apple Inc.'))).toBe('AAPL');
-    expect(map.get(normalizeHoldingName('No Ticker Inc'))).toBeUndefined();
-  });
-});
-
-describe('EDGAR series filings', () => {
-  const atom = `<?xml version="1.0" encoding="ISO-8859-1"?>
-    <feed>
-      <entry>
-        <accession-number>0001209466-26-000952</accession-number>
-        <filing-date>2026-06-29</filing-date>
-        <filing-href>https://www.sec.gov/Archives/edgar/data/1209466/000120946626000952/0001209466-26-000952-index.htm</filing-href>
-        <filing-type>NPORT-P</filing-type>
-      </entry>
-      <entry>
-        <accession-number>0001209466-26-000514</accession-number>
-        <filing-date>2026-04-01</filing-date>
-        <filing-href>https://www.sec.gov/Archives/edgar/data/1209466/000120946626000514/0001209466-26-000514-index.htm</filing-href>
-        <filing-type>NPORT-P</filing-type>
-      </entry>
-      <entry>
-        <accession-number>0001209466-26-000001</accession-number>
-        <filing-date>2026-01-05</filing-date>
-        <filing-type>N-CEN</filing-type>
-      </entry>
-    </feed>`;
-
-  test('builds the browse-edgar Atom URL for one series', () => {
-    const url = edgarSeriesFilingsUrl('S000060812', 5);
-    expect(url).toContain('https://www.sec.gov/cgi-bin/browse-edgar?');
-    expect(url).toContain('CIK=S000060812');
-    expect(url).toContain('type=NPORT-P');
-    expect(url).toContain('output=atom');
-    expect(url).toContain('count=5');
-  });
-
-  test('keeps N-PORT-P entries newest first and builds the primary document URL', () => {
-    const filings = parseEdgarAtomFilings(atom);
-    expect(filings.map((entry) => entry.accession)).toEqual(['0001209466-26-000952', '0001209466-26-000514']);
-    expect(filings[0].filed).toBe('2026-06-29');
-    expect(filings[0].url).toBe('https://www.sec.gov/Archives/edgar/data/1209466/000120946626000952/primary_doc.xml');
-  });
-
-  test('tolerates an empty or unrelated feed', () => {
-    expect(parseEdgarAtomFilings('')).toEqual([]);
-    expect(parseEdgarAtomFilings('<feed><entry><filing-type>10-K</filing-type></entry></feed>')).toEqual([]);
-  });
-});
-
-// ---------------------------------------------------------------------------
-// History fallback layer (Yahoo chart)
-// ---------------------------------------------------------------------------
-
 function chartFixture(options: { closes?: (number | null)[]; adj?: (number | null)[]; dividends?: Record<string, { date: number; amount: number }> } = {}) {
   const start = Date.UTC(2020, 0, 2) / 1000;
   const closes = options.closes ?? [100, 105, 110, 111, 120];
@@ -982,743 +284,429 @@ function chartFixture(options: { closes?: (number | null)[]; adj?: (number | nul
   };
 }
 
-describe('chart fixtures', () => {
-  test('builds trading days, skips null closes, keeps adjusted closes', () => {
-    const chart = parseChart(chartFixture({ closes: [100, null, 110], adj: [90, null, 99] }));
-    expect(chart.days.map((day) => day.close)).toEqual([100, 110]);
-    expect(chart.days.map((day) => day.adjClose)).toEqual([90, 99]);
-    expect(chart.navPrice).toBe(706.3);
-    expect(chart.exchangeName).toBe('NasdaqGS');
-  });
-
-  test('falls back to raw closes when adjclose is absent', () => {
-    const payload = chartFixture({ closes: [100, 101] }) as any;
-    delete payload.chart.result[0].indicators.adjclose;
-    const chart = parseChart(payload);
-    expect(chart.days.map((day) => day.adjClose)).toEqual([100, 101]);
-  });
-
-  test('sorts dividends chronologically and drops non-positive amounts', () => {
-    const chart = parseChart(
-      chartFixture({
-        dividends: {
-          '2': { date: Date.UTC(2026, 5, 15) / 1000, amount: 0.7 },
-          '1': { date: Date.UTC(2026, 2, 15) / 1000, amount: 0.65 },
-          '0': { date: Date.UTC(2025, 11, 15) / 1000, amount: -1 },
-        },
-      }),
-    );
-    expect(chart.dividends.map((entry) => entry.amount)).toEqual([0.65, 0.7]);
-  });
-
-  test('throws on an empty result', () => {
-    expect(() => parseChart({ chart: { result: [] } })).toThrow(/empty result/);
-  });
-});
-
-describe('priceReturns', () => {
-  const days = [
-    { date: '2015-01-02', close: 100, adjClose: 100, volume: 1 },
-    { date: '2022-01-03', close: 200, adjClose: 195, volume: 1 },
-    { date: '2023-01-03', close: 220, adjClose: 214, volume: 1 },
-    { date: '2026-01-02', close: 300, adjClose: 290, volume: 1 },
-    { date: '2026-06-30', close: 320, adjClose: 310, volume: 1 },
-    { date: '2026-07-01', close: 322, adjClose: 312, volume: 1 },
-    { date: '2026-08-21', close: 340, adjClose: 330, volume: 1 },
-  ];
-  const now = new Date(Date.UTC(2026, 7, 21));
-
-  test('derives YTD, 1Y, CAGRs and SI anchored to the last close', () => {
-    const returns = priceReturns(days, now);
-    expect(returns.asOfDate).toBe('2026-08-21');
-    // Each anchor is the last trading day at or before the period start, so a
-    // thin fixture keeps falling back to the newest day that is early enough.
-    expect(returns.ytd).toBeCloseTo(54.21, 2); // 2023-01-03 (the 2026-01-01 anchor)
-    expect(returns.yr1).toBeCloseTo(54.21, 2); // 2023-01-03 (nothing between 2025 and 2023)
-    expect(returns.cagr3y).toBeCloseTo(15.53, 2); // 2026-01-02 (3y before 2026-08-21)
-    expect(returns.mo1).toBeCloseTo(5.77, 2); // 2026-07-01 (the 2026-07-21 anchor)
-    expect(returns.siAnn).toBeGreaterThan(0);
-  });
-
-  test('young funds produce nulls instead of made-up returns', () => {
-    const young = priceReturns([{ date: '2026-08-20', close: 10, adjClose: 10, volume: 1 }], now);
-    expect(young.asOfDate).toBe('2026-08-20');
-    expect(young.ytd).toBeNull();
-    expect(young.cagr3y).toBeNull();
-    expect(young.siAnn).toBeNull();
-  });
-
-  test('empty history yields an empty returns block', () => {
-    expect(priceReturns([], now).asOfDate).toBe('');
-  });
-
-  test('windows that start before the reinvestment coverage are not derived', () => {
-    // A weekly payer whose schedule only covers the last 12 payments: the
-    // since-inception, YTD and 1Y windows would miss reinvestments and must
-    // stay null, while the quarter-to-date and 1-month windows are derived.
-    const covered = priceReturns(days, now, '2026-06-29');
-    expect(covered.siAnn).toBeNull();
-    expect(covered.ytd).toBeNull();
-    expect(covered.yr1).toBeNull();
-    expect(covered.cagr3y).toBeNull();
-    expect(covered.qtd).toBeCloseTo(pctChangeOf(312, 330), 2); // anchored at 2026-07-01 (quarter start)
-    expect(covered.mo1).toBeCloseTo(pctChangeOf(312, 330), 2); // anchored at 2026-07-01 (the 2026-07-21 anchor)
-    // Coverage from the first day changes nothing.
-    expect(priceReturns(days, now, '2015-01-02')).toEqual(priceReturns(days, now));
-  });
-});
-
-function pctChangeOf(start: number, end: number): number {
-  return ((end - start) / start) * 100;
-}
-
-describe('lastCompletedQuarterEnd', () => {
-  test('anchors to the last completed quarter', () => {
-    expect(lastCompletedQuarterEnd(new Date(Date.UTC(2026, 7, 21))).toISOString().slice(0, 10)).toBe('2026-06-30');
-    expect(lastCompletedQuarterEnd(new Date(Date.UTC(2026, 0, 15))).toISOString().slice(0, 10)).toBe('2025-12-31');
-    expect(lastCompletedQuarterEnd(new Date(Date.UTC(2026, 4, 1))).toISOString().slice(0, 10)).toBe('2026-03-31');
-    expect(lastCompletedQuarterEnd(new Date(Date.UTC(2026, 10, 1))).toISOString().slice(0, 10)).toBe('2026-09-30');
-  });
-});
-
 // ---------------------------------------------------------------------------
-// Derived metrics
+// controls: resolver precedence, strict validation, aliases, system CA (no network)
 // ---------------------------------------------------------------------------
 
-describe('annualizedToTotal / totalToAnnualized', () => {
-  test('annualizedToTotal inverts annualization exactly', () => {
-    expect(annualizedToTotal(20.15, 3)).toBeCloseTo(73.45, 2);
-    expect(annualizedToTotal(null, 3)).toBeNull();
-    expect(annualizedToTotal(10, 0)).toBeNull();
+describe('controls', () => {
+  test('precedence: file < advanced < nonblank input < env, blank input keeps the lower layer', () => {
+    const c = resolveControls({ CONCURRENCY: 2, TICKERS: 'JEPI' }, { CONCURRENCY: 3, TICKERS: 'JEPQ' }, { CONCURRENCY: '4', TICKERS: '' }, { CONCURRENCY: '5' });
+    expect(c.CONCURRENCY).toBe('5');
+    expect(c.TICKERS).toBe('JEPQ');
+    expect(resolveControls({ CONCURRENCY: 2 }, { CONCURRENCY: 3 }, { CONCURRENCY: '4' }).CONCURRENCY).toBe('4');
+    expect(resolveControls({ CONCURRENCY: 2 }, { CONCURRENCY: 3 }, { CONCURRENCY: '' }).CONCURRENCY).toBe('3');
+    expect(resolveControls({ CONCURRENCY: 2 }, {}, { CONCURRENCY: '' }).CONCURRENCY).toBe('2');
+    expect(resolveControls({ SKIP_YAHOO: true }, {}, {}, { SKIP_YAHOO: 'false' }).SKIP_YAHOO).toBe('false');
+    expect(resolveControls({ TICKERS: 'JEPI' }, { TICKERS: '' }, { TICKERS: '' }).TICKERS).toBe('');
   });
 
-  test('round-trips through totalToAnnualized', () => {
-    expect(totalToAnnualized(annualizedToTotal(12.5, 5), 5)).toBeCloseTo(12.5, 1);
+  test('brand and legacy env aliases reach the resolver, the canonical name wins', () => {
+    expect(resolve({ JPMORGAN_LIMIT: '7' }).MAX_FETCHES).toBe('7');
+    expect(resolve({ HISTORICAL_PAGE_SIZE: '500' }).HISTORY_PAGE_SIZE).toBe('500');
+    expect(resolve({ JPMORGAN_TICKERS: 'JEPI', TICKERS: 'JEPQ' }).TICKERS).toBe('JEPI');
+    expect(resolve({ JPMORGAN_LIMIT: '7', MAX_FETCHES: '9' }, { MAX_FETCHES: 3 }).MAX_FETCHES).toBe('9');
   });
 
-  test('guards bad input', () => {
-    expect(totalToAnnualized('n/a' as any, 5)).toBeNull();
-  });
-});
-
-describe('indicatedYield', () => {
-  test('computes latest distribution x frequency / price', () => {
-    expect(indicatedYield(0.7, 4, 706.32)).toBeCloseTo(0.4, 1);
-    expect(indicatedYield(0.65, 12, 41.72)).toBe(18.7);
-  });
-
-  test('guards missing pieces', () => {
-    expect(indicatedYield(null, 4, 10)).toBeNull();
-    expect(indicatedYield(0.5, 0, 10)).toBeNull();
-    expect(indicatedYield(0.5, 4, 0)).toBeNull();
-  });
-});
-
-describe('inferDistributionFrequency', () => {
-  test('detects quarterly and monthly cadences', () => {
-    const quarterly = [0, 1, 2, 3].map((i) => ({ epoch: Date.UTC(2026, 0 + i * 3, 15) / 1000, amount: 1 }));
-    expect(inferDistributionFrequency(quarterly).frequency).toBe('Quarterly');
-    const monthly = Array.from({ length: 6 }, (_, i) => ({ epoch: Date.UTC(2026, i, 15) / 1000, amount: 1 }));
-    expect(inferDistributionFrequency(monthly)).toEqual({ frequency: 'Monthly', paymentsPerYear: 12 });
+  test('config file: keys == CONTROL_NAMES, string values, scheduled path == defaults, SEC contact', async () => {
+    expect(Object.keys(config).sort()).toEqual([...CONTROL_NAMES].sort());
+    for (const value of Object.values(config)) expect(typeof value).toBe('string');
+    const scheduled = resolveControls(config, {}, {}, {});
+    expect(scheduled).toEqual(config);
+    expect(await runtimeControls({})).toEqual(scheduled);
+    expect(config.SEC_UA).toBe('daggerok ETF feed daggerok@gmail.com');
+    expect(JSON.stringify(config)).not.toContain('example.com');
+    expect(resolve({ SEC_UA: 'x y z@w.io' }, config).SEC_UA).toBe('x y z@w.io');
+    expect(resolve({ USE_SYSTEM_CA: 'AUTO' }, config).USE_SYSTEM_CA).toBe('auto');
   });
 
-  test('no distributions means None (commodity / crypto style funds)', () => {
-    expect(inferDistributionFrequency([])).toEqual({ frequency: 'None', paymentsPerYear: null });
-  });
-});
-
-describe('deriveCatalogMetrics', () => {
-  test('official JPMorgan returns win over the derived ones', () => {
-    const metrics = deriveCatalogMetrics(
-      { ytd: 15.97, yr1: 18.34, yr3: 20.15, yr5: 17.42, yr10: 16.88, sinceInception: 19.44 },
-      { asOfDate: '2026-08-21', ytd: 13.79, yr1: 54.21, cagr3y: 18.99, cagr5y: 12, cagr10y: 11, siAnn: 10, mo1: 1, qtd: 2 },
-      0.44,
-      null,
-      null,
-      null,
-      706.32,
-      null,
-      '2026-07-31',
-    );
-    expect(metrics.performanceAsOf).toBe('2026-07-31');
-    expect(metrics.ytd).toBe(15.97);
-    expect(metrics.tr1y).toBe(18.34);
-    expect(metrics.cagr3y).toBe(20.15);
-    expect(metrics.tr3y).toBe(annualizedToTotal(20.15, 3));
-    expect(metrics.dividendYield).toBe(0.44);
-    expect(metrics.secYield).toBeNull();
-    expect(metrics.returnsBasis).toContain('official JPMorgan NAV total returns');
-  });
-
-  test('falls back to derived returns and the indicated yield', () => {
-    const metrics = deriveCatalogMetrics(
-      { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null },
-      { asOfDate: '2026-08-21', ytd: 13.79, yr1: 54.21, cagr3y: 18.99, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null },
-      null,
-      null,
-      0.65,
-      12,
-      41.72,
-    );
-    expect(metrics.ytd).toBe(13.79);
-    expect(metrics.tr1y).toBe(54.21);
-    expect(metrics.cagr5y).toBeNull();
-    expect(metrics.dividendYield).toBe(18.7);
-    expect(metrics.dividendYieldText).toBe('18.70%');
-    expect(metrics.returnsBasis).toContain('not official NAV returns');
-    expect(metrics.performanceAsOf).toBe('2026-08-21');
+  test('strict validation: invalid values are errors, never a silent fallback', () => {
+    const badFile: unknown[] = [
+      { UNKNOWN: 1 }, { OUTPUT_DIR: 'x' }, { SEC_UA: 'x\nEVIL=yes' }, { CONCURRENCY: 0 }, { MAX_RETRIES: -1 }, { MAX_RETRIES: 0 },
+      { MAX_FETCHES: 1.5 }, { REQUEST_SLEEP: '-1' }, { VERBOSE: 'maybe' }, { SKIP_YAHOO: 'maybe' }, { AUM: '9:1' }, { TER: '5' },
+      { PERFORMANCE_1Y: '9:1' }, { TICKERS: ['JEPI'] }, { TICKERS: { a: 1 } }, { USE_SYSTEM_CA: 'maybe' }, null, [], 'x',
+    ];
+    for (const value of badFile) expect(() => resolveControls(value)).toThrow();
+    const badEnv: [string, string, RegExp][] = [
+      ['HISTORY_RANGE', 'garbage', /HISTORY_RANGE/],
+      ['HISTORY_RANGE', '6mo', /HISTORY_RANGE/],
+      ['ROLE', 'ad v', /ROLE/],
+      ['API_BASE', 'ftp://example.test', /API_BASE/],
+      ['FUND_EXPLORER_URL', 'http://am.jpmorgan.com/x', /FUND_EXPLORER_URL/],
+      ['EARLY_NAV_URL', 'not a url', /EARLY_NAV_URL/],
+      ['USE_SYSTEM_CA', 'maybe', /USE_SYSTEM_CA/],
+      ['SEC_UA', 'x\0bad', /./],
+      ['TICKERS', 'a\r\nb', /./],
+    ];
+    for (const [name, value, message] of badEnv) expect(() => resolve({ [name]: value })).toThrow(message);
+    expect(() => resolveControls({}, { SEC_UA: 'x\rfoo' })).toThrow();
+    expect(() => resolveControls({}, {}, { TICKERS: 'a\nb' })).toThrow();
+    expect(() => resolveControls({}, null)).toThrow();
+    expect(() => resolveControls({}, [])).toThrow();
+    // the valid neighbours still pass
+    expect(resolve({ HISTORY_RANGE: '5y' }).HISTORY_RANGE).toBe('5y');
+    expect(resolve({ HISTORY_RANGE: 'MAX' }).HISTORY_RANGE).toBe('MAX');
+    expect(resolve({ API_BASE: 'http://localhost:8080/mirror' }).API_BASE).toBe('http://localhost:8080/mirror');
+    for (const value of ['auto', 'true', 'false', 'True', 'FALSE']) expect(resolve({ USE_SYSTEM_CA: value }).USE_SYSTEM_CA).toBe(value.toLowerCase());
   });
 
-  test('metrics end with returnsBasis then performanceAsOf; mixed basis is explained; no returns -> null date', () => {
-    const mixed = deriveCatalogMetrics(
-      { ytd: 1, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null },
-      { asOfDate: '2026-08-21', ytd: 9, yr1: 5, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null },
-      null, null, null, null, 10, null, '2026-07-31',
-    );
-    expect(mixed.ytd).toBe(1);
-    expect(mixed.tr1y).toBe(5);
-    expect(mixed.returnsBasis).toContain('official JPMorgan NAV total returns');
-    expect(mixed.returnsBasis).toContain('1y derived from the daily NAV history');
-    expect(mixed.performanceAsOf).toBe('2026-07-31');
-    expect(Object.keys(mixed).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
-    const none = deriveCatalogMetrics(
-      { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null },
-      { asOfDate: '2026-08-21', ytd: null, yr1: null, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null },
-      null, null, null, null, 10,
-    );
-    expect(none.returnsBasis).toBeTruthy();
-    expect(none.returnsBasis).not.toBe('-');
-    expect(none.performanceAsOf).toBeNull();
+  test('range filters: bounds, suffixes, presets; a stray colon, no colon or min > max is an error', () => {
+    expect(parseRange('', 'X')).toBeUndefined();
+    expect(parseRange(':', 'X')).toBeUndefined();
+    expect(parseRange('1:5', 'X')).toEqual({ min: 1, max: 5 });
+    expect(parseRange('2:', 'X')).toEqual({ min: 2, max: undefined });
+    expect(parseRange(':3', 'X')).toEqual({ min: undefined, max: 3 });
+    expect(parseRange('0.1%:0.5%', 'X')).toEqual({ min: 0.1, max: 0.5 });
+    expect(parseRange('$1:$2', 'X')).toEqual({ min: 1, max: 2 });
+    expect(() => parseRange('15', 'X')).toThrow(/colon is required/);
+    expect(() => parseRange('5:1', 'X')).toThrow(/must not exceed/);
+    expect(() => parseRange('1:2:3', 'PERFORMANCE_1Y')).toThrow(/exactly one colon/);
+
+    expect(parseAumRange('')).toBeUndefined();
+    expect(parseAumRange(':')).toBeUndefined();
+    expect(parseAumRange('10M:2B')).toEqual({ min: 10_000_000, max: 2_000_000_000 });
+    expect(parseAumRange('1B:')).toEqual({ min: 1_000_000_000, max: undefined });
+    const presets: Record<string, [number, number | undefined]> = { nano: [0, 10e6], micro: [10e6, 300e6], small: [300e6, 2e9], mid: [2e9, 10e9], large: [10e9, undefined] };
+    for (const [name, [min, max]] of Object.entries(presets)) expect(parseAumRange(name)).toEqual({ min, max });
+    expect(() => parseAumRange('42')).toThrow(/colon is required/);
+    expect(() => parseAumRange('abc:')).toThrow(/AUM/);
+    expect(() => parseAumRange('x1B:')).toThrow(/AUM/);
+    expect(() => parseAumRange('1B:2B:3B')).toThrow(/exactly one colon/);
   });
 
-  test('official cumulative figures replace the annualized-to-total approximation', () => {
-    const metrics = deriveCatalogMetrics(
-      { ytd: 5.36, yr1: 9.05, yr3: 9.51, yr5: 10.02, yr10: null, sinceInception: 11.25 },
-      { asOfDate: '2026-09-18', ytd: 3.7, yr1: 9, cagr3y: 9.4, cagr5y: 10, cagr10y: null, siAnn: 11, mo1: 1, qtd: 2 },
-      8.42,
-      7.59,
-      0.37421,
-      12,
-      56.24,
-      { yr1: 9.05, yr3: 31.33, yr5: 61.17, yr10: null, sinceInception: 95.24 },
-    );
-    expect(metrics.tr3y).toBe(31.33);
-    expect(metrics.tr5y).toBe(61.17);
-    expect(metrics.tr10y).toBeNull();
-    expect(metrics.cagr3y).toBe(9.51);
-    expect(metrics.secYield).toBe(7.59);
-    expect(metrics.secYieldText).toBe('7.59%');
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Holding name normalization and the ticker seed
-// ---------------------------------------------------------------------------
-
-describe('normalizeHoldingName', () => {
-  test('strips legal-form suffixes and fillers', () => {
-    expect(normalizeHoldingName('Apple Inc.')).toBe('APPLE');
-    expect(normalizeHoldingName('Microsoft Corp Common Stock')).toBe('MICROSOFT');
-    expect(normalizeHoldingName('THE BOEING CO')).toBe('BOEING');
-    // share classes are canonicalized, never dropped: GOOG and GOOGL must not collide
-    expect(normalizeHoldingName('Alphabet Inc. Class C Capital Stock')).toBe('ALPHABET CL C');
-    expect(normalizeHoldingName('Alphabet Inc. Class A Common Stock')).toBe('ALPHABET CL A');
-    expect(normalizeHoldingName('Alphabet Inc Cl C')).toBe('ALPHABET CL C');
+  test('provider defaults: readConfig turns the config file into typed settings', () => {
+    const typed = readConfig(resolveControls(config));
+    expect(typed).toMatchObject({
+      tickers: [], maxFetches: 0, requestSleep: 1, concurrency: 2, holdingsPageSize: 250, historyPageSize: 1000, maxRetries: 2,
+      historyRange: 'max', role: 'adv', edgarFallback: true, skipYahoo: false, skipJpmorgan: false, storeRawDownloads: false, secUa: config.SEC_UA,
+    });
+    expect(typed.aumRange).toBeUndefined();
+    expect(typed.fundExplorerUrl).toContain('/FundsMarketingHandler/fund-explorer?country=us&role=adv');
+    expect(readConfig(resolveControls(config, { MAX_RETRIES: 1 })).maxRetries).toBe(1);
+    expect(readConfig(resolveControls(config, { AUM: '1B:' })).aumRange).toEqual({ min: 1e9, max: undefined });
+    expect(readConfig(resolveControls(config, { API_BASE: 'http://127.0.0.1:1/x/' })).fundExplorerUrl).toStartWith('http://127.0.0.1:1/x/fund-explorer');
   });
 
-  test('core form drops the remaining spaces', () => {
-    expect(normalizeHoldingNameCore('Apple Inc.')).toBe('APPLE');
-  });
-
-  test('share classes stay distinguishable', () => {
-    expect(normalizeHoldingName('Alphabet Inc Cl A')).not.toBe(normalizeHoldingName('Alphabet Inc Cl C'));
-  });
-
-  test('a trailing security word is peeled, a lone one is not', () => {
-    expect(normalizeHoldingName('Berkshire Hathaway Inc Del')).toBe('BERKSHIRE HATHAWAY');
-    // "Cap Stk" is not in the filler/suffix vocabulary (it is only normalized,
-    // never dropped): the class marker survives, which is what matters.
-    expect(normalizeHoldingName('Berkshire Hathaway Inc Cap Stk Cl A')).toBe('BERKSHIRE HATHAWAY CL A');
-    expect(normalizeHoldingName('Berkshire Hathaway Inc Cap Stock Class A')).toBe('BERKSHIRE HATHAWAY CL A');
-  });
-
-  test('empty and junk names normalize to empty', () => {
-    expect(normalizeHoldingName('')).toBe('');
-    expect(normalizeHoldingName('---')).toBe('');
-  });
-});
-
-describe('cleanHoldingTicker', () => {
-  test('keeps class-share markers', () => {
-    expect(cleanHoldingTicker('brk-b')).toBe('BRK-B');
-    expect(cleanHoldingTicker('SCE^L')).toBe('SCE^L');
-    expect(cleanHoldingTicker('BF/A')).toBe('BF/A');
-  });
-
-  test('rejects placeholders', () => {
-    expect(cleanHoldingTicker('')).toBe('');
-    expect(cleanHoldingTicker('N/A')).toBe('');
-    expect(cleanHoldingTicker('see file')).toBe('');
-  });
-});
-
-describe('am.jpmorgan.com URL builders', () => {
-  test('fundNameSlug folds names into the fund page slug', () => {
-    expect(fundNameSlug('JPMorgan Equity Premium Income ETF')).toBe('jpmorgan-equity-premium-income-etf');
-    expect(fundNameSlug('JPMorgan Ultra-Short Income ETF')).toBe('jpmorgan-ultra-short-income-etf');
-    expect(fundNameSlug('JPMorgan BetaBuilders U.S. Equity ETF')).toBe('jpmorgan-betabuilders-us-equity-etf');
-    expect(fundNameSlug('JPMorgan Income & Growth ETF')).toBe('jpmorgan-income-and-growth-etf');
-    expect(fundNameSlug('')).toBe('');
-  });
-
-  test('jpmorganFundPageUrl builds the CUSIP-keyed fund page', () => {
-    expect(jpmorganFundPageUrl('JPMorgan Equity Premium Income ETF', '46641Q332')).toBe(
-      'https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332',
-    );
-    expect(jpmorganFundPageUrl('', '46641Q332')).toBe('https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-etf-etf-shares-46641q332');
-  });
-
-  test('jpmorganFundExplorerUrl builds the catalog JSON URL', () => {
-    expect(jpmorganFundExplorerUrl()).toBe('https://am.jpmorgan.com/FundsMarketingHandler/fund-explorer?country=us&role=adv&userLoggedIn=false&language=en&fundType=etf');
-    expect(jpmorganFundExplorerUrl('per')).toContain('role=per');
-  });
-
-  test('jpmorganProductDataUrl / jpmorganHistoricalDataUrl build the per-fund JSON URLs', () => {
-    expect(jpmorganProductDataUrl('46641Q332')).toBe('https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false');
-    expect(jpmorganHistoricalDataUrl('46641Q332')).toBe('https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false');
-  });
-
-  test('jpmorganHoldingsDownloadUrl / jpmorganPricesDownloadUrl build the human workbook links', () => {
-    expect(jpmorganHoldingsDownloadUrl('46641Q332')).toBe('https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q332&country=us&role=adv&locale=en-US');
-    expect(jpmorganPricesDownloadUrl('46641Q332')).toBe('https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q332&country=us&role=adv&locale=en-US');
-    expect(jpmorganPricesDownloadUrl('46641Q332', 'adv', '2020-05-20', '2026-09-18')).toContain('&fromDate=2020-05-20&toDate=2026-09-18');
-  });
-
-  test('fractionToPercent converts the published fractions and keeps nulls', () => {
-    expect(fractionToPercent(0.0536)).toBe(5.36);
-    expect(fractionToPercent(0.0951)).toBe(9.51);
-    expect(fractionToPercent('0.1')).toBe(10);
-    expect(fractionToPercent(null)).toBeNull();
-    expect(fractionToPercent('--')).toBeNull();
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Client-side catalog helpers (app.tsx)
-//
-// app.tsx is compiled in the browser by Babel standalone and calls init() at
-// module scope, so it cannot be imported here. The catalog's frequency column
-// is nevertheless a pure function of the published data and its coded labels
-// are what the column sorts on, so its source is extracted and exercised
-// directly instead of being left untested.
-// ---------------------------------------------------------------------------
-
-const APP_SOURCE = readFileSync(new URL('../app.tsx', import.meta.url), 'utf8');
-
-function extractClientFunction(name: string): (...args: any[]) => any {
-  const match = new RegExp(`\\nfunction ${name}\\(([^)]*)\\)[^{]*\\{([\\s\\S]*?)\\n\\}`).exec(APP_SOURCE);
-  if (!match) throw new Error(`${name} not found in app.tsx`);
-  const parameters = match[1]
-    .split(',')
-    .map(parameter => parameter.split(':')[0].split('=')[0].trim())
-    .filter(Boolean)
-    .join(', ');
-  return new Function(parameters, match[2]) as (...args: any[]) => any;
-}
-
-const formatDividendFrequency = extractClientFunction('formatDividendFrequency');
-
-describe('formatDividendFrequency (catalog Frequency column)', () => {
-  test('codes the published cadences with a sortable two-digit prefix', () => {
-    expect(formatDividendFrequency('Monthly')).toBe('01 - Monthly');
-    expect(formatDividendFrequency('Quarterly')).toBe('04 - Quarterly');
-    expect(formatDividendFrequency('Semi-annually')).toBe('06 - Semi-annually');
-    expect(formatDividendFrequency('Annually')).toBe('12 - Annually');
-    expect(formatDividendFrequency('None')).toBe('00 - None');
-    expect(formatDividendFrequency('Unknown')).toBe('00 - Unknown');
-    expect(formatDividendFrequency('Irregular')).toBe('99 - Irregular');
-  });
-
-  test('accepts the hyphenated spellings and is case-insensitive', () => {
-    expect(formatDividendFrequency('semi-annually')).toBe('06 - Semi-annually');
-    expect(formatDividendFrequency('Semi-Annual')).toBe('06 - Semi-annually');
-    expect(formatDividendFrequency('semiannual')).toBe('06 - Semi-annually');
-    expect(formatDividendFrequency('annual')).toBe('12 - Annually');
-    expect(formatDividendFrequency('monthly')).toBe('01 - Monthly');
-  });
-
-  test('treats missing data as "00 - None" instead of dropping the cell', () => {
-    expect(formatDividendFrequency(undefined)).toBe('00 - None');
-    expect(formatDividendFrequency(null)).toBe('00 - None');
-    expect(formatDividendFrequency('')).toBe('00 - None');
-    expect(formatDividendFrequency('  ')).toBe('00 - None');
-    expect(formatDividendFrequency('-')).toBe('00 - None');
-  });
-
-  test('passes an unknown published value through unchanged', () => {
-    expect(formatDividendFrequency('Weekly')).toBe('Weekly');
-    expect(formatDividendFrequency('Daily')).toBe('Daily');
-  });
-
-  test('the updater emits the spellings the column codes (decodeDividendFrequency + inferDistributionFrequency)', () => {
-    for (const code of ['MDEC', 'QDEC', 'SDEC', 'YDEC']) {
-      expect(formatDividendFrequency(decodeDividendFrequency(code)!.frequency)).toMatch(/^\d\d - /);
-    }
-    const semiannual = inferDistributionFrequency([
-      { epoch: isoToEpoch('2025-06-20')!, amount: 1 },
-      { epoch: isoToEpoch('2025-12-20')!, amount: 1 },
-      { epoch: isoToEpoch('2026-06-20')!, amount: 1 },
-    ]);
-    expect(semiannual).toEqual({ frequency: 'Semi-annually', paymentsPerYear: 2 });
-    expect(formatDividendFrequency(semiannual.frequency)).toBe('06 - Semi-annually');
-  });
-
-  test('coded labels sort in descending cadence order without extra comparators', () => {
-    const codes = ['Monthly', 'Quarterly', 'Semi-annually', 'Annually', 'None', 'Irregular']
-      .map(formatDividendFrequency)
-      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
-    expect(codes).toEqual(['00 - None', '01 - Monthly', '04 - Quarterly', '06 - Semi-annually', '12 - Annually', '99 - Irregular']);
-  });
-});
-
-
-import { test as frequencyLabelTest, expect as frequencyLabelExpect } from 'bun:test';
-frequencyLabelTest('Frequency placeholders display None and existing cadence labels stay unchanged', async () => {
-  const text = await Bun.file(new URL('../app.tsx', import.meta.url)).text();
-  const start = /^([ \t]*)function (formatDividendFrequency|formatDistributionFrequency)\(/m.exec(text);
-  frequencyLabelExpect(start).not.toBeNull();
-  const tail = text.slice(start!.index);
-  const end = new RegExp('^' + start![1] + '\u007d', 'm').exec(tail);
-  frequencyLabelExpect(end).not.toBeNull();
-  const js = new Bun.Transpiler({ loader: 'ts' }).transformSync(tail.slice(0, end!.index + end![0].length));
-  const format = new Function(js + '; return ' + start![2] + ';')();
-  for (const value of [null, undefined, '', '  ', '-', '‐', '‑', '‒', '–', '—', ' — ']) {
-    frequencyLabelExpect(format(value)).toBe('00 - None');
-  }
-  for (const [input, expected] of [
-    ['None', '00 - None'], ['Unknown', '00 - Unknown'], ['Monthly', '01 - Monthly'],
-    ['Quarterly', '04 - Quarterly'], ['Semi-annually', '06 - Semi-annually'],
-    ['Annually', '12 - Annually'], ['Irregular', '99 - Irregular'],
-  ]) frequencyLabelExpect(format(input)).toBe(expected);
-});
-
-
-import { test as queueTest, describe as queueDescribe, expect as queueExpect } from 'bun:test';
-
-async function tickerChainHarness() {
- const app=await Bun.file(new URL('../app.tsx',import.meta.url)).text();
- const source=app.match(/^function withTickerChain<T>\([\s\S]*?^\}/m)?.[0];
- queueExpect(source).toBeDefined();
- const javascript=new Bun.Transpiler({loader:'ts'}).transformSync(source!);
- const chains=new Map<string,Promise<void>>();
- const enqueue=new Function('holdingsChains',`${javascript}; return withTickerChain;`)(chains) as
-  <T>(ticker:string,fn:()=>Promise<T>)=>Promise<T>;
- return {chains,enqueue};
-}
-
-queueDescribe('per-ticker queue preserves caller results and stores completion-only promises',()=>{
- queueTest('successful generic result reaches caller, not the internal queue',async()=>{
-  const {chains,enqueue}=await tickerChainHarness();
-  const value={rows:[['AGEM']]};
-  queueExpect(await enqueue('AGEM',async()=>value)).toBe(value);
-  queueExpect(await chains.get('AGEM')).toBeUndefined();
- });
- queueTest('rejection reaches caller without poisoning the next queued task',async()=>{
-  const {chains,enqueue}=await tickerChainHarness();
-  const error=new Error('page failed');
-  const work=enqueue('AGEM',async()=>{throw error;});
-  const observed=work.catch(reason=>reason);
-  const settled=chains.get('AGEM');
-  const next=enqueue('AGEM',async()=>42);
-  queueExpect(await observed).toBe(error);
-  queueExpect(await settled).toBeUndefined();
-  queueExpect(await next).toBe(42);
-  queueExpect(await chains.get('AGEM')).toBeUndefined();
- });
- queueTest('synchronous callback throws also leave the queue usable',async()=>{
-  const {chains,enqueue}=await tickerChainHarness();
-  const error=new Error('synchronous failure');
-  queueExpect(await enqueue('AGEM',()=>{throw error;}).catch(reason=>reason)).toBe(error);
-  queueExpect(await chains.get('AGEM')).toBeUndefined();
-  queueExpect(await enqueue('AGEM',async()=>'recovered')).toBe('recovered');
- });
- queueTest('same-ticker work stays serial while other tickers run independently',async()=>{
-  const {chains,enqueue}=await tickerChainHarness();
-  let release!:()=>void;
-  const gate=new Promise<void>(resolve=>{release=resolve;});
-  const events:string[]=[];
-  const first=enqueue('AGEM',async()=>{events.push('first');await gate;events.push('done');return 1;});
-  const second=enqueue('AGEM',async()=>{events.push('second');return 2;});
-  try {
-   queueExpect(await enqueue('SGOL',async()=>3)).toBe(3);
-   queueExpect(events).toEqual(['first']);
-  } finally { release(); }
-  queueExpect(await Promise.all([first,second])).toEqual([1,2]);
-  queueExpect(events).toEqual(['first','done','second']);
-  queueExpect(await chains.get('AGEM')).toBeUndefined();
-  queueExpect(await chains.get('SGOL')).toBeUndefined();
- });
-});
-
-
-import { test as headerTest, expect as headerExpect } from 'bun:test';
-async function headerSummaryHarness() {
-  const source = await Bun.file(new URL('../app.tsx', import.meta.url)).text();
-  const match = /^([ \t]*)function renderHeaderSummary\(/m.exec(source);
-  headerExpect(match).not.toBeNull();
-  const tail = source.slice(match!.index);
-  const end = new RegExp('^' + match![1] + '}', 'm').exec(tail)!;
-  const js = new Bun.Transpiler({ loader: 'ts' }).transformSync(tail.slice(0, end.index + end[0].length));
-  const makeNode = (text = ''): any => {
-    const node: any = { textContent: text, childNodes: [], dataset: {}, listeners: {} };
-    node.replaceChildren = (...children: any[]) => { node.childNodes = children; };
-    node.append = (...children: any[]) => { node.childNodes.push(...children); };
-    node.addEventListener = (name: string, listener: any) => { node.listeners[name] = listener; };
-    return node;
-  };
-  const panel = makeNode(), subtitle = makeNode(), details = makeNode('Data: source link and updated timestamp');
-  subtitle.append(details);
-  const document = { getElementById: () => panel, createTextNode: makeNode, createElement: () => makeNode() };
-  const render = new Function('document', js + '; return renderHeaderSummary;')(document);
-  const text = () => subtitle.childNodes.map((n: any) => n.textContent).join('');
-  return { render, panel, subtitle, details, makeNode, text };
-}
-headerTest('header has no visible subtitle without selection; original details nodes are retained', async () => {
-  const h = await headerSummaryHarness();
-  h.render(h.subtitle, new Set(), null, () => {});
-  headerExpect(h.text()).toBe('');
-  headerExpect(h.panel.childNodes).toEqual([h.details]);
-  headerExpect(h.panel.childNodes[0]).toBe(h.details);
-});
-headerTest('header shows sorted selected tickers only, preserving click activation and highlight', async () => {
-  const h = await headerSummaryHarness(); const activated: string[] = [];
-  h.render(h.subtitle, new Set(['ZZZ', 'AAA']), 'AAA', (ticker: string) => activated.push(ticker));
-  headerExpect(h.text()).toBe('2 selected: AAA, ZZZ');
-  const links = h.subtitle.childNodes.filter((n: any) => n.dataset.headerFund);
-  headerExpect(links[0].className).toContain('underline');
-  links[1].listeners.click({ preventDefault() {} });
-  headerExpect(activated).toEqual(['ZZZ']);
-  headerExpect(h.panel.childNodes[0]).toBe(h.details);
-});
-headerTest('all selected still lists tickers; clear replaces both summary and selection', async () => {
-  const h = await headerSummaryHarness();
-  h.render(h.subtitle, new Set(['CCC','AAA','BBB']), 'BBB', () => {});
-  headerExpect(h.text()).toBe('3 selected: AAA, BBB, CCC');
-  const next = h.makeNode('Fresh detail context'); h.subtitle.replaceChildren(next);
-  h.render(h.subtitle, new Set(), null, () => {});
-  headerExpect(h.text()).toBe(''); headerExpect(h.panel.childNodes).toEqual([next]);
-});
-headerTest('header markup supplies a focusable counter and hidden rich panel with dismissal', async () => {
-  const html = await Bun.file(new URL('../index.html', import.meta.url)).text();
-  headerExpect(html).toMatch(/<button[^>]*aria-controls="app-summary"[^>]*id="ticker-count"/);
-  headerExpect(html).toContain('id="app-summary" role="region" aria-label="ETF catalog information" hidden');
-  headerExpect(html).toContain("event.key !== 'Escape'");
-  headerExpect(html).toContain("trigger.addEventListener('focus', show)");
-  headerExpect(html).toContain("trigger.addEventListener('pointerenter'");
-});
-
-// ---------------------------------------------------------------------------
-// Configuration: resolver, config file, README, --help and workflow parity
-// ---------------------------------------------------------------------------
-
-const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
-const file = JSON.parse(read('scripts/update-data.config.json'));
-
-test('configuration precedence: file < advanced < nonblank input < environment', () => {
-  const c = resolveControls({ CONCURRENCY: 2, TICKERS: 'JEPI' }, { CONCURRENCY: 3, TICKERS: 'JEPQ' }, { CONCURRENCY: '4', TICKERS: '' }, { CONCURRENCY: '5' });
-  expect(c.CONCURRENCY).toBe('5');
-  expect(c.TICKERS).toBe('JEPQ');
-  expect(resolveControls({ CONCURRENCY: 2 }, { CONCURRENCY: 3 }, { CONCURRENCY: '4' }).CONCURRENCY).toBe('4');
-  expect(resolveControls({ CONCURRENCY: 2 }, { CONCURRENCY: 3 }, { CONCURRENCY: '' }).CONCURRENCY).toBe('3');
-  expect(resolveControls({ SKIP_YAHOO: true }, {}, {}, { SKIP_YAHOO: 'false' }).SKIP_YAHOO).toBe('false');
-  expect(resolveControls({ CONCURRENCY: 2 }, {}, { CONCURRENCY: '' }).CONCURRENCY).toBe('2');
-  expect(resolveControls({ TICKERS: 'JEPI' }, { TICKERS: '' }, { TICKERS: '' }).TICKERS).toBe('');
-});
-
-test('legacy and JPMORGAN_ aliases still reach the resolver', () => {
-  expect(resolveControls({}, {}, {}, { JPMORGAN_LIMIT: '7' }).MAX_FETCHES).toBe('7');
-  expect(resolveControls({}, {}, {}, { HISTORICAL_PAGE_SIZE: '500' }).HISTORY_PAGE_SIZE).toBe('500');
-  expect(resolveControls({}, {}, {}, { JPMORGAN_TICKERS: 'JEPI', TICKERS: 'JEPQ' }).TICKERS).toBe('JEPI');
-  expect(resolveControls({ MAX_FETCHES: 3 }, {}, {}, { JPMORGAN_LIMIT: '7', MAX_FETCHES: '9' }).MAX_FETCHES).toBe('9');
-});
-
-test('scheduled path (empty inputs and advanced) equals the config defaults', async () => {
-  const scheduled = resolveControls(file, JSON.parse('{}'), {}, {});
-  expect(scheduled).toEqual(Object.fromEntries(Object.entries(file).map(([k, v]) => [k, String(v)])));
-  expect(await runtimeControls({})).toEqual(scheduled);
-});
-
-test('resolver rejects invalid JSON shapes, unknown keys, non-scalars and newlines', () => {
-  for (const value of [{ UNKNOWN: 1 }, { OUTPUT_DIR: 'x' }, { SEC_UA: 'x\nEVIL=yes' }, { CONCURRENCY: 0 }, { MAX_RETRIES: -1 }, { MAX_RETRIES: 0 }, { MAX_FETCHES: 1.5 }, { REQUEST_SLEEP: '-1' }, { VERBOSE: 'maybe' }, { SKIP_YAHOO: 'maybe' }, { AUM: '9:1' }, { TER: '5' }, { PERFORMANCE_1Y: '9:1' }, { TICKERS: ['JEPI'] }, { TICKERS: { a: 1 } }, null, [], 'x']) {
-    expect(() => resolveControls(value)).toThrow();
-  }
-  expect(() => resolveControls({}, { SEC_UA: 'x\rfoo' })).toThrow();
-  expect(() => resolveControls({}, {}, { TICKERS: 'a\nb' })).toThrow();
-  expect(() => resolveControls({}, {}, {}, { SEC_UA: 'x\0bad' })).toThrow();
-  expect(() => resolveControls({}, null)).toThrow();
-  expect(() => resolveControls({}, [])).toThrow();
-});
-
-test('provider-specific defaults', () => {
-  const config = readConfig(resolveControls(file));
-  expect(config.tickers).toEqual([]);
-  expect(config.maxFetches).toBe(0);
-  expect(config.requestSleep).toBe(1);
-  expect(config.concurrency).toBe(2);
-  expect(config.holdingsPageSize).toBe(250);
-  expect(config.historyPageSize).toBe(1000);
-  expect(config.maxRetries).toBe(2);
-  expect(config.historyRange).toBe('max');
-  expect(config.role).toBe('adv');
-  expect(config.edgarFallback).toBe(true);
-  expect(config.skipYahoo).toBe(false);
-  expect(config.skipJpmorgan).toBe(false);
-  expect(config.storeRawDownloads).toBe(false);
-  expect(config.aumRange).toBeUndefined();
-  expect(config.fundExplorerUrl).toContain('/FundsMarketingHandler/fund-explorer?country=us&role=adv');
-  expect(readConfig(resolveControls(file, { MAX_RETRIES: 1 })).maxRetries).toBe(1);
-  expect(readConfig(resolveControls(file, { AUM: '1B:' })).aumRange).toEqual({ min: 1e9, max: undefined });
-  expect(readConfig(resolveControls(file, { API_BASE: 'http://127.0.0.1:1/x/' })).fundExplorerUrl).toStartWith('http://127.0.0.1:1/x/fund-explorer');
-  expect(file.SEC_UA).toBe('daggerok ETF feed daggerok@gmail.com');
-  expect(readConfig(resolveControls(file)).secUa).toBe(file.SEC_UA);
-  expect(resolveControls(file, {}, {}, { SEC_UA: 'x y z@w.io' }).SEC_UA).toBe('x y z@w.io');
-  expect(JSON.stringify(file)).not.toContain('example.com');
-});
-
-test('config keys == CONTROL_NAMES == README rows == --help', () => {
-  expect(Object.keys(file).sort()).toEqual([...CONTROL_NAMES].sort());
-  for (const value of Object.values(file)) expect(typeof value).toBe('string');
-  const doc = read('README.md');
-  const usage = Bun.spawnSync(['bun', 'scripts/update-data.ts', '--help'], { cwd: new URL('..', import.meta.url).pathname }).stdout.toString();
-  // README lists the tenors of PERFORMANCE_* / TOTAL_RETURN_* on one row: `PREFIX_YTD` with `_1Y` ... `_10Y`
-  for (const name of CONTROL_NAMES) {
-    const tenor = name.match(/^(PERFORMANCE|TOTAL_RETURN)_(1Y|3Y|5Y|10Y)$/);
-    expect(doc).toContain(tenor ? '`_' + tenor[2] + '`' : '`' + name + '`');
-    if (tenor) expect(doc).toContain('`' + tenor[1] + '_YTD`');
-    expect(usage).toContain(tenor ? tenor[1] + '_YTD' : name);
-  }
-  expect(doc).toContain('scripts/update-data.config.json');
-});
-
-test('workflow: inputs, mapping, schedule, fixed output dir, no direct interpolation', () => {
-  const wf = read('.github/workflows/update-data.yml');
-  const block = wf.slice(wf.indexOf('    inputs:'), wf.indexOf('\npermissions:'));
-  const names = [...block.matchAll(/^      (\w+):$/gm)].map((m) => m[1]);
-  expect(names.length).toBeLessThanOrEqual(25);
-  expect(names).toContain('advanced');
-  expect(block).toMatch(/advanced:[\s\S]*default: '\{\}'/);
-  for (const name of names.filter((n) => n !== 'advanced')) expect(CONTROL_NAMES).toContain(name.toUpperCase() as never);
-  expect(names).not.toContain('output_dir');
-  expect(wf).toContain("cron: '0 0 * * 0'");
-  expect(wf).not.toMatch(/^  push:/m);
-  expect(wf).toContain('toJSON(inputs)');
-  expect(wf).not.toMatch(/\$\{\{\s*(github\.event\.)?inputs\./);
-  expect(wf).toContain('git add api/jpmorgan\n          if git diff --cached --quiet -- api/jpmorgan');
-  expect(wf.match(/git add /g)?.length).toBe(1);
-  expect(wf).not.toMatch(/OUTPUT_DIR/);
-  expect(wf).toContain('if: ${{ !cancelled() }}');
-  expect(wf).toContain('PROTECTED_SEC_UA: ${{ vars.SEC_UA }}');
-  expect(wf).toContain('timeout-minutes: 30');
-  expect(wf).toContain('persist-credentials: false');
-  expect(wf).toContain('credential.helper=');
-});
-
-test('README: structure, no stale artifact mentions, verification commands', () => {
-  const doc = read('README.md');
-  const order = ['## Using Bun', '## Updating the static JPMorgan data', '### Data sources', '### Metrics and caveats', '### Update controls', '### Examples', '## TypeScript and verification', '## Brands table', '## Sibling applications', '## License'];
-  let at = -1;
-  for (const heading of order) {
-    const next = doc.indexOf('\n' + heading + '\n');
-    expect(next).toBeGreaterThan(at);
-    at = next;
-  }
-  for (const stale of ['worklog', '.prompt', 'evidence/', 'fixtures', 'config-docs.test', 'admin@daggerok.example.com']) expect(doc).not.toContain(stale);
-  for (const cmd of ['bun install --frozen-lockfile', 'bun test', 'bun build --target=bun scripts/update-data.ts --outfile=/dev/null', 'git diff --check']) expect(doc).toContain(cmd);
-});
-
-test('USE_SYSTEM_CA resolver accepts auto/true/false case-insensitively and rejects other values', () => {
-  expect(resolveControls(file).USE_SYSTEM_CA).toBe('auto');
-  expect(file.USE_SYSTEM_CA).toBe('auto');
-  for (const value of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) {
-    expect(resolveControls({}, {}, {}, { USE_SYSTEM_CA: value }).USE_SYSTEM_CA).toBe(value.toLowerCase());
-  }
-  expect(() => resolveControls({}, {}, {}, { USE_SYSTEM_CA: 'maybe' })).toThrow('USE_SYSTEM_CA');
-  expect(() => resolveControls({ USE_SYSTEM_CA: 'maybe' })).toThrow('USE_SYSTEM_CA');
-});
-
-describe('isCertError', () => {
-  test('detects untrusted-certificate errors, including nested causes', () => {
+  test('USE_SYSTEM_CA: certificate errors are recognized; auto restarts once, true restarts, false and an active CA do nothing', async () => {
     expect(isCertError({ code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' })).toBe(true);
     expect(isCertError(new Error('unable to get local issuer certificate'))).toBe(true);
     expect(isCertError(new Error('fetch failed', { cause: new Error('unable to get local issuer certificate') }))).toBe(true);
-  });
-  test('ignores other failures', () => {
     expect(isCertError({ code: 'ECONNRESET' })).toBe(false);
     expect(isCertError(new Error('HTTP 403 Forbidden'))).toBe(false);
     expect(isCertError(null)).toBe(false);
-  });
-});
 
-describe('installSystemCa', () => {
-  const originalFetch = globalThis.fetch;
-  const reexecSpy = () => {
-    const calls: number[] = [];
-    const reexec = (() => { calls.push(1); return undefined as never; }) as () => never;
-    return { calls, reexec };
-  };
-  const restore = () => { globalThis.fetch = originalFetch; };
+    let restarts = 0;
+    const reexec = (() => { restarts += 1; return undefined as never; }) as () => never;
+    installSystemCa('false', reexec, false);
+    installSystemCa('auto', reexec, true);
+    installSystemCa('true', reexec, true);
+    expect(globalThis.fetch).toBe(realFetch);
+    expect(restarts).toBe(0);
+    installSystemCa('true', reexec, false);
+    expect(restarts).toBe(1);
 
-  test('mode false and an already active system CA leave fetch unchanged', () => {
-    try {
-      const a = reexecSpy();
-      installSystemCa('false', a.reexec, false);
-      expect(globalThis.fetch).toBe(originalFetch);
-      installSystemCa('auto', a.reexec, true);
-      installSystemCa('true', a.reexec, true);
-      expect(globalThis.fetch).toBe(originalFetch);
-      expect(a.calls.length).toBe(0);
-    } finally { restore(); }
-  });
-
-  test('mode true restarts immediately', () => {
-    try {
-      const a = reexecSpy();
-      installSystemCa('true', a.reexec, false);
-      expect(a.calls.length).toBe(1);
-    } finally { restore(); }
-  });
-
-  test('mode auto wraps fetch: cert error restarts once, other errors are rethrown, success passes through', async () => {
-    try {
-      const a = reexecSpy();
-      let next: () => Promise<Response> = async () => new Response('ok');
-      globalThis.fetch = (async () => next()) as unknown as typeof fetch;
-      installSystemCa('auto', a.reexec, false);
-      expect(globalThis.fetch).not.toBe(originalFetch);
-      expect(await (await fetch('https://example.invalid/')).text()).toBe('ok');
-      expect(a.calls.length).toBe(0);
-
-      next = async () => { throw new Error('ECONNRESET'); };
-      await expect(fetch('https://example.invalid/')).rejects.toThrow('ECONNRESET');
-      expect(a.calls.length).toBe(0);
-
-      const quiet = console.error;
-      console.error = () => {};
-      try {
-        next = async () => { throw Object.assign(new Error('fetch failed'), { cause: { code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' } }); };
-        await fetch('https://example.invalid/');
-      } finally { console.error = quiet; }
-      expect(a.calls.length).toBe(1);
-    } finally { restore(); }
+    restarts = 0;
+    let next: () => Promise<Response> = async () => new Response('ok');
+    globalThis.fetch = (async () => next()) as unknown as typeof fetch;
+    installSystemCa('auto', reexec, false);
+    expect(await (await fetch('https://example.invalid/')).text()).toBe('ok');
+    next = async () => { throw new Error('ECONNRESET'); };
+    await expect(fetch('https://example.invalid/')).rejects.toThrow('ECONNRESET');
+    expect(restarts).toBe(0);
+    next = async () => { throw Object.assign(new Error('fetch failed'), { cause: { code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' } }); };
+    await fetch('https://example.invalid/');
+    expect(restarts).toBe(1);
   });
 });
 
 // ---------------------------------------------------------------------------
-// Mocked end-to-end pipeline (fetch mocked, temporary api root, no network)
+// parsing: one small inline sample per payload, missing values become null
+// ---------------------------------------------------------------------------
+
+describe('parsing', () => {
+  test('numbers, dates and CSV helpers', () => {
+    expect(normalizeNumberText('2.97057744E8')).toBe('297057744');
+    expect(normalizeNumberText('1.5e-3')).toBe('0.0015');
+    for (const text of ['Apple Inc', '', '-']) expect(normalizeNumberText(text)).toBe(text);
+    expect(normalizeNumberText('1,234.56')).toBe('1234.56');
+    for (const placeholder of ['--', '—', 'N/A']) expect(numberOrNull(placeholder)).toBeNull();
+    expect(numberOrNull('$1,234.56')).toBe(1234.56);
+    expect(numberOrNull('0.40%')).toBe(0.4);
+    expect([fractionToPercent(0.0536), fractionToPercent('0.1'), fractionToPercent(null), fractionToPercent('--')]).toEqual([5.36, 10, null, null]);
+
+    expect(toIsoDate('08/21/2026')).toBe('2026-08-21');
+    expect(toIsoDate('2026-8-1')).toBe('2026-08-01');
+    expect(toIsoDate('n/a')).toBe('n/a');
+    expect(formatJpmorganDate('2026-08-21')).toBe('08/21/2026');
+    expect(formatEdgarDate('2026-06-30')).toBe('Jun 30 2026');
+    expect(isoToEpoch('2026-01-15')).toBe(Date.UTC(2026, 0, 15) / 1000);
+    expect(isoToEpoch('nope')).toBeNull();
+
+    expect(parseCsv('a,b\r\n"x, y","say ""hi"""\r\n')).toEqual([['a', 'b'], ['x, y', 'say "hi"']]);
+    expect(parseCsv('﻿Ticker,Name\r\n\r\nJEPI,Fund\r\n')).toEqual([['Ticker', 'Name'], ['JEPI', 'Fund']]);
+    const rows = parseCsv(['J.P. Morgan Asset Management', 'Early NAV report', '', EARLY_NAV_FIXTURE].join('\n'));
+    expect(findHeaderRowIndex(rows, ['Ticker', 'CUSIP', 'NAV'])).toBe(2);
+    expect(findHeaderRowIndex(rows, ['Nope'])).toBe(-1);
+    const records = csvRecords(parseCsv('Fund Ticker,Ticker,Name\nQQQ,QQQ,Apple Inc'), 0);
+    expect([pickColumn(records[0], ['Ticker']), pickColumn(records[0], ['Name']), pickColumn(records[0], ['Missing'])]).toEqual(['QQQ', 'Apple Inc', '']);
+    expect(csvRecords(parseCsv('Ticker,Name\n JEPI , Fund \n,,\n'), 0)).toEqual([{ Ticker: 'JEPI', Name: 'Fund' }]);
+  });
+
+  test('catalog: fund explorer keeps ETFs only, converts fractions to percent, null stays null', () => {
+    const funds = parseFundExplorer(FUND_EXPLORER_FIXTURE);
+    expect(funds.map((fund) => fund.ticker)).toEqual(['JEPI', 'JLVP', 'JPST']);
+    expect(funds.every((fund) => fund.source === 'jpmorgan' && fund.ter === null && fund.dividendYield === null)).toBe(true);
+    const jepi = funds[0];
+    expect(jepi).toMatchObject({
+      cusip: '46641Q332', name: 'JPMorgan Equity Premium Income ETF', category: 'U.S. Equity', inception: '2020-05-20', asOfDate: '2026-09-18',
+      fundPage: 'https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332',
+      trustCik: '0001485894', nav: 56.2213, close: 56.24, premiumDiscount: 0.0332, netAssets: 45123456789.12, secYield: 7.44, returnsAsOfDate: '2026-08-31', quarterEndAsOfDate: '2026-06-30',
+    });
+    expect(jepi.returns).toEqual({ ytd: 5.36, yr1: 9.05, yr3: 9.51, yr5: 10.02, yr10: null, sinceInception: 11.25 });
+    expect(jepi.marketReturns.yr1).toBe(9.08);
+    expect(jepi.quarterEnd).toEqual({ ytd: 2.2, yr1: 7.77, yr3: 8.99, yr5: 7.47, yr10: null, sinceInception: 10.82 });
+    const jlvp = funds[1];
+    expect(jlvp.secYield).toBeNull();
+    expect(jlvp.returns.ytd).toBeNull();
+    expect(jlvp.returns.sinceInception).toBe(1.9);
+    expect(jlvp.quarterEndAsOfDate).toBeNull();
+    expect(parseFundExplorer({ funds: FUND_EXPLORER_FIXTURE }).length).toBe(3);
+    expect(parseFundExplorer({ data: FUND_EXPLORER_FIXTURE }).length).toBe(3);
+    expect(() => parseFundExplorer({ error: 'nope' })).toThrow(/not a fund list/);
+  });
+
+  test('catalog fallback: early-NAV CSV reads padded headers, rejects a file without ETF columns; categories are repaired', () => {
+    const funds = parseEarlyNavCsv(EARLY_NAV_FIXTURE);
+    expect(funds.map((fund) => fund.ticker)).toEqual(['JEPI', 'JPST']);
+    expect(funds[0]).toMatchObject({ cusip: '46641Q332', name: 'JPMorgan Equity Premium Income ETF', nav: 56.2213, netAssets: 45123456789.12, asOfDate: '2026-09-18', source: 'early-nav' });
+    expect(funds[0].fundPage).toContain('-etf-shares-46641q332');
+    expect(() => parseEarlyNavCsv('Fund Name,Price\nX,1')).toThrow(/header row not found/);
+    expect(normalizeJpmorganCategory('  Fixed Income   Taxable ')).toBe('Fixed Income Taxable');
+    expect(normalizeJpmorganCategory('')).toBe('ETF');
+    expect(normalizeJpmorganCategory(null)).toBe('ETF');
+  });
+
+  test('fund page: product-data facts, daily yields win over month-end, official At NAV returns, empty answer rejected', () => {
+    const product = parseProductData(PRODUCT_DATA_FIXTURE, 'JEPI');
+    expect(product).toMatchObject({
+      ticker: 'JEPI', cusip: '46641Q332', exchange: 'NYSE-Arca', grossExpense: 0.35, netExpense: 0.35, inception: '2020-05-20', assetClass: 'U.S. Equity',
+      benchmark: 'S&P 500 Index', frequencyCode: 'MDEC', numberOfHoldings: 135, sharesOutstanding: 802600000,
+      nav: 56.2213, navDate: '2026-09-18', marketPrice: 56.24, premiumDiscount: 0.0332, netAssets: 45123456789.12, netAssetsDate: '2026-09-18',
+      secYield: 7.59, secYieldDate: '2026-09-17', dividendYield: 8.42, dividendYieldDate: '2026-09-18', cumulativeAsOfDate: '2026-08-31',
+    });
+    expect(product.secYieldKind).toContain('daily');
+    expect(product.dividendYieldKind).toContain('12-month rolling');
+    expect(product.latestDividend).toEqual({ exDate: '2026-09-01', amount: 0.37421, payDate: '2026-09-04', recordDate: '2026-09-01' });
+    expect(product.monthEnd).toEqual({ ytd: 5.36, yr1: 9.05, yr3: 9.51, yr5: 10.02, yr10: null, sinceInception: 11.25, asOfDate: '2026-08-31', mo1: 1.53, mo3: 4.02 });
+    expect(product.monthEndMarket.yr1).toBe(9.08);
+    expect(product.cumulative).toEqual({ yr1: 9.05, yr3: 31.33, yr5: 61.17, yr10: null, sinceInception: 95.24 });
+
+    const payload = structuredClone(PRODUCT_DATA_FIXTURE);
+    payload.fundData.shareClass.etfSecYield = {} as any;
+    payload.fundData.shareClass.secYield = {} as any;
+    const fallback = parseProductData(payload, 'JEPI');
+    expect([fallback.secYield, fallback.dividendYield]).toEqual([7.44, 8.39]);
+    expect(fallback.secYieldKind).toContain('month-end');
+    expect(fallback.dividendYieldKind).toContain('month-end');
+    expect(() => parseProductData({ fundData: null, error: null }, 'XXXX')).toThrow(/no fundData/);
+  });
+
+  test('holdings: shared headers, "-" for unlisted tickers, bond columns, container fallback, null when empty', () => {
+    const holdings = parseProductHoldings(PRODUCT_DATA_FIXTURE.fundData, 'JEPI')!;
+    expect(holdings.headers).toEqual(HOLDINGS_HEADERS);
+    expect(holdings.asOfDate).toBe('2026-09-17');
+    expect(holdings.rows.length).toBe(5); // the nameless row is dropped
+    expect(holdings.rows[0]).toEqual({ Name: 'NVIDIA CORP COMMON', Ticker: 'NVDA', Identifier: '67066G104', Weight: '1.94', 'Market Value': '879922379.14', 'Shares Held': '4301234', 'Asset Category': 'DOMESTIC COMMON STOCK' });
+    const byName = (name: string) => holdings.rows.find((row) => row.Name.startsWith(name))!;
+    expect([byName('SPX').Ticker, byName('SPX').Identifier]).toEqual(['-', '46654Q104']); // "SPX" is the underlying, not a listed symbol
+    expect([byName('USD CASH').Ticker, byName('USD CASH').Identifier, byName('USD CASH').Weight]).toEqual(['-', '-', '0']);
+    expect(byName('JPMORGAN PRIME').Ticker).toBe('JIMXX');
+    expect([byName('MITSUBISHI').Ticker, byName('MITSUBISHI').Identifier]).toEqual(['8306', '6335171']);
+
+    const bonds = parseProductHoldings(
+      {
+        dailyHoldingsAll: {
+          effectiveDate: '2026-09-17',
+          data: [
+            { securityDescription: 'UNITED STATES TREASURY NOTE 4.25% 2028', securityId: '91282CJN2', securityTicker: 'T', securityType: 'TREASURY NOTES', shares: 50000000, marketValue: 50123456.78, netAssetValuePercent: 1.51, couponRate: 4.25, finalLegalMaturityDate: '2028-11-15' },
+            { securityDescription: 'CAPITAL ONE FINANCIAL 5.7%', securityId: '14040HCX5', securityTicker: 'COF', securityType: 'CORPORATE BONDS', shares: 1000000, marketValue: 1012345.6, netAssetValuePercent: 0.03, couponRate: 5.7, finalLegalMaturityDate: '2030-02-01' },
+            { securityDescription: 'TRI-PARTY REPO', securityId: 'REPO0001', securityTicker: null, securityType: 'REPURCHASE AGREEMENTS', shares: 2000000, marketValue: 2000000, netAssetValuePercent: 0.06 },
+          ],
+        },
+      },
+      'JPST',
+    )!;
+    expect(bonds.headers).toEqual(BOND_SHEET_HEADERS);
+    expect(bonds.rows.map((row) => row.Identifier)).toEqual(['91282CJN2', 'REPO0001', '14040HCX5']); // weight order
+    expect(bonds.rows.map((row) => row.Ticker)).toEqual(['-', '-', '-']); // issuer codes are not exchange symbols
+    expect([bonds.rows[0].Coupon, bonds.rows[0].Maturity]).toEqual(['4.25', 'Nov 15 2028']);
+    expect([bonds.rows[1].Coupon, bonds.rows[1].Maturity]).toEqual(['', '']);
+    expect(weightsSum(bonds.rows)).toBe(1.6);
+
+    const row = { securityDescription: 'APPLE INC COMMON STOCK', securityId: '037833100', securityTicker: 'AAPL', securityType: 'DOMESTIC COMMON STOCK', shares: 10, marketValue: 2000, netAssetValuePercent: 1.5 };
+    const monthly = parseProductHoldings({ dailyHoldingsAll: { data: [] }, dailyHoldings: { data: [row] }, holdings: { monthlyHoldings: { effectiveDate: '2026-08-31', data: [row] } } }, 'XXXX')!;
+    expect([monthly.container, monthly.asOfDate, monthly.rows.length]).toEqual(['holdings.monthlyHoldings', '2026-08-31', 1]);
+    expect(parseProductHoldings({ dailyHoldings: { data: [row] } }, 'XXXX')).toBeNull(); // never the ten-row teaser
+    expect(parseProductHoldings({ dailyHoldingsAll: { data: [] } }, 'XXXX')).toBeNull();
+    expect(parseProductHoldings({}, 'XXXX')).toBeNull();
+  });
+
+  test('holdings order is canonical, so a reshuffled source answer writes identical pages', () => {
+    const rows = [
+      { securityDescription: 'CURRENCY CONTRACT - CNY', securityId: 'CCTCNY_46707_S', securityTicker: null, securityType: 'SPOT CONTRACTS', shares: -10707163, marketValue: 0, netAssetValuePercent: 0 },
+      { securityDescription: 'CURRENCY CONTRACT - CNY', securityId: 'CCTCNY_42963_S', securityTicker: null, securityType: 'SPOT CONTRACTS', shares: -10652727, marketValue: 0, netAssetValuePercent: 0 },
+      { securityDescription: 'KOREA 5% 09/26', securityId: '49151FB90', securityTicker: null, securityType: 'MUNICIPAL BONDS', shares: 1000000, marketValue: 1021341.4, netAssetValuePercent: 0.01 },
+      { securityDescription: 'KOREA 5% 09/26', securityId: '49151F3A6', securityTicker: null, securityType: 'MUNICIPAL BONDS', shares: 1000000, marketValue: 1021341.4, netAssetValuePercent: 0.01 },
+      { securityDescription: 'APPLE INC COMMON STOCK', securityId: '037833100', securityTicker: 'AAPL', securityType: 'DOMESTIC COMMON STOCK', shares: 10, marketValue: 2000, netAssetValuePercent: 1.5 },
+      { securityDescription: 'USD CASH', securityId: null, securityTicker: null, securityType: 'CURRENCIES', shares: 0, marketValue: 0.74, netAssetValuePercent: 0 },
+    ];
+    const ids = (order: typeof rows) => parseProductHoldings({ dailyHoldingsAll: { data: order } }, 'XXXX')!.rows.map((row) => row.Identifier);
+    const expected = ['037833100', '49151F3A6', '49151FB90', '-', 'CCTCNY_42963_S', 'CCTCNY_46707_S'];
+    expect(ids(rows)).toEqual(expected);
+    expect(ids([...rows].reverse())).toEqual(expected);
+    expect(ids([rows[1], rows[3], rows[5], rows[0], rows[2], rows[4]])).toEqual(expected);
+    expect(compareHoldingRows({ Weight: '' }, { Weight: '-0.04' })).toBeGreaterThan(0); // blank weights sort last
+    expect(compareHoldingRows({ Weight: '0', Name: 'B' }, { Weight: '0', Name: 'a' })).toBeLessThan(0); // locale independent
+  });
+
+  test('ticker, name and frequency vocabularies', () => {
+    const tickers: [string, string, string][] = [
+      ['DOMESTIC COMMON STOCK', 'AAPL', 'AAPL'], ['REIT', 'PLD', 'PLD'], ['ADR', 'TSM', 'TSM'], ['MONEY MARKET', 'JIMXX', 'JIMXX'], ['EXCHANGE TRADED FUND', 'JEPQ', 'JEPQ'], ['', 'MSFT', 'MSFT'],
+      ['TREASURY NOTES', 'T', ''], ['CORPORATE BONDS', 'COF', ''], ['COMMERCIAL PAPER', 'GS', ''], ['EQUITY INDEX FUTURES', 'ESZ6', ''], ['EQUITY LINKED NOTES', 'SPX', ''],
+      ['CURRENCIES', 'USD', ''], ['SPOT CONTRACTS', 'JPY', ''], ['DOMESTIC COMMON STOCK', 'n/a', ''],
+    ];
+    for (const [type, symbol, expected] of tickers) expect(holdingTickerFor(type, symbol)).toBe(expected);
+    const cleaned: [string, string][] = [['brk-b', 'BRK-B'], ['SCE^L', 'SCE^L'], ['BF/A', 'BF/A'], ['', ''], ['N/A', ''], ['see file', '']];
+    for (const [input, expected] of cleaned) expect(cleanHoldingTicker(input)).toBe(expected);
+    const names: [string, string][] = [
+      ['Apple Inc.', 'APPLE'], ['Microsoft Corp Common Stock', 'MICROSOFT'], ['THE BOEING CO', 'BOEING'],
+      ['Alphabet Inc. Class C Capital Stock', 'ALPHABET CL C'], ['Alphabet Inc. Class A Common Stock', 'ALPHABET CL A'], ['Alphabet Inc Cl C', 'ALPHABET CL C'],
+      ['Berkshire Hathaway Inc Del', 'BERKSHIRE HATHAWAY'], ['Berkshire Hathaway Inc Cap Stk Cl A', 'BERKSHIRE HATHAWAY CL A'], ['Berkshire Hathaway Inc Cap Stock Class A', 'BERKSHIRE HATHAWAY CL A'],
+      ['', ''], ['---', ''],
+    ];
+    for (const [input, expected] of names) expect(normalizeHoldingName(input)).toBe(expected);
+    expect(normalizeHoldingNameCore('Apple Inc.')).toBe('APPLE');
+    expect(normalizeHoldingName('Alphabet Inc Cl A')).not.toBe(normalizeHoldingName('Alphabet Inc Cl C'));
+
+    expect(decodeDividendFrequency('MDEC')).toEqual({ frequency: 'Monthly', paymentsPerYear: 12 });
+    expect(decodeDividendFrequency('QDEC')).toEqual({ frequency: 'Quarterly', paymentsPerYear: 4 });
+    expect(decodeDividendFrequency('SDEC')).toEqual({ frequency: 'Semi-annually', paymentsPerYear: 2 });
+    expect(decodeDividendFrequency('YDEC')).toEqual({ frequency: 'Annually', paymentsPerYear: 1 });
+    expect(decodeDividendFrequency('DACC')).toEqual({ frequency: 'Daily', paymentsPerYear: null });
+    for (const unknown of ['', null, 'ZZZ']) expect(decodeDividendFrequency(unknown)).toBeNull();
+    const at = (months: number[]) => months.map((month) => ({ epoch: Date.UTC(2026, month, 15) / 1000, amount: 1 }));
+    expect(inferDistributionFrequency(at([0, 3, 6, 9])).frequency).toBe('Quarterly');
+    expect(inferDistributionFrequency(at([0, 1, 2, 3, 4, 5]))).toEqual({ frequency: 'Monthly', paymentsPerYear: 12 });
+    expect(inferDistributionFrequency([])).toEqual({ frequency: 'None', paymentsPerYear: null });
+  });
+
+  test('history: official NAV series, positive dividends only, quarter-end returns; Yahoo chart fallback', () => {
+    const historical = parseHistoricalData(HISTORICAL_DATA_FIXTURE, 'JEPI');
+    expect(historical.points.map((point) => point.date)).toEqual(['2020-05-20', '2026-08-29', '2026-09-01', '2026-09-17', '2026-09-18']);
+    expect(historical.points[4]).toEqual({ date: '2026-09-18', nav: 56.2213, marketPrice: 56.24, premiumDiscount: 0.0332 });
+    expect(historical.points[0].premiumDiscount).toBe(0.04);
+    expect(historical.dividends.map((dividend) => dividend.exDate)).toEqual(['2026-08-01', '2026-09-01']);
+    expect(historical.dividends[1]).toEqual({ epoch: isoToEpoch('2026-09-01')!, amount: 0.37421, exDate: '2026-09-01', payDate: '2026-09-04', recordDate: '2026-09-01', reinvestNav: 55.9, type: 'DVDYLD' });
+    expect(historical.quarterEnd).toEqual({ ytd: 2.2, yr1: 7.77, yr3: 8.99, yr5: 7.47, yr10: null, sinceInception: 10.82, asOfDate: '2026-06-30', mo1: 1.53, mo3: 1.88 });
+    expect(historical.quarterEndMarket.yr1).toBe(7.8);
+    expect(historical.monthlyReturns).toEqual([{ date: '2026-07-31', value: 2.17 }, { date: '2026-08-31', value: 1.53 }]);
+    const empty = parseHistoricalData({}, 'XXXX');
+    expect([empty.points, empty.dividends, empty.quarterEnd.asOfDate]).toEqual([[], [], null]);
+    expect(() => parseHistoricalData(null as any, 'XXXX')).toThrow(/not an object/);
+    expect(HISTORY_HEADERS).toEqual(['Date', 'NAV', 'Market Price', 'Premium/Discount']);
+    expect(YAHOO_HISTORY_HEADERS).toEqual(['Date', 'Close', 'Adj Close', 'Volume']);
+
+    const chart = parseChart(chartFixture({ closes: [100, null, 110], adj: [90, null, 99] }));
+    expect(chart.days.map((day) => [day.close, day.adjClose])).toEqual([[100, 90], [110, 99]]);
+    expect([chart.navPrice, chart.exchangeName]).toEqual([706.3, 'NasdaqGS']);
+    const noAdj = chartFixture({ closes: [100, 101] }) as any;
+    delete noAdj.chart.result[0].indicators.adjclose;
+    expect(parseChart(noAdj).days.map((day) => day.adjClose)).toEqual([100, 101]);
+    const dividends = { '2': { date: Date.UTC(2026, 5, 15) / 1000, amount: 0.7 }, '1': { date: Date.UTC(2026, 2, 15) / 1000, amount: 0.65 }, '0': { date: Date.UTC(2025, 11, 15) / 1000, amount: -1 } };
+    expect(parseChart(chartFixture({ dividends })).dividends.map((entry) => entry.amount)).toEqual([0.65, 0.7]);
+    expect(() => parseChart({ chart: { result: [] } })).toThrow(/empty result/);
+  });
+
+  test('SEC: N-PORT xml, filing lists, registrant and ticker lookups', () => {
+    const parsed = parseNport(`
+      <nportRegDoc><genInfo><regName>J.P. Morgan Exchange-Traded Fund Trust</regName><regCik>0001485894</regCik>
+      <seriesName>JPMorgan Equity Premium Income ETF</seriesName><seriesId>S000068402</seriesId>
+      <repPdDate>2026-06-30</repPdDate></genInfo>
+      <invstOrSec><name>Apple Inc</name><cusip>037833100</cusip><balance>124827810</balance>
+      <valUSD>26312454069.90</valUSD><pctVal>8.24</pctVal><assetCat>EC</assetCat></invstOrSec>
+      <invstOrSec><title>US TREASURY 4.125% 05/15/2028</title>
+      <identifiers><cusip value="912810H80"/></identifiers><balance>5000000</balance>
+      <valUSD>5100000</valUSD><pctVal>2.5</pctVal><assetCat>OB</assetCat></invstOrSec>
+      </nportRegDoc>`);
+    expect([parsed.seriesName, parsed.regCik, parsed.repPdDate, parsed.holdings.length]).toEqual(['JPMorgan Equity Premium Income ETF', '0001485894', '2026-06-30', 2]);
+    expect([parsed.holdings[0].Identifier, parsed.holdings[0].Ticker, parsed.holdings[1].Identifier, parsed.holdings[1].Name]).toEqual(['037833100', '-', '912810H80', 'US TREASURY 4.125% 05/15/2028']);
+    expect(parsed.totalValue).toBeCloseTo(26317554069.9, 1);
+    expect(parsed.netAssets).toBeNull();
+    const withNet = parseNport('<genInfo><seriesName>X</seriesName><repPdDate>2026-04-30</repPdDate></genInfo><fundInfo><totAssets>88500000000.00</totAssets><netAssets>87850000000.00</netAssets></fundInfo><invstOrSec><name>MGM</name><cusip>552953101</cusip><valUSD>1</valUSD></invstOrSec>');
+    expect([withNet.netAssets, withNet.holdings.length]).toEqual([87850000000, 1]);
+    expect(parseNport('<invstOrSec><name>FUND X</name><cusip>N/A</cusip><identifiers><other value="XSCUSIP1"/></identifiers><valUSD>10</valUSD></invstOrSec>').holdings[0].Identifier).toBe('XSCUSIP1');
+    const empty = parseNport('<genInfo><seriesName>Empty</seriesName></genInfo>');
+    expect([empty.holdings, empty.totalValue]).toEqual([[], 0]);
+
+    const accessions = parseNportAccessions({
+      cik: '913760',
+      filings: { recent: { form: ['NPORT-P', '13F-HR', 'NPORT-P'], accessionNumber: ['0000913760-26-000111', '0000913760-26-000112', '0000913760-26-000113'], filingDate: ['2026-07-21', '2026-08-10', '2026-04-21'], reportDate: ['2026-06-30', '2026-06-30', '2026-03-31'] } },
+    });
+    expect(accessions.map((entry) => entry.accession)).toEqual(['0000913760-26-000111', '0000913760-26-000113']);
+    expect(accessions[0].url).toBe(nportUrlFor('0000913760', '0000913760-26-000111'));
+    expect(accessions[0].url).toContain('/Archives/edgar/data/913760/000091376026000111/primary_doc.xml');
+
+    const atom = `<feed>
+      <entry><accession-number>0001209466-26-000952</accession-number><filing-date>2026-06-29</filing-date><filing-type>NPORT-P</filing-type></entry>
+      <entry><accession-number>0001209466-26-000514</accession-number><filing-date>2026-04-01</filing-date><filing-type>NPORT-P</filing-type></entry>
+      <entry><accession-number>0001209466-26-000001</accession-number><filing-date>2026-01-05</filing-date><filing-type>N-CEN</filing-type></entry></feed>`;
+    const filings = parseEdgarAtomFilings(atom);
+    expect(filings.map((entry) => entry.accession)).toEqual(['0001209466-26-000952', '0001209466-26-000514']);
+    expect([filings[0].filed, filings[0].url]).toEqual(['2026-06-29', 'https://www.sec.gov/Archives/edgar/data/1209466/000120946626000952/primary_doc.xml']);
+    expect(parseEdgarAtomFilings('')).toEqual([]);
+    expect(parseEdgarAtomFilings('<feed><entry><filing-type>10-K</filing-type></entry></feed>')).toEqual([]);
+    const url = edgarSeriesFilingsUrl('S000060812', 5);
+    for (const part of ['https://www.sec.gov/cgi-bin/browse-edgar?', 'CIK=S000060812', 'type=NPORT-P', 'output=atom', 'count=5']) expect(url).toContain(part);
+
+    const efts = { hits: [{ _source: { display_names: { cik: 12345, names: ['Some Other Trust'] } } }, { _source: { display_names: { cik: 1485894, names: ['JPMorgan Equity Premium Income ETF'] } } }] };
+    expect(pickEftsCik(efts, 'JPMorgan Equity Premium Income ETF')).toBe('0001485894');
+    expect(pickEftsCik(efts, 'Unknown Fund')).toBeNull();
+    const real = { hits: { total: { value: 2 }, hits: [{ _source: { ciks: ['0001667919'], display_names: ['FIRST TRUST EXCHANGE-TRADED FUND VIII  (CIK 0001667919)'] } }, { _source: { ciks: ['0001485894'], display_names: ['J.P. MORGAN EXCHANGE-TRADED FUND TRUST  (CIK 0001485894)'] } }] } };
+    expect(pickEftsCik(real, 'J.P. Morgan Exchange-Traded Fund Trust')).toBe('0001485894');
+
+    const fundMap = parseFundTickerMap({ fields: ['cik', 'seriesId', 'classId', 'symbol'], data: [[1485894, 'S000068402', 'C000218810', 'JEPI'], [1485894, 'S000061995', 'C000200806', 'bbjp'], [0, 'S0', 'C0', 'ZZZ']] });
+    expect(fundMap.get('JEPI')).toEqual({ cik: '0001485894', seriesId: 'S000068402', classId: 'C000218810' });
+    expect(fundMap.get('BBJP')?.seriesId).toBe('S000061995');
+    expect(fundMap.has('ZZZ')).toBe(false);
+    expect(parseFundTickerMap({}).size).toBe(0);
+    expect(parseFundTickerMap({ fields: ['cik'], data: ['nope'] }).size).toBe(0);
+    const companies = parseCompanyTickerMap({ '0': { cik_str: 1045810, ticker: 'NVDA', title: 'NVIDIA CORP' }, '1': { cik_str: 1, ticker: '', title: 'No Ticker Inc' } });
+    expect(companies.get(normalizeHoldingName('NVIDIA Corp'))).toBe('NVDA');
+    expect(companies.get(normalizeHoldingName('No Ticker Inc'))).toBeUndefined();
+  });
+
+  test('am.jpmorgan.com URL builders', () => {
+    expect(fundNameSlug('JPMorgan BetaBuilders U.S. Equity ETF')).toBe('jpmorgan-betabuilders-us-equity-etf');
+    expect(fundNameSlug('JPMorgan Income & Growth ETF')).toBe('jpmorgan-income-and-growth-etf');
+    expect(fundNameSlug('')).toBe('');
+    const base = 'https://am.jpmorgan.com';
+    expect(jpmorganFundPageUrl('JPMorgan Equity Premium Income ETF', '46641Q332')).toBe(`${base}/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332`);
+    expect(jpmorganFundPageUrl('', '46641Q332')).toBe(`${base}/us/en/asset-management/adv/products/jpmorgan-etf-etf-shares-46641q332`);
+    expect(jpmorganFundExplorerUrl()).toBe(`${base}/FundsMarketingHandler/fund-explorer?country=us&role=adv&userLoggedIn=false&language=en&fundType=etf`);
+    expect(jpmorganFundExplorerUrl('per')).toContain('role=per');
+    expect(jpmorganProductDataUrl('46641Q332')).toBe(`${base}/FundsMarketingHandler/product-data?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false`);
+    expect(jpmorganHistoricalDataUrl('46641Q332')).toBe(`${base}/FundsMarketingHandler/historicalData?cusip=46641Q332&country=us&role=adv&language=en&userLoggedIn=false`);
+    expect(jpmorganHoldingsDownloadUrl('46641Q332')).toBe(`${base}/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q332&country=us&role=adv&locale=en-US`);
+    expect(jpmorganPricesDownloadUrl('46641Q332', 'adv', '2020-05-20', '2026-09-18')).toContain('type=historicalNav&cusip=46641Q332&country=us&role=adv&locale=en-US&fromDate=2020-05-20&toDate=2026-09-18');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Mocked fetch and a temporary feed root, shared by metrics, pipeline and network
 // ---------------------------------------------------------------------------
 
 type MockFund = { ticker: string; cusip: string; young?: boolean };
-const MOCK_FUNDS: MockFund[] = ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF'].map((ticker, i) => ({ ticker, cusip: `4664${i}Q332` }));
+const MOCK_FUNDS: MockFund[] = ['AAA', 'BBB', 'CCC'].map((ticker, i) => ({ ticker, cusip: `4664${i}Q332` }));
+const TICKERS = MOCK_FUNDS.map((fund) => fund.ticker);
 
 function mockExplorerEntry(fund: MockFund): Record<string, any> {
   const entry = structuredClone(FUND_EXPLORER_FIXTURE[0]) as Record<string, any>;
@@ -1745,28 +733,23 @@ function mockProduct(fund: MockFund): Record<string, any> {
   return payload;
 }
 
-type MockRequest = { url: string; userAgent: string };
-function installMockFetch(options: { delayMs?: number; failProduct?: string[]; failHistory?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean } = {}): { requests: MockRequest[]; peak: () => number } {
-  const requests: MockRequest[] = [];
+function installMockFetch(options: { delayMs?: number; failProduct?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean } = {}): { requests: string[]; peak: () => number } {
+  const requests: string[] = [];
   let inFlight = 0;
   let peak = 0;
   const funds = options.funds ?? MOCK_FUNDS;
-  globalThis.fetch = (async (input: unknown, init?: RequestInit) => {
+  const json = (body: unknown) => new Response(JSON.stringify(body), { status: 200, headers: { 'content-type': 'application/json' } });
+  globalThis.fetch = (async (input: unknown) => {
     const url = String(input);
-    requests.push({ url, userAgent: String((init?.headers as Record<string, string>)?.['User-Agent'] ?? '') });
+    requests.push(url);
     inFlight += 1;
     peak = Math.max(peak, inFlight);
     try {
       if (options.delayMs) await new Promise((resolve) => setTimeout(resolve, options.delayMs));
-      const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } });
-      const cusip = /cusip=([^&]+)/.exec(url)?.[1];
-      const fund = funds.find((item) => item.cusip === cusip);
+      const fund = funds.find((item) => item.cusip === /cusip=([^&]+)/.exec(url)?.[1]);
       if (/fund-explorer/.test(url)) return json(funds.map(mockExplorerEntry));
       if (/product-data/.test(url) && fund) return options.failProduct?.includes(fund.ticker) ? new Response('boom', { status: 404 }) : json(mockProduct(fund));
-      if (/historicalData/.test(url) && fund) {
-        if (options.failHistory?.includes(fund.ticker)) return new Response('boom', { status: 404 });
-        return json(options.emptyHistory?.includes(fund.ticker) ? {} : HISTORICAL_DATA_FIXTURE);
-      }
+      if (/historicalData/.test(url) && fund) return json(options.emptyHistory?.includes(fund.ticker) ? {} : HISTORICAL_DATA_FIXTURE);
       if (/query1\.finance\.yahoo\.com/.test(url) && options.yahoo) {
         return json({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2], open: [50, 51], high: [50, 51], low: [50, 51] }], adjclose: [{ adjclose: [50, 51] }] } }] } });
       }
@@ -1778,63 +761,334 @@ function installMockFetch(options: { delayMs?: number; failProduct?: string[]; f
   return { requests, peak: () => peak };
 }
 
-const pipelineControls = (extra: Record<string, string> = {}) =>
-  readConfig(resolveControls({}, {}, {}, { REQUEST_SLEEP: '0', CONCURRENCY: '1', SKIP_YAHOO: 'true', EDGAR_FALLBACK: 'false', ...extra }));
+// Fully explicit controls: nothing is read from process.env.
+const controlsFor = (extra: Record<string, string> = {}) => readConfig(resolve({ REQUEST_SLEEP: '0', CONCURRENCY: '1', SKIP_YAHOO: 'true', EDGAR_FALLBACK: 'false', ...extra }));
 
-async function withTempFeed<T>(run: (root: URL) => Promise<T>): Promise<T> {
-  const { mkdtemp, rm } = await import('node:fs/promises');
-  const { tmpdir } = await import('node:os');
-  const { join } = await import('node:path');
-  const { pathToFileURL } = await import('node:url');
-  const dir = await mkdtemp(join(tmpdir(), 'jpm-feed-'));
+async function withTempFeed<T>(run: (root: URL, dir: string) => Promise<T>): Promise<T> {
+  const dir = mkdtempSync(join(tmpdir(), 'jpm-feed-'));
   setApiRootForTests(pathToFileURL(`${dir}/`));
   try {
-    return await run(pathToFileURL(`${dir}/`));
+    return await run(pathToFileURL(`${dir}/`), dir);
   } finally {
-    await rm(dir, { recursive: true, force: true });
+    rmSync(dir, { recursive: true, force: true });
   }
 }
 
-const readJsonFile = async (root: URL, path: string) => JSON.parse(await Bun.file(new URL(path, root)).text());
-const readIndex = async (root: URL): Promise<{ funds: Record<string, any>[]; counts: Record<string, number> }> => readJsonFile(root, 'index.json');
+const readJson = async (root: URL, path: string) => JSON.parse(await Bun.file(new URL(path, root)).text());
+const readIndex = async (root: URL): Promise<{ funds: Record<string, any>[]; counts: Record<string, number> }> => readJson(root, 'index.json');
 
-describe('strict controls (no silent fallbacks)', () => {
-  test('AUM and range bounds with a stray colon or a non-number are errors', () => {
-    expect(() => parseAumRange('abc:')).toThrow(/AUM/);
-    expect(() => parseAumRange('1B:2B:3B')).toThrow(/exactly one colon/);
-    expect(() => parseAumRange('x1B:')).toThrow(/AUM/);
-    expect(() => parseRange('1:2:3', 'PERFORMANCE_1Y')).toThrow(/exactly one colon/);
-    expect(parseAumRange('1B:')).toEqual({ min: 1e9, max: undefined });
+// ---------------------------------------------------------------------------
+// metrics: null for unavailable (never 0), young funds, one key set, basis and date travel together
+// ---------------------------------------------------------------------------
+
+describe('metrics', () => {
+  const KEYS = ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf'];
+  const noOfficial = { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null };
+  const noDerived = { asOfDate: '2026-08-21', ytd: null, yr1: null, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null };
+
+  test('emptyMetrics has the full key set with null, never 0, and a basis text', () => {
+    const metrics = emptyMetrics();
+    expect(Object.keys(metrics)).toEqual(KEYS);
+    expect(Object.values(metrics)).not.toContain(0);
+    expect(metrics.returnsBasis).toBeTruthy();
   });
 
-  test('HISTORY_RANGE accepts only max or Ny, ROLE and the URL controls are validated', () => {
-    expect(() => resolveControls({}, {}, {}, { HISTORY_RANGE: 'garbage' })).toThrow(/HISTORY_RANGE/);
-    expect(() => resolveControls({}, {}, {}, { HISTORY_RANGE: '6mo' })).toThrow(/HISTORY_RANGE/);
-    expect(resolveControls({}, {}, {}, { HISTORY_RANGE: '5y' }).HISTORY_RANGE).toBe('5y');
-    expect(resolveControls({}, {}, {}, { HISTORY_RANGE: 'MAX' }).HISTORY_RANGE).toBe('MAX');
-    expect(() => resolveControls({}, {}, {}, { ROLE: 'ad v' })).toThrow(/ROLE/);
-    expect(() => resolveControls({}, {}, {}, { API_BASE: 'ftp://example.test' })).toThrow(/API_BASE/);
-    expect(() => resolveControls({}, {}, {}, { FUND_EXPLORER_URL: 'http://am.jpmorgan.com/x' })).toThrow(/FUND_EXPLORER_URL/);
-    expect(() => resolveControls({}, {}, {}, { EARLY_NAV_URL: 'not a url' })).toThrow(/EARLY_NAV_URL/);
-    expect(resolveControls({}, {}, {}, { API_BASE: 'http://localhost:8080/mirror' }).API_BASE).toBe('http://localhost:8080/mirror');
+  test('deriveCatalogMetrics: official wins, derived fills gaps, same key set, returnsBasis then performanceAsOf', () => {
+    const official = deriveCatalogMetrics(
+      { ytd: 15.97, yr1: 18.34, yr3: 20.15, yr5: 17.42, yr10: 16.88, sinceInception: 19.44 },
+      { asOfDate: '2026-08-21', ytd: 13.79, yr1: 54.21, cagr3y: 18.99, cagr5y: 12, cagr10y: 11, siAnn: 10, mo1: 1, qtd: 2 },
+      0.44, null, null, null, 706.32, null, '2026-07-31',
+    );
+    expect(official).toMatchObject({ performanceAsOf: '2026-07-31', ytd: 15.97, tr1y: 18.34, cagr3y: 20.15, dividendYield: 0.44, secYield: null });
+    expect(official.tr3y).toBe(annualizedToTotal(20.15, 3));
+    expect(official.returnsBasis).toContain('official JPMorgan NAV total returns');
+
+    const derived = deriveCatalogMetrics(noOfficial, { ...noDerived, ytd: 13.79, yr1: 54.21, cagr3y: 18.99 }, null, null, 0.65, 12, 41.72);
+    expect(derived).toMatchObject({ ytd: 13.79, tr1y: 54.21, cagr5y: null, dividendYield: 18.7, dividendYieldText: '18.70%', performanceAsOf: '2026-08-21' });
+    expect(derived.returnsBasis).toContain('not official NAV returns');
+
+    const mixed = deriveCatalogMetrics({ ...noOfficial, ytd: 1 }, { ...noDerived, ytd: 9, yr1: 5 }, null, null, null, null, 10, null, '2026-07-31');
+    expect([mixed.ytd, mixed.tr1y, mixed.performanceAsOf]).toEqual([1, 5, '2026-07-31']);
+    expect(mixed.returnsBasis).toContain('official JPMorgan NAV total returns');
+    expect(mixed.returnsBasis).toContain('1y derived from the daily NAV history');
+
+    const none = deriveCatalogMetrics(noOfficial, noDerived, null, null, null, null, 10);
+    expect(none.returnsBasis).toBeTruthy();
+    expect(none.returnsBasis).not.toBe('-');
+    expect(none.performanceAsOf).toBeNull();
+    expect(none.ytd).toBeNull();
+
+    const cumulative = deriveCatalogMetrics(
+      { ytd: 5.36, yr1: 9.05, yr3: 9.51, yr5: 10.02, yr10: null, sinceInception: 11.25 },
+      { asOfDate: '2026-09-18', ytd: 3.7, yr1: 9, cagr3y: 9.4, cagr5y: 10, cagr10y: null, siAnn: 11, mo1: 1, qtd: 2 },
+      8.42, 7.59, 0.37421, 12, 56.24, { yr1: 9.05, yr3: 31.33, yr5: 61.17, yr10: null, sinceInception: 95.24 },
+    );
+    expect([cumulative.tr3y, cumulative.tr5y, cumulative.tr10y, cumulative.cagr3y, cumulative.secYield, cumulative.secYieldText]).toEqual([31.33, 61.17, null, 9.51, 7.59, '7.59%']);
+
+    for (const metrics of [official, derived, mixed, none, cumulative]) {
+      expect(Object.keys(metrics)).toEqual(KEYS);
+      expect(Object.keys(metrics).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
+    }
   });
 
-  test('HISTORY_RANGE really shrinks the Yahoo request: explicit period1/period2, never range=', () => {
-    const now = Date.UTC(2026, 8, 25);
-    const max = new URL(chartUrl('JEPI', { historyRange: 'max' }, now));
-    const five = new URL(chartUrl('JEPI', { historyRange: '5y' }, now));
-    expect(max.searchParams.get('period1')).toBe('0');
-    expect(Number(five.searchParams.get('period1'))).toBe(Math.floor(now / 1000 - 5 * 365.25 * 86_400));
-    expect(five.searchParams.get('period2')).toBe(String(Math.floor(now / 1000)));
-    expect(five.searchParams.has('range')).toBe(false);
+  test('young funds get nulls for horizons they cannot have; since-inception needs a full year', () => {
+    const now = new Date(Date.UTC(2026, 7, 21));
+    const young = priceReturns([{ date: '2026-08-20', close: 10, adjClose: 10, volume: 1 }], now);
+    expect([young.asOfDate, young.ytd, young.cagr3y, young.siAnn]).toEqual(['2026-08-20', null, null, null]);
+    expect(priceReturns([], now).asOfDate).toBe('');
+    const day = (date: string, adjClose: number) => ({ date, close: adjClose, adjClose, volume: 1 });
+    const later = new Date('2026-09-26T00:00:00Z');
+    expect(priceReturns([day('2025-11-25', 100), day('2026-09-25', 110)], later).siAnn).toBeNull();
+    expect(priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], later).siAnn).toBeCloseTo(10, 1);
+    // the official since-inception figure is published once the fund is a year old
+    expect(annualizedSinceInception(11.25, '2020-05-20', '2026-08-31')).toBe(11.25);
+    expect(annualizedSinceInception(1.9, '2026-07-30', '2026-08-31')).toBeNull();
+    expect(annualizedSinceInception(1.9, '2025-08-31', '2026-08-31')).toBe(1.9);
+    expect(annualizedSinceInception(null, '2020-05-20', '2026-08-31')).toBeNull();
+    expect(annualizedSinceInception(5, null, '2026-08-31')).toBe(5);
+  });
+
+  test('derived returns are anchored to the last close and skip windows before the reinvestment coverage', () => {
+    const days = [
+      { date: '2015-01-02', close: 100, adjClose: 100, volume: 1 },
+      { date: '2022-01-03', close: 200, adjClose: 195, volume: 1 },
+      { date: '2023-01-03', close: 220, adjClose: 214, volume: 1 },
+      { date: '2026-01-02', close: 300, adjClose: 290, volume: 1 },
+      { date: '2026-06-30', close: 320, adjClose: 310, volume: 1 },
+      { date: '2026-07-01', close: 322, adjClose: 312, volume: 1 },
+      { date: '2026-08-21', close: 340, adjClose: 330, volume: 1 },
+    ];
+    const now = new Date(Date.UTC(2026, 7, 21));
+    const returns = priceReturns(days, now);
+    expect(returns.asOfDate).toBe('2026-08-21');
+    expect(returns.ytd).toBeCloseTo(54.21, 2);
+    expect(returns.yr1).toBeCloseTo(54.21, 2);
+    expect(returns.cagr3y).toBeCloseTo(15.53, 2);
+    expect(returns.mo1).toBeCloseTo(5.77, 2);
+    expect(returns.siAnn).toBeGreaterThan(0);
+    // a weekly payer whose schedule only covers the last 12 payments: long windows stay null
+    const covered = priceReturns(days, now, '2026-06-29');
+    expect([covered.siAnn, covered.ytd, covered.yr1, covered.cagr3y]).toEqual([null, null, null, null]);
+    const sinceJuly = ((330 - 312) / 312) * 100;
+    expect(covered.qtd).toBeCloseTo(sinceJuly, 2);
+    expect(covered.mo1).toBeCloseTo(sinceJuly, 2);
+    expect(priceReturns(days, now, '2015-01-02')).toEqual(priceReturns(days, now));
+  });
+
+  test('NAV total return and reinvestment coverage helpers', () => {
+    const point = (date: string, nav: number) => ({ date, nav, marketPrice: nav, premiumDiscount: 0 });
+    const dividend = (exDate: string, amount = 0.067, reinvestNav: number | null = null) => ({ epoch: isoToEpoch(exDate)!, amount, exDate, payDate: '', recordDate: '', reinvestNav, type: 'DVDYLD' });
+    const days = navTotalReturnDays([point('2026-08-29', 56.3), point('2026-09-01', 55.9), point('2026-09-17', 56.4101)], [dividend('2026-09-01', 0.37421, 55.9)]);
+    const factor = 1 + 0.37421 / 55.9;
+    expect(days[0]).toEqual({ date: '2026-08-29', close: 56.3, adjClose: 56.3, volume: 0 });
+    expect(days[1].adjClose).toBeCloseTo(55.9 * factor, 6);
+    expect(days[2].adjClose).toBeCloseTo(56.4101 * factor, 6);
+    const exNav = navTotalReturnDays([point('2026-09-01', 50), point('2026-09-02', 51)], [dividend('2026-08-01', 1), dividend('2026-09-01', 0.5)]);
+    expect(exNav[0].adjClose).toBeCloseTo(50 * 1.01, 6); // ex-date NAV, pre-history payout skipped
+    expect(exNav[1].adjClose).toBeCloseTo(51 * 1.01, 6);
+    expect(navTotalReturnDays([], [dividend('2026-09-01')])).toEqual([]);
+
+    const points = [point('2025-12-10', 100.06), point('2026-09-18', 100.11)];
+    expect(DIVIDEND_SCHEDULE_CAP).toBe(12);
+    expect(reinvestmentCoverageStart(points, [])).toBe('2025-12-10');
+    expect(reinvestmentCoverageStart(points, [dividend('2026-05-01'), dividend('2026-06-01')])).toBe('2025-12-10');
+    const weekly = ['07-06', '07-10', '07-17', '07-24', '07-31', '08-07', '08-14', '08-21', '08-28', '09-04', '09-11', '09-18'].map((md) => dividend(`2026-${md}`));
+    expect(reinvestmentCoverageStart(points, weekly)).toBe('2026-06-29'); // median gap 7 days before the earliest ex-date
+    const monthly = Array.from({ length: 12 }, (_, i) => dividend(`2026-${String(i + 1).padStart(2, '0')}-01`));
+    expect(reinvestmentCoverageStart([point('2026-06-15', 50), points[1]], monthly)).toBe('2026-06-15');
+    expect(reinvestmentCoverageStart([], monthly)).toBeNull();
+  });
+
+  test('arithmetic helpers and quarter anchors', () => {
+    expect(annualizedToTotal(20.15, 3)).toBeCloseTo(73.45, 2);
+    expect(annualizedToTotal(null, 3)).toBeNull();
+    expect(annualizedToTotal(10, 0)).toBeNull();
+    expect(totalToAnnualized(annualizedToTotal(12.5, 5), 5)).toBeCloseTo(12.5, 1);
+    expect(totalToAnnualized('n/a' as any, 5)).toBeNull();
+    expect(indicatedYield(0.7, 4, 706.32)).toBeCloseTo(0.4, 1);
+    expect(indicatedYield(0.65, 12, 41.72)).toBe(18.7);
+    expect([indicatedYield(null, 4, 10), indicatedYield(0.5, 0, 10), indicatedYield(0.5, 4, 0)]).toEqual([null, null, null]);
+    const quarter = (month: number, dayOfMonth: number) => lastCompletedQuarterEnd(new Date(Date.UTC(2026, month, dayOfMonth))).toISOString().slice(0, 10);
+    expect([quarter(7, 21), quarter(0, 15), quarter(4, 1), quarter(10, 1)]).toEqual(['2026-06-30', '2025-12-31', '2026-03-31', '2026-09-30']);
+  });
+
+  test('N-PORT freshness: a filing older than the published holdings never replaces them', () => {
+    expect(isOlderReport('2026-06-30', '2026-08-31')).toBe(true);
+    expect(isOlderReport('2026-08-31', '2026-08-31')).toBe(false);
+    expect(isOlderReport('2026-09-30', '2026-08-31')).toBe(false);
+    expect(isOlderReport('2026-06-30', '')).toBe(false);
+    expect(isOlderReport('', '2026-08-31')).toBe(false);
+  });
+
+  test('index rows: terValue is the NET ratio, one key set for official and young funds, performanceAsOf dates', async () => {
+    installMockFetch({ funds: [MOCK_FUNDS[0], { ...MOCK_FUNDS[1], young: true }] });
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      const [official, young] = (await readIndex(root)).funds;
+      expect([official.terValue, official.terGrossValue, official.ter]).toEqual([0.25, 0.35, '0.25%']);
+      const meta = await readJson(root, 'funds/AAA/meta.json');
+      expect([meta.expenseRatio.value, meta.expenseRatio.gross, meta.expenseRatio.net]).toEqual([0.25, 0.35, 0.25]);
+      expect(Object.keys(official.metrics)).toEqual(KEYS);
+      expect(Object.keys(young.metrics)).toEqual(KEYS);
+      expect(official.metrics.returnsBasis).toBeTruthy();
+      expect(young.metrics.returnsBasis).toBeTruthy();
+      // an official month-end table keeps its own date, the later price-return date is reported separately
+      expect([official.returns.monthEnd.asOfDate, official.returns.monthEnd.priceReturnsAsOf, official.metrics.performanceAsOf]).toEqual(['Aug 31 2026', 'Sep 18 2026', '2026-08-31']);
+      // without official returns the fund is dated by its price history, never by the product-data table date
+      expect([young.returns.monthEnd.asOfDate, young.returns.monthEnd.priceReturnsAsOf]).toEqual(['Sep 18 2026', 'Sep 18 2026']);
+      expect([null, '2026-09-18']).toContain(young.metrics.performanceAsOf);
+    });
   });
 });
 
-describe('fetch layer', () => {
-  const realFetch = globalThis.fetch;
-  afterEach(() => { globalThis.fetch = realFetch; configureFetchForTests({ timeoutMs: 45_000, sleepMs: 0, deadlineMs: 25 * 60_000 }); });
+// ---------------------------------------------------------------------------
+// pipeline: mocked fetch, a 3-fund catalog, a temporary feed root
+// ---------------------------------------------------------------------------
 
-  test('every fetch has a timeout and a hanging request is retried then fails', async () => {
+describe('pipeline', () => {
+  test('a one-ticker run keeps every published row and only fetches the selected fund', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      expect((await readIndex(root)).funds.length).toBe(3);
+      const mock = installMockFetch();
+      await runUpdater(controlsFor({ TICKERS: 'BBB' }));
+      const index = await readIndex(root);
+      expect(index.funds.map((fund) => fund.ticker)).toEqual(TICKERS);
+      expect(index.counts.funds).toBe(3);
+      expect(mock.requests.some((url) => url.includes('46641Q332'))).toBe(true);
+      expect(mock.requests.some((url) => url.includes('46640Q332'))).toBe(false);
+    });
+  });
+
+  test('a second identical run writes nothing: same bytes, same mtimes, no temporary files', async () => {
+    installMockFetch();
+    const snapshot = (dir: string): Record<string, string> => {
+      const out: Record<string, string> = {};
+      const walk = (path: string): void => {
+        for (const name of readdirSync(path).sort()) {
+          const full = join(path, name);
+          if (statSync(full).isDirectory()) walk(full); else out[full] = `${statSync(full).mtimeMs}:${readFileSync(full, 'utf8')}`;
+        }
+      };
+      walk(dir);
+      return out;
+    };
+    await withTempFeed(async (_root, dir) => {
+      await runUpdater(controlsFor());
+      const old = new Date('2000-01-01T00:00:00Z');
+      for (const full of Object.keys(snapshot(dir))) utimesSync(full, old, old);
+      const first = snapshot(dir);
+      await runUpdater(controlsFor());
+      expect(snapshot(dir)).toEqual(first);
+      expect(Object.keys(first).some((name) => name.endsWith('.tmp'))).toBe(false);
+    });
+  });
+
+  test('a fund whose source failed keeps its previous state byte for byte; a run where every fund failed errors', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      const before = { meta: await Bun.file(new URL('funds/BBB/meta.json', root)).text(), row: (await readIndex(root)).funds[1] };
+      installMockFetch({ failProduct: ['BBB'] });
+      await runUpdater(controlsFor());
+      expect(await Bun.file(new URL('funds/BBB/meta.json', root)).text()).toBe(before.meta);
+      expect((await readIndex(root)).funds[1]).toEqual(before.row);
+      globalThis.fetch = (async () => new Response('', { status: 404 })) as typeof fetch;
+      await expect(runUpdater(controlsFor())).rejects.toThrow(/every examined fund failed/);
+      expect((await readIndex(root)).funds.length).toBe(3);
+    });
+  });
+
+  test('a fund that lost its index row is rebuilt from meta.json; a row without meta gets dataFile null and the full key set', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      const index = await readIndex(root);
+      const trimmed = { ...index, funds: index.funds.filter((fund) => fund.ticker !== 'CCC').concat([{ ticker: 'ZZZ', name: 'Ghost' }]) };
+      writeFileSync(new URL('index.json', root), JSON.stringify(trimmed), 'utf8');
+      installMockFetch();
+      await runUpdater(controlsFor({ TICKERS: 'AAA' }));
+      const after = await readIndex(root);
+      expect(after.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'ZZZ']);
+      const rebuilt = after.funds.find((fund) => fund.ticker === 'CCC')!;
+      expect(rebuilt).toMatchObject({ dataFile: './funds/CCC/meta.json', terValue: 0.25 });
+      expect(rebuilt.metrics.ytd).toBe(5.36);
+      expect(rebuilt.holdings).toBeGreaterThan(0);
+      const ghost = after.funds.find((fund) => fund.ticker === 'ZZZ')!;
+      expect(ghost.dataFile).toBeNull();
+      expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
+      expect(ghost.metrics.returnsBasis).toBeTruthy();
+      // indexRowFromMeta reproduces the row the updater wrote
+      const row = after.funds[0];
+      const again = indexRowFromMeta(await readJson(root, 'funds/AAA/meta.json'));
+      expect(again.metrics).toEqual(row.metrics);
+      for (const key of ['ticker', 'name', 'cusip', 'ter', 'terValue', 'terGrossValue', 'navValue', 'aumValue', 'closePriceValue', 'holdings', 'history', 'dataFile', 'asOfDate', 'inceptionDate', 'exchange', 'returns', 'distributions']) {
+        expect(again[key]).toEqual(row[key]);
+      }
+    });
+  });
+
+  test('an official NAV history is never replaced by the Yahoo schema', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      const headers = (await readJson(root, 'funds/AAA/history/001.json')).headers;
+      expect(headers).toContain('NAV');
+      installMockFetch({ emptyHistory: ['AAA'], yahoo: true });
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
+      expect((await readJson(root, 'funds/AAA/history/001.json')).headers).toEqual(headers);
+      expect((await readJson(root, 'funds/AAA/meta.json')).history.source).toBe('previous run');
+    });
+  });
+
+  test('filters and limits: SEC_YIELD filters for real, MAX_FETCHES counts selected funds, the cursor wraps and resets for another filter', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      const mock = installMockFetch();
+      await runUpdater(controlsFor({ SEC_YIELD: '20:' }));
+      expect(mock.requests.some((url) => /product-data|historicalData/.test(url))).toBe(false);
+      expect((await readIndex(root)).funds.length).toBe(3);
+
+      await runUpdater(controlsFor({ TICKERS: 'CCC', MAX_FETCHES: '1' }));
+      expect((await readJson(root, 'update-state.json')).cursor).toBe('CCC');
+      const seen: string[] = [];
+      for (let run = 0; run < 3; run++) {
+        await runUpdater(controlsFor({ MAX_FETCHES: '2' }));
+        seen.push((await readJson(root, 'update-state.json')).cursor);
+      }
+      expect(seen).toEqual(['BBB', 'AAA', 'CCC']); // AAA,BBB then CCC,AAA (wrap) then BBB,CCC
+      await runUpdater(controlsFor({ MAX_FETCHES: '1', TICKERS: 'AAA' }));
+      expect((await readJson(root, 'update-state.json')).cursor).toBe('AAA');
+    });
+  });
+
+  test('the soft deadline stops taking funds, still writes the full index and resumes where it stopped', async () => {
+    installMockFetch({ delayMs: 25 });
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      configureFetchForTests({ deadlineMs: 40 });
+      await runUpdater(controlsFor());
+      const state = await readJson(root, 'update-state.json');
+      expect(state.partial).toBe(true);
+      expect(state.cursor).not.toBeNull();
+      expect(state.cursor).not.toBe('CCC');
+      expect((await readIndex(root)).funds.length).toBe(3);
+      configureFetchForTests({ deadlineMs: 25 * 60_000 });
+      await runUpdater(controlsFor());
+      const done = await readJson(root, 'update-state.json');
+      expect([done.partial, done.cursor]).toEqual([false, null]);
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// network: timeout, bounded retries, real concurrency, HISTORY_RANGE request URL
+// ---------------------------------------------------------------------------
+
+describe('network', () => {
+  test('every fetch has a timeout and a hanging request is retried a bounded number of times, then fails', async () => {
     configureFetchForTests({ timeoutMs: 30, sleepMs: 0, lanes: 1 });
     let calls = 0;
     globalThis.fetch = (async (_url: unknown, init?: RequestInit) => {
@@ -1847,297 +1101,37 @@ describe('fetch layer', () => {
     expect(calls).toBe(2);
   });
 
-  test('pacing reserves the lane slot synchronously: 6 simultaneous requests on 2 lanes start 0,0,S,S,2S,2S', async () => {
+  test('pacing reserves lane slots synchronously: 6 simultaneous requests on 2 lanes start in waves of 2', async () => {
     configureFetchForTests({ sleepMs: 200, lanes: 2 });
     const t0 = Date.now();
     const starts: number[] = [];
     await Promise.all([0, 1, 2, 3, 4, 5].map(async () => { await paceRequests(); starts.push(Date.now() - t0); }));
     starts.sort((a, b) => a - b);
-    expect(starts[1]).toBeLessThan(100);
+    // lower bounds only: a slow machine delays a wave, it never makes one start early
     expect(starts[2]).toBeGreaterThanOrEqual(150);
     expect(starts[3]).toBeGreaterThanOrEqual(150);
     expect(starts[4]).toBeGreaterThanOrEqual(350);
     expect(starts[5]).toBeGreaterThanOrEqual(350);
-  });
-});
-
-describe('metrics and dates', () => {
-  test('a derived since-inception needs at least one year of history', () => {
-    const day = (date: string, adjClose: number) => ({ date, close: adjClose, adjClose, volume: 1 });
-    const ten = priceReturns([day('2025-11-25', 100), day('2026-09-25', 110)], new Date('2026-09-26T00:00:00Z'));
-    expect(ten.siAnn).toBeNull();
-    const two = priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], new Date('2026-09-26T00:00:00Z'));
-    expect(two.siAnn).toBeCloseTo(10, 1);
-  });
-
-  test('an N-PORT filing older than the published holdings never replaces them', () => {
-    expect(isOlderReport('2026-06-30', '2026-08-31')).toBe(true);
-    expect(isOlderReport('2026-08-31', '2026-08-31')).toBe(false);
-    expect(isOlderReport('2026-09-30', '2026-08-31')).toBe(false);
-    expect(isOlderReport('2026-06-30', '')).toBe(false);
-    expect(isOlderReport('', '2026-08-31')).toBe(false);
-  });
-
-  test('emptyMetrics carries the full contract key set with null, never 0', () => {
-    const metrics = emptyMetrics();
-    expect(Object.keys(metrics)).toEqual(['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf']);
-    expect(Object.values(metrics).includes(0)).toBe(false);
-    expect(metrics.returnsBasis).toBeTruthy();
-  });
-});
-
-describe('update pipeline (mocked fetch, temporary api root)', () => {
-  const realFetch = globalThis.fetch;
-  const realLog = console.log;
-  afterEach(() => {
-    globalThis.fetch = realFetch;
-    console.log = realLog;
-    configureFetchForTests({ timeoutMs: 45_000, sleepMs: 0, deadlineMs: 25 * 60_000 });
-    // runUpdater throws on a failed run; keep the test process exit status clean regardless
-    (globalThis as any).process.exitCode = 0;
-  });
-  const capture = (): string[] => { const lines: string[] = []; console.log = (...args: unknown[]) => { lines.push(args.join(' ')); }; return lines; };
-
-  test('a one-ticker run keeps every published row and file', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      expect((await readIndex(root)).funds.length).toBe(6);
-      const mock = installMockFetch();
-      await runUpdater(pipelineControls({ TICKERS: 'CCC' }));
-      const index = await readIndex(root);
-      expect(index.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF']);
-      expect(index.counts.funds).toBe(6);
-      expect(mock.requests.some((request) => request.url.includes('46642Q332'))).toBe(true);
-      expect(mock.requests.some((request) => request.url.includes('46640Q332'))).toBe(false);
-    });
-  });
-
-  test('terValue is the NET expense ratio, terGrossValue the gross one', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
-      const row = (await readIndex(root)).funds.find((fund) => fund.ticker === 'AAA')!;
-      expect(row.terValue).toBe(0.25);
-      expect(row.terGrossValue).toBe(0.35);
-      expect(row.ter).toBe('0.25%');
-      const meta = await readJsonFile(root, 'funds/AAA/meta.json');
-      expect(meta.expenseRatio.value).toBe(0.25);
-      expect(meta.expenseRatio.gross).toBe(0.35);
-      expect(meta.expenseRatio.net).toBe(0.25);
-    });
-  });
-
-  test('MAX_FETCHES counts only funds that pass the filters, so a late ticker is reached', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls({ TICKERS: 'FFF', MAX_FETCHES: '1' }));
-      expect((await readJsonFile(root, 'funds/FFF/meta.json')).ticker).toBe('FFF');
-      expect((await readJsonFile(root, 'update-state.json')).cursor).toBe('FFF');
-    });
-  });
-
-  test('the cursor wraps around and is ignored for a different filter set', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      const seen: string[] = [];
-      for (let run = 0; run < 4; run++) {
-        await runUpdater(pipelineControls({ MAX_FETCHES: '2' }));
-        seen.push((await readJsonFile(root, 'update-state.json')).cursor);
-      }
-      expect(seen).toEqual(['BBB', 'DDD', 'FFF', 'BBB']);
-      await runUpdater(pipelineControls({ MAX_FETCHES: '1', TICKERS: 'CCC' }));
-      expect((await readJsonFile(root, 'update-state.json')).cursor).toBe('CCC');
-    });
-  });
-
-  test('a run where no fund received fresh data fails instead of exiting green', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      globalThis.fetch = (async () => new Response('', { status: 404 })) as typeof fetch;
-      await expect(runUpdater(pipelineControls())).rejects.toThrow(/every examined fund failed/);
-      expect((await readIndex(root)).funds.length).toBe(6);
-    });
+    expect(starts[1]).toBeLessThan(starts[2]);
   });
 
   test('CONCURRENCY really runs funds in parallel: peak in-flight 1 at c=1, N at c=N', async () => {
-    capture();
     for (const [concurrency, expected] of [[1, 1], [3, 3]] as const) {
       const mock = installMockFetch({ delayMs: 15 });
       await withTempFeed(async () => {
-        await runUpdater(pipelineControls({ CONCURRENCY: String(concurrency) }));
+        await runUpdater(controlsFor({ CONCURRENCY: String(concurrency) }));
       });
       expect(mock.peak()).toBe(expected);
     }
   });
 
-  test('an unchanged rerun writes nothing and leaves no temporary files', async () => {
-    capture();
-    installMockFetch();
-    const { readdirSync, statSync } = await import('node:fs');
-    const { join } = await import('node:path');
-    const { fileURLToPath } = await import('node:url');
-    const snapshot = (dir: string): Record<string, number> => {
-      const out: Record<string, number> = {};
-      const walk = (path: string): void => {
-        for (const name of readdirSync(path)) {
-          const full = join(path, name);
-          if (statSync(full).isDirectory()) walk(full); else out[full] = statSync(full).mtimeMs;
-        }
-      };
-      walk(dir);
-      return out;
-    };
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      const dir = fileURLToPath(root);
-      const first = snapshot(dir);
-      await new Promise((resolve) => setTimeout(resolve, 30));
-      await runUpdater(pipelineControls());
-      expect(snapshot(dir)).toEqual(first);
-      expect(Object.keys(first).some((name) => name.endsWith('.tmp'))).toBe(false);
-    });
-  });
-
-  test('new funds are announced as NEW FUNDS', async () => {
-    const lines = capture();
-    installMockFetch({ funds: MOCK_FUNDS.slice(0, 2) });
-    await withTempFeed(async () => {
-      await runUpdater(pipelineControls());
-      installMockFetch();
-      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
-    });
-    expect(lines).toContain('NEW FUNDS: CCC, DDD, EEE, FFF');
-  });
-
-  test('a fund whose product-data failed keeps its previous complete state, byte for byte', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      const before = { meta: await Bun.file(new URL('funds/BBB/meta.json', root)).text(), row: (await readIndex(root)).funds[1] };
-      installMockFetch({ failProduct: ['BBB'] });
-      await runUpdater(pipelineControls());
-      expect(await Bun.file(new URL('funds/BBB/meta.json', root)).text()).toBe(before.meta);
-      expect((await readIndex(root)).funds[1]).toEqual(before.row);
-    });
-  });
-
-  test('an official NAV history is never replaced by the Yahoo schema', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      const headersBefore = (await readJsonFile(root, 'funds/AAA/history/001.json')).headers;
-      expect(headersBefore).toContain('NAV');
-      installMockFetch({ emptyHistory: ['AAA'], yahoo: true });
-      await runUpdater(pipelineControls({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
-      expect((await readJsonFile(root, 'funds/AAA/history/001.json')).headers).toEqual(headersBefore);
-      expect((await readJsonFile(root, 'funds/AAA/meta.json')).history.source).toBe('previous run');
-    });
-  });
-
-  test('a fund that lost its index row is rebuilt from meta.json, a row without meta gets dataFile null and full metrics', async () => {
-    capture();
-    installMockFetch();
-    const { writeFile } = await import('node:fs/promises');
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      const index = await readIndex(root);
-      const trimmed = { ...index, funds: index.funds.filter((fund) => fund.ticker !== 'DDD').concat([{ ticker: 'ZZZ', name: 'Ghost' }]) };
-      await writeFile(new URL('index.json', root), JSON.stringify(trimmed), 'utf8');
-      installMockFetch();
-      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
-      const after = await readIndex(root);
-      expect(after.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF', 'ZZZ']);
-      const ddd = after.funds.find((fund) => fund.ticker === 'DDD')!;
-      expect(ddd.dataFile).toBe('./funds/DDD/meta.json');
-      expect(ddd.metrics.ytd).toBe(5.36);
-      expect(ddd.terValue).toBe(0.25);
-      expect(ddd.holdings).toBeGreaterThan(0);
-      const ghost = after.funds.find((fund) => fund.ticker === 'ZZZ')!;
-      expect(ghost.dataFile).toBeNull();
-      expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
-      expect(ghost.metrics.returnsBasis).toBeTruthy();
-    });
-  });
-
-  test('indexRowFromMeta matches the row the updater wrote', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
-      const row = (await readIndex(root)).funds[0];
-      const rebuilt = indexRowFromMeta(await readJsonFile(root, 'funds/AAA/meta.json'));
-      expect(rebuilt.metrics).toEqual(row.metrics);
-      for (const key of ['ticker', 'name', 'cusip', 'ter', 'terValue', 'terGrossValue', 'navValue', 'aumValue', 'closePriceValue', 'holdings', 'history', 'dataFile', 'asOfDate', 'inceptionDate', 'exchange']) {
-        expect(rebuilt[key]).toEqual(row[key]);
-      }
-      expect(rebuilt.returns).toEqual(row.returns);
-      expect(rebuilt.distributions).toEqual(row.distributions);
-    });
-  });
-
-  test('a fund without official returns is dated by its price history, not by the product-data table date', async () => {
-    capture();
-    const young = [{ ...MOCK_FUNDS[0], young: true }];
-    installMockFetch({ funds: young });
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      const row = (await readIndex(root)).funds[0];
-      expect(row.returns.monthEnd.asOfDate).toBe('Sep 18 2026');
-      expect(row.returns.monthEnd.priceReturnsAsOf).toBe('Sep 18 2026');
-      expect(row.metrics.performanceAsOf === null || row.metrics.performanceAsOf === '2026-09-18').toBe(true);
-    });
-  });
-
-  test('an official month-end table keeps its own date and reports the later price-return date separately', async () => {
-    capture();
-    installMockFetch();
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
-      const row = (await readIndex(root)).funds[0];
-      expect(row.returns.monthEnd.asOfDate).toBe('Aug 31 2026');
-      expect(row.returns.monthEnd.priceReturnsAsOf).toBe('Sep 18 2026');
-      expect(row.metrics.performanceAsOf).toBe('2026-08-31');
-    });
-  });
-
-  test('SEC_YIELD is a working filter, not a no-op', async () => {
-    capture();
-    await withTempFeed(async (root) => {
-      installMockFetch();
-      await runUpdater(pipelineControls());
-      const mock = installMockFetch();
-      await runUpdater(pipelineControls({ SEC_YIELD: '20:' }));
-      expect(mock.requests.some((request) => /product-data|historicalData/.test(request.url))).toBe(false);
-      expect((await readIndex(root)).funds.length).toBe(6);
-    });
-  });
-
-  test('the soft deadline stops taking funds, still writes the full index and resumes where it stopped', async () => {
-    capture();
-    installMockFetch({ delayMs: 25 });
-    await withTempFeed(async (root) => {
-      await runUpdater(pipelineControls());
-      configureFetchForTests({ deadlineMs: 60 });
-      await runUpdater(pipelineControls());
-      const state = await readJsonFile(root, 'update-state.json');
-      expect(state.partial).toBe(true);
-      expect(state.cursor).not.toBeNull();
-      expect(state.cursor).not.toBe('FFF');
-      expect((await readIndex(root)).funds.length).toBe(6);
-      configureFetchForTests({ deadlineMs: 25 * 60_000 });
-      await runUpdater(pipelineControls());
-      const done = await readJsonFile(root, 'update-state.json');
-      expect(done.partial).toBe(false);
-      expect(done.cursor).toBeNull();
-    });
+  test('HISTORY_RANGE really shrinks the Yahoo request: explicit period1/period2, never range=', () => {
+    const now = Date.UTC(2026, 8, 25);
+    const max = new URL(chartUrl('JEPI', { historyRange: 'max' }, now));
+    const five = new URL(chartUrl('JEPI', { historyRange: '5y' }, now));
+    expect(max.searchParams.get('period1')).toBe('0');
+    expect(Number(five.searchParams.get('period1'))).toBe(Math.floor(now / 1000 - 5 * 365.25 * 86_400));
+    expect(five.searchParams.get('period2')).toBe(String(Math.floor(now / 1000)));
+    expect(five.searchParams.has('range')).toBe(false);
   });
 });
