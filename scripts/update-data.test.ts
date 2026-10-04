@@ -14,6 +14,8 @@ import {
   fetchWithRetry,
   chartUrl,
   emptyMetrics,
+  withYieldBasis,
+  yieldBasisFromKind,
   indexRowFromMeta,
   isOlderReport,
   readConfig,
@@ -782,7 +784,7 @@ const readIndex = async (root: URL): Promise<{ funds: Record<string, any>[]; cou
 // ---------------------------------------------------------------------------
 
 describe('metrics', () => {
-  const KEYS = ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf'];
+  const KEYS = ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'dividendYieldBasis', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf'];
   const noOfficial = { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null };
   const noDerived = { asOfDate: '2026-08-21', ytd: null, yr1: null, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null };
 
@@ -829,6 +831,33 @@ describe('metrics', () => {
       expect(Object.keys(metrics)).toEqual(KEYS);
       expect(Object.keys(metrics).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
     }
+  });
+
+  test('dividendYieldBasis: one code per yield source, null with a null yield, kind texts map to codes', () => {
+    const basis = (published: number | null, code: string | null, distribution: number | null = null) =>
+      deriveCatalogMetrics(noOfficial, noDerived, published, null, distribution, distribution === null ? null : 12, 40, null, null, code).dividendYieldBasis;
+    // product-data 12-month rolling yield
+    expect(basis(0.44, 'official-trailing-12m')).toBe('official-trailing-12m');
+    // a published yield of 0 is still published
+    expect(basis(0, 'official-trailing-12m')).toBe('official-trailing-12m');
+    // updater estimate from the latest distribution
+    expect(basis(null, null, 0.5)).toBe('indicated');
+    // a yield carried from an earlier run keeps the code it was stored with, never a new code
+    expect(basis(3.1, 'indicated')).toBe('indicated');
+    expect(basis(3.1, 'official-trailing-12m', 0.5)).toBe('official-trailing-12m');
+    // no yield at all
+    expect(basis(null, 'official-trailing-12m')).toBeNull();
+    expect(yieldBasisFromKind('12-month rolling dividend yield (daily, official JPMorgan product-data), as of Sep 18 2026')).toBe('official-trailing-12m');
+    expect(yieldBasisFromKind('12-month rolling dividend yield (month-end, official JPMorgan product-data)')).toBe('official-trailing-12m');
+    expect(yieldBasisFromKind('indicated (latest distribution x payments per year / market price)')).toBe('indicated');
+    expect(yieldBasisFromKind('some other official JPMorgan yield')).toBe('official-other');
+    expect(yieldBasisFromKind('whatever')).toBe('indicated');
+    expect(yieldBasisFromKind('not published: no distributions yet')).toBeNull();
+    // withYieldBasis repairs rows from an older feed and nulls an orphan code
+    expect(withYieldBasis({ dividendYield: 2 }, 'indicated (x)').dividendYieldBasis).toBe('indicated');
+    expect(withYieldBasis({ dividendYield: 2, dividendYieldBasis: 'official-other' }).dividendYieldBasis).toBe('official-other');
+    expect(withYieldBasis({ dividendYield: null, dividendYieldBasis: 'indicated' }).dividendYieldBasis).toBeNull();
+    expect(emptyMetrics().dividendYieldBasis).toBeNull();
   });
 
   test('young funds get nulls for horizons they cannot have; since-inception needs a full year', () => {
@@ -932,6 +961,7 @@ describe('metrics', () => {
       expect(Object.keys(young.metrics)).toEqual(KEYS);
       expect(official.metrics.returnsBasis).toBeTruthy();
       expect(young.metrics.returnsBasis).toBeTruthy();
+      for (const row of [official, young]) expect(row.metrics.dividendYieldBasis === null).toBe(row.metrics.dividendYield === null);
       // an official month-end table keeps its own date, the later price-return date is reported separately
       expect([official.returns.monthEnd.asOfDate, official.returns.monthEnd.priceReturnsAsOf, official.metrics.performanceAsOf]).toEqual(['Aug 31 2026', 'Sep 18 2026', '2026-08-31']);
       // without official returns the fund is dated by its price history, never by the product-data table date
@@ -956,6 +986,9 @@ describe('pipeline', () => {
       const index = await readIndex(root);
       expect(index.funds.map((fund) => fund.ticker)).toEqual(TICKERS);
       expect(index.counts.funds).toBe(3);
+      // the published 12-month rolling yield carries its code on every row, fresh or kept
+      expect(index.funds.map((fund) => [fund.metrics.dividendYield, fund.metrics.dividendYieldBasis])).toEqual(TICKERS.map(() => [8.42, 'official-trailing-12m']));
+      expect(new Set(index.funds.map((fund) => Object.keys(fund.metrics).join()))).toHaveProperty('size', 1);
       expect(mock.requests.some((url) => url.includes('46641Q332'))).toBe(true);
       expect(mock.requests.some((url) => url.includes('46640Q332'))).toBe(false);
     });
@@ -1023,6 +1056,9 @@ describe('pipeline', () => {
       const row = after.funds[0];
       const again = indexRowFromMeta(await readJson(root, 'funds/AAA/meta.json'));
       expect(again.metrics).toEqual(row.metrics);
+      expect(Object.keys(again.metrics)).toEqual(Object.keys(ghost.metrics));
+      expect(Object.keys(rebuilt.metrics)).toEqual(Object.keys(ghost.metrics));
+      expect(rebuilt.metrics.dividendYieldBasis === null).toBe(rebuilt.metrics.dividendYield === null);
       for (const key of ['ticker', 'name', 'cusip', 'ter', 'terValue', 'terGrossValue', 'navValue', 'aumValue', 'closePriceValue', 'holdings', 'history', 'dataFile', 'asOfDate', 'inceptionDate', 'exchange', 'returns', 'distributions']) {
         expect(again[key]).toEqual(row[key]);
       }

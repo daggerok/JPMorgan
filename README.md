@@ -59,7 +59,15 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `cagr3y` / `cagr5y` / `cagr10y` - published annualized 3Y/5Y/10Y figures -> *CAGR 3Y/5Y/10Y*
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
 - `siAnn` - since-inception annualized -> *SI Ann.*; only for funds with at least one year of history, `null` otherwise
-- `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
+- `dividendYield` - 12-month rolling yield or indicated yield (latest distribution x frequency / price)
+- `dividendYieldBasis` - code of the definition behind `dividendYield`, `null` exactly when `dividendYield` is `null`; it travels with the yield it describes, also when a yield is kept from a previous run:
+
+  | Code | Meaning for JPMorgan |
+  | --- | --- |
+  | `official-trailing-12m` | the 12-month rolling dividend yield published in the am.jpmorgan.com product-data JSON (daily, else month-end) |
+  | `indicated` | updater estimate: latest distribution x payments per year / market price, used when JPMorgan publishes no yield |
+
+  JPMorgan has no source for `official-distribution-rate`, `official-other` or `computed-trailing-12m`
 - `secYield` - 30-day SEC yield when published; unavailable values stay empty and are never shown as 0
 - `returnsBasis` - always a non-empty label of how the returns were computed: official JPMorgan NAV total returns, derived from the daily NAV history with distributions reinvested (or Yahoo adjusted closes, an estimate), or a mixed label naming the derived periods
 - `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the JPMorgan performance table date for official returns, the last history date when derived; it is not the NAV date and is `null` when no return is available
