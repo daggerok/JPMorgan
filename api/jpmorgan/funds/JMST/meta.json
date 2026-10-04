@@ -53,6 +53,7 @@
  "yields": {
   "dividendYield": 2.55,
   "dividendYieldText": "2.55%",
+  "dividendYieldBasis": "official-trailing-12m",
   "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 02 2026",
   "distributionRate": null,
   "secYield": 2.94,
@@ -190,6 +191,7 @@
   "siAnn": 2.15,
   "dividendYield": 2.55,
   "dividendYieldText": "2.55%",
+  "dividendYieldBasis": "official-trailing-12m",
   "secYield": 2.94,
   "secYieldText": "2.94%",
   "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",

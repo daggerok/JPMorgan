@@ -53,6 +53,7 @@
  "yields": {
   "dividendYield": 0,
   "dividendYieldText": "0.00%",
+  "dividendYieldBasis": "official-trailing-12m",
   "dividendYieldKind": "12-month rolling dividend yield (month-end, official JPMorgan product-data), as of Aug 31 2026",
   "distributionRate": null,
   "secYield": null,
@@ -73,8 +74,8 @@
    "ytdText": "12.44%",
    "yr1": 18.85,
    "yr1Text": "18.85%",
-   "yr3": null,
-   "yr3Text": "—",
+   "yr3": 29.1,
+   "yr3Text": "29.10%",
    "yr5": null,
    "yr5Text": "—",
    "yr10": null,
@@ -129,18 +130,19 @@
  "metrics": {
   "ytd": 12.44,
   "tr1y": 18.85,
-  "tr3y": null,
+  "tr3y": 115.17,
   "tr5y": null,
   "tr10y": null,
-  "cagr3y": null,
+  "cagr3y": 29.1,
   "cagr5y": null,
   "cagr10y": null,
   "siAnn": 27.44,
   "dividendYield": 0,
   "dividendYieldText": "0.00%",
+  "dividendYieldBasis": "official-trailing-12m",
   "secYield": null,
   "secYieldText": "—",
-  "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
+  "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON); 3y derived from the daily NAV history with published distributions reinvested (performanceAsOf is the official table date, the derived periods end later)",
   "performanceAsOf": "2026-08-31"
  }
 }
