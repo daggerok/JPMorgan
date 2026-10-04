@@ -408,7 +408,7 @@ describe('controls', () => {
 
     restarts = 0;
     let next: () => Promise<Response> = async () => new Response('ok');
-    globalThis.fetch = (async () => next()) as unknown as typeof fetch;
+    globalThis.fetch = (async () => next()) as unknown as unknown as typeof fetch;
     installSystemCa('auto', reexec, false);
     expect(await (await fetch('https://example.invalid/')).text()).toBe('ok');
     next = async () => { throw new Error('ECONNRESET'); };
@@ -759,7 +759,7 @@ function installMockFetch(options: { delayMs?: number; failProduct?: string[]; e
     } finally {
       inFlight -= 1;
     }
-  }) as typeof fetch;
+  }) as unknown as typeof fetch;
   return { requests, peak: () => peak };
 }
 
@@ -1027,7 +1027,7 @@ describe('pipeline', () => {
       await runUpdater(controlsFor());
       expect(await Bun.file(new URL('funds/BBB/meta.json', root)).text()).toBe(before.meta);
       expect((await readIndex(root)).funds[1]).toEqual(before.row);
-      globalThis.fetch = (async () => new Response('', { status: 404 })) as typeof fetch;
+      globalThis.fetch = (async () => new Response('', { status: 404 })) as unknown as typeof fetch;
       await expect(runUpdater(controlsFor())).rejects.toThrow(/every examined fund failed/);
       expect((await readIndex(root)).funds.length).toBe(3);
     });
@@ -1132,7 +1132,7 @@ describe('network', () => {
       const signal = init?.signal;
       if (!signal) { await new Promise((resolve) => setTimeout(resolve, 150)); return new Response('late', { status: 200 }); }
       return new Promise<Response>((_resolve, reject) => signal.addEventListener('abort', () => reject(new Error('aborted'))));
-    }) as typeof fetch;
+    }) as unknown as typeof fetch;
     await expect(fetchWithRetry('https://example.test/x', 't', {}, 1)).rejects.toThrow(/network error/);
     expect(calls).toBe(2);
   });
