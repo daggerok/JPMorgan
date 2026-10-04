@@ -952,6 +952,8 @@ export type CatalogFund = {
   premiumDiscount: number | null;
   netAssets: number | null;
   dividendYield: number | null;
+  /** Code of the definition behind a yield carried from the previous index (null when unknown). */
+  dividendYieldBasis?: string | null;
   secYield: number | null;
   distributionRate: number | null;
   asOfDate: string | null;
@@ -2108,6 +2110,34 @@ export function lastCompletedQuarterEnd(now = new Date()): Date {
   return new Date(Date.UTC(year, 8, 30)); // Oct-Dec -> Sep 30
 }
 
+export const YIELD_BASIS_CODES = [
+  'official-trailing-12m', 'official-distribution-rate', 'official-other', 'computed-trailing-12m', 'indicated',
+] as const;
+export type YieldBasis = (typeof YIELD_BASIS_CODES)[number];
+
+export function isYieldBasis(value: unknown): value is YieldBasis {
+  return typeof value === 'string' && (YIELD_BASIS_CODES as readonly string[]).includes(value);
+}
+
+/**
+ * Maps a stored dividendYieldKind text to a dividendYieldBasis code. Unknown text counts as provider-published
+ * only when it names JPMorgan as the source, otherwise it is the updater's own estimate.
+ */
+export function yieldBasisFromKind(kind: unknown): YieldBasis | null {
+  const text = typeof kind === 'string' ? kind.trim().toLowerCase() : '';
+  if (!text || text.startsWith('not published')) return null;
+  if (text.startsWith('12-month rolling dividend yield')) return 'official-trailing-12m';
+  if (text.startsWith('indicated')) return 'indicated';
+  return text.includes('jpmorgan') ? 'official-other' : 'indicated';
+}
+
+/** The code is null exactly when the yield is null; a yield without a valid code is the updater's own estimate. */
+export function withYieldBasis(metrics: JsonRecord, fallbackKind?: unknown): JsonRecord {
+  const hasYield = typeof metrics.dividendYield === 'number' && Number.isFinite(metrics.dividendYield);
+  const code = isYieldBasis(metrics.dividendYieldBasis) ? metrics.dividendYieldBasis : yieldBasisFromKind(fallbackKind) ?? 'indicated';
+  return { ...metrics, dividendYieldBasis: hasYield ? code : null };
+}
+
 /**
  * Merges the official JPMorgan returns with the ones derived from the adjusted
  * daily series. Official figures win wherever they exist (they are NAV total
@@ -2124,6 +2154,7 @@ export function deriveCatalogMetrics(
   price: number | null,
   officialCumulative: CumulativeReturns | null = null,
   officialAsOf: string | null = null,
+  publishedYieldBasis: string | null = null,
 ): JsonRecord {
   const coalesce = (value: number | null | undefined): number | null => (typeof value === 'number' && Number.isFinite(value) ? value : null);
   const ytd = coalesce(official.ytd) ?? coalesce(derived.ytd);
@@ -2132,7 +2163,11 @@ export function deriveCatalogMetrics(
   const cagr5y = coalesce(official.yr5) ?? coalesce(derived.cagr5y);
   const cagr10y = coalesce(official.yr10) ?? coalesce(derived.cagr10y);
   const siAnn = coalesce(official.sinceInception) ?? coalesce(derived.siAnn);
-  const dividendYield = coalesce(publishedDividendYield) ?? indicatedYield(latestDistribution, paymentsPerYear, price);
+  const published = coalesce(publishedDividendYield);
+  const indicated = published === null ? indicatedYield(latestDistribution, paymentsPerYear, price) : null;
+  const dividendYield = published ?? indicated;
+  const dividendYieldBasis: YieldBasis | null =
+    published !== null ? (isYieldBasis(publishedYieldBasis) ? publishedYieldBasis : 'official-trailing-12m') : indicated !== null ? 'indicated' : null;
   const text = (value: number | null): string | null => (value === null ? null : `${value.toFixed(2)}%`);
   // Section 9a: returnsBasis is never empty; performanceAsOf is the date the
   // returns are as of (official performance table date, or the last NAV-history
@@ -2169,6 +2204,7 @@ export function deriveCatalogMetrics(
     siAnn,
     dividendYield,
     dividendYieldText: text(dividendYield) ?? '—',
+    dividendYieldBasis,
     secYield: coalesce(publishedSecYield),
     secYieldText: text(coalesce(publishedSecYield)) ?? '—',
     returnsBasis,
@@ -2325,7 +2361,7 @@ async function writeUpdateState(lastProcessedTicker: string | null, scope: strin
 
 const METRIC_KEYS = [
   'ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn',
-  'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf',
+  'dividendYield', 'dividendYieldText', 'dividendYieldBasis', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf',
 ] as const;
 
 /** Metrics object with the full contract key set: null for unavailable, never 0. */
@@ -2388,7 +2424,9 @@ export function indexRowFromMeta(meta: JsonRecord): JsonRecord {
       dividend: lastDistribution ? lastDistribution[1] : '—',
     },
     returns: { monthEnd: returns.monthEnd ?? {}, quarterEnd: returns.quarterEnd ?? null },
-    metrics: (meta.metrics as JsonRecord) ?? emptyMetrics('rebuilt from meta.json without stored metrics: refreshed by the next run'),
+    metrics: meta.metrics
+      ? withYieldBasis({ ...emptyMetrics(), ...(meta.metrics as JsonRecord) }, (meta.yields as JsonRecord)?.dividendYieldKind)
+      : emptyMetrics('rebuilt from meta.json without stored metrics: refreshed by the next run'),
     holdings: numberOrNull((meta.holdings as JsonRecord)?.totalRows) ?? 0,
     history: numberOrNull((meta.history as JsonRecord)?.totalRows) ?? 0,
   };
@@ -2593,6 +2631,9 @@ async function processFund(
     null,
     null,
     fund.close,
+    null,
+    null,
+    fund.dividendYield !== null ? fund.dividendYieldBasis : ((previous.metrics as JsonRecord)?.dividendYieldBasis as string | null) ?? null,
   );
   const reasons = fundFilterReasons(
     { ticker, aumValue: fund.netAssets ?? numberOrNull(previous.aumValue), terValue: fund.ter ?? numberOrNull(previous.terValue), metrics: preMetrics },
@@ -2776,6 +2817,12 @@ async function processFund(
   const nav = product?.nav ?? fund.nav ?? navFromChart ?? numberOrNull(previous.navValue);
   const price = product?.marketPrice ?? fund.close ?? priceFromChart ?? numberOrNull(previous.closePriceValue);
   const dividendYield = product?.dividendYield ?? fund.dividendYield;
+  // The code travels with the yield it describes: a fresh product-data yield is the official 12-month rolling
+  // yield, a yield carried from the previous index keeps its stored code (or the one its kind text implies)
+  const carriedBasis = isYieldBasis(fund.dividendYieldBasis)
+    ? fund.dividendYieldBasis
+    : yieldBasisFromKind((previousMeta?.yields as JsonRecord)?.dividendYieldKind) ?? 'indicated';
+  const publishedYieldBasis = product?.dividendYield !== null && product?.dividendYield !== undefined ? 'official-trailing-12m' : carriedBasis;
   const secYield = product?.secYield ?? fund.secYield;
 
   const metrics = deriveCatalogMetrics(
@@ -2788,6 +2835,7 @@ async function processFund(
     price,
     product?.cumulative ?? null,
     returnsAsOfDate,
+    publishedYieldBasis,
   );
 
   const distributions = dividends.length ? distributionRows(dividends) : (((previous.distributions?.rows as JsonRecord[]) || []) as string[][]);
@@ -2870,6 +2918,7 @@ async function processFund(
     yields: {
       dividendYield: metrics.dividendYield,
       dividendYieldText: metrics.dividendYieldText,
+      dividendYieldBasis: metrics.dividendYieldBasis,
       dividendYieldKind:
         product?.dividendYield !== null && product?.dividendYield !== undefined
           ? `${product.dividendYieldKind}${product.dividendYieldDate ? `, as of ${formatEdgarDate(product.dividendYieldDate)}` : ''}`
@@ -3265,8 +3314,9 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
 
 /** Rows keep a full metrics object, and dataFile is null when the fund has no meta.json. */
 async function withMetaContract(row: JsonRecord): Promise<JsonRecord> {
-  const hasMeta = (await readPreviousMeta(String(row.ticker))) !== null;
-  const metrics = { ...emptyMetrics(), ...((row.metrics as JsonRecord) || {}) };
+  const meta = await readPreviousMeta(String(row.ticker));
+  const hasMeta = meta !== null;
+  const metrics = withYieldBasis({ ...emptyMetrics(), ...((row.metrics as JsonRecord) || {}) }, (meta?.yields as JsonRecord)?.dividendYieldKind);
   if (!metrics.returnsBasis) metrics.returnsBasis = emptyMetrics().returnsBasis;
   return { ...row, dataFile: hasMeta ? row.dataFile ?? `./funds/${row.ticker}/meta.json` : null, metrics };
 }
@@ -3298,6 +3348,7 @@ function catalogFundFromIndex(ticker: string, row: JsonRecord): CatalogFund {
     premiumDiscount: numberOrNull(row.premiumDiscountValue),
     netAssets: numberOrNull(row.aumValue),
     dividendYield: numberOrNull(metrics.dividendYield),
+    dividendYieldBasis: isYieldBasis(metrics.dividendYieldBasis) ? metrics.dividendYieldBasis : null,
     secYield: numberOrNull(metrics.secYield),
     distributionRate: null,
     asOfDate: null,
