@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q450&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q450&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q450&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q450&country=us&role=adv&locale=en-US&fromDate=2003-02-28&toDate=2026-10-02",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q450&country=us&role=adv&locale=en-US&fromDate=2003-02-28&toDate=2026-10-09",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/LGDS",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -31,66 +31,66 @@
   "net": 0.3
  },
  "nav": {
-  "display": "$51.17",
-  "value": 51.17016608,
-  "asOfDate": "Oct 02 2026"
+  "display": "$51.38",
+  "value": 51.37855206,
+  "asOfDate": "Oct 09 2026"
  },
  "marketPrice": {
-  "display": "$51.17",
-  "value": 51.17,
-  "asOfDate": "Oct 02 2026"
+  "display": "$51.37",
+  "value": 51.37,
+  "asOfDate": "Oct 09 2026"
  },
  "premiumDiscount": {
-  "display": "-0.00%",
-  "value": -0.0003
+  "display": "-0.02%",
+  "value": -0.0166
  },
  "aum": {
-  "display": "$1,164.54 M",
-  "value": 1164540208.41,
-  "asOfDate": "Oct 02 2026",
+  "display": "$1,151.30 M",
+  "value": 1151300202.28,
+  "asOfDate": "Oct 09 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
   "dividendYield": 0.4,
   "dividendYieldText": "0.40%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 02 2026",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 09 2026",
   "distributionRate": null,
   "secYield": 0.18,
   "secYieldText": "0.18%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 01 2026",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 08 2026",
   "unsubsidizedSecYield": 0.08
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Aug 31 2026",
-   "priceReturnsAsOf": "Oct 02 2026",
-   "mo1": 2.9,
-   "mo1Text": "2.90%",
-   "qtd": 1.11,
-   "qtdText": "1.11%",
-   "ytd": 5.3,
-   "ytdText": "5.30%",
-   "yr1": 13.73,
-   "yr1Text": "13.73%",
-   "yr3": 22.44,
-   "yr3Text": "22.44%",
-   "yr5": 13.27,
-   "yr5Text": "13.27%",
-   "yr10": 17.4,
-   "yr10Text": "17.40%",
-   "sinceInception": 13.21,
-   "sinceInceptionText": "13.21%"
+   "asOfDate": "Sep 30 2026",
+   "priceReturnsAsOf": "Oct 09 2026",
+   "mo1": 2.41,
+   "mo1Text": "2.41%",
+   "qtd": 1.52,
+   "qtdText": "1.52%",
+   "ytd": 7.84,
+   "ytdText": "7.84%",
+   "yr1": 9.95,
+   "yr1Text": "9.95%",
+   "yr3": 25.53,
+   "yr3Text": "25.53%",
+   "yr5": 15.11,
+   "yr5Text": "15.11%",
+   "yr10": 17.63,
+   "yr10Text": "17.63%",
+   "sinceInception": 13.28,
+   "sinceInceptionText": "13.28%"
   },
   "quarterEnd": {
-   "asOfDate": "Jun 30 2026",
-   "ytd": 6.62,
-   "yr1": 21.04,
-   "yr3": 23.84,
-   "yr5": 14.92,
-   "yr10": 18.03,
-   "sinceInception": 13.38
+   "asOfDate": "Sep 30 2026",
+   "ytd": 7.84,
+   "yr1": 9.95,
+   "yr3": 25.53,
+   "yr5": 15.11,
+   "yr10": 17.63,
+   "sinceInception": 13.28
   }
  },
  "distributions": {
@@ -114,8 +114,8 @@
   ],
   "pageSize": 250,
   "totalRows": 103,
-  "asOfDate": "2026-10-02",
-  "asOf": "Oct 02 2026",
+  "asOfDate": "2026-10-09",
+  "asOf": "Oct 09 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -123,26 +123,26 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 60,
-  "asOf": "Oct 02 2026",
+  "totalRows": 65,
+  "asOf": "Oct 09 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  },
  "metrics": {
-  "ytd": 5.3,
-  "tr1y": 13.73,
-  "tr3y": 83.57,
-  "tr5y": 86.5,
-  "tr10y": 397.41,
-  "cagr3y": 22.44,
-  "cagr5y": 13.27,
-  "cagr10y": 17.4,
-  "siAnn": 13.21,
+  "ytd": 7.84,
+  "tr1y": 9.95,
+  "tr3y": 97.79,
+  "tr5y": 102.14,
+  "tr10y": 407.25,
+  "cagr3y": 25.53,
+  "cagr5y": 15.11,
+  "cagr10y": 17.63,
+  "siAnn": 13.28,
   "dividendYield": 0.4,
   "dividendYieldText": "0.40%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 0.18,
   "secYieldText": "0.18%",
   "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
-  "performanceAsOf": "2026-08-31"
+  "performanceAsOf": "2026-09-30"
  }
 }

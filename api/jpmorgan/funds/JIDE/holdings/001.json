@@ -2,7 +2,7 @@
  "ticker": "JIDE",
  "page": 1,
  "pageSize": 250,
- "totalRows": 103,
+ "totalRows": 111,
  "headers": [
   "Name",
   "Ticker",
@@ -10,917 +10,1198 @@
   "Weight",
   "Market Value",
   "Shares Held",
-  "Asset Category"
+  "Asset Category",
+  "Coupon",
+  "Maturity"
  ],
  "rows": [
   {
    "Name": "ASML HOLDING NV COMMON",
    "Ticker": "ASML",
    "Identifier": "B929F46",
-   "Weight": "4.31",
-   "Market Value": "1144745.49",
-   "Shares Held": "614",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "4.14",
+   "Market Value": "1180192.43",
+   "Shares Held": "661",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "ALLIANZ SE COMMON STOCK",
    "Ticker": "ALV",
    "Identifier": "5231485",
    "Weight": "2.41",
-   "Market Value": "639621.36",
-   "Shares Held": "1362",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BANCO SANTANDER SA",
-   "Ticker": "SAN",
-   "Identifier": "5705946",
-   "Weight": "2.28",
-   "Market Value": "605968.63",
-   "Shares Held": "45158",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "686356.77",
+   "Shares Held": "1467",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "SHELL PLC",
    "Ticker": "SHEL",
    "Identifier": "BP6MXD8",
-   "Weight": "2.21",
-   "Market Value": "587814.8",
-   "Shares Held": "12270",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "2.31",
+   "Market Value": "658534.99",
+   "Shares Held": "13214",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "MITSUBISHI UFJ FINANCIAL",
-   "Ticker": "8306",
-   "Identifier": "6335171",
-   "Weight": "2.19",
-   "Market Value": "581723.02",
-   "Shares Held": "25500",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "BANCO SANTANDER SA",
+   "Ticker": "SAN",
+   "Identifier": "5705946",
+   "Weight": "2.31",
+   "Market Value": "656899.43",
+   "Shares Held": "48632",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "NESTLE SA COMMON STOCK",
    "Ticker": "NESN",
    "Identifier": "7123870",
-   "Weight": "2.16",
-   "Market Value": "574942.54",
-   "Shares Held": "6364",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "2.21",
+   "Market Value": "629934.09",
+   "Shares Held": "6853",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "ROCHE HOLDING AG COMMON",
    "Ticker": "ROP",
    "Identifier": "BTMJD19",
-   "Weight": "2.08",
-   "Market Value": "551712.73",
-   "Shares Held": "1321",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "2.16",
+   "Market Value": "615701.22",
+   "Shares Held": "1423",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "DBS GROUP HOLDINGS LTD",
-   "Ticker": "DBSM.SI",
-   "Identifier": "6175203",
-   "Weight": "1.84",
-   "Market Value": "489374.64",
-   "Shares Held": "8100",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "MITSUBISHI UFJ FINANCIAL",
+   "Ticker": "8306",
+   "Identifier": "6335171",
+   "Weight": "2.15",
+   "Market Value": "611268.44",
+   "Shares Held": "27500",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "SAFRAN SA COMMON STOCK",
    "Ticker": "SAF",
    "Identifier": "B058TZ6",
-   "Weight": "1.83",
-   "Market Value": "485529.41",
-   "Shares Held": "1304",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ROLLS-ROYCE HOLDINGS PLC",
-   "Ticker": "RR.",
-   "Identifier": "B63H849",
-   "Weight": "1.82",
-   "Market Value": "484759.84",
-   "Shares Held": "24790",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ING GROEP NV COMMON",
-   "Ticker": "INGA",
-   "Identifier": "BZ57390",
-   "Weight": "1.73",
-   "Market Value": "459741.25",
-   "Shares Held": "13211",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.75",
+   "Market Value": "498836.27",
+   "Shares Held": "1404",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "ADVANTEST CORP COMMON",
    "Ticker": "6857.T",
    "Identifier": "6870490",
-   "Weight": "1.73",
-   "Market Value": "459195.6",
-   "Shares Held": "1800",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.74",
+   "Market Value": "495977",
+   "Shares Held": "1900",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ROLLS-ROYCE HOLDINGS PLC",
+   "Ticker": "RR.",
+   "Identifier": "B63H849",
+   "Weight": "1.72",
+   "Market Value": "491291.76",
+   "Shares Held": "26697",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "SONY GROUP CORP COMMON",
    "Ticker": "6758.T",
    "Identifier": "6821506",
-   "Weight": "1.64",
-   "Market Value": "435423.77",
-   "Shares Held": "18200",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.66",
+   "Market Value": "474332.39",
+   "Shares Held": "19600",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ING GROEP NV COMMON",
+   "Ticker": "INGA",
+   "Identifier": "BZ57390",
+   "Weight": "1.66",
+   "Market Value": "473199.23",
+   "Shares Held": "14227",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "NATWEST GROUP PLC COMMON",
    "Ticker": "NWG",
    "Identifier": "BM8PJY7",
-   "Weight": "1.57",
-   "Market Value": "416190.55",
-   "Shares Held": "47084",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "TOKYO ELECTRON LTD",
-   "Ticker": "8035.T",
-   "Identifier": "6895675",
-   "Weight": "1.5",
-   "Market Value": "398084.37",
-   "Shares Held": "5000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BHP GROUP LTD COMMON",
-   "Ticker": "BHP",
-   "Identifier": "6144690",
-   "Weight": "1.46",
-   "Market Value": "389113.41",
-   "Shares Held": "9046",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ENGIE SA COMMON STOCK",
-   "Ticker": "GSZ",
-   "Identifier": "B0C2CQ3",
-   "Weight": "1.46",
-   "Market Value": "387096",
-   "Shares Held": "15086",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CIE FINANCIERE RICHEMONT",
-   "Ticker": "0QMU",
-   "Identifier": "BCRWZ18",
-   "Weight": "1.44",
-   "Market Value": "382640.59",
-   "Shares Held": "1822",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SANOFI SA COMMON STOCK",
-   "Ticker": "SAN",
-   "Identifier": "5671735",
-   "Weight": "1.43",
-   "Market Value": "380113.63",
-   "Shares Held": "4753",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.52",
+   "Market Value": "432815.19",
+   "Shares Held": "50706",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "RECRUIT HOLDINGS CO LTD",
    "Ticker": "6098",
    "Identifier": "BQRRZ00",
-   "Weight": "1.39",
-   "Market Value": "370620.95",
-   "Shares Held": "3500",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.5",
+   "Market Value": "428717.38",
+   "Shares Held": "3800",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "TOKYO ELECTRON LTD",
+   "Ticker": "8035.T",
+   "Identifier": "6895675",
+   "Weight": "1.49",
+   "Market Value": "423877.96",
+   "Shares Held": "5400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "BHP GROUP LTD COMMON",
+   "Ticker": "BHP",
+   "Identifier": "6144690",
+   "Weight": "1.48",
+   "Market Value": "421259.74",
+   "Shares Held": "9742",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ENGIE SA COMMON STOCK",
+   "Ticker": "GSZ",
+   "Identifier": "B0C2CQ3",
+   "Weight": "1.45",
+   "Market Value": "414445.19",
+   "Shares Held": "16246",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SANOFI SA COMMON STOCK",
+   "Ticker": "SAN",
+   "Identifier": "5671735",
+   "Weight": "1.44",
+   "Market Value": "410408.37",
+   "Shares Held": "5119",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CIE FINANCIERE RICHEMONT",
+   "Ticker": "0QMU",
+   "Identifier": "BCRWZ18",
+   "Weight": "1.42",
+   "Market Value": "403832.19",
+   "Shares Held": "1962",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "CARLSBERG AS COMMON",
    "Ticker": "-",
    "Identifier": "4169219",
-   "Weight": "1.37",
-   "Market Value": "364085.81",
-   "Shares Held": "2810",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "UNICREDIT SPA COMMON",
-   "Ticker": "UCG",
-   "Identifier": "BYMXPS7",
-   "Weight": "1.33",
-   "Market Value": "352702.94",
-   "Shares Held": "3950",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.39",
+   "Market Value": "397035.3",
+   "Shares Held": "3026",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "SIEMENS ENERGY AG COMMON",
    "Ticker": "ENR",
    "Identifier": "BMTVQK9",
    "Weight": "1.33",
-   "Market Value": "352461.21",
-   "Shares Held": "2147",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DEUTSCHE BOERSE AG",
-   "Ticker": "DB1",
-   "Identifier": "7021963",
-   "Weight": "1.27",
-   "Market Value": "336808.84",
-   "Shares Held": "1041",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "GSK PLC COMMON STOCK GBP",
-   "Ticker": "GSK",
-   "Identifier": "BN7SWP6",
-   "Weight": "1.25",
-   "Market Value": "333056.63",
-   "Shares Held": "14116",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ASM INTERNATIONAL NV",
-   "Ticker": "ASM",
-   "Identifier": "5165294",
-   "Weight": "1.25",
-   "Market Value": "332835.01",
-   "Shares Held": "312",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "379322.54",
+   "Shares Held": "2312",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "BRITISH AMERICAN TOBACCO",
    "Ticker": "BATS",
    "Identifier": "0287580",
-   "Weight": "1.24",
-   "Market Value": "330686.27",
-   "Shares Held": "6277",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.32",
+   "Market Value": "375627.26",
+   "Shares Held": "6760",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "BARCLAYS PLC COMMON",
-   "Ticker": "BARC",
-   "Identifier": "3134865",
-   "Weight": "1.24",
-   "Market Value": "328455.1",
-   "Shares Held": "55469",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "NEXT PLC COMMON STOCK",
-   "Ticker": "NXT",
-   "Identifier": "3208986",
-   "Weight": "1.23",
-   "Market Value": "327042.68",
-   "Shares Held": "1714",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "RWE AG COMMON STOCK EUR",
-   "Ticker": "RWE",
-   "Identifier": "4768962",
-   "Weight": "1.23",
-   "Market Value": "326377.23",
-   "Shares Held": "4906",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SUMITOMO MITSUI",
-   "Ticker": "8316",
-   "Identifier": "6563024",
-   "Weight": "1.21",
-   "Market Value": "320397.61",
-   "Shares Held": "15000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ABN AMRO BANK NV DUTCH",
-   "Ticker": "ABN",
-   "Identifier": "BYQP136",
-   "Weight": "1.19",
-   "Market Value": "315390.7",
-   "Shares Held": "6663",
-   "Asset Category": "GDR"
-  },
-  {
-   "Name": "NATURGY ENERGY GROUP SA",
-   "Ticker": "GAS",
-   "Identifier": "5650422",
-   "Weight": "1.17",
-   "Market Value": "312175.91",
-   "Shares Held": "9407",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "UNIPOL ASSICURAZIONI SPA",
-   "Ticker": "UNI",
-   "Identifier": "B7SF135",
-   "Weight": "1.14",
-   "Market Value": "304199.28",
-   "Shares Held": "10424",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SSE PLC COMMON STOCK GBP",
-   "Ticker": "SSE",
-   "Identifier": "0790873",
-   "Weight": "1.14",
-   "Market Value": "304140.03",
-   "Shares Held": "9375",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "QBE INSURANCE GROUP LTD",
-   "Ticker": "QBE",
-   "Identifier": "6715740",
-   "Weight": "1.13",
-   "Market Value": "300948.42",
-   "Shares Held": "18187",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "RIO TINTO PLC COMMON",
-   "Ticker": "RIO",
-   "Identifier": "0718875",
-   "Weight": "1.04",
-   "Market Value": "277431.25",
-   "Shares Held": "2957",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "GALDERMA GROUP AG COMMON",
-   "Ticker": "GALD",
-   "Identifier": "BRC2T72",
-   "Weight": "1.02",
-   "Market Value": "270327.84",
-   "Shares Held": "1393",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "DEUTSCHE BOERSE AG",
+   "Ticker": "DB1",
+   "Identifier": "7021963",
+   "Weight": "1.31",
+   "Market Value": "371993.28",
+   "Shares Held": "1121",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "DHL AG COMMON STOCK EUR",
    "Ticker": "DHL",
    "Identifier": "4617859",
-   "Weight": "1",
-   "Market Value": "266435.66",
-   "Shares Held": "4164",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.28",
+   "Market Value": "365490.46",
+   "Shares Held": "5811",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "UNICREDIT SPA COMMON",
+   "Ticker": "UCG",
+   "Identifier": "BYMXPS7",
+   "Weight": "1.28",
+   "Market Value": "363968.3",
+   "Shares Held": "4254",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "NEXT PLC COMMON STOCK",
+   "Ticker": "NXT",
+   "Identifier": "3208986",
+   "Weight": "1.26",
+   "Market Value": "359935.98",
+   "Shares Held": "1846",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "GSK PLC COMMON STOCK GBP",
+   "Ticker": "GSK",
+   "Identifier": "BN7SWP6",
+   "Weight": "1.24",
+   "Market Value": "353005.17",
+   "Shares Held": "15202",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "QBE INSURANCE GROUP LTD",
+   "Ticker": "QBE",
+   "Identifier": "6715740",
+   "Weight": "1.21",
+   "Market Value": "343457.87",
+   "Shares Held": "19586",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "RWE AG COMMON STOCK EUR",
+   "Ticker": "RWE",
+   "Identifier": "4768962",
+   "Weight": "1.2",
+   "Market Value": "342812.01",
+   "Shares Held": "5283",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "BARCLAYS PLC COMMON",
+   "Ticker": "BARC",
+   "Identifier": "3134865",
+   "Weight": "1.2",
+   "Market Value": "341217.96",
+   "Shares Held": "59736",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "NATURGY ENERGY GROUP SA",
+   "Ticker": "GAS",
+   "Identifier": "5650422",
+   "Weight": "1.18",
+   "Market Value": "337345.03",
+   "Shares Held": "10131",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ASM INTERNATIONAL NV",
+   "Ticker": "ASM",
+   "Identifier": "5165294",
+   "Weight": "1.17",
+   "Market Value": "333349.16",
+   "Shares Held": "336",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SUMITOMO MITSUI",
+   "Ticker": "8316",
+   "Identifier": "6563024",
+   "Weight": "1.16",
+   "Market Value": "331717.22",
+   "Shares Held": "16100",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SSE PLC COMMON STOCK GBP",
+   "Ticker": "SSE",
+   "Identifier": "0790873",
+   "Weight": "1.15",
+   "Market Value": "328595.12",
+   "Shares Held": "10096",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ABN AMRO BANK NV DUTCH",
+   "Ticker": "ABN",
+   "Identifier": "BYQP136",
+   "Weight": "1.14",
+   "Market Value": "325763.37",
+   "Shares Held": "7175",
+   "Asset Category": "GDR",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "UNIPOL ASSICURAZIONI SPA",
+   "Ticker": "UNI",
+   "Identifier": "B7SF135",
+   "Weight": "1.12",
+   "Market Value": "320499.24",
+   "Shares Held": "11226",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "RIO TINTO PLC COMMON",
+   "Ticker": "RIO",
+   "Identifier": "0718875",
+   "Weight": "1.05",
+   "Market Value": "300472.64",
+   "Shares Held": "3184",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "GALDERMA GROUP AG COMMON",
+   "Ticker": "GALD",
+   "Identifier": "BRC2T72",
+   "Weight": "1.05",
+   "Market Value": "298827.14",
+   "Shares Held": "1500",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "TAKEDA PHARMACEUTICAL CO",
    "Ticker": "4502.T",
    "Identifier": "6870445",
-   "Weight": "0.99",
-   "Market Value": "262374.73",
-   "Shares Held": "7300",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1.04",
+   "Market Value": "296223.83",
+   "Shares Held": "7900",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "BAYER AG COMMON STOCK",
+   "Ticker": "BAYN",
+   "Identifier": "5069211",
+   "Weight": "1",
+   "Market Value": "285714.28",
+   "Shares Held": "5823",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "JAPAN TOBACCO INC COMMON",
    "Ticker": "2914.T",
    "Identifier": "6474535",
-   "Weight": "0.94",
-   "Market Value": "251160.72",
-   "Shares Held": "5800",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "1",
+   "Market Value": "283916.72",
+   "Shares Held": "6200",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "AIA GROUP LTD COMMON",
+   "Ticker": "1299",
+   "Identifier": "B4TX8S1",
+   "Weight": "0.97",
+   "Market Value": "275820.71",
+   "Shares Held": "30200",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CONTINENTAL AG COMMON",
+   "Ticker": "CON",
+   "Identifier": "4598589",
+   "Weight": "0.95",
+   "Market Value": "269883.98",
+   "Shares Held": "3475",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "EURONEXT NV COMMON STOCK",
    "Ticker": "ENX",
    "Identifier": "BNBNSG0",
-   "Weight": "0.93",
-   "Market Value": "247152.65",
-   "Shares Held": "1366",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "INTERCONTINENTAL HOTELS",
-   "Ticker": "IHG",
-   "Identifier": "BHJYC05",
-   "Weight": "0.9",
-   "Market Value": "238720.79",
-   "Shares Held": "1483",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Weight": "0.95",
+   "Market Value": "269773.43",
+   "Shares Held": "1471",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "CAPGEMINI SE COMMON",
    "Ticker": "CAP",
    "Identifier": "4163437",
-   "Weight": "0.88",
-   "Market Value": "234760.73",
-   "Shares Held": "1911",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.93",
+   "Market Value": "265568.58",
+   "Shares Held": "2058",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "TELIA CO AB COMMON STOCK",
-   "Ticker": "TLSN",
-   "Identifier": "5978384",
-   "Weight": "0.88",
-   "Market Value": "234622.6",
-   "Shares Held": "53130",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "SAGE GROUP PLC/THE",
+   "Ticker": "SGE",
+   "Identifier": "B8C3BL0",
+   "Weight": "0.9",
+   "Market Value": "255877.94",
+   "Shares Held": "17993",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "INTERCONTINENTAL HOTELS",
+   "Ticker": "IHG",
+   "Identifier": "BHJYC05",
+   "Weight": "0.89",
+   "Market Value": "254248.72",
+   "Shares Held": "1597",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "FISHER & PAYKEL",
+   "Ticker": "FPH",
+   "Identifier": "6340250",
+   "Weight": "0.89",
+   "Market Value": "252753.53",
+   "Shares Held": "9432",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "ASR NEDERLAND NV COMMON",
    "Ticker": "ASRNL",
    "Identifier": "BD9PNF2",
    "Weight": "0.86",
-   "Market Value": "229600.66",
-   "Shares Held": "2848",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "HALMA PLC COMMON STOCK",
-   "Ticker": "HLMA",
-   "Identifier": "0405207",
-   "Weight": "0.86",
-   "Market Value": "228002.45",
-   "Shares Held": "4784",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DAISHI HOKUETSU",
-   "Ticker": "7327",
-   "Identifier": "BFYGQ44",
-   "Weight": "0.86",
-   "Market Value": "227869.62",
-   "Shares Held": "13300",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "FISHER & PAYKEL",
-   "Ticker": "FPH",
-   "Identifier": "6340250",
-   "Weight": "0.85",
-   "Market Value": "226802.33",
-   "Shares Held": "8758",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "UCB SA COMMON STOCK EUR",
-   "Ticker": "UCB",
-   "Identifier": "5596991",
-   "Weight": "0.85",
-   "Market Value": "225549.95",
-   "Shares Held": "979",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "NGK CORP COMMON STOCK",
-   "Ticker": "5333.T",
-   "Identifier": "6619507",
-   "Weight": "0.84",
-   "Market Value": "223464.48",
-   "Shares Held": "6100",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "RIO TINTO LTD COMMON",
-   "Ticker": "RIO",
-   "Identifier": "6220103",
-   "Weight": "0.83",
-   "Market Value": "220418.47",
-   "Shares Held": "1911",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SOCIETE GENERALE SA",
-   "Ticker": "GLE",
-   "Identifier": "5966516",
-   "Weight": "0.83",
-   "Market Value": "220392.11",
-   "Shares Held": "2972",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SBM OFFSHORE NV COMMON",
-   "Ticker": "SBMO",
-   "Identifier": "B156T57",
-   "Weight": "0.83",
-   "Market Value": "219859.86",
-   "Shares Held": "5618",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BALFOUR BEATTY PLC",
-   "Ticker": "BBY",
-   "Identifier": "0096162",
-   "Weight": "0.83",
-   "Market Value": "219297.67",
-   "Shares Held": "17639",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SAGE GROUP PLC/THE",
-   "Ticker": "SGE",
-   "Identifier": "B8C3BL0",
-   "Weight": "0.82",
-   "Market Value": "218417.04",
-   "Shares Held": "16708",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "HOYA CORP COMMON STOCK",
-   "Ticker": "7741.T",
-   "Identifier": "6441506",
-   "Weight": "0.82",
-   "Market Value": "218244.13",
-   "Shares Held": "1400",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "245540.8",
+   "Shares Held": "3067",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "ASICS CORP COMMON STOCK",
    "Ticker": "7936",
    "Identifier": "6057378",
-   "Weight": "0.8",
-   "Market Value": "211712.85",
-   "Shares Held": "8000",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.86",
+   "Market Value": "244165.28",
+   "Shares Held": "8600",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "HAREL INSURANCE",
-   "Ticker": "HARL",
-   "Identifier": "6410700",
-   "Weight": "0.79",
-   "Market Value": "210962.6",
-   "Shares Held": "3235",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "SBM OFFSHORE NV COMMON",
+   "Ticker": "SBMO",
+   "Identifier": "B156T57",
+   "Weight": "0.85",
+   "Market Value": "241666.93",
+   "Shares Held": "6050",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "HALMA PLC COMMON STOCK",
+   "Ticker": "HLMA",
+   "Identifier": "0405207",
+   "Weight": "0.85",
+   "Market Value": "241089.81",
+   "Shares Held": "5152",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "HOYA CORP COMMON STOCK",
+   "Ticker": "7741.T",
+   "Identifier": "6441506",
+   "Weight": "0.83",
+   "Market Value": "237588.41",
+   "Shares Held": "1500",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "DEMANT A/S COMMON STOCK",
+   "Ticker": "DEMANT",
+   "Identifier": "BZ01RF1",
+   "Weight": "0.83",
+   "Market Value": "236771.03",
+   "Shares Held": "4615",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "RIO TINTO LTD COMMON",
+   "Ticker": "RIO",
+   "Identifier": "6220103",
+   "Weight": "0.82",
+   "Market Value": "234735.34",
+   "Shares Held": "2058",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "NGK CORP COMMON STOCK",
+   "Ticker": "5333.T",
+   "Identifier": "6619507",
+   "Weight": "0.82",
+   "Market Value": "234551.37",
+   "Shares Held": "6600",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "KAO CORP COMMON STOCK",
    "Ticker": "4452.T",
    "Identifier": "6483809",
-   "Weight": "0.79",
-   "Market Value": "210337.68",
-   "Shares Held": "9700",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.82",
+   "Market Value": "233915.88",
+   "Shares Held": "10400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "ASTELLAS PHARMA INC",
-   "Ticker": "4503.T",
-   "Identifier": "6985383",
-   "Weight": "0.78",
-   "Market Value": "206585.35",
-   "Shares Held": "14400",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "DAISHI HOKUETSU",
+   "Ticker": "7327",
+   "Identifier": "BFYGQ44",
+   "Weight": "0.82",
+   "Market Value": "232437.9",
+   "Shares Held": "14300",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "LY CORP COMMON STOCK JPY",
+   "Ticker": "4689.Q",
+   "Identifier": "6084848",
+   "Weight": "0.81",
+   "Market Value": "231495.64",
+   "Shares Held": "71600",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "RYOHIN KEIKAKU CO LTD",
+   "Ticker": "7453.T",
+   "Identifier": "6758455",
+   "Weight": "0.81",
+   "Market Value": "231399.08",
+   "Shares Held": "8300",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SOCIETE GENERALE SA",
+   "Ticker": "GLE",
+   "Identifier": "5966516",
+   "Weight": "0.8",
+   "Market Value": "226794.43",
+   "Shares Held": "3201",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "COMPUTACENTER PLC COMMON",
+   "Ticker": "CCC",
+   "Identifier": "BV9FP30",
+   "Weight": "0.79",
+   "Market Value": "226307.27",
+   "Shares Held": "3079",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "INDRA SISTEMAS SA COMMON",
    "Ticker": "IDR",
    "Identifier": "4476210",
    "Weight": "0.78",
-   "Market Value": "206503.55",
-   "Shares Held": "3071",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "222494.55",
+   "Shares Held": "3307",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "RYOHIN KEIKAKU CO LTD",
-   "Ticker": "7453.T",
-   "Identifier": "6758455",
+   "Name": "ASTELLAS PHARMA INC",
+   "Ticker": "4503.T",
+   "Identifier": "6985383",
    "Weight": "0.78",
-   "Market Value": "206411.84",
-   "Shares Held": "7700",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "221977.95",
+   "Shares Held": "15500",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "COMPUTACENTER PLC COMMON",
-   "Ticker": "CCC",
-   "Identifier": "BV9FP30",
+   "Name": "BALFOUR BEATTY PLC",
+   "Ticker": "BBY",
+   "Identifier": "0096162",
    "Weight": "0.77",
-   "Market Value": "204598.19",
-   "Shares Held": "2859",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SEIKO GROUP CORP COMMON",
-   "Ticker": "805000",
-   "Identifier": "6414809",
-   "Weight": "0.76",
-   "Market Value": "203046.76",
-   "Shares Held": "3000",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "220555.34",
+   "Shares Held": "18996",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "KANEMATSU CORP COMMON",
    "Ticker": "8020",
    "Identifier": "6483467",
    "Weight": "0.76",
-   "Market Value": "202388.91",
-   "Shares Held": "14100",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "215855.88",
+   "Shares Held": "15200",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "MS&AD INSURANCE GROUP",
+   "Ticker": "8725",
+   "Identifier": "B2Q4CS1",
+   "Weight": "0.76",
+   "Market Value": "215422",
+   "Shares Held": "6900",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SEIKO GROUP CORP COMMON",
+   "Ticker": "805000",
+   "Identifier": "6414809",
+   "Weight": "0.75",
+   "Market Value": "214559.19",
+   "Shares Held": "3200",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "RENESAS ELECTRONICS CORP",
    "Ticker": "6723",
    "Identifier": "6635677",
-   "Weight": "0.76",
-   "Market Value": "202271.99",
-   "Shares Held": "8700",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.75",
+   "Market Value": "213999.44",
+   "Shares Held": "9400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "HAREL INSURANCE",
+   "Ticker": "HARL",
+   "Identifier": "6410700",
+   "Weight": "0.74",
+   "Market Value": "210774.91",
+   "Shares Held": "3484",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "TECHTRONIC INDUSTRIES CO",
    "Ticker": "669",
    "Identifier": "B0190C7",
    "Weight": "0.74",
-   "Market Value": "197234.72",
-   "Shares Held": "12000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CATHAY PACIFIC AIRWAYS",
-   "Ticker": "293",
-   "Identifier": "6179755",
-   "Weight": "0.74",
-   "Market Value": "195474.21",
-   "Shares Held": "106000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "TOKYO CENTURY CORP",
-   "Ticker": "8439",
-   "Identifier": "6679794",
-   "Weight": "0.73",
-   "Market Value": "194908.18",
-   "Shares Held": "11800",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "MS&AD INSURANCE GROUP",
-   "Ticker": "8725",
-   "Identifier": "B2Q4CS1",
-   "Weight": "0.73",
-   "Market Value": "194443.65",
-   "Shares Held": "6400",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CONTINENTAL AG COMMON",
-   "Ticker": "CON",
-   "Identifier": "4598589",
-   "Weight": "0.71",
-   "Market Value": "189560.22",
-   "Shares Held": "2469",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "210414.09",
+   "Shares Held": "12900",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "HONDA MOTOR CO LTD",
    "Ticker": "7267.T",
    "Identifier": "6435145",
-   "Weight": "0.7",
-   "Market Value": "185677.12",
-   "Shares Held": "17700",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.74",
+   "Market Value": "209544.48",
+   "Shares Held": "19100",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "FRONTIER DEVELOPMENTS",
    "Ticker": "FDEV",
    "Identifier": "BBT32N3",
-   "Weight": "0.69",
-   "Market Value": "184214.6",
-   "Shares Held": "24269",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.73",
+   "Market Value": "209370.4",
+   "Shares Held": "26136",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "TOKYO CENTURY CORP",
+   "Ticker": "8439",
+   "Identifier": "6679794",
+   "Weight": "0.72",
+   "Market Value": "206514.48",
+   "Shares Held": "12700",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CATHAY PACIFIC AIRWAYS",
+   "Ticker": "293",
+   "Identifier": "6179755",
+   "Weight": "0.72",
+   "Market Value": "205706.86",
+   "Shares Held": "114000",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "CK HUTCHISON HOLDINGS",
    "Ticker": "1",
    "Identifier": "BW9P816",
-   "Weight": "0.68",
-   "Market Value": "179485.34",
-   "Shares Held": "21000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "TEVA PHARMACEUTICAL",
-   "Ticker": "TEVA",
-   "Identifier": "M8769Q102",
-   "Weight": "0.64",
-   "Market Value": "171362.55",
-   "Shares Held": "4335",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "NORDEX SE COMMON STOCK",
-   "Ticker": "NDX1",
-   "Identifier": "B06CF71",
-   "Weight": "0.64",
-   "Market Value": "170498.74",
-   "Shares Held": "3939",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.67",
+   "Market Value": "191070.02",
+   "Shares Held": "22500",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "REPLY SPA COMMON STOCK",
    "Ticker": "REY",
    "Identifier": "BZ1DZ96",
-   "Weight": "0.63",
-   "Market Value": "168658.56",
-   "Shares Held": "1221",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.65",
+   "Market Value": "185394.9",
+   "Shares Held": "1315",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "SPIE SA COMMON STOCK EUR",
-   "Ticker": "SPIE",
-   "Identifier": "BYZFYS3",
-   "Weight": "0.61",
-   "Market Value": "161635.2",
-   "Shares Held": "3473",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "TEVA PHARMACEUTICAL",
+   "Ticker": "TEVA",
+   "Identifier": "6882172",
+   "Weight": "0.65",
+   "Market Value": "184538.04",
+   "Shares Held": "4668",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "NORDEX SE COMMON STOCK",
+   "Ticker": "NDX1",
+   "Identifier": "B06CF71",
+   "Weight": "0.59",
+   "Market Value": "168445.88",
+   "Shares Held": "4242",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "HSBC HOLDINGS PLC COMMON",
    "Ticker": "HSBA",
    "Identifier": "0540528",
-   "Weight": "0.56",
-   "Market Value": "150146.15",
-   "Shares Held": "7812",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ONO PHARMACEUTICAL CO",
-   "Ticker": "4528.OS",
-   "Identifier": "6660107",
-   "Weight": "0.53",
-   "Market Value": "141751.32",
-   "Shares Held": "9700",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CREDIT SAISON CO LTD",
-   "Ticker": "8253.T",
-   "Identifier": "6591809",
-   "Weight": "0.52",
-   "Market Value": "138426.27",
-   "Shares Held": "5000",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.55",
+   "Market Value": "155671.75",
+   "Shares Held": "8413",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "CASIO COMPUTER CO LTD",
    "Ticker": "6952.T",
    "Identifier": "6178967",
-   "Weight": "0.52",
-   "Market Value": "138170.61",
-   "Shares Held": "9900",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Weight": "0.53",
+   "Market Value": "150495.06",
+   "Shares Held": "10700",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "NIPPON EXPRESS HOLDINGS",
-   "Ticker": "9147",
-   "Identifier": "BKSHP63",
+   "Name": "ONO PHARMACEUTICAL CO",
+   "Ticker": "4528.OS",
+   "Identifier": "6660107",
    "Weight": "0.52",
-   "Market Value": "137687.71",
-   "Shares Held": "3800",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "148755.72",
+   "Shares Held": "10400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CREDIT SAISON CO LTD",
+   "Ticker": "8253.T",
+   "Identifier": "6591809",
+   "Weight": "0.51",
+   "Market Value": "144661.2",
+   "Shares Held": "5400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "BROTHER INDUSTRIES LTD",
    "Ticker": "6448",
    "Identifier": "6146500",
-   "Weight": "0.52",
-   "Market Value": "137191.46",
-   "Shares Held": "4600",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "AMP LTD COMMON STOCK AUD",
-   "Ticker": "AMP",
-   "Identifier": "6709958",
    "Weight": "0.5",
-   "Market Value": "133250.38",
-   "Shares Held": "74947",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "KINDEN CORP COMMON STOCK",
-   "Ticker": "1944.OS",
-   "Identifier": "6492924",
-   "Weight": "0.5",
-   "Market Value": "132073.8",
-   "Shares Held": "3000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BANK OF EAST ASIA",
-   "Ticker": "23",
-   "Identifier": "6075648",
-   "Weight": "0.49",
-   "Market Value": "131420.09",
-   "Shares Held": "55000",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "141585.26",
+   "Shares Held": "4900",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "YAMATO KOGYO CO LTD",
    "Ticker": "5444",
    "Identifier": "6985446",
    "Weight": "0.49",
-   "Market Value": "130755.76",
-   "Shares Held": "1700",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "140009.11",
+   "Shares Held": "1800",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "AMP LTD COMMON STOCK AUD",
+   "Ticker": "AMP",
+   "Identifier": "6709958",
+   "Weight": "0.48",
+   "Market Value": "137950.58",
+   "Shares Held": "80712",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "FIRST RESOURCES LTD",
+   "Ticker": "FR",
+   "Identifier": "B2927P4",
+   "Weight": "0.48",
+   "Market Value": "137168.29",
+   "Shares Held": "40000",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "BANK OF EAST ASIA",
+   "Ticker": "23",
+   "Identifier": "6075648",
+   "Weight": "0.48",
+   "Market Value": "136179.64",
+   "Shares Held": "59400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "KINDEN CORP COMMON STOCK",
+   "Ticker": "1944.OS",
+   "Identifier": "6492924",
+   "Weight": "0.47",
+   "Market Value": "133360.17",
+   "Shares Held": "3200",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "YANGZIJIANG SHIPBUILDING",
    "Ticker": "YZJSGD",
    "Identifier": "B1VT035",
    "Weight": "0.45",
-   "Market Value": "118325.62",
-   "Shares Held": "30100",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "KIOXIA HOLDINGS CORP",
-   "Ticker": "285A",
-   "Identifier": "BMGYJ02",
-   "Weight": "0.43",
-   "Market Value": "114793.88",
-   "Shares Held": "900",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CASH",
-   "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "0.42",
-   "Market Value": "111847.05",
-   "Shares Held": "111847",
-   "Asset Category": "CURRENCIES"
-  },
-  {
-   "Name": "JPMORGAN PRIME MONEY",
-   "Ticker": "JIMXX",
-   "Identifier": "46637K844",
-   "Weight": "0.39",
-   "Market Value": "104342",
-   "Shares Held": "104342",
-   "Asset Category": "MONEY MARKET"
+   "Market Value": "129225.96",
+   "Shares Held": "32400",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "DFI RETAIL GROUP",
    "Ticker": "DFI",
    "Identifier": "6180274",
-   "Weight": "0.38",
-   "Market Value": "101377.19",
-   "Shares Held": "32700",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Weight": "0.39",
+   "Market Value": "111707.69",
+   "Shares Held": "35200",
+   "Asset Category": "DOMESTIC COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "AUSTRALIAN DOLLAR",
+   "Name": "KIOXIA HOLDINGS CORP",
+   "Ticker": "285A",
+   "Identifier": "BMGYJ02",
+   "Weight": "0.27",
+   "Market Value": "77739.29",
+   "Shares Held": "700",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CASH",
    "Ticker": "-",
-   "Identifier": "AUD",
-   "Weight": "0.03",
-   "Market Value": "7672.3",
-   "Shares Held": "11024",
-   "Asset Category": "CURRENCIES"
+   "Identifier": "CASH",
+   "Weight": "0.22",
+   "Market Value": "63480.95",
+   "Shares Held": "63480",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "TELIA CO AB COMMON STOCK",
+   "Ticker": "TLSN",
+   "Identifier": "5978384",
+   "Weight": "0.2",
+   "Market Value": "57105.43",
+   "Shares Held": "13148",
+   "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SWEDISH KRONA",
+   "Ticker": "-",
+   "Identifier": "SEK",
+   "Weight": "0.16",
+   "Market Value": "44679.35",
+   "Shares Held": "446393",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "BRITISH POUND",
    "Ticker": "-",
    "Identifier": "GBP",
    "Weight": "0.03",
-   "Market Value": "7543.64",
-   "Shares Held": "5694",
-   "Asset Category": "CURRENCIES"
+   "Market Value": "8632.09",
+   "Shares Held": "6519",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "HONG KONG DOLLAR",
+   "Ticker": "-",
+   "Identifier": "HKD",
+   "Weight": "0.01",
+   "Market Value": "4148.78",
+   "Shares Held": "32559",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "EURO",
    "Ticker": "-",
    "Identifier": "EUR",
-   "Weight": "0.02",
-   "Market Value": "5278.22",
-   "Shares Held": "4688",
-   "Asset Category": "CURRENCIES"
+   "Weight": "0.01",
+   "Market Value": "1875.29",
+   "Shares Held": "1674",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_3471_S",
+   "Weight": "0",
+   "Market Value": "140.1",
+   "Shares Held": "-446393",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - JPY",
+   "Ticker": "-",
+   "Identifier": "CCTJPY_3478_L",
+   "Weight": "0",
+   "Market Value": "48.79",
+   "Shares Held": "8286940",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "ISRAELI SHEKEL",
+   "Ticker": "-",
+   "Identifier": "ILS",
+   "Weight": "0",
+   "Market Value": "0.12",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - HKD",
+   "Ticker": "-",
+   "Identifier": "CCTHKD_3480_S",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "-271036",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - JPY",
+   "Ticker": "-",
+   "Identifier": "CCTJPY_3478_S",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "-52312",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_3471_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "44819",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_3479_L",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "363146",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "UNIPOL ASSICURAZIONI SPA",
+   "Ticker": "-",
+   "Identifier": "BVV8JQ8",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "11226",
+   "Asset Category": "RIGHTS",
+   "Coupon": "",
+   "Maturity": "Oct 26 2026"
+  },
+  {
+   "Name": "AUSTRALIAN DOLLAR",
+   "Ticker": "-",
+   "Identifier": "AUD",
+   "Weight": "0",
+   "Market Value": "-0.02",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "SWISS FRANC",
    "Ticker": "-",
    "Identifier": "CHF",
    "Weight": "0",
-   "Market Value": "1095.26",
-   "Shares Held": "907",
-   "Asset Category": "CURRENCIES"
-  },
-  {
-   "Name": "HONG KONG DOLLAR",
-   "Ticker": "-",
-   "Identifier": "HKD",
-   "Weight": "0",
-   "Market Value": "106.73",
-   "Shares Held": "837",
-   "Asset Category": "CURRENCIES"
-  },
-  {
-   "Name": "CURRENCY CONTRACT - HKD",
-   "Ticker": "-",
-   "Identifier": "CCTHKD_3285_S",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "-1099",
-   "Asset Category": "SPOT CONTRACTS"
-  },
-  {
-   "Name": "CURRENCY CONTRACT - HKD",
-   "Ticker": "-",
-   "Identifier": "CCTHKD_3285_L",
-   "Weight": "0",
-   "Market Value": "-0.01",
-   "Shares Held": "8631",
-   "Asset Category": "SPOT CONTRACTS"
+   "Market Value": "-0.1",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
    "Name": "JAPANESE YEN",
@@ -929,16 +1210,31 @@
    "Weight": "0",
    "Market Value": "-0.12",
    "Shares Held": "-19",
-   "Asset Category": "CURRENCIES"
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
   },
   {
-   "Name": "ISRAELI SHEKEL",
+   "Name": "CURRENCY CONTRACT - HKD",
    "Ticker": "-",
-   "Identifier": "ILS",
-   "Weight": "-0.25",
-   "Market Value": "-65813.72",
-   "Shares Held": "-201028",
-   "Asset Category": "CURRENCIES"
+   "Identifier": "CCTHKD_3480_L",
+   "Weight": "0",
+   "Market Value": "-2.35",
+   "Shares Held": "2127050",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - USD",
+   "Ticker": "-",
+   "Identifier": "CCTUSD_3479_S",
+   "Weight": "0",
+   "Market Value": "-147.15",
+   "Shares Held": "-465324",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
   }
  ]
 }
