@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
+  runOrder,
   CONTROL_NAMES,
   runUpdater,
   setApiRootForTests,
@@ -1087,16 +1088,19 @@ describe('pipeline', () => {
       expect(mock.requests.some((url) => /product-data|historicalData/.test(url))).toBe(false);
       expect((await readIndex(root)).funds.length).toBe(3);
 
+      const stateBefore = readFileSync(new URL('update-state.json', root), 'utf8');
       await runUpdater(controlsFor({ TICKERS: 'CCC', MAX_FETCHES: '1' }));
-      expect((await readJson(root, 'update-state.json')).cursor).toBe('CCC');
+      // a TICKERS run never reads, writes or deletes the cursor
+      expect(readFileSync(new URL('update-state.json', root), 'utf8')).toBe(stateBefore);
       const seen: string[] = [];
       for (let run = 0; run < 3; run++) {
         await runUpdater(controlsFor({ MAX_FETCHES: '2' }));
         seen.push((await readJson(root, 'update-state.json')).cursor);
       }
       expect(seen).toEqual(['BBB', 'AAA', 'CCC']); // AAA,BBB then CCC,AAA (wrap) then BBB,CCC
+      const rotated = readFileSync(new URL('update-state.json', root), 'utf8');
       await runUpdater(controlsFor({ MAX_FETCHES: '1', TICKERS: 'AAA' }));
-      expect((await readJson(root, 'update-state.json')).cursor).toBe('AAA');
+      expect(readFileSync(new URL('update-state.json', root), 'utf8')).toBe(rotated);
     });
   });
 
@@ -1169,5 +1173,16 @@ describe('network', () => {
     expect(Number(five.searchParams.get('period1'))).toBe(Math.floor(now / 1000 - 5 * 365.25 * 86_400));
     expect(five.searchParams.get('period2')).toBe(String(Math.floor(now / 1000)));
     expect(five.searchParams.has('range')).toBe(false);
+  });
+});
+
+describe('runOrder', () => {
+  const universe = ['AAA', 'BBB', 'CCC', 'DDD'].map((ticker) => ({ ticker }));
+  test('TICKERS narrows the run before the worker pool', () => {
+    expect(runOrder(universe, ['DDD', 'BBB'], null).map((fund) => fund.ticker)).toEqual(['BBB', 'DDD']);
+  });
+  test('an empty TICKERS walks the whole catalog and the cursor rotates it', () => {
+    expect(runOrder(universe, [], null).map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD']);
+    expect(runOrder(universe, [], 'BBB').map((fund) => fund.ticker)).toEqual(['CCC', 'DDD', 'AAA', 'BBB']);
   });
 });
