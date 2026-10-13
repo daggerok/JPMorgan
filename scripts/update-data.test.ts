@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
+  runOrder,
   CONTROL_NAMES,
   runUpdater,
   setApiRootForTests,
@@ -1169,5 +1170,16 @@ describe('network', () => {
     expect(Number(five.searchParams.get('period1'))).toBe(Math.floor(now / 1000 - 5 * 365.25 * 86_400));
     expect(five.searchParams.get('period2')).toBe(String(Math.floor(now / 1000)));
     expect(five.searchParams.has('range')).toBe(false);
+  });
+});
+
+describe('runOrder', () => {
+  const universe = ['AAA', 'BBB', 'CCC', 'DDD'].map((ticker) => ({ ticker }));
+  test('TICKERS narrows the run before the worker pool', () => {
+    expect(runOrder(universe, ['DDD', 'BBB'], null).map((fund) => fund.ticker)).toEqual(['BBB', 'DDD']);
+  });
+  test('an empty TICKERS walks the whole catalog and the cursor rotates it', () => {
+    expect(runOrder(universe, [], null).map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD']);
+    expect(runOrder(universe, [], 'BBB').map((fund) => fund.ticker)).toEqual(['CCC', 'DDD', 'AAA', 'BBB']);
   });
 });
