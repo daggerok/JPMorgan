@@ -56,20 +56,20 @@
   "dividendYieldBasis": "official-trailing-12m",
   "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 09 2026",
   "distributionRate": null,
-  "secYield": 0.08,
-  "secYieldText": "0.08%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 08 2026",
-  "unsubsidizedSecYield": 0.08
+  "secYield": 0.07,
+  "secYieldText": "0.07%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 09 2026",
+  "unsubsidizedSecYield": 0.07
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Oct 09 2026",
+   "priceReturnsAsOf": "Oct 12 2026",
    "mo1": 2.36,
    "mo1Text": "2.36%",
-   "qtd": 0.48,
-   "qtdText": "0.48%",
+   "qtd": 0.39,
+   "qtdText": "0.39%",
    "ytd": 7.04,
    "ytdText": "7.04%",
    "yr1": 9.44,
@@ -143,8 +143,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 388,
-  "asOf": "Oct 09 2026",
+  "totalRows": 389,
+  "asOf": "Oct 12 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  },
  "metrics": {
@@ -160,8 +160,8 @@
   "dividendYield": 0.11,
   "dividendYieldText": "0.11%",
   "dividendYieldBasis": "official-trailing-12m",
-  "secYield": 0.08,
-  "secYieldText": "0.08%",
+  "secYield": 0.07,
+  "secYieldText": "0.07%",
   "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
   "performanceAsOf": "2026-09-30"
  }
