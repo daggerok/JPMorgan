@@ -736,7 +736,7 @@ function mockProduct(fund: MockFund): Record<string, any> {
   return payload;
 }
 
-function installMockFetch(options: { delayMs?: number; failProduct?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean } = {}): { requests: string[]; peak: () => number } {
+function installMockFetch(options: { delayMs?: number; failProduct?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean; adjclose?: number[] } = {}): { requests: string[]; peak: () => number } {
   const requests: string[] = [];
   let inFlight = 0;
   let peak = 0;
@@ -754,7 +754,7 @@ function installMockFetch(options: { delayMs?: number; failProduct?: string[]; e
       if (/product-data/.test(url) && fund) return options.failProduct?.includes(fund.ticker) ? new Response('boom', { status: 404 }) : json(mockProduct(fund));
       if (/historicalData/.test(url) && fund) return json(options.emptyHistory?.includes(fund.ticker) ? {} : HISTORICAL_DATA_FIXTURE);
       if (/query1\.finance\.yahoo\.com/.test(url) && options.yahoo) {
-        return json({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2], open: [50, 51], high: [50, 51], low: [50, 51] }], adjclose: [{ adjclose: [50, 51] }] } }] } });
+        return json({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2], open: [50, 51], high: [50, 51], low: [50, 51] }], adjclose: [{ adjclose: options.adjclose ?? [50, 51] }] } }] } });
       }
       return new Response('not found', { status: 404 });
     } finally {
@@ -1076,6 +1076,35 @@ describe('pipeline', () => {
       await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
       expect((await readJson(root, 'funds/AAA/history/001.json')).headers).toEqual(headers);
       expect((await readJson(root, 'funds/AAA/meta.json')).history.source).toBe('previous run');
+    });
+  });
+
+  test('two runs on the same Yahoo history write zero changes even when adjusted closes jitter across a cent boundary', async () => {
+    const snapshot = (dir: string): Record<string, string> => {
+      const out: Record<string, string> = {};
+      const walk = (path: string): void => {
+        for (const name of readdirSync(path).sort()) {
+          const full = join(path, name);
+          if (statSync(full).isDirectory()) walk(full); else out[full] = readFileSync(full, 'utf8');
+        }
+      };
+      walk(dir);
+      return out;
+    };
+    const yahooRun = async (adjclose: number[]) => {
+      installMockFetch({ emptyHistory: ['AAA'], yahoo: true, adjclose });
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
+    };
+    await withTempFeed(async (root, dir) => {
+      // Yahoo float32 noise seen live: SPDV 2024-11-12 came back as 31.544998 and 31.545001 a minute apart
+      await yahooRun([49.915001, 50.984999]);
+      const first = snapshot(dir);
+      expect((await readJson(root, 'funds/AAA/history/001.json')).rows.map((row: Record<string, string>) => row['Adj Close'])).toEqual(['49.92', '50.98']);
+      await yahooRun([49.914998, 50.985002]);
+      expect(snapshot(dir)).toEqual(first);
+      // a real change beyond the noise is still written
+      await yahooRun([49.9, 50.97]);
+      expect((await readJson(root, 'funds/AAA/history/001.json')).rows.map((row: Record<string, string>) => row['Adj Close'])).toEqual(['49.9', '50.97']);
     });
   });
 
