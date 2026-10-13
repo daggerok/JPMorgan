@@ -1088,16 +1088,19 @@ describe('pipeline', () => {
       expect(mock.requests.some((url) => /product-data|historicalData/.test(url))).toBe(false);
       expect((await readIndex(root)).funds.length).toBe(3);
 
+      const stateBefore = readFileSync(new URL('update-state.json', root), 'utf8');
       await runUpdater(controlsFor({ TICKERS: 'CCC', MAX_FETCHES: '1' }));
-      expect((await readJson(root, 'update-state.json')).cursor).toBe('CCC');
+      // a TICKERS run never reads, writes or deletes the cursor
+      expect(readFileSync(new URL('update-state.json', root), 'utf8')).toBe(stateBefore);
       const seen: string[] = [];
       for (let run = 0; run < 3; run++) {
         await runUpdater(controlsFor({ MAX_FETCHES: '2' }));
         seen.push((await readJson(root, 'update-state.json')).cursor);
       }
       expect(seen).toEqual(['BBB', 'AAA', 'CCC']); // AAA,BBB then CCC,AAA (wrap) then BBB,CCC
+      const rotated = readFileSync(new URL('update-state.json', root), 'utf8');
       await runUpdater(controlsFor({ MAX_FETCHES: '1', TICKERS: 'AAA' }));
-      expect((await readJson(root, 'update-state.json')).cursor).toBe('AAA');
+      expect(readFileSync(new URL('update-state.json', root), 'utf8')).toBe(rotated);
     });
   });
 
