@@ -42,7 +42,7 @@ function outputConfigEntries(config: Record<string, any>): [string, string][] {
 }
 function outputPrintConfig(brand: string, config: Record<string, any>): void {
   const entries: [string, string][] = [...outputConfigEntries(config), ['VERBOSE', String(outputVerbose())]];
-  console.log(`[ config   ] ${brand} updater:\n${entries.map(([key, value]) => `              ${key}=${/TOKEN|PASSWORD|SECRET|COOKIE/i.test(key) ? '<redacted>' : outputClean(value)}`).join('\n')}`);
+  console.log(`[ config   ] ${brand} updater:\n${entries.map(([key, value]) => `              ${key}=${/TOKEN|PASSWORD|SECRET|COOKIE|SEC_UA/i.test(key) ? '<redacted>' : outputClean(value)}`).join('\n')}`);
 }
 function outputHasOutputFilters(config: Record<string, any>): boolean {
   return outputConfigEntries(config).some(([name, value]) =>
