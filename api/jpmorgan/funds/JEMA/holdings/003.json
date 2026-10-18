@@ -2,7 +2,7 @@
  "ticker": "JEMA",
  "page": 3,
  "pageSize": 250,
- "totalRows": 509,
+ "totalRows": 515,
  "headers": [
   "Name",
   "Ticker",
@@ -15,6 +15,50 @@
   "Maturity"
  ],
  "rows": [
+  {
+   "Name": "HUNGARIAN FORINT",
+   "Ticker": "-",
+   "Identifier": "HUF",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "INDONESIAN RUPIAH",
+   "Ticker": "-",
+   "Identifier": "IDR",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "-3",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "KENYA SHILLING",
+   "Ticker": "-",
+   "Identifier": "KES",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "NEW ROMANIAN LEU",
+   "Ticker": "-",
+   "Identifier": "RON",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
   {
    "Name": "NEW TURKISH LIRA",
    "Ticker": "-",
@@ -75,20 +119,9 @@
    "Ticker": "-",
    "Identifier": "TWD",
    "Weight": "0",
-   "Market Value": "-0.41",
+   "Market Value": "-0.4",
    "Shares Held": "-12",
    "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "CURRENCY CONTRACT - USD",
-   "Ticker": "-",
-   "Identifier": "CCTUSD_172176_S",
-   "Weight": "0",
-   "Market Value": "-0.89",
-   "Shares Held": "-97024",
-   "Asset Category": "SPOT CONTRACTS",
    "Coupon": "",
    "Maturity": ""
   },
@@ -97,7 +130,7 @@
    "Ticker": "-",
    "Identifier": "BRL",
    "Weight": "0",
-   "Market Value": "-1.22",
+   "Market Value": "-1.2",
    "Shares Held": "-6",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
@@ -108,9 +141,42 @@
    "Ticker": "-",
    "Identifier": "CLP",
    "Weight": "0",
-   "Market Value": "-1.47",
+   "Market Value": "-1.46",
    "Shares Held": "-1437",
    "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - HKD",
+   "Ticker": "-",
+   "Identifier": "CCTHKD_172587_L",
+   "Weight": "0",
+   "Market Value": "-9.07",
+   "Shares Held": "4732696",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACT - HKD",
+   "Ticker": "-",
+   "Identifier": "CCTHKD_172445_L",
+   "Weight": "0",
+   "Market Value": "-327.54",
+   "Shares Held": "18891232",
+   "Asset Category": "SPOT CONTRACTS",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CURRENCY CONTRACTS - ZAR",
+   "Ticker": "-",
+   "Identifier": "CCTZAR_172588_L",
+   "Weight": "0",
+   "Market Value": "-10040.42",
+   "Shares Held": "86318586",
+   "Asset Category": "SPOT CONTRACTS",
    "Coupon": "",
    "Maturity": ""
   }

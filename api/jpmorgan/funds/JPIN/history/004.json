@@ -1,0 +1,38 @@
+{
+ "ticker": "JPIN",
+ "page": 4,
+ "pageSize": 1000,
+ "totalRows": 3004,
+ "headers": [
+  "Date",
+  "NAV",
+  "Market Price",
+  "Premium/Discount"
+ ],
+ "rows": [
+  {
+   "Date": "Oct 13 2026",
+   "NAV": "73.64825714",
+   "Market Price": "73.52",
+   "Premium/Discount": "-0.1741"
+  },
+  {
+   "Date": "Oct 14 2026",
+   "NAV": "73.12999133",
+   "Market Price": "73.01",
+   "Premium/Discount": "-0.1641"
+  },
+  {
+   "Date": "Oct 15 2026",
+   "NAV": "73.92173337",
+   "Market Price": "73.91",
+   "Premium/Discount": "-0.0159"
+  },
+  {
+   "Date": "Oct 16 2026",
+   "NAV": "74.13521672",
+   "Market Price": "73.98",
+   "Premium/Discount": "-0.2094"
+  }
+ ]
+}
