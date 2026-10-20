@@ -2,7 +2,7 @@
  "ticker": "JPFP",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 100,
+ "totalRows": 101,
  "headers": [
   "Date",
   "NAV",
@@ -609,6 +609,12 @@
    "NAV": "51.14674927",
    "Market Price": "51.16",
    "Premium/Discount": "0.0259"
+  },
+  {
+   "Date": "Oct 19 2026",
+   "NAV": "51.507483",
+   "Market Price": "51.63",
+   "Premium/Discount": "0.2379"
   }
  ]
 }
