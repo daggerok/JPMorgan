@@ -36,6 +36,7 @@ import {
   parseEarlyNavCsv,
   parseProductData,
   parseProductHoldings,
+  holdingsGuard,
   compareHoldingRows,
   parseHistoricalData,
   navTotalReturnDays,
@@ -218,10 +219,11 @@ const PRODUCT_DATA_FIXTURE = {
         { performanceFactor: 'Market Price Returns', oneYear: 0.0908, threeYears: 0.3137, fiveYears: 0.6125, tenYears: null, inception: 0.9535, effectiveDate: '2026-08-31' },
       ],
     },
+    // NVDA's weight is raised so the sample adds up to ~100% like a real sheet (holdingsGuard rejects a sum outside 50..150)
     dailyHoldingsAll: {
       effectiveDate: '2026-09-17',
       data: [
-        { securityDescription: 'NVIDIA CORP COMMON', securityId: '67066G104', securityTicker: 'NVDA', securityType: 'DOMESTIC COMMON STOCK', shares: 4301234, marketValue: 879922379.14, netAssetValuePercent: 1.94, marketValuePercent: 1.95, country: 'United States', currencyCode: 'USD' },
+        { securityDescription: 'NVIDIA CORP COMMON', securityId: '67066G104', securityTicker: 'NVDA', securityType: 'DOMESTIC COMMON STOCK', shares: 4301234, marketValue: 879922379.14, netAssetValuePercent: 97.94, marketValuePercent: 1.95, country: 'United States', currencyCode: 'USD' },
         { securityDescription: 'SPX 09/22/2026 5990 ELN', securityId: '46654Q104', securityTicker: 'SPX', securityType: 'EQUITY LINKED NOTES', shares: 11500000, marketValue: 120345678.9, netAssetValuePercent: 0.27 },
         { securityDescription: 'JPMORGAN PRIME MONEY', securityId: '46637K844', securityTicker: 'JIMXX', securityType: 'MONEY MARKET', shares: 934627, marketValue: 934534.38, netAssetValuePercent: 0.01 },
         { securityDescription: 'USD CASH', securityId: null, securityTicker: null, securityType: 'CURRENCIES', shares: 1000, marketValue: 1000, netAssetValuePercent: 0 },
@@ -518,7 +520,7 @@ describe('parsing', () => {
     expect(holdings.headers).toEqual(HOLDINGS_HEADERS);
     expect(holdings.asOfDate).toBe('2026-09-17');
     expect(holdings.rows.length).toBe(5); // the nameless row is dropped
-    expect(holdings.rows[0]).toEqual({ Name: 'NVIDIA CORP COMMON', Ticker: 'NVDA', Identifier: '67066G104', Weight: '1.94', 'Market Value': '879922379.14', 'Shares Held': '4301234', 'Asset Category': 'DOMESTIC COMMON STOCK' });
+    expect(holdings.rows[0]).toEqual({ Name: 'NVIDIA CORP COMMON', Ticker: 'NVDA', Identifier: '67066G104', Weight: '97.94', 'Market Value': '879922379.14', 'Shares Held': '4301234', 'Asset Category': 'DOMESTIC COMMON STOCK' });
     const byName = (name: string) => holdings.rows.find((row) => row.Name.startsWith(name))!;
     expect([byName('SPX').Ticker, byName('SPX').Identifier]).toEqual(['-', '46654Q104']); // "SPX" is the underlying, not a listed symbol
     expect([byName('USD CASH').Ticker, byName('USD CASH').Identifier, byName('USD CASH').Weight]).toEqual(['-', '-', '0']);
@@ -551,6 +553,21 @@ describe('parsing', () => {
     expect(parseProductHoldings({ dailyHoldings: { data: [row] } }, 'XXXX')).toBeNull(); // never the ten-row teaser
     expect(parseProductHoldings({ dailyHoldingsAll: { data: [] } }, 'XXXX')).toBeNull();
     expect(parseProductHoldings({}, 'XXXX')).toBeNull();
+  });
+
+  test('holdings guard: header-only, renamed weight column, broken weights, a bad weight sum and a halved sheet are rejected', () => {
+    const headers = ['Name', 'Ticker', 'Weight'];
+    const rows = [{ Name: 'A', Ticker: 'A', Weight: '60%' }, { Name: 'B', Ticker: 'B', Weight: '40%' }];
+    expect(holdingsGuard(headers, rows, 2)).toBeNull();
+    expect(holdingsGuard(headers, [['A', 'A', '60'], ['B', 'B', '40']], null)).toBeNull();
+    expect(holdingsGuard([], [], 0)).toBeNull(); // nothing published before: an empty sheet is honest
+    expect(holdingsGuard(headers, [], 505)).toContain('no holdings rows');
+    expect(holdingsGuard(['Name', 'Ticker', 'Wt'], rows, 2)).toContain('no weight column');
+    expect(holdingsGuard(headers, rows.map((row) => ({ ...row, Weight: '6\u200B0' })), 2)).toContain('numeric weight');
+    const allocation = [{ Name: 'Cash&Collateral', Ticker: '-', Weight: '100' }, { Name: 'Equities', Ticker: '-', Weight: '476' }];
+    expect(holdingsGuard(headers, allocation, 2)).toContain('outside 50..150');
+    expect(holdingsGuard(headers, allocation, 2, ['sum'])).toBeNull();
+    expect(holdingsGuard(headers, rows, 5)).toContain('less than half');
   });
 
   test('holdings order is canonical, so a reshuffled source answer writes identical pages', () => {
@@ -1032,6 +1049,46 @@ describe('pipeline', () => {
       await expect(runUpdater(controlsFor())).rejects.toThrow(/every examined fund failed/);
       expect((await readIndex(root)).funds.length).toBe(3);
     });
+  });
+
+  test('holdings that fail the guard keep the fund exactly as published and report it failed', async () => {
+    const realSummary = process.env.GITHUB_STEP_SUMMARY;
+    const summaryDir = mkdtempSync(join(tmpdir(), 'jpm-summary-'));
+    try {
+      installMockFetch();
+      await withTempFeed(async (_root, dir) => {
+        await runUpdater(controlsFor());
+        const contents = () => {
+          const out: Record<string, string> = {};
+          const walk = (path: string): void => {
+            for (const name of readdirSync(path).sort()) {
+              const full = join(path, name);
+              if (statSync(full).isDirectory()) walk(full); else out[full] = readFileSync(full, 'utf8');
+            }
+          };
+          walk(dir);
+          return out;
+        };
+        const before = contents();
+        // product-data renames its weight fields for BBB: every Weight cell of the fresh sheet turns blank
+        const good = globalThis.fetch;
+        globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+          const response = await good(input, init);
+          if (!/product-data/.test(String(input)) || !String(input).includes(MOCK_FUNDS[1].cusip)) return response;
+          const payload = await response.json();
+          payload.fundData.dailyHoldingsAll.data = payload.fundData.dailyHoldingsAll.data.map(({ netAssetValuePercent, marketValuePercent, ...rest }: Record<string, unknown>) => ({ ...rest, weightPct: netAssetValuePercent }));
+          return new Response(JSON.stringify(payload), { status: 200, headers: { 'content-type': 'application/json' } });
+        }) as unknown as typeof fetch;
+        const summary = join(summaryDir, 'summary.md');
+        process.env.GITHUB_STEP_SUMMARY = summary;
+        await runUpdater(controlsFor());
+        expect(contents()).toEqual(before);
+        expect(readFileSync(summary, 'utf8')).toContain('- failed: 1');
+      });
+    } finally {
+      if (realSummary === undefined) delete process.env.GITHUB_STEP_SUMMARY; else process.env.GITHUB_STEP_SUMMARY = realSummary;
+      rmSync(summaryDir, { recursive: true, force: true });
+    }
   });
 
   test('a fund that lost its index row is rebuilt from meta.json; a row without meta gets dataFile null and the full key set', async () => {
