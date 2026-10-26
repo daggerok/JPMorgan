@@ -7,6 +7,8 @@ import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
   runOrder,
+  CLOSED_FUNDS,
+  closedFund,
   CONTROL_NAMES,
   runUpdater,
   setApiRootForTests,
@@ -353,7 +355,9 @@ describe('controls', () => {
     expect(resolve({ API_BASE: 'http://localhost:8080/mirror' }).API_BASE).toBe('http://localhost:8080/mirror');
     for (const value of ['auto', 'true', 'false', 'True', 'FALSE']) expect(resolve({ USE_SYSTEM_CA: value }).USE_SYSTEM_CA).toBe(value.toLowerCase());
   });
+});
 
+describe('controls 2', () => {
   test('range filters: bounds, suffixes, presets; a stray colon, no colon or min > max is an error', () => {
     expect(parseRange('', 'X')).toBeUndefined();
     expect(parseRange(':', 'X')).toBeUndefined();
@@ -514,7 +518,9 @@ describe('parsing', () => {
     expect(fallback.dividendYieldKind).toContain('month-end');
     expect(() => parseProductData({ fundData: null, error: null }, 'XXXX')).toThrow(/no fundData/);
   });
+});
 
+describe('parsing 2', () => {
   test('holdings: shared headers, "-" for unlisted tickers, bond columns, container fallback, null when empty', () => {
     const holdings = parseProductHoldings(PRODUCT_DATA_FIXTURE.fundData, 'JEPI')!;
     expect(holdings.headers).toEqual(HOLDINGS_HEADERS);
@@ -618,7 +624,9 @@ describe('parsing', () => {
     expect(inferDistributionFrequency(at([0, 1, 2, 3, 4, 5]))).toEqual({ frequency: 'Monthly', paymentsPerYear: 12 });
     expect(inferDistributionFrequency([])).toEqual({ frequency: 'None', paymentsPerYear: null });
   });
+});
 
+describe('parsing 3', () => {
   test('history: official NAV series, positive dividends only, quarter-end returns; Yahoo chart fallback', () => {
     const historical = parseHistoricalData(HISTORICAL_DATA_FIXTURE, 'JEPI');
     expect(historical.points.map((point) => point.date)).toEqual(['2020-05-20', '2026-08-29', '2026-09-01', '2026-09-17', '2026-09-18']);
@@ -921,6 +929,10 @@ describe('metrics', () => {
     expect(covered.mo1).toBeCloseTo(sinceJuly, 2);
     expect(priceReturns(days, now, '2015-01-02')).toEqual(priceReturns(days, now));
   });
+});
+
+describe('metrics 2', () => {
+  const KEYS = ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'dividendYieldBasis', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf'];
 
   test('NAV total return and reinvestment coverage helpers', () => {
     const point = (date: string, nav: number) => ({ date, nav, marketPrice: nav, premiumDiscount: 0 });
@@ -1090,6 +1102,106 @@ describe('pipeline', () => {
       rmSync(summaryDir, { recursive: true, force: true });
     }
   });
+});
+
+describe('pipeline 2', () => {
+  test('a new fund whose holdings the guard rejects gets a catalog-only row, is reported failed and is never read as published data', async () => {
+    const realSummary = process.env.GITHUB_STEP_SUMMARY;
+    const summaryDir = mkdtempSync(join(tmpdir(), 'jpm-summary-'));
+    // product-data renames its weight fields for CCC: every Weight cell of the fresh sheet turns blank
+    const rejectCcc = (good: typeof fetch) => (async (input: RequestInfo | URL, init?: RequestInit) => {
+      const response = await good(input, init);
+      if (!/product-data/.test(String(input)) || !String(input).includes(MOCK_FUNDS[2].cusip)) return response;
+      const payload = await response.json();
+      payload.fundData.dailyHoldingsAll.data = payload.fundData.dailyHoldingsAll.data.map(({ netAssetValuePercent, marketValuePercent, ...rest }: Record<string, unknown>) => ({ ...rest, weightPct: netAssetValuePercent }));
+      return new Response(JSON.stringify(payload), { status: 200, headers: { 'content-type': 'application/json' } });
+    }) as unknown as typeof fetch;
+    try {
+      await withTempFeed(async (root, dir) => {
+        installMockFetch({ funds: MOCK_FUNDS.slice(0, 2) });
+        await runUpdater(controlsFor());
+        installMockFetch();
+        globalThis.fetch = rejectCcc(globalThis.fetch);
+        const summary = join(summaryDir, 'summary.md');
+        process.env.GITHUB_STEP_SUMMARY = summary;
+        await runUpdater(controlsFor());
+        expect(readFileSync(summary, 'utf8')).toContain('- failed: 1');
+        const rows = (await readIndex(root)).funds;
+        expect(rows.map((row) => row.ticker)).toEqual(TICKERS);
+        const ghost = rows[2];
+        expect(ghost).toMatchObject({ ticker: 'CCC', name: 'JPMorgan CCC ETF', cusip: MOCK_FUNDS[2].cusip, dataFile: null, holdings: 0, history: 0 });
+        expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
+        expect(ghost.metrics.returnsBasis).toBeTruthy();
+        expect(Object.values(ghost.metrics).filter((value) => typeof value === 'number')).toEqual([]);
+        expect(readdirSync(join(dir, 'funds')).sort()).toEqual(['AAA', 'BBB']);
+        // still rejected on its own: the failure fails the run (exit code 1), the catalog-only row stays as it was
+        const index = readFileSync(join(dir, 'index.json'), 'utf8');
+        installMockFetch();
+        globalThis.fetch = rejectCcc(globalThis.fetch);
+        await expect(runUpdater(controlsFor({ TICKERS: 'CCC' }))).rejects.toThrow(/every examined fund failed/);
+        expect(readFileSync(join(dir, 'index.json'), 'utf8')).toBe(index);
+        // fresh holdings pass (a young fund, no returns yet): a full row from the fund's own sources, and nothing of
+        // the catalog-only row is read as its previous state (its empty returns block never reaches meta.json)
+        installMockFetch({ funds: [MOCK_FUNDS[0], MOCK_FUNDS[1], { ...MOCK_FUNDS[2], young: true }], emptyHistory: ['CCC'] });
+        await runUpdater(controlsFor({ TICKERS: 'CCC' }));
+        const fresh = (await readIndex(root)).funds[2];
+        expect(fresh).toMatchObject({ ticker: 'CCC', dataFile: './funds/CCC/meta.json', terValue: 0.25 });
+        expect(fresh.holdings).toBeGreaterThan(0);
+        expect((await readJson(root, 'funds/CCC/meta.json')).returns).toBeNull();
+      });
+    } finally {
+      if (realSummary === undefined) delete process.env.GITHUB_STEP_SUMMARY; else process.env.GITHUB_STEP_SUMMARY = realSummary;
+      rmSync(summaryDir, { recursive: true, force: true });
+    }
+  });
+
+  test('a closed fund is never fetched or reported failed: its files stay as published, its index row says closed, a rerun writes nothing', async () => {
+    const entry = { ticker: 'BBB', closed: '2026-10-01', source: 'https://www.sec.gov/Archives/edgar/data/1485894/notice.htm' };
+    expect(() => closedFund([{ ...entry, closed: 'soon' }], 'BBB')).toThrow('CLOSED_FUNDS');
+    expect(closedFund([entry], 'bbb')).toEqual(entry);
+    const contents = (dir: string): Record<string, string> => {
+      const out: Record<string, string> = {};
+      const walk = (path: string): void => {
+        for (const name of readdirSync(path).sort()) {
+          const full = join(path, name);
+          if (statSync(full).isDirectory()) walk(full); else out[full] = readFileSync(full, 'utf8');
+        }
+      };
+      walk(dir);
+      return out;
+    };
+    await withTempFeed(async (root, dir) => {
+      installMockFetch();
+      await runUpdater(controlsFor());
+      const first = contents(dir);
+      // BBB's fresh holdings would fail the guard if it were still processed
+      const mock = installMockFetch();
+      const good = globalThis.fetch;
+      globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+        const response = await good(input, init);
+        if (!/product-data/.test(String(input)) || !String(input).includes(MOCK_FUNDS[1].cusip)) return response;
+        const payload = await response.json();
+        payload.fundData.dailyHoldingsAll.data = payload.fundData.dailyHoldingsAll.data.map(({ netAssetValuePercent, marketValuePercent, ...rest }: Record<string, unknown>) => ({ ...rest, weightPct: netAssetValuePercent }));
+        return new Response(JSON.stringify(payload), { status: 200, headers: { 'content-type': 'application/json' } });
+      }) as unknown as typeof fetch;
+      CLOSED_FUNDS.push(entry);
+      try {
+        await runUpdater(controlsFor({ TICKERS: 'BBB' }));
+        expect(mock.requests.filter((url) => url.includes(MOCK_FUNDS[1].cusip) || /BBB/.test(url))).toEqual([]);
+        expect(process.exitCode).not.toBe(1);
+        const closed = contents(dir);
+        for (const path of Object.keys(first)) if (!path.endsWith('index.json')) expect([path, closed[path]]).toEqual([path, first[path]]);
+        const rows = (await readIndex(root)).funds;
+        expect(rows.map((row) => row.ticker)).toEqual(TICKERS);
+        expect(rows[1]).toMatchObject({ status: 'closed', closedDate: '2026-10-01', closedSource: entry.source, dataFile: './funds/BBB/meta.json' });
+        expect(rows.filter((row) => row.status === 'closed')).toHaveLength(1);
+        await runUpdater(controlsFor());
+        expect(contents(dir)).toEqual(closed);
+      } finally {
+        CLOSED_FUNDS.splice(CLOSED_FUNDS.indexOf(entry), 1);
+      }
+    });
+  });
 
   test('a fund that lost its index row is rebuilt from meta.json; a row without meta gets dataFile null and the full key set', async () => {
     installMockFetch();
@@ -1135,7 +1247,9 @@ describe('pipeline', () => {
       expect((await readJson(root, 'funds/AAA/meta.json')).history.source).toBe('previous run');
     });
   });
+});
 
+describe('pipeline 3', () => {
   test('two runs on the same Yahoo history write zero changes even when adjusted closes jitter across a cent boundary', async () => {
     const snapshot = (dir: string): Record<string, string> => {
       const out: Record<string, string> = {};
