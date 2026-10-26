@@ -2054,6 +2054,9 @@ export function inferDistributionFrequency(
   return { frequency: 'Irregular', paymentsPerYear: null };
 }
 
+// The first close is the fund's own start only when it falls within this many days of its first trade or inception.
+export const INCEPTION_TOLERANCE_DAYS = 10;
+
 export type PriceReturns = {
   asOfDate: string;
   ytd: number | null;
@@ -2084,7 +2087,10 @@ function annualized(start: number, end: number, years: number): number | null {
 // distributions reinvested (or Yahoo adjusted closes in the fallback path).
 // JPMorgan publishes official returns for every fund, so these only fill the
 // gaps (young funds, quarter-to-date) and drive the History-derived blocks.
-export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: string | null = null): PriceReturns {
+// `startIso` is the fund's own start (Yahoo's first trade date, or the inception date): siAnn needs the series to
+// begin there and to span at least one year. A HISTORY_RANGE=Ny window starts years later and its "since inception"
+// would just be cagrNy, so without a matching start siAnn stays null.
+export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: string | null = null, startIso: string | null = null): PriceReturns {
   const empty: PriceReturns = { ...EMPTY_PRICE_RETURNS };
   if (!days.length) return empty;
   const last = days[days.length - 1];
@@ -2115,7 +2121,10 @@ export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: st
   const year5 = yearsAgo(5);
   const year10 = yearsAgo(10);
   const first = days[0];
-  const siYears = (lastEpoch - Date.parse(`${first.date}T00:00:00Z`) / 1000) / (365.25 * 86_400);
+  const firstEpoch = Date.parse(`${first.date}T00:00:00Z`) / 1000;
+  const siYears = (lastEpoch - firstEpoch) / (365.25 * 86_400);
+  const startEpoch = startIso ? Date.parse(`${startIso}T00:00:00Z`) / 1000 : Number.NaN;
+  const startsAtInception = Number.isFinite(startEpoch) && firstEpoch - startEpoch <= INCEPTION_TOLERANCE_DAYS * 86_400;
   const mo1StartDay = atOrBefore(mo1Start);
   const qtdStartDay = atOrBefore(quarterStart);
   return {
@@ -2125,7 +2134,7 @@ export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: st
     cagr3y: anchored(year3) ? annualized(year3.adjClose, last.adjClose, 3) : null,
     cagr5y: anchored(year5) ? annualized(year5.adjClose, last.adjClose, 5) : null,
     cagr10y: anchored(year10) ? annualized(year10.adjClose, last.adjClose, 10) : null,
-    siAnn: siYears >= 1 && anchored(first) ? annualized(first.adjClose, last.adjClose, siYears) : null,
+    siAnn: startsAtInception && siYears >= 1 && anchored(first) ? annualized(first.adjClose, last.adjClose, siYears) : null,
     mo1: anchored(mo1StartDay) ? pctChange(mo1StartDay.adjClose, last.adjClose) : null,
     qtd: anchored(qtdStartDay) ? pctChange(qtdStartDay.adjClose, last.adjClose) : null,
   };
@@ -2574,6 +2583,72 @@ export function keepPublishedAdjClose(days: ChartDay[], published: JsonRecord[])
 }
 
 // Yahoo fallback rows, identical to the sibling feeds.
+/** A history row date ("Oct 23 2026" or ISO) as an ISO date, or null. */
+function historyRowIsoDate(raw: unknown): string | null {
+  const text = String(raw ?? '').trim();
+  const label = /^([A-Za-z]{3}) (\d{2}) (\d{4})$/.exec(text);
+  if (label) {
+    const month = MONTHS.indexOf(label[1]) + 1;
+    return month ? `${label[3]}-${String(month).padStart(2, '0')}-${label[2]}` : null;
+  }
+  return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : null;
+}
+
+/**
+ * A chart that starts after the published history (a HISTORY_RANGE window, or Yahoo cutting a series) never shrinks it:
+ * the published days before the window are kept and the window's metrics (3y, 5y, 10y, since inception) still see them.
+ * Yahoo rescales every adjusted close before a new dividend, so the kept days are rescaled by the ratio of the fresh to
+ * the published adjusted close on the overlapping days (one factor: a dividend moves every earlier close alike); ratios
+ * within float noise of 1 keep the published cents. Distributions before the window are kept the same way.
+ * Returns null when the two cannot be joined honestly (no overlap, a split moved the raw closes, ratios disagree): the
+ * caller then keeps the fund's published history and returns, exactly as after a failed chart request.
+ * Same rule as Fidelity's mergeWindowedChart (Fidelity PR 81).
+ */
+export function mergeWindowedChart(chart: ParsedChart, published: JsonRecord[], publishedDistributions: unknown[]): ParsedChart | null {
+  if (!chart.days.length || !published.length) return chart;
+  const firstFresh = chart.days[0].date;
+  const rows = published
+    .map((row) => ({ date: historyRowIsoDate(row.Date), close: numberOrNull(row.Close), adjClose: numberOrNull(row['Adj Close']), volume: numberOrNull(row.Volume) ?? 0 }))
+    .filter((row): row is { date: string; close: number; adjClose: number; volume: number } => row.date !== null && row.close !== null && row.adjClose !== null && row.adjClose > 0)
+    .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+  const older = rows.filter((row) => row.date < firstFresh);
+  if (!older.length) return chart;
+  const byDate = new Map(rows.map((row) => [row.date, row] as [string, typeof row]));
+  const adjRatios: number[] = [];
+  const closeRatios: number[] = [];
+  for (const day of chart.days) {
+    const prior = byDate.get(day.date);
+    if (!prior) continue;
+    adjRatios.push((day.adjCloseRaw ?? day.adjClose) / prior.adjClose);
+    if (prior.close > 0) closeRatios.push(day.close / prior.close);
+  }
+  if (!adjRatios.length) return null;
+  const mean = (values: number[]): number => values.reduce((sum, value) => sum + value, 0) / values.length;
+  const spread = (values: number[]): number => Math.max(...values) / Math.min(...values) - 1;
+  // A split rescales the raw closes too (the kept raw closes would then be wrong); disagreeing ratios mean the two
+  // series are not the same security or not one adjustment apart.
+  if (closeRatios.length && Math.abs(mean(closeRatios) - 1) > 1e-3) return null;
+  if (spread(adjRatios) > 5e-3) return null;
+  const measured = mean(adjRatios);
+  if (measured < 0.5 || measured > 1.001) return null;
+  const factor = Math.abs(measured - 1) < 1e-4 ? 1 : measured;
+  const days: ChartDay[] = older.map((row) => {
+    const raw = row.adjClose * factor;
+    return { date: row.date, close: row.close, adjClose: factor === 1 ? row.adjClose : round(raw, 2), volume: row.volume, adjCloseRaw: raw };
+  });
+  const firstFreshEpoch = Date.parse(`${firstFresh}T00:00:00Z`) / 1000;
+  const keptDividends = publishedDistributions
+    .map((row) => {
+      const cells = Array.isArray(row) ? row : [];
+      const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(String(cells[0] ?? ''));
+      const amount = numberOrNull(cells[1]);
+      return match && amount !== null && amount > 0 ? { epoch: Date.UTC(Number(match[3]), Number(match[1]) - 1, Number(match[2])) / 1000, amount } : null;
+    })
+    .filter((row): row is { epoch: number; amount: number } => row !== null && row.epoch < firstFreshEpoch)
+    .sort((a, b) => a.epoch - b.epoch);
+  return { ...chart, days: days.concat(chart.days), dividends: keptDividends.concat(chart.dividends.filter((dividend) => dividend.epoch >= firstFreshEpoch)) };
+}
+
 function historyRows(days: ChartDay[]): JsonRecord[] {
   return days.map((day) => ({
     Date: formatEdgarDate(day.date),
@@ -2827,7 +2902,11 @@ async function processFund(
   } else if (!config.skipYahoo && !(await officialHistoryPublished(ticker))) {
     // The Yahoo schema (Date/Close/Adj Close/Volume) never replaces a published official NAV history
     try {
-      const chart = parseChart(await fetchJson(chartUrl(ticker, config), `[ chart    ] ${ticker}`, yahooHeaders(), config));
+      const fetched = parseChart(await fetchJson(chartUrl(ticker, config), `[ chart    ] ${ticker}`, yahooHeaders(), config));
+      // A HISTORY_RANGE window never shrinks the published Yahoo history (and with it 3y, 5y, 10y and since inception)
+      const publishedDistributionRows = ((previousMeta?.distributions as JsonRecord | undefined)?.rows as unknown[] | undefined) ?? [];
+      const chart = mergeWindowedChart(fetched, await readPreviousSheet(ticker, 'history'), publishedDistributionRows);
+      if (!chart) throw new Error(`chart window does not join the published history (${config.historyRange})`);
       exchangeName = chart.exchangeName;
       navFromChart = chart.navPrice;
       priceFromChart = chart.regularMarketPrice;
@@ -2849,7 +2928,10 @@ async function processFund(
     const previousHeaders = await readPreviousSheetHeaders(ticker, 'history');
     historyHeaders = previousHeaders.length ? previousHeaders : HISTORY_HEADERS;
   }
-  const derived = chartDays.length ? priceReturns(chartDays, new Date(), coveredFrom) : EMPTY_PRICE_RETURNS;
+  // siAnn is derived only from a series that starts at the fund's first trade (Yahoo, HISTORY_RANGE=max) or inception
+  const inception = product?.inception ?? fund.inception ?? null;
+  const seriesStart = firstTradeDate !== null ? epochToIsoDate(firstTradeDate) : inception;
+  const derived = chartDays.length ? priceReturns(chartDays, new Date(), coveredFrom, seriesStart) : EMPTY_PRICE_RETURNS;
 
   // The dividend schedule lists the last payments; the product-data "latest
   // dividend" backs it up when the schedule is empty.
@@ -2873,7 +2955,6 @@ async function processFund(
 
   // Official returns: product-data month-end "At NAV" (also carries 1-month)
   // backed by the fund explorer block; quarter-end from historicalData.
-  const inception = product?.inception ?? fund.inception ?? null;
   const returnsAsOfDate = product?.monthEnd.asOfDate ?? fund.returnsAsOfDate ?? null;
   const official = mergeOfficial(product?.monthEnd ?? null, fund.returns);
   official.sinceInception = annualizedSinceInception(official.sinceInception, inception, returnsAsOfDate);
@@ -3107,11 +3188,15 @@ async function loadCompanyTickerMap(config: UpdaterConfig): Promise<Map<string, 
 
 // N-PORT positions carry CUSIP/ISIN but never a ticker; the SEC company table
 // turns the filed issuer name back into an exchange symbol so the watchlist
-// export stays usable, exactly like the sibling Fidelity updater.
-function fillNportTickers(rows: NportHolding[], names: Map<string, string>): NportHolding[] {
+// export stays usable, exactly like the sibling Fidelity updater. Only equity rows (N-PORT assetCat EC common,
+// EP preferred) get one: a bond of Visa or Amazon must not carry the stock ticker V or AMZN, the hub groups by ticker.
+const NPORT_EQUITY_CATEGORIES = new Set(['EC', 'EP']);
+
+export function fillNportTickers(rows: NportHolding[], names: Map<string, string>): NportHolding[] {
   if (!names.size) return rows;
   return rows.map((row) => {
     if (cleanHoldingTicker(row.Ticker)) return row;
+    if (!NPORT_EQUITY_CATEGORIES.has(String(row['Asset Category'] ?? '').trim().toUpperCase())) return row;
     const name = String(row.Name ?? '');
     const ticker = names.get(normalizeHoldingName(name)) || names.get(normalizeHoldingNameCore(name)) || '';
     return ticker ? { ...row, Ticker: ticker } : row;

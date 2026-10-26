@@ -58,6 +58,7 @@ import {
   parseEdgarAtomFilings,
   parseChart,
   priceReturns,
+  fillNportTickers,
   lastCompletedQuarterEnd,
   annualizedToTotal,
   totalToAnnualized,
@@ -710,6 +711,14 @@ describe('parsing 3', () => {
     const companies = parseCompanyTickerMap({ '0': { cik_str: 1045810, ticker: 'NVDA', title: 'NVIDIA CORP' }, '1': { cik_str: 1, ticker: '', title: 'No Ticker Inc' } });
     expect(companies.get(normalizeHoldingName('NVIDIA Corp'))).toBe('NVDA');
     expect(companies.get(normalizeHoldingName('No Ticker Inc'))).toBeUndefined();
+    // JPM-2: only equity rows get the issuer's stock ticker, a bond of the same issuer stays "-"
+    const visa = parseCompanyTickerMap({ '0': { cik_str: 1403161, ticker: 'V', title: 'VISA INC.' } });
+    const filled = fillNportTickers([
+      { Name: 'Visa Inc', Ticker: '-', Identifier: '92826C839', 'Asset Category': 'EC' },
+      { Name: 'Visa Inc', Ticker: '-', Identifier: '92826CAD4', 'Asset Category': 'DBT' },
+      { Name: 'Visa Inc', Ticker: '-', Identifier: 'X', 'Asset Category': 'EP' },
+    ], visa);
+    expect(filled.map((row) => row.Ticker)).toEqual(['V', '-', 'V']);
   });
 
   test('am.jpmorgan.com URL builders', () => {
@@ -893,8 +902,13 @@ describe('metrics', () => {
     expect(priceReturns([], now).asOfDate).toBe('');
     const day = (date: string, adjClose: number) => ({ date, close: adjClose, adjClose, volume: 1 });
     const later = new Date('2026-09-26T00:00:00Z');
-    expect(priceReturns([day('2025-11-25', 100), day('2026-09-25', 110)], later).siAnn).toBeNull();
-    expect(priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], later).siAnn).toBeCloseTo(10, 1);
+    expect(priceReturns([day('2025-11-25', 100), day('2026-09-25', 110)], later, null, '2025-11-25').siAnn).toBeNull();
+    expect(priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], later, null, '2024-09-25').siAnn).toBeCloseTo(10, 1);
+    // JPM-7: a HISTORY_RANGE=2y Yahoo window of a 2006 fund starts years after the first trade, so its
+    // "since inception" would only repeat the 2-year CAGR; a start within 10 days of the first trade still counts
+    expect(priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], later, null, '2006-04-03').siAnn).toBeNull();
+    expect(priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], later, null, '2024-09-18').siAnn).toBeCloseTo(10, 1);
+    expect(priceReturns([day('2024-09-25', 100), day('2026-09-25', 121)], later).siAnn).toBeNull();
     // the official since-inception figure is published once the fund is a year old
     expect(annualizedSinceInception(11.25, '2020-05-20', '2026-08-31')).toBe(11.25);
     expect(annualizedSinceInception(1.9, '2026-07-30', '2026-08-31')).toBeNull();
@@ -914,7 +928,7 @@ describe('metrics', () => {
       { date: '2026-08-21', close: 340, adjClose: 330, volume: 1 },
     ];
     const now = new Date(Date.UTC(2026, 7, 21));
-    const returns = priceReturns(days, now);
+    const returns = priceReturns(days, now, null, '2015-01-02');
     expect(returns.asOfDate).toBe('2026-08-21');
     expect(returns.ytd).toBeCloseTo(54.21, 2);
     expect(returns.yr1).toBeCloseTo(54.21, 2);
@@ -922,12 +936,12 @@ describe('metrics', () => {
     expect(returns.mo1).toBeCloseTo(5.77, 2);
     expect(returns.siAnn).toBeGreaterThan(0);
     // a weekly payer whose schedule only covers the last 12 payments: long windows stay null
-    const covered = priceReturns(days, now, '2026-06-29');
+    const covered = priceReturns(days, now, '2026-06-29', '2015-01-02');
     expect([covered.siAnn, covered.ytd, covered.yr1, covered.cagr3y]).toEqual([null, null, null, null]);
     const sinceJuly = ((330 - 312) / 312) * 100;
     expect(covered.qtd).toBeCloseTo(sinceJuly, 2);
     expect(covered.mo1).toBeCloseTo(sinceJuly, 2);
-    expect(priceReturns(days, now, '2015-01-02')).toEqual(priceReturns(days, now));
+    expect(priceReturns(days, now, '2015-01-02', '2015-01-02')).toEqual(returns);
   });
 });
 
@@ -1276,6 +1290,30 @@ describe('pipeline 3', () => {
       // a real change beyond the noise is still written
       await yahooRun([49.9, 50.97]);
       expect((await readJson(root, 'funds/AAA/history/001.json')).rows.map((row: Record<string, string>) => row['Adj Close'])).toEqual(['49.9', '50.97']);
+    });
+  });
+
+  test('a HISTORY_RANGE window never shrinks a published Yahoo history: older days are rescaled to the new adjusted closes', async () => {
+    await withTempFeed(async (root) => {
+      installMockFetch({ emptyHistory: ['AAA'], yahoo: true });
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
+      expect((await readJson(root, 'funds/AAA/meta.json')).history.totalRows).toBe(2);
+      // a window that starts on the second published day plus one new day, after a dividend: every adjusted close x 0.99
+      const good = globalThis.fetch;
+      const windowed = { chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 52 }, timestamp: [1780086400, 1780172800], indicators: { quote: [{ close: [51, 52], volume: [2, 3] }], adjclose: [{ adjclose: [50.49, 51.48] }] } }] } };
+      globalThis.fetch = (async (input: unknown, init?: RequestInit) =>
+        /query1\.finance\.yahoo\.com/.test(String(input)) ? new Response(JSON.stringify(windowed), { status: 200 }) : good(input as RequestInfo, init)) as unknown as typeof fetch;
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA', HISTORY_RANGE: '1y' }));
+      const rows = (await readJson(root, 'funds/AAA/history/001.json')).rows;
+      expect(rows.map((row: Record<string, string>) => [row.Close, row['Adj Close']])).toEqual([['50', '49.5'], ['51', '50.49'], ['52', '51.48']]);
+      // a split moves the raw closes too: no honest join, the published history stays
+      const split = JSON.parse(JSON.stringify(windowed));
+      split.chart.result[0].indicators.quote[0].close = [25.5, 26];
+      split.chart.result[0].indicators.adjclose[0].adjclose = [25.25, 25.74];
+      globalThis.fetch = (async (input: unknown, init?: RequestInit) =>
+        /query1\.finance\.yahoo\.com/.test(String(input)) ? new Response(JSON.stringify(split), { status: 200 }) : good(input as RequestInfo, init)) as unknown as typeof fetch;
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA', HISTORY_RANGE: '1y' }));
+      expect((await readJson(root, 'funds/AAA/history/001.json')).rows).toEqual(rows);
     });
   });
 
