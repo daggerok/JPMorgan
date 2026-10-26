@@ -682,10 +682,10 @@ describe('parsing 3', () => {
     // JPM-2: the Visa bond keeps no stock ticker and an empty weight, never 0; the future keeps its own id, not SPY's
     expect(sheet.rows.slice(1).map((row) => [row.Ticker, row.Identifier, row.Weight, row.Coupon, row.Maturity])).toEqual([['-', '92826CAD4', '', '4.125', 'Jan 31 2028'], ['-', 'BBG01VKPGXL9', '0.005', '', '']]);
     expect(nportHoldingsSheet({ ...filing, positions: filing.positions.slice(0, 1) }, ['V']).headers).toEqual(HOLDINGS_HEADERS);
-    // a preferred row (EP) never takes the common stock's ticker: the name match alone would give an AT&T preferred "T"
+    // a preferred row (EP) never takes the common stock's ticker: the name match alone would give an AT&T preferred "T" (the shared block, Q31)
     const preferred = parseNportFiling('<invstOrSec><name>AT&amp;T Inc.</name><cusip>00206R706</cusip><identifiers><isin value="US00206R7061"/></identifiers><curCd>USD</curCd><valUSD>100</valUSD><pctVal>1</pctVal><assetCat>EP</assetCat></invstOrSec>');
     const att = nportTickers(preferred.positions, parseSecCompanyNames({ 0: { cik_str: 732717, ticker: 'T', title: 'AT&T INC.' } }));
-    expect([att, nportHoldingsSheet(preferred, att).rows[0].Ticker]).toEqual([['T'], '-']);
+    expect([att, nportHoldingsSheet(preferred, att).rows[0].Ticker]).toEqual([[''], '-']);
   });
 
   test('am.jpmorgan.com URL builders', () => {
