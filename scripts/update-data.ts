@@ -2054,6 +2054,9 @@ export function inferDistributionFrequency(
   return { frequency: 'Irregular', paymentsPerYear: null };
 }
 
+// The first close is the fund's own start only when it falls within this many days of its first trade or inception.
+export const INCEPTION_TOLERANCE_DAYS = 10;
+
 export type PriceReturns = {
   asOfDate: string;
   ytd: number | null;
@@ -2084,7 +2087,10 @@ function annualized(start: number, end: number, years: number): number | null {
 // distributions reinvested (or Yahoo adjusted closes in the fallback path).
 // JPMorgan publishes official returns for every fund, so these only fill the
 // gaps (young funds, quarter-to-date) and drive the History-derived blocks.
-export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: string | null = null): PriceReturns {
+// `startIso` is the fund's own start (Yahoo's first trade date, or the inception date): siAnn needs the series to
+// begin there and to span at least one year. A HISTORY_RANGE=Ny window starts years later and its "since inception"
+// would just be cagrNy, so without a matching start siAnn stays null.
+export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: string | null = null, startIso: string | null = null): PriceReturns {
   const empty: PriceReturns = { ...EMPTY_PRICE_RETURNS };
   if (!days.length) return empty;
   const last = days[days.length - 1];
@@ -2115,7 +2121,10 @@ export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: st
   const year5 = yearsAgo(5);
   const year10 = yearsAgo(10);
   const first = days[0];
-  const siYears = (lastEpoch - Date.parse(`${first.date}T00:00:00Z`) / 1000) / (365.25 * 86_400);
+  const firstEpoch = Date.parse(`${first.date}T00:00:00Z`) / 1000;
+  const siYears = (lastEpoch - firstEpoch) / (365.25 * 86_400);
+  const startEpoch = startIso ? Date.parse(`${startIso}T00:00:00Z`) / 1000 : Number.NaN;
+  const startsAtInception = Number.isFinite(startEpoch) && firstEpoch - startEpoch <= INCEPTION_TOLERANCE_DAYS * 86_400;
   const mo1StartDay = atOrBefore(mo1Start);
   const qtdStartDay = atOrBefore(quarterStart);
   return {
@@ -2125,7 +2134,7 @@ export function priceReturns(days: ChartDay[], now = new Date(), coveredFrom: st
     cagr3y: anchored(year3) ? annualized(year3.adjClose, last.adjClose, 3) : null,
     cagr5y: anchored(year5) ? annualized(year5.adjClose, last.adjClose, 5) : null,
     cagr10y: anchored(year10) ? annualized(year10.adjClose, last.adjClose, 10) : null,
-    siAnn: siYears >= 1 && anchored(first) ? annualized(first.adjClose, last.adjClose, siYears) : null,
+    siAnn: startsAtInception && siYears >= 1 && anchored(first) ? annualized(first.adjClose, last.adjClose, siYears) : null,
     mo1: anchored(mo1StartDay) ? pctChange(mo1StartDay.adjClose, last.adjClose) : null,
     qtd: anchored(qtdStartDay) ? pctChange(qtdStartDay.adjClose, last.adjClose) : null,
   };
@@ -2849,7 +2858,10 @@ async function processFund(
     const previousHeaders = await readPreviousSheetHeaders(ticker, 'history');
     historyHeaders = previousHeaders.length ? previousHeaders : HISTORY_HEADERS;
   }
-  const derived = chartDays.length ? priceReturns(chartDays, new Date(), coveredFrom) : EMPTY_PRICE_RETURNS;
+  // siAnn is derived only from a series that starts at the fund's first trade (Yahoo, HISTORY_RANGE=max) or inception
+  const inception = product?.inception ?? fund.inception ?? null;
+  const seriesStart = firstTradeDate !== null ? epochToIsoDate(firstTradeDate) : inception;
+  const derived = chartDays.length ? priceReturns(chartDays, new Date(), coveredFrom, seriesStart) : EMPTY_PRICE_RETURNS;
 
   // The dividend schedule lists the last payments; the product-data "latest
   // dividend" backs it up when the schedule is empty.
@@ -2873,7 +2885,6 @@ async function processFund(
 
   // Official returns: product-data month-end "At NAV" (also carries 1-month)
   // backed by the fund explorer block; quarter-end from historicalData.
-  const inception = product?.inception ?? fund.inception ?? null;
   const returnsAsOfDate = product?.monthEnd.asOfDate ?? fund.returnsAsOfDate ?? null;
   const official = mergeOfficial(product?.monthEnd ?? null, fund.returns);
   official.sinceInception = annualizedSinceInception(official.sinceInception, inception, returnsAsOfDate);
@@ -3107,11 +3118,15 @@ async function loadCompanyTickerMap(config: UpdaterConfig): Promise<Map<string, 
 
 // N-PORT positions carry CUSIP/ISIN but never a ticker; the SEC company table
 // turns the filed issuer name back into an exchange symbol so the watchlist
-// export stays usable, exactly like the sibling Fidelity updater.
-function fillNportTickers(rows: NportHolding[], names: Map<string, string>): NportHolding[] {
+// export stays usable, exactly like the sibling Fidelity updater. Only equity rows (N-PORT assetCat EC common,
+// EP preferred) get one: a bond of Visa or Amazon must not carry the stock ticker V or AMZN, the hub groups by ticker.
+const NPORT_EQUITY_CATEGORIES = new Set(['EC', 'EP']);
+
+export function fillNportTickers(rows: NportHolding[], names: Map<string, string>): NportHolding[] {
   if (!names.size) return rows;
   return rows.map((row) => {
     if (cleanHoldingTicker(row.Ticker)) return row;
+    if (!NPORT_EQUITY_CATEGORIES.has(String(row['Asset Category'] ?? '').trim().toUpperCase())) return row;
     const name = String(row.Name ?? '');
     const ticker = names.get(normalizeHoldingName(name)) || names.get(normalizeHoldingNameCore(name)) || '';
     return ticker ? { ...row, Ticker: ticker } : row;
