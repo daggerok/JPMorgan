@@ -54,7 +54,7 @@ Defaults for every control live in `scripts/update-data.config.json`. Precedence
 | Catalog (all US JPMorgan ETFs) | `https://am.jpmorgan.com/FundsMarketingHandler/fund-explorer?country=us&role=adv&fundType=etf` (the JSON behind the [ETF fund explorer](https://am.jpmorgan.com/us/en/asset-management/adv/products/fund-explorer/etf)) |
 | Holdings per fund | `https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip={CUSIP}&country=us&role=adv` (the JSON behind each fund page, e.g. [JEPI](https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332)) |
 | Daily history, distributions | `https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip={CUSIP}&country=us&role=adv` (official NAV history) |
-| Fallback | SEC EDGAR N-PORT-P + Yahoo Finance chart API as fallbacks |
+| Fallback | SEC EDGAR N-PORT-P + Yahoo Finance chart API as fallbacks; N-PORT rows get a ticker from the SEC company table only when they are equities (`EC`, `EP`), a bond keeps `-` |
 
 ### Metrics and caveats
 
@@ -105,7 +105,7 @@ All values are strings in `scripts/update-data.config.json`. Every control is al
 | `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. Legacy alias: `HISTORICAL_PAGE_SIZE`. |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the source fund-explorer, product-data and historicalData JSON under `api/jpmorgan/raw`. |
 | `MAX_RETRIES` | `2` | Retries after the initial request (integer >= 1). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
-| `HISTORY_RANGE` | `max` | `max` or `Ny` (for example `5y`): how far back the Yahoo fallback history reaches, sent as explicit `period1`/`period2`; anything else is an error. The official history always covers the whole life of the fund. |
+| `HISTORY_RANGE` | `max` | `max` or `Ny` (for example `5y`): how far back the Yahoo fallback history reaches, sent as explicit `period1`/`period2`; anything else is an error. A window never shrinks a published Yahoo history: older days are kept, rescaled to the new adjusted closes over the shared days, with their distributions; a series that cannot be joined (a split, no overlap) keeps the published history. The official history always covers the whole life of the fund. |
 | `EDGAR_FALLBACK` | `true` | SEC EDGAR N-PORT-P fallback for funds whose product-data lists no holdings. |
 | `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
 | `SKIP_JPMORGAN` | `false` | Keep the previously published catalog, holdings and official returns; only the fallbacks run. |

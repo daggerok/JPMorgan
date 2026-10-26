@@ -1293,6 +1293,30 @@ describe('pipeline 3', () => {
     });
   });
 
+  test('a HISTORY_RANGE window never shrinks a published Yahoo history: older days are rescaled to the new adjusted closes', async () => {
+    await withTempFeed(async (root) => {
+      installMockFetch({ emptyHistory: ['AAA'], yahoo: true });
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
+      expect((await readJson(root, 'funds/AAA/meta.json')).history.totalRows).toBe(2);
+      // a window that starts on the second published day plus one new day, after a dividend: every adjusted close x 0.99
+      const good = globalThis.fetch;
+      const windowed = { chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 52 }, timestamp: [1780086400, 1780172800], indicators: { quote: [{ close: [51, 52], volume: [2, 3] }], adjclose: [{ adjclose: [50.49, 51.48] }] } }] } };
+      globalThis.fetch = (async (input: unknown, init?: RequestInit) =>
+        /query1\.finance\.yahoo\.com/.test(String(input)) ? new Response(JSON.stringify(windowed), { status: 200 }) : good(input as RequestInfo, init)) as unknown as typeof fetch;
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA', HISTORY_RANGE: '1y' }));
+      const rows = (await readJson(root, 'funds/AAA/history/001.json')).rows;
+      expect(rows.map((row: Record<string, string>) => [row.Close, row['Adj Close']])).toEqual([['50', '49.5'], ['51', '50.49'], ['52', '51.48']]);
+      // a split moves the raw closes too: no honest join, the published history stays
+      const split = JSON.parse(JSON.stringify(windowed));
+      split.chart.result[0].indicators.quote[0].close = [25.5, 26];
+      split.chart.result[0].indicators.adjclose[0].adjclose = [25.25, 25.74];
+      globalThis.fetch = (async (input: unknown, init?: RequestInit) =>
+        /query1\.finance\.yahoo\.com/.test(String(input)) ? new Response(JSON.stringify(split), { status: 200 }) : good(input as RequestInfo, init)) as unknown as typeof fetch;
+      await runUpdater(controlsFor({ SKIP_YAHOO: 'false', TICKERS: 'AAA', HISTORY_RANGE: '1y' }));
+      expect((await readJson(root, 'funds/AAA/history/001.json')).rows).toEqual(rows);
+    });
+  });
+
   test('filters and limits: SEC_YIELD filters for real, MAX_FETCHES counts selected funds, the cursor wraps and resets for another filter', async () => {
     installMockFetch();
     await withTempFeed(async (root) => {
