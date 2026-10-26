@@ -1321,6 +1321,39 @@ describe('pipeline 3', () => {
       expect([done.partial, done.cursor]).toEqual([false, null]);
     });
   });
+
+  test('a kept fund keeps the dates, distribution rows and source labels of its own meta.json, not the index row', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(controlsFor());
+      const first = await readJson(root, 'funds/AAA/meta.json');
+      expect([first.holdings.asOfDate, first.distributions.rows.length]).toEqual(['2026-09-17', 2]);
+      // AAA's sheet came from an N-PORT filing; this run the fund explorer is down, product-data lists no positions,
+      // net assets or dividend, and historicalData has no rows
+      const nport = 'SEC EDGAR Form N-PORT-P (accession 0001485894-26-000123, report period 2026-09-17)';
+      writeFileSync(new URL('funds/AAA/meta.json', root), JSON.stringify({ ...first, holdings: { ...first.holdings, source: nport } }));
+      const base = globalThis.fetch;
+      globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input);
+        if (/fund-explorer/.test(url)) return new Response('down', { status: 503 });
+        if (!url.includes(`cusip=${MOCK_FUNDS[0].cusip}`)) return base(input, init);
+        if (/historicalData/.test(url)) return new Response('{}', { status: 200 });
+        const payload = mockProduct(MOCK_FUNDS[0]);
+        delete payload.fundData.dailyHoldingsAll;
+        delete payload.fundData.shareClass.fundShareclassDividend;
+        delete payload.fundData.shareClass.netGrossAssetClass;
+        return new Response(JSON.stringify(payload), { status: 200 });
+      }) as unknown as typeof fetch;
+      await runUpdater(controlsFor({ TICKERS: 'AAA', MAX_RETRIES: '1' }));
+      const kept = await readJson(root, 'funds/AAA/meta.json');
+      // the index row has counts under holdings and history and no distribution rows: nothing is read from it
+      expect([kept.holdings.asOfDate, kept.holdings.source, kept.source.holdingsSource, kept.holdings.totalRows]).toEqual(['2026-09-17', nport, nport, first.holdings.totalRows]);
+      expect([kept.history.asOf, kept.history.source, kept.source.historySource]).toEqual([first.history.asOf, 'previous run', first.source.historySource]);
+      expect(kept.history.asOf).not.toBe('—');
+      expect([kept.aum.asOfDate, kept.aum.source]).toEqual([first.aum.asOfDate, 'previous run']);
+      expect(kept.distributions.rows).toEqual(first.distributions.rows);
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------

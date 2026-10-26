@@ -2775,7 +2775,12 @@ async function processFund(
   const holdingsHeaders = holdings?.headers.length
     ? holdings.headers
     : (await readPreviousSheetHeaders(ticker, 'holdings')) || HOLDINGS_HEADERS;
-  const holdingsAsOf = holdings?.asOfDate || (((previous.holdings as JsonRecord)?.asOfDate as string) ?? null);
+  // meta.json-only fields of kept data (holdings and history dates, distribution rows, sources) come from the fund's
+  // own meta.json: the index row carries counts and display strings under the same keys. Kept rows keep the date and
+  // the source label they were published with, so a later N-PORT filing is still compared with the real date.
+  const previousHoldings = previousMeta?.holdings as JsonRecord | undefined;
+  if (!holdings && typeof previousHoldings?.source === 'string' && previousHoldings.source) holdingsSource = previousHoldings.source;
+  const holdingsAsOf = holdings?.asOfDate || ((previousHoldings?.asOfDate as string | undefined) ?? null);
   // Fresh holdings (product-data or N-PORT) that look broken (no weight column, non-numeric weights, a bad weight sum,
   // half the rows gone) never replace the published ones: the fund fails and keeps its previous complete state.
   // `holdings` is null when the rows above are the previous run's sheet, which is never checked again.
@@ -2905,7 +2910,7 @@ async function processFund(
     publishedYieldBasis,
   );
 
-  const distributions = dividends.length ? distributionRows(dividends) : (((previous.distributions?.rows as JsonRecord[]) || []) as string[][]);
+  const distributions = dividends.length ? distributionRows(dividends) : (((previousMeta?.distributions as JsonRecord | undefined)?.rows as string[][] | undefined) || []);
 
   // Without a fresh am.jpmorgan.com catalog the filed N-PORT-P series name is
   // the most authoritative fund name available.
@@ -2942,7 +2947,7 @@ async function processFund(
       pricesDownload: cusip ? jpmorganPricesDownloadUrl(cusip, config.role, inception ?? '', navAsOfDate ?? '') : null,
       yahooChart: `${YAHOO_CHART_URL}/${encodeURIComponent(ticker)}`,
       holdingsSource,
-      historySource: haveFreshHistory ? historySource : (((previous.source as JsonRecord)?.historySource as string) ?? 'previous run'),
+      historySource: haveFreshHistory ? historySource : (((previousMeta?.source as JsonRecord | undefined)?.historySource as string | undefined) ?? 'previous run'),
       provider: 'J.P. Morgan Asset Management public fund data (FundsMarketingHandler JSON) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)',
     },
     identifiers: { cusip: cusip || null, isin: product?.isin || fund.isin || null, indexTicker: benchmark || null },
@@ -2972,7 +2977,7 @@ async function processFund(
           ? formatEdgarDate((product?.netAssetsDate || navAsOfDate) as string)
           : nportNetAssets !== null && holdingsEdgar?.repPdDate
             ? formatEdgarDate(holdingsEdgar.repPdDate)
-            : (((previous.aum as JsonRecord)?.asOfDate as string) ?? '—'),
+            : (((previousMeta?.aum as JsonRecord | undefined)?.asOfDate as string | undefined) ?? '—'),
       source:
         catalogNetAssets !== null
           ? product?.netAssets !== null && product?.netAssets !== undefined
@@ -3017,7 +3022,7 @@ async function processFund(
   const { cleanup: cleanHoldingsPages, ...holdingsManifest } = await writePages(fundDir, ticker, 'holdings', holdingsHeaders, holdingsRows, config.holdingsPageSize);
   const { cleanup: cleanHistoryPages, ...historyManifest } = await writePages(fundDir, ticker, 'history', historyHeaders, history, config.historyPageSize);
   meta.holdings = { ...holdingsManifest, asOfDate: holdingsAsOf, asOf: holdingsAsOf ? formatEdgarDate(holdingsAsOf) : '—', source: holdingsSource };
-  meta.history = { ...historyManifest, asOf: haveFreshHistory && derived.asOfDate ? formatEdgarDate(derived.asOfDate) : (((previous.history as JsonRecord)?.asOf as string) ?? '—'), source: haveFreshHistory ? historySource : 'previous run' };
+  meta.history = { ...historyManifest, asOf: haveFreshHistory && derived.asOfDate ? formatEdgarDate(derived.asOfDate) : (((previousMeta?.history as JsonRecord | undefined)?.asOf as string | undefined) ?? '—'), source: haveFreshHistory ? historySource : 'previous run' };
   meta.metrics = metrics;
   await writeIfChanged(new URL('meta.json', fundDir), meta);
   await cleanHoldingsPages();
