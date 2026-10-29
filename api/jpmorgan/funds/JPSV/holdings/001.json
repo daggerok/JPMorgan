@@ -2,7 +2,7 @@
  "ticker": "JPSV",
  "page": 1,
  "pageSize": 250,
- "totalRows": 116,
+ "totalRows": 118,
  "headers": [
   "Name",
   "Ticker",
@@ -17,26 +17,26 @@
    "Name": "JPMORGAN PRIME MONEY",
    "Ticker": "JIMXX",
    "Identifier": "46637K844",
-   "Weight": "3.72",
-   "Market Value": "1054523.21",
-   "Shares Held": "1054523",
+   "Weight": "3.38",
+   "Market Value": "962313.07",
+   "Shares Held": "962313",
    "Asset Category": "MONEY MARKET"
   },
   {
    "Name": "INSIGHT ENTERPRISES INC",
    "Ticker": "NSIT",
    "Identifier": "45765U103",
-   "Weight": "2.03",
-   "Market Value": "577330.82",
+   "Weight": "2.04",
+   "Market Value": "580825.44",
    "Shares Held": "3266",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "SELECTIVE INSURANCE",
+   "Name": "SELECTIVE INSURANCE GROUP",
    "Ticker": "SIGI",
    "Identifier": "816300107",
-   "Weight": "1.85",
-   "Market Value": "524785.52",
+   "Weight": "1.87",
+   "Market Value": "530869.36",
    "Shares Held": "5432",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -44,8 +44,8 @@
    "Name": "CONCENTRA GROUP HOLDINGS",
    "Ticker": "CON",
    "Identifier": "20603L102",
-   "Weight": "1.74",
-   "Market Value": "494746.25",
+   "Weight": "1.8",
+   "Market Value": "511636.95",
    "Shares Held": "12605",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -53,8 +53,8 @@
    "Name": "OLD NATIONAL BANCORP/IN",
    "Ticker": "ONB",
    "Identifier": "680033107",
-   "Weight": "1.69",
-   "Market Value": "478396.08",
+   "Weight": "1.64",
+   "Market Value": "467248.62",
    "Shares Held": "18894",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -62,8 +62,8 @@
    "Name": "LIVANOVA PLC COMMON",
    "Ticker": "LIVN",
    "Identifier": "G5509L101",
-   "Weight": "1.63",
-   "Market Value": "462909.8",
+   "Weight": "1.62",
+   "Market Value": "461536.52",
    "Shares Held": "5722",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -71,8 +71,8 @@
    "Name": "MEDIAALPHA INC COMMON",
    "Ticker": "MAX",
    "Identifier": "58450V104",
-   "Weight": "1.61",
-   "Market Value": "457555",
+   "Weight": "1.58",
+   "Market Value": "450634",
    "Shares Held": "38450",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -80,8 +80,8 @@
    "Name": "EPAM SYSTEMS INC COMMON",
    "Ticker": "EPAM",
    "Identifier": "29414B104",
-   "Weight": "1.47",
-   "Market Value": "415971.25",
+   "Weight": "1.46",
+   "Market Value": "415910.19",
    "Shares Held": "3053",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -89,8 +89,8 @@
    "Name": "SOUTHSTATE BANK CORP",
    "Ticker": "SSB",
    "Identifier": "84472E102",
-   "Weight": "1.44",
-   "Market Value": "407585.13",
+   "Weight": "1.43",
+   "Market Value": "405421.85",
    "Shares Held": "3863",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -98,7 +98,7 @@
    "Name": "CARS.COM INC COMMON",
    "Ticker": "CARS",
    "Identifier": "14575E105",
-   "Weight": "1.41",
+   "Weight": "1.4",
    "Market Value": "399583.5",
    "Shares Held": "36525",
    "Asset Category": "DOMESTIC COMMON STOCK"
@@ -107,62 +107,80 @@
    "Name": "PROVIDENT FINANCIAL",
    "Ticker": "PFS",
    "Identifier": "74386T105",
-   "Weight": "1.36",
-   "Market Value": "385784",
+   "Weight": "1.35",
+   "Market Value": "383792",
    "Shares Held": "16600",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ENCOMPASS HEALTH CORP",
-   "Ticker": "EHC",
-   "Identifier": "29261A100",
-   "Weight": "1.36",
-   "Market Value": "384927.18",
-   "Shares Held": "3102",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "WSFS FINANCIAL CORP",
-   "Ticker": "WSFS",
-   "Identifier": "929328102",
-   "Weight": "1.35",
-   "Market Value": "384037.2",
-   "Shares Held": "4860",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "GRAHAM HOLDINGS COMPANY",
-   "Ticker": "GHC",
-   "Identifier": "384637104",
-   "Weight": "1.35",
-   "Market Value": "382246.2",
-   "Shares Held": "315",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "CAMDEN NATIONAL CORP",
    "Ticker": "CAC",
    "Identifier": "133034108",
-   "Weight": "1.33",
-   "Market Value": "378504.96",
+   "Weight": "1.34",
+   "Market Value": "381449.76",
    "Shares Held": "6544",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "WSFS FINANCIAL CORP",
+   "Ticker": "WSFS",
+   "Identifier": "929328102",
+   "Weight": "1.34",
+   "Market Value": "381218.4",
+   "Shares Held": "4860",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ENCOMPASS HEALTH CORP",
+   "Ticker": "EHC",
+   "Identifier": "29261A100",
+   "Weight": "1.33",
+   "Market Value": "378723.18",
+   "Shares Held": "3102",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ENSIGN GROUP INC/THE",
+   "Ticker": "ENSG",
+   "Identifier": "29358P101",
+   "Weight": "1.3",
+   "Market Value": "368772.33",
+   "Shares Held": "2003",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "GRAHAM HOLDINGS COMPANY",
+   "Ticker": "GHC",
+   "Identifier": "384637104",
+   "Weight": "1.3",
+   "Market Value": "368578.35",
+   "Shares Held": "315",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "QCR HOLDINGS INC COMMON",
    "Ticker": "QCRH",
    "Identifier": "74727A104",
-   "Weight": "1.31",
-   "Market Value": "370581.45",
+   "Weight": "1.27",
+   "Market Value": "361834.05",
    "Shares Held": "3585",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CNX RESOURCES CORP",
+   "Ticker": "CNX",
+   "Identifier": "12653C108",
+   "Weight": "1.26",
+   "Market Value": "359800.8",
+   "Shares Held": "9456",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SIMMONS FIRST NATIONAL",
    "Ticker": "SFNC",
    "Identifier": "828730200",
-   "Weight": "1.28",
-   "Market Value": "362726.91",
+   "Weight": "1.26",
+   "Market Value": "358992.27",
    "Shares Held": "15561",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -170,62 +188,44 @@
    "Name": "CORSAIR GAMING INC",
    "Ticker": "CRSR",
    "Identifier": "22041X102",
-   "Weight": "1.25",
-   "Market Value": "353286.63",
-   "Shares Held": "25731",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ENSIGN GROUP INC/THE",
-   "Ticker": "ENSG",
-   "Identifier": "29358P101",
-   "Weight": "1.24",
-   "Market Value": "351706.77",
-   "Shares Held": "2003",
+   "Weight": "1.23",
+   "Market Value": "350892",
+   "Shares Held": "25992",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "WESBANCO INC COMMON",
    "Ticker": "WSBC",
    "Identifier": "950810101",
-   "Weight": "1.24",
-   "Market Value": "351684.3",
+   "Weight": "1.22",
+   "Market Value": "346911.12",
    "Shares Held": "9006",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "MCGRATH RENTCORP COMMON",
-   "Ticker": "MGRC",
-   "Identifier": "580589109",
-   "Weight": "1.24",
-   "Market Value": "350777.04",
-   "Shares Held": "2994",
+   "Name": "AVIENT CORP COMMON STOCK",
+   "Ticker": "AVNT",
+   "Identifier": "05368V106",
+   "Weight": "1.22",
+   "Market Value": "345662.67",
+   "Shares Held": "8193",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SM ENERGY CO COMMON",
    "Ticker": "SM",
    "Identifier": "78454L100",
-   "Weight": "1.22",
-   "Market Value": "347392.71",
+   "Weight": "1.2",
+   "Market Value": "342629.16",
    "Shares Held": "8661",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CNX RESOURCES CORP",
-   "Ticker": "CNX",
-   "Identifier": "12653C108",
-   "Weight": "1.22",
-   "Market Value": "345522.24",
-   "Shares Held": "9456",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ASSOCIATED BANC-CORP",
    "Ticker": "ASB",
    "Identifier": "045487105",
-   "Weight": "1.2",
-   "Market Value": "341433.42",
+   "Weight": "1.19",
+   "Market Value": "339060",
    "Shares Held": "11302",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -233,36 +233,9 @@
    "Name": "INDEPENDENT BANK CORP/MI",
    "Ticker": "IBCP",
    "Identifier": "453838609",
-   "Weight": "1.19",
-   "Market Value": "337294.58",
-   "Shares Held": "9121",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "STAGWELL INC COMMON",
-   "Ticker": "STGW",
-   "Identifier": "85256A109",
-   "Weight": "1.19",
-   "Market Value": "336561.42",
-   "Shares Held": "37479",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "AVIENT CORP COMMON STOCK",
-   "Ticker": "AVNT",
-   "Identifier": "05368V106",
    "Weight": "1.18",
-   "Market Value": "336158.79",
-   "Shares Held": "8193",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "COLUMBIA BANKING SYSTEM",
-   "Ticker": "COLB",
-   "Identifier": "197236102",
-   "Weight": "1.17",
-   "Market Value": "333388.28",
-   "Shares Held": "10805",
+   "Market Value": "336747.32",
+   "Shares Held": "9121",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -270,16 +243,43 @@
    "Ticker": "ICUI",
    "Identifier": "44930G107",
    "Weight": "1.17",
-   "Market Value": "332406.9",
+   "Market Value": "331948.05",
    "Shares Held": "1995",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "COLUMBIA BANKING SYSTEM",
+   "Ticker": "COLB",
+   "Identifier": "197236102",
+   "Weight": "1.17",
+   "Market Value": "331929.6",
+   "Shares Held": "10805",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "STAGWELL INC COMMON",
+   "Ticker": "STGW",
+   "Identifier": "85256A109",
+   "Weight": "1.16",
+   "Market Value": "330939.57",
+   "Shares Held": "37479",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "WEATHERFORD",
+   "Ticker": "WFRD",
+   "Identifier": "G48833118",
+   "Weight": "1.15",
+   "Market Value": "326287.94",
+   "Shares Held": "3674",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "FIRST COMMONWEALTH",
    "Ticker": "FCF",
    "Identifier": "319829107",
-   "Weight": "1.15",
-   "Market Value": "324940",
+   "Weight": "1.13",
+   "Market Value": "320782",
    "Shares Held": "15400",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -288,52 +288,16 @@
    "Ticker": "MHO",
    "Identifier": "55305B101",
    "Weight": "1.12",
-   "Market Value": "319098.78",
+   "Market Value": "318146.4",
    "Shares Held": "2574",
    "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "WEATHERFORD",
-   "Ticker": "WFRD",
-   "Identifier": "G48833118",
-   "Weight": "1.12",
-   "Market Value": "319086.9",
-   "Shares Held": "3674",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "RADIAN GROUP INC COMMON",
-   "Ticker": "RDN",
-   "Identifier": "750236101",
-   "Weight": "1.11",
-   "Market Value": "315207.75",
-   "Shares Held": "8817",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "WHITE MOUNTAINS",
-   "Ticker": "WTM",
-   "Identifier": "G9618E107",
-   "Weight": "1.1",
-   "Market Value": "311533.6",
-   "Shares Held": "140",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "EASTERLY GOVERNMENT",
-   "Ticker": "DEA",
-   "Identifier": "27616P301",
-   "Weight": "1.08",
-   "Market Value": "307563.89",
-   "Shares Held": "13567",
-   "Asset Category": "REIT"
   },
   {
    "Name": "MUELLER INDUSTRIES INC",
    "Ticker": "MLI",
    "Identifier": "624756102",
-   "Weight": "1.08",
-   "Market Value": "307236.58",
+   "Weight": "1.1",
+   "Market Value": "313993.4",
    "Shares Held": "5678",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -341,9 +305,45 @@
    "Name": "URBAN OUTFITTERS INC",
    "Ticker": "URBN",
    "Identifier": "917047102",
-   "Weight": "1.07",
-   "Market Value": "303963.6",
+   "Weight": "1.1",
+   "Market Value": "313797.2",
    "Shares Held": "3512",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "WHITE MOUNTAINS",
+   "Ticker": "WTM",
+   "Identifier": "G9618E107",
+   "Weight": "1.09",
+   "Market Value": "309201.2",
+   "Shares Held": "140",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "RADIAN GROUP INC COMMON",
+   "Ticker": "RDN",
+   "Identifier": "750236101",
+   "Weight": "1.08",
+   "Market Value": "308242.32",
+   "Shares Held": "8817",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "EASTERLY GOVERNMENT",
+   "Ticker": "DEA",
+   "Identifier": "27616P301",
+   "Weight": "1.07",
+   "Market Value": "305393.17",
+   "Shares Held": "13567",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "MCGRATH RENTCORP COMMON",
+   "Ticker": "MGRC",
+   "Identifier": "580589109",
+   "Weight": "1.06",
+   "Market Value": "300988.52",
+   "Shares Held": "2534",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -351,35 +351,17 @@
    "Ticker": "FRME",
    "Identifier": "320817109",
    "Weight": "1.05",
-   "Market Value": "298591.2",
+   "Market Value": "298444.4",
    "Shares Held": "7340",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "CHESAPEAKE UTILITIES",
+   "Name": "CHESAPEAKE UTILITIES CORP",
    "Ticker": "CPK",
    "Identifier": "165303108",
-   "Weight": "1.05",
-   "Market Value": "297027.36",
-   "Shares Held": "2212",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "KITE REALTY GROUP TRUST",
-   "Ticker": "KRG",
-   "Identifier": "49803T300",
    "Weight": "1.04",
-   "Market Value": "294234.96",
-   "Shares Held": "11922",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "HAYWARD HOLDINGS INC",
-   "Ticker": "HAYW",
-   "Identifier": "421298100",
-   "Weight": "1.03",
-   "Market Value": "292233.55",
-   "Shares Held": "23065",
+   "Market Value": "295744.4",
+   "Shares Held": "2212",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -387,26 +369,35 @@
    "Ticker": "KWR",
    "Identifier": "747316107",
    "Weight": "1.03",
-   "Market Value": "291239.88",
+   "Market Value": "293126.56",
    "Shares Held": "1868",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "KITE REALTY GROUP TRUST",
+   "Ticker": "KRG",
+   "Identifier": "49803T300",
+   "Weight": "1.02",
+   "Market Value": "289585.38",
+   "Shares Held": "11922",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "HAYWARD HOLDINGS INC",
+   "Ticker": "HAYW",
+   "Identifier": "421298100",
+   "Weight": "1.01",
+   "Market Value": "288035.25",
+   "Shares Held": "19475",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "MAGNOLIA OIL & GAS CORP",
    "Ticker": "MGY",
    "Identifier": "559663109",
-   "Weight": "1",
-   "Market Value": "283126.05",
+   "Weight": "1.01",
+   "Market Value": "287889.93",
    "Shares Held": "10827",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "UNITIL CORP COMMON STOCK",
-   "Ticker": "UTL",
-   "Identifier": "913259107",
-   "Weight": "0.97",
-   "Market Value": "274647",
-   "Shares Held": "4980",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -414,169 +405,187 @@
    "Ticker": "MYE",
    "Identifier": "628464109",
    "Weight": "0.96",
-   "Market Value": "272526.66",
+   "Market Value": "273120.4",
    "Shares Held": "8482",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "UNITIL CORP COMMON STOCK",
+   "Ticker": "UTL",
+   "Identifier": "913259107",
+   "Weight": "0.96",
+   "Market Value": "272655",
+   "Shares Held": "4980",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "CENTERSPACE",
    "Ticker": "CSR",
    "Identifier": "15202L107",
-   "Weight": "0.95",
-   "Market Value": "270379.62",
+   "Weight": "0.94",
+   "Market Value": "267959.16",
    "Shares Held": "4746",
    "Asset Category": "REIT"
   },
   {
-   "Name": "AMERICAN STATES WATER CO",
-   "Ticker": "AWR",
-   "Identifier": "029899101",
-   "Weight": "0.92",
-   "Market Value": "262300.8",
-   "Shares Held": "3070",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "SABRA HEALTH CARE REIT",
-   "Ticker": "SBRA",
-   "Identifier": "78573L106",
-   "Weight": "0.92",
-   "Market Value": "260637",
-   "Shares Held": "13325",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "YETI HOLDINGS INC COMMON",
-   "Ticker": "YETI",
-   "Identifier": "98585X104",
-   "Weight": "0.91",
-   "Market Value": "259221.82",
-   "Shares Held": "6058",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "INGRAM MICRO HOLDING",
+   "Name": "INGRAM MICRO HOLDING CORP",
    "Ticker": "INGM",
    "Identifier": "457152106",
-   "Weight": "0.91",
-   "Market Value": "257683.14",
+   "Weight": "0.93",
+   "Market Value": "264290.4",
    "Shares Held": "9306",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "TRICO BANCSHARES COMMON",
-   "Ticker": "TCBK",
-   "Identifier": "896095106",
-   "Weight": "0.89",
-   "Market Value": "253372.32",
-   "Shares Held": "4806",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "HB FULLER CO COMMON",
-   "Ticker": "FUL",
-   "Identifier": "359694106",
-   "Weight": "0.88",
-   "Market Value": "249786.35",
-   "Shares Held": "5035",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "BRUKER CORP",
    "Ticker": "BRKR",
    "Identifier": "116794108",
-   "Weight": "0.86",
-   "Market Value": "244066.42",
+   "Weight": "0.92",
+   "Market Value": "262756",
    "Shares Held": "4238",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "YETI HOLDINGS INC COMMON",
+   "Ticker": "YETI",
+   "Identifier": "98585X104",
+   "Weight": "0.91",
+   "Market Value": "259948.78",
+   "Shares Held": "6058",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "AMERICAN STATES WATER CO",
+   "Ticker": "AWR",
+   "Identifier": "029899101",
+   "Weight": "0.91",
+   "Market Value": "259230.8",
+   "Shares Held": "3070",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "TRICO BANCSHARES COMMON",
+   "Ticker": "TCBK",
+   "Identifier": "896095106",
+   "Weight": "0.9",
+   "Market Value": "254814.12",
+   "Shares Held": "4806",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "SABRA HEALTH CARE REIT",
+   "Ticker": "SBRA",
+   "Identifier": "78573L106",
+   "Weight": "0.89",
+   "Market Value": "254107.75",
+   "Shares Held": "13325",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "HB FULLER CO COMMON",
+   "Ticker": "FUL",
+   "Identifier": "359694106",
+   "Weight": "0.87",
+   "Market Value": "248477.25",
+   "Shares Held": "5035",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "MATADOR RESOURCES CO",
    "Ticker": "MTDR",
    "Identifier": "576485205",
-   "Weight": "0.85",
-   "Market Value": "240019.88",
+   "Weight": "0.84",
+   "Market Value": "239539.52",
    "Shares Held": "4003",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "APPLIED INDUSTRIAL",
-   "Ticker": "AIT",
-   "Identifier": "03820C105",
-   "Weight": "0.83",
-   "Market Value": "235531",
-   "Shares Held": "743",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "NBT BANCORP INC COMMON",
-   "Ticker": "NBTB",
-   "Identifier": "628778102",
-   "Weight": "0.83",
-   "Market Value": "234795.67",
-   "Shares Held": "4441",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "KORN FERRY COMMON STOCK",
-   "Ticker": "KFY",
-   "Identifier": "500643200",
-   "Weight": "0.82",
-   "Market Value": "233255.7",
-   "Shares Held": "2979",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "SOUTHWEST GAS HOLDINGS",
-   "Ticker": "SWX",
-   "Identifier": "844895102",
-   "Weight": "0.82",
-   "Market Value": "232797.1",
-   "Shares Held": "2554",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "AZZ INC COMMON STOCK USD",
    "Ticker": "AZZ",
    "Identifier": "002474104",
-   "Weight": "0.81",
-   "Market Value": "231232.92",
+   "Weight": "0.84",
+   "Market Value": "239164.3",
    "Shares Held": "1747",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "AMERICOLD REALTY TRUST",
-   "Ticker": "COLD",
-   "Identifier": "03064D108",
-   "Weight": "0.81",
-   "Market Value": "230376.87",
-   "Shares Held": "15921",
-   "Asset Category": "REIT"
+   "Name": "SOUTHWEST GAS HOLDINGS",
+   "Ticker": "SWX",
+   "Identifier": "844895102",
+   "Weight": "0.83",
+   "Market Value": "236219.46",
+   "Shares Held": "2554",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "PENNYMAC FINANCIAL",
-   "Ticker": "PFSI",
-   "Identifier": "70932M107",
-   "Weight": "0.79",
-   "Market Value": "224026.24",
-   "Shares Held": "3518",
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "0.82",
+   "Market Value": "233571.21",
+   "Shares Held": "233571",
+   "Asset Category": "CURRENCIES"
+  },
+  {
+   "Name": "NBT BANCORP INC COMMON",
+   "Ticker": "NBTB",
+   "Identifier": "628778102",
+   "Weight": "0.81",
+   "Market Value": "230798.77",
+   "Shares Held": "4441",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "GROUP 1 AUTOMOTIVE INC",
    "Ticker": "GPI",
    "Identifier": "398905109",
-   "Weight": "0.78",
-   "Market Value": "221207.91",
+   "Weight": "0.79",
+   "Market Value": "225334.62",
    "Shares Held": "903",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "AMERICOLD REALTY TRUST",
+   "Ticker": "COLD",
+   "Identifier": "03064D108",
+   "Weight": "0.79",
+   "Market Value": "224326.89",
+   "Shares Held": "15921",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "KORN FERRY COMMON STOCK",
+   "Ticker": "KFY",
+   "Identifier": "500643200",
+   "Weight": "0.79",
+   "Market Value": "223961.22",
+   "Shares Held": "2979",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "PENNYMAC FINANCIAL",
+   "Ticker": "PFSI",
+   "Identifier": "70932M107",
+   "Weight": "0.78",
+   "Market Value": "223111.56",
+   "Shares Held": "3518",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "APPLIED INDUSTRIAL",
+   "Ticker": "AIT",
+   "Identifier": "03820C105",
+   "Weight": "0.78",
+   "Market Value": "222231.3",
+   "Shares Held": "743",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SAFETY INSURANCE GROUP",
    "Ticker": "SAFT",
    "Identifier": "78648T100",
-   "Weight": "0.78",
-   "Market Value": "220819.2",
+   "Weight": "0.77",
+   "Market Value": "220374",
    "Shares Held": "2120",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -584,8 +593,8 @@
    "Name": "IDACORP INC COMMON STOCK",
    "Ticker": "IDA",
    "Identifier": "451107106",
-   "Weight": "0.77",
-   "Market Value": "218616.72",
+   "Weight": "0.76",
+   "Market Value": "217140.42",
    "Shares Held": "1554",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -594,97 +603,88 @@
    "Ticker": "OGS",
    "Identifier": "68235P108",
    "Weight": "0.76",
-   "Market Value": "216099.89",
+   "Market Value": "214796.58",
    "Shares Held": "2773",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BANCFIRST CORP COMMON",
-   "Ticker": "BANF",
-   "Identifier": "05945F103",
-   "Weight": "0.74",
-   "Market Value": "209630.85",
-   "Shares Held": "1885",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "HIGHWOODS PROPERTIES INC",
-   "Ticker": "HIW",
-   "Identifier": "431284108",
-   "Weight": "0.73",
-   "Market Value": "207010.35",
-   "Shares Held": "6785",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "CITY HOLDING CO COMMON",
-   "Ticker": "CHCO",
-   "Identifier": "177835105",
-   "Weight": "0.73",
-   "Market Value": "206908.57",
-   "Shares Held": "1457",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "KADANT INC COMMON STOCK",
    "Ticker": "KAI",
    "Identifier": "48282T104",
-   "Weight": "0.73",
-   "Market Value": "206500.93",
+   "Weight": "0.74",
+   "Market Value": "209184.6",
    "Shares Held": "787",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "MERITAGE HOMES CORP",
-   "Ticker": "MTH",
-   "Identifier": "59001A102",
-   "Weight": "0.72",
-   "Market Value": "205215.43",
-   "Shares Held": "3197",
+   "Name": "BANCFIRST CORP COMMON",
+   "Ticker": "BANF",
+   "Identifier": "05945F103",
+   "Weight": "0.73",
+   "Market Value": "208650.65",
+   "Shares Held": "1885",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "ESSENTIAL PROPERTIES",
-   "Ticker": "EPRT",
-   "Identifier": "29670E107",
-   "Weight": "0.71",
-   "Market Value": "201625.2",
-   "Shares Held": "7560",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "INMODE LTD COMMON STOCK",
-   "Ticker": "INMD",
-   "Identifier": "M5425M103",
-   "Weight": "0.7",
-   "Market Value": "199994.52",
-   "Shares Held": "14316",
+   "Name": "CITY HOLDING CO COMMON",
+   "Ticker": "CHCO",
+   "Identifier": "177835105",
+   "Weight": "0.73",
+   "Market Value": "207389.38",
+   "Shares Held": "1457",
    "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "SMARTSTOP SELF STORAGE",
-   "Ticker": "SMA",
-   "Identifier": "83192D402",
-   "Weight": "0.7",
-   "Market Value": "199655.28",
-   "Shares Held": "5602",
-   "Asset Category": "REIT"
   },
   {
    "Name": "ALLIANCE LAUNDRY",
    "Ticker": "ALH",
    "Identifier": "01862Q107",
    "Weight": "0.7",
-   "Market Value": "198217.8",
+   "Market Value": "198962.28",
    "Shares Held": "9306",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "MERITAGE HOMES CORP",
+   "Ticker": "MTH",
+   "Identifier": "59001A102",
+   "Weight": "0.7",
+   "Market Value": "198277.94",
+   "Shares Held": "3197",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "HIGHWOODS PROPERTIES INC",
+   "Ticker": "HIW",
+   "Identifier": "431284108",
+   "Weight": "0.7",
+   "Market Value": "198189.85",
+   "Shares Held": "6785",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "SMARTSTOP SELF STORAGE",
+   "Ticker": "SMA",
+   "Identifier": "83192D402",
+   "Weight": "0.69",
+   "Market Value": "197302.44",
+   "Shares Held": "5602",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "INMODE LTD COMMON STOCK",
+   "Ticker": "INMD",
+   "Identifier": "M5425M103",
+   "Weight": "0.67",
+   "Market Value": "191404.92",
+   "Shares Held": "14316",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "TORO CO/THE COMMON STOCK",
    "Ticker": "TTC",
    "Identifier": "891092108",
-   "Weight": "0.64",
-   "Market Value": "180782.93",
+   "Weight": "0.63",
+   "Market Value": "179855.75",
    "Shares Held": "1717",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -692,8 +692,8 @@
    "Name": "INTERPARFUMS INC COMMON",
    "Ticker": "IPAR",
    "Identifier": "458334109",
-   "Weight": "0.63",
-   "Market Value": "177669.24",
+   "Weight": "0.62",
+   "Market Value": "176158.08",
    "Shares Held": "1542",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -701,116 +701,107 @@
    "Name": "PORTLAND GENERAL",
    "Ticker": "POR",
    "Identifier": "736508847",
-   "Weight": "0.6",
-   "Market Value": "169512.75",
+   "Weight": "0.59",
+   "Market Value": "168447.35",
    "Shares Held": "3805",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BROADSTONE NET LEASE INC",
-   "Ticker": "BNL",
-   "Identifier": "11135E203",
-   "Weight": "0.59",
-   "Market Value": "168322.56",
-   "Shares Held": "9696",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "HORACE MANN EDUCATORS",
-   "Ticker": "HMN",
-   "Identifier": "440327104",
-   "Weight": "0.59",
-   "Market Value": "166911.5",
-   "Shares Held": "3605",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "PETCO HEALTH & WELLNESS",
    "Ticker": "WOOF",
    "Identifier": "71601V105",
-   "Weight": "0.58",
-   "Market Value": "164005.45",
+   "Weight": "0.59",
+   "Market Value": "168021.91",
    "Shares Held": "66941",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "PATRICK INDUSTRIES INC",
-   "Ticker": "PATK",
-   "Identifier": "703343103",
-   "Weight": "0.57",
-   "Market Value": "163060.48",
-   "Shares Held": "2368",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "REYNOLDS CONSUMER",
-   "Ticker": "REYN",
-   "Identifier": "76171L106",
-   "Weight": "0.57",
-   "Market Value": "162590.26",
-   "Shares Held": "7063",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "APPLE HOSPITALITY REIT",
-   "Ticker": "APLE",
-   "Identifier": "03784Y200",
-   "Weight": "0.56",
-   "Market Value": "159329.28",
-   "Shares Held": "8832",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "MOOG INC-CLASS A",
-   "Ticker": "MOG.A",
-   "Identifier": "615394202",
-   "Weight": "0.56",
-   "Market Value": "159064.44",
-   "Shares Held": "466",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "KODIAK GAS SERVICES INC",
    "Ticker": "KGS",
    "Identifier": "50012A108",
-   "Weight": "0.54",
-   "Market Value": "152603.64",
+   "Weight": "0.58",
+   "Market Value": "165656.4",
    "Shares Held": "3444",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "DOLE PLC COMMON STOCK",
-   "Ticker": "DOLE",
-   "Identifier": "G27907107",
-   "Weight": "0.51",
-   "Market Value": "143955.84",
-   "Shares Held": "10711",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "JOHN WILEY & SONS INC",
-   "Ticker": "WLY",
-   "Identifier": "968223206",
-   "Weight": "0.51",
-   "Market Value": "143562.33",
-   "Shares Held": "2663",
+   "Name": "PATRICK INDUSTRIES INC",
+   "Ticker": "PATK",
+   "Identifier": "703343103",
+   "Weight": "0.58",
+   "Market Value": "165594.24",
+   "Shares Held": "2368",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "BRINKER INTERNATIONAL",
    "Ticker": "EAT",
    "Identifier": "109641100",
-   "Weight": "0.48",
-   "Market Value": "136659.6",
+   "Weight": "0.58",
+   "Market Value": "165113.52",
    "Shares Held": "748",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "HORACE MANN EDUCATORS",
+   "Ticker": "HMN",
+   "Identifier": "440327104",
+   "Weight": "0.58",
+   "Market Value": "165109",
+   "Shares Held": "3605",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "APPLE HOSPITALITY REIT",
+   "Ticker": "APLE",
+   "Identifier": "03784Y200",
+   "Weight": "0.58",
+   "Market Value": "164363.52",
+   "Shares Held": "8832",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "REYNOLDS CONSUMER",
+   "Ticker": "REYN",
+   "Identifier": "76171L106",
+   "Weight": "0.57",
+   "Market Value": "162802.15",
+   "Shares Held": "7063",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "MOOG INC-CLASS A",
+   "Ticker": "MOG.A",
+   "Identifier": "615394202",
+   "Weight": "0.57",
+   "Market Value": "161925.68",
+   "Shares Held": "466",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ESSENTIAL PROPERTIES",
+   "Ticker": "EPRT",
+   "Identifier": "29670E107",
+   "Weight": "0.54",
+   "Market Value": "154781.28",
+   "Shares Held": "5832",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "DOLE PLC COMMON STOCK",
+   "Ticker": "DOLE",
+   "Identifier": "G27907107",
+   "Weight": "0.49",
+   "Market Value": "140742.54",
+   "Shares Held": "10711",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "DORMAN PRODUCTS INC",
    "Ticker": "DORM",
    "Identifier": "258278100",
-   "Weight": "0.48",
-   "Market Value": "135760.16",
+   "Weight": "0.49",
+   "Market Value": "140638.16",
    "Shares Held": "1084",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -818,9 +809,18 @@
    "Name": "ENPRO INC COMMON STOCK",
    "Ticker": "NPO",
    "Identifier": "29355X107",
-   "Weight": "0.47",
-   "Market Value": "132789.12",
+   "Weight": "0.49",
+   "Market Value": "140387.84",
    "Shares Held": "496",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "JOHN WILEY & SONS INC",
+   "Ticker": "WLY",
+   "Identifier": "968223206",
+   "Weight": "0.47",
+   "Market Value": "134694.54",
+   "Shares Held": "2663",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -828,7 +828,7 @@
    "Ticker": "GBCI",
    "Identifier": "37637Q105",
    "Weight": "0.47",
-   "Market Value": "132672.75",
+   "Market Value": "133505.25",
    "Shares Held": "2775",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -836,8 +836,8 @@
    "Name": "SCANSOURCE INC COMMON",
    "Ticker": "SCSC",
    "Identifier": "806037107",
-   "Weight": "0.46",
-   "Market Value": "129731.25",
+   "Weight": "0.44",
+   "Market Value": "126310",
    "Shares Held": "2125",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -846,16 +846,25 @@
    "Ticker": "OSBC",
    "Identifier": "680277100",
    "Weight": "0.44",
-   "Market Value": "124959.45",
+   "Market Value": "124857.15",
    "Shares Held": "5115",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CUSHMAN & WAKEFIELD LTD",
+   "Ticker": "CWK",
+   "Identifier": "G2717C106",
+   "Weight": "0.43",
+   "Market Value": "122148.98",
+   "Shares Held": "9679",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "LA-Z-BOY INC COMMON",
    "Ticker": "LZB",
    "Identifier": "505336107",
-   "Weight": "0.44",
-   "Market Value": "123577.56",
+   "Weight": "0.43",
+   "Market Value": "121310.46",
    "Shares Held": "4122",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -863,36 +872,27 @@
    "Name": "PRIMO BRANDS CORP COMMON",
    "Ticker": "PRMB",
    "Identifier": "741623102",
-   "Weight": "0.43",
-   "Market Value": "120975.36",
+   "Weight": "0.42",
+   "Market Value": "118702.08",
    "Shares Held": "6144",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "AH REALTY TRUST INC REIT",
-   "Ticker": "AHRT",
-   "Identifier": "04208T108",
-   "Weight": "0.42",
-   "Market Value": "118669.4",
-   "Shares Held": "19454",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "ENTRAVISION",
-   "Ticker": "EVC",
-   "Identifier": "29382R107",
-   "Weight": "0.4",
-   "Market Value": "114700.53",
-   "Shares Held": "18411",
+   "Name": "FIRST WATCH RESTAURANT",
+   "Ticker": "FWRG",
+   "Identifier": "33748L101",
+   "Weight": "0.41",
+   "Market Value": "115627.05",
+   "Shares Held": "10011",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "CUSHMAN & WAKEFIELD LTD",
-   "Ticker": "CWK",
-   "Identifier": "G2717C106",
+   "Name": "VIRTUS INVESTMENT",
+   "Ticker": "VRTS",
+   "Identifier": "92828Q109",
    "Weight": "0.4",
-   "Market Value": "114502.57",
-   "Shares Held": "9679",
+   "Market Value": "114085.89",
+   "Shares Held": "927",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -900,34 +900,34 @@
    "Ticker": "ATMU",
    "Identifier": "04956D107",
    "Weight": "0.4",
-   "Market Value": "112595.64",
+   "Market Value": "113807.16",
    "Shares Held": "2524",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "VIRTUS INVESTMENT",
-   "Ticker": "VRTS",
-   "Identifier": "92828Q109",
+   "Name": "BROADSTONE NET LEASE INC",
+   "Ticker": "BNL",
+   "Identifier": "11135E203",
    "Weight": "0.39",
-   "Market Value": "110600.37",
-   "Shares Held": "927",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Market Value": "111764.94",
+   "Shares Held": "6629",
+   "Asset Category": "REIT"
   },
   {
-   "Name": "FIRST WATCH RESTAURANT",
-   "Ticker": "FWRG",
-   "Identifier": "33748L101",
+   "Name": "AH REALTY TRUST INC REIT",
+   "Ticker": "AHRT",
+   "Identifier": "04208T108",
    "Weight": "0.38",
-   "Market Value": "109019.79",
-   "Shares Held": "10011",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Market Value": "108810.6",
+   "Shares Held": "18015",
+   "Asset Category": "REIT"
   },
   {
    "Name": "HMH HOLDING INC COMMON",
    "Ticker": "HMH",
    "Identifier": "40445M100",
-   "Weight": "0.36",
-   "Market Value": "100953.54",
+   "Weight": "0.37",
+   "Market Value": "105284.88",
    "Shares Held": "5553",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -936,17 +936,17 @@
    "Ticker": "LW",
    "Identifier": "513272104",
    "Weight": "0.35",
-   "Market Value": "99531.67",
+   "Market Value": "98903.01",
    "Shares Held": "1849",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "UNIFIRST CORP/MA COMMON",
-   "Ticker": "UNF",
-   "Identifier": "904708104",
+   "Name": "ARRAY DIGITAL",
+   "Ticker": "AD",
+   "Identifier": "911684108",
    "Weight": "0.33",
-   "Market Value": "94794.73",
-   "Shares Held": "337",
+   "Market Value": "94128",
+   "Shares Held": "2960",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -954,70 +954,79 @@
    "Ticker": "SYNA",
    "Identifier": "87157D109",
    "Weight": "0.31",
-   "Market Value": "87710.48",
+   "Market Value": "88638",
    "Shares Held": "748",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ARRAY DIGITAL",
-   "Ticker": "AD",
-   "Identifier": "911684108",
-   "Weight": "0.3",
-   "Market Value": "84739",
-   "Shares Held": "2525",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "INNOVIVA INC COMMON",
-   "Ticker": "INVA",
-   "Identifier": "45781M101",
-   "Weight": "0.29",
-   "Market Value": "83466.4",
-   "Shares Held": "4040",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "EXCELERATE ENERGY INC",
-   "Ticker": "EE",
-   "Identifier": "30069T101",
-   "Weight": "0.29",
-   "Market Value": "82134",
-   "Shares Held": "2535",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "HAWKINS INC COMMON STOCK",
    "Ticker": "HWKN",
    "Identifier": "420261109",
-   "Weight": "0.27",
-   "Market Value": "75687.04",
+   "Weight": "0.31",
+   "Market Value": "88122.32",
    "Shares Held": "572",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "MARTEN TRANSPORT LTD",
-   "Ticker": "MRTN",
-   "Identifier": "573075108",
-   "Weight": "0.26",
-   "Market Value": "72411.66",
-   "Shares Held": "6147",
+   "Name": "EXCELERATE ENERGY INC",
+   "Ticker": "EE",
+   "Identifier": "30069T101",
+   "Weight": "0.3",
+   "Market Value": "86113.95",
+   "Shares Held": "2535",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "INNOVIVA INC COMMON",
+   "Ticker": "INVA",
+   "Identifier": "45781M101",
+   "Weight": "0.3",
+   "Market Value": "85324.8",
+   "Shares Held": "4040",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "UNIFIRST CORP/MA COMMON",
+   "Ticker": "UNF",
+   "Identifier": "904708104",
+   "Weight": "0.3",
+   "Market Value": "84634.18",
+   "Shares Held": "337",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "FLOWCO HOLDINGS INC",
    "Ticker": "FLOC",
    "Identifier": "342909108",
-   "Weight": "0.25",
-   "Market Value": "71492.46",
+   "Weight": "0.26",
+   "Market Value": "74114.7",
    "Shares Held": "3642",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "UFP INDUSTRIES INC",
+   "Name": "MARTEN TRANSPORT LTD",
+   "Ticker": "MRTN",
+   "Identifier": "573075108",
+   "Weight": "0.25",
+   "Market Value": "71674.02",
+   "Shares Held": "6147",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ENTRAVISION",
+   "Ticker": "EVC",
+   "Identifier": "29382R107",
+   "Weight": "0.24",
+   "Market Value": "69260.04",
+   "Shares Held": "11317",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "UFP INDUSTRIES INC COMMON",
    "Ticker": "UFPI",
    "Identifier": "90278Q108",
-   "Weight": "0.23",
-   "Market Value": "64577.85",
+   "Weight": "0.22",
+   "Market Value": "62248.5",
    "Shares Held": "795",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1026,16 +1035,34 @@
    "Ticker": "SKT",
    "Identifier": "875465106",
    "Weight": "0.21",
-   "Market Value": "59178.56",
+   "Market Value": "58723.84",
    "Shares Held": "1624",
    "Asset Category": "REIT"
+  },
+  {
+   "Name": "LIFE TIME GROUP HOLDINGS",
+   "Ticker": "LTH",
+   "Identifier": "53190C102",
+   "Weight": "0.2",
+   "Market Value": "56038.86",
+   "Shares Held": "1299",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "BELLRING BRANDS INC",
+   "Ticker": "BRBR",
+   "Identifier": "07831C103",
+   "Weight": "0.19",
+   "Market Value": "55210.47",
+   "Shares Held": "5943",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "CHORD ENERGY CORP COMMON",
    "Ticker": "CHRD",
    "Identifier": "674215207",
    "Weight": "0.15",
-   "Market Value": "42378.84",
+   "Market Value": "41288.08",
    "Shares Held": "268",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1043,19 +1070,10 @@
    "Name": "CECO ENVIRONMENTAL CORP",
    "Ticker": "CECO",
    "Identifier": "125141101",
-   "Weight": "0.1",
-   "Market Value": "29349.84",
+   "Weight": "0.12",
+   "Market Value": "32794.32",
    "Shares Held": "598",
    "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CASH",
-   "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "0.06",
-   "Market Value": "15636.42",
-   "Shares Held": "15636",
-   "Asset Category": "CURRENCIES"
   }
  ]
 }

@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q492&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q492&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q492&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q492&country=us&role=adv&locale=en-US&fromDate=2026-03-18&toDate=2026-10-23",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q492&country=us&role=adv&locale=en-US&fromDate=2026-03-18&toDate=2026-10-28",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/ROCQ",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -31,45 +31,45 @@
   "net": 0.35
  },
  "nav": {
-  "display": "$53.18",
-  "value": 53.18216959,
-  "asOfDate": "Oct 23 2026"
+  "display": "$54.59",
+  "value": 54.58668481,
+  "asOfDate": "Oct 28 2026"
  },
  "marketPrice": {
-  "display": "$53.19",
-  "value": 53.19,
-  "asOfDate": "Oct 23 2026"
+  "display": "$54.66",
+  "value": 54.66,
+  "asOfDate": "Oct 28 2026"
  },
  "premiumDiscount": {
-  "display": "0.01%",
-  "value": 0.0147
+  "display": "0.13%",
+  "value": 0.1343
  },
  "aum": {
-  "display": "$757.85 M",
-  "value": 757845916.71,
-  "asOfDate": "Oct 23 2026",
+  "display": "$786.05 M",
+  "value": 786048261.31,
+  "asOfDate": "Oct 28 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
-  "dividendYield": 11.08,
-  "dividendYieldText": "11.08%",
+  "dividendYield": 10.78,
+  "dividendYieldText": "10.78%",
   "dividendYieldBasis": "indicated",
   "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
   "distributionRate": null,
-  "secYield": 0.24,
-  "secYieldText": "0.24%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 22 2026",
-  "unsubsidizedSecYield": 0.19
+  "secYield": 0.23,
+  "secYieldText": "0.23%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 27 2026",
+  "unsubsidizedSecYield": 0.18
  },
  "returns": {
   "derivedFrom": "derived from the official daily NAV history with published distributions reinvested (NAV total return), not official published returns",
   "monthEnd": {
    "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Oct 23 2026",
+   "priceReturnsAsOf": "Oct 28 2026",
    "mo1": 2.76,
    "mo1Text": "2.76%",
-   "qtd": -5.26,
-   "qtdText": "-5.26%",
+   "qtd": -2.76,
+   "qtdText": "-2.76%",
    "ytd": null,
    "ytdText": "—",
    "yr1": null,
@@ -134,8 +134,8 @@
   ],
   "pageSize": 250,
   "totalRows": 102,
-  "asOfDate": "2026-10-23",
-  "asOf": "Oct 23 2026",
+  "asOfDate": "2026-10-28",
+  "asOf": "Oct 28 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -143,8 +143,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 153,
-  "asOf": "Oct 23 2026",
+  "totalRows": 156,
+  "asOf": "Oct 28 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  },
  "metrics": {
@@ -157,11 +157,11 @@
   "cagr5y": null,
   "cagr10y": null,
   "siAnn": null,
-  "dividendYield": 11.08,
-  "dividendYieldText": "11.08%",
+  "dividendYield": 10.78,
+  "dividendYieldText": "10.78%",
   "dividendYieldBasis": "indicated",
-  "secYield": 0.24,
-  "secYieldText": "0.24%",
+  "secYield": 0.23,
+  "secYieldText": "0.23%",
   "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns",
   "performanceAsOf": null
  }

@@ -2,7 +2,7 @@
  "ticker": "JEMA",
  "page": 3,
  "pageSize": 250,
- "totalRows": 509,
+ "totalRows": 508,
  "headers": [
   "Name",
   "Ticker",
@@ -16,35 +16,24 @@
  ],
  "rows": [
   {
-   "Name": "NEW TURKISH LIRA",
-   "Ticker": "-",
-   "Identifier": "TRY",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "0",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "PHILIPPINES PESO",
-   "Ticker": "-",
-   "Identifier": "PHP",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "0",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
    "Name": "ROSNEFT OIL CO PJSC",
-   "Ticker": "ROSN",
+   "Ticker": "-",
    "Identifier": "B59SS16",
    "Weight": "0",
    "Market Value": "0",
    "Shares Held": "141777",
    "Asset Category": "FOREIGN COMMON STOCK",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SOUTH AFRICAN RAND",
+   "Ticker": "-",
+   "Identifier": "ZAR",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
    "Coupon": "",
    "Maturity": ""
   },
@@ -61,7 +50,7 @@
   },
   {
    "Name": "X5 RETAIL GROUP NV GDR",
-   "Ticker": "FIVE",
+   "Ticker": "-",
    "Identifier": "B07T3T9",
    "Weight": "0",
    "Market Value": "0",
@@ -71,22 +60,11 @@
    "Maturity": ""
   },
   {
-   "Name": "NEW TAIWAN DOLLAR",
-   "Ticker": "-",
-   "Identifier": "TWD",
-   "Weight": "0",
-   "Market Value": "-0.4",
-   "Shares Held": "-12",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
    "Name": "BRAZILIAN REAL",
    "Ticker": "-",
    "Identifier": "BRL",
    "Weight": "0",
-   "Market Value": "-1.22",
+   "Market Value": "-1.14",
    "Shares Held": "-6",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
@@ -97,7 +75,7 @@
    "Ticker": "-",
    "Identifier": "CLP",
    "Weight": "0",
-   "Market Value": "-1.44",
+   "Market Value": "-1.45",
    "Shares Held": "-1437",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
@@ -110,6 +88,17 @@
    "Weight": "0",
    "Market Value": "-2.47",
    "Shares Held": "-2",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "NEW TAIWAN DOLLAR",
+   "Ticker": "-",
+   "Identifier": "TWD",
+   "Weight": "0",
+   "Market Value": "-148.07",
+   "Shares Held": "-4800",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
    "Maturity": ""

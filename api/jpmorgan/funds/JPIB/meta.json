@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46641Q852&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46641Q852&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46641Q852&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q852&country=us&role=adv&locale=en-US&fromDate=2017-04-05&toDate=2026-10-23",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46641Q852&country=us&role=adv&locale=en-US&fromDate=2017-04-05&toDate=2026-10-28",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JPIB",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -31,45 +31,45 @@
   "net": 0.5
  },
  "nav": {
-  "display": "$46.68",
-  "value": 46.68445653,
-  "asOfDate": "Oct 23 2026"
+  "display": "$46.62",
+  "value": 46.62021271,
+  "asOfDate": "Oct 28 2026"
  },
  "marketPrice": {
-  "display": "$46.83",
-  "value": 46.83,
-  "asOfDate": "Oct 23 2026"
+  "display": "$46.81",
+  "value": 46.81,
+  "asOfDate": "Oct 28 2026"
  },
  "premiumDiscount": {
-  "display": "0.31%",
-  "value": 0.3118
+  "display": "0.41%",
+  "value": 0.4071
  },
  "aum": {
-  "display": "$2,296.88 M",
-  "value": 2296875261.21,
-  "asOfDate": "Oct 23 2026",
+  "display": "$2,293.71 M",
+  "value": 2293714465.23,
+  "asOfDate": "Oct 28 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
   "dividendYield": 2.9,
   "dividendYieldText": "2.90%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 23 2026",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 28 2026",
   "distributionRate": null,
-  "secYield": 5.13,
-  "secYieldText": "5.13%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 22 2026",
-  "unsubsidizedSecYield": 5.13
+  "secYield": 5.18,
+  "secYieldText": "5.18%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 27 2026",
+  "unsubsidizedSecYield": 5.18
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Oct 23 2026",
+   "priceReturnsAsOf": "Oct 28 2026",
    "mo1": -1.89,
    "mo1Text": "-1.89%",
-   "qtd": 0.71,
-   "qtdText": "0.71%",
+   "qtd": 0.57,
+   "qtdText": "0.57%",
    "ytd": -1.28,
    "ytdText": "-1.28%",
    "yr1": -0.09,
@@ -162,9 +162,9 @@
    "holdings/006.json"
   ],
   "pageSize": 250,
-  "totalRows": 1328,
-  "asOfDate": "2026-10-23",
-  "asOf": "Oct 23 2026",
+  "totalRows": 1348,
+  "asOfDate": "2026-10-28",
+  "asOf": "Oct 28 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -174,8 +174,8 @@
    "history/003.json"
   ],
   "pageSize": 1000,
-  "totalRows": 2402,
-  "asOf": "Oct 23 2026",
+  "totalRows": 2405,
+  "asOf": "Oct 28 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  },
  "metrics": {
@@ -191,8 +191,8 @@
   "dividendYield": 2.9,
   "dividendYieldText": "2.90%",
   "dividendYieldBasis": "official-trailing-12m",
-  "secYield": 5.13,
-  "secYieldText": "5.13%",
+  "secYield": 5.18,
+  "secYieldText": "5.18%",
   "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
   "performanceAsOf": "2026-09-30"
  }
