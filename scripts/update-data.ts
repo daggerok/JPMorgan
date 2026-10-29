@@ -132,7 +132,7 @@ function outputFundLine(index: number, total: number, ticker: string, status: st
     field('sec', outputPercent(data.secYield ?? data.yields?.secYield ?? metrics.secYield)),
     field('wp', data.workplaceRaw),
   ].filter(part => part !== '').join(' ');
-  return `[ ${String(index).padStart(width)}/${String(total).padEnd(width)}  ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
+  return `[ ${`${String(index).padStart(width)}/${total}`.padEnd(8)} ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
 }
 function outputCreateReporter(root: URL | string, total: number) {
   let completed = 0;
@@ -2831,7 +2831,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
 
   if (!config.skipJpmorgan) {
     try {
-      const payload = await fetchJson(config.fundExplorerUrl, '[catalog ] fund explorer', jpmorganHeaders(), config);
+      const payload = await fetchJson(config.fundExplorerUrl, '[ catalog  ] fund explorer', jpmorganHeaders(), config);
       for (const fund of parseFundExplorer(payload)) catalog.set(fund.ticker, fund);
       if (config.storeRawDownloads) {
         const rawDir = new URL('raw/', API_ROOT);
@@ -2844,7 +2844,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
     }
     if (!catalog.size) {
       try {
-        const csv = await fetchText(config.earlyNavUrl, '[catalog ] early-NAV report', jpmorganHeaders(), config);
+        const csv = await fetchText(config.earlyNavUrl, '[ catalog  ] early-NAV report', jpmorganHeaders(), config);
         for (const fund of parseEarlyNavCsv(csv)) catalog.set(fund.ticker, fund);
         if (config.storeRawDownloads) {
           const rawDir = new URL('raw/', API_ROOT);
@@ -2903,7 +2903,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
   const universe = [...catalog.values()].sort((a, b) => (a.ticker < b.ticker ? -1 : a.ticker > b.ticker ? 1 : 0));
   if (!universe.length) {
     console.log(
-      '[done    ] nothing to do: am.jpmorgan.com is unreachable and the published ' +
+      '[ done     ] nothing to do: am.jpmorgan.com is unreachable and the published ' +
         'api/jpmorgan/index.json is empty or missing — run this where am.jpmorgan.com resolves, e.g. ' +
         'the "Update JPMorgan ETF data" GitHub Actions workflow',
     );
