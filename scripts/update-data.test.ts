@@ -87,6 +87,10 @@ import {
 // Portability: fixed time zone, quiet console, restored fetch/exitCode/fetch settings after every test.
 // Every control is passed explicitly to the resolver, so exported workflow variables never leak in.
 const realFetch = globalThis.fetch;
+// the seven 52-week keys withRange52w puts into every index row in front of returnsBasis and performanceAsOf (range-52w block)
+const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
+const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, key] : [key]));
+const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key)));
 const realLog = console.log;
 const realError = console.error;
 const realTz = process.env.TZ;
@@ -1023,8 +1027,8 @@ describe('metrics 3', () => {
       expect([official.terValue, official.terGrossValue, official.ter]).toEqual([0.25, 0.35, '0.25%']);
       const meta = await readJson(root, 'funds/AAA/meta.json');
       expect([meta.expenseRatio.value, meta.expenseRatio.gross, meta.expenseRatio.net]).toEqual([0.25, 0.35, 0.25]);
-      expect(Object.keys(official.metrics)).toEqual(KEYS);
-      expect(Object.keys(young.metrics)).toEqual(KEYS);
+      expect(Object.keys(official.metrics)).toEqual(withRangeKeys(KEYS));
+      expect(Object.keys(young.metrics)).toEqual(withRangeKeys(KEYS));
       expect(official.metrics.returnsBasis).toBeTruthy();
       expect(young.metrics.returnsBasis).toBeTruthy();
       for (const row of [official, young]) expect(row.metrics.dividendYieldBasis === null).toBe(row.metrics.dividendYield === null);
@@ -1055,6 +1059,7 @@ describe('pipeline', () => {
       // the published 12-month rolling yield carries its code on every row, fresh or kept
       expect(index.funds.map((fund) => [fund.metrics.dividendYield, fund.metrics.dividendYieldBasis])).toEqual(TICKERS.map(() => [8.42, 'official-trailing-12m']));
       expect(new Set(index.funds.map((fund) => Object.keys(fund.metrics).join()))).toHaveProperty('size', 1);
+      for (const fund of index.funds) expect(Object.keys(fund.metrics)).toEqual(expect.arrayContaining(RANGE_KEYS));
       expect(mock.requests.some((url) => url.includes('46641Q332'))).toBe(true);
       expect(mock.requests.some((url) => url.includes('46640Q332'))).toBe(false);
     });
@@ -1166,7 +1171,7 @@ describe('pipeline 2', () => {
         expect(rows.map((row) => row.ticker)).toEqual(TICKERS);
         const ghost = rows[2];
         expect(ghost).toMatchObject({ ticker: 'CCC', name: 'JPMorgan CCC ETF', cusip: MOCK_FUNDS[2].cusip, dataFile: null, holdings: 0, history: 0 });
-        expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
+        expect(Object.keys(ghost.metrics)).toEqual(withRangeKeys(Object.keys(emptyMetrics())));
         expect(ghost.metrics.returnsBasis).toBeTruthy();
         expect(Object.values(ghost.metrics).filter((value) => typeof value === 'number')).toEqual([]);
         expect(readdirSync(join(dir, 'funds')).sort()).toEqual(['AAA', 'BBB']);
@@ -1256,13 +1261,13 @@ describe('pipeline 2', () => {
       expect(rebuilt.holdings).toBeGreaterThan(0);
       const ghost = after.funds.find((fund) => fund.ticker === 'ZZZ')!;
       expect(ghost.dataFile).toBeNull();
-      expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
+      expect(Object.keys(ghost.metrics)).toEqual(withRangeKeys(Object.keys(emptyMetrics())));
       expect(ghost.metrics.returnsBasis).toBeTruthy();
-      // indexRowFromMeta reproduces the row the updater wrote
+      // indexRowFromMeta reproduces the row the updater wrote (the 52-week keys are added later, from the history pages)
       const row = after.funds[0];
       const again = indexRowFromMeta(await readJson(root, 'funds/AAA/meta.json'));
-      expect(again.metrics).toEqual(row.metrics);
-      expect(Object.keys(again.metrics)).toEqual(Object.keys(ghost.metrics));
+      expect(again.metrics).toEqual(rangeless(row.metrics));
+      expect(withRangeKeys(Object.keys(again.metrics))).toEqual(Object.keys(ghost.metrics));
       expect(Object.keys(rebuilt.metrics)).toEqual(Object.keys(ghost.metrics));
       expect(rebuilt.metrics.dividendYieldBasis === null).toBe(rebuilt.metrics.dividendYield === null);
       for (const key of ['ticker', 'name', 'cusip', 'ter', 'terValue', 'terGrossValue', 'navValue', 'aumValue', 'closePriceValue', 'holdings', 'history', 'dataFile', 'asOfDate', 'inceptionDate', 'exchange', 'returns', 'distributions']) {
