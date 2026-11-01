@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q674&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q674&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q674&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q674&country=us&role=adv&locale=en-US&fromDate=2024-08-07&toDate=2026-10-28",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q674&country=us&role=adv&locale=en-US&fromDate=2024-08-07&toDate=2026-10-30",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/MCDS",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -31,45 +31,45 @@
   "net": 0.35
  },
  "nav": {
-  "display": "$67.20",
-  "value": 67.2019965,
-  "asOfDate": "Oct 28 2026"
+  "display": "$67.22",
+  "value": 67.22187717,
+  "asOfDate": "Oct 30 2026"
  },
  "marketPrice": {
   "display": "$67.16",
   "value": 67.16,
-  "asOfDate": "Oct 28 2026"
+  "asOfDate": "Oct 30 2026"
  },
  "premiumDiscount": {
-  "display": "-0.06%",
-  "value": -0.0625
+  "display": "-0.09%",
+  "value": -0.092
  },
  "aum": {
-  "display": "$8.06 M",
-  "value": 8064239.58,
-  "asOfDate": "Oct 28 2026",
+  "display": "$8.07 M",
+  "value": 8066625.26,
+  "asOfDate": "Oct 30 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
   "dividendYield": 1.14,
   "dividendYieldText": "1.14%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 28 2026",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Oct 30 2026",
   "distributionRate": null,
-  "secYield": 1.01,
-  "secYieldText": "1.01%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 27 2026",
-  "unsubsidizedSecYield": 1.01
+  "secYield": 1,
+  "secYieldText": "1.00%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Oct 29 2026",
+  "unsubsidizedSecYield": 1
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Oct 28 2026",
+   "priceReturnsAsOf": "Oct 30 2026",
    "mo1": -3.91,
    "mo1Text": "-3.91%",
-   "qtd": 2.45,
-   "qtdText": "2.45%",
+   "qtd": 2.48,
+   "qtdText": "2.48%",
    "ytd": 11.73,
    "ytdText": "11.73%",
    "yr1": 13.26,
@@ -145,9 +145,9 @@
    "holdings/001.json"
   ],
   "pageSize": 250,
-  "totalRows": 208,
-  "asOfDate": "2026-10-28",
-  "asOf": "Oct 28 2026",
+  "totalRows": 207,
+  "asOfDate": "2026-10-30",
+  "asOf": "Oct 30 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -155,8 +155,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 559,
-  "asOf": "Oct 28 2026",
+  "totalRows": 561,
+  "asOf": "Oct 30 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  },
  "metrics": {
@@ -172,8 +172,8 @@
   "dividendYield": 1.14,
   "dividendYieldText": "1.14%",
   "dividendYieldBasis": "official-trailing-12m",
-  "secYield": 1.01,
-  "secYieldText": "1.01%",
+  "secYield": 1,
+  "secYieldText": "1.00%",
   "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
   "performanceAsOf": "2026-09-30"
  }

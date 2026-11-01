@@ -2,7 +2,7 @@
  "ticker": "JMHI",
  "page": 2,
  "pageSize": 250,
- "totalRows": 268,
+ "totalRows": 264,
  "headers": [
   "Name",
   "Ticker",
@@ -16,55 +16,11 @@
  ],
  "rows": [
   {
-   "Name": "ST VRAIN LAKES ZERO 09/54",
-   "Ticker": "-",
-   "Identifier": "85237KAA9",
-   "Weight": "0.12",
-   "Market Value": "372928.05",
-   "Shares Held": "500000",
-   "Asset Category": "MUNICIPAL BONDS",
-   "Coupon": "",
-   "Maturity": "Sep 20 2054"
-  },
-  {
-   "Name": "NORTHERN TOB ZERO 06/66",
-   "Ticker": "-",
-   "Identifier": "66585VCB9",
-   "Weight": "0.12",
-   "Market Value": "368165",
-   "Shares Held": "3500000",
-   "Asset Category": "MUNICIPAL BONDS",
-   "Coupon": "",
-   "Maturity": "Jun 01 2066"
-  },
-  {
-   "Name": "AQUARION WTR ZERO 08/50",
-   "Ticker": "-",
-   "Identifier": "03843TCG4",
-   "Weight": "0.11",
-   "Market Value": "349740.56",
-   "Shares Held": "1300000",
-   "Asset Category": "MUNICIPAL BONDS",
-   "Coupon": "",
-   "Maturity": "Aug 01 2050"
-  },
-  {
-   "Name": "MIAMI-DADE CNTY 5% 10/56",
-   "Ticker": "-",
-   "Identifier": "59335KFU6",
-   "Weight": "0.11",
-   "Market Value": "328187.79",
-   "Shares Held": "350000",
-   "Asset Category": "MUNICIPAL BONDS",
-   "Coupon": "5",
-   "Maturity": "Oct 01 2056"
-  },
-  {
    "Name": "SEMINOLE CNTY 5.5% 11/49",
    "Ticker": "-",
    "Identifier": "81669TAC2",
    "Weight": "0.1",
-   "Market Value": "310566.31",
+   "Market Value": "313577.36",
    "Shares Held": "350000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "5.5",
@@ -93,33 +49,33 @@
    "Maturity": ""
   },
   {
+   "Name": "USD - FOR FUTURES",
+   "Ticker": "-",
+   "Identifier": "USQ",
+   "Weight": "0.09",
+   "Market Value": "268411.86",
+   "Shares Held": "268411",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
    "Name": "PUERTO RICO ZERO 07/51",
    "Ticker": "-",
    "Identifier": "74529JQH1",
    "Weight": "0.09",
-   "Market Value": "263684.18",
+   "Market Value": "260666.1",
    "Shares Held": "1020000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "",
    "Maturity": "Jul 01 2051"
   },
   {
-   "Name": "USD - FOR FUTURES",
-   "Ticker": "-",
-   "Identifier": "USQ",
-   "Weight": "0.08",
-   "Market Value": "235599.36",
-   "Shares Held": "235599",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
    "Name": "AQUARION WTR ZERO 08/55",
    "Ticker": "-",
    "Identifier": "03843TBK6",
    "Weight": "0.07",
-   "Market Value": "224496.68",
+   "Market Value": "227781.45",
    "Shares Held": "1125000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "",
@@ -130,7 +86,7 @@
    "Ticker": "-",
    "Identifier": "56678RAJ2",
    "Weight": "0.07",
-   "Market Value": "202003.58",
+   "Market Value": "202230.36",
    "Shares Held": "210000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "5.125",
@@ -141,7 +97,7 @@
    "Ticker": "-",
    "Identifier": "13058RAR5",
    "Weight": "0.06",
-   "Market Value": "177819.56",
+   "Market Value": "177801.04",
    "Shares Held": "200000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "",
@@ -163,7 +119,7 @@
    "Ticker": "-",
    "Identifier": "63608TAB6",
    "Weight": "0.03",
-   "Market Value": "99672.71",
+   "Market Value": "99987.31",
    "Shares Held": "100000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "5.25",
@@ -174,7 +130,7 @@
    "Ticker": "-",
    "Identifier": "864809CD8",
    "Weight": "0.03",
-   "Market Value": "78856.2",
+   "Market Value": "80117.5",
    "Shares Held": "1000000",
    "Asset Category": "MUNICIPAL BONDS",
    "Coupon": "",
@@ -192,26 +148,26 @@
    "Maturity": ""
   },
   {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "-0.03",
+   "Market Value": "-84750.34",
+   "Shares Held": "-84750",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
    "Name": "US 10YR NOTE 12/21/2026",
    "Ticker": "-",
    "Identifier": "TYZ6COM",
-   "Weight": "-0.09",
-   "Market Value": "-265131.09",
+   "Weight": "-0.05",
+   "Market Value": "-168334.22",
    "Shares Held": "105",
    "Asset Category": "INTEREST RATE FUTURES",
    "Coupon": "",
    "Maturity": "Dec 21 2026"
-  },
-  {
-   "Name": "CASH",
-   "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "-1.58",
-   "Market Value": "-4846622.97",
-   "Shares Held": "-4846622",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
   }
  ]
 }
