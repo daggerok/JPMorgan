@@ -2,7 +2,7 @@
  "ticker": "JDOC",
  "page": 1,
  "pageSize": 250,
- "totalRows": 60,
+ "totalRows": 61,
  "headers": [
   "Name",
   "Ticker",
@@ -14,29 +14,29 @@
  ],
  "rows": [
   {
-   "Name": "ELI LILLY AND COMPANY",
-   "Ticker": "LLY",
-   "Identifier": "532457108",
-   "Weight": "8.83",
-   "Market Value": "868952.02",
-   "Shares Held": "613",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
    "Name": "ABBVIE INC COMMON STOCK",
    "Ticker": "ABBV",
    "Identifier": "00287Y109",
-   "Weight": "8.57",
-   "Market Value": "842795.62",
+   "Weight": "8.4",
+   "Market Value": "832563.98",
    "Shares Held": "2858",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ELI LILLY AND COMPANY",
+   "Ticker": "LLY",
+   "Identifier": "532457108",
+   "Weight": "8.37",
+   "Market Value": "830002",
+   "Shares Held": "613",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "UNITEDHEALTH GROUP INC",
    "Ticker": "UNH",
    "Identifier": "91324P102",
-   "Weight": "5.43",
-   "Market Value": "534351.61",
+   "Weight": "5.22",
+   "Market Value": "517518.95",
    "Shares Held": "1313",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -44,8 +44,8 @@
    "Name": "JOHNSON & JOHNSON COMMON",
    "Ticker": "JNJ",
    "Identifier": "478160104",
-   "Weight": "4.69",
-   "Market Value": "461434.8",
+   "Weight": "4.71",
+   "Market Value": "466535.58",
    "Shares Held": "1689",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -53,8 +53,8 @@
    "Name": "NOVARTIS AG COMMON STOCK",
    "Ticker": "-",
    "Identifier": "7103065",
-   "Weight": "4.65",
-   "Market Value": "457775.71",
+   "Weight": "4.66",
+   "Market Value": "462300.81",
    "Shares Held": "2840",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -62,8 +62,8 @@
    "Name": "THERMO FISHER SCIENTIFIC",
    "Ticker": "TMO",
    "Identifier": "883556102",
-   "Weight": "4.41",
-   "Market Value": "433534",
+   "Weight": "4.36",
+   "Market Value": "432140.72",
    "Shares Held": "622",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -71,8 +71,8 @@
    "Name": "ASTRAZENECA PLC COMMON",
    "Ticker": "-",
    "Identifier": "0989529",
-   "Weight": "4.23",
-   "Market Value": "415777.63",
+   "Weight": "4.2",
+   "Market Value": "416415.95",
    "Shares Held": "2233",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -80,17 +80,17 @@
    "Name": "MERCK & CO INC COMMON",
    "Ticker": "MRK",
    "Identifier": "58933Y105",
-   "Weight": "3.66",
-   "Market Value": "359894.64",
+   "Weight": "3.56",
+   "Market Value": "353179.11",
    "Shares Held": "2407",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "DANAHER CORP COMMON",
+   "Name": "DANAHER CORP COMMON STOCK",
    "Ticker": "DHR",
    "Identifier": "235851102",
-   "Weight": "2.89",
-   "Market Value": "284017.29",
+   "Weight": "2.84",
+   "Market Value": "281595.75",
    "Shares Held": "1223",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -98,8 +98,8 @@
    "Name": "INTUITIVE SURGICAL INC",
    "Ticker": "ISRG",
    "Identifier": "46120E602",
-   "Weight": "2.59",
-   "Market Value": "254885.9",
+   "Weight": "2.7",
+   "Market Value": "267152",
    "Shares Held": "590",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -108,35 +108,35 @@
    "Ticker": "-",
    "Identifier": "BP6KMJ1",
    "Weight": "2.44",
-   "Market Value": "239949.07",
+   "Market Value": "242344.93",
    "Shares Held": "6019",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "VERTEX PHARMACEUTICALS",
-   "Ticker": "VRTX",
-   "Identifier": "92532F100",
-   "Weight": "2.2",
-   "Market Value": "216845.44",
-   "Shares Held": "388",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BRISTOL-MYERS SQUIBB CO",
-   "Ticker": "BMY",
-   "Identifier": "110122108",
-   "Weight": "2.12",
-   "Market Value": "208808.16",
-   "Shares Held": "3342",
+   "Name": "STRYKER CORP COMMON STOCK",
+   "Ticker": "SYK",
+   "Identifier": "863667101",
+   "Weight": "2.21",
+   "Market Value": "218658.77",
+   "Shares Held": "671",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "IQVIA HOLDINGS INC COMMON",
    "Ticker": "IQV",
    "Identifier": "46266C105",
-   "Weight": "2.11",
-   "Market Value": "207715.41",
+   "Weight": "2.13",
+   "Market Value": "211211.91",
    "Shares Held": "777",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "BRISTOL-MYERS SQUIBB CO",
+   "Ticker": "BMY",
+   "Identifier": "110122108",
+   "Weight": "2.1",
+   "Market Value": "207671.88",
+   "Shares Held": "3342",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -144,26 +144,8 @@
    "Ticker": "COR",
    "Identifier": "03073E105",
    "Weight": "2.03",
-   "Market Value": "199827.36",
+   "Market Value": "201470.24",
    "Shares Held": "604",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "REGENERON PHARMACEUTICALS",
-   "Ticker": "REGN",
-   "Identifier": "75886F107",
-   "Weight": "2.01",
-   "Market Value": "197640.57",
-   "Shares Held": "213",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "STRYKER CORP COMMON STOCK",
-   "Ticker": "SYK",
-   "Identifier": "863667101",
-   "Weight": "1.99",
-   "Market Value": "195838.06",
-   "Shares Held": "671",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -171,79 +153,97 @@
    "Ticker": "-",
    "Identifier": "6870445",
    "Weight": "1.96",
-   "Market Value": "192838.45",
+   "Market Value": "193991.46",
    "Shares Held": "4600",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ROCHE HOLDING AG COMMON",
-   "Ticker": "-",
-   "Identifier": "BTMJD19",
-   "Weight": "1.87",
-   "Market Value": "184179.02",
-   "Shares Held": "377",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Name": "REGENERON PHARMACEUTICALS",
+   "Ticker": "REGN",
+   "Identifier": "75886F107",
+   "Weight": "1.94",
+   "Market Value": "192626.55",
+   "Shares Held": "213",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "HUMANA INC COMMON STOCK",
    "Ticker": "HUM",
    "Identifier": "444859102",
-   "Weight": "1.86",
-   "Market Value": "182794.5",
+   "Weight": "1.93",
+   "Market Value": "191279.34",
    "Shares Held": "441",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "EDWARDS LIFESCIENCES CORP",
+   "Ticker": "EW",
+   "Identifier": "28176E108",
+   "Weight": "1.88",
+   "Market Value": "186609.78",
+   "Shares Held": "1827",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ARGENX SE COMMON STOCK",
    "Ticker": "-",
    "Identifier": "BNHKYX4",
-   "Weight": "1.83",
-   "Market Value": "179658.22",
+   "Weight": "1.87",
+   "Market Value": "185226.28",
    "Shares Held": "201",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "GENMAB A/S",
+   "Name": "ROCHE HOLDING AG COMMON",
    "Ticker": "-",
-   "Identifier": "4595739",
-   "Weight": "1.72",
-   "Market Value": "168950.96",
-   "Shares Held": "295",
+   "Identifier": "BTMJD19",
+   "Weight": "1.81",
+   "Market Value": "179620.13",
+   "Shares Held": "377",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BAYER AG COMMON STOCK EUR",
+   "Ticker": "-",
+   "Identifier": "5069211",
+   "Weight": "1.69",
+   "Market Value": "167637.91",
+   "Shares Held": "2707",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "BIOGEN INC COMMON STOCK",
    "Ticker": "BIIB",
    "Identifier": "09062X103",
-   "Weight": "1.71",
-   "Market Value": "168150.06",
+   "Weight": "1.66",
+   "Market Value": "164656.05",
    "Shares Held": "663",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "EDWARDS LIFESCIENCES",
-   "Ticker": "EW",
-   "Identifier": "28176E108",
-   "Weight": "1.71",
-   "Market Value": "168102.27",
-   "Shares Held": "1827",
+   "Name": "VERTEX PHARMACEUTICALS",
+   "Ticker": "VRTX",
+   "Identifier": "92532F100",
+   "Weight": "1.65",
+   "Market Value": "163579.91",
+   "Shares Held": "299",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "BAYER AG COMMON STOCK EUR",
+   "Name": "GENMAB A/S",
    "Ticker": "-",
-   "Identifier": "5069211",
-   "Weight": "1.55",
-   "Market Value": "152715.66",
-   "Shares Held": "2707",
+   "Identifier": "4595739",
+   "Weight": "1.6",
+   "Market Value": "158201.68",
+   "Shares Held": "295",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "HCA HEALTHCARE INC COMMON",
    "Ticker": "HCA",
    "Identifier": "40412C101",
-   "Weight": "1.47",
-   "Market Value": "144322.95",
+   "Weight": "1.52",
+   "Market Value": "150971.95",
    "Shares Held": "305",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -251,17 +251,26 @@
    "Name": "TEVA PHARMACEUTICAL",
    "Ticker": "-",
    "Identifier": "6882172",
-   "Weight": "1.42",
-   "Market Value": "139292.61",
+   "Weight": "1.45",
+   "Market Value": "144201.91",
    "Shares Held": "3445",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CARDINAL HEALTH INC",
+   "Ticker": "CAH",
+   "Identifier": "14149Y108",
+   "Weight": "1.43",
+   "Market Value": "141566.12",
+   "Shares Held": "521",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "SANDOZ GROUP AG COMMON",
    "Ticker": "-",
    "Identifier": "BLPLD38",
-   "Weight": "1.38",
-   "Market Value": "135377.26",
+   "Weight": "1.4",
+   "Market Value": "138660.08",
    "Shares Held": "1359",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -269,44 +278,17 @@
    "Name": "CENTENE CORP COMMON STOCK",
    "Ticker": "CNC",
    "Identifier": "15135B101",
-   "Weight": "1.35",
-   "Market Value": "132450.75",
+   "Weight": "1.36",
+   "Market Value": "134946.9",
    "Shares Held": "1935",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CARDINAL HEALTH INC",
-   "Ticker": "CAH",
-   "Identifier": "14149Y108",
-   "Weight": "1.33",
-   "Market Value": "130500.08",
-   "Shares Held": "521",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CHARLES RIVER",
-   "Ticker": "CRL",
-   "Identifier": "159864107",
-   "Weight": "1.06",
-   "Market Value": "103869.49",
-   "Shares Held": "289",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ZOETIS INC COMMON STOCK",
-   "Ticker": "ZTS",
-   "Identifier": "98978V103",
-   "Weight": "1.05",
-   "Market Value": "102998.24",
-   "Shares Held": "1292",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "FRESENIUS SE & CO KGAA",
    "Ticker": "-",
    "Identifier": "BT7JGG0",
-   "Weight": "0.99",
-   "Market Value": "97514.69",
+   "Weight": "1.08",
+   "Market Value": "106841.45",
    "Shares Held": "1831",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -314,80 +296,98 @@
    "Name": "ZIMMER BIOMET HOLDINGS",
    "Ticker": "ZBH",
    "Identifier": "98956P102",
-   "Weight": "0.94",
-   "Market Value": "92724.12",
+   "Weight": "1.05",
+   "Market Value": "103583.79",
    "Shares Held": "981",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ZOETIS INC COMMON STOCK",
+   "Ticker": "ZTS",
+   "Identifier": "98978V103",
+   "Weight": "1.03",
+   "Market Value": "102584.8",
+   "Shares Held": "1292",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CHARLES RIVER",
+   "Ticker": "CRL",
+   "Identifier": "159864107",
+   "Weight": "0.98",
+   "Market Value": "97543.28",
+   "Shares Held": "289",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "REVOLUTION MEDICINES INC",
+   "Ticker": "RVMD",
+   "Identifier": "76155X100",
+   "Weight": "0.91",
+   "Market Value": "90179.32",
+   "Shares Held": "469",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "NEUROCRINE BIOSCIENCES",
+   "Ticker": "NBIX",
+   "Identifier": "64125C109",
+   "Weight": "0.9",
+   "Market Value": "88900.2",
+   "Shares Held": "540",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ABBOTT LABORATORIES",
    "Ticker": "ABT",
    "Identifier": "002824100",
-   "Weight": "0.87",
-   "Market Value": "85278.6",
+   "Weight": "0.89",
+   "Market Value": "88273.79",
    "Shares Held": "803",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "DISC MEDICINE INC COMMON",
+   "Ticker": "IRON",
+   "Identifier": "254604101",
+   "Weight": "0.71",
+   "Market Value": "70308.81",
+   "Shares Held": "891",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "JPMORGAN U.S. GOVERNMENT",
    "Ticker": "MGMXX",
    "Identifier": "4812C2270",
-   "Weight": "0.85",
-   "Market Value": "83673.05",
-   "Shares Held": "83673",
+   "Weight": "0.69",
+   "Market Value": "68722.14",
+   "Shares Held": "68722",
    "Asset Category": "MONEY MARKET"
   },
   {
-   "Name": "NEUROCRINE BIOSCIENCES",
-   "Ticker": "NBIX",
-   "Identifier": "64125C109",
-   "Weight": "0.8",
-   "Market Value": "78894",
-   "Shares Held": "540",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CASH",
-   "Ticker": "-",
-   "Identifier": "CASH",
-   "Weight": "0.74",
-   "Market Value": "72971.47",
-   "Shares Held": "72971",
-   "Asset Category": "CURRENCIES"
-  },
-  {
-   "Name": "DISC MEDICINE INC COMMON",
-   "Ticker": "IRON",
-   "Identifier": "254604101",
-   "Weight": "0.73",
-   "Market Value": "72028.44",
-   "Shares Held": "891",
+   "Name": "MEDTRONIC PLC COMMON",
+   "Ticker": "MDT",
+   "Identifier": "G5960L103",
+   "Weight": "0.64",
+   "Market Value": "63319.6",
+   "Shares Held": "622",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "BRIDGEBIO PHARMA INC",
    "Ticker": "BBIO",
    "Identifier": "10806X102",
-   "Weight": "0.63",
-   "Market Value": "61608.9",
+   "Weight": "0.62",
+   "Market Value": "61066.38",
    "Shares Held": "822",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "MEDTRONIC PLC COMMON",
-   "Ticker": "MDT",
-   "Identifier": "G5960L103",
-   "Weight": "0.61",
-   "Market Value": "60047.88",
-   "Shares Held": "622",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CONVATEC GROUP PLC",
+   "Name": "CONVATEC GROUP PLC COMMON",
    "Ticker": "-",
    "Identifier": "BD3VFW7",
-   "Weight": "0.6",
-   "Market Value": "59392.1",
+   "Weight": "0.61",
+   "Market Value": "60689.46",
    "Shares Held": "18179",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -395,62 +395,71 @@
    "Name": "DYNE THERAPEUTICS INC",
    "Ticker": "DYN",
    "Identifier": "26818M108",
-   "Weight": "0.5",
-   "Market Value": "49535.92",
+   "Weight": "0.54",
+   "Market Value": "53631.76",
    "Shares Held": "2968",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "GSK PLC COMMON STOCK GBP",
-   "Ticker": "-",
-   "Identifier": "BN7SWP6",
-   "Weight": "0.49",
-   "Market Value": "47942.59",
-   "Shares Held": "1932",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SPYRE THERAPEUTICS INC",
-   "Ticker": "SYRE",
-   "Identifier": "00773J202",
-   "Weight": "0.48",
-   "Market Value": "47507.52",
-   "Shares Held": "492",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "PTC THERAPEUTICS INC",
    "Ticker": "PTCT",
    "Identifier": "69366J200",
-   "Weight": "0.48",
-   "Market Value": "47376.3",
+   "Weight": "0.52",
+   "Market Value": "51697.6",
    "Shares Held": "790",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "SPYRE THERAPEUTICS INC",
+   "Ticker": "SYRE",
+   "Identifier": "00773J202",
+   "Weight": "0.52",
+   "Market Value": "51099.12",
+   "Shares Held": "492",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
+   "Weight": "0.51",
+   "Market Value": "50291.09",
+   "Shares Held": "50291",
+   "Asset Category": "CURRENCIES"
+  },
+  {
+   "Name": "GSK PLC COMMON STOCK GBP",
+   "Ticker": "-",
+   "Identifier": "BN7SWP6",
+   "Weight": "0.49",
+   "Market Value": "48878.52",
+   "Shares Held": "1932",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ALIGN TECHNOLOGY INC",
+   "Ticker": "ALGN",
+   "Identifier": "016255101",
+   "Weight": "0.45",
+   "Market Value": "44986",
+   "Shares Held": "271",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "LB PHARMACEUTICALS INC",
    "Ticker": "LBRX",
    "Identifier": "50180M108",
-   "Weight": "0.43",
-   "Market Value": "42042.3",
+   "Weight": "0.45",
+   "Market Value": "44488.59",
    "Shares Held": "1059",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ALIGN TECHNOLOGY INC",
-   "Ticker": "ALGN",
-   "Identifier": "016255101",
-   "Weight": "0.41",
-   "Market Value": "40620.19",
-   "Shares Held": "271",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "LEGEND BIOTECH CORP ADR",
    "Ticker": "LEGN",
    "Identifier": "52490G102",
-   "Weight": "0.34",
-   "Market Value": "33288.57",
+   "Weight": "0.36",
+   "Market Value": "36012.6",
    "Shares Held": "1539",
    "Asset Category": "ADR"
   },
@@ -459,7 +468,7 @@
    "Ticker": "BSX",
    "Identifier": "101137107",
    "Weight": "0.34",
-   "Market Value": "33248.16",
+   "Market Value": "33858",
    "Shares Held": "792",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -467,8 +476,8 @@
    "Name": "APNIMED INC COMMON STOCK",
    "Ticker": "APMD",
    "Identifier": "03770Y107",
-   "Weight": "0.21",
-   "Market Value": "20926.4",
+   "Weight": "0.19",
+   "Market Value": "19267.6",
    "Shares Held": "1276",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -477,7 +486,7 @@
    "Ticker": "INSM",
    "Identifier": "457669307",
    "Weight": "0.15",
-   "Market Value": "14297.66",
+   "Market Value": "14529.44",
    "Shares Held": "127",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -486,25 +495,25 @@
    "Ticker": "-",
    "Identifier": "BNHKYX4",
    "Weight": "0.14",
-   "Market Value": "13407.33",
+   "Market Value": "13822.86",
    "Shares Held": "15",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ALNYLAM PHARMACEUTICALS",
-   "Ticker": "ALNY",
-   "Identifier": "02043Q107",
-   "Weight": "0.07",
-   "Market Value": "6930",
-   "Shares Held": "42",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Name": "ISRAELI SHEKEL",
+   "Ticker": "-",
+   "Identifier": "ILS",
+   "Weight": "0.02",
+   "Market Value": "2031.87",
+   "Shares Held": "6479",
+   "Asset Category": "CURRENCIES"
   },
   {
    "Name": "SARTORIUS AG PREFERENCE",
    "Ticker": "-",
    "Identifier": "5843329",
    "Weight": "0",
-   "Market Value": "324.85",
+   "Market Value": "321.85",
    "Shares Held": "1",
    "Asset Category": "FOREIGN PREFERRED STOCK"
   },
@@ -514,6 +523,15 @@
    "Identifier": "CHF",
    "Weight": "0",
    "Market Value": "0.29",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES"
+  },
+  {
+   "Name": "BRITISH POUND",
+   "Ticker": "-",
+   "Identifier": "GBP",
+   "Weight": "0",
+   "Market Value": "0.25",
    "Shares Held": "0",
    "Asset Category": "CURRENCIES"
   },
@@ -533,15 +551,6 @@
    "Weight": "0",
    "Market Value": "-0.02",
    "Shares Held": "-3",
-   "Asset Category": "CURRENCIES"
-  },
-  {
-   "Name": "BRITISH POUND",
-   "Ticker": "-",
-   "Identifier": "GBP",
-   "Weight": "0",
-   "Market Value": "-0.25",
-   "Shares Held": "0",
    "Asset Category": "CURRENCIES"
   },
   {

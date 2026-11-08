@@ -2,7 +2,7 @@
  "ticker": "JEMA",
  "page": 3,
  "pageSize": 250,
- "totalRows": 509,
+ "totalRows": 507,
  "headers": [
   "Name",
   "Ticker",
@@ -15,28 +15,6 @@
   "Maturity"
  ],
  "rows": [
-  {
-   "Name": "NEW TURKISH LIRA",
-   "Ticker": "-",
-   "Identifier": "TRY",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "0",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "PHILIPPINES PESO",
-   "Ticker": "-",
-   "Identifier": "PHP",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "0",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
   {
    "Name": "ROSNEFT OIL CO PJSC",
    "Ticker": "-",
@@ -60,6 +38,17 @@
    "Maturity": ""
   },
   {
+   "Name": "UAB DIRHAM",
+   "Ticker": "-",
+   "Identifier": "AED",
+   "Weight": "0",
+   "Market Value": "0",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
    "Name": "X5 RETAIL GROUP NV GDR",
    "Ticker": "-",
    "Identifier": "B07T3T9",
@@ -67,6 +56,17 @@
    "Market Value": "0",
    "Shares Held": "1062",
    "Asset Category": "GDR",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "SAUDI ARABIAN RYAL",
+   "Ticker": "-",
+   "Identifier": "SAR",
+   "Weight": "0",
+   "Market Value": "-0.03",
+   "Shares Held": "0",
+   "Asset Category": "CURRENCIES",
    "Coupon": "",
    "Maturity": ""
   },
@@ -82,34 +82,12 @@
    "Maturity": ""
   },
   {
-   "Name": "BRAZILIAN REAL",
-   "Ticker": "-",
-   "Identifier": "BRL",
-   "Weight": "0",
-   "Market Value": "-1.12",
-   "Shares Held": "-6",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
    "Name": "CHILEAN PESO CURRENCY",
    "Ticker": "-",
    "Identifier": "CLP",
    "Weight": "0",
-   "Market Value": "-1.45",
+   "Market Value": "-1.47",
    "Shares Held": "-1437",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "EURO",
-   "Ticker": "-",
-   "Identifier": "EUR",
-   "Weight": "0",
-   "Market Value": "-2.47",
-   "Shares Held": "-2",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
    "Maturity": ""
