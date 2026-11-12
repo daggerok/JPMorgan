@@ -89,8 +89,10 @@ import {
 const realFetch = globalThis.fetch;
 // the seven 52-week keys withRange52w puts into every index row in front of returnsBasis and performanceAsOf (range-52w block)
 const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
-const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, key] : [key]));
-const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key)));
+// the swing block puts its keys after the range keys, in front of returnsBasis and performanceAsOf
+const SWING_KEYS = ['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d'];
+const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, ...SWING_KEYS, key] : [key]));
+const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key) && !SWING_KEYS.includes(key)));
 const realLog = console.log;
 const realError = console.error;
 const realTz = process.env.TZ;
@@ -741,6 +743,10 @@ function mockProduct(fund: MockFund): Record<string, any> {
   return payload;
 }
 
+// the swing block's daily chart (period1=0): 300 closes rising 0.1 a day from 2025-01-02
+const SWING_CHART_URL = /query1\.finance\.yahoo\.com\/v8\/finance\/chart\/[^?]+\?period1=0&period2=\d+&interval=1d&includePrePost=false/;
+const swingChart = () => ({ chart: { result: [{ meta: { dataGranularity: '1d' }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 0, 2) / 1000 + i * 86_400), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => Math.round((40 + i / 10) * 100) / 100) }] } }] } });
+
 function installMockFetch(options: { delayMs?: number; failProduct?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean; adjclose?: number[] } = {}): { requests: string[]; peak: () => number } {
   const requests: string[] = [];
   let inFlight = 0;
@@ -758,6 +764,7 @@ function installMockFetch(options: { delayMs?: number; failProduct?: string[]; e
       if (/fund-explorer/.test(url)) return json(funds.map(mockExplorerEntry));
       if (/product-data/.test(url) && fund) return options.failProduct?.includes(fund.ticker) ? new Response('boom', { status: 404 }) : json(mockProduct(fund));
       if (/historicalData/.test(url) && fund) return json(options.emptyHistory?.includes(fund.ticker) ? {} : HISTORICAL_DATA_FIXTURE);
+      if (SWING_CHART_URL.test(url)) return json(swingChart());
       if (/query1\.finance\.yahoo\.com/.test(url) && options.yahoo) {
         return json({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2], open: [50, 51], high: [50, 51], low: [50, 51] }], adjclose: [{ adjclose: options.adjclose ?? [50, 51] }] } }] } });
       }
@@ -1052,7 +1059,7 @@ describe('pipeline', () => {
       await runUpdater(controlsFor());
       expect((await readIndex(root)).funds.length).toBe(3);
       const mock = installMockFetch();
-      await runUpdater(controlsFor({ TICKERS: 'BBB' }));
+      await runUpdater(controlsFor({ TICKERS: 'BBB', SKIP_YAHOO: 'false' }));
       const index = await readIndex(root);
       expect(index.funds.map((fund) => fund.ticker)).toEqual(TICKERS);
       expect(index.counts.funds).toBe(3);
@@ -1060,6 +1067,10 @@ describe('pipeline', () => {
       expect(index.funds.map((fund) => [fund.metrics.dividendYield, fund.metrics.dividendYieldBasis])).toEqual(TICKERS.map(() => [8.42, 'official-trailing-12m']));
       expect(new Set(index.funds.map((fund) => Object.keys(fund.metrics).join()))).toHaveProperty('size', 1);
       for (const fund of index.funds) expect(Object.keys(fund.metrics)).toEqual(expect.arrayContaining(RANGE_KEYS));
+      // the swing keys from the Yahoo daily closes (period1=0) of the fund the run updated (swing block); the kept ones stay null
+      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-11, -2)).toEqual(SWING_KEYS);
+      expect(mock.requests.filter((url) => SWING_CHART_URL.test(url)).map((url) => /chart\/([^?]+)/.exec(url)?.[1])).toEqual(['BBB']);
+      expect([index.funds[1].metrics.athBasis, index.funds[1].metrics.athPrice, index.funds[1].metrics.high60d, index.funds[1].metrics.volatility1y, index.funds[0].metrics.athPrice]).toEqual(['daily closes since 2025-01-02', 69.9, 69.9, expect.any(Number), null]);
       expect(mock.requests.some((url) => url.includes('46641Q332'))).toBe(true);
       expect(mock.requests.some((url) => url.includes('46640Q332'))).toBe(false);
     });
@@ -1437,7 +1448,7 @@ describe('pipeline 4', () => {
       installMockFetch({ emptyHistory: ['AAA'] });
       const good = globalThis.fetch;
       globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) =>
-        /query1\.finance\.yahoo\.com/.test(String(input)) ? new Response(JSON.stringify(yahoo(count)), { status: 200 }) : good(input, init)) as unknown as typeof fetch;
+        /query1\.finance\.yahoo\.com/.test(String(input)) ? new Response(JSON.stringify(yahoo(SWING_CHART_URL.test(String(input)) ? DAYS : count)), { status: 200 }) : good(input, init)) as unknown as typeof fetch;
     };
     await withTempFeed(async (root, dir) => {
       withYahoo(DAYS);
