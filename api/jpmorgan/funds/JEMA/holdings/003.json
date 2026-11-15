@@ -2,7 +2,7 @@
  "ticker": "JEMA",
  "page": 3,
  "pageSize": 250,
- "totalRows": 507,
+ "totalRows": 506,
  "headers": [
   "Name",
   "Ticker",
@@ -15,39 +15,6 @@
   "Maturity"
  ],
  "rows": [
-  {
-   "Name": "ROSNEFT OIL CO PJSC",
-   "Ticker": "-",
-   "Identifier": "B59SS16",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "141777",
-   "Asset Category": "FOREIGN COMMON STOCK",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "SOUTH AFRICAN RAND",
-   "Ticker": "-",
-   "Identifier": "ZAR",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "0",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
-  {
-   "Name": "UAB DIRHAM",
-   "Ticker": "-",
-   "Identifier": "AED",
-   "Weight": "0",
-   "Market Value": "0",
-   "Shares Held": "0",
-   "Asset Category": "CURRENCIES",
-   "Coupon": "",
-   "Maturity": ""
-  },
   {
    "Name": "X5 RETAIL GROUP NV GDR",
    "Ticker": "-",
@@ -64,7 +31,7 @@
    "Ticker": "-",
    "Identifier": "SAR",
    "Weight": "0",
-   "Market Value": "-0.03",
+   "Market Value": "-0.01",
    "Shares Held": "0",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
@@ -82,12 +49,34 @@
    "Maturity": ""
   },
   {
+   "Name": "BRAZILIAN REAL",
+   "Ticker": "-",
+   "Identifier": "BRL",
+   "Weight": "0",
+   "Market Value": "-1.12",
+   "Shares Held": "-6",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
    "Name": "CHILEAN PESO CURRENCY",
    "Ticker": "-",
    "Identifier": "CLP",
    "Weight": "0",
-   "Market Value": "-1.47",
+   "Market Value": "-1.44",
    "Shares Held": "-1437",
+   "Asset Category": "CURRENCIES",
+   "Coupon": "",
+   "Maturity": ""
+  },
+  {
+   "Name": "CHINESE RENMINBI (YUAN)",
+   "Ticker": "-",
+   "Identifier": "CNY",
+   "Weight": "0",
+   "Market Value": "-3.41",
+   "Shares Held": "-22",
    "Asset Category": "CURRENCIES",
    "Coupon": "",
    "Maturity": ""
