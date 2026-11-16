@@ -91,9 +91,13 @@ const realFetch = globalThis.fetch;
 const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
 // the swing block puts its keys after the range keys, the dividends block its keys after the swing ones, in front of returnsBasis and performanceAsOf
 const SWING_KEYS = ['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d'];
-const DIVIDEND_KEYS = ['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y'];
-const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, ...SWING_KEYS, ...DIVIDEND_KEYS, key] : [key]));
-const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key) && !SWING_KEYS.includes(key) && !DIVIDEND_KEYS.includes(key)));
+const DIVIDEND_KEYS = ['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y', 'paymentsPerYear', 'payFrequency'];
+// the benchmark block puts its 32 keys after the dividend ones
+const BENCHMARK_KEYS = ['perf1y', 'perf3y', 'perf5y', 'perf10y', 'perfSi', 'maxDrawdown1y', 'maxDrawdown3y', 'maxDrawdown5y', 'maxDrawdown10y',
+  'vsSpy1y', 'vsSpy3y', 'vsSpy5y', 'vsSpy10y', 'beta1ySpy', 'corr1ySpy', 'upCapture3ySpy', 'downCapture3ySpy', 'relStrength3mSpy', 'stressReturnSpy', 'stressBasisSpy',
+  'vsQqq1y', 'vsQqq3y', 'vsQqq5y', 'vsQqq10y', 'beta1yQqq', 'corr1yQqq', 'upCapture3yQqq', 'downCapture3yQqq', 'relStrength3mQqq', 'stressReturnQqq', 'stressBasisQqq', 'benchmarkAsOf'];
+const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, ...SWING_KEYS, ...DIVIDEND_KEYS, ...BENCHMARK_KEYS, key] : [key]));
+const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key) && !SWING_KEYS.includes(key) && !DIVIDEND_KEYS.includes(key) && !BENCHMARK_KEYS.includes(key)));
 const realLog = console.log;
 const realError = console.error;
 const realTz = process.env.TZ;
@@ -746,7 +750,7 @@ function mockProduct(fund: MockFund): Record<string, any> {
 
 // the swing block's daily chart (period1=0): 300 closes rising 0.1 a day from 2025-01-02
 const SWING_CHART_URL = /query1\.finance\.yahoo\.com\/v8\/finance\/chart\/[^?]+\?period1=0&period2=\d+&interval=1d&includePrePost=false/;
-const swingChart = () => ({ chart: { result: [{ meta: { dataGranularity: '1d', firstTradeDate: Date.UTC(2025, 0, 2) / 1000 }, events: { dividends: { [String(Date.parse('2026-09-21T00:00:00Z') / 1000)]: { amount: 0.25, date: Date.parse('2026-09-21T00:00:00Z') / 1000 } } }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 0, 2) / 1000 + i * 86_400), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => Math.round((40 + i / 10) * 100) / 100) }] } }] } });
+const swingChart = () => ({ chart: { result: [{ meta: { dataGranularity: '1d', firstTradeDate: Date.UTC(2025, 0, 2) / 1000 }, events: { dividends: { [String(Date.parse('2026-09-21T00:00:00Z') / 1000)]: { amount: 0.25, date: Date.parse('2026-09-21T00:00:00Z') / 1000 } } }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 0, 2) / 1000 + i * 86_400), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => Math.round((40 + i / 10) * 100) / 100) }], adjclose: [{ adjclose: Array.from({ length: 300 }, (_, i) => Math.round((40 + i / 10) * 100) / 100) }] } }] } });
 
 function installMockFetch(options: { delayMs?: number; failProduct?: string[]; emptyHistory?: string[]; funds?: MockFund[]; yahoo?: boolean; adjclose?: number[] } = {}): { requests: string[]; peak: () => number } {
   const requests: string[] = [];
@@ -1069,13 +1073,20 @@ describe('pipeline', () => {
       expect(new Set(index.funds.map((fund) => Object.keys(fund.metrics).join()))).toHaveProperty('size', 1);
       for (const fund of index.funds) expect(Object.keys(fund.metrics)).toEqual(expect.arrayContaining(RANGE_KEYS));
       // the swing keys from the Yahoo daily closes (period1=0) of the fund the run updated (swing block); the kept ones stay null
-      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-17, -8)).toEqual(SWING_KEYS);
+      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-51, -42)).toEqual(SWING_KEYS);
       // the dividend keys from the Yahoo dividend events of the same chart (dividends block, tap mode): one payment in the last 12 months,
-      // no complete year after the listing year, so growth, streak and cut are null (never 0); the kept funds stay null
-      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-8, -2)).toEqual(DIVIDEND_KEYS);
-      expect(DIVIDEND_KEYS.map((key) => index.funds[1].metrics[key])).toEqual([0.25, null, null, null, null, null]);
+      // no complete year after the listing year, so growth, streak and cut are null (never 0); payFrequency is null under a year of history; the kept funds stay null
+      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-42, -34)).toEqual(DIVIDEND_KEYS);
+      expect(DIVIDEND_KEYS.map((key) => index.funds[1].metrics[key])).toEqual([0.25, null, null, null, null, null, 1, null]);
+      // the benchmark keys against SPY and QQQ from the same chart (benchmark block, tap mode); the mock gives every ticker the same
+      // 300 bars, so the fund equals the benchmarks: under a year of calendar history (horizons null), beta and correlation 1
+      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-34, -2)).toEqual(BENCHMARK_KEYS);
+      const updated = index.funds[1].metrics;
+      expect([updated.perf1y, updated.vsSpy1y, updated.beta1ySpy, updated.corr1ySpy, updated.relStrength3mQqq, updated.stressReturnSpy, updated.benchmarkAsOf]).toEqual([null, null, 1, 1, 0, null, '2025-10-28']);
+      expect(index.funds[0].metrics.benchmarkAsOf).toBeNull();
       expect(mock.requests.filter((url) => /chart\/BBB\?period1=0&.*includePrePost=false/.test(url))).toHaveLength(1);
-      expect(mock.requests.filter((url) => SWING_CHART_URL.test(url)).map((url) => /chart\/([^?]+)/.exec(url)?.[1])).toEqual(['BBB']);
+      // one request per updated fund feeds swing, dividends and benchmark; SPY and QQQ are read once as the benchmarks
+      expect(mock.requests.filter((url) => SWING_CHART_URL.test(url)).map((url) => /chart\/([^?]+)/.exec(url)?.[1]).sort()).toEqual(['BBB', 'QQQ', 'SPY']);
       expect([index.funds[1].metrics.athBasis, index.funds[1].metrics.athPrice, index.funds[1].metrics.high60d, index.funds[1].metrics.volatility1y, index.funds[0].metrics.athPrice]).toEqual(['daily closes since 2025-01-02', 69.9, 69.9, expect.any(Number), null]);
       expect(mock.requests.some((url) => url.includes('46641Q332'))).toBe(true);
       expect(mock.requests.some((url) => url.includes('46640Q332'))).toBe(false);
