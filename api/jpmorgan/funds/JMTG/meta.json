@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q575&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q575&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q575&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q575&country=us&role=adv&locale=en-US&fromDate=2000-08-18&toDate=2026-11-18",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q575&country=us&role=adv&locale=en-US&fromDate=2000-08-18&toDate=2026-11-19",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JMTG",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -31,45 +31,45 @@
   "net": 0.24
  },
  "nav": {
-  "display": "$48.90",
-  "value": 48.89662269,
-  "asOfDate": "Nov 18 2026"
+  "display": "$48.93",
+  "value": 48.92731911,
+  "asOfDate": "Nov 19 2026"
  },
  "marketPrice": {
-  "display": "$48.86",
-  "value": 48.86,
-  "asOfDate": "Nov 18 2026"
+  "display": "$48.89",
+  "value": 48.89,
+  "asOfDate": "Nov 19 2026"
  },
  "premiumDiscount": {
-  "display": "-0.07%",
-  "value": -0.0749
+  "display": "-0.08%",
+  "value": -0.0763
  },
  "aum": {
-  "display": "$6,845.40 M",
-  "value": 6845398383.36,
-  "asOfDate": "Nov 18 2026",
+  "display": "$6,849.70 M",
+  "value": 6849695800.44,
+  "asOfDate": "Nov 19 2026",
   "source": "am.jpmorgan.com product-data net assets"
  },
  "yields": {
   "dividendYield": 4.89,
   "dividendYieldText": "4.89%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Nov 18 2026",
+  "dividendYieldKind": "12-month rolling dividend yield (daily, official JPMorgan product-data), as of Nov 19 2026",
   "distributionRate": null,
-  "secYield": 4.56,
-  "secYieldText": "4.56%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Nov 17 2026",
-  "unsubsidizedSecYield": 4.45
+  "secYield": 4.48,
+  "secYieldText": "4.48%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Nov 19 2026",
+  "unsubsidizedSecYield": 4.37
  },
  "returns": {
   "derivedFrom": "official JPMorgan NAV total returns (fund explorer / product-data JSON); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Oct 31 2026",
-   "priceReturnsAsOf": "Nov 18 2026",
+   "priceReturnsAsOf": "Nov 19 2026",
    "mo1": 2.57,
    "mo1Text": "2.57%",
-   "qtd": 1.73,
-   "qtdText": "1.73%",
+   "qtd": 1.79,
+   "qtdText": "1.79%",
    "ytd": 0.27,
    "ytdText": "0.27%",
    "yr1": 0.95,
@@ -168,8 +168,8 @@
   ],
   "pageSize": 250,
   "totalRows": 2584,
-  "asOfDate": "2026-11-18",
-  "asOf": "Nov 18 2026",
+  "asOfDate": "2026-11-19",
+  "asOf": "Nov 19 2026",
   "source": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)"
  },
  "history": {
@@ -177,8 +177,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 352,
-  "asOf": "Nov 18 2026",
+  "totalRows": 353,
+  "asOf": "Nov 19 2026",
   "source": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)"
  },
  "metrics": {
@@ -194,8 +194,8 @@
   "dividendYield": 4.89,
   "dividendYieldText": "4.89%",
   "dividendYieldBasis": "official-trailing-12m",
-  "secYield": 4.56,
-  "secYieldText": "4.56%",
+  "secYield": 4.48,
+  "secYieldText": "4.48%",
   "returnsBasis": "official JPMorgan NAV total returns (fund explorer / product-data JSON)",
   "performanceAsOf": "2026-10-31"
  }
