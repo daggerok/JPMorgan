@@ -56,10 +56,10 @@
   "dividendYieldBasis": null,
   "dividendYieldKind": "not published: no distributions yet",
   "distributionRate": null,
-  "secYield": 1.01,
-  "secYieldText": "1.01%",
-  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Nov 23 2026",
-  "unsubsidizedSecYield": 0.85
+  "secYield": 1,
+  "secYieldText": "1.00%",
+  "secYieldKind": "30-day SEC yield (daily, official JPMorgan product-data), as of Nov 24 2026",
+  "unsubsidizedSecYield": 0.84
  },
  "returns": {
   "derivedFrom": "derived from the official daily NAV history with published distributions reinvested (NAV total return), not official published returns",
@@ -135,8 +135,8 @@
   "dividendYield": null,
   "dividendYieldText": "—",
   "dividendYieldBasis": null,
-  "secYield": 1.01,
-  "secYieldText": "1.01%",
+  "secYield": 1,
+  "secYieldText": "1.00%",
   "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns",
   "performanceAsOf": null
  }
