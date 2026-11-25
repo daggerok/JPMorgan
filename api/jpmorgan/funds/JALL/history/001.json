@@ -2,7 +2,7 @@
  "ticker": "JALL",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 2,
+ "totalRows": 5,
  "headers": [
   "Date",
   "NAV",
@@ -21,6 +21,24 @@
    "NAV": "48.90334511",
    "Market Price": "48.94",
    "Premium/Discount": "0.075"
+  },
+  {
+   "Date": "Nov 20 2026",
+   "NAV": "47.16940773",
+   "Market Price": "47.15",
+   "Premium/Discount": "-0.0411"
+  },
+  {
+   "Date": "Nov 23 2026",
+   "NAV": "49.2503151",
+   "Market Price": "49.35",
+   "Premium/Discount": "0.2024"
+  },
+  {
+   "Date": "Nov 24 2026",
+   "NAV": "49.01730151",
+   "Market Price": "49.07",
+   "Premium/Discount": "0.1075"
   }
  ]
 }
