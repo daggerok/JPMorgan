@@ -2,7 +2,7 @@
  "ticker": "JALL",
  "page": 2,
  "pageSize": 250,
- "totalRows": 947,
+ "totalRows": 941,
  "headers": [
   "Name",
   "Ticker",
@@ -14,48 +14,39 @@
  ],
  "rows": [
   {
+   "Name": "ZOETIS INC COMMON STOCK",
+   "Ticker": "ZTS",
+   "Identifier": "98978V103",
+   "Weight": "0.09",
+   "Market Value": "231849.4",
+   "Shares Held": "2812",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
    "Name": "THE PROCTER & GAMBLE",
    "Ticker": "PG",
    "Identifier": "742718109",
    "Weight": "0.09",
-   "Market Value": "229529.75",
+   "Market Value": "229039.5",
    "Shares Held": "1325",
    "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "HON HAI PRECISION",
+   "Ticker": "-",
+   "Identifier": "6438564",
+   "Weight": "0.09",
+   "Market Value": "227051.41",
+   "Shares Held": "34201",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "MITSUI & CO LTD COMMON",
    "Ticker": "-",
    "Identifier": "6597302",
    "Weight": "0.09",
-   "Market Value": "224902.43",
+   "Market Value": "226850.82",
    "Shares Held": "7700",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "PETROLEO BRASILEIRO SA -",
-   "Ticker": "-",
-   "Identifier": "2684532",
-   "Weight": "0.09",
-   "Market Value": "220722.96",
-   "Shares Held": "31088",
-   "Asset Category": "FOREIGN PREFERRED STOCK"
-  },
-  {
-   "Name": "CVS HEALTH CORP COMMON",
-   "Ticker": "CVS",
-   "Identifier": "126650100",
-   "Weight": "0.09",
-   "Market Value": "218943.06",
-   "Shares Held": "2701",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "AGNICO EAGLE MINES LTD",
-   "Ticker": "-",
-   "Identifier": "2009823",
-   "Weight": "0.09",
-   "Market Value": "218642.2",
-   "Shares Held": "1355",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -63,89 +54,44 @@
    "Ticker": "-",
    "Identifier": "BNGN9Z1",
    "Weight": "0.09",
-   "Market Value": "217788.55",
+   "Market Value": "224604.1",
    "Shares Held": "9385",
    "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DEVON ENERGY CORP COMMON",
-   "Ticker": "DVN",
-   "Identifier": "25179M103",
-   "Weight": "0.09",
-   "Market Value": "217004.4",
-   "Shares Held": "5112",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "BAYER AG COMMON STOCK EUR",
    "Ticker": "-",
    "Identifier": "5069211",
-   "Weight": "0.08",
-   "Market Value": "215840.53",
+   "Weight": "0.09",
+   "Market Value": "223591.4",
    "Shares Held": "3850",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CVS HEALTH CORP COMMON",
+   "Ticker": "CVS",
+   "Identifier": "126650100",
+   "Weight": "0.09",
+   "Market Value": "223129.61",
+   "Shares Held": "2701",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "DEVON ENERGY CORP COMMON",
+   "Ticker": "DVN",
+   "Identifier": "25179M103",
+   "Weight": "0.08",
+   "Market Value": "218998.08",
+   "Shares Held": "5112",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "KINGSPAN GROUP PLC COMMON",
    "Ticker": "-",
    "Identifier": "4491235",
    "Weight": "0.08",
-   "Market Value": "215755.45",
+   "Market Value": "218511.65",
    "Shares Held": "2226",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SIEMENS ENERGY AG COMMON",
-   "Ticker": "-",
-   "Identifier": "BMTVQK9",
-   "Weight": "0.08",
-   "Market Value": "213761.6",
-   "Shares Held": "1664",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ORANGE SA COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "5176177",
-   "Weight": "0.08",
-   "Market Value": "213188.89",
-   "Shares Held": "12724",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "KIMBERLY-CLARK CORP",
-   "Ticker": "KMB",
-   "Identifier": "494368103",
-   "Weight": "0.08",
-   "Market Value": "212880.25",
-   "Shares Held": "1945",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "VULCAN MATERIALS CO",
-   "Ticker": "VMC",
-   "Identifier": "929160109",
-   "Weight": "0.08",
-   "Market Value": "212415.4",
-   "Shares Held": "730",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CARLSBERG AS COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "4169219",
-   "Weight": "0.08",
-   "Market Value": "211946.56",
-   "Shares Held": "1424",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "HON HAI PRECISION",
-   "Ticker": "-",
-   "Identifier": "6438564",
-   "Weight": "0.08",
-   "Market Value": "211660.48",
-   "Shares Held": "34201",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -153,26 +99,53 @@
    "Ticker": "NUE",
    "Identifier": "670346105",
    "Weight": "0.08",
-   "Market Value": "211089",
+   "Market Value": "218237.5",
    "Shares Held": "850",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "SAGE GROUP PLC/THE",
+   "Name": "SIEMENS ENERGY AG COMMON",
    "Ticker": "-",
-   "Identifier": "B8C3BL0",
+   "Identifier": "BMTVQK9",
    "Weight": "0.08",
-   "Market Value": "209934.15",
-   "Shares Held": "13840",
+   "Market Value": "217789.22",
+   "Shares Held": "1664",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "MOTOROLA SOLUTIONS INC",
-   "Ticker": "MSI",
-   "Identifier": "620076307",
+   "Name": "VULCAN MATERIALS CO",
+   "Ticker": "VMC",
+   "Identifier": "929160109",
    "Weight": "0.08",
-   "Market Value": "208826",
-   "Shares Held": "386",
+   "Market Value": "215386.5",
+   "Shares Held": "730",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ORANGE SA COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "5176177",
+   "Weight": "0.08",
+   "Market Value": "214797.15",
+   "Shares Held": "12724",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SANDISK CORP COMMON STOCK",
+   "Ticker": "SNDK",
+   "Identifier": "80004C200",
+   "Weight": "0.08",
+   "Market Value": "214424.32",
+   "Shares Held": "2512",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "MARVELL TECHNOLOGY INC",
+   "Ticker": "MRVL",
+   "Identifier": "573874104",
+   "Weight": "0.08",
+   "Market Value": "214323.5",
+   "Shares Held": "1525",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -180,26 +153,44 @@
    "Ticker": "-",
    "Identifier": "5501906",
    "Weight": "0.08",
-   "Market Value": "208542.68",
+   "Market Value": "213742.38",
    "Shares Held": "8746",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "TESCO PLC COMMON STOCK",
+   "Name": "SAGE GROUP PLC/THE",
    "Ticker": "-",
-   "Identifier": "BLGZ986",
+   "Identifier": "B8C3BL0",
    "Weight": "0.08",
-   "Market Value": "204265.98",
-   "Shares Held": "28220",
+   "Market Value": "212550.07",
+   "Shares Held": "13840",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "THE KROGER CO.",
-   "Ticker": "KR",
-   "Identifier": "501044101",
+   "Name": "KIMBERLY-CLARK CORP",
+   "Ticker": "KMB",
+   "Identifier": "494368103",
    "Weight": "0.08",
-   "Market Value": "202437.17",
-   "Shares Held": "2899",
+   "Market Value": "212218.95",
+   "Shares Held": "1945",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "MOTOROLA SOLUTIONS INC",
+   "Ticker": "MSI",
+   "Identifier": "620076307",
+   "Weight": "0.08",
+   "Market Value": "210304.38",
+   "Shares Held": "386",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ANALOG DEVICES INC COMMON",
+   "Ticker": "ADI",
+   "Identifier": "032654105",
+   "Weight": "0.08",
+   "Market Value": "208984",
+   "Shares Held": "604",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -207,71 +198,35 @@
    "Ticker": "EXPE",
    "Identifier": "30212P303",
    "Weight": "0.08",
-   "Market Value": "202425.53",
+   "Market Value": "206914.18",
    "Shares Held": "839",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "KONINKLIJKE KPN NV COMMON",
-   "Ticker": "-",
-   "Identifier": "5956078",
+   "Name": "THE KROGER CO.",
+   "Ticker": "KR",
+   "Identifier": "501044101",
    "Weight": "0.08",
-   "Market Value": "201261.41",
-   "Shares Held": "42323",
-   "Asset Category": "FOREIGN COMMON STOCK"
+   "Market Value": "206623.44",
+   "Shares Held": "2979",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "ANALOG DEVICES INC COMMON",
-   "Ticker": "ADI",
-   "Identifier": "032654105",
+   "Name": "CARLSBERG AS COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "4169219",
    "Weight": "0.08",
-   "Market Value": "201195.42",
-   "Shares Held": "604",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Market Value": "206394.57",
+   "Shares Held": "1424",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "MTU AERO ENGINES AG",
    "Ticker": "-",
    "Identifier": "B09DHL9",
    "Weight": "0.08",
-   "Market Value": "200316.5",
+   "Market Value": "205816.91",
    "Shares Held": "529",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "MARVELL TECHNOLOGY INC",
-   "Ticker": "MRVL",
-   "Identifier": "573874104",
-   "Weight": "0.08",
-   "Market Value": "199668.25",
-   "Shares Held": "1525",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CANADIAN NATIONAL RAILWAY",
-   "Ticker": "-",
-   "Identifier": "2180632",
-   "Weight": "0.08",
-   "Market Value": "197859.26",
-   "Shares Held": "1565",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ENI SPA",
-   "Ticker": "-",
-   "Identifier": "7145056",
-   "Weight": "0.08",
-   "Market Value": "197535.47",
-   "Shares Held": "7584",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "INDUSTRIA DE DISENO",
-   "Ticker": "-",
-   "Identifier": "BP9DL90",
-   "Weight": "0.08",
-   "Market Value": "195807.9",
-   "Shares Held": "3060",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -279,89 +234,107 @@
    "Ticker": "MELI",
    "Identifier": "58733R102",
    "Weight": "0.08",
-   "Market Value": "195150.9",
+   "Market Value": "203878.36",
    "Shares Held": "133",
    "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "KONINKLIJKE KPN NV COMMON",
+   "Ticker": "-",
+   "Identifier": "5956078",
+   "Weight": "0.08",
+   "Market Value": "203258.73",
+   "Shares Held": "42323",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ENI SPA",
+   "Ticker": "-",
+   "Identifier": "7145056",
+   "Weight": "0.08",
+   "Market Value": "202527.48",
+   "Shares Held": "7584",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "TESCO PLC COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "BLGZ986",
+   "Weight": "0.08",
+   "Market Value": "201379.94",
+   "Shares Held": "28220",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "INTERCONTINENTAL HOTELS",
    "Ticker": "IHG",
    "Identifier": "BHJYC05",
    "Weight": "0.08",
-   "Market Value": "194924.79",
+   "Market Value": "197323.29",
    "Shares Held": "1124",
    "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CANADIAN NATIONAL RAILWAY",
+   "Ticker": "-",
+   "Identifier": "2180632",
+   "Weight": "0.08",
+   "Market Value": "197245.37",
+   "Shares Held": "1565",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "INDUSTRIA DE DISENO",
+   "Ticker": "-",
+   "Identifier": "BP9DL90",
+   "Weight": "0.08",
+   "Market Value": "197001.32",
+   "Shares Held": "3060",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "TC ENERGY CORP COMMON",
    "Ticker": "-",
    "Identifier": "BJMY6G0",
    "Weight": "0.08",
-   "Market Value": "194180.62",
+   "Market Value": "195800.01",
    "Shares Held": "3089",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "INTUIT INC COMMON STOCK",
-   "Ticker": "INTU",
-   "Identifier": "461202103",
-   "Weight": "0.08",
-   "Market Value": "193192.92",
-   "Shares Held": "711",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BANK OF CHINA LTD COMMON",
-   "Ticker": "-",
-   "Identifier": "B154564",
-   "Weight": "0.08",
-   "Market Value": "191851.83",
-   "Shares Held": "242597",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "SHIN-ETSU CHEMICAL CO LTD",
    "Ticker": "-",
    "Identifier": "6804585",
-   "Weight": "0.07",
-   "Market Value": "190367.52",
+   "Weight": "0.08",
+   "Market Value": "195353.95",
    "Shares Held": "5500",
    "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BOSTON SCIENTIFIC CORP",
-   "Ticker": "BSX",
-   "Identifier": "101137107",
-   "Weight": "0.07",
-   "Market Value": "189729.6",
-   "Shares Held": "4205",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "KDDI CORP COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "6248990",
-   "Weight": "0.07",
-   "Market Value": "189686.57",
-   "Shares Held": "10700",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CHENIERE ENERGY INC",
-   "Ticker": "LNG",
-   "Identifier": "16411R208",
-   "Weight": "0.07",
-   "Market Value": "189649.72",
-   "Shares Held": "628",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ARGENX SE",
    "Ticker": "-",
    "Identifier": "BNHKYX4",
    "Weight": "0.07",
-   "Market Value": "189576.22",
+   "Market Value": "194087.3",
    "Shares Held": "195",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "INTUIT INC COMMON STOCK",
+   "Ticker": "INTU",
+   "Identifier": "461202103",
+   "Weight": "0.07",
+   "Market Value": "193349.34",
+   "Shares Held": "711",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "MITSUBISHI ELECTRIC CORP",
+   "Ticker": "-",
+   "Identifier": "6597045",
+   "Weight": "0.07",
+   "Market Value": "192179.88",
+   "Shares Held": "6500",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -369,89 +342,35 @@
    "Ticker": "-",
    "Identifier": "BFM0SV9",
    "Weight": "0.07",
-   "Market Value": "188827.72",
+   "Market Value": "191944.31",
    "Shares Held": "10791",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "NATIONAL AUSTRALIA BANK",
-   "Ticker": "-",
-   "Identifier": "6624608",
+   "Name": "CHENIERE ENERGY INC",
+   "Ticker": "LNG",
+   "Identifier": "16411R208",
    "Weight": "0.07",
-   "Market Value": "187489.22",
-   "Shares Held": "7777",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SANDISK CORP COMMON STOCK",
-   "Ticker": "SNDK",
-   "Identifier": "80004C200",
-   "Weight": "0.07",
-   "Market Value": "184908.32",
-   "Shares Held": "2512",
+   "Market Value": "191565.12",
+   "Shares Held": "628",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "CSL LTD COMMON STOCK AUD",
+   "Name": "BANK OF CHINA LTD COMMON",
    "Ticker": "-",
-   "Identifier": "6185495",
+   "Identifier": "B154564",
    "Weight": "0.07",
-   "Market Value": "184487.23",
-   "Shares Held": "1332",
+   "Market Value": "190834.86",
+   "Shares Held": "242597",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "NEUROCRINE BIOSCIENCES",
-   "Ticker": "NBIX",
-   "Identifier": "64125C109",
+   "Name": "BOSTON SCIENTIFIC CORP",
+   "Ticker": "BSX",
+   "Identifier": "101137107",
    "Weight": "0.07",
-   "Market Value": "184426",
-   "Shares Held": "1111",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ANZ GROUP HOLDINGS LTD",
-   "Ticker": "-",
-   "Identifier": "6065586",
-   "Weight": "0.07",
-   "Market Value": "184369.08",
-   "Shares Held": "7225",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "MITSUBISHI ELECTRIC CORP",
-   "Ticker": "-",
-   "Identifier": "6597045",
-   "Weight": "0.07",
-   "Market Value": "183645.53",
-   "Shares Held": "6500",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CAPGEMINI SE COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "4163437",
-   "Weight": "0.07",
-   "Market Value": "182384.13",
-   "Shares Held": "1369",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "TRANSDIGM GROUP INC",
-   "Ticker": "TDG",
-   "Identifier": "893641100",
-   "Weight": "0.07",
-   "Market Value": "181815.34",
-   "Shares Held": "158",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "WEC ENERGY GROUP INC",
-   "Ticker": "WEC",
-   "Identifier": "92939U106",
-   "Weight": "0.07",
-   "Market Value": "181135.89",
-   "Shares Held": "1521",
+   "Market Value": "190276.25",
+   "Shares Held": "4205",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -459,98 +378,80 @@
    "Ticker": "-",
    "Identifier": "BFXZDY1",
    "Weight": "0.07",
-   "Market Value": "178186.47",
+   "Market Value": "188164.75",
    "Shares Held": "12018",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "OVERSEA-CHINESE BANKING",
+   "Name": "NATIONAL AUSTRALIA BANK",
    "Ticker": "-",
-   "Identifier": "B0F9V20",
+   "Identifier": "6624608",
    "Weight": "0.07",
-   "Market Value": "175067.1",
-   "Shares Held": "8530",
+   "Market Value": "188032.21",
+   "Shares Held": "7777",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ING GROEP NV COMMON STOCK",
+   "Name": "KDDI CORP COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "BZ57390",
+   "Identifier": "6248990",
    "Weight": "0.07",
-   "Market Value": "171738.23",
-   "Shares Held": "5841",
+   "Market Value": "187351.95",
+   "Shares Held": "10700",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "CTBC FINANCIAL HOLDING CO",
+   "Name": "ANZ GROUP HOLDINGS LTD",
    "Ticker": "-",
-   "Identifier": "6527666",
+   "Identifier": "6065586",
    "Weight": "0.07",
-   "Market Value": "170949.03",
-   "Shares Held": "86029",
+   "Market Value": "186816.57",
+   "Shares Held": "7225",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "PING AN INSURANCE GROUP",
-   "Ticker": "-",
-   "Identifier": "B01FLR7",
+   "Name": "TRANSDIGM GROUP INC",
+   "Ticker": "TDG",
+   "Identifier": "893641100",
    "Weight": "0.07",
-   "Market Value": "170299.24",
-   "Shares Held": "26473",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DEUTSCHE BOERSE AG COMMON",
-   "Ticker": "-",
-   "Identifier": "7021963",
-   "Weight": "0.07",
-   "Market Value": "169426.22",
-   "Shares Held": "492",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CARNIVAL CORP LTD COMMON",
-   "Ticker": "CCL",
-   "Identifier": "G2004J103",
-   "Weight": "0.07",
-   "Market Value": "168448",
-   "Shares Held": "6016",
+   "Market Value": "185700.56",
+   "Shares Held": "158",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "UNITED PARCEL SERVICE INC",
-   "Ticker": "UPS",
-   "Identifier": "911312106",
-   "Weight": "0.07",
-   "Market Value": "168208.23",
-   "Shares Held": "1509",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BECTON DICKINSON & CO",
-   "Ticker": "BDX",
-   "Identifier": "075887109",
-   "Weight": "0.07",
-   "Market Value": "167921.16",
-   "Shares Held": "759",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "STATE STREET CORP COMMON",
-   "Ticker": "STT",
-   "Identifier": "857477103",
-   "Weight": "0.07",
-   "Market Value": "167701.05",
-   "Shares Held": "1035",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "L'OREAL SA COMMON STOCK",
+   "Name": "CSL LTD COMMON STOCK AUD",
    "Ticker": "-",
-   "Identifier": "4057808",
+   "Identifier": "6185495",
    "Weight": "0.07",
-   "Market Value": "166844.51",
-   "Shares Held": "342",
+   "Market Value": "183833.75",
+   "Shares Held": "1332",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WEC ENERGY GROUP INC",
+   "Ticker": "WEC",
+   "Identifier": "92939U106",
+   "Weight": "0.07",
+   "Market Value": "183740.44",
+   "Shares Held": "1543",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "NEUROCRINE BIOSCIENCES",
+   "Ticker": "NBIX",
+   "Identifier": "64125C109",
+   "Weight": "0.07",
+   "Market Value": "183514.98",
+   "Shares Held": "1111",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CAPGEMINI SE COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "4163437",
+   "Weight": "0.07",
+   "Market Value": "182767.7",
+   "Shares Held": "1369",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -558,25 +459,106 @@
    "Ticker": "-",
    "Identifier": "6770620",
    "Weight": "0.07",
-   "Market Value": "166592.04",
+   "Market Value": "179772.43",
    "Shares Held": "9600",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "INVESTOR AB COMMON STOCK",
+   "Name": "CTBC FINANCIAL HOLDING CO",
    "Ticker": "-",
-   "Identifier": "BMV7PQ4",
+   "Identifier": "6527666",
    "Weight": "0.07",
-   "Market Value": "165805.56",
-   "Shares Held": "4051",
+   "Market Value": "179744.97",
+   "Shares Held": "86029",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "OVERSEA-CHINESE BANKING",
+   "Ticker": "-",
+   "Identifier": "B0F9V20",
+   "Weight": "0.07",
+   "Market Value": "177283.66",
+   "Shares Held": "8530",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "PING AN INSURANCE GROUP",
+   "Ticker": "-",
+   "Identifier": "B01FLR7",
+   "Weight": "0.07",
+   "Market Value": "175455.48",
+   "Shares Held": "26473",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ING GROEP NV COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "BZ57390",
+   "Weight": "0.07",
+   "Market Value": "175129.13",
+   "Shares Held": "5841",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BARRICK MINING CORP",
+   "Ticker": "-",
+   "Identifier": "BNM23Q1",
+   "Weight": "0.07",
+   "Market Value": "173532.57",
+   "Shares Held": "4745",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "DEUTSCHE BOERSE AG COMMON",
+   "Ticker": "-",
+   "Identifier": "7021963",
+   "Weight": "0.07",
+   "Market Value": "172144.38",
+   "Shares Held": "492",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "STATE STREET CORP COMMON",
+   "Ticker": "STT",
+   "Identifier": "857477103",
+   "Weight": "0.07",
+   "Market Value": "170454.15",
+   "Shares Held": "1035",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "KIOXIA HOLDINGS CORP",
+   "Ticker": "-",
+   "Identifier": "BMGYJ02",
+   "Weight": "0.07",
+   "Market Value": "169980.15",
+   "Shares Held": "3200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "UNITED PARCEL SERVICE INC",
+   "Ticker": "UPS",
+   "Identifier": "911312106",
+   "Weight": "0.07",
+   "Market Value": "169958.67",
+   "Shares Held": "1509",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CARNIVAL CORP LTD COMMON",
+   "Ticker": "CCL",
+   "Identifier": "G2004J103",
+   "Weight": "0.07",
+   "Market Value": "169350.4",
+   "Shares Held": "6016",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "OMNICOM GROUP INC COMMON",
    "Ticker": "OMC",
    "Identifier": "681919106",
    "Weight": "0.07",
-   "Market Value": "165799.6",
+   "Market Value": "168596.44",
    "Shares Held": "1828",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -585,35 +567,17 @@
    "Ticker": "-",
    "Identifier": "6441506",
    "Weight": "0.07",
-   "Market Value": "165545.51",
+   "Market Value": "168281.08",
    "Shares Held": "1100",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "BARRICK MINING CORP",
+   "Name": "INVESTOR AB COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "BNM23Q1",
+   "Identifier": "BMV7PQ4",
    "Weight": "0.06",
-   "Market Value": "163882.06",
-   "Shares Held": "4745",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CONTINENTAL AG COMMON",
-   "Ticker": "-",
-   "Identifier": "4598589",
-   "Weight": "0.06",
-   "Market Value": "162744.27",
-   "Shares Held": "2135",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "UCB SA COMMON STOCK EUR 0",
-   "Ticker": "-",
-   "Identifier": "5596991",
-   "Weight": "0.06",
-   "Market Value": "162149.42",
-   "Shares Held": "511",
+   "Market Value": "167334.61",
+   "Shares Held": "4051",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -621,44 +585,116 @@
    "Ticker": "EMR",
    "Identifier": "291011104",
    "Weight": "0.06",
-   "Market Value": "161946.9",
+   "Market Value": "167158.7",
    "Shares Held": "1030",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "ROPER TECHNOLOGIES INC",
-   "Ticker": "ROP",
-   "Identifier": "776696106",
+   "Name": "BECTON DICKINSON & CO",
+   "Ticker": "BDX",
+   "Identifier": "075887109",
    "Weight": "0.06",
-   "Market Value": "160868.97",
-   "Shares Held": "333",
+   "Market Value": "166494.24",
+   "Shares Held": "759",
    "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "AL RAJHI BANK COMMON",
-   "Ticker": "-",
-   "Identifier": "B12LZH9",
-   "Weight": "0.06",
-   "Market Value": "160039.55",
-   "Shares Held": "9873",
-   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "MARATHON PETROLEUM CORP",
    "Ticker": "MPC",
    "Identifier": "56585A102",
    "Weight": "0.06",
-   "Market Value": "159976.74",
+   "Market Value": "166227.6",
    "Shares Held": "462",
    "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "L'OREAL SA COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "4057808",
+   "Weight": "0.06",
+   "Market Value": "166193.12",
+   "Shares Held": "342",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CONTINENTAL AG COMMON",
+   "Ticker": "-",
+   "Identifier": "4598589",
+   "Weight": "0.06",
+   "Market Value": "165620.39",
+   "Shares Held": "2135",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "NETEASE INC COMMON STOCK",
    "Ticker": "-",
    "Identifier": "BM93SF4",
    "Weight": "0.06",
-   "Market Value": "158101.02",
+   "Market Value": "163692.38",
    "Shares Held": "7640",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WHEATON PRECIOUS METALS",
+   "Ticker": "-",
+   "Identifier": "BF13KN5",
+   "Weight": "0.06",
+   "Market Value": "163503.61",
+   "Shares Held": "1246",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ITAU UNIBANCO HOLDING SA",
+   "Ticker": "-",
+   "Identifier": "B037HR3",
+   "Weight": "0.06",
+   "Market Value": "162447.26",
+   "Shares Held": "21109",
+   "Asset Category": "FOREIGN PREFERRED STOCK"
+  },
+  {
+   "Name": "UCB SA COMMON STOCK EUR 0",
+   "Ticker": "-",
+   "Identifier": "5596991",
+   "Weight": "0.06",
+   "Market Value": "162356.34",
+   "Shares Held": "511",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "DELTA ELECTRONICS INC",
+   "Ticker": "-",
+   "Identifier": "6260734",
+   "Weight": "0.06",
+   "Market Value": "161689.88",
+   "Shares Held": "4726",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ROPER TECHNOLOGIES INC",
+   "Ticker": "ROP",
+   "Identifier": "776696106",
+   "Weight": "0.06",
+   "Market Value": "161321.85",
+   "Shares Held": "333",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "FRANCO-NEVADA CORP COMMON",
+   "Ticker": "-",
+   "Identifier": "B29NF31",
+   "Weight": "0.06",
+   "Market Value": "161283.02",
+   "Shares Held": "621",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "AL RAJHI BANK COMMON",
+   "Ticker": "-",
+   "Identifier": "B12LZH9",
+   "Weight": "0.06",
+   "Market Value": "159741.37",
+   "Shares Held": "9873",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -666,7 +702,7 @@
    "Ticker": "EQT",
    "Identifier": "26884L109",
    "Weight": "0.06",
-   "Market Value": "156805.79",
+   "Market Value": "157809.98",
    "Shares Held": "3043",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -675,71 +711,8 @@
    "Ticker": "-",
    "Identifier": "6076146",
    "Weight": "0.06",
-   "Market Value": "156406.31",
+   "Market Value": "157554.99",
    "Shares Held": "6610",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "WHEATON PRECIOUS METALS",
-   "Ticker": "-",
-   "Identifier": "BF13KN5",
-   "Weight": "0.06",
-   "Market Value": "152680.05",
-   "Shares Held": "1246",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "FRANCO-NEVADA CORP COMMON",
-   "Ticker": "-",
-   "Identifier": "B29NF31",
-   "Weight": "0.06",
-   "Market Value": "152133.09",
-   "Shares Held": "621",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "STANDARD CHARTERED PLC",
-   "Ticker": "-",
-   "Identifier": "0408284",
-   "Weight": "0.06",
-   "Market Value": "151445.85",
-   "Shares Held": "6084",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DELTA ELECTRONICS INC",
-   "Ticker": "-",
-   "Identifier": "6260734",
-   "Weight": "0.06",
-   "Market Value": "150968.05",
-   "Shares Held": "4726",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "PERNOD RICARD SA COMMON",
-   "Ticker": "-",
-   "Identifier": "4682329",
-   "Weight": "0.06",
-   "Market Value": "150434.39",
-   "Shares Held": "1955",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CHINA MERCHANTS BANK CO",
-   "Ticker": "-",
-   "Identifier": "B1DYPZ5",
-   "Weight": "0.06",
-   "Market Value": "150137.28",
-   "Shares Held": "22147",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ALIMENTATION COUCHE-TARD",
-   "Ticker": "-",
-   "Identifier": "BL56KN2",
-   "Weight": "0.06",
-   "Market Value": "149584.88",
-   "Shares Held": "2492",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -747,35 +720,17 @@
    "Ticker": "NU",
    "Identifier": "G6683N103",
    "Weight": "0.06",
-   "Market Value": "149395.32",
+   "Market Value": "156043.17",
    "Shares Held": "12087",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "DIGITAL REALTY TRUST INC",
-   "Ticker": "DLR",
-   "Identifier": "253868103",
-   "Weight": "0.06",
-   "Market Value": "149287.71",
-   "Shares Held": "897",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "AIB GROUP PLC COMMON",
+   "Name": "STANDARD CHARTERED PLC",
    "Ticker": "-",
-   "Identifier": "BF0L353",
+   "Identifier": "0408284",
    "Weight": "0.06",
-   "Market Value": "148978.26",
-   "Shares Held": "12733",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DIAGEO PLC COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "0237400",
-   "Weight": "0.06",
-   "Market Value": "147896.46",
-   "Shares Held": "5804",
+   "Market Value": "155850.45",
+   "Shares Held": "6084",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -783,7 +738,7 @@
    "Ticker": "SPCX",
    "Identifier": "84615Q103",
    "Weight": "0.06",
-   "Market Value": "147702.96",
+   "Market Value": "154830.81",
    "Shares Held": "1159",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -792,89 +747,17 @@
    "Ticker": "-",
    "Identifier": "6267359",
    "Weight": "0.06",
-   "Market Value": "147403.22",
+   "Market Value": "153819.44",
    "Shares Held": "3300",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "THE SAUDI NATIONAL BANK",
+   "Name": "AIB GROUP PLC COMMON",
    "Ticker": "-",
-   "Identifier": "BSHYYN1",
+   "Identifier": "BF0L353",
    "Weight": "0.06",
-   "Market Value": "147050.6",
-   "Shares Held": "14851",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ITAU UNIBANCO HOLDING SA",
-   "Ticker": "-",
-   "Identifier": "B037HR3",
-   "Weight": "0.06",
-   "Market Value": "145336.55",
-   "Shares Held": "21109",
-   "Asset Category": "FOREIGN PREFERRED STOCK"
-  },
-  {
-   "Name": "O'REILLY AUTOMOTIVE INC",
-   "Ticker": "ORLY",
-   "Identifier": "67103H107",
-   "Weight": "0.06",
-   "Market Value": "144551.55",
-   "Shares Held": "1495",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "KBC GROUP NV COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "4497749",
-   "Weight": "0.06",
-   "Market Value": "143783.37",
-   "Shares Held": "1203",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "INDUSTRIAL & COMMERCIAL",
-   "Ticker": "-",
-   "Identifier": "B1G1QD8",
-   "Weight": "0.06",
-   "Market Value": "143676.93",
-   "Shares Held": "146363",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "KIOXIA HOLDINGS CORP",
-   "Ticker": "-",
-   "Identifier": "BMGYJ02",
-   "Weight": "0.06",
-   "Market Value": "143438.86",
-   "Shares Held": "3200",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DOLLARAMA INC COMMON",
-   "Ticker": "-",
-   "Identifier": "B4TP9G2",
-   "Weight": "0.06",
-   "Market Value": "142797.89",
-   "Shares Held": "902",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "GENERAL MOTORS CO COMMON",
-   "Ticker": "GM",
-   "Identifier": "37045V100",
-   "Weight": "0.06",
-   "Market Value": "142699.01",
-   "Shares Held": "1699",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "GRUPO FINANCIERO BANORTE",
-   "Ticker": "-",
-   "Identifier": "2421041",
-   "Weight": "0.06",
-   "Market Value": "142454.74",
-   "Shares Held": "13537",
+   "Market Value": "152636.45",
+   "Shares Held": "12733",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -882,17 +765,71 @@
    "Ticker": "-",
    "Identifier": "6572707",
    "Weight": "0.06",
-   "Market Value": "142384.81",
+   "Market Value": "151367.35",
    "Shares Held": "8300",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "CENTRAL JAPAN RAILWAY CO",
-   "Ticker": "-",
-   "Identifier": "6183552",
+   "Name": "DIGITAL REALTY TRUST INC",
+   "Ticker": "DLR",
+   "Identifier": "253868103",
    "Weight": "0.06",
-   "Market Value": "142360.71",
-   "Shares Held": "5000",
+   "Market Value": "149942.52",
+   "Shares Held": "897",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "PERNOD RICARD SA COMMON",
+   "Ticker": "-",
+   "Identifier": "4682329",
+   "Weight": "0.06",
+   "Market Value": "149305.12",
+   "Shares Held": "1955",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ALIMENTATION COUCHE-TARD",
+   "Ticker": "-",
+   "Identifier": "BL56KN2",
+   "Weight": "0.06",
+   "Market Value": "148337.5",
+   "Shares Held": "2492",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "DIAGEO PLC COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "0237400",
+   "Weight": "0.06",
+   "Market Value": "147869.32",
+   "Shares Held": "5804",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA MERCHANTS BANK CO",
+   "Ticker": "-",
+   "Identifier": "B1DYPZ5",
+   "Weight": "0.06",
+   "Market Value": "147797.12",
+   "Shares Held": "22147",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ANTHROPIC PBC COMMON",
+   "Ticker": "ANT",
+   "Identifier": "03703U107",
+   "Weight": "0.06",
+   "Market Value": "146824.24",
+   "Shares Held": "1598",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "KBC GROUP NV COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "4497749",
+   "Weight": "0.06",
+   "Market Value": "146778.76",
+   "Shares Held": "1203",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -900,98 +837,143 @@
    "Ticker": "-",
    "Identifier": "B1X8QN2",
    "Weight": "0.06",
-   "Market Value": "141365.7",
+   "Market Value": "146435.58",
    "Shares Held": "37358",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "WESTINGHOUSE AIR BRAKE",
-   "Ticker": "WAB",
-   "Identifier": "929740108",
-   "Weight": "0.06",
-   "Market Value": "140919.1",
-   "Shares Held": "490",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CONSTELLATION SOFTWARE",
+   "Name": "GRUPO FINANCIERO BANORTE",
    "Ticker": "-",
-   "Identifier": "B15C4L6",
+   "Identifier": "2421041",
    "Weight": "0.06",
-   "Market Value": "140509.41",
-   "Shares Held": "65",
+   "Market Value": "146378.35",
+   "Shares Held": "13537",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "XIAOMI CORP COMMON STOCK",
    "Ticker": "-",
    "Identifier": "BG0ZMJ9",
-   "Weight": "0.05",
-   "Market Value": "139788.23",
+   "Weight": "0.06",
+   "Market Value": "145925.88",
    "Shares Held": "40826",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "CREDICORP LTD COMMON",
-   "Ticker": "BAP",
-   "Identifier": "G2519Y108",
-   "Weight": "0.05",
-   "Market Value": "139749.74",
-   "Shares Held": "398",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "JAPAN POST BANK CO LTD",
+   "Name": "THE SAUDI NATIONAL BANK",
    "Ticker": "-",
-   "Identifier": "BYT8165",
-   "Weight": "0.05",
-   "Market Value": "139011.94",
-   "Shares Held": "7300",
+   "Identifier": "BSHYYN1",
+   "Weight": "0.06",
+   "Market Value": "145691.27",
+   "Shares Held": "14851",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "KB FINANCIAL GROUP INC",
+   "Name": "MURATA MANUFACTURING CO",
    "Ticker": "-",
-   "Identifier": "B3DF0Y6",
-   "Weight": "0.05",
-   "Market Value": "138013.84",
-   "Shares Held": "1245",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "HEINEKEN NV COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "7792559",
-   "Weight": "0.05",
-   "Market Value": "137098.14",
-   "Shares Held": "1468",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "NATIONAL BANK OF CANADA",
-   "Ticker": "-",
-   "Identifier": "2077303",
-   "Weight": "0.05",
-   "Market Value": "136996.85",
-   "Shares Held": "961",
+   "Identifier": "6610403",
+   "Weight": "0.06",
+   "Market Value": "145677.91",
+   "Shares Held": "4500",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "QUALCOMM INC COMMON STOCK",
    "Ticker": "QCOM",
    "Identifier": "747525103",
-   "Weight": "0.05",
-   "Market Value": "136951.92",
+   "Weight": "0.06",
+   "Market Value": "145567.24",
    "Shares Held": "812",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "MURATA MANUFACTURING CO",
+   "Name": "WESTINGHOUSE AIR BRAKE",
+   "Ticker": "WAB",
+   "Identifier": "929740108",
+   "Weight": "0.06",
+   "Market Value": "145113.5",
+   "Shares Held": "490",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "GENERAL MOTORS CO COMMON",
+   "Ticker": "GM",
+   "Identifier": "37045V100",
+   "Weight": "0.06",
+   "Market Value": "144754.8",
+   "Shares Held": "1699",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "O'REILLY AUTOMOTIVE INC",
+   "Ticker": "ORLY",
+   "Identifier": "67103H107",
+   "Weight": "0.06",
+   "Market Value": "143938.6",
+   "Shares Held": "1495",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "CREDICORP LTD COMMON",
+   "Ticker": "BAP",
+   "Identifier": "G2519Y108",
+   "Weight": "0.06",
+   "Market Value": "143753.62",
+   "Shares Held": "398",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "INDUSTRIAL & COMMERCIAL",
    "Ticker": "-",
-   "Identifier": "6610403",
+   "Identifier": "B1G1QD8",
+   "Weight": "0.06",
+   "Market Value": "142904.54",
+   "Shares Held": "146363",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CONSTELLATION SOFTWARE",
+   "Ticker": "-",
+   "Identifier": "B15C4L6",
    "Weight": "0.05",
-   "Market Value": "135359.46",
-   "Shares Held": "4500",
+   "Market Value": "140758.81",
+   "Shares Held": "65",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "DOLLARAMA INC COMMON",
+   "Ticker": "-",
+   "Identifier": "B4TP9G2",
+   "Weight": "0.05",
+   "Market Value": "140618.55",
+   "Shares Held": "902",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MEITUAN COMMON STOCK HKD",
+   "Ticker": "-",
+   "Identifier": "BGJW376",
+   "Weight": "0.05",
+   "Market Value": "140590.61",
+   "Shares Held": "16057",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CENTRAL JAPAN RAILWAY CO",
+   "Ticker": "-",
+   "Identifier": "6183552",
+   "Weight": "0.05",
+   "Market Value": "138767.98",
+   "Shares Held": "5000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "JAPAN POST BANK CO LTD",
+   "Ticker": "-",
+   "Identifier": "BYT8165",
+   "Weight": "0.05",
+   "Market Value": "138403.57",
+   "Shares Held": "7300",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -999,17 +981,8 @@
    "Ticker": "-",
    "Identifier": "B28YTC2",
    "Weight": "0.05",
-   "Market Value": "134067.56",
+   "Market Value": "137509.14",
    "Shares Held": "894",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "FUJITSU LTD COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "6356945",
-   "Weight": "0.05",
-   "Market Value": "133260.09",
-   "Shares Held": "6100",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1017,71 +990,53 @@
    "Ticker": "-",
    "Identifier": "0405207",
    "Weight": "0.05",
-   "Market Value": "133208.58",
+   "Market Value": "137470.89",
    "Shares Held": "3039",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "NEXT PLC COMMON STOCK GBP",
+   "Name": "HEINEKEN NV COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "3208986",
+   "Identifier": "7792559",
    "Weight": "0.05",
-   "Market Value": "133062.86",
-   "Shares Held": "635",
+   "Market Value": "136935.78",
+   "Shares Held": "1468",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "JOHNSON CONTROLS",
-   "Ticker": "JCI",
-   "Identifier": "G51502105",
-   "Weight": "0.05",
-   "Market Value": "132678",
-   "Shares Held": "972",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "ANTHROPIC PBC COMMON",
-   "Ticker": "ANT",
-   "Identifier": "03703U107",
-   "Weight": "0.05",
-   "Market Value": "132298.42",
-   "Shares Held": "1598",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "SUN LIFE FINANCIAL INC",
+   "Name": "FUJITSU LTD COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "2566124",
+   "Identifier": "6356945",
    "Weight": "0.05",
-   "Market Value": "131948.93",
-   "Shares Held": "1873",
+   "Market Value": "136885.29",
+   "Shares Held": "6100",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "STEEL DYNAMICS INC COMMON",
-   "Ticker": "STLD",
-   "Identifier": "858119100",
-   "Weight": "0.05",
-   "Market Value": "131850.88",
-   "Shares Held": "608",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "NINTENDO CO LTD COMMON",
+   "Name": "KB FINANCIAL GROUP INC",
    "Ticker": "-",
-   "Identifier": "6639550",
+   "Identifier": "B3DF0Y6",
    "Weight": "0.05",
-   "Market Value": "131349.64",
-   "Shares Held": "2300",
+   "Market Value": "135681.57",
+   "Shares Held": "1245",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ESSILORLUXOTTICA SA",
+   "Name": "RHEINMETALL AG COMMON",
    "Ticker": "-",
-   "Identifier": "7212477",
+   "Identifier": "5334588",
    "Weight": "0.05",
-   "Market Value": "131079.78",
-   "Shares Held": "684",
+   "Market Value": "135666.07",
+   "Shares Held": "156",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "NATIONAL BANK OF CANADA",
+   "Ticker": "-",
+   "Identifier": "2077303",
+   "Weight": "0.05",
+   "Market Value": "135394.01",
+   "Shares Held": "961",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1089,35 +1044,26 @@
    "Ticker": "-",
    "Identifier": "6226576",
    "Weight": "0.05",
-   "Market Value": "130683.91",
+   "Market Value": "135231.3",
    "Shares Held": "109029",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "FAIRFAX FINANCIAL",
-   "Ticker": "-",
-   "Identifier": "2566351",
+   "Name": "STEEL DYNAMICS INC COMMON",
+   "Ticker": "STLD",
+   "Identifier": "858119100",
    "Weight": "0.05",
-   "Market Value": "129823.23",
-   "Shares Held": "69",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BALL CORP COMMON STOCK",
-   "Ticker": "BALL",
-   "Identifier": "058498106",
-   "Weight": "0.05",
-   "Market Value": "129523.04",
-   "Shares Held": "1928",
+   "Market Value": "134982.08",
+   "Shares Held": "608",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "RHEINMETALL AG COMMON",
+   "Name": "ANGLOGOLD ASHANTI PLC ZAR",
    "Ticker": "-",
-   "Identifier": "5334588",
+   "Identifier": "BRF6FX9",
    "Weight": "0.05",
-   "Market Value": "128777.65",
-   "Shares Held": "156",
+   "Market Value": "134955.78",
+   "Shares Held": "1664",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1125,62 +1071,44 @@
    "Ticker": "DDOG",
    "Identifier": "23804L103",
    "Weight": "0.05",
-   "Market Value": "128340.75",
+   "Market Value": "134423.25",
    "Shares Held": "811",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "EXTRA SPACE STORAGE INC",
-   "Ticker": "EXR",
-   "Identifier": "30225T102",
+   "Name": "JOHNSON CONTROLS",
+   "Ticker": "JCI",
+   "Identifier": "G51502105",
    "Weight": "0.05",
-   "Market Value": "128305.05",
-   "Shares Held": "795",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "MEITUAN COMMON STOCK HKD",
-   "Ticker": "-",
-   "Identifier": "BGJW376",
-   "Weight": "0.05",
-   "Market Value": "127611.85",
-   "Shares Held": "16057",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "PACCAR INC COMMON STOCK",
-   "Ticker": "PCAR",
-   "Identifier": "693718108",
-   "Weight": "0.05",
-   "Market Value": "127381",
-   "Shares Held": "1180",
+   "Market Value": "133319.52",
+   "Shares Held": "972",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "TELIA CO AB COMMON STOCK",
+   "Name": "SUN LIFE FINANCIAL INC",
    "Ticker": "-",
-   "Identifier": "5978384",
+   "Identifier": "2566124",
    "Weight": "0.05",
-   "Market Value": "127302.63",
-   "Shares Held": "25969",
+   "Market Value": "133000.62",
+   "Shares Held": "1873",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ANGLOGOLD ASHANTI PLC ZAR",
+   "Name": "NEXT PLC COMMON STOCK GBP",
    "Ticker": "-",
-   "Identifier": "BRF6FX9",
+   "Identifier": "3208986",
    "Weight": "0.05",
-   "Market Value": "126993.08",
-   "Shares Held": "1664",
+   "Market Value": "132270.63",
+   "Shares Held": "635",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "3I GROUP PLC COMMON STOCK",
+   "Name": "NINTENDO CO LTD COMMON",
    "Ticker": "-",
-   "Identifier": "B1YW440",
+   "Identifier": "6639550",
    "Weight": "0.05",
-   "Market Value": "125573.7",
-   "Shares Held": "3511",
+   "Market Value": "131353.12",
+   "Shares Held": "2300",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1188,71 +1116,62 @@
    "Ticker": "VALE",
    "Identifier": "91912E105",
    "Weight": "0.05",
-   "Market Value": "124832.25",
+   "Market Value": "130685.75",
    "Shares Held": "12725",
    "Asset Category": "ADR"
   },
   {
-   "Name": "MS&AD INSURANCE GROUP",
+   "Name": "FAIRFAX FINANCIAL",
    "Ticker": "-",
-   "Identifier": "B2Q4CS1",
+   "Identifier": "2566351",
    "Weight": "0.05",
-   "Market Value": "123532.89",
-   "Shares Held": "3600",
+   "Market Value": "129901.73",
+   "Shares Held": "69",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "FORD MOTOR CO COMMON",
-   "Ticker": "F",
-   "Identifier": "345370860",
+   "Name": "ESSILORLUXOTTICA SA",
+   "Ticker": "-",
+   "Identifier": "7212477",
    "Weight": "0.05",
-   "Market Value": "122101.61",
-   "Shares Held": "10033",
+   "Market Value": "129887.71",
+   "Shares Held": "684",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "PACCAR INC COMMON STOCK",
+   "Ticker": "PCAR",
+   "Identifier": "693718108",
+   "Weight": "0.05",
+   "Market Value": "129764.6",
+   "Shares Held": "1180",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "APPLOVIN CORP COMMON",
-   "Ticker": "APP",
-   "Identifier": "03831W108",
+   "Name": "3I GROUP PLC COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "B1YW440",
    "Weight": "0.05",
-   "Market Value": "121264",
-   "Shares Held": "320",
+   "Market Value": "129703.74",
+   "Shares Held": "3511",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BALL CORP COMMON STOCK",
+   "Ticker": "BALL",
+   "Identifier": "058498106",
+   "Weight": "0.05",
+   "Market Value": "129272.4",
+   "Shares Held": "1928",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "WESFARMERS LTD COMMON",
+   "Name": "TELIA CO AB COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "6948836",
+   "Identifier": "5978384",
    "Weight": "0.05",
-   "Market Value": "120802.23",
-   "Shares Held": "2333",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "PROSUS NV COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "BJDS7L3",
-   "Weight": "0.05",
-   "Market Value": "120252.52",
-   "Shares Held": "3700",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "POWER CORP OF CANADA",
-   "Ticker": "-",
-   "Identifier": "2697701",
-   "Weight": "0.05",
-   "Market Value": "119798.64",
-   "Shares Held": "1827",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "MITSUBISHI HEAVY",
-   "Ticker": "-",
-   "Identifier": "6597067",
-   "Weight": "0.05",
-   "Market Value": "119400.06",
-   "Shares Held": "7100",
+   "Market Value": "129021.85",
+   "Shares Held": "25969",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1260,17 +1179,107 @@
    "Ticker": "LITE",
    "Identifier": "55024U109",
    "Weight": "0.05",
-   "Market Value": "119145",
+   "Market Value": "128657.5",
    "Shares Held": "250",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "RYANAIR HOLDINGS PLC",
-   "Ticker": "-",
-   "Identifier": "BYTBXV3",
+   "Name": "EXTRA SPACE STORAGE INC",
+   "Ticker": "EXR",
+   "Identifier": "30225T102",
    "Weight": "0.05",
-   "Market Value": "117564.72",
-   "Shares Held": "4191",
+   "Market Value": "128615.1",
+   "Shares Held": "795",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "APPLOVIN CORP COMMON",
+   "Ticker": "APP",
+   "Identifier": "03831W108",
+   "Weight": "0.05",
+   "Market Value": "127747.2",
+   "Shares Held": "320",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "PROSUS NV COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "BJDS7L3",
+   "Weight": "0.05",
+   "Market Value": "127027.68",
+   "Shares Held": "3700",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "OTP BANK NYRT COMMON",
+   "Ticker": "-",
+   "Identifier": "7320154",
+   "Weight": "0.05",
+   "Market Value": "124793.71",
+   "Shares Held": "1060",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ZIJIN MINING GROUP CO LTD",
+   "Ticker": "-",
+   "Identifier": "6725299",
+   "Weight": "0.05",
+   "Market Value": "124641.74",
+   "Shares Held": "38848",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "FORD MOTOR CO COMMON",
+   "Ticker": "F",
+   "Identifier": "345370860",
+   "Weight": "0.05",
+   "Market Value": "123706.89",
+   "Shares Held": "10033",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "WUXI APPTEC CO LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "BGHH0L6",
+   "Weight": "0.05",
+   "Market Value": "123053.65",
+   "Shares Held": "4900",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MITSUBISHI HEAVY",
+   "Ticker": "-",
+   "Identifier": "6597067",
+   "Weight": "0.05",
+   "Market Value": "122821.87",
+   "Shares Held": "7100",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MS&AD INSURANCE GROUP",
+   "Ticker": "-",
+   "Identifier": "B2Q4CS1",
+   "Weight": "0.05",
+   "Market Value": "121616.14",
+   "Shares Held": "3600",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WESFARMERS LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "6948836",
+   "Weight": "0.05",
+   "Market Value": "121503.86",
+   "Shares Held": "2333",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "POWER CORP OF CANADA",
+   "Ticker": "-",
+   "Identifier": "2697701",
+   "Weight": "0.05",
+   "Market Value": "121154.49",
+   "Shares Held": "1827",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1278,7 +1287,7 @@
    "Ticker": "DD",
    "Identifier": "26614N201",
    "Weight": "0.05",
-   "Market Value": "117212.06",
+   "Market Value": "119546.84",
    "Shares Held": "763",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1287,179 +1296,35 @@
    "Ticker": "-",
    "Identifier": "BJT1GR5",
    "Weight": "0.05",
-   "Market Value": "116936.49",
+   "Market Value": "118212.76",
    "Shares Held": "1507",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "KAO CORP COMMON STOCK JPY",
+   "Name": "RYANAIR HOLDINGS PLC",
    "Ticker": "-",
-   "Identifier": "6483809",
+   "Identifier": "BYTBXV3",
    "Weight": "0.05",
-   "Market Value": "116740.42",
-   "Shares Held": "4500",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ZIJIN MINING GROUP CO LTD",
-   "Ticker": "-",
-   "Identifier": "6725299",
-   "Weight": "0.05",
-   "Market Value": "116705.74",
-   "Shares Held": "38848",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "WUXI APPTEC CO LTD COMMON",
-   "Ticker": "-",
-   "Identifier": "BGHH0L6",
-   "Weight": "0.05",
-   "Market Value": "116386.4",
-   "Shares Held": "4900",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "OTP BANK NYRT COMMON",
-   "Ticker": "-",
-   "Identifier": "7320154",
-   "Weight": "0.05",
-   "Market Value": "116377.65",
-   "Shares Held": "1060",
+   "Market Value": "116636.14",
+   "Shares Held": "4191",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "YUM CHINA HOLDINGS INC",
    "Ticker": "-",
    "Identifier": "BN2BD13",
-   "Weight": "0.05",
-   "Market Value": "115863.2",
+   "Weight": "0.04",
+   "Market Value": "116229.12",
    "Shares Held": "2237",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "SHINHAN FINANCIAL GROUP",
+   "Name": "B3 SA - BRASIL BOLSA",
    "Ticker": "-",
-   "Identifier": "6397502",
-   "Weight": "0.05",
-   "Market Value": "115515.65",
-   "Shares Held": "1807",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ANHEUSER-BUSCH INBEV",
-   "Ticker": "-",
-   "Identifier": "BYYHL23",
+   "Identifier": "BG36ZK1",
    "Weight": "0.04",
-   "Market Value": "114264.35",
-   "Shares Held": "1422",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "HONDA MOTOR CO LTD COMMON",
-   "Ticker": "-",
-   "Identifier": "6435145",
-   "Weight": "0.04",
-   "Market Value": "112293.94",
-   "Shares Held": "10000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "IQVIA HOLDINGS INC COMMON",
-   "Ticker": "IQV",
-   "Identifier": "46266C105",
-   "Weight": "0.04",
-   "Market Value": "112250.64",
-   "Shares Held": "447",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "TWILIO INC COMMON STOCK",
-   "Ticker": "TWLO",
-   "Identifier": "90138F102",
-   "Weight": "0.04",
-   "Market Value": "112089.8",
-   "Shares Held": "620",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "INTACT FINANCIAL CORP",
-   "Ticker": "-",
-   "Identifier": "B04YJV1",
-   "Weight": "0.04",
-   "Market Value": "112062.34",
-   "Shares Held": "571",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SUZUKI MOTOR CORP COMMON",
-   "Ticker": "-",
-   "Identifier": "6865504",
-   "Weight": "0.04",
-   "Market Value": "111829.35",
-   "Shares Held": "7900",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "INTESA SANPAOLO SPA",
-   "Ticker": "-",
-   "Identifier": "4076836",
-   "Weight": "0.04",
-   "Market Value": "111679.03",
-   "Shares Held": "18113",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CATHAY FINANCIAL HOLDING",
-   "Ticker": "-",
-   "Identifier": "6425663",
-   "Weight": "0.04",
-   "Market Value": "111221.39",
-   "Shares Held": "36819",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SAUDI ARABIAN OIL CO",
-   "Ticker": "-",
-   "Identifier": "BJTM270",
-   "Weight": "0.04",
-   "Market Value": "111042.74",
-   "Shares Held": "15923",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CENOVUS ENERGY INC COMMON",
-   "Ticker": "-",
-   "Identifier": "B57FG04",
-   "Weight": "0.04",
-   "Market Value": "110337",
-   "Shares Held": "4080",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "GOODMAN GROUP STAPLED",
-   "Ticker": "-",
-   "Identifier": "B03FYZ4",
-   "Weight": "0.04",
-   "Market Value": "109821.25",
-   "Shares Held": "5866",
-   "Asset Category": "REIT"
-  },
-  {
-   "Name": "CEMEX SAB DE CV UNIT MXN",
-   "Ticker": "-",
-   "Identifier": "2406457",
-   "Weight": "0.04",
-   "Market Value": "108875.71",
-   "Shares Held": "109741",
-   "Asset Category": "INVESTMENT TRUSTS"
-  },
-  {
-   "Name": "MTN GROUP LTD COMMON",
-   "Ticker": "-",
-   "Identifier": "6563206",
-   "Weight": "0.04",
-   "Market Value": "108603.54",
-   "Shares Held": "8428",
+   "Market Value": "115681.49",
+   "Shares Held": "37704",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1467,8 +1332,62 @@
    "Ticker": "-",
    "Identifier": "6141011",
    "Weight": "0.04",
-   "Market Value": "107334.86",
+   "Market Value": "115276.29",
    "Shares Held": "13643",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "TWILIO INC COMMON STOCK",
+   "Ticker": "TWLO",
+   "Identifier": "90138F102",
+   "Weight": "0.04",
+   "Market Value": "115078.2",
+   "Shares Held": "620",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "KAO CORP COMMON STOCK JPY",
+   "Ticker": "-",
+   "Identifier": "6483809",
+   "Weight": "0.04",
+   "Market Value": "114878.14",
+   "Shares Held": "4500",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SHINHAN FINANCIAL GROUP",
+   "Ticker": "-",
+   "Identifier": "6397502",
+   "Weight": "0.04",
+   "Market Value": "114684.4",
+   "Shares Held": "1807",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CATHAY FINANCIAL HOLDING",
+   "Ticker": "-",
+   "Identifier": "6425663",
+   "Weight": "0.04",
+   "Market Value": "113872.27",
+   "Shares Held": "36819",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "INTESA SANPAOLO SPA",
+   "Ticker": "-",
+   "Identifier": "4076836",
+   "Weight": "0.04",
+   "Market Value": "113627.92",
+   "Shares Held": "18113",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SUZUKI MOTOR CORP COMMON",
+   "Ticker": "-",
+   "Identifier": "6865504",
+   "Weight": "0.04",
+   "Market Value": "112813.92",
+   "Shares Held": "7900",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1476,8 +1395,107 @@
    "Ticker": "-",
    "Identifier": "B4T3BW6",
    "Weight": "0.04",
-   "Market Value": "107019.66",
+   "Market Value": "112625.72",
    "Shares Held": "18364",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "HONDA MOTOR CO LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "6435145",
+   "Weight": "0.04",
+   "Market Value": "112468.43",
+   "Shares Held": "10000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ANHEUSER-BUSCH INBEV",
+   "Ticker": "-",
+   "Identifier": "BYYHL23",
+   "Weight": "0.04",
+   "Market Value": "112109",
+   "Shares Held": "1422",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SAUDI ARABIAN OIL CO",
+   "Ticker": "-",
+   "Identifier": "BJTM270",
+   "Weight": "0.04",
+   "Market Value": "111692.94",
+   "Shares Held": "15923",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "GOLD FIELDS LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "6280215",
+   "Weight": "0.04",
+   "Market Value": "111669.22",
+   "Shares Held": "3066",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CEMEX SAB DE CV UNIT MXN",
+   "Ticker": "-",
+   "Identifier": "2406457",
+   "Weight": "0.04",
+   "Market Value": "111559.36",
+   "Shares Held": "109741",
+   "Asset Category": "INVESTMENT TRUSTS"
+  },
+  {
+   "Name": "CENOVUS ENERGY INC COMMON",
+   "Ticker": "-",
+   "Identifier": "B57FG04",
+   "Weight": "0.04",
+   "Market Value": "111522.67",
+   "Shares Held": "4080",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "IQVIA HOLDINGS INC COMMON",
+   "Ticker": "IQV",
+   "Identifier": "46266C105",
+   "Weight": "0.04",
+   "Market Value": "111477.33",
+   "Shares Held": "447",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "INTACT FINANCIAL CORP",
+   "Ticker": "-",
+   "Identifier": "B04YJV1",
+   "Weight": "0.04",
+   "Market Value": "111177.86",
+   "Shares Held": "571",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "GOODMAN GROUP STAPLED",
+   "Ticker": "-",
+   "Identifier": "B03FYZ4",
+   "Weight": "0.04",
+   "Market Value": "110834.26",
+   "Shares Held": "5866",
+   "Asset Category": "REIT"
+  },
+  {
+   "Name": "MTN GROUP LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "6563206",
+   "Weight": "0.04",
+   "Market Value": "110709.08",
+   "Shares Held": "8428",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ACCTON TECHNOLOGY CORP",
+   "Ticker": "-",
+   "Identifier": "6005214",
+   "Weight": "0.04",
+   "Market Value": "110209.61",
+   "Shares Held": "2335",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1485,8 +1503,17 @@
    "Ticker": "-",
    "Identifier": "6597584",
    "Weight": "0.04",
-   "Market Value": "106938.39",
+   "Market Value": "109553.79",
    "Shares Held": "2600",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "RIO TINTO LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "6220103",
+   "Weight": "0.04",
+   "Market Value": "109229.36",
+   "Shares Held": "1153",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1494,7 +1521,7 @@
    "Ticker": "FERG",
    "Identifier": "31488V107",
    "Weight": "0.04",
-   "Market Value": "106907.84",
+   "Market Value": "108954.56",
    "Shares Held": "416",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1503,17 +1530,8 @@
    "Ticker": "-",
    "Identifier": "6474535",
    "Weight": "0.04",
-   "Market Value": "106286.83",
+   "Market Value": "108585.01",
    "Shares Held": "3000",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "NTT INC COMMON STOCK JPY",
-   "Ticker": "-",
-   "Identifier": "6641373",
-   "Weight": "0.04",
-   "Market Value": "105996.03",
-   "Shares Held": "100500",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1521,25 +1539,34 @@
    "Ticker": "-",
    "Identifier": "0870612",
    "Weight": "0.04",
-   "Market Value": "105226.04",
+   "Market Value": "107587.77",
    "Shares Held": "84421",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "GOLD FIELDS LTD COMMON",
+   "Name": "NTT INC COMMON STOCK JPY",
    "Ticker": "-",
-   "Identifier": "6280215",
+   "Identifier": "6641373",
    "Weight": "0.04",
-   "Market Value": "104418.16",
-   "Shares Held": "3066",
+   "Market Value": "106326.56",
+   "Shares Held": "100500",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "COHERENT CORP COMMON",
+   "Ticker": "COHR",
+   "Identifier": "19247G107",
+   "Weight": "0.04",
+   "Market Value": "105405.09",
+   "Shares Held": "471",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "NATERA INC COMMON STOCK",
    "Ticker": "NTRA",
    "Identifier": "632307104",
    "Weight": "0.04",
-   "Market Value": "104260.18",
+   "Market Value": "105194.38",
    "Shares Held": "346",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -1548,26 +1575,17 @@
    "Ticker": "-",
    "Identifier": "6801575",
    "Weight": "0.04",
-   "Market Value": "103971.38",
+   "Market Value": "105168.48",
    "Shares Held": "5232",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "RIO TINTO LTD COMMON",
+   "Name": "ELITE MATERIAL CO LTD",
    "Ticker": "-",
-   "Identifier": "6220103",
+   "Identifier": "6316121",
    "Weight": "0.04",
-   "Market Value": "103927.67",
-   "Shares Held": "1153",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ACCTON TECHNOLOGY CORP",
-   "Ticker": "-",
-   "Identifier": "6005214",
-   "Weight": "0.04",
-   "Market Value": "103303.07",
-   "Shares Held": "2335",
+   "Market Value": "105058.13",
+   "Shares Held": "958",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1575,25 +1593,16 @@
    "Ticker": "KKR",
    "Identifier": "48251W104",
    "Weight": "0.04",
-   "Market Value": "102286.7",
+   "Market Value": "104112.86",
    "Shares Held": "1087",
    "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "LOBLAW COS LTD COMMON",
-   "Ticker": "-",
-   "Identifier": "2521800",
-   "Weight": "0.04",
-   "Market Value": "102004.07",
-   "Shares Held": "2011",
-   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "ENEL SPA COMMON STOCK EUR",
    "Ticker": "-",
    "Identifier": "7144569",
    "Weight": "0.04",
-   "Market Value": "101512.57",
+   "Market Value": "103331.33",
    "Shares Held": "9761",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -1602,26 +1611,26 @@
    "Ticker": "-",
    "Identifier": "BG087C6",
    "Weight": "0.04",
-   "Market Value": "101373.06",
+   "Market Value": "102968.01",
    "Shares Held": "5847",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "T&D HOLDINGS INC COMMON",
+   "Name": "SK SQUARE CO LTD COMMON",
    "Ticker": "-",
-   "Identifier": "6744294",
+   "Identifier": "BMG3GS6",
    "Weight": "0.04",
-   "Market Value": "100507.87",
-   "Shares Held": "3300",
+   "Market Value": "102130.72",
+   "Shares Held": "198",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "AMERICA MOVIL SAB DE CV",
+   "Name": "LOBLAW COS LTD COMMON",
    "Ticker": "-",
-   "Identifier": "BMVRB77",
+   "Identifier": "2521800",
    "Weight": "0.04",
-   "Market Value": "100015.66",
-   "Shares Held": "80285",
+   "Market Value": "101058.18",
+   "Shares Held": "2011",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1629,35 +1638,17 @@
    "Ticker": "-",
    "Identifier": "6010906",
    "Weight": "0.04",
-   "Market Value": "99606.98",
+   "Market Value": "101039.82",
    "Shares Held": "3900",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "TARGA RESOURCES CORP",
-   "Ticker": "TRGP",
-   "Identifier": "87612G101",
-   "Weight": "0.04",
-   "Market Value": "99364.44",
-   "Shares Held": "348",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "DEXCOM INC COMMON STOCK",
-   "Ticker": "DXCM",
-   "Identifier": "252131107",
-   "Weight": "0.04",
-   "Market Value": "99177.96",
-   "Shares Held": "1169",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "KIA CORP COMMON STOCK KRW",
+   "Name": "T&D HOLDINGS INC COMMON",
    "Ticker": "-",
-   "Identifier": "6490928",
+   "Identifier": "6744294",
    "Weight": "0.04",
-   "Market Value": "98975.56",
-   "Shares Held": "1378",
+   "Market Value": "100070.16",
+   "Shares Held": "3300",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1665,44 +1656,53 @@
    "Ticker": "SBAC",
    "Identifier": "78410G104",
    "Weight": "0.04",
-   "Market Value": "98372.99",
+   "Market Value": "100005.69",
    "Shares Held": "563",
    "Asset Category": "REIT"
   },
   {
-   "Name": "ELITE MATERIAL CO LTD",
-   "Ticker": "-",
-   "Identifier": "6316121",
+   "Name": "DEXCOM INC COMMON STOCK",
+   "Ticker": "DXCM",
+   "Identifier": "252131107",
    "Weight": "0.04",
-   "Market Value": "97938.03",
-   "Shares Held": "958",
+   "Market Value": "99540.35",
+   "Shares Held": "1169",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "AMERICA MOVIL SAB DE CV",
+   "Ticker": "-",
+   "Identifier": "BMVRB77",
+   "Weight": "0.04",
+   "Market Value": "99515.88",
+   "Shares Held": "80285",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ROYAL CARIBBEAN CRUISES",
-   "Ticker": "RCL",
-   "Identifier": "V7780T103",
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "CASH",
    "Weight": "0.04",
-   "Market Value": "97374.1",
-   "Shares Held": "310",
-   "Asset Category": "DOMESTIC COMMON STOCK"
+   "Market Value": "99227.12",
+   "Shares Held": "99227",
+   "Asset Category": "CURRENCIES"
   },
   {
    "Name": "ANTA SPORTS PRODUCTS LTD",
    "Ticker": "-",
    "Identifier": "B1YVKN8",
    "Weight": "0.04",
-   "Market Value": "97310.92",
+   "Market Value": "98999.95",
    "Shares Held": "9364",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "HOME DEPOT INC/THE COMMON",
-   "Ticker": "HD",
-   "Identifier": "437076102",
+   "Name": "CIENA CORP COMMON STOCK",
+   "Ticker": "CIEN",
+   "Identifier": "171779309",
    "Weight": "0.04",
-   "Market Value": "97178.94",
-   "Shares Held": "269",
+   "Market Value": "98526.72",
+   "Shares Held": "384",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
@@ -1710,62 +1710,8 @@
    "Ticker": "-",
    "Identifier": "BYPC1T4",
    "Weight": "0.04",
-   "Market Value": "97152.29",
+   "Market Value": "98288.6",
    "Shares Held": "2541",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ADIDAS AG COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "4031976",
-   "Weight": "0.04",
-   "Market Value": "96578.75",
-   "Shares Held": "506",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "TERUMO CORP COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "6885074",
-   "Weight": "0.04",
-   "Market Value": "95621.54",
-   "Shares Held": "5600",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "WOOLWORTHS GROUP LTD",
-   "Ticker": "-",
-   "Identifier": "6981239",
-   "Weight": "0.04",
-   "Market Value": "95269.32",
-   "Shares Held": "3369",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "H WORLD GROUP LTD",
-   "Ticker": "-",
-   "Identifier": "BMB5YK5",
-   "Weight": "0.04",
-   "Market Value": "94874.57",
-   "Shares Held": "18200",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ARCA CONTINENTAL SAB DE",
-   "Ticker": "-",
-   "Identifier": "2823885",
-   "Weight": "0.04",
-   "Market Value": "94677.14",
-   "Shares Held": "7399",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "B3 SA - BRASIL BOLSA",
-   "Ticker": "-",
-   "Identifier": "BG36ZK1",
-   "Weight": "0.04",
-   "Market Value": "94374.24",
-   "Shares Held": "37704",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1773,80 +1719,71 @@
    "Ticker": "-",
    "Identifier": "2879327",
    "Weight": "0.04",
-   "Market Value": "93968.12",
+   "Market Value": "98256.49",
    "Shares Held": "1820",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "KIA CORP COMMON STOCK KRW",
+   "Ticker": "-",
+   "Identifier": "6490928",
+   "Weight": "0.04",
+   "Market Value": "97834.44",
+   "Shares Held": "1378",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "ROYAL CARIBBEAN CRUISES",
+   "Ticker": "RCL",
+   "Identifier": "V7780T103",
+   "Weight": "0.04",
+   "Market Value": "97758.5",
+   "Shares Held": "310",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "TARGA RESOURCES CORP",
+   "Ticker": "TRGP",
+   "Identifier": "87612G101",
+   "Weight": "0.04",
+   "Market Value": "97631.4",
+   "Shares Held": "348",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "FANUC CORP COMMON STOCK",
    "Ticker": "-",
    "Identifier": "6356934",
    "Weight": "0.04",
-   "Market Value": "93962.05",
+   "Market Value": "97421.1",
    "Shares Held": "2900",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "FORTIS INC/CANADA COMMON",
-   "Ticker": "-",
-   "Identifier": "2347200",
+   "Name": "HOME DEPOT INC/THE COMMON",
+   "Ticker": "HD",
+   "Identifier": "437076102",
    "Weight": "0.04",
-   "Market Value": "93387.45",
-   "Shares Held": "1572",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ICICI BANK LTD ADR USD",
-   "Ticker": "IBN",
-   "Identifier": "45104G104",
-   "Weight": "0.04",
-   "Market Value": "93367",
-   "Shares Held": "2558",
-   "Asset Category": "ADR"
-  },
-  {
-   "Name": "CIENA CORP COMMON STOCK",
-   "Ticker": "CIEN",
-   "Identifier": "171779309",
-   "Weight": "0.04",
-   "Market Value": "93231.36",
-   "Shares Held": "384",
+   "Market Value": "97418.35",
+   "Shares Held": "269",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "MIDEA GROUP CO LTD COMMON",
+   "Name": "ADIDAS AG COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "BD5CPP1",
+   "Identifier": "4031976",
    "Weight": "0.04",
-   "Market Value": "93193.24",
-   "Shares Held": "6600",
+   "Market Value": "96641.19",
+   "Shares Held": "506",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "COHERENT CORP COMMON",
-   "Ticker": "COHR",
-   "Identifier": "19247G107",
-   "Weight": "0.04",
-   "Market Value": "92405.49",
-   "Shares Held": "471",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "SK SQUARE CO LTD COMMON",
+   "Name": "RENESAS ELECTRONICS CORP",
    "Ticker": "-",
-   "Identifier": "BMG3GS6",
+   "Identifier": "6635677",
    "Weight": "0.04",
-   "Market Value": "92349.31",
-   "Shares Held": "198",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "NUTRIEN LTD",
-   "Ticker": "-",
-   "Identifier": "BDRJLN0",
-   "Weight": "0.04",
-   "Market Value": "92150.06",
-   "Shares Held": "1379",
+   "Market Value": "96614.96",
+   "Shares Held": "5900",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1854,35 +1791,161 @@
    "Ticker": "-",
    "Identifier": "B1359L2",
    "Weight": "0.04",
-   "Market Value": "91845.07",
+   "Market Value": "95492.8",
    "Shares Held": "22400",
    "Asset Category": "GDR"
+  },
+  {
+   "Name": "H WORLD GROUP LTD",
+   "Ticker": "-",
+   "Identifier": "BMB5YK5",
+   "Weight": "0.04",
+   "Market Value": "95317.06",
+   "Shares Held": "18200",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "NAN YA PLASTICS CORP",
+   "Ticker": "-",
+   "Identifier": "6621580",
+   "Weight": "0.04",
+   "Market Value": "94363.09",
+   "Shares Held": "12909",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "WOOLWORTHS GROUP LTD",
+   "Ticker": "-",
+   "Identifier": "6981239",
+   "Weight": "0.04",
+   "Market Value": "93776.35",
+   "Shares Held": "3369",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "NUTRIEN LTD",
+   "Ticker": "-",
+   "Identifier": "BDRJLN0",
+   "Weight": "0.04",
+   "Market Value": "93711.21",
+   "Shares Held": "1379",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA LIFE INSURANCE CO",
+   "Ticker": "-",
+   "Identifier": "6718976",
+   "Weight": "0.04",
+   "Market Value": "93477.96",
+   "Shares Held": "31286",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "DELTA AIR LINES INC",
    "Ticker": "DAL",
    "Identifier": "247361702",
    "Weight": "0.04",
-   "Market Value": "91327.95",
+   "Market Value": "93386.82",
    "Shares Held": "1101",
    "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ITAUSA SA PREFERENCE BRL",
+   "Ticker": "-",
+   "Identifier": "2458771",
+   "Weight": "0.04",
+   "Market Value": "93059.36",
+   "Shares Held": "36647",
+   "Asset Category": "FOREIGN PREFERRED STOCK"
+  },
+  {
+   "Name": "ICICI BANK LTD ADR USD",
+   "Ticker": "IBN",
+   "Identifier": "45104G104",
+   "Weight": "0.04",
+   "Market Value": "92829.82",
+   "Shares Held": "2558",
+   "Asset Category": "ADR"
+  },
+  {
+   "Name": "TERUMO CORP COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "6885074",
+   "Weight": "0.04",
+   "Market Value": "92710.52",
+   "Shares Held": "5600",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "FEDEX FREIGHT HOLDING CO",
+   "Ticker": "FDXF",
+   "Identifier": "314352105",
+   "Weight": "0.04",
+   "Market Value": "92618.55",
+   "Shares Held": "765",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ARCA CONTINENTAL SAB DE",
+   "Ticker": "-",
+   "Identifier": "2823885",
+   "Weight": "0.04",
+   "Market Value": "92609.44",
+   "Shares Held": "7399",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "FORTIS INC/CANADA COMMON",
+   "Ticker": "-",
+   "Identifier": "2347200",
+   "Weight": "0.04",
+   "Market Value": "92603",
+   "Shares Held": "1572",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SASOL LTD COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "6777450",
+   "Weight": "0.04",
+   "Market Value": "92257.93",
+   "Shares Held": "7665",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "MIDEA GROUP CO LTD COMMON",
+   "Ticker": "-",
+   "Identifier": "BD5CPP1",
+   "Weight": "0.04",
+   "Market Value": "91730.44",
+   "Shares Held": "6600",
+   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "ROYALTY PHARMA PLC COMMON",
    "Ticker": "RPRX",
    "Identifier": "G7709Q104",
    "Weight": "0.04",
-   "Market Value": "91317.58",
+   "Market Value": "91692.84",
    "Shares Held": "1294",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "RENESAS ELECTRONICS CORP",
+   "Name": "KONINKLIJKE AHOLD",
    "Ticker": "-",
-   "Identifier": "6635677",
+   "Identifier": "BD0Q398",
    "Weight": "0.04",
-   "Market Value": "91278.94",
-   "Shares Held": "5900",
+   "Market Value": "91250.83",
+   "Shares Held": "2315",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "SUMITOMO ELECTRIC",
+   "Ticker": "-",
+   "Identifier": "6858708",
+   "Weight": "0.04",
+   "Market Value": "91234.33",
+   "Shares Held": "10500",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1895,57 +1958,39 @@
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
+   "Name": "JABIL INC COMMON STOCK",
+   "Ticker": "JBL",
+   "Identifier": "466313103",
+   "Weight": "0.04",
+   "Market Value": "91061.26",
+   "Shares Held": "386",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
    "Name": "EMIRATES",
    "Ticker": "-",
    "Identifier": "6322173",
    "Weight": "0.04",
-   "Market Value": "91103.05",
+   "Market Value": "91059.88",
    "Shares Held": "14111",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "BRIDGESTONE CORP COMMON",
+   "Name": "ORIX CORP COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "6132101",
+   "Identifier": "6661144",
    "Weight": "0.04",
-   "Market Value": "91015.14",
-   "Shares Held": "3300",
+   "Market Value": "91003.56",
+   "Shares Held": "2600",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "KONINKLIJKE AHOLD",
+   "Name": "THALES SA COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "BD0Q398",
+   "Identifier": "4162791",
    "Weight": "0.04",
-   "Market Value": "90961.99",
-   "Shares Held": "2315",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "FEDEX FREIGHT HOLDING CO",
-   "Ticker": "FDXF",
-   "Identifier": "314352105",
-   "Weight": "0.04",
-   "Market Value": "90813.15",
-   "Shares Held": "765",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "LENNOX INTERNATIONAL INC",
-   "Ticker": "LII",
-   "Identifier": "526107107",
-   "Weight": "0.04",
-   "Market Value": "89592.32",
-   "Shares Held": "256",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "HANA FINANCIAL GROUP INC",
-   "Ticker": "-",
-   "Identifier": "B0RNRF5",
-   "Weight": "0.04",
-   "Market Value": "89546.9",
-   "Shares Held": "991",
+   "Market Value": "90791.84",
+   "Shares Held": "346",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1953,44 +1998,17 @@
    "Ticker": "VYLR",
    "Identifier": "92892R108",
    "Weight": "0.03",
-   "Market Value": "89060.54",
+   "Market Value": "90316.9",
    "Shares Held": "1282",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
-   "Name": "SASOL LTD COMMON STOCK",
+   "Name": "BRIDGESTONE CORP COMMON",
    "Ticker": "-",
-   "Identifier": "6777450",
+   "Identifier": "6132101",
    "Weight": "0.03",
-   "Market Value": "88865.24",
-   "Shares Held": "7665",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ORIX CORP COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "6661144",
-   "Weight": "0.03",
-   "Market Value": "88480.33",
-   "Shares Held": "2600",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "JABIL INC COMMON STOCK",
-   "Ticker": "JBL",
-   "Identifier": "466313103",
-   "Weight": "0.03",
-   "Market Value": "88062.04",
-   "Shares Held": "386",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "NAN YA PLASTICS CORP",
-   "Ticker": "-",
-   "Identifier": "6621580",
-   "Weight": "0.03",
-   "Market Value": "87905.59",
-   "Shares Held": "12909",
+   "Market Value": "89393.75",
+   "Shares Held": "3300",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -1998,43 +2016,16 @@
    "Ticker": "TMUS",
    "Identifier": "872590104",
    "Weight": "0.03",
-   "Market Value": "87115",
+   "Market Value": "89179.56",
    "Shares Held": "524",
    "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "THALES SA COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "4162791",
-   "Weight": "0.03",
-   "Market Value": "87093.96",
-   "Shares Held": "346",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "CBRE GROUP INC COMMON",
-   "Ticker": "CBRE",
-   "Identifier": "12504L109",
-   "Weight": "0.03",
-   "Market Value": "86457.03",
-   "Shares Held": "627",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "CHINA LIFE INSURANCE CO",
-   "Ticker": "-",
-   "Identifier": "6718976",
-   "Weight": "0.03",
-   "Market Value": "85714.39",
-   "Shares Held": "31286",
-   "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
    "Name": "UNITED AIRLINES HOLDINGS",
    "Ticker": "UAL",
    "Identifier": "910047109",
    "Weight": "0.03",
-   "Market Value": "85392.84",
+   "Market Value": "88309.53",
    "Shares Held": "817",
    "Asset Category": "DOMESTIC COMMON STOCK"
   },
@@ -2043,26 +2034,8 @@
    "Ticker": "-",
    "Identifier": "BVLKBV3",
    "Weight": "0.03",
-   "Market Value": "84923.76",
+   "Market Value": "87962.63",
    "Shares Held": "8316",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "KAJIMA CORP COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "6481320",
-   "Weight": "0.03",
-   "Market Value": "84880.38",
-   "Shares Held": "2900",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "SUMITOMO REALTY &",
-   "Ticker": "-",
-   "Identifier": "6858902",
-   "Weight": "0.03",
-   "Market Value": "84655.1",
-   "Shares Held": "3800",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -2070,25 +2043,34 @@
    "Ticker": "-",
    "Identifier": "2166160",
    "Weight": "0.03",
-   "Market Value": "84473.73",
+   "Market Value": "87935.22",
    "Shares Held": "1373",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "SUMITOMO ELECTRIC",
+   "Name": "HANA FINANCIAL GROUP INC",
    "Ticker": "-",
-   "Identifier": "6858708",
+   "Identifier": "B0RNRF5",
    "Weight": "0.03",
-   "Market Value": "83939.36",
-   "Shares Held": "10500",
+   "Market Value": "87729.97",
+   "Shares Held": "991",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CBRE GROUP INC COMMON",
+   "Ticker": "CBRE",
+   "Identifier": "12504L109",
+   "Weight": "0.03",
+   "Market Value": "87654.6",
+   "Shares Held": "627",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "RESONA HOLDINGS INC",
    "Ticker": "-",
    "Identifier": "6421553",
    "Weight": "0.03",
-   "Market Value": "83891.88",
+   "Market Value": "86185.26",
    "Shares Held": "6700",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
@@ -2097,152 +2079,35 @@
    "Ticker": "-",
    "Identifier": "6916628",
    "Weight": "0.03",
-   "Market Value": "83626.72",
+   "Market Value": "85104.9",
    "Shares Held": "31733",
    "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ASTELLAS PHARMA INC",
-   "Ticker": "-",
-   "Identifier": "6985383",
-   "Weight": "0.03",
-   "Market Value": "83609.35",
-   "Shares Held": "4500",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "AMEREN CORP COMMON STOCK",
-   "Ticker": "AEE",
-   "Identifier": "023608102",
-   "Weight": "0.03",
-   "Market Value": "83402.88",
-   "Shares Held": "726",
-   "Asset Category": "DOMESTIC COMMON STOCK"
   },
   {
    "Name": "ENN ENERGY HOLDINGS LTD",
    "Ticker": "-",
    "Identifier": "6333937",
    "Weight": "0.03",
-   "Market Value": "82808.24",
+   "Market Value": "84716.27",
    "Shares Held": "13400",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "REVOLUTION MEDICINES INC",
-   "Ticker": "RVMD",
-   "Identifier": "76155X100",
-   "Weight": "0.03",
-   "Market Value": "82740.57",
-   "Shares Held": "471",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "GIVAUDAN SA COMMON STOCK",
+   "Name": "SUMITOMO REALTY &",
    "Ticker": "-",
-   "Identifier": "5980613",
+   "Identifier": "6858902",
    "Weight": "0.03",
-   "Market Value": "82711.68",
-   "Shares Held": "17",
+   "Market Value": "84024.71",
+   "Shares Held": "3800",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "ITAUSA SA PREFERENCE BRL",
+   "Name": "KAJIMA CORP COMMON STOCK",
    "Ticker": "-",
-   "Identifier": "2458771",
+   "Identifier": "6481320",
    "Weight": "0.03",
-   "Market Value": "82593.48",
-   "Shares Held": "36647",
-   "Asset Category": "FOREIGN PREFERRED STOCK"
-  },
-  {
-   "Name": "CHINA SHENHUA ENERGY CO",
-   "Ticker": "-",
-   "Identifier": "B09N7M0",
-   "Weight": "0.03",
-   "Market Value": "82052.73",
-   "Shares Held": "16034",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "GALDERMA GROUP AG COMMON",
-   "Ticker": "-",
-   "Identifier": "BRC2T72",
-   "Weight": "0.03",
-   "Market Value": "81864.67",
-   "Shares Held": "366",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "BEST BUY CO INC COMMON",
-   "Ticker": "BBY",
-   "Identifier": "086516101",
-   "Weight": "0.03",
-   "Market Value": "81756.26",
-   "Shares Held": "797",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "PEMBINA PIPELINE CORP",
-   "Ticker": "-",
-   "Identifier": "B4PT2P8",
-   "Weight": "0.03",
-   "Market Value": "81364.96",
-   "Shares Held": "1648",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DEUTSCHE BANK AG COMMON",
-   "Ticker": "-",
-   "Identifier": "5750355",
-   "Weight": "0.03",
-   "Market Value": "81177.97",
-   "Shares Held": "2489",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "HUNTINGTON BANCSHARES",
-   "Ticker": "HBAN",
-   "Identifier": "446150104",
-   "Weight": "0.03",
-   "Market Value": "80084.16",
-   "Shares Held": "5382",
-   "Asset Category": "DOMESTIC COMMON STOCK"
-  },
-  {
-   "Name": "BRAMBLES LTD COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "B1FJ0C0",
-   "Weight": "0.03",
-   "Market Value": "79756.66",
-   "Shares Held": "5390",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "ABU DHABI ISLAMIC BANK",
-   "Ticker": "-",
-   "Identifier": "6001728",
-   "Weight": "0.03",
-   "Market Value": "79003.95",
-   "Shares Held": "11575",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "DISCO CORP COMMON STOCK",
-   "Ticker": "-",
-   "Identifier": "6270948",
-   "Weight": "0.03",
-   "Market Value": "78916.41",
-   "Shares Held": "300",
-   "Asset Category": "FOREIGN COMMON STOCK"
-  },
-  {
-   "Name": "KE HOLDINGS INC COMMON",
-   "Ticker": "-",
-   "Identifier": "BN7SX97",
-   "Weight": "0.03",
-   "Market Value": "78903.13",
-   "Shares Held": "13000",
+   "Market Value": "83984.72",
+   "Shares Held": "2900",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
@@ -2250,18 +2115,153 @@
    "Ticker": "-",
    "Identifier": "6411673",
    "Weight": "0.03",
-   "Market Value": "78687.85",
+   "Market Value": "83832.99",
    "Shares Held": "19746",
    "Asset Category": "FOREIGN COMMON STOCK"
   },
   {
-   "Name": "CHINA YANGTZE POWER CO",
+   "Name": "BANCO BTG PACTUAL SA UNIT",
    "Ticker": "-",
-   "Identifier": "BP3R2M8",
+   "Identifier": "BZBZVC7",
    "Weight": "0.03",
-   "Market Value": "78531.74",
-   "Shares Held": "16400",
+   "Market Value": "83613.47",
+   "Shares Held": "7724",
+   "Asset Category": "INVESTMENT TRUSTS"
+  },
+  {
+   "Name": "AMEREN CORP COMMON STOCK",
+   "Ticker": "AEE",
+   "Identifier": "023608102",
+   "Weight": "0.03",
+   "Market Value": "83381.1",
+   "Shares Held": "726",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "ASTELLAS PHARMA INC",
+   "Ticker": "-",
+   "Identifier": "6985383",
+   "Weight": "0.03",
+   "Market Value": "83079.28",
+   "Shares Held": "4500",
    "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BEST BUY CO INC COMMON",
+   "Ticker": "BBY",
+   "Identifier": "086516101",
+   "Weight": "0.03",
+   "Market Value": "83031.46",
+   "Shares Held": "797",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "DEUTSCHE BANK AG COMMON",
+   "Ticker": "-",
+   "Identifier": "5750355",
+   "Weight": "0.03",
+   "Market Value": "82984.04",
+   "Shares Held": "2489",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "GIVAUDAN SA COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "5980613",
+   "Weight": "0.03",
+   "Market Value": "82960.54",
+   "Shares Held": "17",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "DISCO CORP COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "6270948",
+   "Weight": "0.03",
+   "Market Value": "82508.69",
+   "Shares Held": "300",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "REVOLUTION MEDICINES INC",
+   "Ticker": "RVMD",
+   "Identifier": "76155X100",
+   "Weight": "0.03",
+   "Market Value": "81944.58",
+   "Shares Held": "471",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "PEMBINA PIPELINE CORP",
+   "Ticker": "-",
+   "Identifier": "B4PT2P8",
+   "Weight": "0.03",
+   "Market Value": "81601.8",
+   "Shares Held": "1648",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CAIXABANK SA COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "B283W97",
+   "Weight": "0.03",
+   "Market Value": "81359.23",
+   "Shares Held": "6417",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "BRAMBLES LTD COMMON STOCK",
+   "Ticker": "-",
+   "Identifier": "B1FJ0C0",
+   "Weight": "0.03",
+   "Market Value": "81120.13",
+   "Shares Held": "5390",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "HUNTINGTON BANCSHARES",
+   "Ticker": "HBAN",
+   "Identifier": "446150104",
+   "Weight": "0.03",
+   "Market Value": "80945.28",
+   "Shares Held": "5382",
+   "Asset Category": "DOMESTIC COMMON STOCK"
+  },
+  {
+   "Name": "KE HOLDINGS INC COMMON",
+   "Ticker": "-",
+   "Identifier": "BN7SX97",
+   "Weight": "0.03",
+   "Market Value": "80574.48",
+   "Shares Held": "13000",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "GALDERMA GROUP AG COMMON",
+   "Ticker": "-",
+   "Identifier": "BRC2T72",
+   "Weight": "0.03",
+   "Market Value": "80514.18",
+   "Shares Held": "366",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "CHINA SHENHUA ENERGY CO",
+   "Ticker": "-",
+   "Identifier": "B09N7M0",
+   "Weight": "0.03",
+   "Market Value": "80314.8",
+   "Shares Held": "16034",
+   "Asset Category": "FOREIGN COMMON STOCK"
+  },
+  {
+   "Name": "INTERACTIVE BROKERS GROUP",
+   "Ticker": "IBKR",
+   "Identifier": "45841N107",
+   "Weight": "0.03",
+   "Market Value": "79403.45",
+   "Shares Held": "1015",
+   "Asset Category": "DOMESTIC COMMON STOCK"
   }
  ]
 }
