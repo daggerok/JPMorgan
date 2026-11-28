@@ -8,7 +8,7 @@
   "productData": "https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip=46654Q203&country=us&role=adv&language=en&userLoggedIn=false",
   "historicalData": "https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip=46654Q203&country=us&role=adv&language=en&userLoggedIn=false",
   "holdingsDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=dailyETFHoldings&cusip=46654Q203&country=us&role=adv&locale=en-US",
-  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q203&country=us&role=adv&locale=en-US&fromDate=2022-05-03&toDate=2026-11-25",
+  "pricesDownload": "https://am.jpmorgan.com/FundsMarketingHandler/excel?type=historicalNav&cusip=46654Q203&country=us&role=adv&locale=en-US&fromDate=2022-05-03&toDate=2026-11-27",
   "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/JEPQ",
   "holdingsSource": "am.jpmorgan.com product-data dailyHoldingsAll (the \"Download holdings\" workbook rows with CUSIP/SEDOL identifiers)",
   "historySource": "am.jpmorgan.com historicalData (daily NAV, market price and premium/discount since inception)",
@@ -31,18 +31,18 @@
   "net": 0.35
  },
  "nav": {
-  "display": "$52.68",
-  "value": 52.68358462,
-  "asOfDate": "Nov 25 2026"
+  "display": "$53.89",
+  "value": 53.88949301,
+  "asOfDate": "Nov 27 2026"
  },
  "marketPrice": {
-  "display": "$52.72",
-  "value": 52.72,
-  "asOfDate": "Nov 25 2026"
+  "display": "$53.95",
+  "value": 53.95,
+  "asOfDate": "Nov 27 2026"
  },
  "premiumDiscount": {
-  "display": "0.07%",
-  "value": 0.0691
+  "display": "0.11%",
+  "value": 0.1123
  },
  "aum": {
   "display": "$39,770.84 M",
